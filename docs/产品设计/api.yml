@@ -1,0 +1,78 @@
+swagger: "2.0"
+info:
+  version: "1.0.0"
+  title: "CScan 扫描器接口文档"
+schemes:
+  - "http"
+host: "scan.host"
+basePath: "/api"
+tags:
+  - name: “asset 资产”
+    description: "资产相关接口，包括增删改查，面向用户端"
+  - name: "component 组件"
+    description: "组件相关接口，用户端只包含查询操作"
+  - name: "poc"
+    description: "poc 相关接口，用户端只包含查询操作"
+  - name: "vuln 漏洞"
+    description: "漏洞相关接口，用户端只包含查询操作"
+  - name: "setting"
+    description: "配置类接口，用于工控机配置"
+  - name: "user 用户"
+    description: "用户相关接口，目前只包括登陆"
+  - name: "scan 扫描任务"
+    description: "扫描任务接口，用于创建和查看扫描任务"
+definitions:
+  Asset:
+    type: "obejct"
+    description: "资产"
+  Component:
+    type: "object"   
+    description: "组件" 
+  Poc:
+    type: "object"  
+    description: "poc"      
+  Vuln:
+    type: "object"
+    description: "漏洞"
+  User:
+    type: "object"
+    description: "用户"
+  Scan:
+    type: "object"
+    description: "扫描"
+  Task:
+    type: "object"
+    description: "扫描中的一次任务，即一次 POC 的执行"
+paths:
+  /assets:
+    post:
+      tags:
+        - "asset"
+      summary: "添加新资产"
+      operationId: "addAsset"
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      requestBody:
+        required: true
+        content:
+          "application/json":
+            schema:
+              $ref:  "#/definations/Asset"
+      responses:
+        405：
+          description: "Invalid input"
+        200:
+          
+   /assets:
+    get:
+      tags:
+        - "asset"
+      summary: "获取资产列表"
+      operationId: "getAssets"
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      

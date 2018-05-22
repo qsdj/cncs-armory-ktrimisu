@@ -1,0 +1,20 @@
+[[source]]
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+colorama = "*"
+requests = "*"
+"enum34" = "*"
+"e1839a8" = {path = ".", editable = true}
+mysql-connector = "*"
+
+[dev-packages]
+twine = "*"
+"e1839a8" = {path = ".", editable = true}
+pylint = "*"
+"autopep8" = "*"
+
+[requires]
+python_version = "2.7"
