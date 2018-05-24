@@ -8,7 +8,7 @@ import re
 
 class Vuln(ABVuln):
     vuln_id = 'Ruijie_0004' # 平台漏洞编号，留空
-    name = '锐捷网络 RG-EG2000 非法访问敏感信息'  # 漏洞名称
+    name = '锐捷网络 RG-EG1000 非法访问敏感信息'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.OTHER # 漏洞类型
     disclosure_date = '2014-11-25'  # 漏洞公布时间
@@ -19,7 +19,7 @@ class Vuln(ABVuln):
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = '锐捷网络 RG-EG1000'  # 漏洞应用名称
+    product = '锐捷网络'  # 漏洞应用名称
     product_version = 'RG-EG1000'  # 漏洞应用版本
 
 def base64(string):
@@ -47,7 +47,6 @@ class Poc(ABPoc):
             url = self.target + payload
             code, head, res, errcode, _ = hh.http(url, cookie=cookie)
             if code ==  200 and 'remove-file config.text' in res :
-                #security_hole('NBR1300G can be reset and read config.txt')
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
                 

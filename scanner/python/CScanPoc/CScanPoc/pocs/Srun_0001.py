@@ -18,7 +18,7 @@ class Vuln(ABVuln):
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = 'Srun3000计费系统'  # 漏洞应用名称
+    product = '深澜软件'  # 漏洞应用名称
     product_version = 'Srun3000 [3.00rc14.17.4]'  # 漏洞应用版本
 
 class Poc(ABPoc):

@@ -19,7 +19,7 @@ class Vuln(ABVuln):
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = '锐捷网络 RG-EG2000'  # 漏洞应用名称
+    product = '锐捷网络'  # 漏洞应用名称
     product_version = 'RG-EG2000'  # 漏洞应用版本
 
 def base64(string):

@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
     vuln_id = 'hanweb_0001' # 平台漏洞编号，留空
-    name = '大汉版通JCMS数据库配置文件读取漏洞'  # 漏洞名称
+    name = '大汉版通JCMS数据库配置 文件读取'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_TRAVERSAL # 漏洞类型
     disclosure_date = '2013-12-24'  # 漏洞公布时间

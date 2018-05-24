@@ -6,7 +6,7 @@ import urllib2
 
 class Vuln(ABVuln):
     vuln_id = 'netentsec_0001' # 平台漏洞编号，留空
-    name = '网康科技 NS-ASG 6.3 任意文件下载漏洞'  # 漏洞名称
+    name = '网康科技 NS-ASG 6.3 任意文件下载'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型
     disclosure_date = '2015-02-20'  # 漏洞公布时间
@@ -16,7 +16,7 @@ class Vuln(ABVuln):
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = '网康科技 NS-ASG'  # 漏洞应用名称
+    product = '网康科技'  # 漏洞应用名称
     product_version = '6.3'  # 漏洞应用版本
 
 class Poc(ABPoc):

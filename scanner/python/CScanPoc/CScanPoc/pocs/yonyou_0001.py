@@ -15,7 +15,7 @@ class Vuln(ABVuln):
     ref = ''  # 漏洞来源    
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = 'yonyou'  # 漏洞应用名称
+    product = '用友'  # 漏洞应用名称
     product_version = '用友FE协作办公系统'  # 漏洞应用版本
 
 class Poc(ABPoc):

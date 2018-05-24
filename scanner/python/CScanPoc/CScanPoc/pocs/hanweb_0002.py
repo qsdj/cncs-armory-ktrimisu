@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
     vuln_id = 'hanweb_0002' # 平台漏洞编号，留空
-    name = '大汉管理后台权限绕过，命令执行漏洞'  # 漏洞名称
+    name = '大汉管理后台权限绕过 命令执行'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型
     disclosure_date = ''  # 漏洞公布时间

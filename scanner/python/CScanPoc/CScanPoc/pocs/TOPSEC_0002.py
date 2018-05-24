@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'TOPSEC_0001'  # 平台漏洞编号，留空
+    vuln_id = 'TOPSEC_0002'  # 平台漏洞编号，留空
     name = '天融信审计系统无需登录可添加任意管理员&未授权下载日志'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.OTHER  # 漏洞类型
@@ -17,7 +17,7 @@ class Vuln(ABVuln):
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = '天融信审计系统'  # 漏洞应用名称
+    product = '天融信'  # 漏洞应用名称
     product_version = '天融信审计系统'  # 漏洞应用版本
 
 class Poc(ABPoc):

@@ -18,8 +18,8 @@ class Vuln(ABVuln):
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = '用友致远A8协同管理系统'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product = '用友'  # 漏洞应用名称
+    product_version = '致远A8协同管理系统'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'cfdc4aac-eb3b-4c11-852f-9dbd63805498'

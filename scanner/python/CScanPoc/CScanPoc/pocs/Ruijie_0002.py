@@ -17,8 +17,8 @@ class Vuln(ABVuln):
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = '锐捷网络NBR路由器'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product = '锐捷网络'  # 漏洞应用名称
+    product_version = 'NBR路由器'  # 漏洞应用版本
 
 def base64(string):
     import base64

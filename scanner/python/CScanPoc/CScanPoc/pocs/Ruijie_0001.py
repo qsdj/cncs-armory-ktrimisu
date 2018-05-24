@@ -16,8 +16,8 @@ class Vuln(ABVuln):
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = '锐捷网络NBR路由器'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product = '锐捷网络'  # 漏洞应用名称
+    product_version = 'NBR路由器'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'ab03e5fb-de2c-4ea9-9e03-b5ca17e584e0'

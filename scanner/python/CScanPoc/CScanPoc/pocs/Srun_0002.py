@@ -15,8 +15,8 @@ class Vuln(ABVuln):
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = 'Srun 网关'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product = '深澜软件'  # 漏洞应用名称
+    product_version = 'Srun 网关'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'c4c782e3-9c5c-46e7-a083-bc961a6ec595'

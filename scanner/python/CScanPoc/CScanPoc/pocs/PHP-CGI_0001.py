@@ -6,17 +6,18 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
     vuln_id = 'PHP-CGI_0001'  # 平台漏洞编号，留空
-    name = 'PHP-CGI远程代码执行漏洞'  # 漏洞名称
+    name = 'PHP-CGI 远程代码执行'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE  # 漏洞类型
     disclosure_date = ''  # 漏洞公布时间
     desc = '''
-        漏洞其实是在apache调用php解释器解释.php文件时，会将url参数传我给php解释器，如果在url后加传命令行开关（例如-s、-d 、-c或-d auto_prepend_file%3d/etc/passwd+-n）等参数时，会导致源代码泄露和任意代码执行。
+        漏洞其实是在apache调用php解释器解释.php文件时，会将url参数传我给php解释器，
+        如果在url后加传命令行开关（例如-s、-d 、-c或-d auto_prepend_file%3d/etc/passwd+-n）等参数时，会导致源代码泄露和任意代码执行。
     '''  # 漏洞描述
     ref = 'https://github.com/vulhub/vulhub/tree/master/php/CVE-2012-1823'  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = 'CVE-2012-1823'  # cve编号
-    product = 'PHP-CGI'  # 漏洞应用名称
+    product = 'PHP'  # 漏洞应用名称
     product_version = 'php < 5.3.12 or php < 5.4.2'  # 漏洞应用版本
 
 
