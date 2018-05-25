@@ -16,8 +16,8 @@ class Vuln(ABVuln):
     ref = 'https://www.secpulse.com/archives/41373.html'  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = '万户oa系统'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product = '万户'  # 漏洞应用名称
+    product_version = '万户oa系统'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'da2d5670-ec2d-4c4c-8650-429cdc894ac4'

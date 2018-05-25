@@ -10,12 +10,16 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2015-01-12'  # 漏洞公布时间
     desc = '''
+        四创灾害预警系统
+        /Disaster/ReportCount.aspx
+        /Disaster/OutGBExcel.aspx
+        存在SQL注入漏洞。
     '''  # 漏洞描述
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = '四创灾害预警系统'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product = '四创'  # 漏洞应用名称
+    product_version = '四创灾害预警系统'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '8c9b3778-97d6-4b23-a539-68b7788880db'

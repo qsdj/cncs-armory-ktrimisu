@@ -10,6 +10,7 @@ class Vuln(ABVuln):
     type = VulnType.OTHER # 漏洞类型
     disclosure_date = ''  # 漏洞公布时间
     desc = '''
+        该产品是用于：滑坡监测，尾矿库安全监测，水库大坝安全监测，桥梁健康监测，沉降塌陷监测，建筑监测，机械精密控制，精准农业导航，和精密定位的GNSS接收机。
         中海达VNet6专业型参考站接收机 用默认口令(zhdgps/zhdgps)即可登录成功。
     '''  # 漏洞描述
     ref = ''  # 漏洞来源

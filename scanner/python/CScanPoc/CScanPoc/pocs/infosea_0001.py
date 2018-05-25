@@ -4,18 +4,23 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'goldlib_0001' # 平台漏洞编号，留空
-    name = '清大新洋图书系统通用SQL注射漏洞'  # 漏洞名称
+    vuln_id = 'infosea_0001' # 平台漏洞编号，留空
+    name = '清大新洋图书系统 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2015-03-06'  # 漏洞公布时间
     desc = '''
+        清大新洋图书系统 
+        /opac/index_hotsc.jsp
+        /opac/index_hotll.jsp
+        /opac/index_hotpj.jsp
+        参数过滤不完整，导致SQL注入漏洞。
     '''  # 漏洞描述
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = '清大新洋图书系统'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product = '清大新洋'  # 漏洞应用名称
+    product_version = '清大新洋图书系统'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '6a592fe8-9918-4c74-98de-07a95d22d8a3'

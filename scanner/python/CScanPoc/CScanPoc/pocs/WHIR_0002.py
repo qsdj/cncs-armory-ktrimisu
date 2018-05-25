@@ -15,8 +15,8 @@ class Vuln(ABVuln):
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = '万户ezeip'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product = '万户'  # 漏洞应用名称
+    product_version = '万户ezeip'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '6b8ac75d-14e5-412c-98b8-dde8d74b32ab'

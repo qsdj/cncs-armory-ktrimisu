@@ -15,8 +15,8 @@ class Vuln(ABVuln):
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = '四创灾害预警系统'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product = '四创'  # 漏洞应用名称
+    product_version = '四创灾害预警系统'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'ac563588-eb03-4142-94a0-eef0b56d570c'

@@ -18,8 +18,8 @@ class Vuln(ABVuln):
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = '万户OA ezOffice'  # 漏洞应用名称
-    product_version = '*'  # 漏洞应用版本
+    product = '万户'  # 漏洞应用名称
+    product_version = '万户OA ezOffice'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'c2064a22-20fa-45c8-9df6-3ba902b78e4b'

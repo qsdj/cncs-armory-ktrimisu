@@ -4,18 +4,24 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'jienuohan_0001' # 平台漏洞编号，留空
-    name = '南京杰诺瀚投稿系统通用型SQL注射漏洞'  # 漏洞名称
+    vuln_id = 'jienuohan_0002' # 平台漏洞编号，留空
+    name = '南京杰诺瀚投稿系统 通用型SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2014-11-20'  # 漏洞公布时间
     desc = '''
+        南京杰诺瀚投稿系统，
+        /CommonPage.aspx
+        /web/ViewAbstract.aspx
+        /Tougao/UserEdit.aspx
+        /tougao/GetInfo.aspx
+        存在SQL注入漏洞。
     '''  # 漏洞描述
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = '南京杰诺瀚投稿系统'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product = '杰诺瀚'  # 漏洞应用名称
+    product_version = '南京杰诺瀚投稿系统'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '55c1a3c3-6d90-4921-ac65-5b113998333e'

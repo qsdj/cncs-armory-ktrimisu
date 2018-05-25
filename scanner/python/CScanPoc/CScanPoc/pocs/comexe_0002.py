@@ -16,8 +16,8 @@ class Vuln(ABVuln):
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = '科迈RAS系统'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product = '科迈'  # 漏洞应用名称
+    product_version = '科迈RAS系统'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '4aac2340-8487-4e9a-bd22-144b204729b6'

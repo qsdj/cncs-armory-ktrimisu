@@ -10,12 +10,13 @@ class Vuln(ABVuln):
     type = VulnType.FILE_DOWNLOAD # 漏洞类型
     disclosure_date = '2014-12-04'  # 漏洞公布时间
     desc = '''
+        北京乐知行教务系统任意文件下载漏洞： /datacenter/getfile.do?path=../../../../../../../../../../etc/passwd
     '''  # 漏洞描述
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = '北京乐知行教务系统'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product = '乐知行'  # 漏洞应用名称
+    product_version = '北京乐知行教务系统'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'a1d68bd5-89d6-4c7e-8c9d-dc46f8a31cb4'

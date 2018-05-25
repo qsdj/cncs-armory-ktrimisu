@@ -15,8 +15,8 @@ class Vuln(ABVuln):
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = '万户ezOffice'  # 漏洞应用名称
-    product_version = '*'  # 漏洞应用版本
+    product = '万户'  # 漏洞应用名称
+    product_version = '万户ezOffice'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '7e97cbe2-5000-4319-8015-9cc8fcb3047a'

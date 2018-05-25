@@ -5,17 +5,18 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
     vuln_id = 'lezhixing_0001' # 平台漏洞编号，留空
-    name = '北京乐知行教务系统SQL注射'  # 漏洞名称
+    name = '北京乐知行教务系统 SQL注射'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2014-12-04'  # 漏洞公布时间
     desc = '''
+        北京乐知行教务系统 /datacenter/downloadApp/loadAppInfo.do SQL注射漏洞。
     '''  # 漏洞描述
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = '北京乐知行教务系统'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product = '乐知行'  # 漏洞应用名称
+    product_version = '北京乐知行教务系统'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '09bc3a4d-570d-4257-a994-0c5ba23cb0bb'

