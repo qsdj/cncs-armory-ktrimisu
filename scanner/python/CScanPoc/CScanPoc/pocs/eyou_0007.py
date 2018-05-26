@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'eyou_0007' # 平台漏洞编号，留空
+    vuln_id = 'eYou_0007' # 平台漏洞编号，留空
     name = '亿邮邮件系统越权漏洞' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.OTHER # 漏洞类型
@@ -16,7 +16,7 @@ class Vuln(ABVuln):
     ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=058462' # 漏洞来源
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
-    product = 'eyou'  # 漏洞应用名称
+    product = 'eYou'  # 漏洞应用名称
     product_version = ''  # 漏洞应用版本
 
 

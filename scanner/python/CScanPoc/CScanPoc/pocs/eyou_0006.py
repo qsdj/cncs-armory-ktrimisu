@@ -7,7 +7,7 @@ import re
 import hashlib
 
 class Vuln(ABVuln):
-    vuln_id = 'eyou_0006' # 平台漏洞编号，留空
+    vuln_id = 'eYou_0006' # 平台漏洞编号，留空
     name = 'eYou /sysinfo.html 信息泄漏漏洞' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -40,7 +40,7 @@ class Poc(ABPoc):
             response = urllib2.urlopen(request)
             content = response.read()
 
-            if 'Hostname:' in content and 'eyou' in content:
+            if 'Hostname:' in content and 'eYou' in content:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target,name=self.vuln.name))
 
         except Exception, e:

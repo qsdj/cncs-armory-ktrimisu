@@ -16,7 +16,7 @@ class Vuln(ABVuln):
     ref = '' # 漏洞来源
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
-    product = 'URP综合教务系统'  # 漏洞应用名称
+    product = 'URP教务系统'  # 漏洞应用名称
     product_version = ''  # 漏洞应用版本
 
 

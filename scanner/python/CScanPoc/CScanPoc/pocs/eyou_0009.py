@@ -5,18 +5,18 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'eyou_0009' # 平台漏洞编号，留空
-    name = ' eyou 邮件系统中 /php/bill/list_userinfo.php 中 SQL注入' # 漏洞名称
+    vuln_id = 'eYou_0009' # 平台漏洞编号，留空
+    name = ' eYou 邮件系统中 /php/bill/list_userinfo.php 中 SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2014-07-23'  # 漏洞公布时间
     desc = '''
-        eyou 邮件系统中 /php/bill/list_userinfo.php 中的 cp 参数存在注入, 将导致敏感数据泄漏
+        eYou 邮件系统中 /php/bill/list_userinfo.php 中的 cp 参数存在注入, 将导致敏感数据泄漏
     ''' # 漏洞描述
     ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=058014' # 漏洞来源
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
-    product = 'eyou'  # 漏洞应用名称
+    product = 'eYou'  # 漏洞应用名称
     product_version = ''  # 漏洞应用版本
 
 
