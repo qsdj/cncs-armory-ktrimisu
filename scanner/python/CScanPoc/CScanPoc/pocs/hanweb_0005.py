@@ -11,7 +11,7 @@ class Vuln(ABVuln):
     type = VulnType.OTHER # 漏洞类型
     disclosure_date = '2015-09-26'  # 漏洞公布时间
     desc = '''
-        大汉网络，/interface/ldap/receive.jsp这个组件，是一个不同大汉系统间，同步用户的通用组件。
+        大汉科技（hanweb）/interface/ldap/receive.jsp这个组件，是一个不同大汉系统间，同步用户的通用组件。
         例如：jact系统，需要把jcms用户同步到自己的系统中，这个组件本来就是，用于创建用户的，如果被创建的用户存在的话，就会进行更新操作。
 
         /interface/ldap/receive.jsp 组件可以被覆盖。
@@ -20,7 +20,7 @@ class Vuln(ABVuln):
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = '大汉网络'  # 漏洞应用名称
+    product = '大汉科技'  # 漏洞应用名称
     product_version = '大汉网络'  # 漏洞应用版本
 
 class Poc(ABPoc):

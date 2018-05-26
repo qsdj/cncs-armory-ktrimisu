@@ -11,13 +11,13 @@ class Vuln(ABVuln):
     type = VulnType.LFI # 漏洞类型
     disclosure_date = '2015-05-29'  # 漏洞公布时间
     desc = '''
-        大汉cms，漏洞文件地址：
+        大汉科技（hanweb）大汉cms，漏洞文件地址：
         /lm/front/reg_2.jsp?sysid=
     '''  # 漏洞描述
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = '大汉网络'  # 漏洞应用名称
+    product = '大汉科技'  # 漏洞应用名称
     product_version = '大汉cms'  # 漏洞应用版本
 
 class Poc(ABPoc):

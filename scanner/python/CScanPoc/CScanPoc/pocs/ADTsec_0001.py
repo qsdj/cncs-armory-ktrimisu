@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
     vuln_id = 'ADTsec_0001'  # 平台漏洞编号，留空
-    name = '安达通某网关产品 信息泄露'  # 漏洞名称
+    name = '安达通安全网关 信息泄露'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
     disclosure_date = '2015-08-04'  # 漏洞公布时间
@@ -16,8 +16,8 @@ class Vuln(ABVuln):
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = '安达通'  # 漏洞应用名称
-    product_version = '安达通某网关产品'  # 漏洞应用版本
+    product = '安全网关'  # 漏洞应用名称
+    product_version = '安达通全网行为管理'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '020b2940-1bba-402d-a5c9-0c495e521ac4'

@@ -5,19 +5,24 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import time
 
 class Vuln(ABVuln):
-    vuln_id = 'libsys_0012' # 平台漏洞编号，留空
-    name = '汇文libsys SQL注入'  # 漏洞名称
+    vuln_id = 'Libsys_0012' # 平台漏洞编号，留空
+    name = '汇文软件 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = ''  # 漏洞公布时间
     desc = '''
-        汇文libsys由于参数过滤不严谨，导致SQL注入漏洞。
+        汇文（Libsys）软件由于参数过滤不严谨，导致多处存在SQL注入漏洞。
+        /opac/cls_browsing_book.php
+        /asord/asord_searchresult.php
+        /opac/search_rss.php
+        /opac/peri_nav_cls_peri.php
+        /opac/sci_browsing_book.php
     '''  # 漏洞描述
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = 'Libsys'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product = '汇文软件'  # 漏洞应用名称
+    product_version = '汇文软件'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '5fe53a65-c501-427a-af09-44be5fd60232'

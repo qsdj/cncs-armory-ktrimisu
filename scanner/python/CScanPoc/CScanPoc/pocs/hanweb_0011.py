@@ -11,13 +11,13 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2015-09-28'  # 漏洞公布时间
     desc = '''
-        大汉VC系统，漏洞地址：
+        大汉科技（hanweb）大汉VC系统，漏洞地址：
         /vc/vc/style/opr_copycode.jsp?id=1。
     '''  # 漏洞描述
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = '大汉网络'  # 漏洞应用名称
+    product = '大汉科技'  # 漏洞应用名称
     product_version = '大汉VC系统'  # 漏洞应用版本
 
 class Poc(ABPoc):

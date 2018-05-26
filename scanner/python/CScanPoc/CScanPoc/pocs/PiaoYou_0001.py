@@ -6,17 +6,26 @@ import re
 
 class Vuln(ABVuln):
     vuln_id = 'PiaoYou_0001' # 平台漏洞编号，留空
-    name = '票友售票系统通用型SQL注入漏洞'  # 漏洞名称
+    name = '票友售票系统 通用型SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2015-03-13'  # 漏洞公布时间
     desc = '''
+        票友售票系统存在多处SQL注入漏洞：
+        /json_db/other_report.aspx
+        /json_db/flight_return.aspx
+        /json_db/meb_list.aspx
+        /json_db/air_company.aspx
+        /json_db/order_gys.aspx
+        /Json_db/flight_report.aspx
+        /Json_db/flight_search.aspx
+        /info/zclist_view.aspx
     '''  # 漏洞描述
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = '票友售票系统'  # 漏洞应用名称
-    product_version = '*'  # 漏洞应用版本
+    product = '票友'  # 漏洞应用名称
+    product_version = '票友售票系统'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '2f9f99cd-b0f2-498f-9aff-634822c2783d'

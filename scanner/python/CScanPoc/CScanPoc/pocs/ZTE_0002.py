@@ -16,7 +16,7 @@ class Vuln(ABVuln):
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = '中兴'  # 漏洞应用名称
+    product = 'ZXV10_W812N'  # 漏洞应用名称
     product_version = '中兴ZXV10 W812N'  # 漏洞应用版本
 
 class Poc(ABPoc):

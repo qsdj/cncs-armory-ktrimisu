@@ -6,18 +6,18 @@ import re, urlparse
 
 class Vuln(ABVuln):
     vuln_id = 'Panabit_0001'  # 平台漏洞编号，留空
-    name = 'Panabit 任意文件下载'  # 漏洞名称
+    name = '派网软件某流量分析管理系统 任意文件下载'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_TRAVERSAL # 漏洞类型
     disclosure_date = '2015-08-27'  # 漏洞公布时间
     desc = '''
-        Panabit 任意文件遍历:http://foorbar/download.php?filename=../../../../etc/passwd
+        派网软件（Panabit）某流量分析管理系统任意文件遍历:http://foorbar/download.php?filename=../../../../etc/passwd
     '''  # 漏洞描述
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = 'Panabit'  # 漏洞应用名称
-    product_version = 'Panabit'  # 漏洞应用版本
+    product = '派网软件'  # 漏洞应用名称
+    product_version = '派网软件某流量分析管理系统'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '19eadb6e-7173-4c7f-8540-7a05af629c46'

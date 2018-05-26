@@ -10,14 +10,14 @@ class Vuln(ABVuln):
     type = VulnType.RCE # 漏洞类型
     disclosure_date = ''  # 漏洞公布时间
     desc = '''
-        管理后台权限绕过，进入后台后轻松GetShell，
+        大汉科技（hanweb）管理后台权限绕过，进入后台后轻松GetShell，
         经验证通杀所有系统和版本，包括：jcms，jact，jsearch，vipchat，vc，xxgk等等。
     '''  # 漏洞描述
     ref = 'http://0day5.com/archives/3280/'  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = '大汉网络'  # 漏洞应用名称
-    product_version = '*'  # 漏洞应用版本
+    product = '大汉科技'  # 漏洞应用名称
+    product_version = '大汉科技'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '638fb5a3-dbc5-4902-a6ce-f4a53a433aa4'

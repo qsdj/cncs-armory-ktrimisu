@@ -12,14 +12,14 @@ class Vuln(ABVuln):
     type = VulnType.FILE_UPLOAD # 漏洞类型
     disclosure_date = '2014-12-05'  # 漏洞公布时间
     desc = '''
-        http://127.0.0.1/jcms/m_5_e/module/idea/opr_import_discussion.jsp?typeid=0&fn_billstatus=S
+        大汉科技（hanweb）http://127.0.0.1/jcms/m_5_e/module/idea/opr_import_discussion.jsp?typeid=0&fn_billstatus=S
         可上传文件,未限制上传文件类型,导致任意文件上传漏洞。
     ''' # 漏洞描述
     ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=075585' # 漏洞来源
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
-    product = 'Hanweb jcms'  # 漏洞应用名称
-    product_version = '*'  # 漏洞应用版本
+    product = '大汉科技'  # 漏洞应用名称
+    product_version = '大汉科技 jcms'  # 漏洞应用版本
 
 
 class Poc(ABPoc):

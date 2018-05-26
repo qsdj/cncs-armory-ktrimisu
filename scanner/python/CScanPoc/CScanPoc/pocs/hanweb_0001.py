@@ -10,13 +10,14 @@ class Vuln(ABVuln):
     type = VulnType.FILE_TRAVERSAL # 漏洞类型
     disclosure_date = '2013-12-24'  # 漏洞公布时间
     desc = '''
-        大汉JCMS内容管理系统由于对文件读取时没有对文件路径进行过滤，导致可以直接直接读取数据库配置文件，该产品政府部门以及学校使用较多，可导致数据库泄露或者getshell.
+        大汉科技（hanweb）大汉JCMS内容管理系统由于对文件读取时没有对文件路径进行过滤，
+        导致可以直接直接读取数据库配置文件，该产品政府部门以及学校使用较多，可导致数据库泄露或者getshell.
     '''  # 漏洞描述
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = '大汉版通JCMS'  # 漏洞应用名称
-    product_version = '*'  # 漏洞应用版本
+    product = '大汉科技'  # 漏洞应用名称
+    product_version = '大汉版通JCMS'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '7cdddbfd-fc97-41a3-80b3-a9905e5d80e5'

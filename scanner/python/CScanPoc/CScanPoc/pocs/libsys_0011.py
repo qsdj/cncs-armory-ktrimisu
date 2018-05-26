@@ -5,18 +5,20 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import datetime
 
 class Vuln(ABVuln):
-    vuln_id = 'libsys_0011' # 平台漏洞编号，留空
-    name = '汇文libsys图书管理系统敏感信息泄露'  # 漏洞名称
+    vuln_id = 'Libsys_0011' # 平台漏洞编号，留空
+    name = '汇文图书管理系统 敏感信息泄露'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
     disclosure_date = '2015-07-10'  # 漏洞公布时间
     desc = '''
+        汇文（Libsys）图书管理系统敏感信息泄露。
+        /include/config.properties
     '''  # 漏洞描述
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = 'Libsys图书管理系统'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product = '汇文软件'  # 漏洞应用名称
+    product_version = '汇文图书管理系统'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'ea2fa4ea-f5ef-48b3-a24a-634d1fd479c7'
