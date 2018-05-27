@@ -15,8 +15,8 @@ class Vuln(ABVuln):
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = '天融信'  # 漏洞应用名称
-    product_version = '天融信WEB应用安全网关'  # 漏洞应用版本
+    product = '应用安全网关'  # 漏洞应用名称
+    product_version = ''  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'b16cb4ac-c342-4f5e-b391-d4544957c838'

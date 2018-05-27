@@ -15,8 +15,8 @@ class Vuln(ABVuln):
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = '天融信'  # 漏洞应用名称
-    product_version = '天融信负载均衡系统'  # 漏洞应用版本
+    product = '负载均衡系统'  # 漏洞应用名称
+    product_version = ''  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '34a909fa-841d-4e03-8303-8914f6ad244e'

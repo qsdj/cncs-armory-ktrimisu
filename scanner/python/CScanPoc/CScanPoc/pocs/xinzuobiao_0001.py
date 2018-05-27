@@ -5,11 +5,14 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
     vuln_id = 'xinzuobiao_0001' # 平台漏洞编号，留空
-    name = '新座标数字校园系统通用SQL注入漏洞'  # 漏洞名称
+    name = '新座标数字校园系统 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2014-12-01'  # 漏洞公布时间
     desc = '''
+        新座标数字校园系统通用SQL注入漏洞。
+        /DPMA/FWeb/SPEWeb/Web5/SPEPhotosDetail.aspx
+        /DPMA/FWeb/WorkRoomWeb/Web/TeacherPhotosDetail.aspx
     '''  # 漏洞描述
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号

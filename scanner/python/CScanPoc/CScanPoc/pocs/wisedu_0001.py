@@ -5,22 +5,24 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
     vuln_id = 'wisedu_0001' # 平台漏洞编号，留空
-    name = '江苏金智教育 高校系统存在通用型Oracle注射漏洞'  # 漏洞名称
+    name = '金智教育高校系统存在通用型Oracle注射'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = ' 2014-08-04'  # 漏洞公布时间
     desc = '''
-        江苏金智教育 高校系统存在通用型Oracle注射漏洞。
+        江苏金智教育高校系统存在通用型Oracle注射漏洞。
+        /elcs/forum/forumIndexAction!init.action
+        /elcs/forum/forumIndexAction!init.action
     '''  # 漏洞描述
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = '高校系统'  # 漏洞应用名称
+    product = '金智教育CMS'  # 漏洞应用名称
     product_version = '*'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'e4c82325-3bcd-40c6-a944-bf97a238c811'
-    author = 'cscan'  # POC编写者
+    author = '47bwy'  # POC编写者
     create_date = '2018-05-06'  # POC创建时间
 
     def __init__(self):

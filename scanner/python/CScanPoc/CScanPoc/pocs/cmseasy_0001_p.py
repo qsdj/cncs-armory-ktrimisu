@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'cmseasy_0001_p' # 平台漏洞编号，留空
+    vuln_id = 'CmsEasy_0001_p' # 平台漏洞编号，留空
     name = 'CmsEasy 5.5_UTF-8_20140802SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

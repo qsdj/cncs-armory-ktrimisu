@@ -17,7 +17,7 @@ class Vuln(ABVuln):
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
     product = 'EmpireCMS'  # 漏洞应用名称
-    product_version = '帝国网站管理系统'  # 漏洞应用版本
+    product_version = ''  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'b94a2e10-2230-447e-a772-df26f1ca9ff1'

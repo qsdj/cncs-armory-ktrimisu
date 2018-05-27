@@ -5,8 +5,8 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = '' # 平台漏洞编号，留空
-    name = 'shopNC B2B版SQL注入' # 漏洞名称
+    vuln_id = 'ShopNC_0006' # 平台漏洞编号，留空
+    name = 'ShopNC B2B版SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2015-10-04'  # 漏洞公布时间
@@ -16,7 +16,7 @@ class Vuln(ABVuln):
     ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=0124172' # 漏洞来源
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
-    product = 'shopNC'  # 漏洞应用名称
+    product = 'ShopNC CMS'  # 漏洞应用名称
     product_version = ''  # 漏洞应用版本
 
 
