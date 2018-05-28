@@ -5,19 +5,19 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'dedecms_0007' # 平台漏洞编号，留空
-    name = 'DedeCms data/mysql_error_trace.inc 敏感信息泄露' # 漏洞名称
+    vuln_id = 'DedeCMS_0007' # 平台漏洞编号，留空
+    name = '织梦CMS data/mysql_error_trace.inc 敏感信息泄露' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
     disclosure_date = '2014-11-20'  # 漏洞公布时间
     desc = '''
-        DEDE mysql_error_trace.inc 日志里面残留被入侵过的账号和密码
+        DedeCMS mysql_error_trace.inc 日志里面残留被入侵过的账号和密码。
     ''' # 漏洞描述
     ref = 'https://www.genban.org/news/dedecms-4653.html' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
-    product = 'dedecms'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
+    product = 'DedeCMS(织梦CMS)'  # 漏洞应用名称
+    product_version = 'Unknown'  # 漏洞应用版本
 
 
 class Poc(ABPoc):

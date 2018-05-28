@@ -6,18 +6,18 @@ import urllib,urllib2
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'dedecms_0003_p_bb2' # 平台漏洞编号，留空
-    name = 'DedeCMS 5.7 /images/swfupload/swfupload.swf 跨站脚本漏洞' # 漏洞名称
+    vuln_id = 'DedeCMS' # 平台漏洞编号，留空
+    name = '织梦CMS /images/swfupload/swfupload.swf XSS' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型
     disclosure_date = '2013-11-19'  # 漏洞公布时间
     desc = '''
-        DedeCMS 5.7 /images/swfupload/swfupload.swf文件movieName参数没有合适过滤，导致跨站脚本漏洞。
+        DedeCMS 5.7 /images/swfupload/swfupload.swf 文件 movieName 参数没有合适过滤，导致跨站脚本漏洞。
     ''' # 漏洞描述
     ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=038593' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
-    product = 'dedecms'  # 漏洞应用名称
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
+    product = 'DedeCMS(织梦CMS)'  # 漏洞应用名称
     product_version = '5.7'  # 漏洞应用版本
 
 

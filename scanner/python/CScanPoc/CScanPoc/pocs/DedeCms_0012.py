@@ -6,18 +6,18 @@ import urllib,urllib2
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'dedecms_0006_p_bb2' # 平台漏洞编号，留空
-    name = 'Dedecms v5.5 full Path Disclosure Vulnerability' # 漏洞名称
+    vuln_id = 'DedeCms_0012' # 平台漏洞编号，留空
+    name = '织梦CMS full Path Disclosure' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
     disclosure_date = '2010-04-26'  # 漏洞公布时间
     desc = '''
-        Dedecms v5.5 full Path Disclosure Vulnerability
+        DedeCMS v5.5 full Path Disclosure Vulnerability.
     ''' # 漏洞描述
     ref = 'http://www.myhack58.com/Article/html/3/62/2010/26804.htm' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
-    product = 'dedecms'  # 漏洞应用名称
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
+    product = 'DedeCMS(织梦CMS)'  # 漏洞应用名称
     product_version = '5.5'  # 漏洞应用版本
 
 

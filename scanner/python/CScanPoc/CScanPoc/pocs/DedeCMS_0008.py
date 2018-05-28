@@ -11,13 +11,13 @@ class Vuln(ABVuln):
     type = VulnType.INFO_LEAK # 漏洞类型
     disclosure_date = '2013-07-12'  # 漏洞公布时间
     desc = '''
-        Dedecms 信息泄露漏洞,可直接泄露出网站的后台目录地址/
+        DedeCMS 信息泄露漏洞,可直接泄露出网站的后台目录地址/
     ''' # 漏洞描述
     ref = 'https://www.daixiaorui.com/read/14.html' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
-    product = 'Dedecms'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
+    product = 'DedeCMS(织梦CMS)'  # 漏洞应用名称
+    product_version = 'Unknown'  # 漏洞应用版本
 
 
 class Poc(ABPoc):

@@ -6,18 +6,18 @@ import re
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'dedecms_0006' # 平台漏洞编号，留空
-    name = 'dedecms 5.7 guestbook.php sql注射漏洞' # 漏洞名称
+    vuln_id = 'DedeCMS_0006' # 平台漏洞编号，留空
+    name = '织梦CMS 5.7 guestbook.php sql注射' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2014-09-05'  # 漏洞公布时间
     desc = '''
-        dedecms 5.7 guestbook.php sql注射漏洞
+        DedeCMS 5.7 guestbook.php sql注射漏洞
     ''' # 漏洞描述
     ref = 'http://www.shangxueba.com/jingyan/2190419.html' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
-    product = 'dedecms'  # 漏洞应用名称
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
+    product = 'DedeCMS(织梦CMS)'  # 漏洞应用名称
     product_version = '5.7'  # 漏洞应用版本
 
 

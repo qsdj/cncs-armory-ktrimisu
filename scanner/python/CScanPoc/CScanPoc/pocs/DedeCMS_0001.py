@@ -5,16 +5,17 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
     vuln_id = 'DedeCMS_0001' # 平台漏洞编号，留空
-    name = 'DedeCMS < 5.7-sp1 - Remote File Inclusion'  # 漏洞名称
+    name = '织梦CMS Remote File Inclusion'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RFI # 漏洞类型
     disclosure_date = '2015-06-14'  # 漏洞公布时间
     desc = '''
+        DedeCMS /install/index.php 远程文件包含漏洞。
     '''  # 漏洞描述
     ref = 'http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-4553'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
     cve_id = 'CVE-2015-4553'  # cve编号
-    product = 'DedeCMS'  # 漏洞应用名称
+    product = 'DedeCMS(织梦CMS)'  # 漏洞应用名称
     product_version = '< 5.7-sp1'  # 漏洞应用版本
 
 class Poc(ABPoc):

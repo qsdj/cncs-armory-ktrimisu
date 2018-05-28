@@ -6,18 +6,18 @@ import urllib,urllib2
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'dedecms_0004_p_bb2' # 平台漏洞编号，留空
-    name = 'DedeCMS 5.7 /wap.php SQL注入漏洞' # 漏洞名称
+    vuln_id = 'DedeCMS_0009' # 平台漏洞编号，留空
+    name = '织梦CMS /wap.php SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2014-03-20'  # 漏洞公布时间
     desc = '''
-        DedeCMS 5.7 /wap.php 文件sids参数在当action为list时没有合适过滤，导致SQL注入漏洞。
+        DedeCMS 5.7 /wap.php 文件 sids参数在当 action 为 list时没有合适过滤，导致SQL注入漏洞。
     ''' # 漏洞描述
     ref = 'https://www.seebug.org/vuldb/ssvid-62607' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
-    product = 'dedecms'  # 漏洞应用名称
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
+    product = 'DedeCMS(织梦CMS)'  # 漏洞应用名称
     product_version = '5.7'  # 漏洞应用版本
 
 

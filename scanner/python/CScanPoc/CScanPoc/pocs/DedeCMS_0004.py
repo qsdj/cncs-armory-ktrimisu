@@ -6,18 +6,18 @@ import urllib,urllib2
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'dedecms_0002_p_bb2' # 平台漏洞编号，留空
-    name = 'DedeCMS 5.7 /plus/recommend.php SQL注入漏洞' # 漏洞名称
+    vuln_id = 'DedeCMS_0004' # 平台漏洞编号，留空
+    name = '织梦CMS /plus/recommend.php 存在SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2014-02-28'  # 漏洞公布时间
     desc = '''
-        Dedecms 5.7 /plus/recommend.php处存在一个sql注入漏洞，可以直接管理员账户密码。
+        DedeCMS 5.7 /plus/recommend.php处存在一个sql注入漏洞，可以直接管理员账户密码。
     ''' # 漏洞描述
     ref = 'http://www.freebuf.com/sectool/27206.html' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
-    product = 'dedecms'  # 漏洞应用名称
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
+    product = 'DedeCMS(织梦CMS)'  # 漏洞应用名称
     product_version = '5.7'  # 漏洞应用版本
 
 

@@ -6,20 +6,19 @@ import urllib,urllib2
 import re
 
 class Vuln(ABVuln):
-    vuln_id = '08cms_0001_p_bb2' # 平台漏洞编号，留空
-    name = '08cms 3.1 /include/paygate/alipay/pays.php SQL注入漏洞' # 漏洞名称
+    vuln_id = '08CMS_0001' # 平台漏洞编号，留空
+    name = '08CMS 3.1 /include/paygate/alipay/pays.php SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2013-08-31'  # 漏洞公布时间
     desc = '''
-        漏洞出现在/include/paygate/alipay/pays.php文件
+        漏洞出现在 /include/paygate/alipay/pays.php 文件。
     ''' # 漏洞描述
     ref = 'http://www.anyun.org/m/view.php?aid=7987' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
-    product = '08cms'  # 漏洞应用名称
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
+    product = '08CMS'  # 漏洞应用名称
     product_version = '3.1'  # 漏洞应用版本
-
 
 class Poc(ABPoc):
     poc_id = '5cd34660-9bca-4385-a400-e44c3cdeaea4'
