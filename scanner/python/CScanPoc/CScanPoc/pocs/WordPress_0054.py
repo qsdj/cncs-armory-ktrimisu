@@ -13,10 +13,10 @@ class Vuln(ABVuln):
         WordPress /wp-admin/admin-ajax.php 数据过滤不严谨，导致信息泄露。
     '''  # 漏洞描述
     ref = 'https://www.exploit-db.com/exploits/36039/'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'WordPress'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'bddc297b-775a-42bb-a0c7-25eace588fee'

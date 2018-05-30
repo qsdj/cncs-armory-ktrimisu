@@ -4,18 +4,19 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'yonyou_0014' # 平台漏洞编号，留空
-    name = '用友NC /hrss/ELTextFile.load.d 信息泄漏漏洞'  # 漏洞名称
+    vuln_id = 'Yonyou_0014' # 平台漏洞编号，留空
+    name = '用友NC /hrss/ELTextFile.load.d 信息泄漏'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型
     disclosure_date = '2014-06-28'  # 漏洞公布时间
     desc = '''
+        用友NC /hrss/ELTextFile.load.d?src=../../ierp/bin/prop.xml 信息泄漏漏洞。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
-    product = '用友NC'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    ref = 'Unknown'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
+    product = '用友'  # 漏洞应用名称
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '9e8a9e39-43f1-475b-bdff-59ad0e6cf5f0'

@@ -6,18 +6,18 @@ import time
 
 class Vuln(ABVuln):
     vuln_id = 'Joomla_0011' # 平台漏洞编号，留空
-    name = 'Joomla com_Myblog Arbitrary File Upload Vulnerability'  # 漏洞名称
+    name = 'Joomla! com_Myblog Arbitrary File Upload Vulnerability'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_UPLOAD # 漏洞类型
     disclosure_date = '2015-07-20'  # 漏洞公布时间
     desc = '''
-        /index.php?option=com_myblog&task=ajaxupload 存在文件上传漏洞
+        /index.php?option=com_myblog&task=ajaxupload 存在文件上传漏洞。
     '''  # 漏洞描述
     ref = 'https://0day.today/exploit/23901'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
-    product = 'Joomla'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
+    product = 'Joomla!'  # 漏洞应用名称
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '263cb6ec-cde9-4ca0-91d2-9eb3eda0db5f'

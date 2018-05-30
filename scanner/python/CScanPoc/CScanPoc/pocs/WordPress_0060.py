@@ -14,8 +14,8 @@ class Vuln(ABVuln):
         WordPress Plugin Crawl Rate Tracker 2.0.2 SQL注入漏洞
     ''' # 漏洞描述
     ref = 'https://www.exploit-db.com/exploits/17755/' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
     product = 'WordPress Plugin Crawl Rate Tracker'  # 漏洞应用名称
     product_version = '2.0.2'  # 漏洞应用版本
 

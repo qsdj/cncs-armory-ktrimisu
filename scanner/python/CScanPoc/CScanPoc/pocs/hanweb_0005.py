@@ -5,23 +5,23 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'hanweb_0005' # 平台漏洞编号，留空
+    vuln_id = 'Hanweb_0005' # 平台漏洞编号，留空
     name = '大汉网络 重置管理员密码'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.OTHER # 漏洞类型
     disclosure_date = '2015-09-26'  # 漏洞公布时间
     desc = '''
-        大汉科技（hanweb）/interface/ldap/receive.jsp这个组件，是一个不同大汉系统间，同步用户的通用组件。
+        大汉科技（Hanweb）/interface/ldap/receive.jsp这个组件，是一个不同大汉系统间，同步用户的通用组件。
         例如：jact系统，需要把jcms用户同步到自己的系统中，这个组件本来就是，用于创建用户的，如果被创建的用户存在的话，就会进行更新操作。
 
         /interface/ldap/receive.jsp 组件可以被覆盖。
         我们可以使用大汉的加解密库进行任意加解密，覆盖原有密码。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
-    product = '大汉科技'  # 漏洞应用名称
-    product_version = '大汉网络'  # 漏洞应用版本
+    ref = 'Unknown'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
+    product = 'JCMS(Hanweb)'  # 漏洞应用名称
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '217d22c9-9ab6-40bd-acd8-46587aa21bc2'

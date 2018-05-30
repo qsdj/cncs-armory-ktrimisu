@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import time, re
 
 class Vuln(ABVuln):
-    vuln_id = 'yonyou_0051' # 平台漏洞编号，留空
+    vuln_id = 'Yonyou_0051' # 平台漏洞编号，留空
     name = '用友TruboCRM管理系统 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -22,11 +22,11 @@ class Vuln(ABVuln):
         webservice/service.php?class=WS_System&orgcode=1',
         background/festivalremind.php?ID=99999',
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unknown'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = '用友'  # 漏洞应用名称
-    product_version = '用友TruboCRM管理系统'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '07ad5515-0c5d-472a-b7e3-a42f866cf392'

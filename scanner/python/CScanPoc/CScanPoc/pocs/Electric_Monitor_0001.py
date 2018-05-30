@@ -15,11 +15,11 @@ class Vuln(ABVuln):
         台湾某电力监控系统通用型注入漏洞。
         /DeMandTest.aspx?B=0&Month=1&PLCNr=5*&MeterID=1
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
-    product = '电力监控'  # 漏洞应用名称
-    product_version = '电力监控'  # 漏洞应用版本
+    ref = 'Unknown'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
+    product = '电力监控系统'  # 漏洞应用名称
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '45350116-1e89-4495-9121-ce3940f8eeaf'

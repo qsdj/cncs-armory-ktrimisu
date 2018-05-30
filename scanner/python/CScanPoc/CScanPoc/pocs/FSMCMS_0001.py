@@ -12,11 +12,11 @@ class Vuln(ABVuln):
     desc = '''
         北京东方文辉FSMCMS /cms/leadermail/p_replydetail.jsp, /cms/leadermail/p_leadermailsum.jsp 页面参数过滤不严谨，导致SQL注入漏洞。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unknown'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'FSMCMS'  # 漏洞应用名称
-    product_version = '*'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'ef842fc2-0cf5-4189-8a54-ec9c99dcecfc'

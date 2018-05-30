@@ -13,11 +13,11 @@ class Vuln(ABVuln):
     desc = '''
         北京东方文辉FSMCMS /cms/client/uploadpic_html.jsp 可写入任意文件。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unknown'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'FSMCMS'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '1e94429f-1f6c-4c79-934e-746d9a748b31'

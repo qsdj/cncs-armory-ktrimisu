@@ -6,23 +6,23 @@ import re
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'shop7z_0000' # 平台漏洞编号，留空
-    name = 'Shop7z order_checknoprint.asp参数SQL注入漏洞' # 漏洞名称
+    vuln_id = 'Shop7z_0000' # 平台漏洞编号，留空
+    name = 'Shop7z SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2014-11-05'  # 漏洞公布时间
     desc = '''
-        Shop7z order_checknoprint.asp参数SQL注入漏洞
+        Shop7z order_checknoprint.asp参数 SQL注入漏洞。
     ''' # 漏洞描述
     ref = 'http://www.anyun.org/a/jishuguanzhu/wangluoanquan/loudongfenxiang/2014/1105/3527.html' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
-    product = 'shop7z'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
+    product = 'Shop7z'  # 漏洞应用名称
+    product_version = 'Unknown'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = 'shop7z_0000' # 平台 POC 编号，留空
+    poc_id = '4a50c811-2ea7-4d38-a7b8-26a5b4042d8a' # 平台 POC 编号，留空
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 

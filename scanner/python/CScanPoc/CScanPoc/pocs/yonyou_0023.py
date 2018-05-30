@@ -6,7 +6,7 @@ import re
 import os
 
 class Vuln(ABVuln):
-    vuln_id = 'yonyou_0023' # 平台漏洞编号，留空
+    vuln_id = 'Yonyou_0023' # 平台漏洞编号，留空
     name = '用友优普U8系统 sql注入漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -14,11 +14,11 @@ class Vuln(ABVuln):
     desc = '''
         用友优普U8系统两处sql注入可无限制getshell(无需登陆) 。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
-    product = '用友优普U8系统'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    ref = 'Unknown'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
+    product = '用友'  # 漏洞应用名称
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '6a9ae96e-f8db-4519-a163-c2a09ee43dc3'

@@ -6,20 +6,20 @@ import urllib,urllib2
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'hanweb_0000' # 平台漏洞编号，留空
-    name = 'Hanweb jcms /opr_import_discussion.jsp 任意文件上传漏洞*' # 漏洞名称
+    vuln_id = 'Hanweb_0000' # 平台漏洞编号，留空
+    name = '大汉JCMS /opr_import_discussion.jsp 任意文件上传漏洞*' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.FILE_UPLOAD # 漏洞类型
     disclosure_date = '2014-12-05'  # 漏洞公布时间
     desc = '''
-        大汉科技（hanweb）http://127.0.0.1/jcms/m_5_e/module/idea/opr_import_discussion.jsp?typeid=0&fn_billstatus=S
+        大汉科技（Hanweb）JCMS http://127.0.0.1/jcms/m_5_e/module/idea/opr_import_discussion.jsp?typeid=0&fn_billstatus=S
         可上传文件,未限制上传文件类型,导致任意文件上传漏洞。
     ''' # 漏洞描述
     ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=075585' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
-    product = '大汉科技'  # 漏洞应用名称
-    product_version = '大汉科技 jcms'  # 漏洞应用版本
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
+    product = 'JCMS(Hanweb)'  # 漏洞应用名称
+    product_version = 'Unknown'  # 漏洞应用版本
 
 
 class Poc(ABPoc):

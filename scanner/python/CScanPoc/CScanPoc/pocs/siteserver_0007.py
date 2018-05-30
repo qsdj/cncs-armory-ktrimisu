@@ -5,18 +5,23 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'siteserver_0007' # 平台漏洞编号，留空
-    name = 'siteserver最新版3.6.4 SQL注入一' # 漏洞名称
+    vuln_id = 'SiteServer_0007' # 平台漏洞编号，留空
+    name = 'SiteServer最新版3.6.4 SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2013-02-03'  # 漏洞公布时间
     desc = '''
-        
+        SiteServer最新版3.6.4 多处存在SQL注入漏洞：
+        /siteserver/cms/background_contentsGroup.aspx
+        /siteserver/cms/modal_contentTagAdd.aspx
+        /siteserver/UserRole/background_userAdd.aspx
+        /siteserver/cms/modal_contentGroupAdd.aspx
+        /siteserver/UserRole/modal_UserView.aspx
     ''' # 漏洞描述
-    ref = '' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
-    product = 'siteserver'  # 漏洞应用名称
+    ref = 'Unknown' # 漏洞来源
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
+    product = 'SiteServer'  # 漏洞应用名称
     product_version = '3.6.4'  # 漏洞应用版本
 
 

@@ -8,18 +8,18 @@ import hashlib
 
 class Vuln(ABVuln):
     vuln_id = 'Joomla_0007' # 平台漏洞编号，留空
-    name = 'Joomla BeaconDecode 跨站脚本漏洞' # 漏洞名称
+    name = 'Joomla! BeaconDecode XSS' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型
     disclosure_date = '2014-10-29'  # 漏洞公布时间
     desc = '''
-        漏洞文件 Vulnerable File: index.php?option=com_beacondecode&task=
+        漏洞文件 Vulnerable File: index.php?option=com_beacondecode&task=.
     ''' # 漏洞描述
-    ref = '' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
-    product = 'Joomla'  # 漏洞应用名称
-    product_version = '*'  # 漏洞应用版本
+    ref = 'Unknown' # 漏洞来源
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
+    product = 'Joomla!'  # 漏洞应用名称
+    product_version = 'Unknown'  # 漏洞应用版本
 
 
 class Poc(ABPoc):

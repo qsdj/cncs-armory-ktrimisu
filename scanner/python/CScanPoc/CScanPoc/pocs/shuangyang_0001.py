@@ -6,18 +6,24 @@ import re
 import time
 
 class Vuln(ABVuln):
-    vuln_id = 'shuangyang_0001' # 平台漏洞编号，留空
-    name = '双杨OA系统 SQL注入漏洞'  # 漏洞名称
+    vuln_id = 'Shuangyang_0001' # 平台漏洞编号，留空
+    name = '双杨OA系统 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2015-05-12'  # 漏洞公布时间
     desc = '''
+        双杨OA系统多处存在SQL注入漏洞：
+        /ObjSwitch/HYTZ.aspx?userid=1
+        /RCMANAGE_New/rcgl.aspx?UID=1
+        /Personnel/VacationComputation.aspx?id=1
+        /Office_Supplies/Goods_Main.aspx?type=1&info_id=1
+        /FormBuilder/yjzxList.aspx?id=1
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unknown'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = '双杨OA系统'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'fe3cb4a3-3356-47bb-a6a6-ed98f9a1c3c2'

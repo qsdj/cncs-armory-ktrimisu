@@ -6,17 +6,17 @@ import re
 
 class Vuln(ABVuln):
     vuln_id = 'Joomla_0031' # 平台漏洞编号，留空
-    name = 'Joomla 远程文件包含'  # 漏洞名称
+    name = 'Joomla! 远程文件包含'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型
     disclosure_date = '2014-12-14'  # 漏洞公布时间
     desc = '''
-        Joomla Shape 5 MP3 Player 2.0 Local File Disclosure Exploit.
+        Joomla! Shape 5 MP3 Player 2.0 Local File Disclosure Exploit.
     '''  # 漏洞描述
     ref = 'https://0day.today/exploits/24724'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
-    product = 'Joomla'  # 漏洞应用名称
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
+    product = 'Joomla!'  # 漏洞应用名称
     product_version = 'Shape 5 MP3 Player 2.0'  # 漏洞应用版本
 
 class Poc(ABPoc):

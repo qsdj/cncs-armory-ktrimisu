@@ -6,18 +6,18 @@ import re
 
 class Vuln(ABVuln):
     vuln_id = 'Joomla_0025' # 平台漏洞编号，留空
-    name = 'Joomla com_media Remot File Upload Vulnerability'  # 漏洞名称
+    name = 'Joomla! com_media Remot File Upload Vulnerability'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_UPLOAD # 漏洞类型
     disclosure_date = '2015-11-22'  # 漏洞公布时间
     desc = '''
-        Joomla com_media Remot File Upload Vulnerability
+        Joomla! com_media Remot File Upload Vulnerability.
     '''  # 漏洞描述
     ref = 'https://cxsecurity.com/issue/WLB-2015110194'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
-    product = 'Joomla'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
+    product = 'Joomla!'  # 漏洞应用名称
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'a96748f8-646e-4d0e-833d-e8856e88c9c3'

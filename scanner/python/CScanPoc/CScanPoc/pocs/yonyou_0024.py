@@ -4,18 +4,20 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'yonyou_0024' # 平台漏洞编号，留空
-    name = '用友人力资源管理软件全版本XXE漏洞'  # 漏洞名称
+    vuln_id = 'Yonyou_0024' # 平台漏洞编号，留空
+    name = '用友人力资源管理软件全版本XXE'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.XXE # 漏洞类型
     disclosure_date = '2015-05-31'  # 漏洞公布时间
     desc = '''
+        用友人力资源管理软件全版本XXE漏洞：
+        /hrss/dorado/smartweb2.RPC.d?__rpc=true
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
-    product = '用友人力资源管理软件'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    ref = 'Unknown'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
+    product = '用友'  # 漏洞应用名称
+    product_version = '全版本'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '2aaa87b8-800c-4178-9e77-b4985ae65bfc'

@@ -6,7 +6,7 @@ import random
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'yonyou_0033' # 平台漏洞编号，留空
+    vuln_id = 'Yonyou_0033' # 平台漏洞编号，留空
     name = '致远A8协同管理系统 泄露JSESSIONID'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
@@ -15,11 +15,11 @@ class Vuln(ABVuln):
         由于致远A8协同管理系统会对用户登录信息进行日志记录，可是日志文件存放在web目录的logs子目录下，
         并且未作任何权限控制，测试发现大部分在用系统都存在logs目录遍历漏洞，因此导致致远A8协同管理系统用户登录信息泄露。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unknown'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = '用友'  # 漏洞应用名称
-    product_version = '致远A8协同管理系统'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'cfdc4aac-eb3b-4c11-852f-9dbd63805498'

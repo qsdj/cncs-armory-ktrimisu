@@ -6,7 +6,7 @@ import urllib2
 
 class Vuln(ABVuln):
     vuln_id = 'Joomla_0005' # 平台漏洞编号，留空
-    name = 'Joomla /index.php 任意文件下载漏洞'  # 漏洞名称
+    name = 'Joomla! /index.php 任意文件下载'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型
     disclosure_date = '2015-10-05'  # 漏洞公布时间
@@ -14,11 +14,11 @@ class Vuln(ABVuln):
         /index.php 文件用于文件下载，/index.php?option=com_jetext&task=download&
         file=[../../index.php] 其中file参数未做正确过滤限制,导致可下载任意文件。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unknown'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'Joomla!'  # 漏洞应用名称
-    product_version = '*'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '1036a24f-3e3b-4cb3-beff-0157dcbe8a18'

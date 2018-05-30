@@ -5,18 +5,18 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
     vuln_id = 'FSMCMS_0002' # 平台漏洞编号，留空
-    name = 'FSMCMS网站重装漏洞'  # 漏洞名称
+    name = 'FSMCMS 未授权网站重装'  # 漏洞名称
     level = VulnLevel.LOW  # 漏洞危害级别
     type = VulnType.MISCONFIGURATION # 漏洞类型
     disclosure_date = '2013-11-19'  # 漏洞公布时间
     desc = '''
         网站安装程序在安装之后默认没有删除，也没有限制，可以很容易地恶意把网站重装了。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'FSMCMS'  # 漏洞应用名称
-    product_version = '*'  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '36dc6b5a-bd86-46c3-b8eb-f12eed83cad0'

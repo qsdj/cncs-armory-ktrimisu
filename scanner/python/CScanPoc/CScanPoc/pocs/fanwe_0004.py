@@ -14,11 +14,11 @@ class Vuln(ABVuln):
         post：origURL=ghost&password=ghost&email=ghost（email参数没有过滤）
         报错，注入。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
-    product = '方维团购'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    ref = 'Unknown'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
+    product = 'fanwe O2O'  # 漏洞应用名称
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'a8de17ea-4206-423b-a9ff-c8a968080d36'

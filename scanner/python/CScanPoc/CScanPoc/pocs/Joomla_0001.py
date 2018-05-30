@@ -11,10 +11,10 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2017-05-11'  # 漏洞公布时间
     desc = '''
-        Joomla于5月17日发布了新版本3.7.1,（(Joomla! 3.7.1 Release News)[https://www.joomla.org/announcements/release-news/5705-joomla-3-7-1-release.html]），本次更新中修复一个高危SQL注入漏洞（[20170501] - Core - SQL Injection)，成功利用该漏洞后攻击者可以在未授权的情况下进行SQL注入。
+        Joomla! 于5月17日发布了新版本3.7.1,（(Joomla! 3.7.1 Release News)[https://www.joomla.org/announcements/release-news/5705-joomla-3-7-1-release.html]），本次更新中修复一个高危SQL注入漏洞（[20170501] - Core - SQL Injection)，成功利用该漏洞后攻击者可以在未授权的情况下进行SQL注入。
     '''  # 漏洞描述
     ref = 'https://www.seebug.org/vuldb/ssvid-93113'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'CVE-2017-8917'  # cve编号
     product = 'Joomla!'  # 漏洞应用名称
     product_version = 'Joomla! 3.7.0'  # 漏洞应用版本

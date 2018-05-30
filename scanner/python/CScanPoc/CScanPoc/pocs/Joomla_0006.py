@@ -9,17 +9,17 @@ import random
 
 class Vuln(ABVuln):
     vuln_id = 'Joomla_0006' # 平台漏洞编号，留空
-    name = 'Joomla CMS DOS漏洞'  # 漏洞名称
+    name = 'Joomla! CMS DOS漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.OTHER # 漏洞类型
     disclosure_date = '2015-02-27'  # 漏洞公布时间
     desc = '''
         Joomla! Unsafe Design Contributes To DOS.
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
-    product = 'Joomla CMS'  # 漏洞应用名称
+    ref = 'Unknown'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
+    product = 'Joomla!'  # 漏洞应用名称
     product_version = '<=3.3'  # 漏洞应用版本
 
 class Poc(ABPoc):

@@ -11,13 +11,13 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2008-12-24'  # 漏洞公布时间
     desc = '''
-        Joomla! Component 5starhotels  SQL注入漏洞
+        Joomla! Component 5starhotels  SQL注入漏洞。
     ''' # 漏洞描述
     ref = 'https://www.exploit-db.com/exploits/7575/' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
+    cnvd_id = 'Unknown' # cnvd漏洞编号
     cve_id = 'CVE-2008-5864' #cve编号
-    product = ''  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product = 'Joomla!'  # 漏洞应用名称
+    product_version = 'Unknown'  # 漏洞应用版本
  
 
 class Poc(ABPoc):

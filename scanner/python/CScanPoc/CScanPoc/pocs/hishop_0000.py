@@ -5,19 +5,19 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'hishop_0000' # 平台漏洞编号，留空
-    name = 'Hishop系统productlist.aspx SQL注入' # 漏洞名称
+    vuln_id = 'HiShop_0000' # 平台漏洞编号，留空
+    name = 'HiShop易分销系统 SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2016-01-11'  # 漏洞公布时间
     desc = '''
-        Hishop系统productlist.aspx SQL注入
+        HiShop易分销系统 /wapshop/productlist.aspx SQL注入漏洞。
     ''' # 漏洞描述
     ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=0154499' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
-    product = 'Hishop'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
+    product = 'HiShop易分销系统'  # 漏洞应用名称
+    product_version = 'Unknown'  # 漏洞应用版本
 
 
 class Poc(ABPoc):

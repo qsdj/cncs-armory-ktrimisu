@@ -8,12 +8,12 @@ import cookielib,sys
 
 class Vuln(ABVuln):
     vuln_id = 'Joomla_0003'  # 平台漏洞编号，留空
-    name = 'Joomla远程命令执行漏洞'  # 漏洞名称
+    name = 'Joomla! 远程命令执行'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE  # 漏洞类型
     disclosure_date = ' 2015-12-15'  # 漏洞公布时间
     desc = '''
-        Joomla存在远程命令执行漏洞，攻击者利用漏洞可在Joomla的数据库中自定义用户代理字符串，并在其中植入恶意代码，并远程执行恶意代码。
+        Joomla! 存在远程命令执行漏洞，攻击者利用漏洞可在Joomla的数据库中自定义用户代理字符串，并在其中植入恶意代码，并远程执行恶意代码。
     '''  # 漏洞描述
     ref = 'https://www.seebug.org/vuldb/ssvid-93113'  # 漏洞来源
     cnvd_id = ' CNVD-2015-08250'  # cnvd漏洞编号

@@ -10,13 +10,13 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2014-10-10'  # 漏洞公布时间
     desc = '''
-        方维订餐系统 shop.php 参数过滤不完整，报错，产生注入。
+        方维订餐系统 /shop.php 参数过滤不完整，报错，产生注入。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
-    product = '方维订餐系统'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    ref = 'Unknown'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
+    product = 'fanwe O2O'  # 漏洞应用名称
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'e513ffb2-7a04-4770-aa60-62ec9ce48ad3'

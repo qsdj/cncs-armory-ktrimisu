@@ -5,19 +5,19 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'hanweb_0006' # 平台漏洞编号，留空
-    name = '大汉网络任意文件下载漏洞' # 漏洞名称
+    vuln_id = 'Hanweb_0006' # 平台漏洞编号，留空
+    name = '大汉网站群访问统计系统 任意文件下载' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型
     disclosure_date = '2015-04-02'  # 漏洞公布时间
     desc = '''
-        大汉网络任意文件下载漏洞 
+        大汉网站群访问统计系统 /vc/vc/columncount/downfile.jsp?savename=a.txt&filename= 任意文件下载漏洞。
     ''' # 漏洞描述
     ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=092339' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
-    product = '大汉网络'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
+    product = 'Hanweb'  # 漏洞应用名称
+    product_version = 'Unknown'  # 漏洞应用版本
 
 
 class Poc(ABPoc):

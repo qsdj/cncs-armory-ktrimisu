@@ -14,10 +14,10 @@ class Vuln(ABVuln):
         'WordPress LineNity主题 /wp-content/themes/linenity/functions/download.php 任意文件上传包含漏洞。
     '''  # 漏洞描述
     ref = 'https://www.exploit-db.com/exploits/32861/'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'WordPress'  # 漏洞应用名称
-    product_version = 'WordPress LineNity'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '291ac5c4-4584-488f-8261-e7d6e67e598f'

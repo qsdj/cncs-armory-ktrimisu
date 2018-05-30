@@ -11,14 +11,14 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2015-08-07'  # 漏洞公布时间
     desc = '''
-        KJ65N煤矿远程监控安全预警系统存在SQL注入漏洞。
+        KJ65N 煤矿远程监控安全预警系统存在SQL注入漏洞。
         /yhpc/trbl_acc_modi.asp?pActFlag=
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
-    product = 'KJ65N'  # 漏洞应用名称
-    product_version = 'KJ65N煤矿安全监控系统'  # 漏洞应用版本
+    ref = 'Unknown'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
+    product = 'KJ65N煤矿安全监控系统'  # 漏洞应用名称
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '431819e5-969c-4ec1-9d98-48711672aff3'

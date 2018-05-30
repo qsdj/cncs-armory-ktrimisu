@@ -6,17 +6,18 @@ import re
 
 class Vuln(ABVuln):
     vuln_id = 'Joomla_0021' # 平台漏洞编号，留空
-    name = 'Joomla 命令执行'  # 漏洞名称
+    name = 'Joomla! 命令执行'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型
     disclosure_date = ''  # 漏洞公布时间
     desc = '''
+        Joomla! /index.php 存在命令执行漏洞。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
-    product = 'Joomla'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    ref = 'Unknown'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
+    product = 'Joomla!'  # 漏洞应用名称
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '4851cb2b-10e5-4a65-a4fe-3e8b78de9463'

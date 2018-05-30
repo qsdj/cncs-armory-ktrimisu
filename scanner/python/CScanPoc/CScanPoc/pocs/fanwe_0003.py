@@ -12,11 +12,11 @@ class Vuln(ABVuln):
     desc = '''
         UNION SELECT注入，直接出数据，demo验证，无需登录，只要一个POST数据库，可批量。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
-    product = '方维O2O商业系统'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    ref = 'Unknown'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
+    product = 'fanwe O2O'  # 漏洞应用名称
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '24cc2d03-ff75-4dbd-a269-45f3e2a559a6'

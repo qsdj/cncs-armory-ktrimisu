@@ -6,18 +6,18 @@ import urllib2
 
 class Vuln(ABVuln):
     vuln_id = 'Joomla_0004'  # 平台漏洞编号，留空
-    name = 'Joomla /index.php com_memorix SQL 注入漏洞'  # 漏洞名称
+    name = 'Joomla! /index.php com_memorix SQL 注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-08-15'  # 漏洞公布时间
     desc = '''
         Normal user can inject sql query in the url which lead to read data from the database.
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unknown'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'Joomla!'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '7224bc64-80d9-4f67-b37d-9dbfcf1939c9'

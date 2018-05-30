@@ -6,18 +6,18 @@ import urllib2
 
 class Vuln(ABVuln):
     vuln_id = 'P2P_0001' # 平台漏洞编号，留空
-    name = 'p2p通用系统 SQL注入'  # 漏洞名称
+    name = '金钱柜P2P通用系统 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2015-08-20'  # 漏洞公布时间
     desc = '''
-        p2p通用系统过滤参数不严谨，导致SQL注入。
+        金钱柜P2P通用系统过滤参数不严谨，导致SQL注入。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
-    product = 'p2p通用系统'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    ref = 'Unknown'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
+    product = 'P2P通用系统'  # 漏洞应用名称
+    product_version = 'Unknown' # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'ef91d3ce-61ab-45e3-9731-42bf3bf3302f'

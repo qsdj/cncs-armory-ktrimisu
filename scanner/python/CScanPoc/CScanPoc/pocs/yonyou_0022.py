@@ -4,18 +4,20 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'yonyou_0022' # 平台漏洞编号，留空
-    name = '用友NC综合办公系统前台Oracle注入漏洞'  # 漏洞名称
+    vuln_id = 'Yonyou_0022' # 平台漏洞编号，留空
+    name = '用友NC综合办公系统前台Oracle注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2015-07-03'  # 漏洞公布时间
     desc = '''
+        用友NC综合办公系统前台Oracle注入漏洞：
+        /epp/html/nodes/upload/SupdocDo.jsp?areaname=areaname=1
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
-    product = '用友NC综合办公系统'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    ref = 'Unknown'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
+    product = '用友'  # 漏洞应用名称
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'c10457d8-cefe-4e2d-85f0-fc5ae9e2aa74'

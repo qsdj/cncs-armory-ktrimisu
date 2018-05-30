@@ -6,17 +6,18 @@ import re
 
 class Vuln(ABVuln):
     vuln_id = 'Joomla_0015' # 平台漏洞编号，留空
-    name = 'Joomla 跨站脚本漏洞'  # 漏洞名称
+    name = 'Joomla! 跨站脚本'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型
     disclosure_date = ''  # 漏洞公布时间
     desc = '''
+        Joomla! /index.php 存在跨站脚本漏洞。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
-    product = 'Joomla'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    ref = 'Unknown'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
+    product = 'Joomla!'  # 漏洞应用名称
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '3c538d56-206d-4cc3-a761-cfc7b1f772b9'

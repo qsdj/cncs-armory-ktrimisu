@@ -5,18 +5,19 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urlparse, httplib
 
 class Vuln(ABVuln):
-    vuln_id = 'zfsoft_0001' # 平台漏洞编号，留空
+    vuln_id = 'Zfsoft_0001' # 平台漏洞编号，留空
     name = '正方教务管理系统 SQL注入漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2015-06-24'  # 漏洞公布时间
     desc = '''
+        正方教务管理系统
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unknown'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = '正方教务管理系统'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'ff9845e8-189b-4e24-97f0-fa4fa7bd7e77'

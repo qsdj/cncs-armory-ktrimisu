@@ -6,18 +6,18 @@ import  re
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'siteserver_0000' # 平台漏洞编号，留空
-    name = 'siteserver 3.6.4 SQL注入' # 漏洞名称
+    vuln_id = 'SiteServer_0000' # 平台漏洞编号，留空
+    name = 'SiteServer 3.6.4 SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
-    disclosure_date = '2014-02-18'  # 漏洞公布时间
+    disclosure_date = '2013-11-20'  # 漏洞公布时间
     desc = '''
-        siteserver最新版3.6.4 SQL注入
+        SiteServer最新版3.6.4 /platform/background_log.aspx 存在SQL注入漏洞。
     ''' # 漏洞描述
     ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=043523' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
-    product = 'siteserver'  # 漏洞应用名称
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
+    product = 'SiteServer'  # 漏洞应用名称
     product_version = '3.6.4'  # 漏洞应用版本
 
 

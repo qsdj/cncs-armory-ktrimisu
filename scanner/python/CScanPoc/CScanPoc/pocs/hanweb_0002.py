@@ -4,20 +4,20 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'hanweb_0002' # 平台漏洞编号，留空
+    vuln_id = 'Hanweb_0002' # 平台漏洞编号，留空
     name = '大汉管理后台权限绕过 命令执行'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型
     disclosure_date = ''  # 漏洞公布时间
     desc = '''
-        大汉科技（hanweb）管理后台权限绕过，进入后台后轻松GetShell，
+        大汉科技（Hanweb）管理后台权限绕过，进入后台后轻松GetShell，
         经验证通杀所有系统和版本，包括：jcms，jact，jsearch，vipchat，vc，xxgk等等。
     '''  # 漏洞描述
     ref = 'http://0day5.com/archives/3280/'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
-    product = '大汉科技'  # 漏洞应用名称
-    product_version = '大汉科技'  # 漏洞应用版本
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
+    product = 'Hanweb'  # 漏洞应用名称
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '638fb5a3-dbc5-4902-a6ce-f4a53a433aa4'

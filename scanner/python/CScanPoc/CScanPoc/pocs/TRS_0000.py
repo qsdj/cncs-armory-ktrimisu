@@ -6,17 +6,17 @@ hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
     vuln_id = 'TRS_0000' # 平台漏洞编号，留空
-    name = 'TRS网络信息雷达4.6系统敏感信息泄漏到进后台' # 漏洞名称
+    name = '拓尔思网络信息雷达系统 敏感信息泄漏到进后台' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
     disclosure_date = '2015-04-15'  # 漏洞公布时间
     desc = '''
-        TRS网络信息雷达4.6系统敏感信息泄漏到进后台
+        拓尔思网络信息雷达系统4.6, /inforadar/jsp/xml/init_sysUsers.xml 敏感信息泄漏到进后台。
     ''' # 漏洞描述
     ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=091999' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
-    product = 'TRS'  # 漏洞应用名称
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
+    product = 'TRS InfoRadar(拓尔思网络信息雷达系统)'  # 漏洞应用名称
     product_version = '4.6'  # 漏洞应用版本
 
 

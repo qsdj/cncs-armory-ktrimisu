@@ -6,18 +6,19 @@ import random
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'yonyou_0025' # 平台漏洞编号，留空
+    vuln_id = 'Yonyou_0025' # 平台漏洞编号，留空
     name = '用友CRM系统 任意文件上传'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_UPLOAD # 漏洞类型
     disclosure_date = '2015-08-27'  # 漏洞公布时间
     desc = '''
+        用友CRM系统 /ajax/swfupload.php?DontCheckLogin=1&vname=file 任意文件上传漏洞。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
-    product = '用友CRM系统'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    ref = 'Unknown'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
+    product = '用友'  # 漏洞应用名称
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '3eecc23f-7c75-4124-84fb-e6cdcfb09558'

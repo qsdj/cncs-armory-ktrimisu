@@ -13,10 +13,10 @@ class Vuln(ABVuln):
     desc = '''
         方维团购 v4.3 /index.php?ctl=ajax&act=load_topic_reply_list，topic_id造成了注入。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
-    product = 'fanwe'  # 漏洞应用名称
+    ref = 'Unknown'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
+    product = 'fanwe O2O'  # 漏洞应用名称
     product_version = 'v4.3'  # 漏洞应用版本
 
 class Poc(ABPoc):

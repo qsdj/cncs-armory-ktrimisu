@@ -10,13 +10,17 @@ class Vuln(ABVuln):
     type = VulnType.FILE_UPLOAD # 漏洞类型
     disclosure_date = '2015-10-10'  # 漏洞公布时间
     desc = '''
-        北京东方文辉FSMCMS uploadwordpic.jsp 页面未做过滤，可任意文件上传。
+        北京东方文辉FSMCMS
+        /cms/fileupload/uploadwordpic.jsp?AddWebInfoTID=
+        /fsm/cms/fileupload/uploadwordpic.jsp?AddWebInfoTID=
+        /nlw/cms/fileupload/uploadwordpic.jsp?AddWebInfoTID=
+        页面未做过滤，可任意文件上传。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unknown'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'FSMCMS'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'e361121b-786e-4c8b-9cb3-007a0c9f80d1'

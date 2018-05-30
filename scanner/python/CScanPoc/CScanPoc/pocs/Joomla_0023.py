@@ -6,17 +6,18 @@ import re
 
 class Vuln(ABVuln):
     vuln_id = 'Joomla_0023' # 平台漏洞编号，留空
-    name = 'Joomla 配置文件下载漏洞'  # 漏洞名称
+    name = 'Joomla! 配置文件下载'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型
     disclosure_date = '2016-09-13'  # 漏洞公布时间
     desc = '''
+        Joomla! /index.php?option=com_cckjseblod&task=download&file=configuration.php 可下载配置文件。 
     '''  # 漏洞描述
     ref = 'https://cxsecurity.com/issue/WLB-2016090120'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
-    product = 'Joomla'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
+    product = 'Joomla!'  # 漏洞应用名称
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '3665e853-69f1-4d96-bb86-46eed38a93ea'

@@ -34,7 +34,9 @@ class Poc(ABPoc):
             response = urllib2.urlopen(request)
             content = response.read()
             if 'root:' in content and 'nobody:' in content:
-                self.output.report(self.vuln, '目标{target}存在{name}漏洞'.format(target=self.target,name=self.vuln.name))
+                self.output.report(self.vuln, '目标{target}存在{name}漏洞'.format(
+                    target=self.target, name=self.vuln.name))
+
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
 

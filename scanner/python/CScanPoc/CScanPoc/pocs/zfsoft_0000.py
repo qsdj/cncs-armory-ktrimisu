@@ -5,23 +5,23 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'zfsoft_0000' # 平台漏洞编号，留空
-    name = '正方教务系统SQL注入获取账户密码' # 漏洞名称
+    vuln_id = 'Zfsoft_0000' # 平台漏洞编号，留空
+    name = '正方教务管理系统 SQL注入获取账户密码' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2015-12-28'  # 漏洞公布时间
     desc = '''
-        正方教务系统某处可任意执行select语句，轻松获取账户密码
+        正方教务系统某处可任意执行select语句，轻松获取账户密码。
     ''' # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=0142558' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unknown' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0142558
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
     product = '正方教务管理系统'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = 'zfsoft_0000' # 平台 POC 编号，留空
+    poc_id = '911d4889-cf19-4503-9655-72f3d45bae3a' # 平台 POC 编号，留空
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 

@@ -6,7 +6,7 @@ import re
 
 class Vuln(ABVuln):
     vuln_id = 'Joomla_0012' # 平台漏洞编号，留空
-    name = 'Joomla DOCman Component_Path_Get'  # 漏洞名称
+    name = 'Joomla! DOCman Component_Path_Get'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.OTHER # 漏洞类型
     disclosure_date = '2015-07-15'  # 漏洞公布时间
@@ -14,10 +14,10 @@ class Vuln(ABVuln):
         Joomla! Component com_docman - Multiple Vulnerabilities.
     '''  # 漏洞描述
     ref = 'https://www.exploit-db.com/exploits/37620/'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
-    product = 'Joomla! Component com_docman'  # 漏洞应用名称
-    product_version = '*'  # 漏洞应用版本
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
+    product = 'Joomla!'  # 漏洞应用名称
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'c08d2094-9b22-4ccf-ad8c-0aa43336f156'
