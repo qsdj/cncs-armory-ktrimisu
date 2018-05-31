@@ -14,7 +14,7 @@ class Vuln(ABVuln):
     desc = '''
         53KF /new/client.php 任意文件下载漏洞。
     ''' # 漏洞描述
-    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=086882
+    ref = 'Unknown' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=086882
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
     product = '53KF'  # 漏洞应用名称
