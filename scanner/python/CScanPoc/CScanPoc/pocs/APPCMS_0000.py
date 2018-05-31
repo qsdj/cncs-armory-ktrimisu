@@ -6,17 +6,17 @@ hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
     vuln_id = 'APPCMS_0000' # 平台漏洞编号，留空
-    name = 'appcms设计权限备份数据库可直接下载' # 漏洞名称
+    name = 'APPCMS设计权限备份数据库可直接下载' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型
     disclosure_date = '2014-12-20'  # 漏洞公布时间
     desc = '''
-        appcms设计权限备份数据库可直接下载
+        APPCMS设计权限备份数据库可直接下载
     ''' # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=077157' # 漏洞来源
+    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=077157
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
-    product = 'appcms'  # 漏洞应用名称
+    product = 'APPCMS'  # 漏洞应用名称
     product_version = ''  # 漏洞应用版本
 
 

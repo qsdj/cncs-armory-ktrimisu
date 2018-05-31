@@ -6,18 +6,18 @@ import re
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = '5clib_0000' # 平台漏洞编号，留空
-    name = '五车图书管理系统越权漏洞' # 漏洞名称
+    vuln_id = '5Clib_0000' # 平台漏洞编号，留空
+    name = '五车图书管理系统 越权' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.OTHER # 漏洞类型
     disclosure_date = '2015-10-26'  # 漏洞公布时间
     desc = '''
-        五车图书管理系统越权漏洞
+        五车图书管理系统 /5clib/property.action 越权漏洞。
     ''' # 漏洞描述
     ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=0128686' # 漏洞来源
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
-    product = '5clib'  # 漏洞应用名称
+    product = '5Clib(五车图书管理系统)'  # 漏洞应用名称
     product_version = ''  # 漏洞应用版本
 
 

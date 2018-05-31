@@ -18,7 +18,7 @@ class Vuln(ABVuln):
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
     product = '蓝太平洋'  # 漏洞应用名称
-    product_version = '蓝太平洋网站决策支持系统WebEngine'  # 漏洞应用版本
+    product_version = ''  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '64d9d206-6457-4603-891c-b8760dce2381'

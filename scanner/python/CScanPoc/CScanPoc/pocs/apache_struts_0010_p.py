@@ -4,18 +4,18 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'apache_struts_0010_p' # 平台漏洞编号，留空
-    name = 'Apache Struts2 S2-019远程代码执行漏洞' # 漏洞名称
+    vuln_id = 'Apache_Struts_0010_p' # 平台漏洞编号，留空
+    name = 'Apache Struts2 S2-019远程代码执行' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型
     disclosure_date = '2013-10-08'  # 漏洞公布时间
     desc = '''
-    Apache Struts2中存在漏洞，动态方法调用是一种已知的可能导致安全漏洞的机制，但到目前为止，它是默认启用的，警告用户应该在可能的情况下关闭它。 
+        Apache Struts2中存在漏洞，动态方法调用是一种已知的可能导致安全漏洞的机制，但到目前为止，它是默认启用的，警告用户应该在可能的情况下关闭它。 
     ''' # 漏洞描述
     ref = 'https://cwiki.apache.org/confluence/display/WW/S2-019' # 漏洞来源
     cnvd_id = '' # cnvd漏洞编号
     cve_id = 'CVE-2013-4316' #cve编号
-    product = 'Apache Struts2'  # 漏洞应用名称
+    product = 'Apache Struts'  # 漏洞应用名称
     product_version = 'Struts 2.0.0 - Struts 2.3.15.1'  # 漏洞应用版本
 
 class Poc(ABPoc):

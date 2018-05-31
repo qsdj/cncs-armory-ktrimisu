@@ -7,7 +7,7 @@ import time
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'bytevalue_0001' # 平台漏洞编号，留空
+    vuln_id = 'Bytevalue_0001' # 平台漏洞编号，留空
     name = '百为流控路由管理员密码重置'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型

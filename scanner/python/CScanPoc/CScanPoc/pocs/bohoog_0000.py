@@ -5,18 +5,18 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'bohoog_0000' # 平台漏洞编号，留空
-    name = '贵州博虹科技政府建站程序通用型SQL注射漏洞' # 漏洞名称
+    vuln_id = 'Bohoog_0000' # 平台漏洞编号，留空
+    name = '贵州博虹科技政府建站程序通用型SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2015-01-20'  # 漏洞公布时间
     desc = '''
-        贵州博虹科技政府建站程序通用型SQL注射漏洞
+        贵州博虹科技政府建站程序 /NewsSearch.aspx?TxtKey=1 通用型SQL注射漏洞。
     ''' # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=080289' # 漏洞来源
+    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=080289
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
-    product = 'bohoog'  # 漏洞应用名称
+    product = 'Bohoog'  # 漏洞应用名称
     product_version = ''  # 漏洞应用版本
 
 

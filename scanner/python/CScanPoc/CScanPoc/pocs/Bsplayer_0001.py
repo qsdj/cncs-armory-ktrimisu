@@ -7,21 +7,21 @@ import socket
 import urlparse
 
 class Vuln(ABVuln):
-    vuln_id = 'Bsplayer_0001' # 平台漏洞编号，留空
-    name = 'Bsplayer2.68 缓冲区溢出漏洞'  # 漏洞名称
+    vuln_id = 'BSPlayer_0001' # 平台漏洞编号，留空
+    name = 'BSPlayer2.68 缓冲区溢出漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
     disclosure_date = '2015-03-24'  # 漏洞公布时间
     desc = '''
-        Bsplayer suffers from a buffer overflow vulnerability when processing the HTTP response when opening a URL.
+        BSPlayer suffers from a buffer overflow vulnerability when processing the HTTP response when opening a URL.
         In order to exploit this bug I partially overwrited the seh record to land at pop pop ret instead of the full
         address and then used backward jumping to jump to a long jump that eventually land in my shellcode.
     '''  # 漏洞描述
     ref = 'https://www.exploit-db.com/exploits/36477/'  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = 'Bsplayer'  # 漏洞应用名称
-    product_version = 'Bsplayer2.68'  # 漏洞应用版本
+    product = 'BSPlayer'  # 漏洞应用名称
+    product_version = 'BSPlayer2.68'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '7fbaa4e2-b03e-46e6-856d-ae7a0db41330'

@@ -7,14 +7,14 @@ import re
 
 class Vuln(ABVuln):
     vuln_id = 'CSDJCMS_0000' # 平台漏洞编号，留空
-    name = 'CSDJCMS 3.5 /app/controllers/dance.php SQL注入漏洞' # 漏洞名称
+    name = 'CSDJCMS /app/controllers/dance.php SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2014-08-03'  # 漏洞公布时间
     desc = '''
         CSDJCMS 3.5 app/controllers/dance.php文件存在SQL注入漏洞。
     ''' # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=59088' # 漏洞来源
+    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=59088
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
     product = 'CSDJCMS'  # 漏洞应用名称

@@ -16,8 +16,8 @@ class Vuln(ABVuln):
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = '安全网关'  # 漏洞应用名称
-    product_version = '安达通全网行为管理'  # 漏洞应用版本
+    product = '安达通安全网关'  # 漏洞应用名称
+    product_version = ''  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'a9797fc4-1c1e-4c75-90e7-9e251b0fcded'

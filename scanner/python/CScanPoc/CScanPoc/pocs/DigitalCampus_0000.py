@@ -5,18 +5,18 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'chengrui_edu_0000' # 平台漏洞编号，留空
+    vuln_id = 'DigitalCampus_0000' # 平台漏洞编号，留空
     name = '通用型数字校园平台敏感信息泄露' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
     disclosure_date = '2014-11-06'  # 漏洞公布时间
     desc = '''
-        通用型数字校园平台敏感信息泄露
+        通用型数字校园平台 /log.txt 敏感信息泄露漏洞。
     ''' # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=071575' # 漏洞来源
+    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=071575
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
-    product = 'chengrui'  # 漏洞应用名称
+    product = 'DigitalCampus'  # 漏洞应用名称
     product_version = ''  # 漏洞应用版本
 
 

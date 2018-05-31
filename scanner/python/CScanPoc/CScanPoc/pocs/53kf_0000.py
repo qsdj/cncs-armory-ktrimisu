@@ -6,15 +6,15 @@ import re
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = '53kf_0000' # 平台漏洞编号，留空
-    name = '53KF任意文件下载漏洞' # 漏洞名称
+    vuln_id = '53KF_0000' # 平台漏洞编号，留空
+    name = '53KF 任意文件下载' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型
     disclosure_date = '2015-03-12'  # 漏洞公布时间
     desc = '''
-        53KF任意文件下载漏洞（多个企业中标）
+        53KF /new/client.php 任意文件下载漏洞。
     ''' # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=086882' # 漏洞来源
+    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=086882
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
     product = '53KF'  # 漏洞应用名称

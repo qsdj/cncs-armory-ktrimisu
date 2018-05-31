@@ -5,19 +5,19 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    vuln_id = '74cms_0003' # 平台漏洞编号，留空
-    name = '74cms 重置任意账号密码'  # 漏洞名称
+    vuln_id = '74CMS_0003' # 平台漏洞编号，留空
+    name = '骑士CMS 重置任意账号密码'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.OTHER # 漏洞类型
     disclosure_date = '2015-08-31'  # 漏洞公布时间
     desc = '''
-        密码重置机制可以绕过，同时可重置任意账号密码。
+        骑士CMS 密码重置机制可以绕过，同时可重置任意账号密码。
     '''  # 漏洞描述
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = '74cms'  # 漏洞应用名称
-    product_version = '74cms'  # 漏洞应用版本
+    product = '74CMS(骑士CMS)'  # 漏洞应用名称
+    product_version = ''  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '2e0a2cf0-0fff-45bc-beb3-829525d1597b'

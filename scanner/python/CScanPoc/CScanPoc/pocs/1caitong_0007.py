@@ -5,19 +5,28 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = '1caitong_0007' # 平台漏洞编号，留空
-    name = '北京网达信联通用型电子采购系统多处SQL注入打包' # 漏洞名称
+    vuln_id = '1Caitong_0007' # 平台漏洞编号，留空
+    name = '北京网达信联通用型电子采购系统 SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2015-09-24'  # 漏洞公布时间
     desc = '''
-        北京网达信联通用型电子采购系统多处SQL注入打包
+        北京网达信联通用型电子采购系统多处SQL注入漏洞：
+        /Rat/ebid/viewInvite3.asp?InviteId=0000002852
+        /Rat/ebid/viewInvite4.asp?InviteId=0000002852
+        /Rat/ebid/viewInvite5.asp?InviteId=0000002852
+        /Rat/ebid/viewInvite6.asp?InviteId=0000002852
+        /Rat/ebid/viewInvite2.asp?InviteId=0000002852
+        /Rat/ebid/viewInvite1.asp?InviteId=0000002852
+        /Rat/EBid/ViewClarify1.asp?InviteId=11
+        /Rat/EBid/ViewClarify.asp?InviteId=11
+        /Rat/EBid/AuditForm/AuditForm_ExpertForm.asp?InviteId=11
     ''' # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=0122276' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
-    product = '一采通' # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    ref = 'Unknown' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0122276
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
+    product = '1Caitong(一采通)' # 漏洞应用名称
+    product_version = 'Unknown'  # 漏洞应用版本
 
 
 class Poc(ABPoc):

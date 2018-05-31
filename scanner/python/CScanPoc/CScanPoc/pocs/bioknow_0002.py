@@ -5,12 +5,16 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'bioknow_0002' # 平台漏洞编号，留空
-    name = '百奥知实验室综合信息管理系统 SQL注射漏洞'  # 漏洞名称
+    vuln_id = 'Bioknow_0002' # 平台漏洞编号，留空
+    name = '百奥知实验室综合信息管理系统 SQL注射'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2015-04-14'  # 漏洞公布时间
     desc = '''
+        百奥知实验室综合信息管理系统：
+        '?id=1%20or%201=1'
+        '?id=1%20or%201=2'
+        处存在SQL注入漏洞。
     '''  # 漏洞描述
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号

@@ -4,18 +4,18 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'apache_struts_0009_p' # 平台漏洞编号，留空
-    name = 'Apache Struts2 S2-016远程代码执行漏洞' # 漏洞名称
+    vuln_id = 'Apache_Struts_0009_p' # 平台漏洞编号，留空
+    name = 'Apache Struts2 S2-016远程代码执行' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型
     disclosure_date = '2013-07-09'  # 漏洞公布时间
     desc = '''
-    Apache Struts2中存在漏洞，该漏洞在Struts 2之前2.3.15.1信息下面的“action”、“redirect：”或“redirectaction：“没有正确处理过滤。因为该信息将被评估为OGNL表达式和值栈，介绍了服务器端代码注入的可能性。
+        Apache Struts2中存在漏洞，该漏洞在Struts 2之前2.3.15.1信息下面的“action”、“redirect：”或“redirectaction：“没有正确处理过滤。因为该信息将被评估为OGNL表达式和值栈，介绍了服务器端代码注入的可能性。
     ''' # 漏洞描述
     ref = 'https://cwiki.apache.org/confluence/display/WW/S2-016' # 漏洞来源
     cnvd_id = 'CNNVD-201307-308' # cnvd漏洞编号
     cve_id = 'CVE-2013-2251' #cve编号
-    product = 'Apache Struts2'  # 漏洞应用名称
+    product = 'Apache Struts'  # 漏洞应用名称
     product_version = 'Struts 2.0.0 - Struts 2.3.15 1 '  # 漏洞应用版本
 
 class Poc(ABPoc):

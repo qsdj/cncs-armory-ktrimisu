@@ -5,19 +5,19 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'apache_struts_0001' # 平台漏洞编号，留空
-    name = 'Apache Struts2 REST插件远程代码执行漏洞(s2-052)' # 漏洞名称
+    vuln_id = 'Apache_Struts_0001' # 平台漏洞编号，留空
+    name = 'Apache Struts2 REST插件远程代码执行(s2-052)' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型
     disclosure_date = '2017-09-06'  # 漏洞公布时间
     desc = '''
-    Struts2 是Apache软件基金会负责维护的一个基于MVC设计模式的Web应用框架开源项目。 
-    Apache Struts2 REST插件存在远程代码执行漏洞，由于使用XStream组件对XML格式的数据包进行反序列化操作时，未对数据内容进行有效验证，导致攻击者可构造恶意的XML内容执行任意代码。
+        Struts2 是Apache软件基金会负责维护的一个基于MVC设计模式的Web应用框架开源项目。 
+        Apache Struts2 REST插件存在远程代码执行漏洞，由于使用XStream组件对XML格式的数据包进行反序列化操作时，未对数据内容进行有效验证，导致攻击者可构造恶意的XML内容执行任意代码。
     ''' # 漏洞描述
     ref = 'http://www.cnvd.org.cn/flaw/show/CNVD-2017-25267' # 漏洞来源
     cnvd_id = 'CNVD-2017-25267' # cnvd漏洞编号
     cve_id = 'CVE-2017-9805' #cve编号
-    product = 'Apache Struts2'  # 漏洞应用名称
+    product = 'Apache Struts'  # 漏洞应用名称
     product_version = 'Apache Struts2 >=2.5，<=2.5.12'  # 漏洞应用版本
 
 class Poc(ABPoc):

@@ -5,18 +5,18 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'anmai_0000' # 平台漏洞编号，留空
-    name = '安脉某处注入' # 漏洞名称
+    vuln_id = 'Anmai_0000' # 平台漏洞编号，留空
+    name = '安脉学校综合管理平台 SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '20160-01-11'  # 漏洞公布时间
     desc = '''
-        安脉某处注入
+        安脉学校综合管理平台 /anmai/Edis/DiathesisAppraise/grghjl.aspx?stuNo=1 SQL注入漏洞。
     ''' # 漏洞描述
     ref = '' # 漏洞来源
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
-    product = '安脉'  # 漏洞应用名称
+    product = '安脉学校综合管理平台'  # 漏洞应用名称
     product_version = ''  # 漏洞应用版本
 
 

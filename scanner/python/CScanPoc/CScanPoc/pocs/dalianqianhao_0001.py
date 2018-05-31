@@ -4,12 +4,14 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'dalianqianhao_0001' # 平台漏洞编号，留空
+    vuln_id = 'Dalianqianhao_0001' # 平台漏洞编号，留空
     name = '大连乾豪综合教务管理系统信息泄漏'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
     disclosure_date = '2014-06-04'  # 漏洞公布时间
     desc = '''
+        大连乾豪综合教务管理系统信息泄漏:
+        /QHDBCONFIG.INI
     '''  # 漏洞描述
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号

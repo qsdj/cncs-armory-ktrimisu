@@ -5,18 +5,18 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'apache_0000' # 平台漏洞编号，留空
-    name = 'apache目录下会有一个cgi-bin/test-cgi bash 远程命令执行漏洞' # 漏洞名称
+    vuln_id = 'Apache_0000' # 平台漏洞编号，留空
+    name = 'Apache目录下会有一个cgi-bin/test-cgi bash 远程命令执行' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型
     disclosure_date = '2015-05-23s'  # 漏洞公布时间
     desc = '''
-        apache后目录下会有一个cgi-bin/test-cgi bash 远程命令执行漏洞
+        Apache 目录下会有一个cgi-bin/test-cgi bash 远程命令执行漏洞
     ''' # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=0106070' # 漏洞来源
+    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0106070
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
-    product = 'apache'  # 漏洞应用名称
+    product = 'Apache'  # 漏洞应用名称
     product_version = ''  # 漏洞应用版本
 
 

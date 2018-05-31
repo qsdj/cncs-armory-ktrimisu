@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = '5clib_0006' # 平台漏洞编号，留空
+    vuln_id = '5Clib_0006' # 平台漏洞编号，留空
     name = '五车图书管系统越权添加管理员' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.OTHER # 漏洞类型
@@ -16,7 +16,7 @@ class Vuln(ABVuln):
     ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=0128686' # 漏洞来源
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
-    product = '5clib'  # 漏洞应用名称
+    product = '5Clib(五车图书管理系统)'  # 漏洞应用名称
     product_version = ''  # 漏洞应用版本
 
 

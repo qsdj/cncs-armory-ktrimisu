@@ -6,18 +6,18 @@ import urllib,urllib2
 import re
 
 class Vuln(ABVuln):
-    vuln_id = '74cms_0000' # 平台漏洞编号，留空
-    name = '74cms V3.4 /plus/ajax_officebuilding.php SQL注入漏洞' # 漏洞名称
+    vuln_id = '74CMS_0000' # 平台漏洞编号，留空
+    name = '骑士CMS /plus/ajax_officebuilding.php SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2014-09-03'  # 漏洞公布时间
     desc = '''
-        74cms V3.4.20140530 /plus/ajax_officebuilding.php文件存在SQL注入漏洞
+        骑士CMS V3.4.20140530 /plus/ajax_officebuilding.php文件存在SQL注入漏洞。
     ''' # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=063225' # 漏洞来源
+    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=063225
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
-    product = '74cms'  # 漏洞应用名称
+    product = '74CMS(骑士CMS)'  # 漏洞应用名称
     product_version = '3.4'  # 漏洞应用版本
 
 

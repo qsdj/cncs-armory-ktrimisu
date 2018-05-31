@@ -5,20 +5,20 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'damiCMS_0001'  # 平台漏洞编号，留空
+    vuln_id = 'DamiCMS_0001'  # 平台漏洞编号，留空
     name = '大米CMS /Web/Lib/Action/ApiAction.class.php SQL注入漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-06-28'  # 漏洞公布时间
     desc = '''
-        damiCMS SQL注入漏洞，漏洞位于/Web/Lib/Action/ApiAction.class.php，
-                过滤不严导致漏洞。
+        DamiCMS(大米CMS) SQL注入漏洞，漏洞位于/Web/Lib/Action/ApiAction.class.php，
+        过滤不严导致漏洞。
     '''  # 漏洞描述
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = '大米CMS'  # 漏洞应用名称
-    product_version = '大米CMS'  # 漏洞应用版本
+    product = 'DamiCMS(大米CMS)'  # 漏洞应用名称
+    product_version = ''  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'cb5ddf3b-3ef7-4ed5-8a98-6cfd980d0b01'

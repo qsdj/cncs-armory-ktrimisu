@@ -7,12 +7,12 @@ hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
     vuln_id = 'CSDJCMS_0006' # 平台漏洞编号，留空
-    name = 'CSDJCMS 程式舞曲 最新版 SQL 注入漏洞' # 漏洞名称
+    name = 'CSDJCMS 程式舞曲 最新版 SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2014-08-03'  # 漏洞公布时间
     desc = '''
-        CSDJCMS 程式舞曲 最新版 SQL 注入漏洞
+        CSDJCMS 程式舞曲最新版 SQL注入漏洞。
     ''' # 漏洞描述
     ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=059088' # 漏洞来源
     cnvd_id = '' # cnvd漏洞编号

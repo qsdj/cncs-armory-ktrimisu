@@ -7,18 +7,18 @@ import base64
 import hashlib
 
 class Vuln(ABVuln):
-    vuln_id = 'Dayucms_Dircms_0001'  # 平台漏洞编号，留空
-    name = 'Dayucms & Dircms 代码执行漏洞'  # 漏洞名称
+    vuln_id = 'DayuCMS_0001'  # 平台漏洞编号，留空
+    name = 'DayuCMS 代码执行漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE  # 漏洞类型
     disclosure_date = '2015-06-09'  # 漏洞公布时间
     desc = '''
-         DayuCMS在将字符串转换为数组的函数中直接利用eval，并且存在可控变量，导致任意代码执行。
+        DayuCMS在将字符串转换为数组的函数中直接利用eval，并且存在可控变量，导致任意代码执行。
     '''  # 漏洞描述
     ref = 'https://joychou.org/web/dayucms-1-526-foreground-remote-code-execution.html'  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = 'Dayucms & Dircms'  # 漏洞应用名称
+    product = 'DayuCMS'  # 漏洞应用名称
     product_version = 'DayuCMS <=1.526'  # 漏洞应用版本
 
 

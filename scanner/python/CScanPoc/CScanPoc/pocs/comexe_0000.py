@@ -5,13 +5,13 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'comexe_0000' # 平台漏洞编号，留空
+    vuln_id = 'Comexe_0000' # 平台漏洞编号，留空
     name = '科迈RAS远程快速接入方案后台登陆绕过' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.MISCONFIGURATION # 漏洞类型
     disclosure_date = '2015-10-01'  # 漏洞公布时间
     desc = '''
-        科迈RAS远程快速接入方案后台登陆绕过  
+        科迈RAS远程快速接入方案后台 /server/CmxManager.php 登陆绕过。
     ''' # 漏洞描述
     ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=0123807' # 漏洞来源
     cnvd_id = '' # cnvd漏洞编号

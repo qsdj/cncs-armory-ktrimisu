@@ -5,11 +5,12 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
     vuln_id = 'B2Bbuilder_0001' # 平台漏洞编号，留空
-    name = 'B2Bbuilder SQL注入漏洞'  # 漏洞名称
+    name = 'B2Bbuilder SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2014-07-28'  # 漏洞公布时间
     desc = '''
+        B2Bbuilder /index.php 存在SQL注入漏洞。
     '''  # 漏洞描述
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号

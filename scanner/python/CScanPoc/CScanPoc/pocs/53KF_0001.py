@@ -16,7 +16,7 @@ class Vuln(ABVuln):
     ref = '' # 漏洞来源
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
-    product = '53KF(快服科技)'  # 漏洞应用名称
+    product = '53KF'  # 漏洞应用名称
     product_version = ''  # 漏洞应用版本
 
 class Poc(ABPoc):

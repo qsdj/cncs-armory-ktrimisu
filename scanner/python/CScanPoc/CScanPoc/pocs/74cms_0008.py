@@ -5,18 +5,18 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = '74cms_0008' # 平台漏洞编号，留空
-    name = '74cms(20140709)全局注入漏洞' # 漏洞名称
+    vuln_id = '74CMS_0008' # 平台漏洞编号，留空
+    name = '骑士CMS(20140709)全局注入漏洞' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2014-09-14'  # 漏洞公布时间
     desc = '''
-        74cms(20140709)全局注入漏洞
+        骑士CMS(20140709) /plus/ajax_common.php 全局注入漏洞。
     ''' # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=070316' # 漏洞来源
+    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=070316
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
-    product = '74cms'  # 漏洞应用名称
+    product = '74CMS(骑士CMS)'  # 漏洞应用名称
     product_version = '20140709'  # 漏洞应用版本
 
 

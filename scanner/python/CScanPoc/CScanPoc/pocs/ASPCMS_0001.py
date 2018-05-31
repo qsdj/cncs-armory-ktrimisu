@@ -7,8 +7,8 @@ import urllib2
 import cookielib
 
 class Vuln(ABVuln):
-    vuln_id = 'AspCMS_0001'  # 平台漏洞编号，留空
-    name = 'AspCMS信息泄漏包括管理员帐号'  # 漏洞名称
+    vuln_id = 'ASPCMS_0001'  # 平台漏洞编号，留空
+    name = 'ASPCMS信息泄漏包括管理员帐号'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK  # 漏洞类型
     disclosure_date = ' 2014-05-15'  # 漏洞公布时间

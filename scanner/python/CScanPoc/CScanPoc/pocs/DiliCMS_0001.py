@@ -12,13 +12,13 @@ class Vuln(ABVuln):
     type = VulnType.INFO_LEAK # 漏洞类型
     disclosure_date = '2015-03-11'  # 漏洞公布时间
     desc = '''
-        管理后台登录页面信息泄漏。
+        管理后台登录页面 /admin/login/do 信息泄漏。
     '''  # 漏洞描述
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
     product = 'DiliCMS'  # 漏洞应用名称
-    product_version = '*'  # 漏洞应用版本
+    product_version = ''  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '516447ea-5cfe-46fe-9838-9a7ddfcb9676'

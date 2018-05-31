@@ -6,7 +6,7 @@ import re
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'dahua_0000' # 平台漏洞编号，留空
+    vuln_id = 'Dahuatech_0000' # 平台漏洞编号，留空
     name = '大华城市安防监控系统平台管理未授权访问' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.MISCONFIGURATION # 漏洞类型
@@ -17,7 +17,7 @@ class Vuln(ABVuln):
     ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=151421' # 漏洞来源
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
-    product = '大华'  # 漏洞应用名称
+    product = 'Dahuatech'  # 漏洞应用名称
     product_version = ''  # 漏洞应用版本
 
 

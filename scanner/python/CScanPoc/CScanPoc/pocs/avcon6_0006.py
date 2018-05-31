@@ -5,15 +5,15 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'avcon6_0006' # 平台漏洞编号，留空
-    name = 'AVCON多媒体通信系统任意文件下载' # 漏洞名称
+    vuln_id = 'AVCON6_0006' # 平台漏洞编号，留空
+    name = 'AVCON6多媒体通信系统任意文件下载' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型
     disclosure_date = '2014-05-12'  # 漏洞公布时间
     desc = '''
-        AVCON多媒体通信系统任意文件下载
+        华平 AVCON6 统一协同通讯系统 /download.action?filename=../../../../../../etc/shadow 任意文件下载漏洞。
     ''' # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=50653' # 漏洞来源
+    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=50653
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
     product = 'AVCON6'  # 漏洞应用名称

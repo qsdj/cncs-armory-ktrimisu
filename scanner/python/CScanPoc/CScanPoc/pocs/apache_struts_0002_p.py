@@ -4,19 +4,19 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'apache_struts_0002_p' # 平台漏洞编号，留空
-    name = 'Apache Struts2 S2-053远程代码执行漏洞' # 漏洞名称
+    vuln_id = 'Apache_Struts_0002_p' # 平台漏洞编号，留空
+    name = 'Apache Struts2 S2-053远程代码执行' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型
     disclosure_date = '2017-09-07'  # 漏洞公布时间
     desc = '''
-    Struts2 是Apache软件基金会负责维护的一个基于MVC设计模式的Web应用框架开源项目。 
-    Apache Struts2存在S2-053远程代码执行漏洞，在Freemarker标记中使用错误的表达式而不是字符串文字时，导致攻击者远程执行代码攻击。
+        Struts2 是Apache软件基金会负责维护的一个基于MVC设计模式的Web应用框架开源项目。 
+        Apache Struts2存在S2-053远程代码执行漏洞，在Freemarker标记中使用错误的表达式而不是字符串文字时，导致攻击者远程执行代码攻击。
     ''' # 漏洞描述
     ref = 'http://www.cnvd.org.cn/flaw/show/CNVD-2017-25632' # 漏洞来源
     cnvd_id = 'CNVD-2017-25632' # cnvd漏洞编号
     cve_id = 'CVE-2017-12611' #cve编号
-    product = 'Apache Struts2'  # 漏洞应用名称
+    product = 'Apache Struts'  # 漏洞应用名称
     product_version = 'Apache Struts2 >=2.0.1，<=2.3.33 ，Apache Struts2 >=2.5，<=2.5.10'  # 漏洞应用版本
 
 class Poc(ABPoc):

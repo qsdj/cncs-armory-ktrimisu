@@ -7,18 +7,18 @@ import re
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = '74cms_0009' # 平台漏洞编号，留空
-    name = '74cms任意文件的读取(XML实体注入)' # 漏洞名称
+    vuln_id = '74CMS_0009' # 平台漏洞编号，留空
+    name = '骑士CMS任意文件的读取(XML实体注入)' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2014-12-03'  # 漏洞公布时间
     desc = '''
-        74cms任意文件的读取(XML实体注入)
+        骑士CMS /plus/weixin.php 任意文件的读取(XML实体注入)漏洞。
     ''' # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=075009' # 漏洞来源
+    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=075009
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
-    product = ''  # 漏洞应用名称
+    product = '74CMS(骑士CMS)'  # 漏洞应用名称
     product_version = ''  # 漏洞应用版本
 
 

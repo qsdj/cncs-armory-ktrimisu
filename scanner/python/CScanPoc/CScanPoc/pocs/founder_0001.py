@@ -4,12 +4,13 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'founder_0001' # 平台漏洞编号，留空
-    name = '方正Apabi数字资源平台MSSQL SQL注射漏洞'  # 漏洞名称
+    vuln_id = 'Founder_0001' # 平台漏洞编号，留空
+    name = '方正Apabi数字资源平台MSSQL SQL注射'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2015-03-26'  # 漏洞公布时间
     desc = '''
+        方正Apabi数字资源平台 /DLib/List1.asp 页面存在多处MSSQL SQL注射漏洞。
     '''  # 漏洞描述
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号

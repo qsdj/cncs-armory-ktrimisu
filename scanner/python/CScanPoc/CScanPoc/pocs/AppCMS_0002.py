@@ -4,8 +4,8 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'AppCMS_0002' # 平台漏洞编号，留空
-    name = 'AppCMS 本地文件包含'  # 漏洞名称
+    vuln_id = 'APPCMS_0002' # 平台漏洞编号，留空
+    name = 'APPCMS 本地文件包含'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型
     disclosure_date = ''  # 漏洞公布时间
@@ -15,7 +15,7 @@ class Vuln(ABVuln):
     ref = 'http://www.shellcodes.org/Hacking/AppCMS%E6%9C%AC%E5%9C%B0%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E6%BC%8F%E6%B4%9E.html'  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = 'AppCMS'  # 漏洞应用名称
+    product = 'APPCMS'  # 漏洞应用名称
     product_version = ''  # 漏洞应用版本
 
 class Poc(ABPoc):

@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'chinaunicom_0000' # 平台漏洞编号，留空
+    vuln_id = 'Chinaunicom_0000' # 平台漏洞编号，留空
     name = '中国联通某solr服务未授权访问漏洞' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
@@ -14,7 +14,7 @@ class Vuln(ABVuln):
         中国联通某solr服务未授权访问，泄露员工信息。索引数据库为iwo_ad、iwo_agency、iwo_user、iwo_video。联通的沃业务相关服务器
         而且C段几乎全是联通的业务。
     ''' # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=0105302' # 漏洞来源
+    ref = 'https://www.secpulse.com/archives/31908.html' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0105302
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
     product = '中国联通'  # 漏洞应用名称

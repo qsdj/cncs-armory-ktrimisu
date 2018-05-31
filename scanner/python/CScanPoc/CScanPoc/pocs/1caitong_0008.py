@@ -6,19 +6,30 @@ import time
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = '1caitong_0008' # 平台漏洞编号，留空
-    name = ' 一采通电子采购系统十处SQL注入漏洞' # 漏洞名称
+    vuln_id = '1Caitong_0008' # 平台漏洞编号，留空
+    name = ' 一采通电子采购系统 SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '	2015-09-06'  # 漏洞公布时间
     desc = '''
-        一采通电子采购系统十处SQL注入漏洞
+        一采通电子采购系统多处SQL注入漏洞：
+        /Plan/TitleShow/ApplyInfo.aspx?ApplyID=1
+        /Price/AVL/AVLPriceTrends_SQU.aspx?classId=1
+        /Price/SuggestList.aspx?priceid=1
+        /PriceDetail/PriceComposition_Formula.aspx?indexNum=3&elementId=1
+        /Products/Category/CategoryOption.aspx?option=IsStop&classId=1
+        /Products/Tiens/CategoryStockView.aspx?id=1
+        /custom/CompanyCGList.aspx?ComId=1
+        /SuperMarket/InterestInfoDetail.aspx?ItemId=1
+        /Orders/k3orderdetail.aspx?FINTERID=1
+        /custom/CompanyCGList.aspx?ComId=1
+        /custom/GroupNewsList.aspx?child=true&groupId=121
     ''' # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=0117552' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
-    product = '一采通'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    ref = 'Unknown' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0117552
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
+    product = '1Caitong(一采通)'  # 漏洞应用名称
+    product_version = 'Unknown'  # 漏洞应用版本
 
 
 class Poc(ABPoc):

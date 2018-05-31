@@ -17,7 +17,7 @@ class Vuln(ABVuln):
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
     product = '3gmeeting'  # 漏洞应用名称
-    product_version = '3gmeeting视讯系统'  # 漏洞应用版本
+    product_version = ''  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'cf0d2373-7943-40af-9646-ec71d0d09b09'

@@ -5,17 +5,24 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'dedCMS_0001' # 平台漏洞编号，留空
-    name = 'dedCMS 路径泄漏'  # 漏洞名称
+    vuln_id = 'DedeCMS_0013' # 平台漏洞编号，留空
+    name = '织梦CMS 路径泄漏'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
     disclosure_date = ''  # 漏洞公布时间
     desc = '''
+        织梦CMS多处路径泄露：
+        '/member/inc/config_pay_yeepay.php', 
+        '/member/inc/config_pay_tenpay.php',
+        '/member/inc/config_pay_nps.php ',
+        '/member/inc/config_pay_cbpayment.php ',
+        '/member/inc/config_pay_alipay.php',
+        '/include/downmix.inc.php'
     '''  # 漏洞描述
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = 'dedCMS'  # 漏洞应用名称
+    product = 'DedeCMS(织梦CMS)'  # 漏洞应用名称
     product_version = ''  # 漏洞应用版本
 
 class Poc(ABPoc):

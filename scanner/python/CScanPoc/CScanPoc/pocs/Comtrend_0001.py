@@ -6,7 +6,7 @@ import re
 import urlparse
 
 class Vuln(ABVuln):
-    vuln_id = 'ADSL_Router_0001' # 平台漏洞编号，留空
+    vuln_id = 'Comtrend_0001' # 平台漏洞编号，留空
     name = '康全电讯 ADSL Router 远程代码执行'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型
@@ -17,7 +17,7 @@ class Vuln(ABVuln):
     ref = 'https://www.exploit-db.com/exploits/16275/, http://www.exploit-db.com/exploits/18101/'  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = '康全电讯 ADSL Router'  # 漏洞应用名称
+    product = 'Comtrend Router'  # 漏洞应用名称
     product_version = 'CT-5367 C01_R12'  # 漏洞应用版本
 
 class Poc(ABPoc):

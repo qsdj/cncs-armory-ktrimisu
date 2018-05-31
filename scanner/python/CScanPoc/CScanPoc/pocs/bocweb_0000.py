@@ -6,18 +6,18 @@ import re
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'bocweb_0000' # 平台漏洞编号，留空
-    name = 'bocweb敏感信息泄露' # 漏洞名称
+    vuln_id = 'Bocweb_0000' # 平台漏洞编号，留空
+    name = '博采网络系统 敏感信息泄露' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
     disclosure_date = '2015-05-16'  # 漏洞公布时间
     desc = '''
-        bocweb敏感信息泄露
+        Bocweb（博采网络）/nobom.php 敏感信息泄露。
     ''' # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=0105069' # 漏洞来源
+    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0105069
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
-    product = 'bocweb'  # 漏洞应用名称
+    product = 'Bocweb'  # 漏洞应用名称
     product_version = ''  # 漏洞应用版本
 
 

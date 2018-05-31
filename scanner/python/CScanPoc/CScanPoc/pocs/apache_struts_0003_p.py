@@ -4,18 +4,18 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'apache_struts_0003_p' # 平台漏洞编号，留空
-    name = 'Apache Struts2 S2-013远程代码执行漏洞' # 漏洞名称
+    vuln_id = 'Apache_Struts_0003_p' # 平台漏洞编号，留空
+    name = 'Apache Struts2 S2-013远程代码执行' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型
     disclosure_date = '2013-05-24'  # 漏洞公布时间
     desc = '''
-    Apache Struts2中存在漏洞，该漏洞源于s:a和s:url标签都提供了一个includeParams属性。此属性允许使用的值包括none、get、all。当该属性被设置为get或all时，Apache Struts2会将用户提交的参数值作为Ognl表达式执行。攻击者可通过提交带有恶意的Ongl表达式，利用该漏洞执行任意Java代码。
+        Apache Struts2中存在漏洞，该漏洞源于s:a和s:url标签都提供了一个includeParams属性。此属性允许使用的值包括none、get、all。当该属性被设置为get或all时，Apache Struts2会将用户提交的参数值作为Ognl表达式执行。攻击者可通过提交带有恶意的Ongl表达式，利用该漏洞执行任意Java代码。
     ''' # 漏洞描述
     ref = 'http://www.cnvd.org.cn/flaw/show/CNVD-2013-05924' # 漏洞来源
     cnvd_id = 'CNVD-2013-05924' # cnvd漏洞编号
     cve_id = 'CVE-2013-1966' #cve编号
-    product = 'Apache Struts2'  # 漏洞应用名称
+    product = 'Apache Struts'  # 漏洞应用名称
     product_version = 'Apache Struts2.0.0 - 2.3.14.1'  # 漏洞应用版本
 
 class Poc(ABPoc):

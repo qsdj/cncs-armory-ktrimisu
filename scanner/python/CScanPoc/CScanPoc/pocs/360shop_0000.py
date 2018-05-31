@@ -5,18 +5,18 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = '360shop_0000' # 平台漏洞编号，留空
-    name = '启博淘店通标准版任意文件遍历漏洞' # 漏洞名称
+    vuln_id = '360Shop_0000' # 平台漏洞编号，留空
+    name = '启博淘店通标准版 任意文件遍历' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.FILE_TRAVERSAL # 漏洞类型
     disclosure_date = '2016-01-19'  # 漏洞公布时间
     desc = '''
-        启博淘店通标准版任意文件遍历漏洞
+        启博淘店通标准版 /?mod=goods&do=../../../../../../../../../etc/passwd%00.jpg&class_id=25 任意文件遍历漏洞。
     ''' # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=0148274' # 漏洞来源
+    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0148274
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
-    product = '360shop'  # 漏洞应用名称
+    product = '360Shop(启博微分销)'  # 漏洞应用名称
     product_version = ''  # 漏洞应用版本
 
 

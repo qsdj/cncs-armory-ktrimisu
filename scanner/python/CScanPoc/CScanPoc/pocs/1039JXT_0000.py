@@ -5,19 +5,19 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = '1039_jxt_0000' # 平台漏洞编号，留空
-    name = '1039 家校通未授权访问2处' # 漏洞名称
+    vuln_id = '1039JXT_0000' # 平台漏洞编号，留空
+    name = '1039家校通 未授权访问' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.MISCONFIGURATION # 漏洞类型
     disclosure_date = '2015-11-12'  # 漏洞公布时间
     desc = '''
-        1039 家校通未授权访问2处
+        1039家校通 /headmaster/Index.aspx 未授权访问。
     ''' # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=0132856' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
-    product = '1039家校通'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    ref = 'Unknown' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0132856
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
+    product = '1039JXT(1039家校通)'  # 漏洞应用名称
+    product_version = 'Unknown'  # 漏洞应用版本
 
 
 class Poc(ABPoc):

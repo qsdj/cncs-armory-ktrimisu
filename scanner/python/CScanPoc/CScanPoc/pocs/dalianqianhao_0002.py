@@ -5,11 +5,13 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
     vuln_id = 'dalianqianhao_0002' # 平台漏洞编号，留空
-    name = '大连乾豪综合教务管理系统 SQL注入漏洞'  # 漏洞名称
+    name = '大连乾豪综合教务管理系统 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2014-06-18'  # 漏洞公布时间
     desc = '''
+        大连乾豪综合教务管理系统SQL注入漏洞：
+        /ACTIONQUERYELECTIVERESULTBYTEACHSECRETARY.APPPROCESS?mode=2
     '''  # 漏洞描述
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号

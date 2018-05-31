@@ -5,8 +5,8 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    vuln_id = '74cms_0004' # 平台漏洞编号，留空
-    name = '74cms SQL注入'  # 漏洞名称
+    vuln_id = '74CMS_0004' # 平台漏洞编号，留空
+    name = '骑士CMS SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2014-11-11'  # 漏洞公布时间
@@ -16,8 +16,8 @@ class Vuln(ABVuln):
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = '74cms'  # 漏洞应用名称
-    product_version = '74cms'  # 漏洞应用版本
+    product = '74CMS(骑士CMS)'  # 漏洞应用名称
+    product_version = ''  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '80aa152f-c75b-4f37-9cd7-1c6e742515c5'

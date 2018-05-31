@@ -5,13 +5,13 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re, urlparse
 
 class Vuln(ABVuln):
-    vuln_id = 'BOCWEB_0001'  # 平台漏洞编号，留空
-    name = '博采微营销网站(bocweb)前台getshell'  # 漏洞名称
+    vuln_id = 'Bocweb_0001'  # 平台漏洞编号，留空
+    name = '博采微营销网站前台getshell'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_UPLOAD # 漏洞类型
     disclosure_date = '2015-07-09'  # 漏洞公布时间
     desc = '''
-        BOC是杭州博采网络科技股份有限公司的高端网站建设品牌，是知名的杭州网络公司。
+        Bocweb（博采网络）是杭州博采网络科技股份有限公司的高端网站建设品牌，是知名的杭州网络公司。
         博采网络成立于2004年。我们致力于为全球精英企业提供创新、尖端、前沿的数字化营销服务。十年来始终坚守"全网价值营销服务商"的服务定位，与全球逾3000家企业建立了长期深入、互惠互信的战略合作关系，其中包括阿里巴巴、松下、吉利、华润、保利、万科、传化等知名企业。
         官网给出的案例：http://www.bocweb.cn/
 
@@ -20,8 +20,8 @@ class Vuln(ABVuln):
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = '博采网络'  # 漏洞应用名称
-    product_version = '博采微营销网站'  # 漏洞应用版本
+    product = 'Bocweb'  # 漏洞应用名称
+    product_version = ''  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '62949694-75a4-4e8a-8088-f0e8e67efe81'

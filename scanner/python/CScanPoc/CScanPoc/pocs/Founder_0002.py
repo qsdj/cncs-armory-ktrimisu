@@ -5,17 +5,23 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import time
 
 class Vuln(ABVuln):
-    vuln_id = 'apabi_0001' # 平台漏洞编号，留空
-    name = 'apabi /tasi sql注入'  # 漏洞名称
+    vuln_id = 'Founder_0002' # 平台漏洞编号，留空
+    name = '方正Apabi数字资源平台 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2015-04-08'  # 漏洞公布时间
     desc = '''
+        方正Apabi数字资源平台多处存在QL注入漏洞：
+        '/tasi/admin/system/tutordept.asp'
+        '/tasi/admin/system/language.asp'
+        '/tasi/admin/system/subject.asp'
+        '/tasi/admin/system/usermng.asp'
+        '/tasi/admin/system/fileformat.asp'
     '''  # 漏洞描述
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = 'apabi'  # 漏洞应用名称
+    product = '方正Apabi数字资源平台'  # 漏洞应用名称
     product_version = ''  # 漏洞应用版本
 
 class Poc(ABPoc):

@@ -4,18 +4,18 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'apache_struts_0013_p' # 平台漏洞编号，留空
-    name = 'Apache Struts2 S2-033远程代码执行漏洞' # 漏洞名称
+    vuln_id = 'Apache_Struts_0013_p' # 平台漏洞编号，留空
+    name = 'Apache Struts2 S2-033远程代码执行' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型
     disclosure_date = '2016-05-12'  # 漏洞公布时间
     desc = '''
-    Apache Struts2中存在漏洞，Apache当使用REST插件时，当启用动态方法调用时，可以传递恶意的表达式，该恶意表达式可用于在服务器端执行任意代码。
+        Apache Struts2中存在漏洞，Apache当使用REST插件时，当启用动态方法调用时，可以传递恶意的表达式，该恶意表达式可用于在服务器端执行任意代码。
     ''' # 漏洞描述
     ref = 'https://cwiki.apache.org/confluence/display/WW/S2-033' # 漏洞来源
     cnvd_id = '' # cnvd漏洞编号
     cve_id = 'CVE-2016-3087' #cve编号
-    product = 'Apache Struts2'  # 漏洞应用名称
+    product = 'Apache Struts'  # 漏洞应用名称
     product_version = 'Struts 2.3.20 - Struts Struts 2.3.28 (except 2.3.20.3 and 2.3.24.3)'  # 漏洞应用版本
 
 class Poc(ABPoc):

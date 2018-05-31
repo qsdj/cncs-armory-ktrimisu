@@ -5,12 +5,16 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'bioknow_0001' # 平台漏洞编号，留空
-    name = '百奥知实验室综合信息管理系统 SQL注射漏洞'  # 漏洞名称
+    vuln_id = 'Bioknow_0001' # 平台漏洞编号，留空
+    name = '百奥知实验室综合信息管理系统 SQL注射'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2015-04-08'  # 漏洞公布时间
     desc = '''
+        百奥知实验室综合信息管理系统：
+        '?lmbm=YHXZ',
+        '?id=1',
+        处存在SQL注入漏洞。
     '''  # 漏洞描述
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
@@ -67,7 +71,7 @@ class Poc(ABPoc):
                     code2, head, res2, errcode, _ = hh.http(url2)
                     m1 = re.findall('src', res1)
                     m2 = re.findall('src', res2)
-                    if code1 == 200 and code2 ==200 and m1!=m2:
+                    if code1 == 200 and code2 == 200 and m1 != m2:
                         #security_hole(arg + payload +'  :found sql Injection')
                         self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                             target=self.target, name=self.vuln.name))
