@@ -6,7 +6,7 @@ import re
 
 class Vuln(ABVuln):
     vuln_id = 'Discuz_0012' # 平台漏洞编号，留空
-    name = 'Discuz! Board X /batch.common.php SQL注入漏洞'  # 漏洞名称
+    name = 'Discuz! Board X /batch.common.php SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2014-10-24'  # 漏洞公布时间
@@ -16,7 +16,7 @@ class Vuln(ABVuln):
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = 'Discuz! Board X'  # 漏洞应用名称
+    product = 'Discuz!'  # 漏洞应用名称
     product_version = '1.0.0'  # 漏洞应用版本
 
 class Poc(ABPoc):

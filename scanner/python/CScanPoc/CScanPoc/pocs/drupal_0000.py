@@ -6,7 +6,7 @@ import urllib,urllib2
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'drupal_0000' # 平台漏洞编号，留空
+    vuln_id = 'Drupal_0000' # 平台漏洞编号，留空
     name = 'Drupal 7.31 GetShell via /includes/database/database.inc SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

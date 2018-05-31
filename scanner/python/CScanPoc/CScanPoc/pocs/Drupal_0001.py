@@ -11,7 +11,7 @@ class Vuln(ABVuln):
     type = VulnType.RCE  # 漏洞类型
     disclosure_date = '2018-3-28'  # 漏洞公布时间
     desc = '''
-    Drupal 是一款用量庞大的CMS，其6/7/8版本的Form API中存在一处远程代码执行漏洞。
+        Drupal 是一款用量庞大的CMS，其6/7/8版本的Form API中存在一处远程代码执行漏洞。
     '''  # 漏洞描述
     ref = '''https://github.com/vulhub/vulhub/tree/master/drupal/CVE-2018-7600
              https://www.exehack.net/5163.html

@@ -6,19 +6,19 @@ import urllib,urllib2
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'discuz_0004_p_bb2' # 平台漏洞编号，留空
-    name = 'Discuz 敏感文件备份导致uc_key泄露GETSHELL' # 漏洞名称
+    vuln_id = 'Discuz_0020' # 平台漏洞编号，留空
+    name = 'Discuz! 敏感文件备份导致uc_key泄露GETSHELL' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
     disclosure_date = '2014-01-10'  # 漏洞公布时间
     desc = '''
-        Discuz存在一些敏感文件，如果存在备份的话，可能导致UC_KEY的泄露从而进行GETSHELL。
+        Discuz! 存在一些敏感文件，如果存在备份的话，可能导致UC_KEY的泄露从而进行GETSHELL。
     ''' # 漏洞描述
     ref = 'https://phpinfo.me/2014/01/10/182.html' # 漏洞来源
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
-    product = 'Discuz'  # 漏洞应用名称
-    product_version = '*'  # 漏洞应用版本
+    product = 'Discuz!'  # 漏洞应用名称
+    product_version = ''  # 漏洞应用版本
 
 
 class Poc(ABPoc):

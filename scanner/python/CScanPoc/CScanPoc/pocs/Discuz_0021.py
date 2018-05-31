@@ -5,11 +5,13 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
     vuln_id = 'Discuz_0021' # 平台漏洞编号，留空
-    name = 'Discuz milu_seotool插件 本地文件包含漏洞'  # 漏洞名称
+    name = 'Discuz! milu_seotool插件 本地文件包含'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型
     disclosure_date = ''  # 漏洞公布时间
     desc = '''
+        Discuz! milu_seotool插件 本地文件包含漏洞。   
+        /plugin.php?id=milu_seotool:sitemap&myac=../../robots.txt%00
     '''  # 漏洞描述
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号

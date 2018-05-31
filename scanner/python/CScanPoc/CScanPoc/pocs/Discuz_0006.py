@@ -6,17 +6,19 @@ hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
     vuln_id = 'Discuz_0006' # 平台漏洞编号，留空
-    name = 'Disucz X3.2 多处反射型XSS漏洞' # 漏洞名称
+    name = 'Discuz! X3.2 多处反射型XSS' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型
     disclosure_date = '2015-06-04'  # 漏洞公布时间
     desc = '''
-        Disucz X3.2 多处反射型XSS漏洞
+        Discuz! X3.2 多处反射型XSS漏洞。
+        /member.php?mod=logging&action=login&referer=
+        /connect.php?receive=yes&mod=login&op=callback&referer=
     ''' # 漏洞描述
     ref = 'https://www.secpulse.com/archives/32974.html' # 漏洞来源
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
-    product = 'Discuz'  # 漏洞应用名称
+    product = 'Discuz!'  # 漏洞应用名称
     product_version = 'X3.2'  # 漏洞应用版本
 
 

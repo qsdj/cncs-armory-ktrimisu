@@ -7,13 +7,13 @@ import re
 import hashlib
 
 class Vuln(ABVuln):
-    vuln_id = 'drupal_0001_p_bb2' # 平台漏洞编号，留空
-    name = 'Drupal 7.0-7.31 node SQL注入漏洞' # 漏洞名称
+    vuln_id = 'Drupal_0006' # 平台漏洞编号，留空
+    name = 'Drupal 7.0-7.31 node SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2014-10-15'  # 漏洞公布时间
     desc = '''
-        由于后台操作对用户验证逻辑不严谨，导致后台操作可对未登录者开放。
+        /?q=node&destination=node 由于后台操作对用户验证逻辑不严谨，导致后台操作可对未登录者开放。
     ''' # 漏洞描述
     ref = 'https://www.sektioneins.de/en/advisories/advisory-012014-drupal-pre-auth-sql-injection-vulnerability.html' # 漏洞来源
     cnvd_id = '' # cnvd漏洞编号

@@ -4,17 +4,21 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'dreamershop_0001' # 平台漏洞编号，留空
-    name = 'dreamershop sql注入'  # 漏洞名称
+    vuln_id = 'Dreamershop_0001' # 平台漏洞编号，留空
+    name = 'Dreamershop梦想家网店系统 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2015-06-24'  # 漏洞公布时间
     desc = '''
+        Dreamershop梦想家网店系统多处存在SQL注入漏洞：
+        '/PopUpWindows.aspx?id=1',
+        'PopUpWindows.aspx?id=1%20and%201=1',
+        'PopUpWindows.aspx?id=1%20and%201=2'
     '''  # 漏洞描述
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = 'dreamershop'  # 漏洞应用名称
+    product = 'Dreamershop(梦想家网店系统)'  # 漏洞应用名称
     product_version = ''  # 漏洞应用版本
 
 class Poc(ABPoc):

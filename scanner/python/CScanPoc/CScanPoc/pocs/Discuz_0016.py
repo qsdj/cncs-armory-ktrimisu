@@ -6,18 +6,18 @@ hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
     vuln_id = 'Discuz_0016' # 平台漏洞编号，留空
-    name = 'Discuz UCenter Home 2.0 SQL注入漏洞' # 漏洞名称
+    name = 'Discuz! UCenter Home 2.0 SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2013-12-9'  # 漏洞公布时间
     desc = '''
-        discuz UCenter Home 2.0 SQL注入漏洞
+        discuz UCenter Home 2.0 SQL注入漏洞。
     ''' # 漏洞描述
     ref = 'http://www.discuz.net/thread-3490557-1-1.html' # 漏洞来源
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
-    product = 'Discuz UCenter Home'  # 漏洞应用名称
-    product_version = '2.0'  # 漏洞应用版本
+    product = 'Discuz!'  # 漏洞应用名称
+    product_version = 'Discuz UCenter Home 2.0'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
