@@ -9,12 +9,12 @@ hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
     vuln_id = '08CMS_0101' # 平台漏洞编号，留空
-    name = '08cms 3.1 /include/paygate/alipay/pays.php SQL注入 EXP' # 漏洞名称
+    name = '08cms 3.1 /include/paygate/alipay/pays.php SQL注入' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2014-09-30'  # 漏洞公布时间
     desc = '''
-    08cms 3.1 /include/paygate/alipay/pays.php SQL注入漏洞 EXP
+    08cms 3.1 /include/paygate/alipay/pays.php SQL注入漏洞 EXP,
     漏洞出现在/include/paygate/alipay/pays.php文件。
     ''' # 漏洞描述
     ref = 'http://www.cnseay.com/3333/' # 漏洞来源
