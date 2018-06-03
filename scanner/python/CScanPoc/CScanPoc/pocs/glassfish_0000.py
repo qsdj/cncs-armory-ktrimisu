@@ -5,23 +5,23 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'glassfish_0000' # 平台漏洞编号，留空
+    vuln_id = 'GlassFish_0000' # 平台漏洞编号，留空
     name = '应用服务器glassfish存在通用任意文件读取漏洞' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型
     disclosure_date = '2016-01-11'  # 漏洞公布时间
     desc = '''
-        应用服务器glassfish存在通用任意文件读取漏洞
+        应用服务器GlassFish存在通用任意文件读取漏洞
     ''' # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=0144595' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
-    product = 'glassfish'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    ref = 'Uknown' # https://wooyun.shuimugan.com/bug/view?bug_no=0144595
+    cnvd_id = 'Uknown' # cnvd漏洞编号
+    cve_id = 'Uknown' #cve编号
+    product = 'GlassFish'  # 漏洞应用名称
+    product_version = 'Uknown'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = 'glassfish_0000' # 平台 POC 编号，留空
+    poc_id = '944e3de0-35aa-48ea-8210-e7ca75a1fd11' # 平台 POC 编号，留空
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 

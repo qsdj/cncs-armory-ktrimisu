@@ -11,7 +11,7 @@ class Vuln(ABVuln):
     name = 'Mybb <= 1.8.2  代码执行漏洞' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型
-    disclosure_date = ''  # 漏洞公布时间
+    disclosure_date = ' 2014-11-22'  # 漏洞公布时间
     desc = '''
         Mybb <= 1.8.2  代码执行漏洞
     ''' # 漏洞描述

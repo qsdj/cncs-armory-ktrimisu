@@ -17,7 +17,7 @@ class Vuln(ABVuln):
     ref = 'http://www.lijiejie.com/python-iis-put-file/'  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = 'IIS 6.0'  # 漏洞应用名称
+    product = 'IIS'  # 漏洞应用名称
     product_version = 'IIS 6.0'  # 漏洞应用版本
 
 class Poc(ABPoc):
