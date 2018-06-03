@@ -11,8 +11,8 @@ class Vuln(ABVuln):
     type = VulnType.RCE  # 漏洞类型
     disclosure_date = '2015-02-13'  # 漏洞公布时间
     desc = '''
-    ElasticSearch是一个JAVA开发的搜索分析引擎。
-    2014年，曾经被曝出过一个远程代码执行漏洞（CVE-2014-3120），漏洞出现在脚本查询模块，由于搜索引擎支持使用脚本代码（MVEL），作为表达式进行数据操作，攻击者可以通过MVEL构造执行任意java代码。
+        ElasticSearch是一个JAVA开发的搜索分析引擎。
+        2014年，曾经被曝出过一个远程代码执行漏洞（CVE-2014-3120），漏洞出现在脚本查询模块，由于搜索引擎支持使用脚本代码（MVEL），作为表达式进行数据操作，攻击者可以通过MVEL构造执行任意java代码。
     '''  # 漏洞描述
     ref = 'https://github.com/vulhub/vulhub/tree/master/elasticsearch/CVE-2015-1427'  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号

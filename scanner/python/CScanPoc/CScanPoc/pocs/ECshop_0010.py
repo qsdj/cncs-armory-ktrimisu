@@ -6,7 +6,7 @@ hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
     vuln_id = 'ECshop_0010' # 平台漏洞编号，留空
-    name = 'ECshop CMS存在SQL注入漏洞' # 漏洞名称
+    name = 'ECshop CMS SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = ''  # 漏洞公布时间

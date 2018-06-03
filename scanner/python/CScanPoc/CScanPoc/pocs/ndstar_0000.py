@@ -5,18 +5,24 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'ndstar_0000' # 平台漏洞编号，留空
+    vuln_id = 'Ndstar_0000' # 平台漏洞编号，留空
     name = '南大之星信息发布系统SQL注入6枚' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2016-01-11'  # 漏洞公布时间
     desc = '''
-        南大之星信息发布系统SQL注入6枚
+        南大之星信息发布系统多处SQL注入漏洞：
+        "/pub/search/search_graph_dl.asp?id=85",
+        "/pub/search/search_fj_dl.asp?id=2",
+        "/pub/search/search_video.asp?id=3",
+        "/pub/search/search_audio.asp?id=3",
+        "/pub/search/search_audio_view.asp?id=",
+        "/pub/search/search_video_view.asp?id=3",
     ''' # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=0153651' # 漏洞来源
+    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0153651
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
-    product = 'ndstar'  # 漏洞应用名称
+    product = 'Ndstar'  # 漏洞应用名称
     product_version = ''  # 漏洞应用版本
 
 

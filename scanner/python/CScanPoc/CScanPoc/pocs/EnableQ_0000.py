@@ -16,7 +16,7 @@ class Vuln(ABVuln):
     desc = '''
         EnableQ全版本通杀sql注入（影响电信、金融、大型互联网公司、政府等）
     ''' # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=082118' # 漏洞来源
+    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=082118
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
     product = 'EnableQ'  # 漏洞应用名称

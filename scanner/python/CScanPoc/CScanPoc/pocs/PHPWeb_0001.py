@@ -6,11 +6,12 @@ import urllib2
 
 class Vuln(ABVuln):
     vuln_id = 'PHPWeb_0001' # 平台漏洞编号，留空
-    name = 'phpweb 1.3.18-1.4.3 /company.php SQL Injection'  # 漏洞名称
+    name = 'PHPWeb 1.3.18-1.4.3 /company.php SQL Injection'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2014-10-20'  # 漏洞公布时间
     desc = '''
+        PHPWeb /page/html/company.php?id= SQL注入漏洞。
     '''  # 漏洞描述
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号

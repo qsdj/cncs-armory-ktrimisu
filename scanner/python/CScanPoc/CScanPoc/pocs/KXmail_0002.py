@@ -16,7 +16,7 @@ class Vuln(ABVuln):
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
     product = 'KXmail'  # 漏洞应用名称
-    product_version = 'KXmail'  # 漏洞应用版本
+    product_version = ''  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'a0aecb6d-f5ef-4fd9-97b1-55588e09fdc7'

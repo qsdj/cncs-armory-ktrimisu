@@ -6,7 +6,7 @@ import time
 
 class Vuln(ABVuln):
     vuln_id = 'ExtMail_0001' # 平台漏洞编号，留空
-    name = 'ExtMail 邮件系统sql注入漏洞'  # 漏洞名称
+    name = 'ExtMail 邮件系统sql注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2015-02-04'  # 漏洞公布时间
@@ -17,7 +17,7 @@ class Vuln(ABVuln):
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
     product = 'ExtMail'  # 漏洞应用名称
-    product_version = '*'  # 漏洞应用版本
+    product_version = ''  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '97b7f090-d7d3-4d8f-8bd8-56814188d342'

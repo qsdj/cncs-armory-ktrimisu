@@ -5,8 +5,8 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import time
 
 class Vuln(ABVuln):
-    vuln_id = 'PowerCMS_0001' # 平台漏洞编号，留空
-    name = '鼎维iPowerCMS建站CMS 万能密码漏洞'  # 漏洞名称
+    vuln_id = 'iPowerCMS_0001' # 平台漏洞编号，留空
+    name = '鼎维iPowerCMS建站CMS 万能密码'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.OTHER # 漏洞类型
     disclosure_date = '2015-04-28'  # 漏洞公布时间
@@ -16,8 +16,8 @@ class Vuln(ABVuln):
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = 'PowerCMS'  # 漏洞应用名称
-    product_version = '*'  # 漏洞应用版本
+    product = 'iPowerCMS'  # 漏洞应用名称
+    product_version = ''  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'f887725f-44e6-4f87-ada9-21041c904dde'

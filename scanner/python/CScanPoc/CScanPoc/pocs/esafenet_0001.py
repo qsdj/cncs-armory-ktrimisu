@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import time
 
 class Vuln(ABVuln):
-    vuln_id = 'esafenet_0001'  # 平台漏洞编号，留空
+    vuln_id = 'Esafenet_0001'  # 平台漏洞编号，留空
     name = '亿赛通数据泄露防护系统(DLP) SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

@@ -13,7 +13,7 @@ class Vuln(ABVuln):
     desc = '''
         PageAdmin可“伪造”VIEWSTATE从而执行任意SQL查询、可随意重置管理员密码
     ''' # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=061699' # 漏洞来源
+    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=061699
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
     product = 'PageAdmin'  # 漏洞应用名称

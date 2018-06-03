@@ -6,18 +6,18 @@ import re
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'npmaker_0000' # 平台漏洞编号，留空
-    name = 'npmaker数字报爆路径' # 漏洞名称
+    vuln_id = 'Npmaker_0000' # 平台漏洞编号，留空
+    name = 'Npmaker数字报爆路径' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
     disclosure_date = '2013-07-26'  # 漏洞公布时间
     desc = '''
-        npmaker数字报爆路径
+        Npmaker数字报爆路径
     ''' # 漏洞描述
     ref = 'https://www.2cto.com/article/201307/231014.html' # 漏洞来源
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
-    product = 'npmaker'  # 漏洞应用名称
+    product = 'Npmaker'  # 漏洞应用名称
     product_version = ''  # 漏洞应用版本
 
 

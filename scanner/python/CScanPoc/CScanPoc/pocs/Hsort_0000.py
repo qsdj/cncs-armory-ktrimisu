@@ -11,9 +11,10 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2015-12-2'  # 漏洞公布时间
     desc = '''
-        Hsort报刊管理系统getshell
+        Hsort报刊管理系统getshell.
+        /Admin/fileManage.aspx?action=UPLOAD&value1=~/
     ''' # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=0141695' # 漏洞来源
+    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0141695
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
     product = 'Hsort'  # 漏洞应用名称

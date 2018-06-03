@@ -12,12 +12,12 @@ class Vuln(ABVuln):
     type = VulnType.LFI # 漏洞类型
     disclosure_date = '2010-10-06'  # 漏洞公布时间
     desc = '''
-        攻击者通过此漏洞最终可以达到任意文件读取的效果。
+        Microsoft ASP.NET 攻击者通过此漏洞最终可以达到任意文件读取的效果。
     ''' # 漏洞描述
     ref = 'https://www.exploit-db.com/exploits/15213/' # https://www.exploit-db.com/exploits/15213/  https://docs.microsoft.com/en-us/security-updates/securitybulletins/2010/ms10-070
     cnvd_id = 'Unknown' # cnvd漏洞编号
     cve_id = 'CVE-2010-3332'  # cve编号
-    product = 'Microsoft ASP.NET'  # 漏洞组件名称
+    product = 'Microsoft'  # 漏洞组件名称
     product_version = 'Windows XP、Windows Server 2003、Windows Vista、Windows Server 2008、Windows Server 2008 R2、Windows 7'  # 漏洞应用版本
 
 class Poc(ABPoc):

@@ -18,7 +18,7 @@ class Vuln(ABVuln):
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
     product = 'FastMeeting'  # 漏洞应用名称
-    product_version = 'FastMeeting'  # 漏洞应用版本
+    product_version = ''  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'a897ff33-d686-4567-8092-62380609be67'

@@ -5,13 +5,13 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'mambo_0000' # 平台漏洞编号
-    name = 'mambo com_babackup Component <= 1.1 File Include Vulnerability' # 漏洞名称
+    vuln_id = 'Mambo_0000' # 平台漏洞编号
+    name = 'Mambo com_babackup Component <= 1.1 File Include Vulnerability' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.RFI # 漏洞类型
     disclosure_date = '2006-08-22'  # 漏洞公布时间
     desc = '''
-        mambo com_babackup Component <= 1.1版本存在远程文件包含漏洞。
+        Mambo com_babackup Component <= 1.1版本存在远程文件包含漏洞。
     ''' # 漏洞描述
     ref = 'https://www.seebug.org/vuldb/ssvid-63864' # 
     cnvd_id = 'CNVD-2006-6440' # cnvd漏洞编号

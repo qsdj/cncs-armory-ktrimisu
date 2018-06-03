@@ -4,20 +4,20 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'edusohoCMS_0001' # 平台漏洞编号，留空
-    name = 'edusohoCMS 敏感信息泄露'  # 漏洞名称
+    vuln_id = 'EduSohoCMS_0001' # 平台漏洞编号，留空
+    name = 'EduSohoCMS 敏感信息泄露'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
     disclosure_date = '2016-06-02'  # 漏洞公布时间
     desc = '''
-        edusohoCMS 两处敏感信息泄露。
+        EduSohoCMS 两处敏感信息泄露。
         /api/users/1/followings
         /api/users/1/friendship?toIds[]=a
     '''  # 漏洞描述
     ref = 'https://www.secpulse.com/archives/46292.html'  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = 'edusohoCMS'  # 漏洞应用名称
+    product = 'EduSohoCMS'  # 漏洞应用名称
     product_version = ''  # 漏洞应用版本
 
 class Poc(ABPoc):

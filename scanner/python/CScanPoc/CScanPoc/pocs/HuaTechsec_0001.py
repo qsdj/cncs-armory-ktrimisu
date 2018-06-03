@@ -15,8 +15,8 @@ class Vuln(ABVuln):
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = '中软华泰'  # 漏洞应用名称
-    product_version = '中软华泰某防火墙'  # 漏洞应用版本
+    product = '中软华泰防火墙'  # 漏洞应用名称
+    product_version = ''  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '55e11ac8-a257-4be9-b01f-54e42498385b'

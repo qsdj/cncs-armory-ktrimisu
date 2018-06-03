@@ -11,7 +11,7 @@ class Vuln(ABVuln):
     type = VulnType.RCE  # 漏洞类型
     disclosure_date = '2014-05-14'  # 漏洞公布时间
     desc = '''
-    ElasticSearch用的脚本引擎是MVEL，这个引擎没有做任何的防护，或者沙盒包装，所以直接可以执行任意代码。
+        ElasticSearch用的脚本引擎是MVEL，这个引擎没有做任何的防护，或者沙盒包装，所以直接可以执行任意代码。
     '''  # 漏洞描述
     ref = 'https://github.com/vulhub/vulhub/tree/master/elasticsearch/CVE-2014-3120'  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号

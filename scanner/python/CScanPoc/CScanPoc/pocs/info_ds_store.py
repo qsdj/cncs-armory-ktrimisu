@@ -4,18 +4,18 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'info_ds_store' # 平台漏洞编号，留空
+    vuln_id = 'Info_DS_Store' # 平台漏洞编号，留空
     name = '.DS_Store文件泄露' # 漏洞名称
     level = VulnLevel.LOW # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
     disclosure_date = ''  # 漏洞公布时间
     desc = '''
-    在发布代码钱未删除文件夹中隐藏的.DS_store文件,里面可能包含了某些铭感文件名等信息.
+        在发布代码钱未删除文件夹中隐藏的.DS_store文件,里面可能包含了某些铭感文件名等信息.
     ''' # 漏洞描述
     ref = '' # 漏洞来源
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
-    product = ''  # 漏洞应用名称
+    product = 'Info_DS_Store(.DS_Store文件泄露)'  # 漏洞应用名称
     product_version = ''  # 漏洞应用版本
 
 class Poc(ABPoc):

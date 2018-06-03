@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'insight_0000' # 平台漏洞编号，留空
+    vuln_id = 'Insight_0000' # 平台漏洞编号，留空
     name = '英赛特仓储管理系统互联网客户服务平台越权访问' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.MISCONFIGURATION # 漏洞类型
@@ -16,7 +16,7 @@ class Vuln(ABVuln):
     ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=0122207' # 漏洞来源
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
-    product = 'insight'  # 漏洞应用名称
+    product = 'Insight(英赛特仓储管理系统)'  # 漏洞应用名称
     product_version = ''  # 漏洞应用版本
 
 

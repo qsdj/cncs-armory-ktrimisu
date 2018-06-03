@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'info_shell' # 平台漏洞编号，留空
+    vuln_id = 'Info_shell' # 平台漏洞编号，留空
     name = '疑似webshell木马后门文件' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
@@ -15,7 +15,7 @@ class Vuln(ABVuln):
     ref = '' # 漏洞来源
     cnvd_id = '' #cnvd漏洞编号
     cve_id = '' #cve编号
-    product = ''  # 漏洞应用名称
+    product = 'Info_shell'  # 漏洞应用名称
     product_version = ''  # 漏洞应用版本
 
 class Poc(ABPoc):

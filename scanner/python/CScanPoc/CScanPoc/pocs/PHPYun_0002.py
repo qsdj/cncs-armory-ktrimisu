@@ -6,17 +6,17 @@ import urllib2
 
 class Vuln(ABVuln):
     vuln_id = 'PHPYun_0002' # 平台漏洞编号，留空
-    name = 'phpyun 2.5 /api/alipay/alipayto.php SQL注入漏洞'  # 漏洞名称
+    name = 'PHPYun 2.5 /api/alipay/alipayto.php SQL注入漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2014-06-10'  # 漏洞公布时间
     desc = '''
-        phpyun 2.5 在 /api/alipay/alipayto.php 中，提交POST[dingdan]参数存在SQL注入漏洞。
+        PHPYun 2.5 在 /api/alipay/alipayto.php 中，提交POST[dingdan]参数存在SQL注入漏洞。
     '''  # 漏洞描述
     ref = 'https://www.seebug.org/vuldb/ssvid-62513'  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = 'phpyun'  # 漏洞应用名称
+    product = 'PHPYun'  # 漏洞应用名称
     product_version = '2.5'  # 漏洞应用版本
 
 class Poc(ABPoc):

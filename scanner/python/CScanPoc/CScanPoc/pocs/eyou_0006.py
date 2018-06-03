@@ -8,14 +8,14 @@ import hashlib
 
 class Vuln(ABVuln):
     vuln_id = 'eYou_0006' # 平台漏洞编号，留空
-    name = 'eYou /sysinfo.html 信息泄漏漏洞' # 漏洞名称
+    name = 'eYou /sysinfo.html 信息泄漏' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2014-08-18'  # 漏洞公布时间
     desc = '''
         eYou /sysinfo.html 信息泄漏漏洞
     ''' # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=061538' # 漏洞来源
+    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=061538
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
     product = 'eYou'  # 漏洞应用名称

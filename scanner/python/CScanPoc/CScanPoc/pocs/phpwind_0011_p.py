@@ -5,8 +5,8 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
 class Vuln(ABVuln):
-    vuln_id = 'phpwind_0011_p' # 平台漏洞编号，留空
-    name = 'phpwind 8.3 /apps/group/admin/manage.php SQL注入漏洞'  # 漏洞名称
+    vuln_id = 'PHPWind_0011_p' # 平台漏洞编号，留空
+    name = 'PHPWind 8.3 /apps/group/admin/manage.php SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2011-03-10'  # 漏洞公布时间

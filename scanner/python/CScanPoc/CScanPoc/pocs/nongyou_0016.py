@@ -5,18 +5,19 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'nongyou_0016' # 平台漏洞编号，留空
+    vuln_id = 'Nongyou_0016' # 平台漏洞编号，留空
     name = '某农业廉洁系统存在SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2015-03-12'  # 漏洞公布时间
     desc = '''
-        某农业廉洁系统存在SQL注入
+        某农业廉洁系统存在SQL注入漏洞。
+        /ExtWebModels/WebFront/ShowNews.aspx?class=1&id=1
     ''' # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=086880' # 漏洞来源
+    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=086880
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
-    product = 'nongyou'  # 漏洞应用名称
+    product = 'Nongyou'  # 漏洞应用名称
     product_version = ''  # 漏洞应用版本
 
 

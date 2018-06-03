@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'gowinsoft_0000' # 平台漏洞编号，留空
+    vuln_id = 'Gowinsoft_0000' # 平台漏洞编号，留空
     name = '金窗教务系统存在多处SQL注射漏洞' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

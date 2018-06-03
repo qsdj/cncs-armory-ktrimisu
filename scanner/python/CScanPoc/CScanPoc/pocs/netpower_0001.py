@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'netpower_0001' # 平台漏洞编号，留空
+    vuln_id = 'Netpower_0001' # 平台漏洞编号，留空
     name = '中科网威防火墙 文件遍历'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_TRAVERSAL # 漏洞类型
@@ -15,8 +15,8 @@ class Vuln(ABVuln):
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = '中科网威'  # 漏洞应用名称
-    product_version = '中科网威防火墙'  # 漏洞应用版本
+    product = '中科网威防火墙'  # 漏洞应用名称
+    product_version = ''  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '73745102-3872-49c3-a1b2-dd2c21acf97a'

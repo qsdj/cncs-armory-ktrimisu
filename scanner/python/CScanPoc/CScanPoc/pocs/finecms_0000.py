@@ -6,18 +6,18 @@ import urllib,urllib2
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'finecms_0000' # 平台漏洞编号，留空
-    name = 'Finecms 2.3.0 /models/search_model.php SQL注入漏洞' # 漏洞名称
+    vuln_id = 'FineCMS_0000' # 平台漏洞编号，留空
+    name = 'FineCMS 2.3.0 /models/search_model.php SQL注入漏洞' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2014-05-23'  # 漏洞公布时间
     desc = '''
-        Finecms 2.3.0 /dayrui/models/Search_model.php文件中,catid没有过滤
+        FineCMS 2.3.0 /dayrui/models/Search_model.php文件中,catid没有过滤
     ''' # 漏洞描述
     ref = 'https://www.seebug.org/vuldb/ssvid-62681' # 漏洞来源
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
-    product = 'Finecms'  # 漏洞应用名称
+    product = 'FineCMS'  # 漏洞应用名称
     product_version = '2.3.0'  # 漏洞应用版本
 
 

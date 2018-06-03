@@ -4,12 +4,13 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'mop_0001' # 平台漏洞编号，留空
-    name = '猫扑OA登陆 SQL注射漏洞'  # 漏洞名称
+    vuln_id = 'Mop_0001' # 平台漏洞编号，留空
+    name = '猫扑OA登陆 SQL注射'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2015-05-22'  # 漏洞公布时间
     desc = '''
+        猫扑OA /inc/loginAjax.aspx 页面存在SQL注入漏洞。
     '''  # 漏洞描述
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号

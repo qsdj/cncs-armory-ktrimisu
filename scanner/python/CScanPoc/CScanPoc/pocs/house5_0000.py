@@ -5,18 +5,18 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'house5_0000' # 平台漏洞编号，留空
-    name = 'house5房产系统SQL注射影响大量网站' # 漏洞名称
+    vuln_id = 'House5_0000' # 平台漏洞编号，留空
+    name = 'House5房产系统SQL注射影响大量网站' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2015-08-28'  # 漏洞公布时间
     desc = '''
-        house5房产系统SQL注射影响大量网站
+        House5房产系统 /index.php?s=wap/index/tools&t=maplist&catid=1 SQL注射影响大量网站。
     ''' # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=0126625' # 漏洞来源
+    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0126625
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
-    product = 'house5'  # 漏洞应用名称
+    product = 'House5'  # 漏洞应用名称
     product_version = ''  # 漏洞应用版本
 
 

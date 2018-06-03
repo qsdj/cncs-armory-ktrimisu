@@ -6,18 +6,18 @@ import re
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'info_iis7' # 平台漏洞编号，留空
+    vuln_id = 'Info_IIS7' # 平台漏洞编号，留空
     name = 'IIS7以上物理路径泄露' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
     disclosure_date = '2015-05-05'  # 漏洞公布时间
     desc = '''
-        IIS7以上物理路径泄露
+        IIS7以上物理路径泄露。
     ''' # 漏洞描述
     ref = '' # 漏洞来源
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
-    product = 'IIS7'  # 漏洞应用名称
+    product = 'IIS'  # 漏洞应用名称
     product_version = ''  # 漏洞应用版本
 
 

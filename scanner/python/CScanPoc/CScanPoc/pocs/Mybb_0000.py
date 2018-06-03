@@ -7,18 +7,18 @@ import re
 import hashlib
 
 class Vuln(ABVuln):
-    vuln_id = 'Mybb_0000' # 平台漏洞编号，留空
-    name = 'Mybb <= 1.8.2  代码执行漏洞' # 漏洞名称
+    vuln_id = 'MyBB_0000' # 平台漏洞编号，留空
+    name = 'MyBB <= 1.8.2  代码执行漏洞' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型
     disclosure_date = ' 2014-11-22'  # 漏洞公布时间
     desc = '''
-        Mybb <= 1.8.2  代码执行漏洞
+        MyBB <= 1.8.2  代码执行漏洞
     ''' # 漏洞描述
     ref = 'https://www.exploit-db.com/exploits/35323/' # 漏洞来源
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
-    product = 'Mybb'  # 漏洞应用名称
+    product = 'MyBB'  # 漏洞应用名称
     product_version = '<=1.8.2'  # 漏洞应用版本
 
 

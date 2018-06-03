@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
     vuln_id = 'ExtMail_0002' # 平台漏洞编号，留空
-    name = 'ExtMail XSS漏洞'  # 漏洞名称
+    name = 'ExtMail XSS'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型
     disclosure_date = '2012-02-27'  # 漏洞公布时间
@@ -18,7 +18,7 @@ class Vuln(ABVuln):
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
     product = 'ExtMail'  # 漏洞应用名称
-    product_version = '*'  # 漏洞应用版本
+    product_version = ''  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'a46ee5af-3f3a-4aec-ba55-cd238e9fe2f7'

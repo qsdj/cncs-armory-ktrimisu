@@ -9,6 +9,8 @@ requests = "*"
 "enum34" = "*"
 "e1839a8" = {path = ".", editable = true}
 mysql-connector = "*"
+pymango = "*"
+pymongo = "*"
 
 [dev-packages]
 twine = "*"

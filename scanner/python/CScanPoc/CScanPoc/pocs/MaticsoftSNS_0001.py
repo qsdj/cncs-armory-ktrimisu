@@ -16,8 +16,8 @@ class Vuln(ABVuln):
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = '最土团购'  # 漏洞应用名称
-    product_version = '*'  # 漏洞应用版本
+    product = 'MaticsoftSNS'  # 漏洞应用名称
+    product_version = 'MaticsoftSNS 1.9版本'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '3d445b6e-a603-4aab-934f-c7bd96df8851'

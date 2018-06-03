@@ -16,7 +16,7 @@ class Vuln(ABVuln):
     ref = 'https://www.exploit-db.com/exploits/35239/' # 漏洞来源
     cnvd_id = '' # cnvd漏洞编号
     cve_id = 'CVE-2011-0645' #cve编号
-    product = 'phpcms'  # 漏洞应用名称
+    product = 'PHPCMS'  # 漏洞应用名称
     product_version = '2008 V2'  # 漏洞应用版本
 
 

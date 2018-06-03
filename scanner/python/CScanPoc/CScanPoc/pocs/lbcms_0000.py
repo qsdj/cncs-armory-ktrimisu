@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'lbcms_0000' # 平台漏洞编号，留空
+    vuln_id = 'LBCMS_0000' # 平台漏洞编号，留空
     name = 'LBCMS Sql Injection' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -13,7 +13,7 @@ class Vuln(ABVuln):
     desc = '''
         LBCMS Sql Injection
     ''' # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=0121366' # 漏洞来源
+    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0121366
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
     product = 'LBCMS'  # 漏洞应用名称

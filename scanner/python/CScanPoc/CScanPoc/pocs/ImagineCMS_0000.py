@@ -6,17 +6,17 @@ hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
     vuln_id = 'ImagineCMS_0000' # 平台漏洞编号，留空
-    name = 'Imagine-CMS links.php 注入漏洞' # 漏洞名称
+    name = 'ImagineCMS links.php 注入漏洞' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2010-07-21'  # 漏洞公布时间
     desc = '''
-        Imagine-cms 2.50 - SQL Injection
+        ImagineCMS 2.50 - SQL Injection
     ''' # 漏洞描述
     ref = 'https://www.exploit-db.com/exploits/14426/' # 漏洞来源
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
-    product = 'Imagine-CMS'  # 漏洞应用名称
+    product = 'ImagineCMS'  # 漏洞应用名称
     product_version = '2.50'  # 漏洞应用版本
 
 

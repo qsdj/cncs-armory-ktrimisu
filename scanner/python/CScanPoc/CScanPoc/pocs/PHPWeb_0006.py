@@ -6,12 +6,12 @@ hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
     vuln_id = 'PHPWeb_0006' # 平台漏洞编号，留空
-    name = 'phpweb伪静态页面注入' # 漏洞名称
+    name = 'PHPWeb伪静态页面注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2013-01-04'  # 漏洞公布时间
     desc = '''
-        phpweb伪静态页面注入
+        PHPWeb伪静态页面注入。
     ''' # 漏洞描述
     ref = 'http://www.myhack58.com/Article/html/3/62/2013/36562.htm' # 漏洞来源
     cnvd_id = '' # cnvd漏洞编号

@@ -18,7 +18,7 @@ class Vuln(ABVuln):
     ref = 'https://www.exploit-db.com/exploits/37424/'  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = 'Huawei Home Gateway'  # 漏洞应用名称
+    product = '华为路由器'  # 漏洞应用名称
     product_version = 'Huawei Home Gateway UPnP/1.0 IGD/1.00'  # 漏洞应用版本
 
 class Poc(ABPoc):

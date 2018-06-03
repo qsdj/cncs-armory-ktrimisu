@@ -6,7 +6,7 @@ import urllib2
 
 class Vuln(ABVuln):
     vuln_id = 'Newvane_0001' # 平台漏洞编号，留空
-    name = 'Newvane online exam 在线考试系统通用型任意文件上传漏洞'  # 漏洞名称
+    name = 'Newvane online exam 在线考试系统通用型任意文件上传'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_UPLOAD # 漏洞类型
     disclosure_date = '2015-04-17'  # 漏洞公布时间
@@ -16,8 +16,8 @@ class Vuln(ABVuln):
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = 'Newvane online exam'  # 漏洞应用名称
-    product_version = '*'  # 漏洞应用版本
+    product = 'Newvane(新风向在线考试系统)'  # 漏洞应用名称
+    product_version = 'Newvane online exam'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '41fcaff6-b252-45ac-98aa-48891f5dcd2f'

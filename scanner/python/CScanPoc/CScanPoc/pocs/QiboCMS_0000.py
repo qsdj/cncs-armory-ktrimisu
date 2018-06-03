@@ -18,8 +18,8 @@ class Vuln(ABVuln):
     ref = '' # 漏洞来源
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
-    product = 'Qibocms'  # 漏洞应用名称
-    product_version = '7'  # 漏洞应用版本
+    product = 'QiboCMS(齐博CMS)'  # 漏洞应用名称
+    product_version = 'v7'  # 漏洞应用版本
 
 
 class Poc(ABPoc):

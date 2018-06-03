@@ -17,8 +17,8 @@ class Vuln(ABVuln):
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = '汇文软件'  # 漏洞应用名称
-    product_version = '汇文图书管理系统'  # 漏洞应用版本
+    product = '汇文图书管理系统'  # 漏洞应用名称
+    product_version = ''  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'ea2fa4ea-f5ef-48b3-a24a-634d1fd479c7'

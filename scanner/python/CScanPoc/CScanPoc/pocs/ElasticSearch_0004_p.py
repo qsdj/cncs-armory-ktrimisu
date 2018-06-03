@@ -11,7 +11,7 @@ class Vuln(ABVuln):
     type = VulnType.FILE_TRAVERSAL  # 漏洞类型
     disclosure_date = '2015-07-21'  # 漏洞公布时间
     desc = '''
-    源于程序没有充分过滤用户提交的输入，远程攻击者可借助目录遍历字符‘..’利用该漏洞访问包含敏感信息的任意文件。
+        源于程序没有充分过滤用户提交的输入，远程攻击者可借助目录遍历字符‘..’利用该漏洞访问包含敏感信息的任意文件。
     '''  # 漏洞描述
     ref = 'https://github.com/vulhub/vulhub/tree/master/elasticsearch/CVE-2015-5531'  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号

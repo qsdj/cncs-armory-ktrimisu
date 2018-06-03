@@ -20,8 +20,8 @@ class Vuln(ABVuln):
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = '票友'  # 漏洞应用名称
-    product_version = '票友订票系统'  # 漏洞应用版本
+    product = 'PiaoYou(票友软件)'  # 漏洞应用名称
+    product_version = ''  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '2d15ba40-a29f-445e-b678-5fb87ed99e83'

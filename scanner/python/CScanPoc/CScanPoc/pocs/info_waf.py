@@ -6,7 +6,7 @@ import re
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'info_waf' # 平台漏洞编号，留空
+    vuln_id = 'Info_waf' # 平台漏洞编号，留空
     name = 'WAF检测' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
@@ -17,7 +17,7 @@ class Vuln(ABVuln):
     ref = '' # 漏洞来源
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
-    product = 'waf'  # 漏洞应用名称
+    product = 'Info_waf'  # 漏洞应用名称
     product_version = '1.0'  # 漏洞应用版本
 
 

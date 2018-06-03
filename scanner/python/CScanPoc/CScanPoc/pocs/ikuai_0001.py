@@ -4,18 +4,18 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'ikuai_0001' # 平台漏洞编号，留空
-    name = 'ikuai 弱口令，远程命令执行'  # 漏洞名称
+    vuln_id = 'iKuai_0001' # 平台漏洞编号，留空
+    name = 'iKuai(爱快系统) 弱口令，远程命令执行'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型
     disclosure_date = ''  # 漏洞公布时间
     desc = '''
-        爱快系统存在弱口令漏洞，以及远程代码执行漏洞。
+        iKuai(爱快系统)存在弱口令漏洞，以及远程代码执行漏洞。
     '''  # 漏洞描述
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = '爱快系统'  # 漏洞应用名称
+    product = 'iKuai(爱快系统)'  # 漏洞应用名称
     product_version = ''  # 漏洞应用版本
 
 class Poc(ABPoc):

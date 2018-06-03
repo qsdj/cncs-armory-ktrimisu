@@ -6,14 +6,17 @@ hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
     vuln_id = 'Hsort_0007' # 平台漏洞编号，留空
-    name = 'Hsort报刊管理系统SQL注入漏洞打包' # 漏洞名称
+    name = 'Hsort报刊管理系统SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2015-08-13'  # 漏洞公布时间
     desc = '''
-        Hsort报刊管理系统SQL注入漏洞打包
+        Hsort报刊管理系统SQL注入漏洞:
+        "/BlackNews.aspx?papername=1&qnum=1&pagenum=1&id=1",
+        "/BlackShow.aspx?paperName=1&qnum=1",
+        "/admin/B/ajax/showB1.aspx?paperName=%2527",
     ''' # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=0113030' # 漏洞来源
+    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0113030
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
     product = 'Hsort'  # 漏洞应用名称

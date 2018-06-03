@@ -16,8 +16,8 @@ class Vuln(ABVuln):
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = '京瓷'  # 漏洞应用名称
-    product_version = '京瓷打印机'  # 漏洞应用版本
+    product = '京瓷打印机'  # 漏洞应用名称
+    product_version = ''  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '4f7727cc-6162-4e9d-9fe9-4432c4f40abc'

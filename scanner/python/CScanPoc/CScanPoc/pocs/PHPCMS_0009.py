@@ -6,12 +6,12 @@ hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
     vuln_id = 'PHPCMS_0009' # 平台漏洞编号，留空
-    name = 'PHPCMS 搜索跨站脚本漏洞' # 漏洞名称
+    name = 'PHPCMS 搜索跨站脚本' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型
     disclosure_date = '2010-02-03'  # 漏洞公布时间
     desc = '''
-        PHPCMS 搜索跨站脚本漏洞
+        PHPCMS /search/?type= 搜索跨站脚本漏洞。
     ''' # 漏洞描述
     ref = 'https://www.seebug.org/vuldb/ssvid-19058' # 漏洞来源
     cnvd_id = '' # cnvd漏洞编号

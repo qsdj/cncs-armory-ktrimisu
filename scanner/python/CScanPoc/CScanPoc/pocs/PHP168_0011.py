@@ -12,6 +12,7 @@ class Vuln(ABVuln):
     type = VulnType.FILE_DOWNLOAD # 漏洞类型
     disclosure_date = ''  # 漏洞公布时间
     desc = '''
+        PHP168 /job.php 任意文件下载。
     '''  # 漏洞描述
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号

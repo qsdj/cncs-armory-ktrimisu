@@ -12,7 +12,7 @@ class Vuln(ABVuln):
     type = VulnType.LFI # 漏洞类型
     disclosure_date = '2012-07-25'  # 漏洞公布时间
     desc = '''
-        PHPCMS v9 /index.php 任意文件读取漏洞
+        PHPCMS v9 /index.php 任意文件读取漏洞。
     ''' # 漏洞描述
     ref = 'https://www.seebug.org/vuldb/ssvid-60295' # 漏洞来源
     cnvd_id = '' # cnvd漏洞编号

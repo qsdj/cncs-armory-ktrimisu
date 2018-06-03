@@ -5,18 +5,19 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
 class Vuln(ABVuln):
-    vuln_id = 'lianbangsoft_0002' # 平台漏洞编号，留空
+    vuln_id = 'LianbangSoft_0002' # 平台漏洞编号，留空
     name = '邯郸市连邦软件政府网上审批系统sql注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2015-06-28'  # 漏洞公布时间
     desc = '''
         邯郸市连邦软件政府网上审批系统sql注入漏洞。
+        workplate/base/org/WebUserList.aspx?id=
     '''  # 漏洞描述
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = '政府网上审批系统'  # 漏洞应用名称
+    product = '连邦软件'  # 漏洞应用名称
     product_version = ''  # 漏洞应用版本
 
 class Poc(ABPoc):

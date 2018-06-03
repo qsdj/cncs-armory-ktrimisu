@@ -6,14 +6,14 @@ hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
     vuln_id = 'PHPWeb_0000' # 平台漏洞编号，留空
-    name = 'PHPWeb SQL注入漏洞' # 漏洞名称
+    name = 'PHPWeb SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2015-08-08'  # 漏洞公布时间
     desc = '''
-        PHPWeb SQL注入漏洞
+        PHPWeb SQL注入漏洞。
     ''' # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=0121935' # 漏洞来源
+    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0121935
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
     product = 'PHPWeb'  # 漏洞应用名称

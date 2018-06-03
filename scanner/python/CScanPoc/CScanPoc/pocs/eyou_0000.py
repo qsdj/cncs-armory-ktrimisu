@@ -7,7 +7,7 @@ import re
 
 class Vuln(ABVuln):
     vuln_id = 'eYou_0000' # 平台漏洞编号，留空
-    name = 'eYou v3 /user/send_queue/listCollege.php 路径泄漏漏洞' # 漏洞名称
+    name = 'eYou v3 /user/send_queue/listCollege.php 路径泄漏' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
     disclosure_date = '2014-05-29'  # 漏洞公布时间

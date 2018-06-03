@@ -6,17 +6,20 @@ hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
     vuln_id = 'Huawei_0006' # 平台漏洞编号，留空
-    name = 'Huawei SEQ Analyst - XML External Entity Injection XML注入漏洞' # 漏洞名称
+    name = 'Huawei SEQ Analyst - XML External Entity Injection XML注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2015-04-15'  # 漏洞公布时间
     desc = '''
-        Huawei SEQ Analyst - XML External Entity Injection XML注入漏洞
+        SEQ Analyst is a platform for business quality monitoring and management by
+        individual user and multiple vendors in a quasi-realtime and retraceable manner.
+
+        Huawei SEQ Analyst - XML External Entity Injection XML注入漏洞。
     ''' # 漏洞描述
     ref = 'http://seclists.org/fulldisclosure/2015/Apr/42' # 漏洞来源
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
-    product = 'Huawei SEQ Analyst'  # 漏洞应用名称
+    product = '华为软件'  # 漏洞应用名称
     product_version = ''  # 漏洞应用版本
 
 

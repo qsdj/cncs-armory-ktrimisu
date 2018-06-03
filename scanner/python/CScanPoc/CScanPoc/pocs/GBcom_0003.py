@@ -17,8 +17,8 @@ class Vuln(ABVuln):
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = 'WLAN产品'  # 漏洞应用名称
-    product_version = '上海寰创运营商WLAN产品'  # 漏洞应用版本
+    product = '上海寰创运营商WLAN'  # 漏洞应用名称
+    product_version = ''  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'af612ee2-3fa7-425e-a3bd-ad0d9e8ff62f'

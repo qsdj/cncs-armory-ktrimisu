@@ -5,15 +5,16 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'iwms_0000' # 平台漏洞编号，留空
+    vuln_id = 'IWMS_0000' # 平台漏洞编号，留空
     name = 'IWMS系统后台绕过&整站删除' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
     disclosure_date = '2015-02-19'  # 漏洞公布时间
     desc = '''
-        IWMS系统后台绕过&整站删除
+        IWMS系统后台绕过&整站删除。
+        /Admin/pages/fileManager.aspx?bp=
     ''' # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=083888' # 漏洞来源
+    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=083888
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
     product = 'IWMS'  # 漏洞应用名称

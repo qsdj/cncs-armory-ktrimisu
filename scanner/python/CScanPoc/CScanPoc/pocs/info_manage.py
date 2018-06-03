@@ -4,18 +4,18 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'info_ manage' # 平台漏洞编号，留空
+    vuln_id = 'Info_Manage' # 平台漏洞编号，留空
     name = '管理后台地址暴露' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
     disclosure_date = ''  # 漏洞公布时间
     desc = '''
-    直接将Web后台的管理地址暴露在外面可能会被攻击者进行攻击利用,带来不安全因素.
+        直接将Web后台的管理地址暴露在外面可能会被攻击者进行攻击利用,带来不安全因素.
     ''' # 漏洞描述
     ref = '' # 漏洞来源
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
-    product = ''  # 漏洞应用名称
+    product = 'Info_Manage'  # 漏洞应用名称
     product_version = ''  # 漏洞应用版本
 
 class Poc(ABPoc):

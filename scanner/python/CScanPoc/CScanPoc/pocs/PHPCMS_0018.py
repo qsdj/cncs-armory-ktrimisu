@@ -11,9 +11,10 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2012-10-21'  # 漏洞公布时间
     desc = '''
-        PHPCMS V9 WAP模块注入漏洞
+        PHPCMS V9 WAP模块注入漏洞：
+        /index.php?m=wap&c=index&a=comment_list&commentid=content_12
     ''' # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=011818' # 漏洞来源
+    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=011818
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
     product = 'PHPCMS'  # 漏洞应用名称

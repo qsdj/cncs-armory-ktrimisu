@@ -7,17 +7,17 @@ hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
     vuln_id = 'MvMmall_00006' # 平台漏洞编号，留空
-    name = 'mvmmall网店商城系统注入漏洞' # 漏洞名称
+    name = 'MvMmall网店商城系统注入漏洞' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2011-03-27'  # 漏洞公布时间
     desc = '''
-        mvmmall网店商城系统注入漏洞
+        MvMmall网店商城系统注入漏洞。
     ''' # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=01732' # 漏洞来源
+    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=01732
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
-    product = 'mvmmall'  # 漏洞应用名称
+    product = 'MvMmall'  # 漏洞应用名称
     product_version = ''  # 漏洞应用版本
 
 

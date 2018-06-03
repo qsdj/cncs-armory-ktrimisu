@@ -13,12 +13,12 @@ class Vuln(ABVuln):
     disclosure_date = '2014-05-18'  # 漏洞公布时间
     desc = '''
         PHPCMS 9.5.3 /phpcms/modules/vote/classes/vote_tag.class.php 文件siteid变量可控
-需register_globals=on
+        需register_globals=on
     ''' # 漏洞描述
     ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=051077' # 漏洞来源
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
-    product = 'phpcms'  # 漏洞应用名称
+    product = 'PHPCMS'  # 漏洞应用名称
     product_version = '9.5.3'  # 漏洞应用版本
 
 

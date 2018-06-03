@@ -12,13 +12,13 @@ class Vuln(ABVuln):
     type = VulnType.LFI # 漏洞类型
     disclosure_date = '2013-02-03'  # 漏洞公布时间
     desc = '''
-        海康威视IVMS系列2.0 日志文件包含getshell
+        海康威视IVMS系列2.0 日志文件包含getshell.
     ''' # 漏洞描述
     ref = '' # 漏洞来源
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
     product = 'Hikvision'  # 漏洞应用名称
-    product_version = 'iVMS-4200 2.0'  # 漏洞应用版本
+    product_version = '海康威视IVMS系列2.0'  # 漏洞应用版本
 
 
 class Poc(ABPoc):

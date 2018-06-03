@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'hezhong_0000' # 平台漏洞编号，留空
+    vuln_id = 'Hezhong_0000' # 平台漏洞编号，留空
     name = '合众商道php系统通用注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -13,10 +13,10 @@ class Vuln(ABVuln):
     desc = '''
         合众商道php系统通用注入,支持联合查询。
     ''' # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=083434' # 漏洞来源
+    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=083434
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
-    product = '合众商道'  # 漏洞应用名称
+    product = '合众商道php系统'  # 漏洞应用名称
     product_version = ''  # 漏洞应用版本
 
 

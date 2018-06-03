@@ -4,18 +4,18 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'info_backup' # 平台漏洞编号，留空
+    vuln_id = 'Info_Backup' # 平台漏洞编号，留空
     name = '网站备份文件泄露' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
     disclosure_date = ''  # 漏洞公布时间
     desc = '''
-    网站运维管理人员有时候操作不当会将一些敏感文件甚至是网站备份文件放在网站的目录下,攻击者可以直接下载到这些数据,直接造成了网站的重要数据信息泄露.
+        网站运维管理人员有时候操作不当会将一些敏感文件甚至是网站备份文件放在网站的目录下,攻击者可以直接下载到这些数据,直接造成了网站的重要数据信息泄露.
     ''' # 漏洞描述
     ref = '' # 漏洞来源
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
-    product = ''  # 漏洞应用名称
+    product = 'Info_Backup(网站备份文件泄露)'  # 漏洞应用名称
     product_version = ''  # 漏洞应用版本
 
 class Poc(ABPoc):

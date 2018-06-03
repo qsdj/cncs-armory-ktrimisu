@@ -7,17 +7,17 @@ import urllib2
 
 class Vuln(ABVuln):
     vuln_id = 'Espcms_0001' # 平台漏洞编号，留空
-    name = 'Espcms v5.0 /index.php SQL注入漏洞'  # 漏洞名称
+    name = '易思CMS v5.0 /index.php SQL注入漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2013-03-13'  # 漏洞公布时间
     desc = '''
-        Espcms v5.0 /index.php，tagkey造成了注入。
+        EspCMS(易思CMS) v5.0 /index.php，tagkey造成了注入。
     '''  # 漏洞描述
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = 'Espcms'  # 漏洞应用名称
+    product = 'EspCMS(易思CMS)'  # 漏洞应用名称
     product_version = 'v5.0'  # 漏洞应用版本
 
 class Poc(ABPoc):

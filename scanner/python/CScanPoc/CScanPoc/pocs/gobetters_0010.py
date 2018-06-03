@@ -6,14 +6,15 @@ hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
     vuln_id = 'gobetters_0010' # 平台漏洞编号，留空
-    name = 'Gobetters视频会议系统post注入二' # 漏洞名称
+    name = 'Gobetters视频会议系统 post注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2015-11-19'  # 漏洞公布时间
     desc = '''
-        Gobetters视频会议系统post注入二
+        Gobetters视频会议系统post注入漏洞：
+        /web/users/usersave.php
     ''' # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=0134733' # 漏洞来源
+    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0134733
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
     product = 'Gobetters'  # 漏洞应用名称

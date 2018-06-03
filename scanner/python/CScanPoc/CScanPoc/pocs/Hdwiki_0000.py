@@ -6,17 +6,17 @@ hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
     vuln_id = 'Hdwiki_0000' # 平台漏洞编号，留空
-    name = 'hdwiki5.1 SQL注入漏洞' # 漏洞名称
+    name = 'Hdwiki5.1 SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2015-02-26'  # 漏洞公布时间
     desc = '''
-        hdwiki5.1 SQL注入漏洞s
+        Hdwiki5.1 SQL注入漏洞s
     ''' # 漏洞描述
     ref = 'http://0day5.com/archives/2978/' # 漏洞来源
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
-    product = 'hdwiki'  # 漏洞应用名称
+    product = 'Hdwiki'  # 漏洞应用名称
     product_version = '5.1'  # 漏洞应用版本
 
 

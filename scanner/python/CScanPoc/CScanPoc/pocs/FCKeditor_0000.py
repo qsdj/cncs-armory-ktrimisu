@@ -8,17 +8,17 @@ import hashlib
 
 class Vuln(ABVuln):
     vuln_id = 'FCKeditor_0000' # 平台漏洞编号，留空
-    name = 'fckeditor 2.6.4 %00截断任意文件上传漏洞' # 漏洞名称
+    name = 'FCKeditor 2.6.4 %00截断任意文件上传漏洞' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.FILE_UPLOAD # 漏洞类型
     disclosure_date = '2012-04-19'  # 漏洞公布时间
     desc = '''
-        fckeditor 2.6 版本有一个文件上传漏洞.
+        FCKeditorr 2.6 版本有一个文件上传漏洞.
     ''' # 漏洞描述
     ref = 'http://www.webshell.cc/3459.html' # 漏洞来源
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
-    product = 'fckeditor'  # 漏洞应用名称
+    product = 'FCKeditor'  # 漏洞应用名称
     product_version = '2.6.4'  # 漏洞应用版本
 
 

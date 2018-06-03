@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
     vuln_id = 'EnableQ_0001' # 平台漏洞编号，留空
-    name = 'EnableQ全版本通杀sql注入漏洞'  # 漏洞名称
+    name = 'EnableQ全版本 sql注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2014-12-23'  # 漏洞公布时间

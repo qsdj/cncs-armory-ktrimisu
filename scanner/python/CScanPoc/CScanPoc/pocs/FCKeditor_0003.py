@@ -11,7 +11,7 @@ class Vuln(ABVuln):
     type = VulnType.FILE_UPLOAD # 漏洞类型
     disclosure_date = ''  # 漏洞公布时间
     desc = '''
-        fckeditor upload.asp 文件为黑名单过滤, 可绕过上传。
+        FCKeditor upload.asp 文件为黑名单过滤, 可绕过上传。
     '''  # 漏洞描述
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号

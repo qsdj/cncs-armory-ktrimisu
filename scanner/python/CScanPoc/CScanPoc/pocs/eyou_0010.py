@@ -6,14 +6,14 @@ hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
     vuln_id = 'eYou_0009' # 平台漏洞编号，留空
-    name = ' eYou邮件系统问题搜索功能SQL注射漏洞' # 漏洞名称
+    name = ' eYou邮件系统问题搜索功能SQL注射' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2014-10-12'  # 漏洞公布时间
     desc = '''
         eYou邮件系统问题搜索功能SQL注射漏洞
     ''' # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=074260' # 漏洞来源
+    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=074260
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
     product = 'eYou'  # 漏洞应用名称

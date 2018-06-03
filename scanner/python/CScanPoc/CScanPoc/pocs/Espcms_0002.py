@@ -5,18 +5,18 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
 class Vuln(ABVuln):
-    vuln_id = 'Espcms_0002' # 平台漏洞编号，留空
-    name = 'Espcms v5.0 /wap/index.php SQL注入漏洞'  # 漏洞名称
+    vuln_id = 'EspCMS_0002' # 平台漏洞编号，留空
+    name = '易思CMS v5.0 /wap/index.php SQL注入漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2013-06-25'  # 漏洞公布时间
     desc = '''
-        Espcms v5.0 /wap/index.php，attr[jobnum]造成了注入。
+        EspCMS(易思CMS) v5.0 /wap/index.php，attr[jobnum]造成了注入。
     '''  # 漏洞描述
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = 'Espcms'  # 漏洞应用名称
+    product = 'EspCMS(易思CMS)'  # 漏洞应用名称
     product_version = 'v5.0'  # 漏洞应用版本
 
 class Poc(ABPoc):

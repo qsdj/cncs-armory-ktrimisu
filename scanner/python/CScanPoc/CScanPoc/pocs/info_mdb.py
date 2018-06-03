@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'info_mdb' # 平台漏洞编号，留空
+    vuln_id = 'Info_mdb' # 平台漏洞编号，留空
     name = '网站备份数据文件泄露' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
@@ -16,7 +16,7 @@ class Vuln(ABVuln):
     ref = '' # 漏洞来源
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
-    product = 'asp'  # 漏洞应用名称
+    product = 'Info_mdb'  # 漏洞应用名称
     product_version = ''  # 漏洞应用版本
 
 

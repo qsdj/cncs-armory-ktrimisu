@@ -6,18 +6,18 @@ import time
 
 class Vuln(ABVuln):
     vuln_id = 'Foosun_0002' # 平台漏洞编号，留空
-    name = '风讯cms /user/City_ajax.aspx sql注入'  # 漏洞名称
+    name = '风讯CMS /user/City_ajax.aspx sql注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2015-11-04'  # 漏洞公布时间
     desc = '''
-       风讯cms /user/City_ajax.aspx sql注入漏洞。
+       风讯CMS /user/City_ajax.aspx sql注入漏洞。
     '''  # 漏洞描述
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = '风讯'  # 漏洞应用名称
-    product_version = '风讯CMS'  # 漏洞应用版本
+    product = '风讯CMS'  # 漏洞应用名称
+    product_version = ''  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '0eb470ab-85d1-414d-b63c-ec9937b89d25'

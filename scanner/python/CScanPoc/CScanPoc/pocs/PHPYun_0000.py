@@ -8,14 +8,14 @@ hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
     vuln_id = 'PHPYun_0000' # 平台漏洞编号，留空
-    name = 'phpyun人才系统任意文件读取(XML实体注入)' # 漏洞名称
+    name = 'PHPYun人才系统任意文件读取(XML实体注入)' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2014-09-10'  # 漏洞公布时间
     desc = '''
-        phpyun人才系统任意文件读取(XML实体注入)
+        PHPYun人才系统任意文件读取(XML实体注入)。
     ''' # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=064637' # 漏洞来源
+    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=064637
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
     product = 'PHPYun'  # 漏洞应用名称

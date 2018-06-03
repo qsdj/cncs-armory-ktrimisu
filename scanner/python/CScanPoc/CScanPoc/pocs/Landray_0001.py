@@ -16,8 +16,8 @@ class Vuln(ABVuln):
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = '蓝凌'  # 漏洞应用名称
-    product_version = '蓝凌EIS智慧协同平台'  # 漏洞应用版本
+    product = '蓝凌EIS智慧协同平台'  # 漏洞应用名称
+    product_version = ''  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '4df7310a-b40b-444e-9bc5-bb3884b57f7a'

@@ -12,6 +12,7 @@ class Vuln(ABVuln):
     type = VulnType.RCE # 漏洞类型
     disclosure_date = '2015-04-07'  # 漏洞公布时间
     desc = '''
+        FineCMS /dayrui/libraries/Chart/ofc_upload_image.php 未做限制，可上传任意文件，getshell.
     '''  # 漏洞描述
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号

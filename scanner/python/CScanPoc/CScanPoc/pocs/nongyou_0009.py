@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'nongyou_0009' # 平台漏洞编号，留空
+    vuln_id = 'Nongyous_0009' # 平台漏洞编号，留空
     name = '农友政务系统再一处  sql注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -13,10 +13,10 @@ class Vuln(ABVuln):
     desc = '''
        村级重大事项及监委会建设监管系统 /ExtWebModels/WebFront/ShowLand.aspx?id=id参数 sql注入
     ''' # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=099433' # 漏洞来源
+    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=099433
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
-    product = 'nongyou'  # 漏洞应用名称
+    product = 'Nongyou'  # 漏洞应用名称
     product_version = ''  # 漏洞应用版本
 
 

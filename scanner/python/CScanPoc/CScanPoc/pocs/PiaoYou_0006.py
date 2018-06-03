@@ -11,12 +11,18 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2015-09-10'  # 漏洞公布时间
     desc = '''
-        票友机票预订系统通用SQL注入
+        票友机票预订系统多处通用SQL注入漏洞：
+        "/ser_Hotel/SearchList.aspx?CityCode=1%27",
+        "/visa/visa_view.aspx?a=11",
+        "/travel/Default.aspx?leixing=11",
+        "/hotel/Default.aspx?s=11",
+        "/travel/Default.aspx?ecity=%E4%B8%8A%E6%B5%B7&leixing=11",
+        "/hotel/Default.aspx?s=11", 
     ''' # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=0118867' # 漏洞来源
+    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0118867
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
-    product = 'PiaoYou'  # 漏洞应用名称
+    product = 'PiaoYou(票友软件)'  # 漏洞应用名称
     product_version = ''  # 漏洞应用版本
 
 

@@ -11,6 +11,8 @@ class Vuln(ABVuln):
     type = VulnType.RCE  # 漏洞类型
     disclosure_date = ''  # 漏洞公布时间
     desc = '''
+        JBoss 反序列化漏洞：
+        /invoker/JMXInvokerServlet
     '''  # 漏洞描述
     ref = 'https://foxglovesecurity.com/2015/11/06/what-do-weblogic-websphere-jboss-jenkins-opennms-and-your-application-have-in-common-this-vulnerability/'  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号

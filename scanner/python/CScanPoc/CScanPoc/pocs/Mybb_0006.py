@@ -7,7 +7,7 @@ import re
 import hashlib
 
 class Vuln(ABVuln):
-    vuln_id = 'Mybb_0006' # 平台漏洞编号，留空
+    vuln_id = 'MyBB_0006' # 平台漏洞编号，留空
     name = 'MyBB 1.6.5 suffers from a cross site scripting vulnerability' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型
@@ -18,7 +18,7 @@ class Vuln(ABVuln):
     ref = 'https://www.seebug.org/vuldb/ssvid-26119' # 漏洞来源
     cnvd_id = 'Unknown' # cnvd漏洞编号
     cve_id = 'Unknown' #cve编号
-    product = 'Mybb'  # 漏洞应用名称
+    product = 'MyBB'  # 漏洞应用名称
     product_version = '1.6.5'  # 漏洞应用版本
 
 

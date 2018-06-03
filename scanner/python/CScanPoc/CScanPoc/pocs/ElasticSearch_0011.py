@@ -12,6 +12,7 @@ class Vuln(ABVuln):
     type = VulnType.RCE # 漏洞类型
     disclosure_date = '2015-01-20'  # 漏洞公布时间
     desc = '''
+        ElasticSearch :9200/_search?source= 远程代码执行漏洞。
     '''  # 漏洞描述
     ref = 'http://javaweb.org/?p=1300'  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号

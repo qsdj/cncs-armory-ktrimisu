@@ -15,10 +15,10 @@ class Vuln(ABVuln):
     type = VulnType.OTHER # 漏洞类型
     disclosure_date = '2015-04-20'  # 漏洞公布时间
     desc = '''
-    ProFTPD <=1.3.5 mod_copy 未授权文件复制漏洞(CVE-2015-3306)
-    This candidate has been reserved by an organization or individual that will use it when announcing
-    a new security problem. When the candidate has been publicized, the details for this candidate will be
-    provided.
+        ProFTPD <=1.3.5 mod_copy 未授权文件复制漏洞(CVE-2015-3306)
+        This candidate has been reserved by an organization or individual that will use it when announcing
+        a new security problem. When the candidate has been publicized, the details for this candidate will be
+        provided.
     ''' # 漏洞描述
     ref = 'http://bugs.proftpd.org/show_bug.cgi?id=4169' # 漏洞来源
     cnvd_id = 'Unknown' # cnvd漏洞编号

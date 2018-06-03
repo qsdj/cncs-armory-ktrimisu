@@ -12,8 +12,8 @@ class Vuln(ABVuln):
     type = VulnType.XSS # 漏洞类型
     disclosure_date = '2014-10-08'  # 漏洞公布时间
     desc = '''
-    Mango Blog没有正确地过滤提交给archives.cfm/search页面的term参数便返回给了用户，
-    远程攻击者可以通过提交恶意参数请求执行跨站脚本攻击，导致在用户浏览器会话中执行任意HTML和脚本代码。
+        Mango Blog没有正确地过滤提交给archives.cfm/search页面的term参数便返回给了用户，
+        远程攻击者可以通过提交恶意参数请求执行跨站脚本攻击，导致在用户浏览器会话中执行任意HTML和脚本代码。
     ''' # 漏洞描述
     ref = 'http://sebug.net/vuldb/ssvid-87080'# 漏洞来源
     cnvd_id = 'Unknown' # cnvd漏洞编号

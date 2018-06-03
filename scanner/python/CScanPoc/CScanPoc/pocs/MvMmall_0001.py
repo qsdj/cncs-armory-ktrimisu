@@ -11,13 +11,13 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2011-03-27'  # 漏洞公布时间
     desc = '''
-        mvmmall网店商城系统最新注入0day问题出在搜索search.php这个文件上。
+        MvMmall网店商城系统最新注入0day问题出在搜索search.php这个文件上。
     '''  # 漏洞描述
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = 'mvmmall网店商城系统'  # 漏洞应用名称
-    product_version = 'mvmmall网店商城系统'  # 漏洞应用版本
+    product = 'MvMmall'  # 漏洞应用名称
+    product_version = 'MvMmall网店商城系统'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '251af4e4-e6e1-4626-8020-525b78eff4dc'

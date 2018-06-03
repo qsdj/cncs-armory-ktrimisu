@@ -5,18 +5,18 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
 class Vuln(ABVuln):
-    vuln_id = 'Kesioncms_0001' # 平台漏洞编号，留空
-    name = 'Kesion cms SQL注入'  # 漏洞名称
+    vuln_id = 'KesionCMS_0001' # 平台漏洞编号，留空
+    name = 'KesionCMS SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2015-03-24'  # 漏洞公布时间
     desc = '''
-        desion cms 方法为UnEscape()函数过滤混乱导致注入。
+        KesionCMS 方法为UnEscape()函数过滤混乱导致注入。
     '''  # 漏洞描述
     ref = 'http://www.phpfensi.com/cms/20150324/8831.html'  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = 'Kesion cms'  # 漏洞应用名称
+    product = 'KesionCMS'  # 漏洞应用名称
     product_version = ''  # 漏洞应用版本
 
 class Poc(ABPoc):

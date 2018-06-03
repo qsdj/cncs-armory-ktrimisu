@@ -5,19 +5,19 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'ESPCMS_0000' # 平台漏洞编号，留空
-    name = '易思(ESPCMS)开源企业网站管理系统SQL注入漏洞' # 漏洞名称
+    vuln_id = 'EspCMS_0000' # 平台漏洞编号，留空
+    name = '易思CMS开源企业网站管理系统SQL注入漏洞' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2013-03-08'  # 漏洞公布时间
     desc = '''
-        易思ESPCMS企业网站管理系统基于LAMP开发构建的企业网站管理系统。
+        EspCMS(易思CMS)企业网站管理系统基于LAMP开发构建的企业网站管理系统。
         漏洞主要存在于2个文件：interface/search.php 及 interface/3gwap_search.php 文件里的in_taglist()函数
     ''' # 漏洞描述
     ref = 'http://www.venustech.com.cn/NewsInfo/124/19066.Html' # 漏洞来源
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
-    product = 'ESPCMS'  # 漏洞应用名称
+    product = 'EspCMS(易思CMS)'  # 漏洞应用名称
     product_version = ''  # 漏洞应用版本
 
 

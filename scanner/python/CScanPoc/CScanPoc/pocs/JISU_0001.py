@@ -6,7 +6,7 @@ import urllib2
 
 class Vuln(ABVuln):
     vuln_id = 'JISU_0001' # 平台漏洞编号，留空
-    name = '台州市极速网络CMS /index.php 任意代码执行漏洞'  # 漏洞名称
+    name = '台州市极速网络CMS /index.php 任意代码执行'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型
     disclosure_date = '2014-11-13'  # 漏洞公布时间

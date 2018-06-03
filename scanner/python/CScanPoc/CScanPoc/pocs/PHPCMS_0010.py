@@ -11,12 +11,12 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = ''  # 漏洞公布时间
     desc = '''
-        PHPCMS authkey泄露可以导致一系列安全问题
+        PHPCMS authkey泄露可以导致一系列安全问题。
     ''' # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=0105242' # 漏洞来源
+    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0105242
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
-    product = '	phpcms'  # 漏洞应用名称
+    product = '	PHPCMS'  # 漏洞应用名称
     product_version = ''  # 漏洞应用版本
 
 

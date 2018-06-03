@@ -4,19 +4,19 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'haitianOA_0002' # 平台漏洞编号，留空
-    name = 'haitianOA系统 SQL注入'  # 漏洞名称
+    vuln_id = 'HaitianOA_0002' # 平台漏洞编号，留空
+    name = 'HaitianOA SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2014-05-23'  # 漏洞公布时间
     desc = '''
-        haitianOA系统 /loginverify.asp 参数过滤不完整，导致SQL注入漏洞。
+        HaitianOA系统 /loginverify.asp 参数过滤不完整，导致SQL注入漏洞。
     '''  # 漏洞描述
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = 'haitianOA'  # 漏洞应用名称
-    product_version = 'haitianOA系统'  # 漏洞应用版本
+    product = '海天OA'  # 漏洞应用名称
+    product_version = ''  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '95a4a90e-dd24-4d10-89be-cda3fe02f3b7'

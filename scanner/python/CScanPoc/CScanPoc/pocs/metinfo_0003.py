@@ -10,6 +10,8 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = ''  # 漏洞公布时间
     desc = '''
+        MetInfo SQL注入漏洞：
+        /MetInfo5.3/search/search.php
     '''  # 漏洞描述
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号

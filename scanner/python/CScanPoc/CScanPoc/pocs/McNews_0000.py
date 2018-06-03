@@ -12,6 +12,7 @@ class Vuln(ABVuln):
     disclosure_date = '2005-05-02'  # 漏洞公布时间
     desc = '''
         McNews 1.x Install.PHP文件存在远程文件包含漏洞。
+        /admin/install.php?l=http://baidu.com/robots.txt
     ''' # 漏洞描述
     ref = 'https://www.seebug.org/vuldb/ssvid-78899' # 
     cnvd_id = 'CNVD-2005-0665' # cnvd漏洞编号

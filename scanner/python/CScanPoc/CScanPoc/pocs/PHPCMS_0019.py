@@ -7,17 +7,18 @@ hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
     vuln_id = 'PHPCMS_0019' # 平台漏洞编号，留空
-    name = 'phpcms V9最新任意读文件漏洞' # 漏洞名称
+    name = 'PHPCMS V9最新任意读文件' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型
     disclosure_date = '2012-07-23'  # 漏洞公布时间
     desc = '''
-        phpcms V9最新任意读文件漏洞
+        PHPCMS V9最新任意读文件漏洞。
+        /index.php?m=search&c=index&a=public_get_suggest_keyword&url=asdf&q=
     ''' # 漏洞描述
     ref = 'https://www.2cto.com/article/201207/142839.html' # 漏洞来源
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
-    product = 'phpcms'  # 漏洞应用名称
+    product = 'PHPCMS'  # 漏洞应用名称
     product_version = 'V9'  # 漏洞应用版本
 
 

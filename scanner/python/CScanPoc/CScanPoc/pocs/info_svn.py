@@ -4,18 +4,18 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'info_svn' # 平台漏洞编号，留空
-    name = 'Svn 源码泄露' # 漏洞名称
+    vuln_id = 'Info_SVN' # 平台漏洞编号，留空
+    name = 'SVN 源码泄露' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
     disclosure_date = ''  # 漏洞公布时间
     desc = '''
-    当前大量开发人员使用svn进行版本控制，对站点自动部署。如果配置不当，可能会将.svn文件夹直接部署到线上环境。这就引起了svn泄露漏洞。
+        当前大量开发人员使用svn进行版本控制，对站点自动部署。如果配置不当，可能会将.svn文件夹直接部署到线上环境。这就引起了svn泄露漏洞。
     ''' # 漏洞描述
     ref = '' # 漏洞来源
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
-    product = ''  # 漏洞应用名称
+    product = 'Info_SVN'  # 漏洞应用名称
     product_version = ''  # 漏洞应用版本
 
 class Poc(ABPoc):

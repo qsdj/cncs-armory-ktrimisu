@@ -18,7 +18,7 @@ class Vuln(ABVuln):
     ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=02955' # 漏洞来源
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
-    product = 'EMLOG'  # 漏洞应用名称
+    product = 'Emlog'  # 漏洞应用名称
     product_version = '<4.2.1'  # 漏洞应用版本
 
 

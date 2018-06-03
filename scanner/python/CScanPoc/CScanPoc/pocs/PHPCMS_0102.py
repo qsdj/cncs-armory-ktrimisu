@@ -12,7 +12,7 @@ class Vuln(ABVuln):
     type = VulnType.INFO_LEAK # 漏洞类型
     disclosure_date = '2015-07-17'  # 漏洞公布时间
     desc = '''
-    PHPCMS V9 /api.php Authkey 信息泄漏漏洞。
+        PHPCMS V9 /api.php Authkey 信息泄漏漏洞。
     ''' # 漏洞描述
     ref = 'Unknown' # 漏洞来源
     cnvd_id = 'Unknown' # cnvd漏洞编号

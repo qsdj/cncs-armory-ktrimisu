@@ -5,13 +5,15 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'gobetters_0007' # 平台漏洞编号，留空
-    name = 'Gobetters视频会议系统SQL注入漏洞三' # 漏洞名称
+    vuln_id = 'Gobetters_0007' # 平台漏洞编号，留空
+    name = 'Gobetters视频会议系统 SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2015-11-19'  # 漏洞公布时间
     desc = '''
         Gobetters视频会议系统SQL注入漏洞三，危害比较大，可以直接写Shell。
+        /web/server/serverstart.php?machineid=1
+        /web/systemconfig/guangboinfo.php?id=1
     ''' # 漏洞描述
     ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=0134733' # 漏洞来源
     cnvd_id = '' # cnvd漏洞编号

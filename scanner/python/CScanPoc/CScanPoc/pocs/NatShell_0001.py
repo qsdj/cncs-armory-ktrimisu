@@ -16,8 +16,8 @@ class Vuln(ABVuln):
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = 'NatShell宽带认证计费系统'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product = 'NatShell'  # 漏洞应用名称
+    product_version = 'NatShell宽带认证计费系统'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'a0a1c063-30d7-4ced-bfe0-1e4b796d1d30'

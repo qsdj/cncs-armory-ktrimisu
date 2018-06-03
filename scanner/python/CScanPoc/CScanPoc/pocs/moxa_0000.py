@@ -5,13 +5,13 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'moxa_0000' # 平台漏洞编号，留空
+    vuln_id = 'Moxa_0000' # 平台漏洞编号，留空
     name = 'Moxa NPorts web console! 未授权访问' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.MISCONFIGURATION # 漏洞类型
     disclosure_date = '2017-12-21'  # 漏洞公布时间
     desc = '''
-        Moxa NPort's web console! 未授权访问
+        Moxa NPort's web console! 未授权访问。
     ''' # 漏洞描述
     ref = 'https://nvd.nist.gov/vuln/detail/CVE-2017-16727' # 漏洞来源
     cnvd_id = '' # cnvd漏洞编号

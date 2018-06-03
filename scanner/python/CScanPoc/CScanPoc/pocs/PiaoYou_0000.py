@@ -5,18 +5,20 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'piaoyou_0000' # 平台漏洞编号，留空
+    vuln_id = 'PiaoYou_0000' # 平台漏洞编号，留空
     name = '票友票务系统通用sql注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2015-10-24'  # 漏洞公布时间
     desc = '''
-        票友票务系统通用sql注入
+        票友票务系统通用sql注入漏洞：
+        newslist.aspx?newsid=1or/**/1=convert
+        news_view.aspx?id=1or/**/1=convert
     ''' # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=0128207' # 漏洞来源
+    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0128207
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
-    product = 'piaoyou'  # 漏洞应用名称
+    product = 'PiaoYou(票友软件)'  # 漏洞应用名称
     product_version = ''  # 漏洞应用版本
 
 

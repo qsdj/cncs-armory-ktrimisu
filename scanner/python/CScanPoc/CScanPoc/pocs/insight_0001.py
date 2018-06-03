@@ -4,13 +4,13 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'insight_0001' # 平台漏洞编号，留空
+    vuln_id = 'Insight_0001' # 平台漏洞编号，留空
     name = 'insight仓储管理系统 信息泄露'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
     disclosure_date = '2015-08-01'  # 漏洞公布时间
     desc = '''
-        insight仓储管理系统
+        Insight仓储管理系统
         /gjdcx/ljsz.asp
         /gjdcx/yhgl.asp
         信息泄露。
@@ -18,8 +18,8 @@ class Vuln(ABVuln):
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = '英赛特软件'  # 漏洞应用名称
-    product_version = '英赛特仓储管理系统'  # 漏洞应用版本
+    product = 'Insight(英赛特仓储管理系统)'  # 漏洞应用名称
+    product_version = ''  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'ae0f00bf-0873-4b91-a8cd-46a8a874ce1e'

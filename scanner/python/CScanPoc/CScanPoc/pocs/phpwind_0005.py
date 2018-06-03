@@ -6,18 +6,18 @@ import md5
 import urllib2
 
 class Vuln(ABVuln):
-    vuln_id = 'phpwind_0005' # 平台漏洞编号，留空
-    name = 'phpwind 9.0 貝塔 反射XSS漏洞 POC'  # 漏洞名称
-    level = VulnLevel.HIGH  # 漏洞危害级别
+    vuln_id = 'PHPWind_0005' # 平台漏洞编号，留空
+    name = 'PHPWind 9.0 貝塔 反射XSS'  # 漏洞名称
+    level = VulnLevel.LOW  # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型
     disclosure_date = '2012-09-14'  # 漏洞公布时间
     desc = '''
-        漏洞文件：index.php
+        漏洞文件：index.php.
     '''  # 漏洞描述
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = 'phpwind'  # 漏洞应用名称
+    product = 'PHPWind'  # 漏洞应用名称
     product_version = '9.0'  # 漏洞应用版本
 
 class Poc(ABPoc):

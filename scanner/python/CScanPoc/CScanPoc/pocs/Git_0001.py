@@ -16,8 +16,8 @@ class Vuln(ABVuln):
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = 'git'  # 漏洞应用名称
-    product_version = 'git'  # 漏洞应用版本
+    product = 'Git'  # 漏洞应用名称
+    product_version = ''  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'c5ce7a4e-bc7e-4541-8faa-5fbdce14abec'

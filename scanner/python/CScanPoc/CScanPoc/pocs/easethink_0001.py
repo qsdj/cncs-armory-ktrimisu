@@ -4,17 +4,18 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'easethink_0001' # 平台漏洞编号，留空
-    name = '易想团购系统KOOCIES注入'  # 漏洞名称
+    vuln_id = 'Easethink_0001' # 平台漏洞编号，留空
+    name = '易想团购系统 cookies注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2014-08-12'  # 漏洞公布时间
     desc = '''
+        Easethink(易想团购管理系统)/index.php 存在cookies注入漏洞。
     '''  # 漏洞描述
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = '易想团购系统'  # 漏洞应用名称
+    product = 'Easethink(易想团购管理系统)'  # 漏洞应用名称
     product_version = ''  # 漏洞应用版本
 
 class Poc(ABPoc):

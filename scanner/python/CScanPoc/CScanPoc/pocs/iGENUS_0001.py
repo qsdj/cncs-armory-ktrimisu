@@ -15,8 +15,8 @@ class Vuln(ABVuln):
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = '爱琴思邮件系统'  # 漏洞应用名称
-    product_version = '爱琴思邮件系统'  # 漏洞应用版本
+    product = 'iGENUS(爱琴思邮件系统)'  # 漏洞应用名称
+    product_version = ''  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '8ffdc1e7-d80f-4384-a1b5-d7ba22a9f97e'

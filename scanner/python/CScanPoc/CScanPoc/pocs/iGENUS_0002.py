@@ -10,13 +10,13 @@ class Vuln(ABVuln):
     type = VulnType.FILE_TRAVERSAL  # 漏洞类型
     disclosure_date = ''  # 漏洞公布时间
     desc = '''
-        Lang存在遍历，%00截断。
+        iGENUS(爱琴思邮件系统) Lang存在遍历，%00截断。
     '''  # 漏洞描述
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = '爱琴思邮件系统'  # 漏洞应用名称
-    product_version = '爱琴思邮件系统'  # 漏洞应用版本
+    product = 'iGENUS(爱琴思邮件系统)'  # 漏洞应用名称
+    product_version = ''  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'c2a0d475-2ae2-4b2c-b9df-7c94f3221fc8'

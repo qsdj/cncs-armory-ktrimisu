@@ -6,18 +6,18 @@ import urllib,urllib2
 import hashlib
 
 class Vuln(ABVuln):
-    vuln_id = 'emlog_0000' # 平台漏洞编号，留空
-    name = 'Emlog 5.3.1 /include/lib/js/uploadify/uploadify.swf 跨站脚本漏洞' # 漏洞名称
+    vuln_id = 'Emlog_0000' # 平台漏洞编号，留空
+    name = 'Emlog 5.3.1 /include/lib/js/uploadify/uploadify.swf XSS' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型
     disclosure_date = '2014-10-26'  # 漏洞公布时间
     desc = '''
-        emblog include/lib/js/uploadify/uploadify.swf文件存在FlashXss漏洞。
+        Emlog include/lib/js/uploadify/uploadify.swf文件存在FlashXss漏洞。
     ''' # 漏洞描述
     ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=069818' # 漏洞来源
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
-    product = 'emblog'  # 漏洞应用名称
+    product = 'Emlog'  # 漏洞应用名称
     product_version = '5.3.1'  # 漏洞应用版本
 
 

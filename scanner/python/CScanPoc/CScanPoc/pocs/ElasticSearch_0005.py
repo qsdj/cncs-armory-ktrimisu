@@ -11,7 +11,7 @@ class Vuln(ABVuln):
     type = VulnType.OTHER  # 漏洞类型
     disclosure_date = '2015-05-14'  # 漏洞公布时间
     desc = '''
-        elasticsearch在安装了river之后可以同步多种数据库数据（包括关系型的mysql、mongodb等）。
+        ElasticSearch在安装了river之后可以同步多种数据库数据（包括关系型的mysql、mongodb等）。
     '''  # 漏洞描述
     ref = 'https://www.cnblogs.com/xiaozi/p/8275201.html'  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号

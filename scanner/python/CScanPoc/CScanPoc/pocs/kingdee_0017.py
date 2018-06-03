@@ -12,7 +12,7 @@ class Vuln(ABVuln):
     type = VulnType.LFI # 漏洞类型
     disclosure_date = '2015-05-10'  # 漏洞公布时间
     desc = '''
-        金蝶EAS任意文件读取
+        金蝶EAS任意文件读取。
     '''  # 漏洞描述
     ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=096179'  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号

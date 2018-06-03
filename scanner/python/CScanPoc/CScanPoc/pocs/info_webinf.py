@@ -4,18 +4,18 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'info_webinf' # 平台漏洞编号，留空
+    vuln_id = 'Info_webinf' # 平台漏洞编号，留空
     name = 'WEB/INF/web.xml 文件泄露' # 漏洞名称
     level = VulnLevel.LOW # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
     disclosure_date = ''  # 漏洞公布时间
     desc = '''
-    WEB-INF是Java的Web应用的安全目录,如果没有配置得到可以被外部直接访问到的话,有造成敏感信息泄露的风险.
-        ''' # 漏洞描述
+        WEB-INF是Java的Web应用的安全目录,如果没有配置得到可以被外部直接访问到的话,有造成敏感信息泄露的风险.
+    ''' # 漏洞描述
     ref = '' # 漏洞来源
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
-    product = ''  # 漏洞应用名称
+    product = 'Info_webinf'  # 漏洞应用名称
     product_version = ''  # 漏洞应用版本
 
 class Poc(ABPoc):

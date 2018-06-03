@@ -6,18 +6,24 @@ import re
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'pkpmbs_0019' # 平台漏洞编号，留空
-    name = 'PKPMBS工程质量监督站信息管理系统5处SQL注入打包' # 漏洞名称
+    vuln_id = 'PKPMBS_0019' # 平台漏洞编号，留空
+    name = 'PKPMBS工程质量监督站信息管理系统5处SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2015-09-20'  # 漏洞公布时间
     desc = '''
-        PKPMBS工程质量监督站信息管理系统5处SQL注入打包
+        PKPMBS工程质量监督站信息管理系统5处SQL注入漏洞：
+        "/pkpmbs/jdmanage/TJdSgyuanList.aspx",
+        "/pkpmbs/jdmanage/TJdShejidanweiList.aspx",
+        "/pkpmbs/jdmanage/TJdShentudanweiList.aspx",
+        "/pkpmbs/jdmanage/TJdShigongdanweiList.aspx",
+        "/pkpmbs/jdmanage/TJdXmjlList.aspx",
+        "/pKPMBS/portal/MsgList.aspx"       
     ''' # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=0121058' # 漏洞来源
+    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0121058
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
-    product = 'pkpmbs'  # 漏洞应用名称
+    product = 'PKPMBS'  # 漏洞应用名称
     product_version = ''  # 漏洞应用版本
 
 

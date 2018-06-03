@@ -8,7 +8,7 @@ import time
 
 class Vuln(ABVuln):
     vuln_id = 'JLYKT_0000' # 平台漏洞编号，留空
-    name = '金龙卡金融化一卡通校园卡查询系统任意文件上传 漏洞' # 漏洞名称
+    name = '金龙卡金融化一卡通校园卡查询系统任意文件上传' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.FILE_UPLOAD  # 漏洞类型
     disclosure_date = '2014-12-10'  # 漏洞公布时间

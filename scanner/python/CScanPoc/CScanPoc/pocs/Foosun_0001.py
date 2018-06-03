@@ -15,8 +15,8 @@ class Vuln(ABVuln):
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = '风讯'  # 漏洞应用名称
-    product_version = '风讯CMS'  # 漏洞应用版本
+    product = '风讯CMS'  # 漏洞应用名称
+    product_version = ''  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '58ec2f03-2801-46bd-b779-97917177d661'

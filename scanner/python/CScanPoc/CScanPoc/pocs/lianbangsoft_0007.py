@@ -5,18 +5,19 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'lianbangsoft_0007' # 平台漏洞编号，留空
-    name = '行政审批系统越权三' # 漏洞名称
+    vuln_id = 'LianbangSoft_0007' # 平台漏洞编号，留空
+    name = '行政审批系统越权' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.OTHER # 漏洞类型
     disclosure_date = '2015-10-22'  # 漏洞公布时间
     desc = '''
-        行政审批系统越权三
+        邯郸连邦软件行政审批系统越权：
+        /workplate/xzsp/kqgl/kqsz/kqsz.aspx
     ''' # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=0126218' # 漏洞来源
+    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0126218
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
-    product = 'lianbangsoft'  # 漏洞应用名称
+    product = '连邦软件'  # 漏洞应用名称
     product_version = ''  # 漏洞应用版本
 
 

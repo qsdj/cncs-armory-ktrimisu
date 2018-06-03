@@ -11,7 +11,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2014-11-30'  # 漏洞公布时间
     desc = '''
-        PHPCMS 2007 /digg_add.php SQL注入
+        PHPCMS 2007 /digg_add.php SQL注入漏洞。
     ''' # 漏洞描述
     ref = 'http://vul.1aq.com/index.php/vul/JDSEC-POC-20141129-4654' # 漏洞来源
     cnvd_id = '' # cnvd漏洞编号

@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'infosea_0014' # 平台漏洞编号，留空
+    vuln_id = 'Infosea_0014' # 平台漏洞编号，留空
     name = '北京清大新洋图书检索系统 任意文件下载'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型

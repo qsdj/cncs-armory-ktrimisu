@@ -12,7 +12,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2014-11-30'  # 漏洞公布时间
     desc = '''
-    PHPCMS 2007 /digg_add.php mod参数未过滤带入sql语句导致SQL注入。
+        PHPCMS 2007 /digg_add.php mod参数未过滤带入sql语句导致SQL注入。
     ''' # 漏洞描述
     ref = 'Unknown', # 漏洞来源
     cnvd_id = 'Unknown' # cnvd漏洞编号

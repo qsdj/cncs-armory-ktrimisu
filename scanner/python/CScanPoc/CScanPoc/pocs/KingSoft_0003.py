@@ -17,7 +17,7 @@ class Vuln(ABVuln):
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
     product = '金山软件'  # 漏洞应用名称
-    product_version = '金山KingGate防火墙'  # 漏洞应用版本
+    product_version = ''  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '6a3b6ebe-4dc4-4957-8c53-b745e866737a'

@@ -17,7 +17,7 @@ class Vuln(ABVuln):
     ref = 'http://vul.jdsec.com/index.php/vul/JDSEC-POC-20141129-4547'  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = 'PHPCMS 2008'  # 漏洞应用名称
+    product = 'PHPCMS'  # 漏洞应用名称
     product_version = 'PHPCMS 2008'  # 漏洞应用版本
 
 class Poc(ABPoc):

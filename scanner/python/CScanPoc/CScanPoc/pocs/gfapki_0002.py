@@ -6,7 +6,7 @@ import re
 import random
 
 class Vuln(ABVuln):
-    vuln_id = 'gfakpi_0002' # 平台漏洞编号，留空
+    vuln_id = 'Gfapki_0002' # 平台漏洞编号，留空
     name = '国富安应用安全网关任意添加管理员'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型
@@ -18,7 +18,7 @@ class Vuln(ABVuln):
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = '应用安全网关'  # 漏洞应用名称
+    product = '国富安应用安全网关'  # 漏洞应用名称
     product_version = ''  # 漏洞应用版本
 
 class Poc(ABPoc):

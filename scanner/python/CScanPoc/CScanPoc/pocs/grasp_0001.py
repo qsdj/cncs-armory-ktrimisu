@@ -4,20 +4,20 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'grasp_0001' # 平台漏洞编号，留空
+    vuln_id = 'Grasp_0001' # 平台漏洞编号，留空
     name = '任我行ECT SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2015-04-01'  # 漏洞公布时间
     desc = '''
-        任我行ECT存在SQL注入漏洞（无需登录）。
+        成都任我行软件管家婆ECT存在SQL注入漏洞（无需登录）。
         /VerifyUser.asp
     '''  # 漏洞描述
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = '任我行ECT'  # 漏洞应用名称
-    product_version = '任我行ECT'  # 漏洞应用版本
+    product = '管家婆ECT'  # 漏洞应用名称
+    product_version = ''  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '88197004-a3ca-4642-a66a-04af2197b60e'

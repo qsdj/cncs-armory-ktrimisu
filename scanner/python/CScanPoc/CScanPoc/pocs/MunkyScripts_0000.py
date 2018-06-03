@@ -16,8 +16,8 @@ class Vuln(ABVuln):
     ref = 'https://www.seebug.org/vuldb/ssvid-68151' # 
     cnvd_id = 'Unknown' # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
-    product = 'MunkyScripts Simple Gallery'  # 漏洞组件名称
-    product_version = 'Unknown'  # 漏洞应用版本
+    product = 'MunkyScripts'  # 漏洞组件名称
+    product_version = 'MunkyScripts Simple Gallery'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'c77db581-9e44-45fd-bcab-d385d8ce09da' # 平台 POC 编号

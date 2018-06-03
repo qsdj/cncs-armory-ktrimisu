@@ -4,17 +4,18 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'es-cloud_0002' # 平台漏洞编号，留空
-    name = '移商网 SQL注入漏洞'  # 漏洞名称
+    vuln_id = 'Es-Cloud_0002' # 平台漏洞编号，留空
+    name = '移商网 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = ''  # 漏洞公布时间
     desc = '''
+        移商网某系统两处SQL注入漏洞。 /Easy/Login.aspx','/Easy/Login2.aspx'
     '''  # 漏洞描述
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = ''  # 漏洞应用名称
+    product = '移商网'  # 漏洞应用名称
     product_version = ''  # 漏洞应用版本
 
 class Poc(ABPoc):

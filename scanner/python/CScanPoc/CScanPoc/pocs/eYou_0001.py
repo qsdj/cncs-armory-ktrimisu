@@ -6,7 +6,7 @@ import urllib2
 
 class Vuln(ABVuln):
     vuln_id = 'eYou_0001' # 平台漏洞编号，留空
-    name = 'eYou v4 /php/report/include/config.inc 信息泄露漏洞'  # 漏洞名称
+    name = 'eYou v4 /php/report/include/config.inc 信息泄露'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
     disclosure_date = '2014-04-25'  # 漏洞公布时间

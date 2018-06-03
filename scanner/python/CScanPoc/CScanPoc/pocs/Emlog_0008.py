@@ -7,12 +7,12 @@ hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
     vuln_id = 'Emlog_0008' # 平台漏洞编号，留空
-    name = 'emlog博客前台反射型XSS(无视浏览器filter)' # 漏洞名称
+    name = 'Emlog博客前台反射型XSS(无视浏览器filter)' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型
     disclosure_date = '2014-10-26'  # 漏洞公布时间
     desc = '''
-        emlog博客前台反射型XSS(无视浏览器filter)
+        Emlog博客前台反射型XSS(无视浏览器filter)
     ''' # 漏洞描述
     ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=69818' # 漏洞来源
     cnvd_id = '' # cnvd漏洞编号

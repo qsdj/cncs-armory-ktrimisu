@@ -13,7 +13,7 @@ class Vuln(ABVuln):
     type = VulnType.INFO_LEAK # 漏洞类型
     disclosure_date = '2014-10-27'  # 漏洞公布时间
     desc = '''
-    The functions in the global.func.php can not handle with array,so it raise an error.
+        The functions in the global.func.php can not handle with array,so it raise an error.
     ''' # 漏洞描述
     ref = 'Unknown' # 漏洞来源
     cnvd_id = 'Unknown' # cnvd漏洞编号

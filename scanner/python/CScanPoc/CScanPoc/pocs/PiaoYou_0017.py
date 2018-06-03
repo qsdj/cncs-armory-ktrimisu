@@ -11,12 +11,13 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2015-10-27'  # 漏洞公布时间
     desc = '''
-        票友系统一处通用SQL注入
+        票友系统一处通用SQL注入漏洞：
+        /flight/view_xz.aspx?a=1+and+1=
     ''' # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=0128323' # 漏洞来源
+    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0128323
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
-    product = 'piaoyou'  # 漏洞应用名称
+    product = 'PiaoYou(票友软件)'  # 漏洞应用名称
     product_version = ''  # 漏洞应用版本
 
 
