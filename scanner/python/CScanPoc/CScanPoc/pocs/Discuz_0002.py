@@ -6,7 +6,7 @@ import re
 
 class Vuln(ABVuln):
     vuln_id = 'Discuz_0002'  # 平台漏洞编号，留空
-    name = 'Discuz X3.0 绝对路径泄露'  # 漏洞名称
+    name = 'Discuz! X3.0 绝对路径泄露'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK  # 漏洞类型
     disclosure_date = '2015-06-25'  # 漏洞公布时间

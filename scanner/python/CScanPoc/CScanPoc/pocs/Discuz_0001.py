@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
     vuln_id = 'Discuz_0001'  # 平台漏洞编号，留空
-    name = 'discuz积分商城插件设计缺陷可前台getshell'  # 漏洞名称
+    name = 'Discuz!积分商城插件设计缺陷可前台getshell'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.LFI  # 漏洞类型
     disclosure_date = '2015-08-04'  # 漏洞公布时间

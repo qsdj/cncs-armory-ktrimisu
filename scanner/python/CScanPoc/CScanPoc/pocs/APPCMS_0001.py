@@ -4,19 +4,19 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'AppCMS_0001' # 平台漏洞编号，留空
-    name = 'AppCMS SQL注入'  # 漏洞名称
+    vuln_id = 'APPCMS_0001' # 平台漏洞编号，留空
+    name = 'APPCMS SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2013-12-11'  # 漏洞公布时间
     desc = '''
-        前台sql注射漏洞可爆后台密码，但在不知道后台地址及安全码的情况下略显鸡肋。
+        APPCMS 前台sql注射漏洞可爆后台密码。
     '''  # 漏洞描述
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = 'AppCMS'  # 漏洞应用名称
-    product_version = '*'  # 漏洞应用版本
+    product = 'APPCMS'  # 漏洞应用名称
+    product_version = ''  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '06780be3-c793-434b-8902-77bf587eeeb0'

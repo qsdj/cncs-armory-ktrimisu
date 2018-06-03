@@ -7,11 +7,12 @@ import re
 
 class Vuln(ABVuln):
     vuln_id = 'Drupal_0002'  # 平台漏洞编号，留空
-    name = 'Drupal full path disclousure'  # 漏洞名称
+    name = 'Drupal full path disclosure'  # 漏洞名称
     level = VulnLevel.LOW  # 漏洞危害级别
-    type = VulnType.OTHER  # 漏洞类型
+    type = VulnType.INFO_LEAK  # 漏洞类型
     disclosure_date = ''  # 漏洞公布时间
     desc = '''
+        Drupal 直接访问?q[]=x 造成路径泄露。
     '''  # 漏洞描述
     ref = ''    # 漏洞来源
     cnvd_id = ''    # cnvd漏洞编号

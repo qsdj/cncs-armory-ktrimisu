@@ -11,7 +11,7 @@ class Vuln(ABVuln):
     type = VulnType.FILE_TRAVERSAL # 漏洞类型
     disclosure_date = '2014-12-22'  # 漏洞公布时间
     desc = '''
-        DouPHP某漏洞导致目录遍历
+        DouPHP某漏洞导致目录遍历。
     ''' # 漏洞描述
     ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=076974' # 漏洞来源
     cnvd_id = '' # cnvd漏洞编号

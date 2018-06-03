@@ -10,14 +10,14 @@ class Vuln(ABVuln):
     type = VulnType.RCE # 漏洞类型
     disclosure_date = '2015-05-15'  # 漏洞公布时间
     desc = '''
-        埃森诺网络服务质量检测系统（ACSNO） Struts2 命令执行。
+        埃森诺网络服务质量检测系统 Struts2 命令执行。
         /usercfg/user_loginUI.do
     '''  # 漏洞描述
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = '通用型管理系统'  # 漏洞应用名称
-    product_version = '埃森诺网络服务质量检测系统'  # 漏洞应用版本
+    product = 'ACSNO(埃森诺)'  # 漏洞应用名称
+    product_version = ''  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '8f26924e-f7b5-4a28-99eb-8d4693eca404'

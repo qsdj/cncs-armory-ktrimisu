@@ -10,7 +10,7 @@ class Vuln(ABVuln):
     type = VulnType.RCE # 漏洞类型
     disclosure_date = '2015-03-02'  # 漏洞公布时间
     desc = '''
-        影响众多学校。
+        卓越课程中心 /G2S/AdminSpace/PublicClass/AddVideoCourseWare.ashx?action=UploadImage 可上传任意文件，getshell，影响众多学校。
     '''  # 漏洞描述
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号

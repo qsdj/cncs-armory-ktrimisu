@@ -16,7 +16,7 @@ class Vuln(ABVuln):
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
     product = 'Discuz!'  # 漏洞应用名称
-    product_version = 'Discuz!'  # 漏洞应用版本
+    product_version = ''  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'ac60f974-0236-44ef-81fa-9372aca9f194'

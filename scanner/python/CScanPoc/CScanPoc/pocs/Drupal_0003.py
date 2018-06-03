@@ -7,12 +7,13 @@ import random
 import urllib
 
 class Vuln(ABVuln):
-    vuln_id = 'Drupal_0002'  # 平台漏洞编号，留空
-    name = 'Drupal 7.0-7.31 index.php getshell'  # 漏洞名称
+    vuln_id = 'Drupal_0003'  # 平台漏洞编号，留空
+    name = 'Drupal /index.php getshell'  # 漏洞名称
     level = VulnLevel.LOW  # 漏洞危害级别
     type = VulnType.RCE  # 漏洞类型
     disclosure_date = ''  # 漏洞公布时间
     desc = '''
+        Drupal 7.0-7.31 index.php getshell.
     '''  # 漏洞描述
     ref = ''    # 漏洞来源
     cnvd_id = ''    # cnvd漏洞编号

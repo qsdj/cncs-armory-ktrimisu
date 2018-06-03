@@ -19,8 +19,8 @@ class Vuln(ABVuln):
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = '飞鱼星'  # 漏洞应用名称
-    product_version = '飞鱼星上网行为管理路由器'  # 漏洞应用版本
+    product = '飞鱼星上网行为管理路由器'  # 漏洞应用名称
+    product_version = ''  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '29c16e8a-81b2-401f-a079-4cd4932ca21a'

@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
     vuln_id = 'Discuz_0003'  # 平台漏洞编号，留空
-    name = 'Discuz SQL注入漏洞'  # 漏洞名称
+    name = 'Discuz! SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-06-04'  # 漏洞公布时间
@@ -16,7 +16,7 @@ class Vuln(ABVuln):
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
     product = 'Discuz!'  # 漏洞应用名称
-    product_version = 'Discuz问卷调查专业版插件'  # 漏洞应用版本
+    product_version = ''  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '5ae2c103-fd61-4ed8-8650-5d0963ac7fa0'

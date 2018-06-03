@@ -5,11 +5,13 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
     vuln_id = 'Discuz_0005' # 平台漏洞编号，留空
-    name = 'Discuz! NT3.1.0 用户相册存储型XSS漏洞'  # 漏洞名称
+    name = 'Discuz! NT3.1.0 用户相册存储型XSS'  # 漏洞名称
     level = VulnLevel.MED  # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型
     disclosure_date = '2015-04-25'  # 漏洞公布时间
     desc = '''
+        Discuz! NT3.1.0 用户相册存储型XSS漏洞。
+        /usercpspacemanagealbum.aspx?page=1&mod=edit&albumid=32
     '''  # 漏洞描述
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号

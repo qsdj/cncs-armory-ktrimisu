@@ -7,7 +7,7 @@ import hashlib
 
 class Vuln(ABVuln):
     vuln_id = 'Discuz_0011' # 平台漏洞编号，留空
-    name = 'Discuz /source/plugin/hux_wx/hux_wx.inc.php 本地文件包含漏洞'  # 漏洞名称
+    name = 'Discuz! /source/plugin/hux_wx/hux_wx.inc.php 本地文件包含'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型
     disclosure_date = '2014-10-15'  # 漏洞公布时间

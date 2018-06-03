@@ -6,10 +6,10 @@ import urllib2
 
 class Vuln(ABVuln):
     vuln_id = 'BlueCMS_0001' # 平台漏洞编号，留空
-    name = 'BlueCMS v1.6 sp1 SQL注入漏洞'  # 漏洞名称
+    name = 'BlueCMS v1.6 sp1 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
-    disclosure_date = '2015-03-12'  # 漏洞公布时间
+    disclosure_date = '2010-08-03'  # 漏洞公布时间
     desc = '''
         BlueCMS(地方分类信息门户专用CMS系统)           
         $ad_id = !empty($_GET['ad_id']) ? trim($_GET['ad_id']) : ''; //根目录下其他文件都做了很好的过滤，
