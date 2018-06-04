@@ -59,13 +59,13 @@ class Poc(ABPoc):
                 vul = arg + url + data
                 code, head, res, errcode, _ = hh.http(vul)
                 if code!=0 and 'testXQ17' in res:
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target,name=self.vuln.name))
+                    self.output.report(self.vuln, '发现{target}存在{name}漏洞,漏洞地址为{url}'.format(target=self.target,name=self.vuln.name,url=url))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 
 if __name__ == '__main__':

