@@ -2,15 +2,20 @@
 
 import uuid
 import os
+import inspect
+import logging
 import argparse
 import mysql.connector
 from datetime import datetime
+from CScanPoc import ABPoc, ABVuln
 from CScanPoc.lib.constants.product_type import get_product_type
 
 
+logger = logging.getLogger('sync')
+
+
 class SyncError(Exception):
-    def __init__(self, args):
-        super(SyncError, self).__init__(args)
+    pass
 
 
 class SyncPoc:
@@ -18,12 +23,13 @@ class SyncPoc:
     vuln.vuln_id 需要手工被添加
     '''
 
-    def __init__(self):
-        self.cnx = None
+    def __init__(self, cnx, poc):
+        self.cnx = cnx
+        self.poc = poc
 
     def _poc_exists(self, poc_id):
         cursor = self.cnx.cursor(buffered=True)
-        print "搜索 poc {0}".format(poc_id)
+        logger.info('搜索 Poc[id={}]'.format(poc_id))
         try:
             cursor.execute(
                 'SELECT count(*) FROM poc WHERE poc_id=%s',
@@ -31,7 +37,9 @@ class SyncPoc:
             count = cursor.fetchone()[0]
             return count > 0
         except Exception as e:
-            print e
+            raise SyncError({
+                'message': '检查 poc_id={} 是否在数据库存在失败'.format(poc_id),
+                'exception': e})
         finally:
             cursor.close()
 
@@ -44,13 +52,17 @@ class SyncPoc:
             count = cursor.fetchone()[0]
             return count > 0
         except Exception as e:
-            print e
+            raise SyncError({
+                'message': '检查 poc_id={} vuln_id={} 映射在数据库是否存在失败'.format(poc_id, vuln_id),
+                'exception': e})
         finally:
             cursor.close()
 
     def _create_poc_vuln_map(self, poc_id, vuln_id):
         if self._poc_vuln_map_exists(poc_id, vuln_id):
+            logger.info('poc_id={} vuln_id={} 映射已存在'.format(poc_id, vuln_id))
             return
+        logger.info('创建 poc_id={} vuln_id={} 的映射'.format(poc_id, vuln_id))
         cursor = self.cnx.cursor(buffered=True)
         try:
             cursor.execute(
@@ -58,83 +70,79 @@ class SyncPoc:
                 (poc_id, vuln_id))
             self.cnx.commit()
         except Exception as e:
-            print e
+            logger.warning(
+                '创建 poc_id={} vuln_id={} 映射失败'.format(poc_id, vuln_id))
+            raise SyncError({
+                'message': '创建 poc_id={} vuln_id={} 映射失败'.format(poc_id, vuln_id),
+                'exception': e})
         finally:
             cursor.close()
 
     def _pre_check_poc(self, poc):
+        if not isinstance(poc, ABPoc):
+            raise SyncError({
+                'message': '{} 不是 poc'.format(poc)})
+
         poc_id = poc.poc_id
         if poc_id is None or poc_id.strip() == '':
-            raise SyncError('poc_id 为空')
+            raise SyncError({
+                'message': '{} 的 poc_id 为空'.format(poc)})
 
-    def run(self, args, poc, dbpasswd):
-        '''
-        args.host
-        args.db
-        args.user
-        args.update
-        '''
-        if not self.cnx:
-            self.cnx = mysql.connector.connect(
-                user=args.user, password=dbpasswd, host=args.host, database=args.db)
-        if args.update:
-            self.update_poc(poc)
-        else:
-            self.insert_poc(poc)
-
-    def insert_poc(self, poc):
-        self._pre_check_poc(poc)
-        if self._poc_exists(poc.poc_id):
-            print 'poc 存在 [{0} id={1}]'.format(poc, poc.poc_id)
+    def insert(self):
+        self._pre_check_poc(self.poc)
+        if self._poc_exists(self.poc.poc_id):
+            logger.info('{} 在数据库中已经存在'.format(self.poc))
             return
         data = (
-            poc.poc_id,
-            poc.get_poc_name(),
-            poc.author,
-            poc.create_date)
+            self.poc.poc_id,
+            self.poc.get_poc_name(),
+            self.poc.author,
+            self.poc.create_date)
 
         sql = ("INSERT INTO poc "
                "(poc_id, poc_name, author, create_time) "
                "VALUES(%s, %s, %s, %s)")
         cursor = self.cnx.cursor(buffered=True)
-        print '插入 poc {0}'.format(poc)
+        logger.info('插入 {}'.format(self.poc))
         try:
             cursor.execute(sql, data)
             self.cnx.commit()
         except Exception as e:
-            print '插入失败 {0}'.format(poc)
-            print e
+            logger.warning('插入失败 {}\n%s'.format(self.poc), e)
         finally:
             cursor.close()
 
-        if poc.vuln and poc.vuln.vuln_id:
-            self._create_poc_vuln_map(poc.poc_id, poc.vuln.vuln_id)
+        if self.poc.vuln and self.poc.vuln.vuln_id:
+            self._create_poc_vuln_map(self.poc.poc_id, self.poc.vuln.vuln_id)
 
-    def update_poc(self, poc):
-        self._pre_check_poc(poc)
-        if not self._poc_exists(poc.poc_id):
-            print 'poc 不存在 [{0} id={1}]'.format(poc, poc.poc_id)
+    def update(self):
+        self._pre_check_poc(self.poc)
+        if not self._poc_exists(self.poc.poc_id):
+            logger.warn('{} 在数据库中不存在'.format(self.poc))
             return
         data = (
-            poc.get_poc_name(),
-            poc.author,
-            poc.create_date,
-            poc.poc_id)
+            self.poc.get_poc_name(),
+            self.poc.author,
+            self.poc.create_date,
+            self.poc.poc_id)
 
         sql = ("UPDATE poc SET "
                "poc_name=%s, author=%s, create_time=%s "
                "WHERE poc_id=%s")
         cursor = self.cnx.cursor(buffered=True)
+        logger.info('更新 {}'.format(self.poc))
         try:
-            print '更新 poc {0}'.format(poc)
             cursor.execute(sql, data)
+            self.cnx.commit()
         except Exception as e:
-            print '更新 {0}'.format(poc)
-            print e
+            logger.warn('更新失败 {}\n%s'.format(self.poc), e)
+            return
         finally:
             cursor.close()
-        if poc.vuln and poc.vuln.vuln_id:
-            self._create_poc_vuln_map(poc.poc_id, poc.vuln.vuln_id)
+
+        if self.poc.vuln and self.poc.vuln.vuln_id:
+            self._create_poc_vuln_map(self.poc.poc_id, self.poc.vuln.vuln_id)
+
 
 class SyncVuln:
     '''同步 POC 静态信息到数据库
@@ -152,26 +160,33 @@ class SyncVuln:
     2. 根据 poc_id 更新数据
     '''
 
-    def __init__(self):
-        self.cnx = None
+    def __init__(self, cnx, vuln):
+        self.cnx = cnx
+        self.vuln = vuln
 
     def _pre_check_vuln(self, vuln):
+        if not isinstance(vuln, ABVuln):
+            raise SyncError({
+                'message': '{} 不是 ABVuln'.format(vuln)})
+
         vuln_id = vuln.vuln_id
         if vuln_id is None or vuln_id.strip() == '':
-            raise SyncError('vuln_id 为空')
+            raise SyncError({
+                'message': '{} 的 vuln_id 为空'.format(vuln)})
 
     def _vuln_exists(self, vuln_id):
         cursor = self.cnx.cursor(buffered=True)
-        print "搜索漏洞 {0}".format(vuln_id)
+        logger.info('搜索 vuln_id={}'.format(vuln_id))
         try:
             cursor.execute(
                 'SELECT count(*) FROM vuln WHERE vuln_id=%s',
-                (vuln_id,)
-            )
+                (vuln_id,))
             count = cursor.fetchone()[0]
             return count > 0
         except Exception as e:
-            print e
+            raise SyncError({
+                'message': 'vuln_id={} 的漏洞搜索失败'.format(vuln_id),
+                'exception': e})
         finally:
             cursor.close()
 
@@ -184,12 +199,13 @@ class SyncVuln:
         cursor = self.cnx.cursor(buffered=True)
         try:
             data = (product_name, product_type.name)
-            print '搜索组件 c_name={0} c_type={1}'.format(*data)
+            logger.info('搜索组件 c_name={} c_type={}'.format(*data))
+
             sql = ("SELECT c_id FROM component WHERE c_name=%s AND c_type=%s")
             cursor.execute(sql, data)
             c_id = None
             if cursor.rowcount <= 0:
-                print '创建组件 component c_name={0} c_type={1}'.format(*data)
+                logger.info('创建组件 component c_name={} c_type={}'.format(*data))
                 sql = ("INSERT INTO component "
                        "(c_id, c_name, c_type) "
                        "VALUES(%s, %s, %s)")
@@ -199,37 +215,27 @@ class SyncVuln:
             else:
                 c_id = cursor.fetchone()[0]
 
-            print '查询得 name={0} type={1} 得组件ID为 {2}'.format(
-                product_name, product_type, c_id)
+            logger.info('搜索得组件ID={} [c_name={} c_type={}]'.format(
+                        c_id, product_name, product_type))
             return c_id
         except Exception as e:
-            print '创建组件失败'
-            print e
+            logger.warning('搜索/创建组件失败 c_name={} c_type={}'.format(*data))
+            raise SyncError({
+                'message': '搜索/创建组件 c_name={} c_type={}'.format(*data),
+                'exception': e})
         finally:
             cursor.close()
 
-    def run(self, args, vuln, dbpasswd):
-        '''
-        args.host
-        args.db
-        args.user
-        args.update
-        '''
-        if not self.cnx:
-            self.cnx = mysql.connector.connect(
-                user=args.user, password=dbpasswd, host=args.host, database=args.db)
-        if args.update:
-            self.update_vuln(vuln)
-        else:
-            self.insert_vuln(vuln)
-
-    def insert_vuln(self, vuln):
+    def insert(self):
+        vuln = self.vuln
         self._pre_check_vuln(vuln)
-        product_id = self._create_or_get_product(vuln.product)
+
         if self._vuln_exists(vuln.vuln_id):
-            print '漏洞已经存在[{0} id={1}]'.format(vuln, vuln.vuln_id)
+            logger.info('{} 漏洞已存在'.format(vuln))
             return
-        print '插入漏洞 {0}'.format(vuln)
+
+        product_id = self._create_or_get_product(vuln.product)
+        logger.info('插入漏洞 %s', vuln)
         sql = ("INSERT INTO vuln "
                "(vuln_id, vuln_name, vuln_type,"
                " c_id, c_version,"
@@ -242,20 +248,26 @@ class SyncVuln:
                 vuln.vuln_id, vuln.name, vuln.type.value,
                 product_id, vuln.product_version,
                 vuln.cve_id, vuln.disclosure_date, datetime.now(),
-                vuln.level.value, vuln.ref, vuln.desc
-            )
+                vuln.level.value, vuln.ref, vuln.desc)
+            print '-----------------'
+            print data
+            print '-----------------'
             cursor.execute(sql, data)
+            self.cnx.commit()
         except Exception as e:
-            print '插入漏洞失败{0}'.format(vuln)
-            print e
+            logger.warning('{} 漏洞插入失败'.format(vuln))
+            raise SyncError({
+                'message': '漏洞插入失败 {}'.format(vuln),
+                'exception': e})
         finally:
             cursor.close()
-            self.cnx.commit()
 
-    def update_vuln(self, vuln):
+    def update(self):
         '''根据 vuln_id 更新漏洞信息'''
+        vuln = self.vuln
         self._pre_check_vuln(vuln)
         product_id = self._create_or_get_product(vuln.product)
+        logger.info('更新漏洞 {}'.format(vuln))
         cursor = self.cnx.cursor()
         try:
             sql = ("UPDATE vuln SET "
@@ -269,7 +281,12 @@ class SyncVuln:
                 product_id, vuln.product_version,
                 vuln.cve_id, vuln.disclosure_date, datetime.now(),
                 vuln.level.value, vuln.ref, vuln.desc,
-                vuln.vuln_id
-            ))
+                vuln.vuln_id))
+            self.cnx.commit()
+        except Exception as e:
+            logger.warning('{} 漏洞更新失败'.format(vuln))
+            raise SyncError({
+                'message': '漏洞更新失败 {}'.format(vuln),
+                'exception': e})
         finally:
             cursor.close()

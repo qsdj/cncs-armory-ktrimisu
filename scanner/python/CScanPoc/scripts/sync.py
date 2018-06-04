@@ -1,16 +1,30 @@
 # coding: utf-8
 
 import os
+import logging
 import uuid
 import getpass
 import argparse
 import imp
 import importlib
 import mysql.connector
-from CScanPoc.lib.utils import sync
+from CScanPoc import ABPoc, ABVuln
+from CScanPoc.lib.utils.sync import SyncPoc, SyncVuln
+
+logger = logging.getLogger('sync')
+ch = logging.StreamHandler()
+ch.setLevel(logging.DEBUG)
+formatter = logging.Formatter(
+    '%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+ch.setFormatter(formatter)
+logger.addHandler(ch)
 
 
-def __add_db_arguments(parser):
+def create_parser():
+    parser = argparse.ArgumentParser(
+        formatter_class=argparse.RawTextHelpFormatter)
+
+    # 数据库选项
     parser.add_argument('--host', dest="host",
                         required=True, help="数据库地址")
     parser.add_argument("--user", dest="user",
@@ -18,44 +32,36 @@ def __add_db_arguments(parser):
     parser.add_argument('--db', dest="db", required=True, help="数据库名")
     parser.add_argument('--pass', dest="passwd", help="数据库密码")
 
+    # 更新/插入
+    parser.add_argument('--update', dest='update',
+                        action='store_true', help='执行更新操作')
+    parser.add_argument('--insert', dest='update',
+                        action='store_false', help='执行插入操作')
 
-def __add_update_option(parser):
-    parser.add_argument('--update', dest='update', action='store_true')
-    parser.add_argument('--insert', dest='update', action='store_false')
-    parser.set_defaults(update=False)
+    # 操作对象 poc/vuln
+    parser.add_argument('--poc', dest='poc', action='store_true',
+                        help='设定 poc 为操作对象，可以和 --vuln 选项同时使用')
+    parser.add_argument('--vuln', dest='vuln', action='store_true',
+                        help='设定 vuln 为操作对象，可以和 --poc 选项同时使用')
 
+    # 操作对象地址
+    parser.add_argument('--target', dest='target', required=True,
+                        help='目标目录/文件')
 
-def create_parser():
-    parser = argparse.ArgumentParser(
-        formatter_class=argparse.RawTextHelpFormatter)
+    parser.add_argument('-v', dest='verbose', action='store_true',
+                        help='verbose')
+    parser.add_argument('-vv', dest='very_verbose', action='store_true',
+                        help='very verbose')
 
-    subparsers = parser.add_subparsers(dest='subparsers')
+    # 默认值
+    parser.set_defaults(poc=False, vuln=False, update=False,
+                        verbose=False, very_verbose=False)
 
-    parser_vuln = subparsers.add_parser('vuln')
-    __add_db_arguments(parser_vuln)
-    __add_update_option(parser_vuln)
-    parser_vuln.add_argument('--vuln_name', dest="vuln_name",
-                             help="漏洞类名，从 pocs 目录开始，如 Joomla_0001.Vuln")
-
-    parser_poc = subparsers.add_parser('poc')
-    __add_db_arguments(parser_poc)
-    __add_update_option(parser_poc)
-    parser_poc.add_argument('--poc_name', dest="poc_name",
-                            help="poc 类名，从 pocs 目录开始，如 Joomla_0001.Poc")
-
-    parser_all = subparsers.add_parser('all')
-    __add_db_arguments(parser_all)
-    __add_update_option(parser_all)
-    parser_all.add_argument('--poc-dir', dest='poc_dir')
-    parser_all.add_argument('--poc-only', dest='poc_only', action='store_true')
-    parser_all.add_argument(
-        '--vuln-only', dest='vuln_only', action='store_true')
-
-    subparsers.add_parser('uuid')
     return parser
 
 
 def add_poc_id(poc_file):
+    '''为文件中 POC 添加 poc_id 属性'''
     lines = open(poc_file, 'r').readlines()
     new_lines = []
     for line in lines:
@@ -68,77 +74,104 @@ def add_poc_id(poc_file):
         f.writelines(new_lines)
 
 
-def get_all_modules(poc_dir, create_poc_id=False):
-    result = []
-    for f in os.listdir(poc_dir):
-        if f == '__init__.py':
-            continue
-        poc_file = os.path.join(poc_dir, f)
-        try:
-            foo = imp.load_source(
-                'CScanPoc.{0}'.format(f.rstrip('.py')), poc_file)
-            poc_id = foo.Poc().poc_id
-            if poc_id is None or poc_id.strip() == '':
-                foo = None
-                add_poc_id(poc_file)
-                foo = imp.load_source(
-                    'CScanPoc.{0}'.format(f.rstrip('.py')), poc_file)
+def get_module(poc_file, create_poc_id=False):
+    '''
+    :return: Tuple<Vuln, Poc, string_poc_file>
+    '''
+    if not os.path.isfile(poc_file) or not poc_file.endswith('.py'):
+        logger.warn('不是 Python 源文件 {}'.format(poc_file))
+        return
+    mod_name = '{}-{}'.format(
+        os.path.basename(poc_file).rstrip('.py'),
+        str(uuid.uuid4())
+    ).replace('.', '_')
 
-            result.append((foo.Vuln(), foo.Poc(), poc_file))
+    try:
+        logger.debug('加载 {}'.format(poc_file))
+        foo = imp.load_source('CScanPoc.{}'.format(mod_name), poc_file)
+        poc = None
+        vuln = None
+        for attr in dir(foo):
+            try:
+                val = getattr(foo, attr)()
+                if isinstance(val, ABPoc):
+                    poc = val
+                elif isinstance(val, ABVuln):
+                    vuln = val
+            except:
+                continue
+        return (vuln, poc, poc_file)
+    except Exception as e:
+        logger.warn('加载失败 {}'.format(poc_file))
+        raise e
+
+
+def get_modules(poc_file_or_dir, create_poc_id=False):
+    '''
+    :return: List<Tuple<Vuln, Poc, string_poc_file>>
+    '''
+    if os.path.isfile(poc_file_or_dir):
+        return [get_module(poc_file_or_dir, create_poc_id)]
+    elif not os.path.isdir(poc_file_or_dir):
+        logger.warn('目标不是文件/目录')
+        return
+
+    result = []
+    for f in os.listdir(poc_file_or_dir):
+        if not f.endswith('.py') or f == '__init__.py':
+            continue
+        poc_file = os.path.join(poc_file_or_dir, f)
+        try:
+            result.append(get_module(poc_file))
         except Exception as e:
-            print 'Import Error: {0}\n{1}'.format(poc_file, e)
+            logger.warn('导入失败 {}:\n%s'.format(poc_file), e)
     return result
 
 
-def sync_poc(args, poc, dbpasswd, poc_file='', cnx=None):
+def sync_poc(poc, poc_file='', cnx=None, do_update=False):
     try:
-        s = sync.SyncPoc()
-        if cnx is not None:
-            s.cnx = cnx
-        s.run(args, poc, dbpasswd)
+        s = SyncPoc(cnx, poc)
+        if do_update:
+            s.update()
+        else:
+            s.insert()
     except Exception as e:
-        print '同步 {0} 失败：{1}\n{2}'.format(poc, poc_file, e)
+        logger.warn('同步 {} 失败[update={}]：{}\n%s'.format(
+            poc, do_update, poc_file), e)
 
 
-def sync_vuln(args, vuln, dbpasswd, poc_file='', cnx=None):
+def sync_vuln(vuln, poc_file='', cnx=None, do_update=False):
     try:
-        s = sync.SyncVuln()
-        if cnx is not None:
-            s.cnx = cnx
-        s.run(args, vuln, passwd)
+        s = SyncVuln(cnx, vuln)
+        if do_update:
+            s.update()
+        else:
+            s.insert()
     except Exception as e:
-        print '同步 {0} 失败：{1}\n{2}'.format(vuln, poc_file, e)
+        logger.warn('同步 {} 失败[update={}]：{}\n%s'.format(
+            vuln, do_update, poc_file), e)
 
 
 if __name__ == '__main__':
     args = create_parser().parse_args()
-    if args.subparsers in ['vuln', 'poc', 'all']:
-        passwd = args.passwd
-        if passwd is None:
-            passwd = getpass.getpass('输入数据库密码：')
-        cnx = mysql.connector.connect(
-            user=args.user, password=passwd, host=args.host, database=args.db)
 
-    if args.subparsers == 'vuln':
-        vuln_name = args.vuln_name
-        (f, n) = vuln_name.split('.')
-        vuln = getattr(importlib.import_module('CScanPoc.pocs.' + f), n)()
-        sync_vuln(args, vuln, passwd, cnx)
-    elif args.subparsers == 'poc':
-        poc_name = args.poc_name
-        (f, n) = poc_name.split('.')
-        poc = getattr(importlib.import_module('CScanPoc.pocs.' + f), n)()
-        sync_poc(args, poc, passwd, cnx)
-    elif args.subparsers == 'all':
-        vuln_poc_list = get_all_modules(args.poc_dir)
-        print '================= 开始同步 =================='
-        for (vuln, poc, poc_file) in vuln_poc_list:
-            if args.poc_only:
-                sync_poc(args, poc, passwd, poc_file, cnx)
-            elif args.vuln_only:
-                sync_vuln(args, vuln, passwd, poc_file, cnx)
-            else:
-                sync_vuln(args, vuln, passwd, poc_file, cnx)
-                sync_poc(args, poc, passwd, poc_file, cnx)
-    elif args.subparsers == 'uuid':
-        print uuid.uuid4()
+    if args.very_verbose:
+        logger.setLevel(logging.DEBUG)
+    elif args.verbose:
+        logger.setLevel(logging.INFO)
+    else:
+        logger.setLevel(logging.WARN)
+
+    passwd = args.passwd
+    if passwd is None:
+        passwd = getpass.getpass('输入数据库密码：')
+    cnx = mysql.connector.connect(
+        user=args.user, password=passwd, host=args.host, database=args.db)
+
+    vuln_poc_list = get_modules(args.target)
+
+    for (vuln, poc, poc_file) in vuln_poc_list:
+        if args.poc:
+            sync_poc(poc, poc_file, cnx, args.update)
+        if args.vuln:
+            sync_vuln(vuln, poc_file, cnx, args.update)
