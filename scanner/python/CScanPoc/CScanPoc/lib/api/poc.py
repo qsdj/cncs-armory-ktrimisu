@@ -7,6 +7,7 @@ from CScanPoc.lib.parse.args import create_poc_cmd_parser
 
 argparser = create_poc_cmd_parser()
 
+
 class ABPoc:
     '''Abstract Base of specific CScan poc
 
@@ -86,3 +87,6 @@ class ABPoc:
     @abstractmethod
     def exploit(self):
         pass
+
+    def __str__(self):
+        return '<Poc id={0} name={1}>'.format(self.poc_id, self.poc_name)
