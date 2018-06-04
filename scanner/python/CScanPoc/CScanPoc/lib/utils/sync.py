@@ -249,9 +249,6 @@ class SyncVuln:
                 product_id, vuln.product_version,
                 vuln.cve_id, vuln.disclosure_date, datetime.now(),
                 vuln.level.value, vuln.ref, vuln.desc)
-            print '-----------------'
-            print data
-            print '-----------------'
             cursor.execute(sql, data)
             self.cnx.commit()
         except Exception as e:
