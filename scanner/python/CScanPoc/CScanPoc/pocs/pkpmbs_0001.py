@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
 class Vuln(ABVuln):
-    poc_id = 'd1b50c74-bd08-4ba8-b500-8a2945f76523'
+    vuln_id = 'PKPMBS_0001' # 平台漏洞编号，留空
     name = 'PKPMBS建设工程质量监督系统 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

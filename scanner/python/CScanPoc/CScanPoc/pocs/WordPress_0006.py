@@ -7,7 +7,7 @@ import urllib
 import urllib2
 
 class Vuln(ABVuln):
-    poc_id = '73a73a09-efed-4c2c-83e5-d0fca536c9f9'
+    vuln_id = 'WordPress_0006'  # 平台漏洞编号，留空
     name = 'WordPress CP Multi View Event Calendar 注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION  # 漏洞类型

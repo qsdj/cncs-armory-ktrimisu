@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = '271a0eb0-781e-483f-ab4b-01df7d8a4909'
+    vuln_id = 'Gxwssb_0001' # 平台漏洞编号，留空
     name = '天津神州助平台通用型任意下载' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型

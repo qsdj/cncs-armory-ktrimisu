@@ -6,7 +6,7 @@ import re
 import time
 
 class Vuln(ABVuln):
-    poc_id = '9785dc10-9947-410c-904c-2a17422ef024'
+    vuln_id = 'weaver_0013' # 平台漏洞编号，留空
     name = '泛微Eoffice 后台绕过和时间盲注'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

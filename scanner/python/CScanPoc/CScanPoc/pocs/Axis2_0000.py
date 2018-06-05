@@ -6,7 +6,7 @@ import re
 import urllib2
 
 class Vuln(ABVuln):
-    poc_id = '8915b673-4cd5-405a-a1a9-64e2e5e04b77'
+    vuln_id = 'Axis2_0000' # 平台漏洞编号
     name = 'Axis2任意文件读取' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型

@@ -6,7 +6,7 @@ import time
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = '4c644521-683e-4ef2-b5d2-5c6d18487b17'
+    vuln_id = 'WordPress_0037' # 平台漏洞编号，留空
     name = 'WordPress SP Project & Document Manager SQL盲注' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

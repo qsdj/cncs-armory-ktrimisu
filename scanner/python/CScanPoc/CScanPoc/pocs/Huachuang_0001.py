@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urlparse
 
 class Vuln(ABVuln):
-    poc_id = 'aefa3e91-0774-4070-8b5c-3fcfdc09281f'
+    vuln_id = 'Huachuang_0001'  # 平台漏洞编号，留空
     name = '华创设备 命令执行'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION  # 漏洞类型

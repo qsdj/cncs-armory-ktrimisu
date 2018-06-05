@@ -7,7 +7,7 @@ import re
 import hashlib
 
 class Vuln(ABVuln):
-    poc_id = '202f6375-1f78-45b3-a1fa-0c1a7964897e'
+    vuln_id = 'Discuz_0000' # 平台漏洞编号，留空
     name = 'Discuz! 6.0 /viewthread.php 跨站脚本漏洞' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型

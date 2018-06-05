@@ -7,7 +7,7 @@ import hashlib
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = 'dae28fc3-fb5e-4993-bdff-0c122a95b2c6'
+    vuln_id = 'WordPress_0040' # 平台漏洞编号，留空
     name = 'WordPress 3.3.1 swfupload.swf XSS' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型

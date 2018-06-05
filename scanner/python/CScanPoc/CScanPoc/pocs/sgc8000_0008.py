@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = '3fa25bea-1e31-4596-a4b0-7ebfc91c443a'
+    vuln_id = 'sgc8000_0008' # 平台漏洞编号，留空
     name = 'sgc8000 大型旋转机监控系统 phpRedisAdmin未授权访问' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
@@ -21,7 +21,7 @@ class Vuln(ABVuln):
 
 
 class Poc(ABPoc):
-    poc_id = 'e73073b0-21c7-4061-aed4-23f1e256cd8d'
+    poc_id = 'bc3eb0f6-a481-4382-98f8-8a0cb760fa72'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 

@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = 'bb9ec0c9-8ec6-44a5-8d7d-06eab9643e48'
+    vuln_id = 'TRS_0000' # 平台漏洞编号，留空
     name = '拓尔思网络信息雷达系统 敏感信息泄漏到进后台' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
@@ -21,7 +21,7 @@ class Vuln(ABVuln):
 
 
 class Poc(ABPoc):
-    poc_id = '4dadd00f-f9bd-4a88-b8da-50169b35adba'
+    poc_id = 'bae9eff3-c39a-4792-901b-9b665fee9778'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 

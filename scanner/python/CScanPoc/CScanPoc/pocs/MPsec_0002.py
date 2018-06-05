@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = 'f27e57e5-fe28-4468-8f97-3612b9a90197'
+    vuln_id = 'MPsec_0002' # 平台漏洞编号，留空
     name = '迈普ISG1000系列网关 配置文件下载'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型

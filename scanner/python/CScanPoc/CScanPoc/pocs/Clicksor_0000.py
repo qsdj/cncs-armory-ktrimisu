@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    poc_id = '5dcaad73-947c-4967-88e9-9f9514eb2b44'
+    vuln_id = 'Clicksor_0000' # 平台漏洞编号
     name = 'Clicksor SQL Injection Vulnerability' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    poc_id = '45301e13-8b8c-4e9f-96b3-14f44ab4e0dc'
+    vuln_id = 'PHPCMS_0002'  # 平台漏洞编号，留空
     name = 'PHPCMS V9 /api.php Authkey 信息泄漏漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK  # 漏洞类型

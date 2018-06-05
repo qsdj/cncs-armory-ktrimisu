@@ -6,7 +6,7 @@ import re
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = 'e5a2b526-f4a6-4fe6-8b45-bae986275f2e'
+    vuln_id = 'Zfsoft_0006' # 平台漏洞编号，留空
     name = '正方教务管理系统 文件上传漏洞' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.FILE_UPLOAD # 漏洞类型

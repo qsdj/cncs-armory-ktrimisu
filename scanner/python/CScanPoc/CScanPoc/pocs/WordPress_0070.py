@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = '57ebd2ea-7eb7-4782-81fe-081ecd1023a0'
+    vuln_id = 'WordPress_0070' # 平台漏洞编号，留空
     name = 'WordPress Plugin SEO by Yoast 1.7.3.3 - Blind SQL Injection' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

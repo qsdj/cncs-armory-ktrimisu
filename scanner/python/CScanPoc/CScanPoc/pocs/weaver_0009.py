@@ -7,7 +7,7 @@ import time
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = 'ea67e957-c682-4526-bf71-2d6c2d3fabf9'
+    vuln_id = 'weaver_0009' # 平台漏洞编号，留空
     name = '泛微某系统通用型SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

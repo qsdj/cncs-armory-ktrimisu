@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = '0fa85419-2fd8-4aad-b342-796962853f89'
+    vuln_id = 'Uniflows_0001'  # 平台漏洞编号，留空
     name = '有图互联数字期刊系统 报错注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

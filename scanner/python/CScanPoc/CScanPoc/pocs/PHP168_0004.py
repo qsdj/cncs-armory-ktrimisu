@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import base64
 
 class Vuln(ABVuln):
-    poc_id = '7e7d4472-2b48-4ee5-b6ae-e9da94919c3e'
+    vuln_id = 'PHP168_0004' # 平台漏洞编号，留空
     name = 'PHP168整站任意文件下载'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型

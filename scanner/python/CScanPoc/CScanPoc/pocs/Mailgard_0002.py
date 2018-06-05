@@ -7,7 +7,7 @@ import urlparse
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = 'e17f18a9-abd0-4f45-996e-ede4c70b77ac'
+    vuln_id = 'Mailgard_0001' # 平台漏洞编号，留空
     name = 'Mailgard佑友系列邮件网关 conn.php SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

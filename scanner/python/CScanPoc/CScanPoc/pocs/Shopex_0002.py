@@ -6,7 +6,7 @@ import urllib,urllib2
 import re
 
 class Vuln(ABVuln):
-    poc_id = '230d9fcb-cab9-425e-9458-ef45f3f3d826'
+    vuln_id = 'Shopex_0002' # 平台漏洞编号，留空
     name = 'Shopex 4.8.5.45144 /core/include_v5/crontab.php 代码执行' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型

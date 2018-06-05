@@ -8,7 +8,7 @@ import random
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = '2d42db57-77f0-4e4f-9b6a-6de6ecea83c2'
+    vuln_id = 'EnableQ_0000' # 平台漏洞编号，留空
     name = 'EnableQ全版本通杀sql注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    poc_id = '42078553-decf-4b95-8f61-f921c6213542'
+    vuln_id = 'interact_0000' # 平台漏洞编号
     name = 'interact <= 2.2 (CONFIG[BASE_PATH]) Remote File Include Vulnerability' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.RFI # 漏洞类型

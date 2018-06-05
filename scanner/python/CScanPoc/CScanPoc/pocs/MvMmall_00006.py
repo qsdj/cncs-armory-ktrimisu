@@ -6,7 +6,7 @@ import  re
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = '98281f3f-faae-4bee-99ba-0abdf525adcc'
+    vuln_id = 'MvMmall_00006' # 平台漏洞编号，留空
     name = 'MvMmall网店商城系统注入漏洞' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

@@ -6,7 +6,7 @@ import urllib,urllib2
 import re
 
 class Vuln(ABVuln):
-    poc_id = '7c844af5-f413-4be1-a628-e29c5db63804'
+    vuln_id = 'Discuz_0028' # 平台漏洞编号，留空
     name = 'Discuz! x2 /source/function/function_connect.php 泄漏服务器物理路径' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型

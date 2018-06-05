@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = '4c1baad6-64a8-40e5-9263-d98c9468a716'
+    vuln_id = 'KXmail_0002'  # 平台漏洞编号，留空
     name = '科信邮件系统 SQL盲注'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION  # 漏洞类型

@@ -6,7 +6,7 @@ import urllib,urllib2
 import re
 
 class Vuln(ABVuln):
-    poc_id = '79068733-2d05-496d-afa2-1eba2813edc4'
+    vuln_id = 'JeeCMS_0011' # 平台漏洞编号，留空
     name = 'JeeCMS任意文件下载导致敏感信息泄露' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型

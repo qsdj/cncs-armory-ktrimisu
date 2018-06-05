@@ -7,7 +7,7 @@ import re
 import hashlib
 
 class Vuln(ABVuln):
-    poc_id = '5eaf1d8c-b99f-4fe0-b63b-736c9d8e7c2c'
+    vuln_id = 'QiboCMS_0000' # 平台漏洞编号，留空
     name = 'QiboCMS v7 /inc/splitword.php 后门漏洞' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型

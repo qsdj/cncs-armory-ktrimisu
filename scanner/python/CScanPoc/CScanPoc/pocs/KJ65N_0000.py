@@ -6,7 +6,7 @@ import time
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = '38eff735-39ea-49e8-8430-93bf917f48ff'
+    vuln_id = 'KJ65N_0000' # 平台漏洞编号，留空
     name = 'KJ65N煤矿安全监控系统 通用 SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

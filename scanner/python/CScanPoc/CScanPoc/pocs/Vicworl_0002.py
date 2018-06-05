@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = 'b02f55f1-9779-4b4a-8554-b29485961513'
+    vuln_id = 'Vicworl_0002' # 平台漏洞编号，留空
     name = 'Vicworl媒体系统 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

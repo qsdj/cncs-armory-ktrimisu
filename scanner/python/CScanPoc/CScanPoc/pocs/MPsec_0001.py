@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = 'bb769b3d-88fe-4868-b508-031207b7271c'
+    vuln_id = 'MPsec_0001' # 平台漏洞编号，留空
     name = '迈普某接入认证系统 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

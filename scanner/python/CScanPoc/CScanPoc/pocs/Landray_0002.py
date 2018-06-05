@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = '2dca9340-47fb-4c45-8b54-39ef2a7a8cd0'
+    vuln_id = 'Landray_0002'  # 平台漏洞编号，留空
     name = '蓝凌EIS智慧协同平台 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

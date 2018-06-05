@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = 'e8d5d429-6423-4b52-8b91-7c96ab88a5a8'
+    vuln_id = 'vBulletin_0001'  # 平台漏洞编号，留空
     name = 'vBulletin 5.x.x ajax/api 远程代码执行漏洞 POC'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE  # 漏洞类型

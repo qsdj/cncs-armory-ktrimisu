@@ -6,7 +6,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 
 class Vuln(ABVuln):
-    poc_id = '2e743eb4-71b0-4992-bb3d-bb0139453aa0'
+    vuln_id = 'eYou_0003' # 平台漏洞编号，留空
     name = 'eYou /sysinfo.html 信息泄漏' # 漏洞名称
     level = VulnLevel.LOW # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型

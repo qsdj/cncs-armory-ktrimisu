@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = '46871340-d259-4188-a262-0fd687cfa791'
+    vuln_id = 'EWEBS_0000' # 平台漏洞编号，留空
     name = '极通EWEBS应用虚拟化系统任意系统文件读取'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型

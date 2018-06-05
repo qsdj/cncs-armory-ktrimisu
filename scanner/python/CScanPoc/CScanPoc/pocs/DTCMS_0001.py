@@ -7,7 +7,7 @@ import re
 import hashlib
 
 class Vuln(ABVuln):
-    poc_id = 'c353b116-b1be-455b-800c-29f697cdfaca'
+    vuln_id = 'DTCMS_0001' # 平台漏洞编号，留空
     name = 'DTCMS /scripts/swfupload/swfupload.swf 跨站脚本' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

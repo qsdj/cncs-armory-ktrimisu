@@ -7,7 +7,7 @@ import time
 import re
 
 class Vuln(ABVuln):
-    poc_id = '60002cc0-403a-45c3-9f2d-646945f5ffcf'
+    vuln_id = 'TP-Link_0001' # 平台漏洞编号，留空
     name = 'TP-Link 信息泄露'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型

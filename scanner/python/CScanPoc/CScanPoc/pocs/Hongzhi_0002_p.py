@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    poc_id = 'd6463cd5-70fe-4dea-a41f-3f14845bd59e'
+    vuln_id = 'Hongzhi_0002_p' # 平台漏洞编号，留空
     name = '武汉弘智房产管理系统通用 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

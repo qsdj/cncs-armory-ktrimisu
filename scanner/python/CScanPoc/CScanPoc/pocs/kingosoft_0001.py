@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = 'af40ec54-6e8d-45e4-9eeb-9c7839d808eb'
+    vuln_id = 'kingosoft_0001' # 平台漏洞编号，留空
     name = '青果教务系统存在SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

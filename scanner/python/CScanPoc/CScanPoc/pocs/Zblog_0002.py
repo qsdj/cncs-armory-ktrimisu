@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = '8de699e1-3446-4eb8-9e2e-eb6f28fffc29'
+    vuln_id = 'Zblog_0002'  # 平台漏洞编号，留空
     name = 'Zblog 任意文件读取'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_OPERATION  # 漏洞类型

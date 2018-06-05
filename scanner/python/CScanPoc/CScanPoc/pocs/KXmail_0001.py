@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = 'a42055c7-70a4-416e-944c-625f565b13ee'
+    vuln_id = 'KXmail_0001'  # 平台漏洞编号，留空
     name = '科信邮件系统 任意文件下载'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD  # 漏洞类型

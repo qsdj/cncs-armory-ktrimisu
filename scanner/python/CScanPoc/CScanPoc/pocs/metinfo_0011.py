@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = 'ee2902a6-2070-4d6f-85ea-d9b44acece68'
+    vuln_id = 'MetInfo_0011' # 平台漏洞编号，留空
     name = 'MetInfo 5.2 任意文件读取'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_OPERATION # 漏洞类型

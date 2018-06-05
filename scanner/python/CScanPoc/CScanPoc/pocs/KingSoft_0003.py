@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re, urlparse
 
 class Vuln(ABVuln):
-    poc_id = 'ebc15363-c904-4063-ba74-a48287d52e02'
+    vuln_id = 'KingSoft_0003'  # 平台漏洞编号，留空
     name = '金山KingGate防火墙 获取权限'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.OTHER # 漏洞类型

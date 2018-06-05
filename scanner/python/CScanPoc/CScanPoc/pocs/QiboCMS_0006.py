@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = '40157c4b-3094-4b1a-9e5a-74cbb754f696'
+    vuln_id = 'QiboCMS_0006' # 平台漏洞编号，留空
     name = '齐博CMS博客系统注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

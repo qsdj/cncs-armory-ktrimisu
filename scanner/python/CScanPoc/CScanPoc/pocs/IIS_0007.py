@@ -7,7 +7,7 @@ import time
 import urlparse
 
 class Vuln(ABVuln):
-    poc_id = 'aa7f79db-291f-484a-8587-c267c33315d7'
+    vuln_id = 'IIS_0007' # 平台漏洞编号
     name = 'IIS WebDav RCE' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型

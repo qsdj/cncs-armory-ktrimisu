@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    poc_id = '2194156a-dd44-4807-b554-64d6de2a685e'
+    vuln_id = 'WordPress_0003_p' # 平台漏洞编号，留空
     name = 'WordPress PHPmailer 命令执行' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型

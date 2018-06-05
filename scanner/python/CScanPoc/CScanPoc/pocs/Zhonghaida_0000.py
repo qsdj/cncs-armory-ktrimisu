@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = 'e4b52785-fdec-4296-af51-a4bd845b3fc2'
+    vuln_id = 'Zhonghaida_0000' # 平台漏洞编号，留空
     name = '中海达VNet6专业型参考站接收机 默认口令登录'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.OTHER # 漏洞类型

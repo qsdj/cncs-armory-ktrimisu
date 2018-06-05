@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = 'bc4bff23-b952-447c-87be-fc52ae74cccb'
+    vuln_id = 'Whir_0004' # 平台漏洞编号，留空
     name = '万户ezOffice所有版本通用型SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

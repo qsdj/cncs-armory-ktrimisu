@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = '11627721-eba8-4109-b75b-80e32ffff825'
+    vuln_id = 'U-Mail_0010' # 平台漏洞编号，留空
     name = '卓创资讯U-mail系统漏洞' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型

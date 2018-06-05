@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re, urlparse
 
 class Vuln(ABVuln):
-    poc_id = 'ce191918-21f7-49a7-ae2e-53825efe5914'
+    vuln_id = 'Chinatelecom_0001'  # 平台漏洞编号，留空
     name = '电信路由器 信息泄露'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型

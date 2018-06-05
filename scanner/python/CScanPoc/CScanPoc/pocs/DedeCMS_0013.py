@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    poc_id = '9fae9878-2f7f-4b73-bf86-5d0b0b5afb58'
+    vuln_id = 'DedeCMS_0013' # 平台漏洞编号，留空
     name = '织梦CMS 路径泄漏'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型

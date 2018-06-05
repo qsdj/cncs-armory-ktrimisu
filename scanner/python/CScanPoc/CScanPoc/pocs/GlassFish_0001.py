@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = '47eb154f-0aea-4263-bc48-837dfd91c9d4'
+    vuln_id = 'GlassFish_0001' # 平台漏洞编号，留空
     name = 'GlassFish 任意文件读取' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型
@@ -22,7 +22,7 @@ class Vuln(ABVuln):
 
 
 class Poc(ABPoc):
-    poc_id = 'ff588de2-91b7-4e69-b0dc-9c5c3a6ebead'
+    poc_id = '7cffecb8-b63f-4cee-a9d3-54c850dd16eb'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 

@@ -6,7 +6,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    poc_id = 'f9fd8075-eece-4da9-b479-cc52e5c06d06'
+    vuln_id = 'FlashChat_0000' # 平台漏洞编号
     name = 'FlashChat <= 4.5.7 (aedating4CMS.php) Remote File Include Vulnerability' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.RFI # 漏洞类型

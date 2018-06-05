@@ -6,7 +6,7 @@ import re
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = 'b36e76d7-35fe-4238-a152-2bc30530f365'
+    vuln_id = 'Shop7z_0000' # 平台漏洞编号，留空
     name = 'Shop7z SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

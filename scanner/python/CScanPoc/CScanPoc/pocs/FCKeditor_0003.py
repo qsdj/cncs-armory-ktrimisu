@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    poc_id = '0d5368ab-b67f-4c8b-8921-be202855f9fc'
+    vuln_id = 'FCKeditor_0003' # 平台漏洞编号，留空
     name = 'FCKeditor upload.asp 任意文件上传'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_UPLOAD # 漏洞类型

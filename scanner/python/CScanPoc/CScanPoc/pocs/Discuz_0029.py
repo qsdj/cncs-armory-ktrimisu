@@ -8,7 +8,7 @@ import random
 import hashlib
 
 class Vuln(ABVuln):
-    poc_id = '46cb825b-e243-490f-b0c4-92476e145fad'
+    vuln_id = 'Discuz_0029' # 平台漏洞编号，留空
     name = 'Discuz! x3.1 /utility/convert/index.php 代码执行漏洞' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型

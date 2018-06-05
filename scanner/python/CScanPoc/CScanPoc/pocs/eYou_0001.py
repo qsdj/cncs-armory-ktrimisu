@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
 class Vuln(ABVuln):
-    poc_id = 'ce9d40ed-2d08-4690-b4a9-4b62eb9cecf5'
+    vuln_id = 'eYou_0001' # 平台漏洞编号，留空
     name = 'eYou v4 /php/report/include/config.inc 信息泄露'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型

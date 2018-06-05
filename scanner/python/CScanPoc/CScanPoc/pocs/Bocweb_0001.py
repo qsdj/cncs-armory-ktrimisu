@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re, urlparse
 
 class Vuln(ABVuln):
-    poc_id = '53f4309d-90d4-4329-9e89-76ca1f2ceb36'
+    vuln_id = 'Bocweb_0001'  # 平台漏洞编号，留空
     name = '博采微营销网站前台getshell'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_UPLOAD # 漏洞类型

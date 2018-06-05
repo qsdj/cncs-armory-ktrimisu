@@ -6,7 +6,7 @@ import urlparse
 import time
 
 class Vuln(ABVuln):
-    poc_id = '1f0c6f7f-cbfe-484a-9b6c-a113f92a2073'
+    vuln_id = 'Metadata_0001' # 平台漏洞编号，留空
     name = '学位论文服务系统 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

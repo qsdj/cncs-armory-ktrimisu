@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 from time import clock
 
 class Vuln(ABVuln):
-    poc_id = '9c715004-4a95-43d6-9564-6927bcbb44a7'
+    vuln_id = 'TOUR_0001' # 平台漏洞编号，留空
     name = 'TOUR旅游网站管理系统 SQL注入漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

@@ -7,7 +7,7 @@ import time
 import re
 
 class Vuln(ABVuln):
-    poc_id = '9a4db83f-a156-4274-82c7-5dd4d8bfc44e'
+    vuln_id = 'D-Link_0011' # 平台漏洞编号，留空
     name = 'D-Link 未授权访问'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型

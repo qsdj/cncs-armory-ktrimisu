@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re,urllib,md5
 
 class Vuln(ABVuln):
-    poc_id = 'd2e002bf-bf2b-4a73-b0dd-4c7760c8b07d'
+    vuln_id = 'PHPCMS_0004' # 平台漏洞编号，留空
     name = 'PHPCMS v9.4.9 flash xss漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型

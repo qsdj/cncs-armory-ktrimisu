@@ -6,7 +6,7 @@ import urllib
 import urllib2
 
 class Vuln(ABVuln):
-    poc_id = 'a9657d26-46d6-4871-8ccd-559dd8a12c3a'
+    vuln_id = 'DiliCMS_0001' # 平台漏洞编号，留空
     name = 'DiliCMS 信息泄漏漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型

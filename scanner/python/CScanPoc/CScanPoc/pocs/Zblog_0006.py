@@ -6,7 +6,7 @@ import urlparse
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = 'a4314a64-4a20-4c2a-a02f-64103a710088'
+    vuln_id = 'Zblog_0006' # 平台漏洞编号，留空
     name = 'Zblog前台无需登录包含' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型

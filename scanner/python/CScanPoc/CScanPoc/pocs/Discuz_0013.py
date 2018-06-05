@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
 class Vuln(ABVuln):
-    poc_id = '2379246c-1d03-4ca7-8bff-20b32ae3ac3c'
+    vuln_id = 'Discuz_0013' # 平台漏洞编号，留空
     name = 'Discuz! 7.2 /admincp.php 跨站脚本'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型

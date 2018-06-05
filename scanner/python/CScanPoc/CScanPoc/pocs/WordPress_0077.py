@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = '2f7d3497-dd27-4c6b-9c4c-13e5893ae0ce'
+    vuln_id = 'WordPress_0077' # 平台漏洞编号，留空
     name = 'WordPress Plugin UnGallery 1.5.8 - Local File Disclosure' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型

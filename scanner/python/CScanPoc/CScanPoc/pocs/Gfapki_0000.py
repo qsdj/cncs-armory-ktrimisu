@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = '2871854c-c6e6-4f13-a3ba-5a90839b0c69'
+    vuln_id = 'Gfapki_0000' # 平台漏洞编号，留空
     name = '国富安应用安全网关 目录遍历'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_TRAVERSAL # 漏洞类型

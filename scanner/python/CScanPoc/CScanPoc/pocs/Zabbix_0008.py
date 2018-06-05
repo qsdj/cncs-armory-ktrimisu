@@ -6,7 +6,7 @@ import re
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = '4e63c7c0-8094-4c87-aab0-47751df6abb0'
+    vuln_id = 'Zabbix_0008' # 平台漏洞编号，留空
     name = '极光推送之zabbix注入导致命令执行' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型

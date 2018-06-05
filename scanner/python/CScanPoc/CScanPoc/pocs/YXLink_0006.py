@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = '22c206fb-1258-40e1-af69-c6c5efc762eb'
+    vuln_id = 'YXLink_0006'  # 平台漏洞编号，留空
     name = '铱迅web应用防护系统 信息泄露'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型

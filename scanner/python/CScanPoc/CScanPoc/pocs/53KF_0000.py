@@ -6,7 +6,7 @@ import re
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = 'e310ef7f-3a24-45cf-a396-7619b51dc41c'
+    vuln_id = '53KF_0000' # 平台漏洞编号，留空
     name = '53KF 任意文件下载' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型

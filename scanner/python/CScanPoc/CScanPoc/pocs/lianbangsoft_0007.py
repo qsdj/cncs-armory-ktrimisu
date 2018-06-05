@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = '5461a3a5-5c52-4454-8e2a-9e9c5d0da407'
+    vuln_id = 'LianbangSoft_0007' # 平台漏洞编号，留空
     name = '行政审批系统越权' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.OTHER # 漏洞类型

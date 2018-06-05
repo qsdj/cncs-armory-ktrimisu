@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = 'f1149935-3de8-45eb-8850-b41171630627'
+    vuln_id = 'Netcore_0000' # 平台漏洞编号，留空
     name = '磊科NI360安全路由器绕过密码登录' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.OTHER # 漏洞类型

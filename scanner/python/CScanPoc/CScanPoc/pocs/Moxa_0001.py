@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = '46be6662-5112-4fe7-87b8-841ccc43d83a'
+    vuln_id = 'Moxa_0001' # 平台漏洞编号，留空
     name = 'Moxa NPorts web console! 未授权访问' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.MISCONFIGURATION # 漏洞类型
@@ -21,7 +21,7 @@ class Vuln(ABVuln):
 
 
 class Poc(ABPoc):
-    poc_id = 'ed2dc24a-4a40-411e-94e5-664a7879782e'
+    poc_id = 'fb70178c-59bf-4f2f-a628-ef6a49e7667b'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 

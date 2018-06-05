@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = '8e99604e-0ad2-4e7c-9110-9926d6946b2a'
+    vuln_id = 'Zblog_0003'  # 平台漏洞编号，留空
     name = 'Zblog1.8 search.asp XSS'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.XSS  # 漏洞类型

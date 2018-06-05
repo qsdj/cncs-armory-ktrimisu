@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re, time
 
 class Vuln(ABVuln):
-    poc_id = '3a6cd3d1-e2f3-4059-892d-bf0842c19ea8'
+    vuln_id = 'DOSSM_0001' # 平台漏洞编号，留空
     name = '广州问途网络营销系统 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

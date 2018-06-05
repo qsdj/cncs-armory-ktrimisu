@@ -6,7 +6,7 @@ import urllib,urllib2
 import re
 
 class Vuln(ABVuln):
-    poc_id = 'd623ea84-adcd-4a4c-b710-141824e269e6'
+    vuln_id = 'SVN_0001' # 平台漏洞编号，留空
     name = 'SVN 信息泄露漏洞' # 漏洞名称
     level = VulnLevel.LOW # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型

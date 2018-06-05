@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = '0f78cb91-38ab-418a-bcdf-34ee9680fd33'
+    vuln_id = 'Joomla_0018' # 平台漏洞编号，留空
     name = 'Joomla! Random Article SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

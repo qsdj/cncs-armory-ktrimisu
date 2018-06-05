@@ -6,7 +6,7 @@ import urllib,urllib2
 import re
 
 class Vuln(ABVuln):
-    poc_id = '9dca075f-06ea-4c43-b8cb-9c2cf16ae6f0'
+    vuln_id = 'XAMPP_0001' # 平台漏洞编号，留空
     name = 'XAMPP 1.7.3 /xampp/showcode.php 任意文件下载' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型

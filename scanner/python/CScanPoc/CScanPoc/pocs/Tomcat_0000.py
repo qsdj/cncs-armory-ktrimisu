@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = 'cf08ccf4-a201-4dd1-8ef6-e8f38662b815'
+    vuln_id = 'Tomcat_0000' # 平台漏洞编号，留空
     name = 'Tomcat管理路径泄露漏洞' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型

@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
 class Vuln(ABVuln):
-    poc_id = 'e76667da-ab64-43a3-9ef8-de425a3e2460'
+    vuln_id = 'QiboCMS_0021' # 平台漏洞编号，留空
     name = 'Qibo Information V1 /search.php XSS'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型

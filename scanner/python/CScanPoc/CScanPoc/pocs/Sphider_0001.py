@@ -7,7 +7,7 @@ import re
 import httplib
 
 class Vuln(ABVuln):
-    poc_id = 'afc7e72b-ec7e-4eed-8465-b84c5734dff0'
+    vuln_id = 'Sphider_0001' # 平台漏洞编号，留空
     name = 'Sphider 1.3.6 /admin.php 代码执行漏洞' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型

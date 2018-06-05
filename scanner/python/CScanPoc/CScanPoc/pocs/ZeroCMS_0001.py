@@ -6,7 +6,7 @@ import urllib,urllib2
 import re
 
 class Vuln(ABVuln):
-    poc_id = 'a90b37c4-a984-4493-b6e1-885b45d1aa88'
+    vuln_id = 'ZeroCMS_0001' # 平台漏洞编号，留空
     name = 'ZeroCMS 1.0 /zero_transact_user.php XSS' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型

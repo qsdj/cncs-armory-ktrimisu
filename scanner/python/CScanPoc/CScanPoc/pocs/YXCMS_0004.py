@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    poc_id = 'd202f01e-201c-4b8e-8fd7-45c0cff570dd'
+    vuln_id = 'YXcms_0004' # 平台漏洞编号，留空
     name = '新云cms建站系统 通用SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION  # 漏洞类型

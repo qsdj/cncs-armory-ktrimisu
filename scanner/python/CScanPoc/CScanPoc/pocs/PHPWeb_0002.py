@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
 class Vuln(ABVuln):
-    poc_id = '044e8f16-a757-4c19-b408-e80f2f1dcde0'
+    vuln_id = 'PHPWeb_0002' # 平台漏洞编号，留空
     name = 'phpweb SQL Injection'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

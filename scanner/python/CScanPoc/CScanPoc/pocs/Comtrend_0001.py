@@ -6,7 +6,7 @@ import re
 import urlparse
 
 class Vuln(ABVuln):
-    poc_id = 'bf53e58e-43c5-4957-bd08-c5fc6188a414'
+    vuln_id = 'Comtrend_0001' # 平台漏洞编号，留空
     name = '康全电讯 ADSL Router 远程代码执行'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型

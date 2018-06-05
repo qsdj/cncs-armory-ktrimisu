@@ -8,7 +8,7 @@ import urllib2
 import random
 
 class Vuln(ABVuln):
-    poc_id = '252dab1e-d375-423b-8704-01a082f1dd5b'
+    vuln_id = 'Joomla_0013' # 平台漏洞编号，留空
     name = 'Joomla! CMS DOS漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.OTHER # 漏洞类型

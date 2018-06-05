@@ -6,7 +6,7 @@ import re
 import time
 
 class Vuln(ABVuln):
-    poc_id = 'fcb44bfc-5d59-4d44-8239-e813e89091ff'
+    vuln_id = 'UCenter_0001' # 平台漏洞编号，留空
     name = 'UCenter Home 2.0 SQL注入漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

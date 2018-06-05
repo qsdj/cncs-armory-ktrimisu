@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = 'e0b3ab18-98c5-41b9-a266-fe02ff71f05d'
+    vuln_id = 'PHPCMS_0010' # 平台漏洞编号，留空
     name = 'PHPCMS authkey泄露可注射拿shell' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

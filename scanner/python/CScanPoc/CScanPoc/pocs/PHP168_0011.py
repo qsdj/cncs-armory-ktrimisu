@@ -6,7 +6,7 @@ import urlparse
 import re
 
 class Vuln(ABVuln):
-    poc_id = 'd632c738-480a-4d80-983b-42edb0b0cda5'
+    vuln_id = 'PHP168_0011' # 平台漏洞编号，留空
     name = 'PHP168 任意文件下载'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型

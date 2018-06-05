@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = 'ba5c08d6-0c31-4274-b42a-3d7aa537e52d'
+    vuln_id = 'TOPSEC_0003'  # 平台漏洞编号，留空
     name = '天融信WEB应用安全网关 任意文件读取'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_TRAVERSAL  # 漏洞类型

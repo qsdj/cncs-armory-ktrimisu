@@ -6,7 +6,7 @@ import urlparse
 import time
 
 class Vuln(ABVuln):
-    poc_id = 'e3f92be3-3e3c-4105-92e0-ef87a9b210d5'
+    vuln_id = 'RuvarHRM_0001' # 平台漏洞编号，留空
     name = '璐华人力资源管理系统 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

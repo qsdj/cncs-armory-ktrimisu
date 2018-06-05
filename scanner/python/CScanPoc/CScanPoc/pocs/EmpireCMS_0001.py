@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = '9bc19975-6472-4edd-b29e-5f42134d29dc'
+    vuln_id = 'EmpireCMS_0001'  # 平台漏洞编号，留空
     name = '帝国网站管理系统某手机插件注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

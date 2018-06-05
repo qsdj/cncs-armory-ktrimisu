@@ -6,7 +6,7 @@ import urllib,urllib2
 import hashlib
 
 class Vuln(ABVuln):
-    poc_id = '90e62190-06b6-4bde-a957-513febf1fa47'
+    vuln_id = 'StartBBS_0001' # 平台漏洞编号，留空
     name = 'StartBBS /swfupload.swf 跨站脚本漏洞' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型

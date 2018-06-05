@@ -7,7 +7,7 @@ import re
 import hashlib
 
 class Vuln(ABVuln):
-    poc_id = 'abfbc226-c291-4de2-8a94-4a12e52ef583'
+    vuln_id = 'LotusCMS_0000' # 平台漏洞编号，留空
     name = 'LotusCMS 3.0 /core/lib/router.php 代码执行漏洞' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型

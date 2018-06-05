@@ -6,7 +6,7 @@ import random
 import base64
 
 class Vuln(ABVuln):
-    poc_id = '252c4466-af38-4f55-ab2d-556d8221029d'
+    vuln_id = 'WebSphere_0001'  # 平台漏洞编号，留空
     name = 'WebSphere java反序列化漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE  # 漏洞类型

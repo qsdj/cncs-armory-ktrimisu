@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = '36af8a1a-08d5-488a-a45c-551ec0dcb621'
+    vuln_id = 'TOPSEC_0023'  # 平台漏洞编号，留空
     name = '天融信 前台无需登录命令执行'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型

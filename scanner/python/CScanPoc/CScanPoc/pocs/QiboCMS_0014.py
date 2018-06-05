@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    poc_id = '089ddff3-aec9-40f8-909d-6c69399cdf91'
+    vuln_id = 'QiboCMS_0014' # 平台漏洞编号，留空
     name = '齐博CMS下载系统 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

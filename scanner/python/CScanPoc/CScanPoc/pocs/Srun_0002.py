@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = '8aad9402-3a6b-406f-b3f9-42aa612bb65f'
+    vuln_id = 'Srun_0002' # 平台漏洞编号，留空
     name = 'Srun 网关 命令执行'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型

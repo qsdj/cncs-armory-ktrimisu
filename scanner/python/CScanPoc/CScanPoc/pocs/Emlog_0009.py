@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = '2ff62834-57e9-4d50-96fa-47aa6a4c1de1'
+    vuln_id = 'Emlog_0009' # 平台漏洞编号，留空
     name = 'Emlog相册插件SQL注入漏洞' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

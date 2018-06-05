@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import time
 
 class Vuln(ABVuln):
-    poc_id = '1003e0cc-86ae-4133-80bf-9f4b07d301a7'
+    vuln_id = 'Foosun_0002' # 平台漏洞编号，留空
     name = '风讯CMS /user/City_ajax.aspx sql注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

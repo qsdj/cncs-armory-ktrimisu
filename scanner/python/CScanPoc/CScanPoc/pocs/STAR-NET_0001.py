@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = '24fd5351-879e-43b7-9186-8f17b0fb3f44'
+    vuln_id = 'STAR-NET_0001' # 平台漏洞编号，留空
     name = '星网锐捷语音网关 配置下载'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型

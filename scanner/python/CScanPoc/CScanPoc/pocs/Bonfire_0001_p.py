@@ -6,7 +6,7 @@ import urllib,urllib2
 import re
 
 class Vuln(ABVuln):
-    poc_id = '911629f4-a15b-49f6-a2ff-d0ebd67d0354'
+    vuln_id = 'Bonfire_0001_p' # 平台漏洞编号，留空
     name = 'Bonfire 0.7 /install.php 信息泄露' # 漏洞名称
     level = VulnLevel.LOW # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型

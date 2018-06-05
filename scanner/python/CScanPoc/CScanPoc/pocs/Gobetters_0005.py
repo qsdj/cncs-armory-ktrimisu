@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = 'f2443456-5680-43e0-8360-e5d54a1f5f82'
+    vuln_id = 'Gobetters_0005' # 平台漏洞编号，留空
     name = 'Gobetters视频会议系统 post注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

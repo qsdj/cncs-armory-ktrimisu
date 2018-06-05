@@ -6,7 +6,7 @@ import urllib,urllib2
 import re
 
 class Vuln(ABVuln):
-    poc_id = 'f1b1dcd0-68d8-4ef5-b870-03b2ea8eae22'
+    vuln_id = 'Southidc_0003' # 平台漏洞编号，留空
     name = 'Southidc南方数据 v11.0 /NewsType.asp SQL注入漏洞' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

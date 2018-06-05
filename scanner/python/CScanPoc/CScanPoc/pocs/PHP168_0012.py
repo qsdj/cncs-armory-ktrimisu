@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = '72cceb1d-c404-4fe7-90b4-2a258bdfd730'
+    vuln_id = 'PHP168_0012' # 平台漏洞编号，留空
     name = 'PHP168 V6.02整站系统 远程代码执行'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型

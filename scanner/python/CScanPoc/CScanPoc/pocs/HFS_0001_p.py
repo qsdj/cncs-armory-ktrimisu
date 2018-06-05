@@ -6,7 +6,7 @@ import urllib,urllib2
 import re
 
 class Vuln(ABVuln):
-    poc_id = '5fb55912-436c-43eb-954e-8ddcad637f46'
+    vuln_id = 'HFS_0001_p' # 平台漏洞编号，留空
     name = 'HFS(HttpFileServer)命令执行' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型

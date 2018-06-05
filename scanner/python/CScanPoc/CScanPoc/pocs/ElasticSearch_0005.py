@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urlparse
 
 class Vuln(ABVuln):
-    poc_id = 'f234b419-58b3-4fc4-be57-75ae4c5824b2'
+    vuln_id = 'ElasticSearch_0005'  # 平台漏洞编号，留空
     name = 'ElasticSearch 未授权访问漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.OTHER  # 漏洞类型

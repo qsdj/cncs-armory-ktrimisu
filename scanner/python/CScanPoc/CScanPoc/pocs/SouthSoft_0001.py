@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = '7539995e-dc15-4b94-8f1d-0822d2628238'
+    vuln_id = 'SouthSoft_0001' # 平台漏洞编号，留空
     name = '南软研究生信息管理系统任意上传' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.FILE_UPLOAD # 漏洞类型

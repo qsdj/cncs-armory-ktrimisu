@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = '064f6a26-dcd0-4721-a88f-43ca5eb7f3af'
+    vuln_id = 'Yonyou_0015' # 平台漏洞编号，留空
     name = '用友致远A6协同系统 敏感信息泄露'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型

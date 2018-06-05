@@ -7,7 +7,7 @@ import re
 import hashlib
 
 class Vuln(ABVuln):
-    poc_id = '7ae9c763-be57-462e-a416-51651c73ab31'
+    vuln_id = 'eYou_0006' # 平台漏洞编号，留空
     name = 'eYou /sysinfo.html 信息泄漏' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

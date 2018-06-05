@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = 'fe8ef509-285a-49c7-9619-e6704b520de4'
+    vuln_id = 'Dianping_0000' # 平台漏洞编号，留空
     name = '大众点评某分站存在远程命令执行' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型

@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    poc_id = '79731fb8-1f3f-41eb-9d24-5f6efbfb50d2'
+    vuln_id = 'Cyberfolio_0000' # 平台漏洞编号
     name = 'Cyberfolio <= 2.0 RC1 (av) Remote File Include Vulnerabilities' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.RFI # 漏洞类型

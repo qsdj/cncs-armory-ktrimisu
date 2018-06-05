@@ -6,7 +6,7 @@ import socket
 import urllib
 
 class Vuln(ABVuln):
-    poc_id = '4cd914da-aba6-4943-bbed-eed4b4feeb1b'
+    vuln_id = 'MS08-067_0001_p'  # 平台漏洞编号，留空
     name = 'MS08-067 NetAPI32.dll 远程缓冲区溢出漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型

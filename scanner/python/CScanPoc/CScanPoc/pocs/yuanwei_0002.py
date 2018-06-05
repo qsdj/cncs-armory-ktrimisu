@@ -6,7 +6,7 @@ import re
 import random
 
 class Vuln(ABVuln):
-    poc_id = '379cb8d3-892d-4cbb-b6a4-ac51acd1779e'
+    vuln_id = 'Yuanwei_0002' # 平台漏洞编号，留空
     name = '远为应用安全网关 任意添加管理员'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型

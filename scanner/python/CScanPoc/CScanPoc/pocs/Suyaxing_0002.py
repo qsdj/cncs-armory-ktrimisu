@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = 'b73b024f-9928-441b-9c3a-b3f0e0ae7be9'
+    vuln_id = 'Suyaxing_0002' # 平台漏洞编号，留空
     name = '苏亚星校园管理系统 后台未授权访问到SQL注入再到Getshell'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

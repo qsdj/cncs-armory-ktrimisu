@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = '3da07f87-5a30-4e6a-a3e3-ebcba978e9b9'
+    vuln_id = 'WordPress_0048' # 平台漏洞编号，留空
     name = 'WordPress aspose-doc-exporter 1.0 插件任意文件下载' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型

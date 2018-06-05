@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = 'bfb8e5d4-ef65-4bd2-9850-bc35df235e7f'
+    vuln_id = 'weaver_0044' # 平台漏洞编号，留空
     name = '泛微e-office 越权遍历'  # 漏洞名称
     level = VulnLevel.MED  # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型

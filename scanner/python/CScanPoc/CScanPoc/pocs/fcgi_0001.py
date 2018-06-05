@@ -6,7 +6,7 @@ import socket
 import urlparse
 
 class Vuln(ABVuln):
-    poc_id = 'a775a9d2-8ddb-4731-8346-174c42b8eef0'
+    vuln_id = 'fcgi_0001' # 平台漏洞编号，留空
     name = 'fcgi 暴露于公网'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.OTHER # 漏洞类型

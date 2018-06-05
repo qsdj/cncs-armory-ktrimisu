@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = '9e1c1299-80b9-4112-b9ad-dc1ad96ea9f1'
+    vuln_id = 'TOPSEC_0001'  # 平台漏洞编号，留空
     name = '天融信负载均衡系统 /change_lan.php 本地文件包含'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.LFI  # 漏洞类型

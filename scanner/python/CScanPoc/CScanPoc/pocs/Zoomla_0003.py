@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = '7b0685cb-4e60-4c39-9c8d-e08db2cd7b31'
+    vuln_id = 'Zoomla_0003' # 平台漏洞编号，留空
     name = '逐浪CMS SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

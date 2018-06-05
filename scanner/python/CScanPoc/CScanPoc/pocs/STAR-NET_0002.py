@@ -6,7 +6,7 @@ import urlparse
 import random
 
 class Vuln(ABVuln):
-    poc_id = '28ebd8f3-cff7-47e5-bb32-3d4ca8827152'
+    vuln_id = 'STAR-NET_0002' # 平台漏洞编号，留空
     name = '星网锐捷语音网关 任意添加管理员'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型

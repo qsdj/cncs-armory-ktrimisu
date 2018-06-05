@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
 class Vuln(ABVuln):
-    poc_id = 'aae12c1c-a218-4d49-986c-62e056f58faa'
+    vuln_id = 'Looyu_0011' # 平台漏洞编号，留空
     name = '乐语客服系统任意文件下载漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型

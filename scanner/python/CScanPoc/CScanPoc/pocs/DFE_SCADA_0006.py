@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = '402e65bf-4c74-4905-b7a3-41e5ad644231'
+    vuln_id = 'DFE_SCADA_0006' # 平台漏洞编号，留空
     name = '东方电子SCADA通用系统文件包含' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型
@@ -22,7 +22,7 @@ class Vuln(ABVuln):
 
 
 class Poc(ABPoc):
-    poc_id = '76b655aa-bfce-484e-bc49-9ab350e6013a'
+    poc_id = '2f8f3f3c-b784-4f98-a2ee-267ac558cf19'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 

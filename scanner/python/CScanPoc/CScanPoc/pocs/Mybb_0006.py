@@ -7,7 +7,7 @@ import re
 import hashlib
 
 class Vuln(ABVuln):
-    poc_id = '68451508-2e9e-4a65-8dee-08d87224ff89'
+    vuln_id = 'MyBB_0006' # 平台漏洞编号，留空
     name = 'MyBB 1.6.5 suffers from a cross site scripting vulnerability' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型

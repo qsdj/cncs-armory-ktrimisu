@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = 'c395bb96-e4d2-47e1-98c8-4658d8d42d45'
+    vuln_id = 'KenticoCMS_0001' # 平台漏洞编号，留空
     name = 'Kentico CMS suffers from a user enumeration vulnerability.'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.LFI  # 漏洞类型

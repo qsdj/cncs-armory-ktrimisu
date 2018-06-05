@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = 'd790cf68-de0d-40a3-b9ec-560ed9feec71'
+    vuln_id = '74CMS_0002' # 平台漏洞编号，留空
     name = '骑士CMS 反射型XSS'  # 漏洞名称
     level = VulnLevel.LOW  # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型

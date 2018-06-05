@@ -7,7 +7,7 @@ import re
 import hashlib
 
 class Vuln(ABVuln):
-    poc_id = '3e525be9-0c17-4bf7-8e72-f40512cb683b'
+    vuln_id = 'WordPress_0018' # 平台漏洞编号，留空
     name = 'WordPress Google Document Embedder 2.5.16 ~view.php SQL Injection' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

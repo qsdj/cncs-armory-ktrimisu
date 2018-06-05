@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    poc_id = '9879133e-2d4b-48b5-b639-f8be5e004ec7'
+    vuln_id = 'Zabbix_0002' # 平台漏洞编号，留空
     name = 'Zabbix /popup.php SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

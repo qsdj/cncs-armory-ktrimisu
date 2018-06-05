@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    poc_id = 'a22f5e0c-a39d-4883-9f43-8ec65696c662'
+    vuln_id = 'Joomla_0058' # 平台漏洞编号
     name = 'Joomla Kochsuite Component <= 0.9.4 - Remote File Include Vulnerability' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.RFI # 漏洞类型

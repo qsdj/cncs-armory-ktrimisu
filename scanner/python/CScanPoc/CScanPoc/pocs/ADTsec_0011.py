@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = '6512c983-d115-4984-8fe8-19f49a79fc16'
+    vuln_id = 'ADTsec_0011'  # 平台漏洞编号，留空
     name = '安达通安全网关 信息泄露'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型

@@ -7,7 +7,7 @@ import re
 import cookielib
 
 class Vuln(ABVuln):
-    poc_id = '4e494777-c529-44a9-b482-2934fe782d19'
+    vuln_id = 'BeesCMS_0001_p' # 平台漏洞编号，留空
     name = 'BeesCMS /admin/admin.php 登录绕过' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re, urlparse
 
 class Vuln(ABVuln):
-    poc_id = 'b92fb094-8334-4387-810d-285928d6516d'
+    vuln_id = 'GBcom_0005'  # 平台漏洞编号，留空
     name = '上海寰创运营商WLAN产品 未授权访问'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型

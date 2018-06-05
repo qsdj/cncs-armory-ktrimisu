@@ -7,7 +7,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 
 class Vuln(ABVuln):
-    poc_id = '042611ca-cd19-4cb2-97ee-cf32aa80bb24'
+    vuln_id = 'eYou_0004' # 平台漏洞编号，留空
     name = 'eYou v3 /user/send_queue/listCollege.php 路径泄漏' # 漏洞名称
     level = VulnLevel.LOW # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型

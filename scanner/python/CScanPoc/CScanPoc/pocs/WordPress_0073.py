@@ -6,7 +6,7 @@ import urllib,urllib2
 import re
 
 class Vuln(ABVuln):
-    poc_id = 'f2422eb5-ec04-4938-ba3e-8533839c4996'
+    vuln_id = 'WordPress_0073' # 平台漏洞编号，留空
     name = 'WordPress Acento主题 任意文件下载' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型

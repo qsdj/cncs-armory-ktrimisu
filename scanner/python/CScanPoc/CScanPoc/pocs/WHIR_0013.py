@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import time
 
 class Vuln(ABVuln):
-    poc_id = '0a1e63fe-fe88-4f33-8e68-252d6749fc24'
+    vuln_id = 'Whir_0013' # 平台漏洞编号，留空
     name = '万户OA任意sql语句执行'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型

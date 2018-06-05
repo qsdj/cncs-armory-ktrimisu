@@ -6,7 +6,7 @@ import re
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = '2b4b3f59-8394-487d-8844-45157b9dfacb'
+    vuln_id = 'iGENUS_0000' # 平台漏洞编号，留空
     name = 'iGENUS邮件系统一处无需登录的任意代码执行' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型

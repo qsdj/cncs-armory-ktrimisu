@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = '12e83a7c-3fd5-48d3-bfa8-9482badda93b'
+    vuln_id = 'Mallbuilder_0005' # 平台漏洞编号，留空
     name = 'Mallbuilder商城系统change_status.php id参数SQL注入漏洞' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

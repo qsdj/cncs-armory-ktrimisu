@@ -13,7 +13,7 @@ import getopt
 import urlparse
 
 class Vuln(ABVuln):
-    poc_id = '783e9bc5-4108-4349-b08b-ca752c9c21fa'
+    vuln_id = 'Jetty_Web_Server_0001' # 平台漏洞编号，留空
     name = 'Jetty Web Server 9.2.x-9.3.x 共享缓存区远程泄露漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型

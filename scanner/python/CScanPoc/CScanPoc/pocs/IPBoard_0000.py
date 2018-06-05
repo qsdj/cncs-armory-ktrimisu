@@ -7,7 +7,7 @@ import re
 import hashlib
 
 class Vuln(ABVuln):
-    poc_id = 'acb14529-9c6d-45e3-8ffe-a45239d1a25a'
+    vuln_id = 'IPBoard_0000' # 平台漏洞编号，留空
     name = 'IP.Board <= 3.4.7 /ipsconnect.php SQL注入漏洞' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

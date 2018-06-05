@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
 class Vuln(ABVuln):
-    poc_id = '15058606-8e28-4586-af7d-8ebd76a63233'
+    vuln_id = 'SunData_0001' # 平台漏洞编号，留空
     name = '三唐实验室综合信息管理系统SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

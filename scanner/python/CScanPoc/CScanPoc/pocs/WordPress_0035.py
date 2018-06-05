@@ -7,7 +7,7 @@ import re
 import time
 
 class Vuln(ABVuln):
-    poc_id = '8c7435ad-ce7a-4e8f-95f4-e6ff6308864b'
+    vuln_id = 'WordPress_0035' # 平台漏洞编号，留空
     name = 'WordPress XML-RPC WeakPassWd'  # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.OTHER # 漏洞类型

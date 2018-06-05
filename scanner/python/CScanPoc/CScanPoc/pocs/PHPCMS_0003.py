@@ -6,7 +6,7 @@ import re
 import base64 as b64
 
 class Vuln(ABVuln):
-    poc_id = 'ddd210fa-5091-4f45-a063-eb633fb671cd'
+    vuln_id = 'PHPCMS_0003'  # 平台漏洞编号，留空
     name = 'PHPCMS /phpcms/modules/vote/index.php 代码执行漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型

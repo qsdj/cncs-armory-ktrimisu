@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
 class Vuln(ABVuln):
-    poc_id = 'a1342266-50d3-4428-a821-ef1e094835e2'
+    vuln_id = 'Supesite_0001' # 平台漏洞编号，留空
     name = 'Supesite 7.0 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

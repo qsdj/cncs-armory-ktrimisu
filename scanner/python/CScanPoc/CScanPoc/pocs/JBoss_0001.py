@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
 class Vuln(ABVuln):
-    poc_id = '96837011-22c0-4028-bdcd-6541355e45f6'
+    vuln_id = 'JBoss_0001'  # 平台漏洞编号，留空
     name = 'JBoss 目录遍历'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_TRAVERSAL  # 漏洞类型

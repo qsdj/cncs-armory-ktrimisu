@@ -7,7 +7,7 @@ import re
 import hashlib
 
 class Vuln(ABVuln):
-    poc_id = 'f80f7cf9-946e-4cc1-aa77-0675f7729f30'
+    vuln_id = 'TRS_0007' # 平台漏洞编号，留空
     name = '拓尔思内容协作平台 /wcm/app/system/read_image.jsp 任意文件下载' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型

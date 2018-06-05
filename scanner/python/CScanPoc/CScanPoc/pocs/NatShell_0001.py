@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = '4e3cfb40-85aa-4905-a6a0-9abcc45fc215'
+    vuln_id = 'NatShell_0001' # 平台漏洞编号，留空
     name = 'NatShell宽带认证计费系统 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

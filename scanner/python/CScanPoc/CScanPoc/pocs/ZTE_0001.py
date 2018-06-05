@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re, urlparse
 
 class Vuln(ABVuln):
-    poc_id = '5571f971-6aad-49aa-bc4b-8b0312d4285d'
+    vuln_id = 'ZTE_0001'  # 平台漏洞编号，留空
     name = '中兴ZXV10 MS90 远程视频会议系统任意文件下载'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型

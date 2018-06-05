@@ -6,7 +6,7 @@ import re
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = '64b063ef-c7b6-4b74-abf0-97d2c6cb12b5'
+    vuln_id = 'weaver_0010' # 平台漏洞编号，留空
     name = '泛微e-office 任意文件下载' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型
@@ -22,7 +22,7 @@ class Vuln(ABVuln):
 
 
 class Poc(ABPoc):
-    poc_id = '28c49dcf-a639-48b4-9518-6ff45dbecf04'
+    poc_id = 'd9ca4ada-22d3-424b-b6ef-a63b4bd5bbc6'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 

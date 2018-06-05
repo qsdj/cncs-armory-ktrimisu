@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = '017b9c7e-7758-474f-8f38-4db1db9463b3'
+    vuln_id = 'Jenkins_0002'  # 平台漏洞编号，留空
     name = 'Jenkins 远程命令执行漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE  # 漏洞类型

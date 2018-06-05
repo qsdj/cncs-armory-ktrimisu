@@ -6,7 +6,7 @@ import time
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = '5448ca18-a0c8-4154-8484-d6b8679ada88'
+    vuln_id = 'Yonyou_0040' # 平台漏洞编号，留空
     name = '用友致远A6 initData.jsp SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import random
 
 class Vuln(ABVuln):
-    poc_id = '514e78eb-702b-4560-a8ea-45fb4f011592'
+    vuln_id = 'PHP168_0001' # 平台漏洞编号，留空
     name = 'PHP168 6.0及以下版本login.php存在逻辑错误'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.OTHER # 漏洞类型

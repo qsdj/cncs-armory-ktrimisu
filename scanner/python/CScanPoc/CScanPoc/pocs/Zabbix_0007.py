@@ -6,7 +6,7 @@ import re
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = '8a12a7bb-5dad-4626-b02f-92dc228c0e01'
+    vuln_id = 'Zabbix_0007' # 平台漏洞编号，留空
     name = 'Zabbix Popup.php SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

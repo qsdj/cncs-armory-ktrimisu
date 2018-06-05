@@ -6,7 +6,7 @@ import urllib,urllib2
 import re
 
 class Vuln(ABVuln):
-    poc_id = 'b37abac8-0380-4f39-bf55-61d7be687ebf'
+    vuln_id = 'OSA_0001_p' # 平台漏洞编号，留空
     name = 'OSA运维管理系统前台 /index.php GETSHELL' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型

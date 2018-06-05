@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    poc_id = '615a3da6-4a8e-4156-876e-8f9e1b7dabe3'
+    vuln_id = 'Gizzar_0000' # 平台漏洞编号
     name = 'Gizzar <= 03162002 (index.php) Remote File Include Vulnerability' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.RFI # 漏洞类型

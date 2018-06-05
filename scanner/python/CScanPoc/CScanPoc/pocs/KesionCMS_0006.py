@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
 class Vuln(ABVuln):
-    poc_id = 'd8549886-83d2-4556-a154-231c48ca84f6'
+    vuln_id = 'KesionCMS_0006' # 平台漏洞编号，留空
     name = 'KesionCMS SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

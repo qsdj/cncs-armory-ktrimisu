@@ -6,7 +6,7 @@ import re
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = '6064647e-cfdb-437d-a3b6-bb56d35e13eb'
+    vuln_id = 'Taiji_0001' # 平台漏洞编号，留空
     name = '太极行政服务中心 SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -25,7 +25,7 @@ class Vuln(ABVuln):
 
 
 class Poc(ABPoc):
-    poc_id = '34eedb0c-a1e3-464c-9a02-fecce73fcdc6'
+    poc_id = '7389d8c1-3e09-4f4d-970f-220368fa239c'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 

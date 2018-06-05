@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = 'faf45aef-5004-4a2a-a365-210cc4c6719d'
+    vuln_id = 'StrongSoft_0013' # 平台漏洞编号，留空
     name = '四创灾害预警系统 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

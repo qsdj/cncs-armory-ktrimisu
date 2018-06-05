@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import hashlib
 
 class Vuln(ABVuln):
-    poc_id = '41d9e678-dca8-4ab3-a517-642344d2d275'
+    vuln_id = 'Discuz_0017' # 平台漏洞编号，留空
     name = 'Discuz! X3.0 static/image/common/focus.swf文件存在FlashXss漏洞。' # 漏洞名称
     level = VulnLevel.LOW # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型

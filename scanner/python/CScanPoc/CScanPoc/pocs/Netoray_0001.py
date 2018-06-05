@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = '3b45cef9-730d-4b3d-a1fe-e69f0f99b855'
+    vuln_id = 'Netoray_0001'  # 平台漏洞编号，留空
     name = '莱克斯科技上网行为管理系统通用注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

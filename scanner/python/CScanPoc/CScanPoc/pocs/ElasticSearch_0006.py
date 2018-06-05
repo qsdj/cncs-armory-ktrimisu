@@ -6,7 +6,7 @@ import re
 import urlparse
 
 class Vuln(ABVuln):
-    poc_id = '0cabe66c-b14b-4157-8fd0-188db3aa1b3e'
+    vuln_id = 'ElasticSearch_0006' # 平台漏洞编号，留空
     name = 'ElasticSearch 9200端口 未授权访问漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.OTHER # 漏洞类型

@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re, urlparse
 
 class Vuln(ABVuln):
-    poc_id = '6f32a225-e168-4874-9362-5e6af2f7191f'
+    vuln_id = 'FastMeeting_0001'  # 平台漏洞编号，留空
     name = '好视通FastMeeting视频会议系统任意文件上传'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_UPLOAD # 漏洞类型

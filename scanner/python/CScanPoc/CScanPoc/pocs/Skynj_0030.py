@@ -7,7 +7,7 @@ import re
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = '0ff9212d-8f1d-4c36-9ed7-1ab5f6b44378'
+    vuln_id = 'Skynj_0030' # 平台漏洞编号，留空
     name = '南京擎天政务系统路径泄露' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -24,7 +24,7 @@ class Vuln(ABVuln):
 
 
 class Poc(ABPoc):
-    poc_id = 'c9c50484-c268-4f65-83eb-cde1b680291c'
+    poc_id = '0edab9c9-53a7-4ed2-8fd1-a3c373548b1b'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 

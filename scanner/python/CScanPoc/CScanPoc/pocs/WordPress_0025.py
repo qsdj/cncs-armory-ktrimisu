@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = 'a9f2d9b1-81c9-4e59-a684-cd92c1560508'
+    vuln_id = 'WordPress_0025' # 平台漏洞编号，留空
     name = 'WordPress ibs-mappro Plugin Arbitrary File Download Vulnerability'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型

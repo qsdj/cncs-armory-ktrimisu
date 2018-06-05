@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
 class Vuln(ABVuln):
-    poc_id = '0e79955e-9696-4ec5-ac88-b37105ed68b0'
+    vuln_id = 'StaMPi_0001' # 平台漏洞编号，留空
     name = 'StaMPi /path/fotogalerie.php 本地文件包含'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型

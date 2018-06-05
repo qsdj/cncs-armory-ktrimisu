@@ -7,7 +7,7 @@ import re
 import hashlib
 
 class Vuln(ABVuln):
-    poc_id = 'fd924e2a-b29a-4334-96b9-2cf36424b9a8'
+    vuln_id = 'WordPress_0020' # 平台漏洞编号，留空
     name = 'WordPress DZS-VideoGallery /ajax.php XSS漏洞' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型

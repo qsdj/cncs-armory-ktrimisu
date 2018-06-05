@@ -7,7 +7,7 @@ import urllib
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = '0bf7c333-cd94-4fc5-a1d7-87ac3ea80bed'
+    vuln_id = 'EnableQ_0006' # 平台漏洞编号，留空
     name = 'EnableQ全版本通杀sql注' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

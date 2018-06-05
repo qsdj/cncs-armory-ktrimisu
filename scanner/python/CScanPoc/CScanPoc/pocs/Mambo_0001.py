@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    poc_id = '3492d0f6-9087-4cb1-9d6c-8ceef754ca16'
+    vuln_id = 'Mambo_0001' # 平台漏洞编号
     name = 'Mambo com_babackup Component <= 1.1 File Include Vulnerability' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.RFI # 漏洞类型

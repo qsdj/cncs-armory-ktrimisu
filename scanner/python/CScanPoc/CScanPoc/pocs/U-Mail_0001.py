@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
 class Vuln(ABVuln):
-    poc_id = 'b84e7931-a943-406e-9f02-2224d31ba4b4'
+    vuln_id = 'U-Mail_0001' # 平台漏洞编号，留空
     name = 'U-Mail v9.8.57 /getpass.php 信息泄漏漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型

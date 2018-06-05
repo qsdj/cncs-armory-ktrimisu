@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import time
 
 class Vuln(ABVuln):
-    poc_id = 'd95a2878-ecc7-474d-8f44-072f2d7bba9f'
+    vuln_id = 'Seentech_0012' # 平台漏洞编号，留空
     name = '中科新业网络哨兵 命令执行'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型

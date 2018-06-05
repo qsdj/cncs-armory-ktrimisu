@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    poc_id = '507eb4f2-0764-45bc-8755-dc6a2828c29e'
+    vuln_id = 'Discuz_0012' # 平台漏洞编号，留空
     name = 'Discuz! Board X /batch.common.php SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

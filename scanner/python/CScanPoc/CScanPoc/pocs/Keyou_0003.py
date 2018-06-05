@@ -6,7 +6,7 @@ import urlparse
 import time
 
 class Vuln(ABVuln):
-    poc_id = '41b7cdec-a3d3-4a44-a3d8-ef589cd360d2'
+    vuln_id = 'Keyou_0003' # 平台漏洞编号，留空
     name = '江南科友堡垒机 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

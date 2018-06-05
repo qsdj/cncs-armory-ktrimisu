@@ -7,7 +7,7 @@ import time
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = '90fde3fd-4384-4008-aaf9-a2afb0b2e1eb'
+    vuln_id = 'Whir_0008' # 平台漏洞编号，留空
     name = '万户OA多处无限制任意文件下载' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型
@@ -23,7 +23,7 @@ class Vuln(ABVuln):
 
 
 class Poc(ABPoc):
-    poc_id = '59119c06-c312-436c-92a8-452ba48039de'
+    poc_id = '35ed7d21-37bb-4fc4-88e9-9500295ee6a5'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 

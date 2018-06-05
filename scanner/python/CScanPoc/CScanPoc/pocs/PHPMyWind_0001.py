@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    poc_id = '323549c3-6a0f-4112-93d6-a67fee5c9c36'
+    vuln_id = 'PHPMyWind_0001' # 平台漏洞编号，留空
     name = 'PHPMyWind SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

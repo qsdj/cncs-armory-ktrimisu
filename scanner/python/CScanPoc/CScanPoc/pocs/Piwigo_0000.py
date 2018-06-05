@@ -7,7 +7,7 @@ import re
 import hashlib
 
 class Vuln(ABVuln):
-    poc_id = '0f2b19e2-e2f6-4ca9-9d17-76489e3719ca'
+    vuln_id = 'Piwigo_0000' # 平台漏洞编号，留空
     name = 'Piwigo <= v2.6.0 /piwigo/include/functions_rate.inc.php SQL注入漏洞' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

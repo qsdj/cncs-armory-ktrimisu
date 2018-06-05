@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = 'f1620cfe-85dc-412b-928e-dfc4863ece73'
+    vuln_id = 'P2P_0003' # 平台漏洞编号，留空
     name = '绿麻雀网贷系统 通用注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

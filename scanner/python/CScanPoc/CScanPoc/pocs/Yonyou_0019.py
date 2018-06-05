@@ -6,7 +6,7 @@ import time
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = '45dbb381-7bec-4277-8e4e-021580dc1ab0'
+    vuln_id = 'yongyou_0019' # 平台漏洞编号，留空
     name = '用友 GRP-u8 四处sql注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -22,7 +22,7 @@ class Vuln(ABVuln):
 
 
 class Poc(ABPoc):
-    poc_id = '89caf3c7-7c63-41fd-a304-b466dca3931e'
+    poc_id = '89ce6614-ffb1-4b32-a230-4d21235a2c93'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 

@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = '1d9f15ed-ca7d-4386-b93c-cc64fa3b0fb5'
+    vuln_id = 'ZTE_0011' # 平台漏洞编号，留空
     name = 'ZTE-F660 未授权访问'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型

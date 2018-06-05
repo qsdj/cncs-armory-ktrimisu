@@ -6,7 +6,7 @@ import urllib,urllib2
 import re
 
 class Vuln(ABVuln):
-    poc_id = '0d7a4c9a-f49d-4698-8c32-8bcea7820524'
+    vuln_id = 'Shopv8_0001' # 平台漏洞编号，留空
     name = 'Shopv8商城系统 /admin/pinglun.asp SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

@@ -6,7 +6,7 @@ import urllib,urllib2
 import re
 
 class Vuln(ABVuln):
-    poc_id = '4187f49b-808d-4268-986e-0c03a4312fba'
+    vuln_id = 'DedeCMS_0004' # 平台漏洞编号，留空
     name = '织梦CMS /plus/recommend.php 存在SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

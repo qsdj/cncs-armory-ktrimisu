@@ -7,7 +7,7 @@ import re
 import hashlib
 
 class Vuln(ABVuln):
-    poc_id = '2c116e88-8c1d-487c-8b9b-1132a9e31125'
+    vuln_id = 'Joomla_0009' # 平台漏洞编号，留空
     name = 'Joomla! Component com_departments插件 SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

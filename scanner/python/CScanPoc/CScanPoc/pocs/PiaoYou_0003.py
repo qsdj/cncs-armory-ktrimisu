@@ -7,7 +7,7 @@ import time
 import urllib
 
 class Vuln(ABVuln):
-    poc_id = '98fc11d8-5035-4712-b9fd-5619ac0a3876'
+    vuln_id = 'PiaoYou_0003' # 平台漏洞编号，留空
     name = '票友订票系统 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

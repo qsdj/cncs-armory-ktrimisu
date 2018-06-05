@@ -6,7 +6,7 @@ import re
 import urlparse
 
 class Vuln(ABVuln):
-    poc_id = 'a3e0070a-558f-4fda-98e3-5d0f843cb570'
+    vuln_id = 'D-Link_0004' # 平台漏洞编号，留空
     name = 'D-Link 任意文件下载'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型

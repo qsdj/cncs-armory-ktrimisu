@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = '42a2d975-ad77-4219-a2cc-6219bb14a721'
+    vuln_id = 'PHPCMS_0011' # 平台漏洞编号，留空
     name = 'PHPCMS 2008黄页模块代码执行'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型

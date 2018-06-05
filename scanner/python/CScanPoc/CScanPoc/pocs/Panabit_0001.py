@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re, urlparse
 
 class Vuln(ABVuln):
-    poc_id = '4cb5b587-3416-4097-b5ba-3bde323d8fca'
+    vuln_id = 'Panabit_0001'  # 平台漏洞编号，留空
     name = '派网软件某流量分析管理系统 任意文件下载'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_TRAVERSAL # 漏洞类型

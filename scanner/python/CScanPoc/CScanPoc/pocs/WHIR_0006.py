@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = '2b1e9e46-6af9-42ec-b2a2-3385b6347d9a'
+    vuln_id = 'Whir_0006'  # 平台漏洞编号，留空
     name = '万户ezEIP /download.ashx 任意文件下载'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD  # 漏洞类型

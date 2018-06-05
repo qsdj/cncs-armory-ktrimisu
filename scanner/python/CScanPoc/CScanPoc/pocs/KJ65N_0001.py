@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re, urlparse
 
 class Vuln(ABVuln):
-    poc_id = '119bba35-4405-45ce-858c-0fa648bbc2d7'
+    vuln_id = 'KJ65N_0001'  # 平台漏洞编号，留空
     name = 'KJ65N煤矿安全监控系统 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

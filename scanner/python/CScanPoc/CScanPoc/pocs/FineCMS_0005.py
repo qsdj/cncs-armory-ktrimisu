@@ -6,7 +6,7 @@ import urllib,urllib2
 import re
 
 class Vuln(ABVuln):
-    poc_id = 'c12a5503-07aa-4d30-a3db-383c8a539a20'
+    vuln_id = 'FineCMS_0005' # 平台漏洞编号，留空
     name = 'FineCMS 2.3.0 /models/search_model.php SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

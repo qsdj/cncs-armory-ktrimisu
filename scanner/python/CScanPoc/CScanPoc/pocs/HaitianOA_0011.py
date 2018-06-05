@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = '138b1ee1-9d8d-462c-880d-7c5a06ced284'
+    vuln_id = 'HaitianOA_0011' # 平台漏洞编号，留空
     name = '海天OA系统存在SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -33,7 +33,7 @@ class Vuln(ABVuln):
 
 
 class Poc(ABPoc):
-    poc_id = 'd0384cc8-bccf-4cfe-86ec-677c3c415864'
+    poc_id = '6e14296f-6bfc-43a3-92b8-5229693cc054'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 

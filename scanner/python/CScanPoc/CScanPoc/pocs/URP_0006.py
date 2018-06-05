@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = '522b0d71-338c-4242-bee7-c70b9ef91cc0'
+    vuln_id = 'URP_0006' # 平台漏洞编号，留空
     name = 'URP综合教务系统代码执行' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型

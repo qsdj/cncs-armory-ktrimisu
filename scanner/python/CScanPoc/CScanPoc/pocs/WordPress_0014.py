@@ -7,7 +7,7 @@ import urllib
 import urllib2
 
 class Vuln(ABVuln):
-    poc_id = '96cf425a-51f7-4ddf-935d-3fe8c352d6af'
+    vuln_id = 'WordPress_0014' # 平台漏洞编号，留空
     name = 'WordPress CodeArt Google MP3 Player Plugin 任意文件下载'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型

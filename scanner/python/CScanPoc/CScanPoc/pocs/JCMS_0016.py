@@ -6,7 +6,7 @@ import time
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = 'cb50841f-4ee0-4536-8ad4-8734ff6ff70e'
+    vuln_id = 'JCMS_0016' # 平台漏洞编号，留空
     name = '南京大汉某政府信息公开系统存在通用型SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -22,7 +22,7 @@ class Vuln(ABVuln):
 
 
 class Poc(ABPoc):
-    poc_id = '84e53478-eccd-4053-a848-bb0a151b9aa0'
+    poc_id = '4edaa049-da4d-444d-b99b-7d8dcd8b0046'
     author = '国光'  # POC编写者
     create_date = '2018-05-13' # POC创建时间
 

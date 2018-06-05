@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
 class Vuln(ABVuln):
-    poc_id = 'b580da46-000f-41e3-94fc-25b1199a9a3c'
+    vuln_id = 'Netentsec_0002' # 平台漏洞编号，留空
     name = '网康科技 NS-ASG /commonplugin-Download.php 任意文件下载漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型

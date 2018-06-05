@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    poc_id = '312723cb-d0b3-48ab-8088-e15e4b1e1da8'
+    vuln_id = 'Mambo_0002' # 平台漏洞编号
     name = 'Mambo cropimage Component <= 1.0 - Remote File Include Vulnerability' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.RFI # 漏洞类型

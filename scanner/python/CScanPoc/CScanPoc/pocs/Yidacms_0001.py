@@ -7,7 +7,7 @@ import re
 import hashlib
 
 class Vuln(ABVuln):
-    poc_id = '66e933e3-6610-4396-81da-02491a955d90'
+    vuln_id = 'YidaCMS_0001' # 平台漏洞编号，留空
     name = 'Yidacms v3.2 /Yidacms/user/user.asp 信息泄漏' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型

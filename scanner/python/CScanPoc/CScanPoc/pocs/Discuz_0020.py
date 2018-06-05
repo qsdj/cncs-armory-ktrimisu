@@ -6,7 +6,7 @@ import urllib,urllib2
 import re
 
 class Vuln(ABVuln):
-    poc_id = 'ebe95354-9124-442a-bffa-ccdb0ffb0ab1'
+    vuln_id = 'Discuz_0020' # 平台漏洞编号，留空
     name = 'Discuz! 敏感文件备份导致uc_key泄露GETSHELL' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型

@@ -6,7 +6,7 @@ import urllib,urllib2
 import re
 
 class Vuln(ABVuln):
-    poc_id = 'b044939c-d1f3-43f7-bb1b-ac0a6b314a92'
+    vuln_id = 'PHPWind_0007' # 平台漏洞编号，留空
     name = 'PHPWind 9.0 /res/images/uploader.swf 跨站脚本漏洞' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型

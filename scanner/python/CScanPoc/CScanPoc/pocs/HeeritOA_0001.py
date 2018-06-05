@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = '8561bf55-06ab-4600-8912-a43b4b1d9df4'
+    vuln_id = 'HeeritOA_0001' # 平台漏洞编号，留空
     name = '北京希尔OA通用型任意文件读取'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_OPERATION # 漏洞类型

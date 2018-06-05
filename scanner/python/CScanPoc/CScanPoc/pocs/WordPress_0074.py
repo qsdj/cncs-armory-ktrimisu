@@ -6,7 +6,7 @@ import urllib,urllib2
 import re
 
 class Vuln(ABVuln):
-    poc_id = 'a78b2ebf-f8c3-4cb2-ab45-1e4a2e4accca'
+    vuln_id = 'WordPress_0074' # 平台漏洞编号，留空
     name = 'WordPress Persuasion Theme 2.x 任意文件下载' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型

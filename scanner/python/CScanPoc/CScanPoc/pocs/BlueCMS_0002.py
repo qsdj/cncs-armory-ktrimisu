@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = '311d18a0-3f19-4c22-b5ae-73a5b46b5457'
+    vuln_id = 'BlueCMS_0002' # 平台漏洞编号，留空
     name = 'BlueCMS 双字节万能密码进后台'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

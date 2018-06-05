@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
 class Vuln(ABVuln):
-    poc_id = '13d7b65c-bee2-444e-a501-fd655a554f97'
+    vuln_id = 'LianbangSoft_0001' # 平台漏洞编号，留空
     name = '邯郸市连邦软件行政服务系统sql注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

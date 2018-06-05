@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = 'ad370da0-72d6-4bc8-9584-5edf7c1758d7'
+    vuln_id = 'Workyi_0006' # 平台漏洞编号，留空
     name = 'Workyi人才系统 SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -21,7 +21,7 @@ class Vuln(ABVuln):
 
 
 class Poc(ABPoc):
-    poc_id = '2258e243-5463-49eb-86ca-aaa73f586df8'
+    poc_id = '05f3f046-1b3e-463a-ac4c-5fd897dcc1b9'
     author = '国光'  # POC编写者
     create_date = '2018-05-22' # POC创建时间
 

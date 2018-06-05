@@ -8,7 +8,7 @@ import string
 import requests
 
 class Vuln(ABVuln):
-    poc_id = '93eb2715-715a-41aa-a203-363b34acf1e9'
+    vuln_id = 'WordPress_0007'  # 平台漏洞编号，留空
     name = 'WordPress 存储型XSS'  # 漏洞名称
     level = VulnLevel.MED  # 漏洞危害级别
     type = VulnType.XSS  # 漏洞类型

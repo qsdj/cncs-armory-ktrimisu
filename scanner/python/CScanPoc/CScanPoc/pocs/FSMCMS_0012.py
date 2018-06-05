@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    poc_id = 'd2b17ea2-a5ee-4f8b-a73b-bc940a5290f0'
+    vuln_id = 'FSMCMS_0012' # 平台漏洞编号，留空
     name = 'FSMCMS系统 任意文件上传'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_UPLOAD # 漏洞类型

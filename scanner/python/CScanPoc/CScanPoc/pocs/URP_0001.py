@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
 class Vuln(ABVuln):
-    poc_id = 'f449740b-9a28-43b6-8a54-db486d4b068d'
+    vuln_id = 'UPR_0001' # 平台漏洞编号，留空
     name = 'URP教务系统 任意文件下载'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型

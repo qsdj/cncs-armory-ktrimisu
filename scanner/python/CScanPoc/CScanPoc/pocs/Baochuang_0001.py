@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = '585da141-df06-4076-9655-0bd6d1ad62b7'
+    vuln_id = 'Baochuang_0001'  # 平台漏洞编号，留空
     name = '宝创科技MSA 处任意文件下载'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型

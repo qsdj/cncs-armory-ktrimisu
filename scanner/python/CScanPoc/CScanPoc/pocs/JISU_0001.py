@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
 class Vuln(ABVuln):
-    poc_id = 'd2b54d62-d053-4797-8368-96a77b75ce83'
+    vuln_id = 'JISU_0001' # 平台漏洞编号，留空
     name = '台州市极速网络CMS /index.php 任意代码执行'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型

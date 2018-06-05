@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 
 class Vuln(ABVuln):
-    poc_id = '28a5fec0-a4f4-497c-8507-3d9d5f443fe4'
+    vuln_id = 'PHP_0003'  # 平台漏洞编号，留空
     name = 'PHP-CGI 远程代码执行'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE  # 漏洞类型

@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    poc_id = '326d13cb-9bee-4b42-9d53-28112199285e'
+    vuln_id = 'eWebEditor_0000' # 平台漏洞编号
     name = 'eWebEditor 弱密码' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.MISCONFIGURATION # 漏洞类型

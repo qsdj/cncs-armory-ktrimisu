@@ -6,7 +6,7 @@ import urllib,urllib2
 import re
 
 class Vuln(ABVuln):
-    poc_id = '3183070c-7b5e-4420-ba15-58897472a7d3'
+    vuln_id = '74CMS_0000' # 平台漏洞编号，留空
     name = '骑士CMS /plus/ajax_officebuilding.php SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

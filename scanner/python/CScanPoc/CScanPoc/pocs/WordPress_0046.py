@@ -7,7 +7,7 @@ import time
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = '4e5ca08d-fd1c-4a62-85f6-4793f4777297'
+    vuln_id = 'WordPress_0046' # 平台漏洞编号，留空
     name = 'WordPress Simple Ads Manager-Multiple 插件SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

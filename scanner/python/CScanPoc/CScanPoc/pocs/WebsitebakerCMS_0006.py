@@ -6,7 +6,7 @@ import re
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = '693db20a-a770-4df6-b6e8-02cdb9b12447'
+    vuln_id = 'WebsitebakerCMS_0006' # 平台漏洞编号，留空
     name = 'CMS Websitebaker 2.8.3 SP3 Cross Site Scripting' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型

@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = 'bcdd91cd-af7d-43ed-b649-9af30983debc'
+    vuln_id = 'HeeritOA_0006' # 平台漏洞编号，留空
     name = 'HeeritOA系统通用型任意文件读取漏洞' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型

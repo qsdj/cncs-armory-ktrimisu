@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import time
 
 class Vuln(ABVuln):
-    poc_id = '3a9e5346-8bd2-4dd9-9434-fa434dd0141c'
+    vuln_id = '53KF_0001' # 平台漏洞编号，留空
     name = '53KF SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

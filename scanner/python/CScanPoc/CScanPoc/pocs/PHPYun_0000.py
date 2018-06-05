@@ -7,7 +7,7 @@ import re
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = '846338d7-6f2d-4b51-8d10-e4074ba62ad8'
+    vuln_id = 'PHPYun_0000' # 平台漏洞编号，留空
     name = 'PHPYun人才系统任意文件读取(XML实体注入)' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -23,7 +23,7 @@ class Vuln(ABVuln):
 
 
 class Poc(ABPoc):
-    poc_id = '347f200c-3b61-41cb-abe6-faafcd775a22'
+    poc_id = 'e65e28b0-96a2-4c00-8e24-75d19bd095d8'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 

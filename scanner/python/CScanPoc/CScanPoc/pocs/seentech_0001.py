@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = '4eddd790-1b2a-42c5-9268-d9e79b4dce9c'
+    vuln_id = 'seentech_0001' # 平台漏洞编号，留空
     name = '中科新业网络哨兵任意文件上传getshell'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_UPLOAD # 漏洞类型

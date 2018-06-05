@@ -8,7 +8,7 @@ import math
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = '2380d10e-23a4-4466-b02b-f53c04d25b42'
+    vuln_id = 'Discuz_0007' # 平台漏洞编号，留空
     name = 'Discuz!问卷调查专业版插件注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

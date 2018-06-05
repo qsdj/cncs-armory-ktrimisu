@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = '82446c67-e71f-4250-bda0-b9ffac36beec'
+    vuln_id = 'JumboECMS_0000' # 平台漏洞编号，留空
     name = 'JumboECMS V1.6.1 注入漏洞' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -21,7 +21,7 @@ class Vuln(ABVuln):
 
 
 class Poc(ABPoc):
-    poc_id = '4c599d2d-1fea-473a-bc10-7fc6999093a7'
+    poc_id = '7603b1c9-d784-4346-95b9-6d5e2ffa5bdc'
     author = '国光'  # POC编写者
     create_date = '2018-05-22' # POC创建时间
 

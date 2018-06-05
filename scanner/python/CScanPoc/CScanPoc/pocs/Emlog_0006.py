@@ -7,7 +7,7 @@ import re
 import hashlib
 
 class Vuln(ABVuln):
-    poc_id = '1b410aa7-708d-47ad-8aeb-b3c2867e460c'
+    vuln_id = 'Emlog_0006' # 平台漏洞编号，留空
     name = 'Emlog <4.2.1 /content/cache/user 信息泄漏漏洞' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型

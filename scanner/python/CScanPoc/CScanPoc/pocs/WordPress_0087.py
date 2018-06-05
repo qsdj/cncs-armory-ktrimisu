@@ -6,7 +6,7 @@ import re
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = '7475dc9c-f10a-4e90-96ec-1e0be0fe5549'
+    vuln_id = 'WordPress_0087' # 平台漏洞编号，留空
     name = 'WordPress WooCommerce 2.4.12 PHP Code Injection' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型
@@ -22,7 +22,7 @@ class Vuln(ABVuln):
 
 
 class Poc(ABPoc):
-    poc_id = 'f46f1241-7cd8-499f-8586-30a4536c8c98'
+    poc_id = 'fcff2739-11db-4c85-be17-15d8dbf876eb'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 

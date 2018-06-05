@@ -8,7 +8,7 @@ import time
 import datetime
 
 class Vuln(ABVuln):
-    poc_id = '470a7b07-f15b-48b7-a2c0-71b8b4354c51'
+    vuln_id = 'weaver_0011' # 平台漏洞编号，留空
     name = '泛微e-cology未授权访问日志'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_OPERATION # 漏洞类型

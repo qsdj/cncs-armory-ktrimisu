@@ -6,7 +6,7 @@ import re
 import time
 
 class Vuln(ABVuln):
-    poc_id = 'adbd6228-aa93-4bc6-b1b8-755725609dfb'
+    vuln_id = 'ThinkPHP_0004' # 平台漏洞编号，留空
     name = 'ThinkPHP SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = 'b2805571-c468-4684-9bbf-535e03b16afa'
+    vuln_id = 'XR_GatewayPlatform_0001' # 平台漏洞编号，留空
     name = 'XR网关平台 任意文件遍历下载'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型

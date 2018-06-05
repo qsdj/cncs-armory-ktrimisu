@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
 class Vuln(ABVuln):
-    poc_id = '312c6985-f55d-443b-9f69-25ab64f0e466'
+    vuln_id = 'Git_0001'  # 平台漏洞编号，留空
     name = 'Git information disclosure'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK  # 漏洞类型

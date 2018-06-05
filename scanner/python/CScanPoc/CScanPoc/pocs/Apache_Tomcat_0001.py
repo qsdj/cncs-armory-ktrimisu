@@ -8,7 +8,7 @@ import urllib
 import time
 
 class Vuln(ABVuln):
-    poc_id = 'f1440f02-69af-4080-80d3-2dd0237c0049'
+    vuln_id = 'Apache_Tomcat_0001' # 平台漏洞编号，留空
     name = 'Apache Tomcat 远程代码执行' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型

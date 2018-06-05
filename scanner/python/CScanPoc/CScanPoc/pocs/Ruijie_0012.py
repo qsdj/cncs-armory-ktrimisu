@@ -7,7 +7,7 @@ import time
 import re
 
 class Vuln(ABVuln):
-    poc_id = '457214e7-49d6-4130-ad40-89640f5527fe'
+    vuln_id = 'Ruijie_0012' # 平台漏洞编号，留空
     name = '锐捷网络 RG-EG2000 非法访问敏感信息'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.OTHER # 漏洞类型

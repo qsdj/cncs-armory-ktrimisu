@@ -6,7 +6,7 @@ import re
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = '2c8d2a3e-de84-4199-b289-04e24d4b856e'
+    vuln_id = 'WordPress_0088' # 平台漏洞编号，留空
     name = 'WordPress AzonPop Plugin SQL Injection' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -22,7 +22,7 @@ class Vuln(ABVuln):
 
 
 class Poc(ABPoc):
-    poc_id = 'fba69790-be89-44aa-93fe-576cd9353608'
+    poc_id = 'fceb69c4-652d-46e0-9374-23b738798b7e'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 

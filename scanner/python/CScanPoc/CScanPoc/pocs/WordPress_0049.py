@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = '81069299-a5cd-44ed-ba9e-792ec4a68622'
+    vuln_id = 'WordPress_0049' # 平台漏洞编号，留空
     name = 'WordPress LineNity 1.20主题 本地文件包含漏洞' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型

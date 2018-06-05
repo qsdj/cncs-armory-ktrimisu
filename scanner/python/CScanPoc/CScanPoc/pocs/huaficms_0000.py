@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = 'e5d3b90c-a3db-47a8-82cd-b16847eb0eda'
+    vuln_id = 'HuafiCMS_0000' # 平台漏洞编号，留空
     name = '华飞科技建站系统未授权添加管理员' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
@@ -21,7 +21,7 @@ class Vuln(ABVuln):
 
 
 class Poc(ABPoc):
-    poc_id = '3326c300-80f1-4add-bcae-a09b40097b7f'
+    poc_id = '699fc29e-27d5-43e7-8aa4-0b4d27388a07'
     author = '国光'  # POC编写者
     create_date = '2018-05-22' # POC创建时间
 

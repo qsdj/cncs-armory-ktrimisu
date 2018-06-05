@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urlparse
 
 class Vuln(ABVuln):
-    poc_id = '532705a3-7bb3-4260-9006-8d25eba73e64'
+    vuln_id = 'Netpower_0012' # 平台漏洞编号，留空
     name = '中科网威防火墙 命令执行'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型

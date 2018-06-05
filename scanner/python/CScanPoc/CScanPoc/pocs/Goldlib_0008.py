@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = 'adc2805e-54a5-46fb-a0af-d151cc485dad'
+    vuln_id = 'Goldlib_0008' # 平台漏洞编号，留空
     name = '金盘大型图书馆系统 SQL注射'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

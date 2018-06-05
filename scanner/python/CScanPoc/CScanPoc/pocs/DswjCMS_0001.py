@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re, urlparse
 
 class Vuln(ABVuln):
-    poc_id = '8f81450a-6d5b-4f5c-9d65-f4914ab7b0ab'
+    vuln_id = 'DswjCMS_0001' # 平台漏洞编号，留空
     name = 'DswjCMS P2P网贷系统 文件上传'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_UPLOAD # 漏洞类型

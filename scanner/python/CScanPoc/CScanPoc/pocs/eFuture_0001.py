@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = '9c6d0636-395b-4cd5-8f85-7362b30967f2'
+    vuln_id = 'eFuture_0001' # 平台漏洞编号，留空
     name = '京富基融通科技商业链系统任意文件下载' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型

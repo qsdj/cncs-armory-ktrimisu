@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = '03968506-d41d-4dc0-9a50-3ff7b3709143'
+    vuln_id = 'XYCMS_0001' # 平台漏洞编号，留空
     name = 'XYCMS环保设备企业建站系统 信息泄露'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型

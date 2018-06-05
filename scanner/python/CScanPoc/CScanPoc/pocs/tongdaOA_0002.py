@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = '65402445-4b2b-4bc7-9204-84e1e0db46fc'
+    vuln_id = 'TongdaOA_0002' # 平台漏洞编号，留空
     name = '通达OA系统 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

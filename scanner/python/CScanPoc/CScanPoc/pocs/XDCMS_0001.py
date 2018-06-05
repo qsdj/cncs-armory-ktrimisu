@@ -6,7 +6,7 @@ import urllib
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = '2bd8922e-38ac-4c02-a40d-c873a1fb42c0'
+    vuln_id = 'XDCMS_0001' # 平台漏洞编号，留空
     name = 'XDCMS网上订餐系统 sql注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

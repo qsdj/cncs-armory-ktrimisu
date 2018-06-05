@@ -7,7 +7,7 @@ import re
 import hashlib
 
 class Vuln(ABVuln):
-    poc_id = 'e4d3ee02-aa68-477e-a011-e47de8a2078c'
+    vuln_id = 'WordPress_0019' # 平台漏洞编号，留空
     name = 'WordPress Sexy Squeeze Pages Plugin XSS' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型

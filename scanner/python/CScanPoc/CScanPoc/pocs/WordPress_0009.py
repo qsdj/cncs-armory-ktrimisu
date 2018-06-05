@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import time
 
 class Vuln(ABVuln):
-    poc_id = '419f358f-4e23-4180-8dad-7ae59fd5168a'
+    vuln_id = 'WordPress_0009'  # 平台漏洞编号，留空
     name = 'WordPress NEX-Forms SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION  # 漏洞类型

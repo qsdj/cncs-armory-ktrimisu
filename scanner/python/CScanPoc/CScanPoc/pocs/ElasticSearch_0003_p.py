@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import json
 
 class Vuln(ABVuln):
-    poc_id = '7d81daa3-568e-4123-9770-d2088f38b531'
+    vuln_id = 'ElasticSearch_0003_p'  # 平台漏洞编号，留空
     name = 'ElasticSearch 目录穿越漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_TRAVERSAL  # 漏洞类型

@@ -7,7 +7,7 @@ import urllib
 import urllib2
 
 class Vuln(ABVuln):
-    poc_id = 'a9f2e60a-abbc-4fef-988d-a8317c126aa2'
+    vuln_id = 'WebUI_0006'  # 平台漏洞编号，留空
     name = 'WebUI 远程代码执行漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE  # 漏洞类型

@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    poc_id = 'e3caac90-6749-4969-af42-e6af255955a2'
+    vuln_id = 'Hitweb_0000' # 平台漏洞编号
     name = 'Hitweb <= 4.2.1 (REP_INC) Remote File Include Vulnerability' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.RFI # 漏洞类型

@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
 class Vuln(ABVuln):
-    poc_id = '80923816-fdf7-4191-8534-ca72d70457de'
+    vuln_id = 'EspCMS_0002' # 平台漏洞编号，留空
     name = '易思CMS v5.0 /wap/index.php SQL注入漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

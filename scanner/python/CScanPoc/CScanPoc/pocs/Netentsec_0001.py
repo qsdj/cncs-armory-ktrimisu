@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re, urlparse
 
 class Vuln(ABVuln):
-    poc_id = '99487abf-0f23-4242-bd3a-2cbc91e84cdf'
+    vuln_id = 'Netentsec_0001'  # 平台漏洞编号，留空
     name = '网康NS-ASG 应用安全网关多处命令执行'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型

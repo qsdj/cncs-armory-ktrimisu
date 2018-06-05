@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
 class Vuln(ABVuln):
-    poc_id = 'a3a0ae67-bd5e-4272-98c5-15118746f436'
+    vuln_id = 'WordPress_0023' # 平台漏洞编号，留空
     name = 'WordPress Ajax Store Locator <= 1.2 /sl_file_download.php 任意文件下载漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型

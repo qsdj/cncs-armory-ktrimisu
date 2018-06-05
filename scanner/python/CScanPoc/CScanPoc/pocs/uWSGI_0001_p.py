@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 
 class Vuln(ABVuln):
-    poc_id = 'd05a4900-bc5e-4793-8389-75feb70d8226'
+    vuln_id = 'uWSGI_0001_p'  # 平台漏洞编号，留空
     name = 'uWSGI PHP目录穿越漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_TRAVERSAL  # 漏洞类型

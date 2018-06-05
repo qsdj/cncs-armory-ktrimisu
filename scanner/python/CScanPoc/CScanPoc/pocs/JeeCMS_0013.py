@@ -6,7 +6,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 
 class Vuln(ABVuln):
-    poc_id = 'f28ee1ac-9cb0-4283-9d10-166891ad0e73'
+    vuln_id = 'JeeCMS_0013' # 平台漏洞编号，留空
     name = 'JeeCMS /download.jspx Arbitrary File Download' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型

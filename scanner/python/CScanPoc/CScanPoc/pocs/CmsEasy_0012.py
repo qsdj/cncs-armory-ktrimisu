@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = 'f807c7db-0707-4a06-994a-0795bb9422bd'
+    vuln_id = 'CmsEasy_0012' # 平台漏洞编号，留空
     name = 'CmsEasy /demo.php 处反射型XSS'  # 漏洞名称
     level = VulnLevel.LOW  # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型

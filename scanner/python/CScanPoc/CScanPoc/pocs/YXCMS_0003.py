@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    poc_id = '8f42efcc-fec5-4f77-a175-d27112e6b86d'
+    vuln_id = 'YXCMS_0003' # 平台漏洞编号，留空
     name = 'YXCMS 文件上传getshell'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_UPLOAD # 漏洞类型

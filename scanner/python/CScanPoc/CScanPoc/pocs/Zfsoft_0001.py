@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urlparse, httplib
 
 class Vuln(ABVuln):
-    poc_id = '10790bdb-df9e-490c-874e-6edd05f95150'
+    vuln_id = 'Zfsoft_0001' # 平台漏洞编号，留空
     name = '正方教务管理系统 SQL注入漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

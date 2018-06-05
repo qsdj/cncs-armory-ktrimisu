@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
 class Vuln(ABVuln):
-    poc_id = '2d2a04dd-e95a-45e5-b515-068a5997f20f'
+    vuln_id = 'Newvane_0001' # 平台漏洞编号，留空
     name = 'Newvane online exam 在线考试系统通用型任意文件上传'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_UPLOAD # 漏洞类型

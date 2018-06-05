@@ -6,7 +6,7 @@ import urllib,urllib2
 import re
 
 class Vuln(ABVuln):
-    poc_id = '3753f23e-5a29-4787-85fd-9fe6735b2cf0'
+    vuln_id = 'Discuz_0018' # 平台漏洞编号，留空
     name = 'Discuz! 7.2 /faq.php sql注入漏洞' # 漏洞名称
     level = VulnLevel.LOW # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型

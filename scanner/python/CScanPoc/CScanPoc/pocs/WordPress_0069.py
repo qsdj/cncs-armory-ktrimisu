@@ -6,7 +6,7 @@ import re
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = 'c98a8d88-41ad-4793-839c-c38b3b1a4163'
+    vuln_id = 'WordPress_0069' # 平台漏洞编号，留空
     name = 'WordPress Like Dislike Counter插件 ajax_counter.php多个SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

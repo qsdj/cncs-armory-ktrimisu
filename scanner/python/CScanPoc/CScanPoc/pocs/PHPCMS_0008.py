@@ -7,7 +7,7 @@ import re
 import hashlib
 
 class Vuln(ABVuln):
-    poc_id = 'b259ff66-91f7-4a03-8482-4db818766738'
+    vuln_id = 'PHPCMS_0008' # 平台漏洞编号，留空
     name = 'PHPCMS 2007 /digg_add.php SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

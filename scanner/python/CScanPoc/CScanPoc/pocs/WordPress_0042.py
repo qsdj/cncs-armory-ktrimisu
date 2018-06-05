@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = '732f280a-0cf3-42e7-8dfe-69a1365de823'
+    vuln_id = 'WordPress_0042' # 平台漏洞编号，留空
     name = 'WordPress 文件下载'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型

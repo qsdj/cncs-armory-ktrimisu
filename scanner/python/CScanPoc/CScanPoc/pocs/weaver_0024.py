@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import time
 
 class Vuln(ABVuln):
-    poc_id = '21af4d7f-0141-4ab4-9193-9aad44ca11c6'
+    vuln_id = 'weaver_0023' # 平台漏洞编号，留空
     name = '泛微OA通用系统 路径遍历'  # 漏洞名称
     level = VulnLevel.LOW  # 漏洞危害级别
     type = VulnType.FILE_TRAVERSAL # 漏洞类型

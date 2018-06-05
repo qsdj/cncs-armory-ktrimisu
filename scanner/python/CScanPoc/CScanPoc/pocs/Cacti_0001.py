@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    poc_id = '28fa3d14-ad25-4757-a913-5558ee40172e'
+    vuln_id = 'Cacti_0001' # 平台漏洞编号
     name = 'Cacti sql数据库文件泄露' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型

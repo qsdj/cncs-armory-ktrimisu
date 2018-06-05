@@ -6,7 +6,7 @@ import re
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = 'db3d74e2-24fa-4ab3-9e06-9b3fa6345846'
+    vuln_id = 'StartBBS_0007' # 平台漏洞编号，留空
     name = 'StartBBS v1.1.5.2版SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

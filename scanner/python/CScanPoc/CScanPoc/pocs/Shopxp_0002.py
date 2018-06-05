@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import random
 
 class Vuln(ABVuln):
-    poc_id = '9aa2dcc5-5c87-4cf6-92e2-1a2e3e60a426'
+    vuln_id = 'Shopxp_0002'  # 平台漏洞编号，留空
     name = 'Shopxp-v10.85 CRSF攻击远程添加管理漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION  # 漏洞类型

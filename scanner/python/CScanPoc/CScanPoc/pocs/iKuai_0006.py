@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = 'c3e4d352-85f6-49de-8f27-dc785eb578ac'
+    vuln_id = 'iKuai_0006' # 平台漏洞编号，留空
     name = 'iKuai(爱快系统) 弱口令，远程命令执行'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型

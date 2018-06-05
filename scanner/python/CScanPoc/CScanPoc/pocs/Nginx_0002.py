@@ -6,7 +6,7 @@ import sys
 
 
 class Vuln(ABVuln):
-    poc_id = 'ca21b78e-01da-491d-9415-1c8822765338'
+    vuln_id = 'Nginx_0002'  # 平台漏洞编号，留空
     name = 'Nginx越界读取缓存漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK  # 漏洞类型

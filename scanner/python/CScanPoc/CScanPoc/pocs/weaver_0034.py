@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import time, re
 
 class Vuln(ABVuln):
-    poc_id = 'bf3d220d-ea8a-48fa-a88b-3a395b56d393'
+    vuln_id = 'weaver_0034' # 平台漏洞编号，留空
     name = '泛微e-office 任意文件上传'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_UPLOAD # 漏洞类型

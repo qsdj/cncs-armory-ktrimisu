@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = 'f1b019d7-d63e-4583-9413-d38aab4ee2eb'
+    vuln_id = 'PHPVibe_0000' # 平台漏洞编号，留空
     name = 'PHPVibe 4.0 Arbitrary File Disclosure'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型

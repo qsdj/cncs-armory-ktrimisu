@@ -7,7 +7,7 @@ import time
 import telnetlib
 
 class Vuln(ABVuln):
-    poc_id = '11ed7ffe-1fcf-46d6-a844-63946094c6c6'
+    vuln_id = 'Juniper_0001'  # 平台漏洞编号，留空
     name = 'Juniper ScreenOS认证后门'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.OTHER # 漏洞类型

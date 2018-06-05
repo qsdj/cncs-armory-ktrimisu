@@ -6,7 +6,7 @@ import  re
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = 'f5b3e9d8-22ed-4248-8a70-b4f2cd97306b'
+    vuln_id = 'Zabbix_0006' # 平台漏洞编号，留空
     name = 'Zabbix Default Account Authentication' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.OTHER # 漏洞类型

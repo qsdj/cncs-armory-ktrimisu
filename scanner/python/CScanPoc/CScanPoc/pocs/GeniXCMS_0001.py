@@ -6,7 +6,7 @@ import re
 import time
 
 class Vuln(ABVuln):
-    poc_id = '9077cbfc-72d0-4541-83e1-558f605fff37'
+    vuln_id = 'GeniXCMS_0001' # 平台漏洞编号，留空
     name = 'GeniXCMS v0.0.1 SQL注入漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

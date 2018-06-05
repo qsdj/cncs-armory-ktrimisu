@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    poc_id = 'bb5f2114-a312-4f42-b7f1-aa8bca5d400d'
+    vuln_id = 'Ecshop_0001' # 平台漏洞编号，留空
     name = 'Ecshop /spellchecker.php 信息泄漏漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型

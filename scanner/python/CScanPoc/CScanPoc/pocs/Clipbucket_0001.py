@@ -7,7 +7,7 @@ import urllib2
 import httplib
 
 class Vuln(ABVuln):
-    poc_id = 'b8ad9cde-da25-445b-aebf-7bab9979ac21'
+    vuln_id = 'Clipbucket_0001' # 平台漏洞编号，留空
     name = 'Clipbucket 2.7 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

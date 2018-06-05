@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
 class Vuln(ABVuln):
-    poc_id = 'c3af4bc0-c997-4979-9aa5-fd905a242098'
+    vuln_id = 'Joomla_0005' # 平台漏洞编号，留空
     name = 'Joomla! /index.php 任意文件下载'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型

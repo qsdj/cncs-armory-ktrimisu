@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = '0a4cc4db-ba54-4e8d-9f99-6397c52555f0'
+    vuln_id = 'Mailgard_0001' # 平台漏洞编号，留空
     name = '河辰通讯Mailgard佑友系列邮件网关文件上传'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_UPLOAD # 漏洞类型

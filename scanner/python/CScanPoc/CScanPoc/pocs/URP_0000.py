@@ -7,7 +7,7 @@ import re
 import hashlib
 
 class Vuln(ABVuln):
-    poc_id = 'ba25fc86-bcdd-4e39-b1d3-3b90b9bb7370'
+    vuln_id = 'URP_0000' # 平台漏洞编号，留空
     name = 'URP综合教务系统 /lwUpLoad_action.jsp 任意文件上传漏洞' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.FILE_UPLOAD # 漏洞类型

@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
 class Vuln(ABVuln):
-    poc_id = '3f846e54-40af-4699-8081-3f7587e5ea1f'
+    vuln_id = 'P2P_0001' # 平台漏洞编号，留空
     name = '金钱柜P2P通用系统 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    poc_id = 'b3935616-9d38-4496-9e40-f92d42b70126'
+    vuln_id = 'Yonyou_0044' # 平台漏洞编号，留空
     name = '用友致远A6协同系统 账号密码泄露'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型

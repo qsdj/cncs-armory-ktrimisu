@@ -7,7 +7,7 @@ import re
 import hashlib
 
 class Vuln(ABVuln):
-    poc_id = 'd71e05d8-e55f-4797-829a-c603e00af44c'
+    vuln_id = 'SePortal_0000' # 平台漏洞编号，留空
     name = 'SePortal 2.4 /poll.php SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

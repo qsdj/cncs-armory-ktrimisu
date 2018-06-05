@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
 class Vuln(ABVuln):
-    poc_id = '8fe56dfb-b027-4c17-8e93-6bc6b49656d7'
+    vuln_id = 'Whir_0001' # 平台漏洞编号，留空
     name = '万户OA ezOffice 任意文件下载'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型

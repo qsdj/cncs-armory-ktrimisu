@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
 class Vuln(ABVuln):
-    poc_id = '64a00f68-17fe-4b72-9188-238a61f7f064'
+    vuln_id = 'WebsitebakerCMS_0001' # 平台漏洞编号，留空
     name = 'Websitebaker CMS v2.8.3 Reflecting XSS vulnerability'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型

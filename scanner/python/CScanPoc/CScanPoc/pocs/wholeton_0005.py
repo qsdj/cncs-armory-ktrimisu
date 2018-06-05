@@ -6,7 +6,7 @@ import random
 import urllib
 
 class Vuln(ABVuln):
-    poc_id = 'ed1aafcf-7b17-4f45-8f21-db72a8e9cac4'
+    vuln_id = 'Wholeton_0005' # 平台漏洞编号，留空
     name = '惠尔顿上网行为管理系统 信息泄露'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型

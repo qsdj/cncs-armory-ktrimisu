@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = '490c431d-8031-4329-8975-4856f4d802cc'
+    vuln_id = 'Newedos_0002' # 平台漏洞编号，留空
     name = '菲斯特诺期刊系统5处SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -27,7 +27,7 @@ class Vuln(ABVuln):
 
 
 class Poc(ABPoc):
-    poc_id = 'd0786e7c-9d01-452c-a8ef-a15e0bbb5a28'
+    poc_id = '153810b7-8adf-4024-ac2f-726dd92a24fb'
     author = '国光'  # POC编写者
     create_date = '2018-05-22' # POC创建时间
 

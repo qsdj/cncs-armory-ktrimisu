@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = '090fbe7b-af4d-4802-b023-4262e9b3ab1a'
+    vuln_id = 'HaitianOA_0002' # 平台漏洞编号，留空
     name = 'HaitianOA SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = '252ff89c-c8ba-48e4-9e90-388a27d91da4'
+    vuln_id = 'Uniportal_0001' # 平台漏洞编号，留空
     name = '东软通用门户软件 UniPortal 1.2存在通用型未授权访问' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.OTHER # 漏洞类型
@@ -21,7 +21,7 @@ class Vuln(ABVuln):
 
 
 class Poc(ABPoc):
-    poc_id = '7668e3c1-ab12-42b3-b926-d6234bf19d95'
+    poc_id = 'cadc2142-e1bb-413c-9ee5-28cf47f52c94'
     author = '国光'  # POC编写者
     create_date = '2018-05-22' # POC创建时间
 

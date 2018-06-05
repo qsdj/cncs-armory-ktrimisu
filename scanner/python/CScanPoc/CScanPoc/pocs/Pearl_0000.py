@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    poc_id = '8a925058-b698-4db8-a584-4f3c24a290b7'
+    vuln_id = 'Pearl_0000' # 平台漏洞编号
     name = 'Pearl For Mambo <= 1.6 - Multiple Remote File Include Vulnerabilities' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.RFI # 漏洞类型

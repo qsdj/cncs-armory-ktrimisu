@@ -6,7 +6,7 @@ import re
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = 'e79430e5-eb4c-4946-a22d-fe62bd9d6817'
+    vuln_id = 'weaver_0016' # 平台漏洞编号，留空
     name = '泛微OA任意目录遍历' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.FILE_TRAVERSAL # 漏洞类型
@@ -22,7 +22,7 @@ class Vuln(ABVuln):
 
 
 class Poc(ABPoc):
-    poc_id = 'cf3be13f-7661-4b2f-89ef-b49d6aad2321'
+    poc_id = 'b9088281-6e9c-4d2d-91ce-ec7c1ea2b25d'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 

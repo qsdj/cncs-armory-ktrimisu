@@ -8,7 +8,7 @@ import time
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = 'f18a91a3-c2e0-490e-9310-7093cec4489e'
+    vuln_id = 'Southidc_0002' # 平台漏洞编号，留空
     name = 'Southidc news_search.asp 注入漏洞' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

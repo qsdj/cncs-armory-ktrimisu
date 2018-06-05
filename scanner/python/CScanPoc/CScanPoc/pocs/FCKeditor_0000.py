@@ -7,7 +7,7 @@ import re
 import hashlib
 
 class Vuln(ABVuln):
-    poc_id = '72cfa0fb-64d6-447b-b42a-a8890f5001a3'
+    vuln_id = 'FCKeditor_0000' # 平台漏洞编号，留空
     name = 'FCKeditor 2.6.4 %00截断任意文件上传漏洞' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.FILE_UPLOAD # 漏洞类型

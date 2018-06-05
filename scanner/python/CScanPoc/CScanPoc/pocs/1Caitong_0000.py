@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    poc_id = 'ee59bdd7-9412-4ec8-ac04-32645d5c782a'
+    vuln_id = '1Caitong_0000' # 平台漏洞编号，留空
     name = '一采通电子采购系统 /library/editornew/Editor/img_save.asp任意文件上传' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.FILE_UPLOAD # 漏洞类型
@@ -21,7 +21,7 @@ class Vuln(ABVuln):
 
 
 class Poc(ABPoc):
-    poc_id = '56df7392-5566-4010-a840-55f39561ef0d'
+    poc_id = '5c10b24d-e906-470b-bd32-6a89808a1a3c'
     author = '国光'  # POC编写者
     create_date = '2018-05-22' # POC创建时间
 

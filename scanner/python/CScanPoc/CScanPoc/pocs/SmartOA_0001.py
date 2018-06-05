@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = 'c0b9fd01-f47c-4a8b-9ebc-5c155b834972'
+    vuln_id = 'SmartOA_0001' # 平台漏洞编号，留空
     name = 'SmartOA系统 任意文件下载' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型
@@ -25,7 +25,7 @@ class Vuln(ABVuln):
 
 
 class Poc(ABPoc):
-    poc_id = 'b81d54eb-1866-4a9d-afbd-69fbb7ef77d1'
+    poc_id = '1b441e49-fdbc-412c-a9cc-1fa3c2a2afc7'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 

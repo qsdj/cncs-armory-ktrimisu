@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re, urlparse
 
 class Vuln(ABVuln):
-    poc_id = '5d75b7ff-1f0e-4840-b76e-cad5fde9da6c'
+    vuln_id = 'ZTE_0002'  # 平台漏洞编号，留空
     name = 'ZXV10 W812N路由设置文件未授权访问下载'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型

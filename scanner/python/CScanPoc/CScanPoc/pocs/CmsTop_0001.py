@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
 class Vuln(ABVuln):
-    poc_id = '66030c08-5758-4569-bf52-c3dd6ae2d72c'
+    vuln_id = 'CmsTop_0001' # 平台漏洞编号，留空
     name = 'CmsTop 远程代码执行'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型

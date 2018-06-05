@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = '3532b92a-1853-4ab1-9b5f-711e4037b510'
+    vuln_id = 'Hanweb_0002' # 平台漏洞编号，留空
     name = '大汉管理后台权限绕过 命令执行'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型

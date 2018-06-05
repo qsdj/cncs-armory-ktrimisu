@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = '53137104-fa88-4528-8e29-d2ffd8dd9ef6'
+    vuln_id = 'QiboCMS_0005' # 平台漏洞编号，留空
     name = '齐博CMS分类系统 前台无限制Getshell'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE  # 漏洞类型

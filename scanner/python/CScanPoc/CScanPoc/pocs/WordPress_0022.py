@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
 class Vuln(ABVuln):
-    poc_id = 'c572095f-4a38-4260-9a29-9dad8e7f37f6'
+    vuln_id = 'WordPress_0022' # 平台漏洞编号，留空
     name = 'WordPress Multiple themes /download.php Arbitrary File Download'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型

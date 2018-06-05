@@ -6,7 +6,7 @@ import urllib2
 import hashlib
 
 class Vuln(ABVuln):
-    poc_id = '42563425-84aa-4c5e-b358-5891699f56c2'
+    vuln_id = 'Discuz_0011' # 平台漏洞编号，留空
     name = 'Discuz! /source/plugin/hux_wx/hux_wx.inc.php 本地文件包含'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型

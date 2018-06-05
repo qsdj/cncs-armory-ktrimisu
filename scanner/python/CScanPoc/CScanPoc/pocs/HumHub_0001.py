@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = '1b7477f3-9a33-454b-8744-91ae0d4f6998'
+    vuln_id = 'HumHub_0001' # 平台漏洞编号，留空
     name = 'HumHub 0.11.2/0.20.0-beta.2 - SQL Injection'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

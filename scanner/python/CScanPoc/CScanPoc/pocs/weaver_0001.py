@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    poc_id = '7cf482b1-74ce-4d46-947d-9e762fa4f84d'
+    vuln_id = 'weaver_0001'  # 平台漏洞编号，留空
     name = 'e-office /tools/SWFUpload/upload.jsp 任意文件上传'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_UPLOAD  # 漏洞类型

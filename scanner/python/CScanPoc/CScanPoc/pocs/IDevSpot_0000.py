@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    poc_id = '028c8d57-0606-46fa-9aad-939519680c1b'
+    vuln_id = 'IDevSpot_0000' # 平台漏洞编号
     name = 'IDevSpot PHPLinkExchange 1.0 Index.PHP Remote File Include Vulnerability' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.RFI # 漏洞类型

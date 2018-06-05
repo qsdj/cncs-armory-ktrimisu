@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
 class Vuln(ABVuln):
-    poc_id = 'f428cf7f-7bcc-405a-8c82-823486bdf189'
+    vuln_id = 'Srun_0001' # 平台漏洞编号，留空
     name = 'Srun3000计费系统 任意文件下载'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型

@@ -6,7 +6,7 @@ import re
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = 'cab8a13b-ee0f-4f67-be6f-a2ff48bcc48a'
+    vuln_id = 'Kingdee_0006' # 平台漏洞编号，留空
     name = '金蝶协同办公系统存在通用型任意文件下载漏洞' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型
@@ -22,7 +22,7 @@ class Vuln(ABVuln):
 
 
 class Poc(ABPoc):
-    poc_id = 'd92e80dc-7021-41c5-a1a3-350653df7cd4'
+    poc_id = '02e5e6ab-c7e6-4b01-b36b-d46d2adbb6ed'
     author = '国光'  # POC编写者
     create_date = '2018-05-22' # POC创建时间
 

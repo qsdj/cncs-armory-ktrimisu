@@ -6,7 +6,7 @@ import urllib,urllib2
 import re
 
 class Vuln(ABVuln):
-    poc_id = 'a1e67ff9-769e-4110-a1fe-eb0ded0a411d'
+    vuln_id = 'PHPMyAdmin_0002' # 平台漏洞编号，留空
     name = 'PHPMyAdmin /themes/darkblue_orange/layout.inc.php 泄漏服务器物理路径' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型

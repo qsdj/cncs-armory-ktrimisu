@@ -7,7 +7,7 @@ import os
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = '1d7d9b73-aaf4-447e-b3e5-3c3644358be5'
+    vuln_id = 'yongyou_0036' # 平台漏洞编号，留空
     name = '用友优谱u8系统cmxcheckuserMachine.php注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -23,7 +23,7 @@ class Vuln(ABVuln):
 
 
 class Poc(ABPoc):
-    poc_id = 'e15655c6-325a-41ce-9043-eafcf6a40880'
+    poc_id = '0dfd368d-ff74-4bad-be21-792a9a5041da'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 

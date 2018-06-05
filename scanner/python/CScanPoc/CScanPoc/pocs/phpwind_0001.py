@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = 'd334a298-9fa2-4585-9f03-56a18801801b'
+    vuln_id = 'PHPWind_0001'  # 平台漏洞编号，留空
     name = 'PHPWind 跨站脚本漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.XSS  # 漏洞类型

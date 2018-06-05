@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = 'f35904cb-9550-4c7b-a58b-77c36da9f95d'
+    vuln_id = 'Dalianqianhao_0001' # 平台漏洞编号，留空
     name = '大连乾豪综合教务管理系统信息泄漏'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型

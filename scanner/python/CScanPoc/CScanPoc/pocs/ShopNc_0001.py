@@ -6,7 +6,7 @@ import re
 import urllib2
 
 class Vuln(ABVuln):
-    poc_id = 'd5ebdfbe-598f-41dd-a6d9-060924ca9222'
+    vuln_id = 'ShopNc_0001' # 平台漏洞编号，留空
     name = 'ShopNc v6.0 /index.php SQL注入漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = '8155de60-be5b-4761-aefc-dbe1e169d0b8'
+    vuln_id = 'NITC_0007' # 平台漏洞编号，留空
     name = 'NITC营销系统SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -21,7 +21,7 @@ class Vuln(ABVuln):
 
 
 class Poc(ABPoc):
-    poc_id = '3bad0697-b9e2-4af2-b99b-a2328a384630'
+    poc_id = 'b2b5ab2c-4d3d-4a73-8708-c4af0a651e8c'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 

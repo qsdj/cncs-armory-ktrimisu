@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = '9dc3850c-dd4b-4ea4-80be-e0264826980f'
+    vuln_id = 'SiteFactoryCMS_0000' # 平台漏洞编号，留空
     name = 'SiteFactory CMS 5.5.9任意文件下载漏洞' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型

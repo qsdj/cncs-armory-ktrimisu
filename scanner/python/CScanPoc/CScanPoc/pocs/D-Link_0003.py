@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = 'f33dadaf-55ab-4cf8-b519-4becbc361d19'
+    vuln_id = 'D-Link_0003' # 平台漏洞编号，留空
     name = 'D-Link Command_Execution'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型

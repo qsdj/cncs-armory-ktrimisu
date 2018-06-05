@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = '1ea8c356-c84f-4ef3-aeaf-5f8a306845a2'
+    vuln_id = ' Vicworl_0001'  # 平台漏洞编号，留空
     name = 'Vicworl /VICWOR~1.SQL 数据库备份文件下载'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD  # 漏洞类型

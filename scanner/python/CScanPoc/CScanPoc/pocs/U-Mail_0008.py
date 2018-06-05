@@ -7,7 +7,7 @@ import re
 import hashlib
 
 class Vuln(ABVuln):
-    poc_id = 'f1eebec3-89e3-41b3-860d-db34b255eea7'
+    vuln_id = 'U-Mail_0008' # 平台漏洞编号，留空
     name = 'U-Mail 20141124 /api/api.php 敏感信息泄漏' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型

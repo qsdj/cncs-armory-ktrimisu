@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = 'd4d53c3f-b6ca-41b9-8e62-2aa42d2f562d'
+    vuln_id = 'IWMS_0001' # 平台漏洞编号，留空
     name = 'IWMS系统后台绕过&整站删除' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
@@ -22,7 +22,7 @@ class Vuln(ABVuln):
 
 
 class Poc(ABPoc):
-    poc_id = 'ee95fe74-2871-4b18-95ed-e4cb056a5081'
+    poc_id = '647fc3c0-72d8-4761-9d9d-defa6295bbdf'
     author = '国光'  # POC编写者
     create_date = '2018-05-22' # POC创建时间
 

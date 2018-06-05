@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = '9ee1a951-05af-444c-a058-f3d239d3c861'
+    vuln_id = 'FSMCMS_0003' # 平台漏洞编号，留空
     name = 'FSMCMS通用网站集群系统 任意文件下载'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型

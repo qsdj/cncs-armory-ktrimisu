@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    poc_id = '19550e43-450a-4f8d-897b-7a0defcd4bae'
+    vuln_id = 'Bioknow_0002' # 平台漏洞编号，留空
     name = '百奥知实验室综合信息管理系统 SQL注射'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

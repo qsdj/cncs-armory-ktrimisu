@@ -6,7 +6,7 @@ import re
 import urlparse
 
 class Vuln(ABVuln):
-    poc_id = '6d61c928-0c02-4ddf-b899-81ff65ec329d'
+    vuln_id = 'ASUS_0001' # 平台漏洞编号，留空
     name = '华硕 RT-N16 路由器信息泄露'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型

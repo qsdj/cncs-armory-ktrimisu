@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
 class Vuln(ABVuln):
-    poc_id = '211c42ce-3bb0-444e-bebe-44685efd877b'
+    vuln_id = 'Mallbuilder_0001' # 平台漏洞编号，留空
     name = 'Mallbuilder商城系统 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

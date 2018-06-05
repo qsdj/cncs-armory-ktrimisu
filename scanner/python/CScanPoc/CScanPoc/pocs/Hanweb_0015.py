@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import time, random
 
 class Vuln(ABVuln):
-    poc_id = '6dbac1e9-91e5-48dc-b894-77fa2a6aa659'
+    vuln_id = 'Hanweb_0015' # 平台漏洞编号，留空
     name = '大汉JCMS /lm/sys/opr_uploadimg.jsp 文件上传'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_UPLOAD # 漏洞类型

@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = '46d33fee-61e3-4ad7-af1b-c26f16d3dabb'
+    vuln_id = 'ExtMail_0003' # 平台漏洞编号，留空
     name = 'ExtMail 反射型XSS'  # 漏洞名称
     level = VulnLevel.LOW  # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型

@@ -6,7 +6,7 @@ import re
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = '8b7a3505-5b82-4e0c-9a90-44fc62afb61d'
+    vuln_id = 'SpeedCMS_0001' # 平台漏洞编号，留空
     name = 'SpeedCMS某处Oracle注射' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

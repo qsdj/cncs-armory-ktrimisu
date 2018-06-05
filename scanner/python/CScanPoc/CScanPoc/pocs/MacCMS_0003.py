@@ -6,7 +6,7 @@ import urllib,urllib2
 import re
 
 class Vuln(ABVuln):
-    poc_id = '8afb8149-ac7b-4b96-97d2-8f5438e99a36'
+    vuln_id = 'MacCMS_0003' # 平台漏洞编号，留空
     name = 'MacCMS v8 /inc/api.php SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

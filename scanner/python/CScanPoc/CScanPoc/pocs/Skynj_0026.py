@@ -7,7 +7,7 @@ import re
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = '6699f958-e1b8-401f-a996-65bc85335739'
+    vuln_id = 'Skynj_0026' # 平台漏洞编号，留空
     name = '南京擎天政务系统SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -24,7 +24,7 @@ class Vuln(ABVuln):
 
 
 class Poc(ABPoc):
-    poc_id = 'c268e08a-9b57-43a5-b030-1ac627ac0753'
+    poc_id = 'c03377ec-bb86-4973-ba2f-a07620e64f44'
     author = '国光'  # POC编写者
     create_date = '2018-05-15' # POC创建时间
 

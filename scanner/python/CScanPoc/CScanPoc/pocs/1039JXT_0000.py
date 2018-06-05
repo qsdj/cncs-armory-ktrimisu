@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = 'bf97d24c-8fb0-4dc4-8e26-890c4c25f714'
+    vuln_id = '1039JXT_0000' # 平台漏洞编号，留空
     name = '1039家校通 未授权访问' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.MISCONFIGURATION # 漏洞类型
@@ -21,7 +21,7 @@ class Vuln(ABVuln):
 
 
 class Poc(ABPoc):
-    poc_id = '31e79435-0a1e-4ef6-8ce0-3d5a5bf47fa8'
+    poc_id = 'e5b7b4ec-412c-4054-a734-06966f750d01'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 

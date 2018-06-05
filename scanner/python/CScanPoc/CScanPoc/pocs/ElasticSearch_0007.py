@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = 'cd0f27ba-4683-4c8f-8894-23889c9f4b38'
+    vuln_id = 'ElasticSearch_0007' # 平台漏洞编号，留空
     name = 'ElasticSearch river未授权访问' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.OTHER # 漏洞类型

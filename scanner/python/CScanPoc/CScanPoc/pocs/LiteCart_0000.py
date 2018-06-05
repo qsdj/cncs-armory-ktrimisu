@@ -7,7 +7,7 @@ import re
 import hashlib
 
 class Vuln(ABVuln):
-    poc_id = 'fd7cc7df-cc7f-4c4d-8a86-37527b289e03'
+    vuln_id = 'LiteCart_0000' # 平台漏洞编号，留空
     name = 'LiteCart 1.1.2.1 /search.php 跨站脚本漏洞' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型

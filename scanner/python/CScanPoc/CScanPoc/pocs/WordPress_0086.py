@@ -6,7 +6,7 @@ import re
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = '4aeed9dc-5bd2-499c-b6ee-324da70a815f'
+    vuln_id = 'WordPress_0086' # 平台漏洞编号，留空
     name = 'WordPress Theme Epic - download.php Arbitrary File Download' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型
@@ -22,7 +22,7 @@ class Vuln(ABVuln):
 
 
 class Poc(ABPoc):
-    poc_id = 'e1d3f89d-b84a-4f44-87d5-c2ef96b61df6'
+    poc_id = 'cbaae509-cd43-4388-b0ca-b0266ccf3d22'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 

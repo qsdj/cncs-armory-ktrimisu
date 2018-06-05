@@ -6,7 +6,7 @@ import re
 import urllib2
 
 class Vuln(ABVuln):
-    poc_id = '93163792-923c-4c79-a283-64b30958346d'
+    vuln_id = 'WordPress_0015' # 平台漏洞编号，留空
     name = 'WordPress UnGallery plugin 本地文件包含'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型

@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = '4a3be2ad-d302-4d44-b730-7da15c6463a6'
+    vuln_id = 'PageAdmin_0001'  # 平台漏洞编号，留空
     name = 'PageAdmin v3.0 /e/database/v3.mdb 数据库发现漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.OTHER # 漏洞类型

@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    poc_id = '2de4a969-b033-4f4f-8513-6fb5e83bf66a'
+    vuln_id = 'Whir_0011' # 平台漏洞编号，留空
     name = '万户OA系统 文件上传'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_UPLOAD # 漏洞类型

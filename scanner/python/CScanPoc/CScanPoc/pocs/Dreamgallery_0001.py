@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = 'e07c63f0-0c72-4b3e-b586-f94728691925'
+    vuln_id = 'Dreamgallery_0001' # 平台漏洞编号，留空
     name = 'Dreamgallery /dream/album.php SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -21,7 +21,7 @@ class Vuln(ABVuln):
 
 
 class Poc(ABPoc):
-    poc_id = '351babfd-69f8-4a29-945c-e7bf66bf160d'
+    poc_id = 'a1a4dabf-6eb7-4261-953c-be102891a406'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 

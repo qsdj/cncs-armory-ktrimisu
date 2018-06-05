@@ -6,7 +6,7 @@ import re
 import urlparse
 
 class Vuln(ABVuln):
-    poc_id = 'b7f4b405-656e-48f7-9191-67a538750289'
+    vuln_id = 'Goodo-edu_0006' # 平台漏洞编号，留空
     name = '上海鼎创通用型数字校园系统 任意上传'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_UPLOAD # 漏洞类型

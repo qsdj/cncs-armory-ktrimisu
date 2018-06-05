@@ -6,7 +6,7 @@ import os
 import urllib2
 
 class Vuln(ABVuln):
-    poc_id = 'ade6aa53-9797-4aca-9f55-385f919725d0'
+    vuln_id = 'MetInfo_0001' # 平台漏洞编号，留空
     name = 'MetInfo 无需登录前台GETSHELL'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型

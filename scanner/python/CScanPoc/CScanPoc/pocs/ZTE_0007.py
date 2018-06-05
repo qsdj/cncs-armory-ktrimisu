@@ -6,7 +6,7 @@ import  re
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = '6f6cf292-23fe-4176-acd3-59c769dad321'
+    vuln_id = 'ZTE_0007' # 平台漏洞编号，留空
     name = '中兴W-LAN无线接入控制器信息泄露' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
@@ -22,7 +22,7 @@ class Vuln(ABVuln):
 
 
 class Poc(ABPoc):
-    poc_id = '374237c2-9299-4b7e-b9ea-3a6acd24712f'
+    poc_id = '36701094-e475-450d-84a9-1f8608e2979a'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 

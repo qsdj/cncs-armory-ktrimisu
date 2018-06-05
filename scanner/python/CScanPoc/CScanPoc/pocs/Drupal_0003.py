@@ -7,7 +7,7 @@ import random
 import urllib
 
 class Vuln(ABVuln):
-    poc_id = '069ba5ec-bf2d-4743-b9f1-78d726fc3640'
+    vuln_id = 'Drupal_0003'  # 平台漏洞编号，留空
     name = 'Drupal /index.php getshell'  # 漏洞名称
     level = VulnLevel.LOW  # 漏洞危害级别
     type = VulnType.RCE  # 漏洞类型

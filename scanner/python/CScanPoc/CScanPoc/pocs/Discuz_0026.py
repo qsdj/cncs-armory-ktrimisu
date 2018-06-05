@@ -6,7 +6,7 @@ import hashlib
 import urllib2
 
 class Vuln(ABVuln):
-    poc_id = 'f3ba037b-2f91-456a-ae61-91ac56bf7bce'
+    vuln_id = 'Discuz_0026' # 平台漏洞编号，留空
     name = 'Discuz! /static/image/common/flvplayer.swf 跨站脚本' # 漏洞名称
     level = VulnLevel.LOW # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型

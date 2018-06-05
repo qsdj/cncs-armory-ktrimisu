@@ -7,7 +7,7 @@ import re
 import hashlib
 
 class Vuln(ABVuln):
-    poc_id = 'd986350a-1e67-42da-baff-41e83a7da048'
+    vuln_id = 'JCMS_0000' # 平台漏洞编号，留空
     name = '大汉JCMS内容管理系统 /jcms/m_5_9/sendreport/downfile.jsp 任意文件下载漏洞' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型

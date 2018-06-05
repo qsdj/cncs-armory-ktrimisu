@@ -8,7 +8,7 @@ import urllib2
 import time
 
 class Vuln(ABVuln):
-    poc_id = 'aaa62afd-791a-44ac-b678-2ac9d0211483'
+    vuln_id = 'Piwigo_0001' # 平台漏洞编号，留空
     name = 'Piwigo <= v2.7.1 /functions_rate.inc.php SQL注入漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

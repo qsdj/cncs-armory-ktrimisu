@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urlparse
 
 class Vuln(ABVuln):
-    poc_id = '4095b09b-c686-4737-a70d-b565e4f5bc41'
+    vuln_id = 'StrongSoft_0002' # 平台漏洞编号，留空
     name = '四创灾害预警系统 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

@@ -7,7 +7,7 @@ import random
 import urlparse
 
 class Vuln(ABVuln):
-    poc_id = '5fda1f4b-69bb-442a-9844-4ea5f3bb45fa'
+    vuln_id = 'IIS_0001_p.py' # 平台漏洞编号，留空
     name = 'IIS HTTP.sys 远程代码执行漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型

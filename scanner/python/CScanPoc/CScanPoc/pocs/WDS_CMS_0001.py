@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    poc_id = '6c6c5b4c-2d32-4dfd-846d-f640af2eccbf'
+    vuln_id = 'WDS_CMS_0001'  # 平台漏洞编号，留空
     name = 'WDS CMS /wds_news/article.php SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION  # 漏洞类型

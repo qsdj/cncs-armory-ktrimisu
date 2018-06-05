@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import datetime
 
 class Vuln(ABVuln):
-    poc_id = 'a6a29f96-8fd3-45ff-bcaf-55b6ab0eb038'
+    vuln_id = 'PHP_0001'  # 平台漏洞编号，留空
     name = 'PHP 远程DOS漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE  # 漏洞类型

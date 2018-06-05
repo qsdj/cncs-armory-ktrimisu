@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = '96d2210d-aabc-4015-8fa4-1ea1b2918e80'
+    vuln_id = 'EnableQ_0002' # 平台漏洞编号，留空
     name = 'EnableQ官方免费版任意文件上传'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_UPLOAD # 漏洞类型

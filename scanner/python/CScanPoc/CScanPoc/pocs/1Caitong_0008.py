@@ -6,7 +6,7 @@ import time
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = 'aa0ff02a-ee4c-4e26-9592-5e0ce15724cb'
+    vuln_id = '1Caitong_0008' # 平台漏洞编号，留空
     name = ' 一采通电子采购系统 SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -33,7 +33,7 @@ class Vuln(ABVuln):
 
 
 class Poc(ABPoc):
-    poc_id = '9234828a-551e-4407-9660-280e17e059ec'
+    poc_id = 'fa35c9ab-9eb6-4d28-ad23-711dcafac4e9'
     author = '国光'  # POC编写者
     create_date = '2018-05-22' # POC创建时间
 

@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import md5
 
 class Vuln(ABVuln):
-    poc_id = '382aec2d-fbb5-42ae-8c96-dbe992c3b6e4'
+    vuln_id = 'CMS_swf_0001' # _平台漏洞编号，留空
     name = 'CMS 通用插件swf XSS'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型

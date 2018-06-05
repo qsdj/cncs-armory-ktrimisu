@@ -7,7 +7,7 @@ import re
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = '320ffd2b-cbe3-44e2-b17f-7d2379b55b04'
+    vuln_id = '74CMS_0009' # 平台漏洞编号，留空
     name = '骑士CMS任意文件的读取(XML实体注入)' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -23,7 +23,7 @@ class Vuln(ABVuln):
 
 
 class Poc(ABPoc):
-    poc_id = '39eed310-fd89-468e-8344-61bc2284ce95'
+    poc_id = 'f55f4caf-e932-49db-aee6-ac186b6e8f40'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 

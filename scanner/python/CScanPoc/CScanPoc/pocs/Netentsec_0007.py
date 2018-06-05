@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = 'd01ebdaf-ecd0-4671-874a-5ec4d29952bc'
+    vuln_id = 'Netentsec_0007' # 平台漏洞编号，留空
     name = '网康 NS-ASG 应用安全网关所有版本任意文件下载漏洞' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型

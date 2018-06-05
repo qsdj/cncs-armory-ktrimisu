@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = '73cd53e7-22f0-42e0-a3c6-ee479d6f64e2'
+    vuln_id = 'WordPress_0028' # 平台漏洞编号，留空
     name = 'WordPress LeagueManager 3.9.11 Plugin SQL注入漏洞' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

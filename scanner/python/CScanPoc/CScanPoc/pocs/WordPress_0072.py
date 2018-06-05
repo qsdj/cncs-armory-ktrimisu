@@ -6,7 +6,7 @@ import urllib,urllib2
 import re
 
 class Vuln(ABVuln):
-    poc_id = '853aa9df-e75e-4f64-9ef4-de15135edfa1'
+    vuln_id = 'WordPress_0072' # 平台漏洞编号，留空
     name = 'WordPress ShortCode Plugin 1.1 - Local File Inclusion Vulnerability' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型

@@ -6,7 +6,7 @@ import socket
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = '8b68725b-85e2-4a99-a32e-7d00f9e9d4e6'
+    vuln_id = 'Redis_0000' # 平台漏洞编号，留空
     name = 'Redis未授权访问漏洞' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.MISCONFIGURATION # 漏洞类型

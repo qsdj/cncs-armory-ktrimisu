@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re, urlparse
 
 class Vuln(ABVuln):
-    poc_id = '6fd0b3f2-c0c2-4f7c-83ac-8c70bfd1f794'
+    vuln_id = 'Netentsec_0003'  # 平台漏洞编号，留空
     name = '网康NS-ASG 应用安全网关SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

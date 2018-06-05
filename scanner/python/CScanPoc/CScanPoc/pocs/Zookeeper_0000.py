@@ -7,7 +7,7 @@ import socket
 import urlparse
 
 class Vuln(ABVuln):
-    poc_id = '0c8a542d-4a3a-4dd4-bbce-5df74a8f5470'
+    vuln_id = 'Zookeeper_0000' # 平台漏洞编号
     name = 'Zookeeper未授权访问' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.OTHER # 漏洞类型

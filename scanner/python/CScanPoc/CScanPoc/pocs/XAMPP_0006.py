@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = '7c8fe620-26a0-4c0e-bb54-22790e24c933'
+    vuln_id = 'XAMPP_0006' # 平台漏洞编号，留空
     name = 'XAMPP 1.7.3 文件泄露漏洞' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型

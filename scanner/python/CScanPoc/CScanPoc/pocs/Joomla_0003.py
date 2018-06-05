@@ -7,7 +7,7 @@ import urllib2
 import cookielib,sys
 
 class Vuln(ABVuln):
-    poc_id = '1bb0f67f-ec22-49d7-9733-f7b190c70441'
+    vuln_id = 'Joomla_0003'  # 平台漏洞编号，留空
     name = 'Joomla! 远程命令执行'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE  # 漏洞类型

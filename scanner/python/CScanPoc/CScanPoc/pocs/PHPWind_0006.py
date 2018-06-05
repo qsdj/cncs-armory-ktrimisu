@@ -6,7 +6,7 @@ import hashlib
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = 'dbb3715d-c6d9-4af7-a538-e5d4fc9cac58'
+    vuln_id = 'PHPWind_0006' # 平台漏洞编号，留空
     name = 'PHPWind flash xss' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型

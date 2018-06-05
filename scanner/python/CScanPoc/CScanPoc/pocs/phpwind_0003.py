@@ -6,7 +6,7 @@ import md5
 import urllib2
 
 class Vuln(ABVuln):
-    poc_id = '58faf106-6c34-4130-a539-a425493f9d7e'
+    vuln_id = 'PHPWind_0003' # 平台漏洞编号，留空
     name = 'PHPWind 9.0 swfupload.swf XSS '  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型

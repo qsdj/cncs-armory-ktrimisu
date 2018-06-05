@@ -6,7 +6,7 @@ import re
 import urlparse
 
 class Vuln(ABVuln):
-    poc_id = 'b2fdce18-8ada-48c6-951c-e507e1fc7d6f'
+    vuln_id = 'DianYiPS_0001' # 平台漏洞编号，留空
     name = 'DianYiPS建站系统 SQL注射'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

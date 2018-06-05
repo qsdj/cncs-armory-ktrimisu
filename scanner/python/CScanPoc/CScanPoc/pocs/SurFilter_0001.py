@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import time
 
 class Vuln(ABVuln):
-    poc_id = 'cfcddcd2-65a7-45df-b6dc-d1dc717d8b23'
+    vuln_id = 'SurFilter_0001'  # 平台漏洞编号，留空
     name = '任子行net110网络审计系统无需登录任意命令执行'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型

@@ -6,7 +6,7 @@ import urllib2
 import time
 
 class Vuln(ABVuln):
-    poc_id = 'd7aa5119-bfb5-4f60-ba3c-d94c5c7205fd'
+    vuln_id = 'WordPress_0012' # 平台漏洞编号，留空
     name = 'WordPress Calculated Fields SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

@@ -7,7 +7,7 @@ import urlparse
 import time
 
 class Vuln(ABVuln):
-    poc_id = '4d1714db-06bd-414d-a97e-8b5c9c029c57'
+    vuln_id = 'Electric_Monitor_0003'  # 平台漏洞编号，留空
     name = '台湾某电力监控系统通用型注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

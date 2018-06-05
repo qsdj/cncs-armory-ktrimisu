@@ -6,7 +6,7 @@ hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
 <<<<<<< HEAD
-    poc_id = '7b379f4a-960b-404e-a647-2eeb2c8107d2'
+    vuln_id = 'PHPCMS_0016' # 平台漏洞编号，留空
     name = 'PHPCMS 9.5.3 vote_tag.class.php SQL注入漏洞' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

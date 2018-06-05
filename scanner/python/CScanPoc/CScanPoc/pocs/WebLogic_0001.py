@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    poc_id = '61145c46-2a75-45b8-8dcf-d3364a112d66'
+    vuln_id = 'WebLogic_0001' # 平台漏洞编号，留空
     name = 'WebLogic SSRF And XSS'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型

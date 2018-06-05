@@ -6,7 +6,7 @@ import urllib,urllib2
 import re
 
 class Vuln(ABVuln):
-    poc_id = '1af0384d-b29c-471e-b959-a25c50b5b7df'
+    vuln_id = 'WaiKuCMS_0001' # 平台漏洞编号，留空
     name = 'WaiKuCMS /index.php/Search.html 代码执行' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型

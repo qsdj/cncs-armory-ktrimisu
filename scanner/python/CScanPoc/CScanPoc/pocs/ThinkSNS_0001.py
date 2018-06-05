@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = 'cbedb268-179c-45c2-bf05-323632bf6198'
+    vuln_id = 'ThinkSNS_0001' # 平台漏洞编号，留空
     name = 'ThinkSNS 前台GetShell' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.OTHER # 漏洞类型

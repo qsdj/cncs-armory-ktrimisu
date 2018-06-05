@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import base64
 
 class Vuln(ABVuln):
-    poc_id = '3c77355f-8276-4c77-ae47-41509ee676dd'
+    vuln_id = 'weaver_0012' # 平台漏洞编号，留空
     name = '泛微OA系统敏感文件未授权访问'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型

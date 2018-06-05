@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = '6d96e162-950b-4293-a2be-4d408094d58a'
+    vuln_id = 'JCMS_0002'  # 平台漏洞编号，留空
     name = '大汉JCMS /opr_readfile.jsp 任意文件读取'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD  # 漏洞类型

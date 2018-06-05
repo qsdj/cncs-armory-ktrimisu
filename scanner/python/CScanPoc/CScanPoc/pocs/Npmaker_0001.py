@@ -6,7 +6,7 @@ import re
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = 'e4405edd-132d-43a0-9b37-c26d957655b3'
+    vuln_id = 'Npmaker_0001' # 平台漏洞编号，留空
     name = 'Npmaker数字报爆路径' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型

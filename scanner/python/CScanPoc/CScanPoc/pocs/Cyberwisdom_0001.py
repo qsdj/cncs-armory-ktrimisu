@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
 class Vuln(ABVuln):
-    poc_id = '18b03849-96aa-489e-8f80-c2f77a62f809'
+    vuln_id = 'Cyberwisdom_0001' # 平台漏洞编号，留空
     name = '汇思e-Learning平台wizBank 任意文件下载'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型

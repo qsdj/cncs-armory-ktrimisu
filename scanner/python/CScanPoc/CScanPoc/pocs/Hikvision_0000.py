@@ -7,7 +7,7 @@ import re
 import hashlib
 
 class Vuln(ABVuln):
-    poc_id = '981f491c-986c-48ce-a18a-37ce32719692'
+    vuln_id = 'Hikvision_0000' # 平台漏洞编号，留空
     name = 'Hikvision /Server/logs/error.log 文件包含导致GETSHELL漏洞' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型

@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = '9e525c97-d01e-4d25-bba3-5af2fc70990d'
+    vuln_id = 'RuvarOA_0001' # 平台漏洞编号，留空
     name = '璐华通用企业版OA系统SQL注' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -25,7 +25,7 @@ class Vuln(ABVuln):
 
 
 class Poc(ABPoc):
-    poc_id = 'b7309081-2cce-4ea0-b3ad-ff38c4e16c16'
+    poc_id = '3c7d4736-05ef-4943-a5f9-6ab1442b42ef'
     author = '国光'  # POC编写者
     create_date = '2018-05-22' # POC创建时间
 

@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = 'c86283ab-2985-48bb-8878-e10364c88a93'
+    vuln_id = 'WordPress_0032' # 平台漏洞编号，留空
     name = 'WordPress plugins/wp-symposium 本地文件包含'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型

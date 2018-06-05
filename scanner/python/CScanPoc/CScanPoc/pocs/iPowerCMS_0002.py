@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import time
 
 class Vuln(ABVuln):
-    poc_id = '044b3690-2649-40d6-9f1e-da6c51064744'
+    vuln_id = 'iPowerCMS_0002' # 平台漏洞编号，留空
     name = '鼎维iPowerCMS建站CMS建站弱口令、万能密码'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.OTHER # 漏洞类型

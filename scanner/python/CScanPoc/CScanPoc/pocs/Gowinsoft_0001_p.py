@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = '10fe7331-90f5-4ed7-9261-e0e1205d0a3e'
+    vuln_id = 'Gowinsoft_0001_p' # 平台漏洞编号，留空
     name = '金窗教务系统 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

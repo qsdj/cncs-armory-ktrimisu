@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    poc_id = 'e22f119d-a960-4b89-9950-6d71f7dcb127'
+    vuln_id = 'DreamAccount_0000' # 平台漏洞编号
     name = 'DreamAccount <= 3.1 (Authentication.api.php) Remote File Include Exploit' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.RFI # 漏洞类型

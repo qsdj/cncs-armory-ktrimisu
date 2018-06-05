@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = 'd0a2dfe1-7fc1-4a85-a6e4-1aa6bdec1ef9'
+    vuln_id = 'cnOA_0001' # 平台漏洞编号，留空
     name = '协众OA系统 任意文件上传'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_UPLOAD # 漏洞类型

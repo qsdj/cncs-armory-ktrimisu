@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = '7ad1d78a-96cc-4eed-8b53-456dd69b73a6'
+    vuln_id = 'Comexe_0000' # 平台漏洞编号，留空
     name = '科迈RAS远程快速接入方案后台登陆绕过' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.MISCONFIGURATION # 漏洞类型
@@ -21,7 +21,7 @@ class Vuln(ABVuln):
 
 
 class Poc(ABPoc):
-    poc_id = '9c978595-00eb-4086-970e-5107ca32a264'
+    poc_id = 'a646118d-352f-45ec-9d67-bd0b37353eb1'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 

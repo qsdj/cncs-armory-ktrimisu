@@ -6,7 +6,7 @@ import urllib,urllib2
 import re
 
 class Vuln(ABVuln):
-    poc_id = 'b7385614-75c5-4926-b705-c2eb4a0d96a0'
+    vuln_id = 'PHPCMS_0007' # 平台漏洞编号，留空
     name = 'PHPCMS v9 /index.php 任意文件读取漏洞' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型

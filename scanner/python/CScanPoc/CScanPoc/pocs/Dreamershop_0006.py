@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = '6d807888-8a6a-48a7-a930-214e950a403f'
+    vuln_id = 'Dreamershop_0006' # 平台漏洞编号，留空
     name = 'Dreamershop梦想家网店系统 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

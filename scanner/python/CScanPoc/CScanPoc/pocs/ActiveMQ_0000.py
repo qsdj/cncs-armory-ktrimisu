@@ -8,7 +8,7 @@ import urllib2
 import random
 
 class Vuln(ABVuln):
-    poc_id = 'b7162eac-1414-4888-b528-a8a42662bae0'
+    vuln_id = 'ActiveMQ_0000' # 平台漏洞编号
     name = 'Apache ActiveMQ upload/download功能目录遍历' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.FILE_UPLOAD # 漏洞类型

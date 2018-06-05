@@ -7,7 +7,7 @@ import time
 import re
 
 class Vuln(ABVuln):
-    poc_id = 'dda2a614-cf2d-4ec2-99e2-312a1a6ebccf'
+    vuln_id = 'ADSLR_0001' # 平台漏洞编号，留空
     name = '飞鱼星上网行为管理路由器 信息泄露'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型

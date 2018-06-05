@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = '08a0369f-5661-4167-bb0f-978295a02d27'
+    vuln_id = 'Netpower_0011' # 平台漏洞编号，留空
     name = '中科网威防火墙 文件遍历'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_TRAVERSAL # 漏洞类型

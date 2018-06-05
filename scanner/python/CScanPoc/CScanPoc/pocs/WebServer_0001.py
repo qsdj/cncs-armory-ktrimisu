@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
 class Vuln(ABVuln):
-    poc_id = '0659ab4d-b212-4b31-9799-a83d5c09a49c'
+    vuln_id = 'WebServer_0001' # 平台漏洞编号，留空
     name = 'WebServer处理URL不当导致的任意文件读取'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_TRAVERSAL # 漏洞类型

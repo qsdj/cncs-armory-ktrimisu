@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = '823fe9fc-4d81-4415-b5a1-08ec293e975f'
+    vuln_id = 'WordPress_0031' # 平台漏洞编号，留空
     name = 'WordPress plugins/wp-swimteam 文件下载'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型

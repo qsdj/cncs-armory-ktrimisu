@@ -6,7 +6,7 @@ import re
 import time
 
 class Vuln(ABVuln):
-    poc_id = '5ec6df19-5bf8-41e5-a55a-995508893aa9'
+    vuln_id = 'weaver_0015' # 平台漏洞编号，留空
     name = '泛微OA平台系统 泄露所有账户密码'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型

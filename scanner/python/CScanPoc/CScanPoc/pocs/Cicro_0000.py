@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = '785e9d18-0752-4912-b13f-ba855a1d4673'
+    vuln_id = 'Cicro_0000' # 平台漏洞编号，留空
     name = '时光动态网站平台(Cicro 3e WS) 任意下载' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型

@@ -6,7 +6,7 @@ import urllib,urllib2
 import re
 
 class Vuln(ABVuln):
-    poc_id = '26515c51-eb5f-4626-ab58-340b81780f04'
+    vuln_id = 'eYou_0000' # 平台漏洞编号，留空
     name = 'eYou v3 /user/send_queue/listCollege.php 路径泄漏' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型

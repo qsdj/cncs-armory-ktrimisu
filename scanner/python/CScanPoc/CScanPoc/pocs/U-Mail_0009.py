@@ -6,7 +6,7 @@ import re
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = 'b23d7117-b1de-4c29-b0bb-f686fa063ddc'
+    vuln_id = 'U-Mail_0009' # 平台漏洞编号，留空
     name = 'U-mail代码注入导致敏感信息泄漏' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型

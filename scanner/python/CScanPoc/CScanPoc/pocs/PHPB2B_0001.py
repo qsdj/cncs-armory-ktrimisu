@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re, urlparse
 
 class Vuln(ABVuln):
-    poc_id = '78a8a7cb-d10f-4641-ae69-950a009435cc'
+    vuln_id = 'PHPB2B_0001'  # 平台漏洞编号，留空
     name = 'PHPB2B某处漏洞直接查看mysql密码'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型

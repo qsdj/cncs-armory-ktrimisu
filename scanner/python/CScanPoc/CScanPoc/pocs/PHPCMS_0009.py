@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = 'e4721ed5-58f2-4cf5-9246-347e918e92fa'
+    vuln_id = 'PHPCMS_0009' # 平台漏洞编号，留空
     name = 'PHPCMS 搜索跨站脚本' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型

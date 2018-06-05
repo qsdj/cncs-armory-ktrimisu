@@ -6,7 +6,7 @@ import re
 import urllib2
 
 class Vuln(ABVuln):
-    poc_id = 'af512ce5-6235-40b7-9b35-398dff5f1cb2'
+    vuln_id = 'PHPMPS_0001' # 平台漏洞编号，留空
     name = 'PHPMPS v2.3 /search.php SQL注入漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

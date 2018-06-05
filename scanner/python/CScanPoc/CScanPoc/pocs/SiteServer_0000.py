@@ -6,7 +6,7 @@ import  re
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = '2d24336a-0c6f-4d1c-9286-00ea328e7d9d'
+    vuln_id = 'SiteServer_0000' # 平台漏洞编号，留空
     name = 'SiteServer 3.6.4 SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

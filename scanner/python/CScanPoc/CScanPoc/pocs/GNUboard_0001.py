@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    poc_id = 'a799d014-8710-4d94-be78-ae66629c5e3a'
+    vuln_id = 'GNUboard_0001' # 平台漏洞编号，留空
     name = 'GNUboard /bbs/poll_update.php SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

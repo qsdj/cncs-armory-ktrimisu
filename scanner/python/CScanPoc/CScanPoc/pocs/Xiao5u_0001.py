@@ -6,7 +6,7 @@ import urllib,urllib2
 import re
 
 class Vuln(ABVuln):
-    poc_id = '709dc67d-aef3-409a-917e-d58c66a1063f'
+    vuln_id = 'Xiao5u_0001' # 平台漏洞编号，留空
     name = '校无忧建站系统 /TeachView.asp SQL注入漏洞' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

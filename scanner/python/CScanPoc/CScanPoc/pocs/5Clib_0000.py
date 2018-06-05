@@ -6,7 +6,7 @@ import re
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = '0ed842b2-f0f6-4884-916b-bf2def934a7d'
+    vuln_id = '5Clib_0000' # 平台漏洞编号，留空
     name = '五车图书管理系统 越权' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.OTHER # 漏洞类型

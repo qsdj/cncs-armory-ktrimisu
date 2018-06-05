@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = '719c7c48-77c7-4478-ae68-7c928c9e4e29'
+    vuln_id = 'Xinhaisoft_0001' # 平台漏洞编号，留空
     name = '北京心海通用型管理系统 任意文件下载'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型

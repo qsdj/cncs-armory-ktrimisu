@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
 class Vuln(ABVuln):
-    poc_id = 'f524d5f4-5100-47c6-a415-241f44231357'
+    vuln_id = 'IIS_0000' # 平台漏洞编号
     name = 'IIS短文件名' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型

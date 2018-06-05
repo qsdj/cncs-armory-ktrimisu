@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = '14ba2621-8295-47b9-9d87-2d0962f66436'
+    vuln_id = 'MetInfo_0003' # 平台漏洞编号，留空
     name = 'MetInfo sql注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

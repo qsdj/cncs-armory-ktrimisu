@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import time
 
 class Vuln(ABVuln):
-    poc_id = '6e7e17c3-8605-4648-8287-49bd0108bc99'
+    vuln_id = 'WordPress_0011'  # 平台漏洞编号，留空
     name = 'WordPress SEO by Yoast 1.7.3.3 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

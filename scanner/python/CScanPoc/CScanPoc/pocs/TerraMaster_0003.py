@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = '38c53b51-123b-4834-a8fe-0f15c762db77'
+    vuln_id = 'TerraMaster_0003' # 平台漏洞编号，留空
     name = 'TerraMaster NAS网络存储服务器 getshell'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型

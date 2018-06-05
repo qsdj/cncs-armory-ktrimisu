@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    poc_id = '2f2775d5-7614-42f5-a846-6e0bcf412842'
+    vuln_id = 'GnatTGP_0000' # 平台漏洞编号
     name = 'Gnat-TGP <= 1.2.20 Remote File Include Vulnerability' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

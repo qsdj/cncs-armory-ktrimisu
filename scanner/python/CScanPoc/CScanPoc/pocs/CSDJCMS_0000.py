@@ -6,7 +6,7 @@ import urllib,urllib2
 import re
 
 class Vuln(ABVuln):
-    poc_id = '634f0720-3c0a-4449-869a-095fd999c042'
+    vuln_id = 'CSDJCMS_0000' # 平台漏洞编号，留空
     name = 'CSDJCMS /app/controllers/dance.php SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

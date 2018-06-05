@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = '02c67c15-6aaf-44fa-9647-f8d19740971f'
+    vuln_id = 'U-Mail_0002' # 平台漏洞编号，留空
     name = 'U-Mail邮件系统 SQL注入漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

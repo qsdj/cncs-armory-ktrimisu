@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    poc_id = '808bf94f-27de-4473-9010-5b511e3a6e14'
+    vuln_id = 'Joomla_0038' # 平台漏洞编号
     name = 'Joomla Component com_jequoteform - Local File Inclusion' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型

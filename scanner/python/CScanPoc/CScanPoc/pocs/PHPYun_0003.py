@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = '474dc84a-a2b2-4809-afd6-1d7fd29e07ea'
+    vuln_id = 'PHPYun_0003' # 平台漏洞编号，留空
     name = 'PHPYun SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

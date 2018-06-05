@@ -6,7 +6,7 @@ import time
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = 'f665530d-91a5-41d6-9bfb-0955796fbb1e'
+    vuln_id = 'yongyou_0030' # 平台漏洞编号，留空
     name = '用友u8 CmxPagedQuery.php参数ViewAppFld存在sql注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -22,7 +22,7 @@ class Vuln(ABVuln):
 
 
 class Poc(ABPoc):
-    poc_id = 'ed6be39b-7a15-43d4-bc53-51cade427bd6'
+    poc_id = '37f81544-0f32-4d78-a6e2-8e5165e994a1'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 

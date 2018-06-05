@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    poc_id = 'd351b50b-4009-4cec-9cff-b677ee1be188'
+    vuln_id = 'rockOA_0003' # 平台漏洞编号，留空
     name = 'rockOA 物理路径泄露'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型

@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    poc_id = '5d2c5f5e-d15f-473c-a32e-29ab03b26687'
+    vuln_id = 'ShopNc_0004' # 平台漏洞编号，留空
     name = 'ShopNc SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

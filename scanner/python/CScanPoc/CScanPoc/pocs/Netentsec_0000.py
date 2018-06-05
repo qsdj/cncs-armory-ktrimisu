@@ -6,7 +6,7 @@ import re
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = '7aa2d2fd-5d8d-431e-93ca-22693c0204fb'
+    vuln_id = 'Netentsec_0000' # 平台漏洞编号，留空
     name = '网康 NS-ASG 应用安全网关SQL注入漏洞' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    poc_id = '4674d6ba-a2e0-46d3-88c1-aea87a538635'
+    vuln_id = 'WordPress_0044' # 平台漏洞编号，留空
     name = 'WordPress 配置文件信息泄露'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型

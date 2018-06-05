@@ -6,7 +6,7 @@ import re
 import os
 
 class Vuln(ABVuln):
-    poc_id = '7eb6fac6-3cbb-4783-b37b-a89f692bc776'
+    vuln_id = 'Yonyou_0023' # 平台漏洞编号，留空
     name = '用友优普U8系统 sql注入漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

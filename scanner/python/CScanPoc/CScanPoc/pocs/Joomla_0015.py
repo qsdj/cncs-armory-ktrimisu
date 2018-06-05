@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    poc_id = 'ea3a206f-d7d6-43c9-be53-5a0da00d924c'
+    vuln_id = 'Joomla_0015' # 平台漏洞编号，留空
     name = 'Joomla! 跨站脚本'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型

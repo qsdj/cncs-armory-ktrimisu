@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
 class Vuln(ABVuln):
-    poc_id = 'c336402b-d7c8-450e-bc88-ee615d356c32'
+    vuln_id = 'ExponentCMS_0001' # 平台漏洞编号，留空
     name = 'Exponent CMS 2.3.2 Reflected XSS Vulnerability'  # 漏洞名称
     level = VulnLevel.LOW  # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型

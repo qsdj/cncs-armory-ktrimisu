@@ -6,7 +6,7 @@ import time
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = 'a8ebe4fc-3365-499f-bc26-9c87124edccc'
+    vuln_id = 'JCMS_0006' # 平台漏洞编号，留空
     name = '大汉版通JCMS SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
 class Vuln(ABVuln):
-    poc_id = '7cd71322-108d-424d-ab66-6c821d03c071'
+    vuln_id = 'MetInfo_0002' # 平台漏洞编号，留空
     name = 'MetInfo v5.3sql注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

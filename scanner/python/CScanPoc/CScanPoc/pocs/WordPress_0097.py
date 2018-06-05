@@ -6,7 +6,7 @@ import re
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = '9306f3bb-2a43-49ea-bf38-1e06a88fcffd'
+    vuln_id = 'WordPress_0097' # 平台漏洞编号，留空
     name = 'WordPress Plugin Fancybox 3.0.2 - Persistent Cross-Site Scripting' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型
@@ -22,7 +22,7 @@ class Vuln(ABVuln):
 
 
 class Poc(ABPoc):
-    poc_id = '411fa44e-fa1f-4274-ae64-259aafc6c7b8'
+    poc_id = '8efbbebe-f9e3-48c9-94f2-e37838086aeb'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 

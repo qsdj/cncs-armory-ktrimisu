@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
 class Vuln(ABVuln):
-    poc_id = '5b3e4309-88ae-4a64-b52a-75b8887d04bc'
+    vuln_id = 'QiboCMS_0015' # 平台漏洞编号，留空
     name = '齐博地方门户系统 /coupon/s.php SQL注入漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

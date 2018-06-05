@@ -6,7 +6,7 @@ import urllib,urllib2
 import re
 
 class Vuln(ABVuln):
-    poc_id = '767d6864-6a68-48c7-8e0f-3a15549998ca'
+    vuln_id = 'U-Mail_0000' # 平台漏洞编号，留空
     name = 'U-Mail /webmail/userapply.php 路径泄漏' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型

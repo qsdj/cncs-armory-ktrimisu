@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = '005de25a-51cc-4a8a-932a-d95d143750b5'
+    vuln_id = 'Insight_0011' # 平台漏洞编号，留空
     name = '英赛特仓储管理系统互联网客户服务平台越权访问' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.MISCONFIGURATION # 漏洞类型
@@ -21,7 +21,7 @@ class Vuln(ABVuln):
 
 
 class Poc(ABPoc):
-    poc_id = 'f3bde80b-6652-4373-8f3c-92e565b4fdbc'
+    poc_id = '8a5c0ebd-d10f-457f-be04-26fc3578a1d7'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 

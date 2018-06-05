@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 
 class Vuln(ABVuln):
-    poc_id = 'b1992622-1583-4ee1-bc24-71ce2ea1ed4b'
+    vuln_id = 'Node.js_0001_p'  # 平台漏洞编号，留空
     name = 'Node.js 目录穿越漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_TRAVERSAL  # 漏洞类型

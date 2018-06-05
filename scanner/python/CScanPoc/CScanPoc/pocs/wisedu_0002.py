@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = '463615a5-9345-4a0c-aac6-03968349fb8b'
+    vuln_id = 'Wisedu_0002' # 平台漏洞编号，留空
     name = '金智教育门户信息系统存在任意文件读取'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型

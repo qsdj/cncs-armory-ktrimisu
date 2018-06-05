@@ -6,7 +6,7 @@ import  re
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = '86249f73-d1e3-4e36-aa7f-d747c94836e7'
+    vuln_id = 'WordPress_0078' # 平台漏洞编号，留空
     name = 'WordPress force download Arbitrary File Download' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型

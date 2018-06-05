@@ -7,7 +7,7 @@ import md5
 import time
 
 class Vuln(ABVuln):
-    poc_id = 'bcd2a83e-ec4c-475a-9898-3c15ca2503fe'
+    vuln_id = 'weaver_0003' # 平台漏洞编号，留空
     name = '泛微e-cology SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

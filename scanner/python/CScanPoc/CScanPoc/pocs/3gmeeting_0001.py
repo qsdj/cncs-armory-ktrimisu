@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re, urlparse
 
 class Vuln(ABVuln):
-    poc_id = '17334e09-25bd-421c-aa1f-0677ff2165fb'
+    vuln_id = '3gmeeting_0001'  # 平台漏洞编号，留空
     name = '3gmeeting视讯系统任意文件下载'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型

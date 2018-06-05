@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = 'a7415ea7-76d3-44bb-a927-0f2cd7f7869d'
+    vuln_id = '360Shop_0000' # 平台漏洞编号，留空
     name = '启博淘店通标准版 任意文件遍历' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.FILE_TRAVERSAL # 漏洞类型

@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = 'e21411bd-b3aa-4b53-b99b-412372825415'
+    vuln_id = 'FineCMS_0002_p' # 平台漏洞编号，留空
     name = 'FineCMS 设计缺陷导致多处SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

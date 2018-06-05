@@ -6,7 +6,7 @@ import re
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = '740db440-6ab2-4883-93fb-aac5f2a3c321'
+    vuln_id = 'PHPCMS_0020' # 平台漏洞编号，留空
     name = 'PHPCMS 2008 SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

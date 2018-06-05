@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = '7583ddc4-1261-484d-a7d0-dfb03315118f'
+    vuln_id = 'TaokediguoCMS_0001' # 平台漏洞编号，留空
     name = '淘客帝国CMS 无视GPC注射和信息泄露漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型

@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = '61a926b5-3f5a-492c-b62a-1eb83db3686a'
+    vuln_id = 'WordPress_0038' # 平台漏洞编号，留空
     name = 'WordPress Work-The-Flow Plugin 2.5.2 文件上传' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.FILE_UPLOAD # 漏洞类型

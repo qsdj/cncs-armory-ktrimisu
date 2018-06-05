@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
 class Vuln(ABVuln):
-    poc_id = 'b0bfb0b7-5c6c-4c17-8a69-178e55eccd7e'
+    vuln_id = 'BlueCMS_0001' # 平台漏洞编号，留空
     name = 'BlueCMS v1.6 sp1 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

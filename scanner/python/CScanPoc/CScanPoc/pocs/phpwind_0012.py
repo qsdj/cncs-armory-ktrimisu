@@ -6,7 +6,7 @@ import random
 import urlparse
 
 class Vuln(ABVuln):
-    poc_id = 'a6d7db9d-15ab-466f-93de-5332fa9c5323'
+    vuln_id = 'PHPWind_0012' # 平台漏洞编号，留空
     name = 'PHPWind 后台可爆破'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.OTHER # 漏洞类型

@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    poc_id = 'a05f284e-051b-453a-bb71-dc362d68f085'
+    vuln_id = 'Nginx_0000' # 平台漏洞编号，留空
     name = 'Nginx HTTP请求源码泄露和拒绝服务'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型

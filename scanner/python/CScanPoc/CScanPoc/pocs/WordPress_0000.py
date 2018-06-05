@@ -7,7 +7,7 @@ import re
 import hashlib
 
 class Vuln(ABVuln):
-    poc_id = '4c031406-f1bb-479c-b5e1-545b0063db27'
+    vuln_id = 'WordPress_0000' # 平台漏洞编号，留空
     name = 'WordPress full Path Disclosure Vulnerability' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型

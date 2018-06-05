@@ -6,7 +6,7 @@ import urllib,urllib2
 import re
 
 class Vuln(ABVuln):
-    poc_id = '6c1c93a1-a319-46ff-9927-83a45acf669a'
+    vuln_id = 'EasyTalk_0002_p' # 平台漏洞编号，留空
     name = 'EasyTalk 2.5 /Home/Lib/Action/ApiAction.class.php SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

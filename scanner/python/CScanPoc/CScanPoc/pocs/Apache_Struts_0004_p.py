@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = '0e2b98b5-faf3-4305-a38e-1bc92659e80d'
+    vuln_id = 'Apache_Struts_0004_p' # 平台漏洞编号，留空
     name = 'Apache Struts2 S2-001远程代码执行' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型

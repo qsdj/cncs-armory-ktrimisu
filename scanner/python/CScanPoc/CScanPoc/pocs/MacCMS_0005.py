@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 
 class Vuln(ABVuln):
-    poc_id = '0f43dd63-b14b-4587-982b-f9e9b85db6bc'
+    vuln_id = 'MacCMS_0005' # 平台漏洞编号，留空
     name = 'MacCMS v8 /inc_ajax.php SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

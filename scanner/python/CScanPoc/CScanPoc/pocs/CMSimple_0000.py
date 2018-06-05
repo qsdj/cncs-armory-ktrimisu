@@ -7,7 +7,7 @@ import re
 import hashlib
 
 class Vuln(ABVuln):
-    poc_id = '31d1850d-8c91-44c9-a460-89af123a5384'
+    vuln_id = 'CMSimple_0000' # 平台漏洞编号，留空
     name = 'CMSimple 3.54 /whizzywig/wb.php XSS漏洞' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型

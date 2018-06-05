@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = 'cdd77ecd-9d1d-4b66-96c5-91de28465fc0'
+    vuln_id = 'Apache_0000' # 平台漏洞编号，留空
     name = 'Apache目录下会有一个cgi-bin/test-cgi bash 远程命令执行' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型

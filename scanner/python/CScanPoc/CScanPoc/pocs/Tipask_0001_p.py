@@ -6,7 +6,7 @@ import urllib,urllib2
 import re
 
 class Vuln(ABVuln):
-    poc_id = 'f4da283c-0473-41e8-80fc-0337775209f1'
+    vuln_id = 'Tipask_0001_p' # 平台漏洞编号，留空
     name = 'Tipask 2.0 /control/question.php SQL注入漏洞' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

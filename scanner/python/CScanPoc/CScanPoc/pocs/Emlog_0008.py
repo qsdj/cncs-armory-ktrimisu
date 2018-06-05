@@ -6,7 +6,7 @@ import hashlib
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = '61b1a843-cc78-484b-a9cb-e1cd8df8aa38'
+    vuln_id = 'Emlog_0008' # 平台漏洞编号，留空
     name = 'Emlog博客前台反射型XSS(无视浏览器filter)' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型

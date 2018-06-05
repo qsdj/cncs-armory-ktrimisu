@@ -11,7 +11,7 @@ import re
 from urlparse import urlparse
 
 class Vuln(ABVuln):
-    poc_id = 'a12dd851-1219-43dc-92da-6eb9bece27e1'
+    vuln_id = 'Jenkins_0001'  # 平台漏洞编号，留空
     name = 'Jenkins 反序列化漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE  # 漏洞类型

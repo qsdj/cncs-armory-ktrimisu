@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = '76b85e03-0e52-41a4-8ebb-983e84479da7'
+    vuln_id = 'SiteFactoryCMS_0001' # 平台漏洞编号，留空
     name = 'SiteFactory CMS任意文件下载'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型

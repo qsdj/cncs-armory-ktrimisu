@@ -6,7 +6,7 @@ hh = hackhttp.hackhttp()
 
 
 class Vuln(ABVuln):
-    poc_id = '8fd7f06d-763c-40c3-874c-b1c3752c45f7'
+    vuln_id = 'ShopNum1_0006' # 平台漏洞编号，留空
     name = '武汉群翔软件有限公司商城系统注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -21,7 +21,7 @@ class Vuln(ABVuln):
     product_version = 'Unkonwn'  # 漏洞应用版本
 
 class Poc(ABPoc):
-    poc_id = '4a912bf7-f32f-4d0a-9ff9-53417efadf67'
+    poc_id = '327c12e2-361a-491f-9f4d-433463d8651f'
     author = '国光'  # POC编写者
     create_date = '2018-05-25'  # POC创建时间
 

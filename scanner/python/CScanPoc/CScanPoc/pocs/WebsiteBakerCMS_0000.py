@@ -7,7 +7,7 @@ import re
 import hashlib
 
 class Vuln(ABVuln):
-    poc_id = '9ad43d51-3c44-411a-8a63-ae845279d7ca'
+    vuln_id = 'WebsiteBakerCMS_0000' # 平台漏洞编号，留空
     name = 'WebsiteBakerCMS <=2.8.3 多个XSS漏洞' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型

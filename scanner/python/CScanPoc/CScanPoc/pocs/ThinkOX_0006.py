@@ -6,7 +6,7 @@ import time
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = '7272d782-38de-4ef7-aa86-ccc29bfb1f09'
+    vuln_id = 'ThinkOX_0006' # 平台漏洞编号，留空
     name = 'ThinkOX SQL 盲注漏洞' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

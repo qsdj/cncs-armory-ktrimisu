@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = 'a72cc2dc-0327-4642-bdd0-cdaffade3d23'
+    vuln_id = '724CMS_0000' # 平台漏洞编号
     name = '724CMS 4.01 Enterprise - index.php SQL Injection' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

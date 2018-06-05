@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    poc_id = '1cb38337-eace-40a5-8b5f-98af856eb41b'
+    vuln_id = 'PHPMyAdmin_0001' # 平台漏洞编号，留空
     name = 'PHPMyAdmin 绝对路径获取'  # 漏洞名称
     level = VulnLevel.LOW  # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型

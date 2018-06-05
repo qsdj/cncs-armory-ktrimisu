@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    poc_id = 'fb82af3d-5168-49a8-8f3b-8e16806a9b28'
+    vuln_id = 'Yuysoft_0006' # 平台漏洞编号，留空
     name = '育友通用数字化校园平台 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

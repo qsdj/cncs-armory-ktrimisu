@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = '79b66e57-6cbf-4abc-8cb5-af7d0ad43419'
+    vuln_id = 'Linksys_0001' # 平台漏洞编号，留空
     name = 'Linksys X2000 Command Execution'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型

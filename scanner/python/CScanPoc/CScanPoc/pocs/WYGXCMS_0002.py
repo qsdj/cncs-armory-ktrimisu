@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re, urlparse
 
 class Vuln(ABVuln):
-    poc_id = 'e230e36d-25bf-4440-aeb2-2cf9a426ac53'
+    vuln_id = 'WYGXCMS_0002'  # 平台漏洞编号，留空
     name = '网域高校CMS数据库任意下载'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型

@@ -7,7 +7,7 @@ import urllib,urllib2
 import re
 
 class Vuln(ABVuln):
-    poc_id = '04cd00cd-610e-423b-9c94-463d528a6cf4'
+    vuln_id = 'Shopex_0003' # 平台漏洞编号，留空
     name = 'Shopex /api.php SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

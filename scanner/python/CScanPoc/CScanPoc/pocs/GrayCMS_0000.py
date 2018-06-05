@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    poc_id = '2e8c8429-d511-410f-9ccb-e283de903630'
+    vuln_id = 'GrayCMS_0000' # 平台漏洞编号
     name = 'GrayCMS 1.1 Error.PHP Remote File Include Vulnerability' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.RFI # 漏洞类型

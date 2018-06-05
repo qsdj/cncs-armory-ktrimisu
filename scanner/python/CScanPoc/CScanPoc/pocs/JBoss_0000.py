@@ -9,7 +9,7 @@ import random
 import urlparse
 
 class Vuln(ABVuln):
-    poc_id = 'c41aa865-c1f9-46af-8009-931dae5af393'
+    vuln_id = 'JBoss_0000' # 平台漏洞编号
     name = 'Jboss 认证绕过' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.OTHER # 漏洞类型

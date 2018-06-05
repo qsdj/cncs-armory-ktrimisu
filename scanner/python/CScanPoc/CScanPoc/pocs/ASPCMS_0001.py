@@ -7,7 +7,7 @@ import urllib2
 import cookielib
 
 class Vuln(ABVuln):
-    poc_id = 'cbfb304b-95f1-448d-b75f-49d1e7f7dbab'
+    vuln_id = 'ASPCMS_0001'  # 平台漏洞编号，留空
     name = 'ASPCMS信息泄漏包括管理员帐号'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK  # 漏洞类型

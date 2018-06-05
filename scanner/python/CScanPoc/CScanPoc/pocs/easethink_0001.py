@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = 'f86d1eab-97f9-410d-9f34-8a151db2b49e'
+    vuln_id = 'Easethink_0001' # 平台漏洞编号，留空
     name = '易想团购系统 cookies注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

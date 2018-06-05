@@ -7,7 +7,7 @@ import re
 import hashlib
 
 class Vuln(ABVuln):
-    poc_id = '7a1b7a3b-fe2a-49b3-89d8-9713611bced8'
+    vuln_id = 'TCCMS_0000' # 平台漏洞编号，留空
     name = 'TCCMS v9.0 /system/core/controller.class.php SQL注入漏洞' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

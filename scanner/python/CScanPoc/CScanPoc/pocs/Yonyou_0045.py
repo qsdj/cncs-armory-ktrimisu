@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    poc_id = 'b5276ed6-b016-4b64-b294-12a25bc0a046'
+    vuln_id = 'Yonyou_0045' # 平台漏洞编号，留空
     name = '用友致远A6/yyoa/ext/trafaxserver/downloadAtt.jsp sql注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

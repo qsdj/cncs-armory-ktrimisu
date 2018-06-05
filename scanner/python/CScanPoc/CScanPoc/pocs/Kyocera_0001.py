@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re, urlparse
 
 class Vuln(ABVuln):
-    poc_id = '0b59d16c-1f12-47e1-b5ed-068327755a0a'
+    vuln_id = 'Kyocera_0001'  # 平台漏洞编号，留空
     name = '京瓷打印机任意文件读取'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_TRAVERSAL # 漏洞类型

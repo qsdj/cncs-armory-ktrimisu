@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = 'c37b401e-dd8b-4225-b3be-f26807a81808'
+    vuln_id = 'Wanpeng_0001' # 平台漏洞编号，留空
     name = '浙江万鹏某通用教育类门户系统存在任意文件下载' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型
@@ -21,7 +21,7 @@ class Vuln(ABVuln):
 
 
 class Poc(ABPoc):
-    poc_id = '863c6051-16a9-4abe-8699-5eabfa9b86de'
+    poc_id = 'fc527a96-e9b3-45f4-8424-b7411ee1c4d1'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 

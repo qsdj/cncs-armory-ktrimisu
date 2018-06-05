@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urlparse
 
 class Vuln(ABVuln):
-    poc_id = 'da3ba9e3-bded-484e-b28f-3430f44b5264'
+    vuln_id = 'AppExNetworks_0002' # 平台漏洞编号，留空
     name = '华创路由器 命令执行'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型

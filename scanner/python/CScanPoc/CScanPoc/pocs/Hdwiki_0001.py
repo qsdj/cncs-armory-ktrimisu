@@ -8,7 +8,7 @@ import urllib2
 import urlparse
 
 class Vuln(ABVuln):
-    poc_id = 'ae73d321-5eaf-4a34-90d5-14b8d8a461fd'
+    vuln_id = 'Hdwiki_0001' # 平台漏洞编号，留空
     name = 'Hdwiki 5.1 /control/edition.php SQL注入漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

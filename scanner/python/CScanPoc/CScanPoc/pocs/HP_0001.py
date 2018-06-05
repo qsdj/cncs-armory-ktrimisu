@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re, urlparse
 
 class Vuln(ABVuln):
-    poc_id = 'e74a9960-1f12-442f-af43-60b4c24c5b90'
+    vuln_id = 'HP_0001'  # 平台漏洞编号，留空
     name = 'HP多款打印机 未授权访问'  # 漏洞名称
     level = VulnLevel.LOW  # 漏洞危害级别
     type = VulnType.OTHER # 漏洞类型

@@ -6,7 +6,7 @@ import hashlib
 import uuid
 
 class Vuln(ABVuln):
-    poc_id = 'a60485f8-9611-4e8f-b340-b1ebbcc613b3'
+    vuln_id = 'CouchDB_0001'  # 平台漏洞编号，留空
     name = 'CouchDB 垂直权限绕过漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE  # 漏洞类型

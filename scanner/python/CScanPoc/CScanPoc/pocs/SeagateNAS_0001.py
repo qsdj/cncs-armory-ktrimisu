@@ -6,7 +6,7 @@ import re
 import urlparse
 
 class Vuln(ABVuln):
-    poc_id = '2212a316-875d-465d-b5b9-54a0792e073d'
+    vuln_id = 'Seagate_NAS_0001' # 平台漏洞编号，留空
     name = '希捷NAS 管理员密码重置'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.OTHER # 漏洞类型

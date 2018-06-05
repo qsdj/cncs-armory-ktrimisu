@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = 'cfac4f07-3df4-45a7-beff-3a9ab3d13367'
+    vuln_id = 'Discuz_0001'  # 平台漏洞编号，留空
     name = 'Discuz!积分商城插件设计缺陷可前台getshell'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.LFI  # 漏洞类型

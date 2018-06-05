@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    poc_id = '6972726b-b211-46c0-8b48-2b7a2d2984ef'
+    vuln_id = 'Infosea_0011' # 平台漏洞编号，留空
     name = '北京清大新洋通用图书馆集成系统GLIS9.0 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

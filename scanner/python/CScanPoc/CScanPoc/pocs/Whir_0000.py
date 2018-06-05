@@ -7,7 +7,7 @@ import time
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = '8573f115-fbf0-4b1a-8b9a-b32012e33991'
+    vuln_id = 'Whir_0000' # 平台漏洞编号，留空
     name = '万户ezEIP前台 GovSendFileBoxAction.do无条件注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -23,7 +23,7 @@ class Vuln(ABVuln):
 
 
 class Poc(ABPoc):
-    poc_id = '9a3b8104-6f48-45b1-8ac6-edde16bdb454'
+    poc_id = '9a8017cb-a586-4bc7-8005-ee29491c7b80'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 

@@ -6,7 +6,7 @@ import urllib,urllib2
 import re
 
 class Vuln(ABVuln):
-    poc_id = '8b244b65-7b5f-48ed-b0af-e607a735e269'
+    vuln_id = 'PHPCMS_0000' # 平台漏洞编号，留空
     name = 'PHPCMS 9.5.3 /phpcms/modules/vote/classes/vote_tag.class.php SQL注入漏洞' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

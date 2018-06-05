@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
 class Vuln(ABVuln):
-    poc_id = '5de10b87-214c-4c8a-90ca-0ebc0e5a1d35'
+    vuln_id = 'QiboCMS_0002' # 平台漏洞编号，留空
     name = 'QiboCMS V7 任意文件下载漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型

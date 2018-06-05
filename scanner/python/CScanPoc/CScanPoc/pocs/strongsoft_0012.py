@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re, urlparse
 
 class Vuln(ABVuln):
-    poc_id = 'd0db91c8-6271-468a-814a-1722441c1786'
+    vuln_id = 'StrongSoft_0012' # 平台漏洞编号，留空
     name = '四创灾害预警系统 文件上传'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_UPLOAD # 漏洞类型

@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = '21cc4851-183d-48d4-bdda-8abc8a0b3d4f'
+    vuln_id = 'weaver_0006' # 平台漏洞编号，留空
     name = '泛微Eoffice无需登录直接getshell' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型

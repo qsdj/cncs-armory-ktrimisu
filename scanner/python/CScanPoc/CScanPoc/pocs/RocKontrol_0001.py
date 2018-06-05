@@ -6,7 +6,7 @@ import re
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = 'e8dad5cd-aad0-4a12-91b8-1b702b626f10'
+    vuln_id = 'RocKontrol_0001' # 平台漏洞编号，留空
     name = '工控安全之火力发电能耗监测弱口令' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.MISCONFIGURATION # 漏洞类型
@@ -22,7 +22,7 @@ class Vuln(ABVuln):
 
 
 class Poc(ABPoc):
-    poc_id = 'b79a2dbe-984c-4ae0-8a78-8e1b81ac60b1'
+    poc_id = '08ee8410-7d08-404c-bcb8-115e1d00fd75'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 

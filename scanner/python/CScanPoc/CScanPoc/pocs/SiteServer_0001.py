@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
 class Vuln(ABVuln):
-    poc_id = '9e199bd4-974c-4004-bae7-7e39ebc6d829'
+    vuln_id = 'SiteServer_0001' # 平台漏洞编号，留空
     name = 'SiteServerCMS SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

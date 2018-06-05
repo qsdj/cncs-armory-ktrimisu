@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = '7a77899b-bc21-44ff-bb69-1bca341d637e'
+    vuln_id = 'Shenlan_0001_p' # 平台漏洞编号，留空
     name = '深蓝软件建筑工程质量安全监督系统任意文件下载/任意上传/任意删除/越权操作/SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -21,7 +21,7 @@ class Vuln(ABVuln):
 
 
 class Poc(ABPoc):
-    poc_id = 'd1cdb83b-62a3-4a01-a62b-ade5ac021739'
+    poc_id = 'dde4464b-ecb7-448a-a17c-b4190422ca17'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 

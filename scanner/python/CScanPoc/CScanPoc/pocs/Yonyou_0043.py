@@ -6,7 +6,7 @@ import re
 import time
 
 class Vuln(ABVuln):
-    poc_id = '7182794c-180e-4be7-a90c-54323e9214ba'
+    vuln_id = 'Yonyou_0043' # 平台漏洞编号，留空
     name = '用友u8 CmxMailSet.php SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

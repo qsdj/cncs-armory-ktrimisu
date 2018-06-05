@@ -6,7 +6,7 @@ import urllib,urllib2
 import hashlib
 
 class Vuln(ABVuln):
-    poc_id = 'bc53ae48-f271-4b90-874a-508a0d491862'
+    vuln_id = 'Emlog_0000' # 平台漏洞编号，留空
     name = 'Emlog 5.3.1 /include/lib/js/uploadify/uploadify.swf XSS' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型

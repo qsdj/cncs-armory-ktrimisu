@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re, urlparse
 
 class Vuln(ABVuln):
-    poc_id = 'f1f32b32-4e27-45a1-a595-04ed9f845679'
+    vuln_id = 'Netcore_0001'  # 平台漏洞编号，留空
     name = '磊科路由器 未授权访问'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型

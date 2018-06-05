@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import time
 
 class Vuln(ABVuln):
-    poc_id = 'ae3bae78-9d2c-4a1e-9a88-225ec01260d4'
+    vuln_id = 'ExtMail_0001' # 平台漏洞编号，留空
     name = 'ExtMail 邮件系统sql注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

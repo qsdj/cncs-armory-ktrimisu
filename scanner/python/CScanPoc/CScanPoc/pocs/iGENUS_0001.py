@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = '17789326-0255-4e8c-8b67-bb8e46a5f89f'
+    vuln_id = 'iGENUS_0001'  # 平台漏洞编号，留空
     name = '爱琴思邮件系统任意文件遍历'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_TRAVERSAL  # 漏洞类型

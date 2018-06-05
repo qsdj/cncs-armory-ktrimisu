@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = '3a7ade97-0778-4a9e-a4fb-841a35e97ccb'
+    vuln_id = 'Wisedu_0001' # 平台漏洞编号，留空
     name = '金智教育高校系统存在通用型Oracle注射'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

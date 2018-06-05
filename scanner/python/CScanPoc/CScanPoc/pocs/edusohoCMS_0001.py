@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = 'a4708296-beae-415b-965f-53d57598a145'
+    vuln_id = 'EduSohoCMS_0001' # 平台漏洞编号，留空
     name = 'EduSohoCMS 敏感信息泄露'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型

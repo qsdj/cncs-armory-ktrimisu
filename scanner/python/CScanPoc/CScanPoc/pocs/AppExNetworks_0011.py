@@ -6,7 +6,7 @@ import urlparse
 import re
 
 class Vuln(ABVuln):
-    poc_id = '35a416d3-5105-4a88-96d3-266f5953d706'
+    vuln_id = 'AppExNetworks_0011' # 平台漏洞编号，留空
     name = '华创路由器 路径泄露'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_TRAVERSAL # 漏洞类型

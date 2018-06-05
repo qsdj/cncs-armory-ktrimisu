@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = 'b866fe05-46ca-4cf0-8ae2-25c524a6f082'
+    vuln_id = 'Ecshop_0009' # 平台漏洞编号，留空
     name = 'Ecshop SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

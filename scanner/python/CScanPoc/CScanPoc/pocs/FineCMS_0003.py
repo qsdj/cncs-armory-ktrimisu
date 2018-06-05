@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = '0a223742-832c-426f-b8d2-bce5bef8de16'
+    vuln_id = 'FineCMS_0003' # 平台漏洞编号，留空
     name = 'FineCMS v1.x远程代码执行漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型

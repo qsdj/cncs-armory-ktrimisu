@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = 'cf9c1a85-9ba9-4f76-8222-75432154fdfe'
+    vuln_id = 'WordPress_0089' # 平台漏洞编号，留空
     name = 'WordPress Plugin ShortCode 0.2.3 - Local File Inclusion' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型
@@ -21,7 +21,7 @@ class Vuln(ABVuln):
 
 
 class Poc(ABPoc):
-    poc_id = 'e4eb910d-d819-425f-b03c-c6014376ca16'
+    poc_id = '3ed267bd-0810-4403-ada8-22d47e003d91'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 

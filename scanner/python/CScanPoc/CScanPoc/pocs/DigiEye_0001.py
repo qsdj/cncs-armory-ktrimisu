@@ -6,7 +6,7 @@ import socket
 import urlparse
 
 class Vuln(ABVuln):
-    poc_id = '8582834a-fb09-4a7b-8533-bd1a5aff5005'
+    vuln_id = 'DigiEye_0001' # 平台漏洞编号，留空
     name = 'DigiEye 3G(software version 3.19.30004) Backdoor'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.OTHER # 漏洞类型

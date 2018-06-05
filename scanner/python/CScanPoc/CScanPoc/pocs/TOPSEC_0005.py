@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = '06057a4a-9a2e-43b5-9042-f88408acb9dc'
+    vuln_id = 'TOPSEC_0005'  # 平台漏洞编号，留空
     name = '天融信负载均衡系统 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

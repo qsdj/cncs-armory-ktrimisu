@@ -6,7 +6,7 @@ import time
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = '14479d4f-58e7-4209-9cf9-6eb7bca90d4f'
+    vuln_id = 'kingdee_0016' # 平台漏洞编号，留空
     name = '金蝶AES系统2种Java web配置文件可下载'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.MISCONFIGURATION # 漏洞类型
@@ -21,7 +21,7 @@ class Vuln(ABVuln):
     product_version = 'Unkonwn'  # 漏洞应用版本
 
 class Poc(ABPoc):
-    poc_id = '340504b3-fd4f-4404-bdef-34575b6d2940'
+    poc_id = 'f380c6ec-71bb-4743-8d1a-63279a26f9a8'
     author = '国光'  # POC编写者
     create_date = '2018-05-25'  # POC创建时间
 

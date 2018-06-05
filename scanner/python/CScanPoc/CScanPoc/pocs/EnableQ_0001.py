@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = 'b53d99ab-dda2-4272-96b8-7149fac147e1'
+    vuln_id = 'EnableQ_0001' # 平台漏洞编号，留空
     name = 'EnableQ全版本 sql注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

@@ -6,7 +6,7 @@ from xml.dom import minidom
 import urllib2
 
 class Vuln(ABVuln):
-    poc_id = '2ee147bf-907a-4450-9c33-673d002256df'
+    vuln_id = 'Flash_0000' # 平台漏洞编号
     name = 'Flash crossdomain.xml CSRF' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.XXE # 漏洞类型

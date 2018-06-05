@@ -10,7 +10,7 @@ import urllib
 import urllib2
 
 class Vuln(ABVuln):
-    poc_id = '19c09ed7-ab34-4674-935b-d566c959e93c'
+    vuln_id = 'FineCMS_0004' # 平台漏洞编号，留空
     name = 'FineCMS高级版 前台getshell'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型

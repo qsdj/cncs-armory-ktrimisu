@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    poc_id = 'a49ff65e-7bd4-43b5-9fdc-908b285c6512'
+    vuln_id = 'WordPress_0010'  # 平台漏洞编号，留空
     name = 'Wordpress Ajax Store Locator SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

@@ -6,7 +6,7 @@ import random
 import re
 
 class Vuln(ABVuln):
-    poc_id = 'b989f126-b3ce-4774-8d4c-4b2f8f8f1127'
+    vuln_id = 'Joomla_0002'  # 平台漏洞编号，留空
     name = 'Joomla! 未授权创建特权用户'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION  # 漏洞类型

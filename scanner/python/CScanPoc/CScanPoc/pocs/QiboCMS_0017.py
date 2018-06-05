@@ -6,7 +6,7 @@ import re
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = '37d3293a-ea52-4447-95b6-82f9631ac4aa'
+    vuln_id = 'QiboCMS_0017' # 平台漏洞编号，留空
     name = '齐博CMS 地方门户系统 SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

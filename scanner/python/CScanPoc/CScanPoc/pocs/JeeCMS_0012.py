@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = '3685061a-6f05-4431-9ab1-eb87c5a2832e'
+    vuln_id = 'JeeCMS_0012' # 平台漏洞编号，留空
     name = 'JeeCMS arbitrary file download'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型

@@ -8,7 +8,7 @@ import string
 import random
 
 class Vuln(ABVuln):
-    poc_id = '909b254f-8836-45ab-94a4-30ebb04091a3'
+    vuln_id = 'eYou_0017_p' # 平台漏洞编号，留空
     name = 'eYou v4 /storage_explore.php 命令执行' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型

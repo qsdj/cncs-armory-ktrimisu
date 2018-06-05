@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import datetime
 
 class Vuln(ABVuln):
-    poc_id = 'ab359e40-4130-46de-b63c-4c694604abc8'
+    vuln_id = 'Libsys_0005' # 平台漏洞编号，留空
     name = '汇文图书管理系统 变量覆盖'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.OTHER # 漏洞类型

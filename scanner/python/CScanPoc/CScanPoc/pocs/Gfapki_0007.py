@@ -6,7 +6,7 @@ import re
 import random
 
 class Vuln(ABVuln):
-    poc_id = 'eb8ab283-1931-45c7-88ed-995d5e2d25ad'
+    vuln_id = 'Gfapki_0007' # 平台漏洞编号，留空
     name = '国富安应用安全网关登录绕过'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.OTHER # 漏洞类型

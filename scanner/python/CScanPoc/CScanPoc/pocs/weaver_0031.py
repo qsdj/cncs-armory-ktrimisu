@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import time, re
 
 class Vuln(ABVuln):
-    poc_id = 'dd47ba7f-d81e-407a-9914-f7c9ca6e4f6e'
+    vuln_id = 'weaver_0031' # 平台漏洞编号，留空
     name = '泛微e-cology通用性 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

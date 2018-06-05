@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
 class Vuln(ABVuln):
-    poc_id = '7328c9ee-7aa9-461e-9364-2b41bb83ea1f'
+    vuln_id = 'Chamilo_LMS_0001' # 平台漏洞编号，留空
     name = 'Chamilo LMS 1.9.10 跨站脚本漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型

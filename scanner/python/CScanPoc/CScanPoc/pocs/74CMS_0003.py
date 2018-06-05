@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    poc_id = '3df50e8d-05dd-4910-b1bf-e55123cc9d19'
+    vuln_id = '74CMS_0003' # 平台漏洞编号，留空
     name = '骑士CMS 重置任意账号密码'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.OTHER # 漏洞类型

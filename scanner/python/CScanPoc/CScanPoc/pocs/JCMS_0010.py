@@ -6,7 +6,7 @@ import re
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = '529e2ad4-4943-4d62-8d58-7f54d9e9fd8b'
+    vuln_id = 'JCMS_0010' # 平台漏洞编号，留空
     name = '大汉政府信息公开网站群存在getshell的风险' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.MISCONFIGURATION # 漏洞类型
@@ -22,7 +22,7 @@ class Vuln(ABVuln):
 
 
 class Poc(ABPoc):
-    poc_id = '41f669fd-8a1f-4693-8269-83f734eed54b'
+    poc_id = 'de8011e0-7904-423e-9bb5-99089b8bc1f7'
     author = '国光'  # POC编写者
     create_date = '2018-05-13' # POC创建时间
 

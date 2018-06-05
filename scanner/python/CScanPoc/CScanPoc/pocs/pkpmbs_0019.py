@@ -6,7 +6,7 @@ import re
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = 'a8c7e2c2-dbc5-4765-90c9-51b76621a184'
+    vuln_id = 'PKPMBS_0019' # 平台漏洞编号，留空
     name = 'PKPMBS工程质量监督站信息管理系统5处SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -28,7 +28,7 @@ class Vuln(ABVuln):
 
 
 class Poc(ABPoc):
-    poc_id = '64d19667-d855-4105-8b3a-6ff65ef6bc97'
+    poc_id = '52c099a6-8e15-4a1b-b065-1882d72ada49'
     author = '国光'  # POC编写者
     create_date = '2018-05-22' # POC创建时间
 

@@ -6,7 +6,7 @@ from ftplib import FTP
 import urlparse
 
 class Vuln(ABVuln):
-    poc_id = 'a7fda323-55ae-4c02-9cbc-2225d37bdd4e'
+    vuln_id = 'PCMan_0001' # 平台漏洞编号，留空
     name = 'PCMan FTP Server 2.0.7 - Directory Traversal'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_TRAVERSAL # 漏洞类型

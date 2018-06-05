@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = 'a47c4ab3-b3a4-4450-ac8e-0dbaf8f9666f'
+    vuln_id = 'D-Link_0006' # 平台漏洞编号，留空
     name = 'D-Link发送特定POST包获取宽带帐号wifi等密码' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.OTHER # 漏洞类型

@@ -7,7 +7,7 @@ import re
 import hashlib
 
 class Vuln(ABVuln):
-    poc_id = '5a609379-2d42-4e8b-aed3-f1270ad27234'
+    vuln_id = 'HeeritOA_0000' # 平台漏洞编号，留空
     name = '北京希尔自动化OA管理系统/数据库系统 /bnuoa/info/infoShowAction.do 任意文件下载' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型

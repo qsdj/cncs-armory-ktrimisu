@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = 'c5fab998-6d39-4134-ba1e-ec5c2768520a'
+    vuln_id = 'Infosea_0001' # 平台漏洞编号，留空
     name = '清大新洋图书系统 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

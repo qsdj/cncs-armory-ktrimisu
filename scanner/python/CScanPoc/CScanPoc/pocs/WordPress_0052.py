@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = '45e7eaaf-192a-4cc3-9bee-8b9fb84693e1'
+    vuln_id = 'WordPress_0052' # 平台漏洞编号，留空
     name = 'WordPress Theme Persuasion 2.x 任意文件下载'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型

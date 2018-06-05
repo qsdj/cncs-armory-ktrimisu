@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
 class Vuln(ABVuln):
-    poc_id = '1c9d3c86-079f-4e31-9a9b-feee41cbdb29'
+    vuln_id = 'WordPress_0013' # 平台漏洞编号，留空
     name = 'WordPress Media Cleaner Plugin 2.2.6 XSS'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型

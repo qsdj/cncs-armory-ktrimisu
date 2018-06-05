@@ -6,7 +6,7 @@ import urllib,urllib2
 import re
 
 class Vuln(ABVuln):
-    poc_id = '0c8fdc2b-984b-4ee9-899e-8d55128887ec'
+    vuln_id = 'Ecshop_0005' # 平台漏洞编号，留空
     name = 'Ecshop 2.7.2 /category.php SQL注入漏洞' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

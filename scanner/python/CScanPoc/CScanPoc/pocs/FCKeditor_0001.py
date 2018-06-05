@@ -7,7 +7,7 @@ import socket
 import urllib2
 
 class Vuln(ABVuln):
-    poc_id = '5d770d48-8220-4462-b899-2536c0215ea1'
+    vuln_id = 'FCKeditor_0001' # 平台漏洞编号，留空
     name = 'FCKeditor <= 2.4.3 /upload.asp File Upload'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_UPLOAD # 漏洞类型

@@ -7,7 +7,7 @@ import re
 import hashlib
 
 class Vuln(ABVuln):
-    poc_id = '389fbd3b-2257-4f1b-82f5-f5721b719b12'
+    vuln_id = 'Shopex_0004' # 平台漏洞编号，留空
     name = 'Shopex /svinfo.php phpinfo信息泄露漏洞' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型

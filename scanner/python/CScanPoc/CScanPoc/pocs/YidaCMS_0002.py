@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
 class Vuln(ABVuln):
-    poc_id = 'd45fdb38-73e0-4a83-bfa5-a37235da8796'
+    vuln_id = 'YidaCMS_0002' # 平台漏洞编号，留空
     name = 'YidaCMS v3.2 /Yidacms/admin/admin_fso.asp 任意文件读取漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.OTHER # 漏洞类型

@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = '1cb5e342-335d-4031-9b92-2f1a82f1938c'
+    vuln_id = 'DouPHP_0000' # 平台漏洞编号，留空
     name = 'DouPHP目录遍历漏洞' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.FILE_TRAVERSAL # 漏洞类型

@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = 'beceb32c-0800-4c8c-977c-75438b4af4e1'
+    vuln_id = 'Insight_0013' # 平台漏洞编号，留空
     name = 'Insight仓储管理系统 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

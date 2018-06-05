@@ -6,7 +6,7 @@ import re
 import time
 
 class Vuln(ABVuln):
-    poc_id = '6dd4487f-72bb-4155-96af-b60dea067125'
+    vuln_id = 'ZhongqidongliCMS_0000' # 平台漏洞编号，留空
     name = '中企动力门户CMS SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

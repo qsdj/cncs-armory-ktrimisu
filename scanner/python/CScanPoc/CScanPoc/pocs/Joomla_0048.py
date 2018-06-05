@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    poc_id = '2407222d-523d-4ffb-9951-b68a5869e559'
+    vuln_id = 'Joomla_0048' # 平台漏洞编号
     name = 'Joomla Component mydyngallery 1.4.2 (directory) SQL Injection Vuln' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

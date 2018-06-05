@@ -6,7 +6,7 @@ import time
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = '976c88bf-7d3b-4e69-9384-182e7c207920'
+    vuln_id = 'KXmail_0000' # 平台漏洞编号，留空
     name = '科信邮件系统漏洞另一处SQL盲注' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -22,7 +22,7 @@ class Vuln(ABVuln):
 
 
 class Poc(ABPoc):
-    poc_id = '1fa850b5-7221-4337-b332-643867609a23'
+    poc_id = '8b6049db-2a78-4743-872d-a9a3459e2ff5'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 

@@ -6,7 +6,7 @@ import urlparse
 import socket
 
 class Vuln(ABVuln):
-    poc_id = '65d9d704-dcce-41c8-b71c-0b9895e889e3'
+    vuln_id = 'ElasticSearch_0011' # 平台漏洞编号，留空
     name = 'Elasticsearch Remote Code Execution'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型

@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re, urlparse
 
 class Vuln(ABVuln):
-    poc_id = 'b39e098f-a77d-4ec2-9cff-3e4d9d240f69'
+    vuln_id = 'Alstom_0001'  # 平台漏洞编号，留空
     name = '阿尔斯通S8000 旋转机械在线状态监测与分析系统 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

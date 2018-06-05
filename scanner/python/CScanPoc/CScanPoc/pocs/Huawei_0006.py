@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = 'a3f101ac-45fb-4525-8f6e-bd59e9ad4485'
+    vuln_id = 'Huawei_0006' # 平台漏洞编号，留空
     name = 'Huawei SEQ Analyst - XML External Entity Injection XML注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

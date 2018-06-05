@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 
 class Vuln(ABVuln):
-    poc_id = '5c09594c-4515-4820-9565-1d08c6ca9f18'
+    vuln_id = 'Drupal_0001'  # 平台漏洞编号，留空
     name = 'Drupal核心远程代码执行漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE  # 漏洞类型

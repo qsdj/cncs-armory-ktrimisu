@@ -6,7 +6,7 @@ import urllib,urllib2
 import re
 
 class Vuln(ABVuln):
-    poc_id = 'fb3b5df8-9e63-4ddd-a83e-056c9ee4c1ce'
+    vuln_id = 'WordPress_0075' # 平台漏洞编号，留空
     name = 'WordPress 3.8.1 /xmlrpc.php 拒绝服务漏洞' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.OTHER # 漏洞类型

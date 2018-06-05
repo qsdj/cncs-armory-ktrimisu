@@ -6,7 +6,7 @@ import re
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = '6876be9b-c506-4692-b10a-e0ee5f0b02d0'
+    vuln_id = 'WordPress_0076' # 平台漏洞编号，留空
     name = 'WordPress DZS Videogallery < 8.60 XSS' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型

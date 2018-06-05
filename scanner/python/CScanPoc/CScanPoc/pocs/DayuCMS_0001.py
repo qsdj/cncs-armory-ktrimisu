@@ -7,7 +7,7 @@ import base64
 import hashlib
 
 class Vuln(ABVuln):
-    poc_id = '86550a3e-1ba6-4c1a-9795-81277e43acc3'
+    vuln_id = 'DayuCMS_0001'  # 平台漏洞编号，留空
     name = 'DayuCMS 代码执行漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE  # 漏洞类型

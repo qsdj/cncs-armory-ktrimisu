@@ -7,7 +7,7 @@ import socket
 import urlparse
 
 class Vuln(ABVuln):
-    poc_id = '71a259ce-2bea-4eac-bdb0-521eec4ba85a'
+    vuln_id = 'BSPlayer_0001' # 平台漏洞编号，留空
     name = 'BSPlayer2.68 缓冲区溢出漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型

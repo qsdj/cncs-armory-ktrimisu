@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = '701745d0-c1ce-4d89-9a68-5db06e2bab92'
+    vuln_id = 'DedeCMS_0007' # 平台漏洞编号，留空
     name = '织梦CMS data/mysql_error_trace.inc 敏感信息泄露' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型

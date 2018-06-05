@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    poc_id = 'cc05d10c-28a0-4acc-97b3-32646013f550'
+    vuln_id = 'Joomla_0027' # 平台漏洞编号
     name = 'HD FLV Player Component for Joomla! id Parameter SQL Injection Vulnerability' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

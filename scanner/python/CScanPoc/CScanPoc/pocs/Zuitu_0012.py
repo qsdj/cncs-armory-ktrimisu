@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
 class Vuln(ABVuln):
-    poc_id = 'bb9cdfb5-e764-49ed-bf9f-adfb31cb1bb4'
+    vuln_id = 'Zuitu_0012' # 平台漏洞编号，留空
     name = '最土团购 /ajax/coupon.php SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

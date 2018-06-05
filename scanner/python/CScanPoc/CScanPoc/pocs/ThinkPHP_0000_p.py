@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = 'd77a65a0-2018-4e04-80ee-c7a80827f489'
+    vuln_id = 'ThinkPHP_0000_p' # 平台漏洞编号，留空
     name = 'ThinkPHP Builder.php SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

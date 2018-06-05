@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    poc_id = '12d76639-c9d3-44da-8622-e08386a56d58'
+    vuln_id = 'MaticsoftSNS_0001' # 平台漏洞编号，留空
     name = 'MaticsoftSNS 1.9 任意文件上传'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_UPLOAD # 漏洞类型

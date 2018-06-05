@@ -6,7 +6,7 @@ import re
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = '34f8109a-7264-48b9-b734-4d7e587924b7'
+    vuln_id = 'CSDJCMS_0006' # 平台漏洞编号，留空
     name = 'CSDJCMS 程式舞曲 最新版 SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

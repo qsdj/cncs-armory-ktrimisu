@@ -7,7 +7,7 @@ import re
 import hashlib
 
 class Vuln(ABVuln):
-    poc_id = '5167385a-4b23-46e1-9005-79d1d9a1c713'
+    vuln_id = 'WordPress_0017' # 平台漏洞编号，留空
     name = 'WordPress HTML 5 MP3 Player with Playlist 插件泄漏服务器物理路径' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型

@@ -6,7 +6,7 @@ import re
 import urlparse
 
 class Vuln(ABVuln):
-    poc_id = '5120447a-ceb7-40b8-8180-6e3262614c4c'
+    vuln_id = 'Goodo-edu_0007' # 平台漏洞编号，留空
     name = '上海鼎创通用型数字校园系统 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

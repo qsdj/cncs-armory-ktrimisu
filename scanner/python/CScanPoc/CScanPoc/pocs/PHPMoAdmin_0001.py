@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
 class Vuln(ABVuln):
-    poc_id = 'f3e395af-4958-4d56-b206-a4b443177d23'
+    vuln_id = 'PHPMoAdmin_0001' # 平台漏洞编号，留空
     name = 'PHPMoAdmin /moadmin.php 远程命令执行漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型

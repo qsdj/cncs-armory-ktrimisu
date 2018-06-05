@@ -6,7 +6,7 @@ import time
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = '88f6a2cc-5ee0-48a9-96a9-d8a2d6d3b323'
+    vuln_id = 'Dahuatech_0006' # 平台漏洞编号，留空
     name = '大华城市安防监控系统平台管理存在任意文件遍历' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.MISCONFIGURATION # 漏洞类型
@@ -22,7 +22,7 @@ class Vuln(ABVuln):
 
 
 class Poc(ABPoc):
-    poc_id = 'e27ed940-5935-463b-8156-7fa17b2017ef'
+    poc_id = 'ae528da8-cceb-4850-bc50-166c84857d65'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 

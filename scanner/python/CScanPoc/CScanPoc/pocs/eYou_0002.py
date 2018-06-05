@@ -6,7 +6,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 
 class Vuln(ABVuln):
-    poc_id = 'd2052835-522d-4299-a2b9-3a334453ef3e'
+    vuln_id = 'eYou_0002' # 平台漏洞编号，留空
     name = 'eYou v4 /php/report/include/config.inc 信息泄露' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型

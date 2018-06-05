@@ -6,7 +6,7 @@ import re
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = 'f5ffa2b3-33ed-4914-9102-9f87fd9d0a41'
+    vuln_id = 'yongyou_0039' # 平台漏洞编号，留空
     name = '用友多个系统通用漏洞导致接口信息泄露引发多数据库信息泄露' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
@@ -22,7 +22,7 @@ class Vuln(ABVuln):
 
 
 class Poc(ABPoc):
-    poc_id = 'd5f4e13d-dd1f-475f-8ef4-4f45b40cfa70'
+    poc_id = 'fcdc33b4-ed38-4dfb-b965-f02a43a92aab'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 

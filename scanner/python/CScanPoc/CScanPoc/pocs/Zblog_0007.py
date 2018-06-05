@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = '17beda82-b5ec-447a-8a20-c5d736384d21'
+    vuln_id = 'Zblog_0007' # 平台漏洞编号，留空
     name = 'Zblog Blind-XXE造成任意文件读取' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型

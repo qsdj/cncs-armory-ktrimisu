@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = '8277697c-8caa-4184-94b0-b4a8b38e0638'
+    vuln_id = 'GeverCMS_0001' # 平台漏洞编号，留空
     name = '金宇恒内容管理系统通用型任意文件下载' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型

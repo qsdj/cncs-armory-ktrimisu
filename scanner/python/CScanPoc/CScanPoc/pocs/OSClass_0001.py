@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = 'a3891c95-5914-412d-894b-4b02c56c3a2d'
+    vuln_id = 'OSClass_0001' # 平台漏洞编号，留空
     name = 'OSClass 3.4.1 本地文件包含漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型

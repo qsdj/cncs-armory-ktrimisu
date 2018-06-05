@@ -7,7 +7,7 @@ import re
 import hashlib
 
 class Vuln(ABVuln):
-    poc_id = 'cbd039cd-963e-4bbc-b264-df2dc5514f98'
+    vuln_id = 'WKCMS_0000' # 平台漏洞编号，留空
     name = '歪酷CMS /search.html?keyword 任意代码执行漏洞' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型

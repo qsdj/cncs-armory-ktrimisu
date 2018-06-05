@@ -7,7 +7,7 @@ import re
 import hashlib
 
 class Vuln(ABVuln):
-    poc_id = '8d487090-6ac4-4a31-ac1b-a4242b793d71'
+    vuln_id = 'Drupal_0006' # 平台漏洞编号，留空
     name = 'Drupal 7.0-7.31 node SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

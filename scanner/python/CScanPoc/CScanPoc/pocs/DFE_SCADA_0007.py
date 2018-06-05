@@ -7,7 +7,7 @@ import re
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = '83679ced-53d8-4032-b230-c905f6e1a2ba'
+    vuln_id = 'DFE_SCADA_0007' # 平台漏洞编号，留空
     name = '东方电子SCADA通用系统信息泄露' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
@@ -24,7 +24,7 @@ class Vuln(ABVuln):
 
 
 class Poc(ABPoc):
-    poc_id = '0102c728-0861-42f1-bec6-637361ea57b4'
+    poc_id = 'fd27f0e8-7fd8-4c8c-9c49-14fd29acc1db'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 

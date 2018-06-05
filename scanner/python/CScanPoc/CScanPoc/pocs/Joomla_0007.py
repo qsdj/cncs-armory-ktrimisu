@@ -7,7 +7,7 @@ import re
 import hashlib
 
 class Vuln(ABVuln):
-    poc_id = '7349614b-872a-45a1-991c-750427908454'
+    vuln_id = 'Joomla_0007' # 平台漏洞编号，留空
     name = 'Joomla! BeaconDecode XSS' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型

@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    poc_id = 'c3e17cac-71fa-4ddb-baa0-a437b49505dd'
+    vuln_id = 'Discuz_0023'  # 平台漏洞编号，留空
     name = 'Discuz! 命令执行'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE  # 漏洞类型

@@ -6,7 +6,7 @@ import re
 import time
 
 class Vuln(ABVuln):
-    poc_id = '232dc3b7-4377-4743-a57c-e8835b4c0c04'
+    vuln_id = 'Discuz_0004' # 平台漏洞编号，留空
     name = 'Discuz! X2.5 急诊箱扫描页面弱口令'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型

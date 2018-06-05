@@ -6,7 +6,7 @@ import urllib,urllib2
 import cookielib
 
 class Vuln(ABVuln):
-    poc_id = 'f5bd2eac-26de-4ed1-9383-582dc1b0ce38'
+    vuln_id = 'Ecshop_0004_p' # 平台漏洞编号，留空
     name = 'Ecshop 2.7.3 /flow.php 登录绕过漏洞' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.OTHER # 漏洞类型

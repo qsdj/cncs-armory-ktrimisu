@@ -6,7 +6,7 @@ import re
 import time
 
 class Vuln(ABVuln):
-    poc_id = '82cffef7-296f-43bf-9e55-e03d0342ff89'
+    vuln_id = 'TOPSEC_0031'  # 平台漏洞编号，留空
     name = '天融信WEB应用安全网关 任意命令执行'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型

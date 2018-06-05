@@ -7,7 +7,7 @@ import re
 import hashlib
 
 class Vuln(ABVuln):
-    poc_id = 'eba14475-7c49-4fdf-8e77-5afdb3de0212'
+    vuln_id = 'PJBlog_0001' # 平台漏洞编号，留空
     name = 'PJBlog 3.0.6.170 /Getarticle.asp XSS漏洞' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型

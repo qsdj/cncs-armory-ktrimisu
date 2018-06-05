@@ -6,7 +6,7 @@ import urllib2
 import re
 
 class Vuln(ABVuln):
-    poc_id = '56bc9d69-b1d8-467b-ae44-5ba4b54a1823'
+    vuln_id = 'Horde_0001' # 平台漏洞编号，留空
     name = 'Horde 等地文件包含'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型

@@ -6,7 +6,7 @@ import urllib2
 import random
 
 class Vuln(ABVuln):
-    poc_id = 'ab358ec9-88c7-41c5-8b5e-5056482589a2'
+    vuln_id = 'FineCMS_0001' # 平台漏洞编号，留空
     name = 'FineCMS免费版无条件getshell'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型

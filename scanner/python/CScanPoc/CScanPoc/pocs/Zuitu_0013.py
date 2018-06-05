@@ -6,7 +6,7 @@ import urllib,urllib2
 import re
 
 class Vuln(ABVuln):
-    poc_id = 'cc2e6715-1c40-450c-a13e-d0aef152491b'
+    vuln_id = 'Zuitu_0013' # 平台漏洞编号，留空
     name = '最土团购 /api/call.php SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    poc_id = 'b71975cc-b0b5-435f-8ffe-893ad54f530b'
+    vuln_id = 'Dream4Koobi_0000' # 平台漏洞编号
     name = 'Dream4 Koobi CMS 4.2.3 Index.PHP Cross-Site Scripting Vulnerability' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型

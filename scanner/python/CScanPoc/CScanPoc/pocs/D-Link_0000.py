@@ -7,7 +7,7 @@ import re
 import hashlib
 
 class Vuln(ABVuln):
-    poc_id = '1f228b68-eb44-4ad1-b092-3b703945d9e3'
+    vuln_id = 'D-Link_0000' # 平台漏洞编号，留空
     name = 'D-Link DCS-2103 /cgi-bin/sddownload.cgi 任意文件下载漏洞' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型

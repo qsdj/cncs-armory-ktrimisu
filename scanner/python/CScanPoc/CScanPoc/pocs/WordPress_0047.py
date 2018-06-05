@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = '73fecdcf-14aa-4ad2-95eb-388120147d5f'
+    vuln_id = 'WordPress_0047' # 平台漏洞编号，留空
     name = 'WordPress Simple Ads Manager 插件信息泄露' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型

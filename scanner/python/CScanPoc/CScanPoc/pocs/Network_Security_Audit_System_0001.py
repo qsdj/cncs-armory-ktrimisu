@@ -6,7 +6,7 @@ import urlparse
 import time
 
 class Vuln(ABVuln):
-    poc_id = '0cc50c4b-2360-4927-a047-0ef2936f2cbf'
+    vuln_id = 'Network_Security_Audit_System_0001'  # 平台漏洞编号，留空
     name = '上网行为审计系统 通用型SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

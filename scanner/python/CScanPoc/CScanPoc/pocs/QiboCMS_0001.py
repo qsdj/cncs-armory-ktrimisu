@@ -6,7 +6,7 @@ import re
 import urlparse
 
 class Vuln(ABVuln):
-    poc_id = 'a66c0ac9-8e22-4647-aa31-6a1d7e0016e4'
+    vuln_id = 'QiboCMS_0001' # 平台漏洞编号，留空
     name = 'QiboCMS V5.0 本地文件包含漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型

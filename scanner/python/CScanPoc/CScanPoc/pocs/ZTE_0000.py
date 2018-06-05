@@ -6,7 +6,7 @@ import  re
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = '16d11ba4-856c-4340-949e-87b3e3fd9daf'
+    vuln_id = 'ZTE_0000' # 平台漏洞编号，留空
     name = 'ZTE SOHO ROUTERWEB_SHELL_CMD.GCH 远程命令执行漏洞' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型

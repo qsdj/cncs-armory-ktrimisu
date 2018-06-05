@@ -6,7 +6,7 @@ import re
 from urllib import quote
 
 class Vuln(ABVuln):
-    poc_id = '3bdaff3f-e503-483d-928f-a1ba3cbd449a'
+    vuln_id = 'Yuysoft_0008' # 平台漏洞编号，留空
     name = '育友通用数字化校园平台 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

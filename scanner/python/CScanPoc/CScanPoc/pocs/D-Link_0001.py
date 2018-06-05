@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = 'da5f1a96-b53e-43df-a7b0-41cd7fb854fb'
+    vuln_id = 'D-Link_0001'  # 平台漏洞编号，留空
     name = 'D-Link 未授权信息泄漏漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK  # 漏洞类型

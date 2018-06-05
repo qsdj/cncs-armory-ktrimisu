@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import time
 
 class Vuln(ABVuln):
-    poc_id = '78627605-5117-4008-8077-c8d941ea735e'
+    vuln_id = 'PHPShe_0000' # 平台漏洞编号，留空
     name = 'PHPShe 未授权重装漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.OTHER # 漏洞类型

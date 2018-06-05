@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = '93c6ea13-6efd-4de2-af2f-087ae838e726'
+    vuln_id = 'StartBBS_0008' # 平台漏洞编号，留空
     name = 'StartBBS 物理路径泄露' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型

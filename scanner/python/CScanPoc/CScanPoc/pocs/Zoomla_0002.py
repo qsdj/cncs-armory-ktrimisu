@@ -6,7 +6,7 @@ import urllib,urllib2
 import re
 
 class Vuln(ABVuln):
-    poc_id = 'b9a20b9d-50bc-4b48-b97a-6958098061a1'
+    vuln_id = 'Zoomla_0002' # 平台漏洞编号，留空
     name = 'Zoomla 2.0 /User/UserZone/School/Download.aspx 任意文件下载漏洞' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型

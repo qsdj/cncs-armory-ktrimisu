@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = 'b81cce5a-3f7d-407a-94f8-8269104ab480'
+    vuln_id = 'ZFCG_0001' # 平台漏洞编号，留空
     name = '政府采购系统 任意用户密码获取' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.OTHER # 漏洞类型
@@ -22,7 +22,7 @@ class Vuln(ABVuln):
 
 
 class Poc(ABPoc):
-    poc_id = '81f50615-6633-4161-be96-924fff9c049c'
+    poc_id = '958f4ef2-13e3-4814-a197-913f262455fe'
     author = '国光'  # POC编写者
     create_date = '2018-05-22' # POC创建时间
 

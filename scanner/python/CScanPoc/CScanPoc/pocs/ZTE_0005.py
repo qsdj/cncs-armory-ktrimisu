@@ -6,7 +6,7 @@ import urlparse
 import time
 
 class Vuln(ABVuln):
-    poc_id = '9e5ab6c8-5ffc-46c7-b4c3-d070f479d398'
+    vuln_id = 'ZTE_0005'  # 平台漏洞编号，留空
     name = '中兴某系统 通用SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

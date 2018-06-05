@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re, urlparse
 
 class Vuln(ABVuln):
-    poc_id = '5e638f4b-781a-46d2-8e3f-9dfa118b40e5'
+    vuln_id = 'BluePacific_0001'  # 平台漏洞编号，留空
     name = '蓝太平洋网站决策支持系统WebEngine 信息泄露'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型

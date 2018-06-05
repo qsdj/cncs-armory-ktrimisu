@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = '28bfec70-0483-44d0-b786-deba9ebc78d0'
+    vuln_id = 'WordPress_0056' # 平台漏洞编号，留空
     name = 'WordPress Plugin eShop 6.2.8 XSS' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型

@@ -7,7 +7,7 @@ import time
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = '3c5c5d35-1883-468d-81fe-62f1794bc629'
+    vuln_id = 'yongyou_0028' # 平台漏洞编号，留空
     name = '用友优普远程快速接入系统SQL注入漏洞 ' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -23,7 +23,7 @@ class Vuln(ABVuln):
 
 
 class Poc(ABPoc):
-    poc_id = 'b9dd8657-b3e6-4174-a6b3-6f125ba7b58f'
+    poc_id = '2f1fe3ed-dc43-48cd-b4f7-e0af43a6d2a6'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 

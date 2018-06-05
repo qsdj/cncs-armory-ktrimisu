@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = '32620386-9a83-469e-a933-6efd8118ab30'
+    vuln_id = 'AppExNetworks_0001' # 平台漏洞编号，留空
     name = '华创路由器可任意用户登录'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.OTHER # 漏洞类型

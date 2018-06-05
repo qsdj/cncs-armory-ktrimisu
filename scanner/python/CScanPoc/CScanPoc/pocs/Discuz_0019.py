@@ -6,7 +6,7 @@ import urllib,urllib2
 import re
 
 class Vuln(ABVuln):
-    poc_id = '70ca23c6-7f07-41b9-bc61-8437dfb9ebf8'
+    vuln_id = 'Discuz_0019' # 平台漏洞编号，留空
     name = 'Discuz! 7.2 /post.php 跨站脚本漏洞' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型

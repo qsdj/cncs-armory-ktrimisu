@@ -7,7 +7,7 @@ import re
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = 'b6efa281-8f19-4dcb-be06-5348a4dea70c'
+    vuln_id = 'SurFilter_0000' # 平台漏洞编号，留空
     name = '任子行网络安全审计系统任意命令执行&未授权下载配置文件' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型

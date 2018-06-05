@@ -6,7 +6,7 @@ import urllib,urllib2
 import re
 
 class Vuln(ABVuln):
-    poc_id = '5d1e4e7c-5207-451c-a592-577953e4d6cc'
+    vuln_id = 'U-Mail_0006' # 平台漏洞编号，留空
     name = 'U-Mail /webmail/client/option/index.php SQL注入漏洞' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

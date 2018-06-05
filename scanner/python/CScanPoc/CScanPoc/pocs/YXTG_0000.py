@@ -7,7 +7,7 @@ import re
 import hashlib
 
 class Vuln(ABVuln):
-    poc_id = '7ca53766-7262-4dcd-a3be-f285cf386880'
+    vuln_id = 'YXTG_0000' # 平台漏洞编号，留空
     name = '易想团购 v1.4 /ajax.php check_field参数 SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

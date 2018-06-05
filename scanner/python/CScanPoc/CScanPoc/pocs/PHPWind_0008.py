@@ -6,7 +6,7 @@ import urllib,urllib2
 import re
 
 class Vuln(ABVuln):
-    poc_id = '7fe50a32-22d7-4f23-9f88-fadc3ba0dd89'
+    vuln_id = 'PHPWind_0008' # 平台漏洞编号，留空
     name = 'PHPWind 9.0 /res/js/dev/util_libs/syntaxHihglighter/scripts/clipboard.swf 跨站脚本漏洞' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型

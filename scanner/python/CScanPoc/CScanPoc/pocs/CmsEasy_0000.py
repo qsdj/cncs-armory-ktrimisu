@@ -7,7 +7,7 @@ import re
 import datetime
 
 class Vuln(ABVuln):
-    poc_id = 'b30548fc-ef3b-44bb-a816-e4c9a50c87d1'
+    vuln_id = 'CmsEasy_0000' # 平台漏洞编号，留空
     name = 'CmsEasy 5.5 <=20140718 /index.php SQL注入漏洞' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

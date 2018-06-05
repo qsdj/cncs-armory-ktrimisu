@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = '84ea5afc-22b5-4f1b-8aa9-7e99afc4f196'
+    vuln_id = 'Inspur_0008' # 平台漏洞编号，留空
     name = 'ECGAP电子政务系统 SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

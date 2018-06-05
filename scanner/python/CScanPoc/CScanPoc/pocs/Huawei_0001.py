@@ -7,7 +7,7 @@ import socket
 import urllib
 
 class Vuln(ABVuln):
-    poc_id = '4aeb32fa-a5cc-4c65-b048-5045ef81735a'
+    vuln_id = 'Huawei_0001'  # 平台漏洞编号，留空
     name = 'Huawei Home Gateway UPnP/1.0 IGD/1.00 密码泄露'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK  # 漏洞类型

@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re, urlparse
 
 class Vuln(ABVuln):
-    poc_id = 'a83bd5e2-a4bc-4792-bfdb-56fca873bb63'
+    vuln_id = 'iDVR_0001'  # 平台漏洞编号，留空
     name = 'iDVR Mobile Video dvr系统任意文件遍历'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_TRAVERSAL # 漏洞类型

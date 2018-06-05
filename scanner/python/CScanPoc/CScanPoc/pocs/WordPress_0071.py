@@ -6,7 +6,7 @@ import urllib,urllib2
 import re
 
 class Vuln(ABVuln):
-    poc_id = 'e75d212f-c1e8-4129-bafa-945c29c26dcf'
+    vuln_id = 'WordPress_0071' # 平台漏洞编号，留空
     name = 'WordPress CuckooTap&eShop Themes 任意文件下载' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型

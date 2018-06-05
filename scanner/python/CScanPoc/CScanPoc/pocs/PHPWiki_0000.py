@@ -7,7 +7,7 @@ import urllib
 import re
 
 class Vuln(ABVuln):
-    poc_id = '91c12b65-133f-4eb2-898e-d3ee3581874a'
+    vuln_id = 'PHPWiki_0000'  # 平台漏洞编号，留空
     name = 'PHPWiki 1.5.4 /index.php  XSS'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.XSS  # 漏洞类型

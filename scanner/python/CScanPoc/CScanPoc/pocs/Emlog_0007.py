@@ -7,7 +7,7 @@ import random
 import hashlib
 
 class Vuln(ABVuln):
-    poc_id = '9308fb73-bae8-40e3-9106-f6cfa860ddcb'
+    vuln_id = 'Emlog_0007' # 平台漏洞编号，留空
     name = 'Emlog 5.0.1 /xmlrpc.php 后门漏洞' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.OTHER # 漏洞类型

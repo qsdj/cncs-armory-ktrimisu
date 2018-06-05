@@ -7,7 +7,7 @@ import re
 import hashlib
 
 class Vuln(ABVuln):
-    poc_id = '0efb7177-4396-4666-8cd9-090e5e0ef1ca'
+    vuln_id = 'YaBB_0000' # 平台漏洞编号，留空
     name = 'YaBB.pl ?board=news&action=display&num= 任意文件读取' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型

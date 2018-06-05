@@ -6,7 +6,7 @@ import urllib,urllib2
 import re
 
 class Vuln(ABVuln):
-    poc_id = 'f4386694-b694-4e72-8c0f-17726f2bf025'
+    vuln_id = 'PHPMyWind_0003' # 平台漏洞编号，留空
     name = 'PHPMyWind 4.6.6 /order.php SQL注入漏洞' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

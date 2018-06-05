@@ -6,7 +6,7 @@ import re
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = 'e3d6456e-9764-412f-b475-f2c5965c5b99'
+    vuln_id = 'WordPress_0090' # 平台漏洞编号，留空
     name = 'WordPress Feed Statistics Plugin V 1.4.3 Open Redirect' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.OTHER # 漏洞类型
@@ -22,7 +22,7 @@ class Vuln(ABVuln):
 
 
 class Poc(ABPoc):
-    poc_id = '7b788534-3166-4bac-8114-faa9acae3110'
+    poc_id = 'd28dede9-ebcd-407c-9930-4ac834453dc3'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 

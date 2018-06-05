@@ -7,7 +7,7 @@ import re
 import hashlib
 
 class Vuln(ABVuln):
-    poc_id = '2f310f94-4739-441f-9b8a-87afd7e30e96'
+    vuln_id = 'WordPress_0016' # 平台漏洞编号，留空
     name = 'WordPress CM Download Manager 2.0.0 代码执行漏洞' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型

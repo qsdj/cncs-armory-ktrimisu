@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = '54406932-6ce1-4cd7-be0e-ac73bbdcd30e'
+    vuln_id = 'Yuanwei_0001' # 平台漏洞编号，留空
     name = '远为应用安全网关 目录遍历'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_TRAVERSAL # 漏洞类型

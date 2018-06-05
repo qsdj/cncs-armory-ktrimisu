@@ -6,7 +6,7 @@ import re
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = 'ed704526-6e1a-45f4-b4e7-74435f7faf95'
+    vuln_id = 'VIEWGOOD_0004' # 平台漏洞编号，留空
     name = '远古流媒体系统 POST注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -24,7 +24,7 @@ class Vuln(ABVuln):
 
 
 class Poc(ABPoc):
-    poc_id = '28bd1e3c-5c8b-4102-b893-9b8d4c60a734'
+    poc_id = 'e25f55a4-89a7-42b2-8a3e-65c1b71a9854'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 

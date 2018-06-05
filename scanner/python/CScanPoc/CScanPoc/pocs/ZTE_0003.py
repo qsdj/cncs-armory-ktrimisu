@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re, urlparse
 
 class Vuln(ABVuln):
-    poc_id = '8186aa07-91b6-40fe-b38f-e9b78054d004'
+    vuln_id = 'ZTE_0003'  # 平台漏洞编号，留空
     name = '中兴ZXHN H168N光猫 任意远程命令执行'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型

@@ -11,7 +11,7 @@ import re
 from urlparse import urlparse
 
 class Vuln(ABVuln):
-    poc_id = '330f0e57-6f62-4d68-a2c9-2c9d2054cad5'
+    vuln_id = 'WebLogic_0002'  # 平台漏洞编号，留空
     name = 'WebLogic 反序列化漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE  # 漏洞类型

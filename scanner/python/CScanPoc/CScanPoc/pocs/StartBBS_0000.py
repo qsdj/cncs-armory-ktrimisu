@@ -7,7 +7,7 @@ import re
 import hashlib
 
 class Vuln(ABVuln):
-    poc_id = '1beebc61-52c4-4108-9c64-b0b9186a0050'
+    vuln_id = 'StartBBS_0000' # 平台漏洞编号，留空
     name = 'StartBBS v1.1.3 物理路径泄漏' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型

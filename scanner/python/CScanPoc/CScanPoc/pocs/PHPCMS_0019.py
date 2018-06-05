@@ -6,7 +6,7 @@ import re
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = 'e94d4bed-38c3-4b93-94e6-d8fb7379aa65'
+    vuln_id = 'PHPCMS_0019' # 平台漏洞编号，留空
     name = 'PHPCMS V9最新任意读文件' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型

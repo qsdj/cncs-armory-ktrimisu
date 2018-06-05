@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re, urlparse
 
 class Vuln(ABVuln):
-    poc_id = 'f7015977-0633-44c7-8086-1b50c66de0cb'
+    vuln_id = 'PLCRouter_0001'  # 平台漏洞编号，留空
     name = 'PLC Wireless Router 未授权访问'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.OTHER # 漏洞类型

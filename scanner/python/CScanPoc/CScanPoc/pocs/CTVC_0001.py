@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    poc_id = '72daa3db-d4e8-415e-a271-2dddd85b08da'
+    vuln_id = 'CTVC_0001' # 平台漏洞编号，留空
     name = '华视校园电视 信息泄露'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型

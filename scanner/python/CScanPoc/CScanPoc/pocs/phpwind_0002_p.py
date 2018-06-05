@@ -9,7 +9,7 @@ import urllib
 import urllib2
 
 class Vuln(ABVuln):
-    poc_id = '5ee0082b-dc99-4d4b-b82a-c9d48f0ceb05'
+    vuln_id = 'PHPWind_0002_p' # 平台漏洞编号，留空
     name = 'PHPWind 9.0 /src/windid/service/user/srv/WindidUserService.php 远程密码修改漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.OTHER # 漏洞类型

@@ -7,7 +7,7 @@ import string
 import hashlib
 
 class Vuln(ABVuln):
-    poc_id = '6ec10d40-beb4-4ad8-bb3f-0efd067eeda1'
+    vuln_id = 'QiboCMS_0020' # 平台漏洞编号，留空
     name = '齐博分类系统 远程代码执行漏洞洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型

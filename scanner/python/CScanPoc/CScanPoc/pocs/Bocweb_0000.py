@@ -6,7 +6,7 @@ import re
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = 'a612591d-8136-49a1-bad4-712ee3602814'
+    vuln_id = 'Bocweb_0000' # 平台漏洞编号，留空
     name = '博采网络系统 敏感信息泄露' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型

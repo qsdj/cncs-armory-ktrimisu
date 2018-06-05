@@ -6,7 +6,7 @@ import urlparse
 import re
 
 class Vuln(ABVuln):
-    poc_id = '22c11243-188e-4567-8ce0-f8035c438c44'
+    vuln_id = 'PHP_0002' # 平台漏洞编号
     name = 'Maxs Image Uploader Shell Upload Vulnerability' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

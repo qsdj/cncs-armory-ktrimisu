@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = 'b9c1a873-be83-47b4-9415-7c3c6d3e5018'
+    vuln_id = 'DedeCMS_0001' # 平台漏洞编号，留空
     name = '织梦CMS Remote File Inclusion'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RFI # 漏洞类型

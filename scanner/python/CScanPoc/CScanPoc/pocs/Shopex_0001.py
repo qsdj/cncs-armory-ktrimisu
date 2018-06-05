@@ -6,7 +6,7 @@ import re
 import time
 
 class Vuln(ABVuln):
-    poc_id = '729031dd-edff-4c13-9bfa-cfaf719e8b04'
+    vuln_id = 'Shopex_0001' # 平台漏洞编号，留空
     name = 'Shopex SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

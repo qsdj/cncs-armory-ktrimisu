@@ -6,7 +6,7 @@ import re
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = '6b9cc12c-1881-4811-8ef8-ddac969a0e46'
+    vuln_id = 'Keyou_0006' # 平台漏洞编号，留空
     name = '江南科友堡垒机 爆物理路径' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型

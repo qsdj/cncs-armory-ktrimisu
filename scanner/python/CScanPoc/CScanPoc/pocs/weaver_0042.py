@@ -6,7 +6,7 @@ import random
 import base64
 
 class Vuln(ABVuln):
-    poc_id = '67f08160-57bf-4b52-b535-31ccbaa5d34c'
+    vuln_id = 'weaver_0042' # 平台漏洞编号，留空
     name = '泛微e-office getshell'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型

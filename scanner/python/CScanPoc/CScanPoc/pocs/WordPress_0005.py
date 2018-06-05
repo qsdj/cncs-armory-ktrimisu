@@ -7,7 +7,7 @@ import urllib
 import urllib2
 
 class Vuln(ABVuln):
-    poc_id = '14b57b94-bfbc-4fe5-a8d6-3724ab9bfb51'
+    vuln_id = 'WordPress_MiwoFTP_0005'  # 平台漏洞编号，留空
     name = 'WordPress MiwoFTP 任意文件下载'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD  # 漏洞类型

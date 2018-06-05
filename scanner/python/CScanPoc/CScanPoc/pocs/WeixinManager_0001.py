@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    poc_id = '62754879-383c-43ec-8255-b9a9f1f11cc1'
+    vuln_id = 'WeixiManager_0001' # 平台漏洞编号，留空
     name = '微信管理系统存在sql注入漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

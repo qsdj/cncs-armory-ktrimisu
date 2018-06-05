@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    poc_id = '338ef1bc-e6f0-4ee1-83a6-0e243ca28a7c'
+    vuln_id = 'Hanweb_0011' # 平台漏洞编号，留空
     name = '大汉网站群访问统计系统 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = 'f82768e4-5519-48a8-9c15-72c9f35b75dd'
+    vuln_id = 'JCMS_0008' # 平台漏洞编号，留空
     name = '大汉JCMS 设计缺陷直接爆管理员明文密码' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.OTHER # 漏洞类型

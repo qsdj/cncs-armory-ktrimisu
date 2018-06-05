@@ -7,7 +7,7 @@ import re
 import hashlib
 
 class Vuln(ABVuln):
-    poc_id = '7b45aed1-1267-4f71-98b0-11cecfbb097a'
+    vuln_id = 'MyBB_0000' # 平台漏洞编号，留空
     name = 'MyBB <= 1.8.2  代码执行漏洞' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型

@@ -6,7 +6,7 @@ import re
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = 'c1639c60-e803-49e1-a37c-8c007f7e532b'
+    vuln_id = 'Looyu_0012' # 平台漏洞编号，留空
     name = '乐语客服系统任意文件下载漏洞' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型

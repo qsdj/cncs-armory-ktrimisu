@@ -6,7 +6,7 @@ import urllib,urllib2
 import re
 
 class Vuln(ABVuln):
-    poc_id = '72f8edb1-18c7-4c75-afa1-6c59f23dacaa'
+    vuln_id = 'DedeCMS_0003' # 平台漏洞编号，留空
     name = '织梦CMS /download.php 注入getshell' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

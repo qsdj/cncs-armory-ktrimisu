@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
 class Vuln(ABVuln):
-    poc_id = 'd492b4e7-3cbe-484d-8ea6-0de0d48af414'
+    vuln_id = 'P2P_0004' # 平台漏洞编号，留空
     name = '帝友P2P借贷系统 v3.0 信息泄露'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型

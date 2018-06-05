@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    poc_id = '7f138a75-34cd-4cb6-ae7a-5c602ff330f7'
+    vuln_id = 'PageAdmin_0000' # 平台漏洞编号，留空
     name = 'PageAdmin可“伪造”VIEWSTATE从而执行任意SQL查询、可随意重置管理员密码' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
