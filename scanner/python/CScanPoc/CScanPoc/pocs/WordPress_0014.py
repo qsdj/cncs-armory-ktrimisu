@@ -7,7 +7,7 @@ import urllib
 import urllib2
 
 class Vuln(ABVuln):
-    vuln_id = 'WordPress_0014' # 平台漏洞编号，留空
+    poc_id = '96cf425a-51f7-4ddf-935d-3fe8c352d6af'
     name = 'WordPress CodeArt Google MP3 Player Plugin 任意文件下载'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型
@@ -16,8 +16,8 @@ class Vuln(ABVuln):
          WordPress CodeArt Google MP3 Player Plugin has file download in do/direct_download.php.
     '''  # 漏洞描述
     ref = 'https://www.exploit-db.com/exploits/35460/'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'WordPress'  # 漏洞应用名称
     product_version = 'WordPress CodeArt Google MP3 Player Plugin <=1.0.11'  # 漏洞应用版本
 

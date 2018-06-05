@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'Discuz_0006' # 平台漏洞编号，留空
+    poc_id = 'f5e235dd-6440-4842-b0ec-93e88dc7d01c'
     name = 'Discuz! X3.2 多处反射型XSS' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型
@@ -16,8 +16,8 @@ class Vuln(ABVuln):
         /connect.php?receive=yes&mod=login&op=callback&referer=
     ''' # 漏洞描述
     ref = 'https://www.secpulse.com/archives/32974.html' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'Discuz!'  # 漏洞应用名称
     product_version = 'X3.2'  # 漏洞应用版本
 

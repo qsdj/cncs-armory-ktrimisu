@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'CmsEasy_0011' # 平台漏洞编号，留空
+    poc_id = '2052c806-cc19-4203-8a86-8c57e45e866f'
     name = 'CmsEasy /bbs/index.php 处反射型XSS'  # 漏洞名称
     level = VulnLevel.LOW  # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型
@@ -13,10 +13,10 @@ class Vuln(ABVuln):
         CmsEasy /bbs/index.php 处反射型XSS,无视浏览器filter无视360webscan.
     '''  # 漏洞描述
     ref = 'https://www.2cto.com/article/201409/334119.html'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'CmsEasy'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'd8c98aab-031f-41fc-843f-939a6f19e3ae'

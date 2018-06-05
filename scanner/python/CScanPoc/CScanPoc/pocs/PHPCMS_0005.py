@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'PHPCMS_0005' # 平台漏洞编号，留空
+    poc_id = '1d9e0c02-2360-439e-b59b-807d005ec7e4'
     name = 'PHPCMS v9 信息泄露'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
@@ -13,9 +13,9 @@ class Vuln(ABVuln):
         PHPCMS v9 信息泄露：
         phpsso_server/index.php?m=phpsso&c=index&a=getapplist&auth_data=v=1&appid=1&data=
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'PHPCMS'  # 漏洞应用名称
     product_version = 'v9'  # 漏洞应用版本
 

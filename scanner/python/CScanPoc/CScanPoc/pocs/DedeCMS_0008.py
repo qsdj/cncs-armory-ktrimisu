@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'DedeCMS_0008' # 平台漏洞编号，留空
+    poc_id = 'dd206815-752a-4581-a6c3-f7801f02fe96'
     name = 'Dedecms 信息泄露漏洞' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型

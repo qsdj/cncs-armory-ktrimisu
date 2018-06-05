@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re, urlparse
 
 class Vuln(ABVuln):
-    vuln_id = 'Netentsec_0025'  # 平台漏洞编号，留空
+    poc_id = '0b1c42b4-0bca-435b-bc85-0d9fa85a5c5b'
     name = '网康NS-ASG 默认口令'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.OTHER # 漏洞类型
@@ -13,9 +13,9 @@ class Vuln(ABVuln):
     desc = '''
         网康安全网关NS—ASG 6.3默认账户密码。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = '网康应用安全网关'  # 漏洞应用名称
     product_version = '网康NS-ASG 6.3'  # 漏洞应用版本
 

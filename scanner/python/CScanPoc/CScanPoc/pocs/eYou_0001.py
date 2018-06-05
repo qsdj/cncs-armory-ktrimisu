@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
 class Vuln(ABVuln):
-    vuln_id = 'eYou_0001' # 平台漏洞编号，留空
+    poc_id = 'ce9d40ed-2d08-4690-b4a9-4b62eb9cecf5'
     name = 'eYou v4 /php/report/include/config.inc 信息泄露'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
@@ -13,9 +13,9 @@ class Vuln(ABVuln):
     desc = '''
         亿邮邮件系统存在严重的越权，漏洞文件：/php/report/include/config.inc
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'eYou'  # 漏洞应用名称
     product_version = 'V4'  # 漏洞应用版本
 

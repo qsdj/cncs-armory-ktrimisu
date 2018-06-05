@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import time
 
 class Vuln(ABVuln):
-    vuln_id = 'Zhilvtianxia_0000'  # 平台漏洞编号，留空
+    poc_id = 'ea9cca24-30cc-41a1-aff2-702e008fc3d7'
     name = '智旅天下景区分销系统 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -15,10 +15,10 @@ class Vuln(ABVuln):
         智旅天下景区分销系统，注入点：/Account/IsEmailExists?Email=admin%40qq.com&UserName=admin
     '''  # 漏洞描述
     ref = 'https://www.secpulse.com/archives/42866.html'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = '智旅天下景区分销系统'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '941c14be-33ca-477e-9ecd-5b7bbc00ce66'

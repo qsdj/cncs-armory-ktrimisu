@@ -6,7 +6,7 @@ import urllib,urllib2
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'PHPOK_0003' # 平台漏洞编号，留空
+    poc_id = '61b16d3c-3eba-45af-a39b-2f5db93f9aa6'
     name = 'PHPOK 4.2 /framework/www/project_control.php SQL注入漏洞' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -14,9 +14,9 @@ class Vuln(ABVuln):
     desc = '''
          PHPOK企业站 4.2 /framework/www/project_control.php中数组$key在未过滤情况下带入SQL语句
     ''' # 漏洞描述
-    ref = '' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'PHPOK'  # 漏洞应用名称
     product_version = '4.2'  # 漏洞应用版本
 

@@ -6,7 +6,7 @@ import random
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'Yonyou_0033' # 平台漏洞编号，留空
+    poc_id = '43d97d68-bb9c-4528-a284-e8ab77041fbb'
     name = '致远A8协同管理系统 泄露JSESSIONID'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型

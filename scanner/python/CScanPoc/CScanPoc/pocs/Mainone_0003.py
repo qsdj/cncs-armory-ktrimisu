@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'Mainone_0003' # 平台漏洞编号，留空
+    poc_id = '6af0046e-e236-47e8-b86d-8d323b7f42f2'
     name = '铭万信息技术企事业通用建站系统SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -14,15 +14,15 @@ class Vuln(ABVuln):
         铭万信息技术企事业通用建站系统SQL注入漏洞。
         /MessageBoard/Default.aspx
     ''' # 漏洞描述
-    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=074974
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=074974
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'Mainone'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = 'mingwang_0000' # 平台 POC 编号，留空
+    poc_id = 'f74d0a75-c1bf-40f2-81b2-cd77d01514be'
     author = '国光'  # POC编写者
     create_date = '2018-05-22' # POC创建时间
 

@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import time
 
 class Vuln(ABVuln):
-    vuln_id = 'Whir_0013' # 平台漏洞编号，留空
+    poc_id = '0a1e63fe-fe88-4f33-8e68-252d6749fc24'
     name = '万户OA任意sql语句执行'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型
@@ -13,11 +13,11 @@ class Vuln(ABVuln):
     desc = '''
         万户OA /defaultroot/GraphReportAction.do?action=showResult 任意sql语句执行，直接返回数据。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = '万户OA'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '135a2be7-f215-429c-937f-ae81af4cd446'

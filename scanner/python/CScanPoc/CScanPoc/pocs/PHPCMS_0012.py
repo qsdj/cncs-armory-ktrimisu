@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'PHPCMS_0012' # 平台漏洞编号，留空
+    poc_id = '82dc85dd-8b98-4c0e-993f-47cdb3b9e220'
     name = 'PHPCMS 2007 flash_upload.php SQL注入漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -13,8 +13,8 @@ class Vuln(ABVuln):
         modelid参数未过滤导致SQL注入。
     '''  # 漏洞描述
     ref = 'http://vul.jdsec.com/index.php/vul/JDSEC-POC-20141206-2286'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'PHPCMS'  # 漏洞应用名称
     product_version = 'PHPCMS 2007'  # 漏洞应用版本
 

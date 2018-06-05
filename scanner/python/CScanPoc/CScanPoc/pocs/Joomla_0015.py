@@ -5,11 +5,11 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'Joomla_0015' # 平台漏洞编号，留空
+    poc_id = 'ea3a206f-d7d6-43c9-be53-5a0da00d924c'
     name = 'Joomla! 跨站脚本'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型
-    disclosure_date = ''  # 漏洞公布时间
+    disclosure_date = 'Unkonwn'  # 漏洞公布时间
     desc = '''
         Joomla! /index.php 存在跨站脚本漏洞。
     '''  # 漏洞描述

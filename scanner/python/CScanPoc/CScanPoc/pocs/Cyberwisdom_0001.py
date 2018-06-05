@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
 class Vuln(ABVuln):
-    vuln_id = 'Cyberwisdom_0001' # 平台漏洞编号，留空
+    poc_id = '18b03849-96aa-489e-8f80-c2f77a62f809'
     name = '汇思e-Learning平台wizBank 任意文件下载'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型
@@ -14,10 +14,10 @@ class Vuln(ABVuln):
         汇思e-Learning平台wizBank 网站配置不当，导致可以直接下载应用配置信息。
     '''  # 漏洞描述
     ref = 'https://www.secpulse.com/archives/44850.html'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'Cyberwisdom(汇思软件)'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'beb5ab0d-fc64-498a-a4fb-237c98993cfd'

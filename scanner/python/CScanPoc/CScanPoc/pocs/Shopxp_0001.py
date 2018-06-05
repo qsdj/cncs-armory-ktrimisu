@@ -6,7 +6,7 @@ import re
 import urllib2
 
 class Vuln(ABVuln):
-    vuln_id = 'Shopxp_0001'  # 平台漏洞编号，留空
+    poc_id = '575279ec-a9b7-4a60-8f5e-13e77b78bc0f'
     name = 'Shopxp 7.4 /textbox2.asp SQL Injection'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION  # 漏洞类型
@@ -14,9 +14,9 @@ class Vuln(ABVuln):
     desc = '''
         Shopxp 7.4 textbox2.asp sql injection。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'Shopxp'  # 漏洞应用名称
     product_version = 'Shopxp 7.4'  # 漏洞应用版本
 

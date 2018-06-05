@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urlparse
 
 class Vuln(ABVuln):
-    vuln_id = 'FSMCMS_0005' # 平台漏洞编号，留空
+    poc_id = 'fe18f044-0b61-45b4-bf1d-a2bfbaa201a8'
     name = 'FSMCMS系统 任意文件写入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.OTHER # 漏洞类型

@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'Apache_Struts_0015_p' # 平台漏洞编号，留空
+    poc_id = '26d94b40-6300-4a11-a265-6517f0b14c1a'
     name = 'Apache Struts2 S2-048远程代码执行' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型
@@ -14,7 +14,7 @@ class Vuln(ABVuln):
         Apache Struts2存在S2-053远程代码执行漏洞，在Freemarker标记中使用错误的表达式而不是字符串文字时，导致攻击者远程执行代码攻击。
     ''' # 漏洞描述
     ref = 'https://cwiki.apache.org/confluence/display/WW/S2-048' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
     cve_id = 'CVE-2017-9791' #cve编号
     product = 'Apache Struts'  # 漏洞应用名称
     product_version = 'Struts 2.3.x with Struts 1 plugin and Struts 1 action'  # 漏洞应用版本

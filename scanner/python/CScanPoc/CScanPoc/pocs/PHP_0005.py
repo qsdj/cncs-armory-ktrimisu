@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'PHP_0005' # 平台漏洞编号，留空
+    poc_id = 'a81ce2d5-e96d-4fc7-98df-9364e0160bb6'
     name = 'php-utility-belt 远程代码执行'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型
@@ -15,8 +15,8 @@ class Vuln(ABVuln):
         Vulnerable code (Line number 12 to 15)
     '''  # 漏洞描述
     ref = 'https://www.exploit-db.com/exploits/38901/'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'PHP'  # 漏洞应用名称
     product_version = 'php-utility-belt'  # 漏洞应用版本
 

@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'FastMeeting_0002' # 平台漏洞编号，留空
+    poc_id = '7ccc716c-9144-4268-ba1c-0fea05fd9244'
     name = '好视通视频会议系统(fastmeeting)任意文件遍历' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.FILE_TRAVERSAL # 漏洞类型
@@ -14,14 +14,14 @@ class Vuln(ABVuln):
         好视通视频会议系统(fastmeeting)任意文件遍历
     ''' # 漏洞描述
     ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=0143719' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'FastMeeting'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = 'fastmeeting_0000' # 平台 POC 编号，留空
+    poc_id = '86761c30-fcab-487e-a4e0-1640c4adf0b1'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 

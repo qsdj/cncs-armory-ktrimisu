@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urlparse
 
 class Vuln(ABVuln):
-    vuln_id = 'ElasticSearch_0005'  # 平台漏洞编号，留空
+    poc_id = 'f234b419-58b3-4fc4-be57-75ae4c5824b2'
     name = 'ElasticSearch 未授权访问漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.OTHER  # 漏洞类型
@@ -14,8 +14,8 @@ class Vuln(ABVuln):
         ElasticSearch在安装了river之后可以同步多种数据库数据（包括关系型的mysql、mongodb等）。
     '''  # 漏洞描述
     ref = 'https://www.cnblogs.com/xiaozi/p/8275201.html'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'ElasticSearch'  # 漏洞应用名称
     product_version = 'ElasticSearch'  # 漏洞应用版本
 

@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
 class Vuln(ABVuln):
-    vuln_id = 'Srun_0001' # 平台漏洞编号，留空
+    poc_id = 'f428cf7f-7bcc-405a-8c82-823486bdf189'
     name = 'Srun3000计费系统 任意文件下载'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型
@@ -15,9 +15,9 @@ class Vuln(ABVuln):
         漏洞文件，
         /srun3/srun/services/modules/login/controller/login_controller.php
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = '深澜软件'  # 漏洞应用名称
     product_version = 'Srun3000 [3.00rc14.17.4]'  # 漏洞应用版本
 

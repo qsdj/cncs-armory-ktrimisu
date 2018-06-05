@@ -4,17 +4,17 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = '74CMS_0002' # 平台漏洞编号，留空
+    poc_id = 'd790cf68-de0d-40a3-b9ec-560ed9feec71'
     name = '骑士CMS 反射型XSS'  # 漏洞名称
     level = VulnLevel.LOW  # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型
-    disclosure_date = ''  # 漏洞公布时间
+    disclosure_date = 'Unkonwn'  # 漏洞公布时间
     desc = '''
         骑士CMS /jobs/jobs-list.php?key=%22%20autofocus%20onfocus=alert%281%29%20style=%22%22 反射型XSS漏洞。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = '74CMS(骑士CMS)'  # 漏洞应用名称
     product_version = '74cms'  # 漏洞应用版本
 

@@ -8,7 +8,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 
 class Vuln(ABVuln):
-    vuln_id = 'eYou_0005' # 平台漏洞编号，留空
+    poc_id = '49a72a07-ae7b-442a-8fe8-570456dee840'
     name = 'eYou v5 /em/controller/action/help.class.php SQL Injection' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

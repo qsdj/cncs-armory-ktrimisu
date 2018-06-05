@@ -13,7 +13,7 @@ import getopt
 import urlparse
 
 class Vuln(ABVuln):
-    vuln_id = 'Jetty_Web_Server_0001' # 平台漏洞编号，留空
+    poc_id = '783e9bc5-4108-4349-b08b-ca752c9c21fa'
     name = 'Jetty Web Server 9.2.x-9.3.x 共享缓存区远程泄露漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
@@ -34,7 +34,7 @@ class Vuln(ABVuln):
             https://github.com/GDSSecurity/Jetleak-Testing-Script/blob/master/jetleak_tester.py
             http://bobao.360.cn/news/detail/1251.html
             '''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
     cve_id = 'CVE-2015-2080'  # cve编号
     product = 'Jetty Web Server'  # 漏洞应用名称
     product_version = '9.2.x-9.3.x'  # 漏洞应用版本

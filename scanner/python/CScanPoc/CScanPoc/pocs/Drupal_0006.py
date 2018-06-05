@@ -7,7 +7,7 @@ import re
 import hashlib
 
 class Vuln(ABVuln):
-    vuln_id = 'Drupal_0006' # 平台漏洞编号，留空
+    poc_id = '8d487090-6ac4-4a31-ac1b-a4242b793d71'
     name = 'Drupal 7.0-7.31 node SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -16,8 +16,8 @@ class Vuln(ABVuln):
         /?q=node&destination=node 由于后台操作对用户验证逻辑不严谨，导致后台操作可对未登录者开放。
     ''' # 漏洞描述
     ref = 'https://www.sektioneins.de/en/advisories/advisory-012014-drupal-pre-auth-sql-injection-vulnerability.html' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'Drupal'  # 漏洞应用名称
     product_version = '7.0-7.31'  # 漏洞应用版本
 

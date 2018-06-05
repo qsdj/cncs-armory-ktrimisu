@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'KXmail_0001'  # 平台漏洞编号，留空
+    poc_id = 'a42055c7-70a4-416e-944c-625f565b13ee'
     name = '科信邮件系统 任意文件下载'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD  # 漏洞类型
@@ -12,9 +12,9 @@ class Vuln(ABVuln):
     desc = '''
         科信邮件系统 任意文件下载漏洞导致敏感信息泄漏，可致系统沦陷。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'KXmail'  # 漏洞应用名称
     product_version = 'KXmail'  # 漏洞应用版本
 

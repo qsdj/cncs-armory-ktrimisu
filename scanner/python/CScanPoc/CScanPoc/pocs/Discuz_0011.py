@@ -6,7 +6,7 @@ import urllib2
 import hashlib
 
 class Vuln(ABVuln):
-    vuln_id = 'Discuz_0011' # 平台漏洞编号，留空
+    poc_id = '42563425-84aa-4c5e-b358-5891699f56c2'
     name = 'Discuz! /source/plugin/hux_wx/hux_wx.inc.php 本地文件包含'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型
@@ -14,9 +14,9 @@ class Vuln(ABVuln):
     desc = '''
         Discuz! 插件前台文件包含，可直接shell，百度云会拦截恶意程序，但是潜在问题还是存在。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'Discuz!'  # 漏洞应用名称
     product_version = '*'  # 漏洞应用版本
 

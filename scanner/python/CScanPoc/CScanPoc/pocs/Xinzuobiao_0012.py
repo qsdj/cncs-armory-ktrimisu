@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'Xinzuobiao_0012' # 平台漏洞编号，留空
+    poc_id = '214ebbce-1335-4584-a9cd-6144c98bf03b'
     name = '新座标通用型数字校园系统 SQL注射'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -19,11 +19,11 @@ class Vuln(ABVuln):
         /DPMA/FWeb/SPEWeb/Web5/SPEVideosDetail.aspx
         /dpma/FWeb/SchoolWeb/Web/AnnounAndNews.aspx
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = '新座标数字校园系统'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '0240eca6-4571-4f0d-ac0c-ad8694b8f763'

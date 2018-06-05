@@ -6,7 +6,7 @@ import  re
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'WordPress_0078' # 平台漏洞编号，留空
+    poc_id = '86249f73-d1e3-4e36-aa7f-d747c94836e7'
     name = 'WordPress force download Arbitrary File Download' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型
@@ -15,10 +15,10 @@ class Vuln(ABVuln):
         WordPress force download Arbitrary File Download
     ''' # 漏洞描述
     ref = 'https://cxsecurity.com/issue/WLB-2016080079' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'WordPress'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):

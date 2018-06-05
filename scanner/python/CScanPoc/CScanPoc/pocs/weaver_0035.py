@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import time, re
 
 class Vuln(ABVuln):
-    vuln_id = 'weaver_0035' # 平台漏洞编号，留空
+    poc_id = '4d80a108-55a7-47b1-9cc7-b10fb18bb33a'
     name = '泛微e-office 任意文件上传'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_UPLOAD # 漏洞类型
@@ -14,9 +14,9 @@ class Vuln(ABVuln):
         泛微e-cology 存在任意文件上传漏洞。
         general/weibo/javascript/uploadify/uploadify.php
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = '泛微OA'  # 漏洞应用名称
     product_version = '泛微e-office'  # 漏洞应用版本
 

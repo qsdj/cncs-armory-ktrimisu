@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'TRS_0001' # 平台漏洞编号，留空
+    poc_id = '80ce895a-4b22-4c91-b4c6-754c3145d0f7'
     name = '拓尔思内容协作平台 用户密码泄漏'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型

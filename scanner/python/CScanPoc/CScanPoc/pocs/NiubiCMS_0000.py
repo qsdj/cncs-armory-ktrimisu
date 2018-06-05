@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'NiubiCMS_0000' # 平台漏洞编号，留空
+    poc_id = '8fb0f236-5de9-4e05-80cb-774081bebe5a'
     name = 'NiubiCMS通杀SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -14,10 +14,10 @@ class Vuln(ABVuln):
        牛逼CMS 地方门户网站源码系统 PHP免费版。功能包含：新闻、房产、人才、汽车、二手、分类信息、交友、商城、团购、知道、论坛、DM读报、优惠券、本地商家、商家名片等功能。 
     ''' # 漏洞描述
     ref = 'http://0day5.com/archives/3021/' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'NiubiCMS'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):

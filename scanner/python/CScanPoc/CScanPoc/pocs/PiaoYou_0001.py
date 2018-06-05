@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re 
 
 class Vuln(ABVuln):
-    vuln_id = 'PiaoYou_0001' # 平台漏洞编号，留空
+    poc_id = '9822d4de-dd2f-4b3e-9475-d53096eb11a4'
     name = '票友售票系统 通用型SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -21,11 +21,11 @@ class Vuln(ABVuln):
         /Json_db/flight_search.aspx
         /info/zclist_view.aspx
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'PiaoYou(票友软件)'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '2f9f99cd-b0f2-498f-9aff-634822c2783d'

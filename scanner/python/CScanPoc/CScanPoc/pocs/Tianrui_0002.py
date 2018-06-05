@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'Tianrui_0002' # 平台漏洞编号，留空
+    poc_id = '51017402-fa32-4c65-b3a7-1fa6337a05f4'
     name = '天睿电子图书管理系统任意增加管理员' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.MISCONFIGURATION # 漏洞类型
@@ -13,15 +13,15 @@ class Vuln(ABVuln):
     desc = '''
         天睿电子图书管理系统 /useradd.asp 任意增加管理员。
     ''' # 漏洞描述
-    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0121549
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0121549
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = '天睿电子图书管理系统'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = 'tianrui_0006' # 平台 POC 编号，留空
+    poc_id = 'c44514dd-f834-4de8-81e6-64cfdb24db1e'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 

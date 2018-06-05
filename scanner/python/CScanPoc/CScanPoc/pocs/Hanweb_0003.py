@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'Hanweb_0003' # 平台漏洞编号，留空
+    poc_id = '000b3564-f9aa-4f98-8f44-a0c0d89a83ea'
     name = '大汉网络vipchat上传getshell'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型

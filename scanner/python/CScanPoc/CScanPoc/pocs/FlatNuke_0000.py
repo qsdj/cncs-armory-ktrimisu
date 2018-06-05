@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'FlatNuke_0000' # 平台漏洞编号
+    poc_id = '6feff809-ed60-4285-afbd-63cdd530b31e'
     name = 'FlatNuke 2.5.7 Index.php Remote File Include Vulnerability' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.RFI # 漏洞类型

@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'WordPress_0049' # 平台漏洞编号，留空
+    poc_id = '81069299-a5cd-44ed-ba9e-792ec4a68622'
     name = 'WordPress LineNity 1.20主题 本地文件包含漏洞' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型
@@ -15,8 +15,8 @@ class Vuln(ABVuln):
         /wp-content/themes/linenity/functions/download.php?imgurl=
     ''' # 漏洞描述
     ref = 'https://www.exploit-db.com/exploits/32861/' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'WordPress'  # 漏洞应用名称
     product_version = 'WordPress LineNity 1.20主题'  # 漏洞应用版本
 

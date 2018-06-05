@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'Apache_Struts_0006_p' # 平台漏洞编号，留空
+    poc_id = '7dc99973-04b0-4fa8-ae6b-296adc5ad6bb'
     name = 'Apache Struts2 S2-008远程代码执行' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型
@@ -13,8 +13,8 @@ class Vuln(ABVuln):
         Apache Struts2中存在漏洞，该漏洞为了防止攻击者任意方法调用在国旗xwork.methodaccessor.denymethodexecution参数设置为true，securitymemberaccess场allowstaticmethodaccess默认设置为false。
     ''' # 漏洞描述
     ref = 'https://cwiki.apache.org/confluence/display/WW/S2-008' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'Apache Struts'  # 漏洞应用名称
     product_version = 'Struts 2.1.0 - Struts 2.3.1 '  # 漏洞应用版本
 

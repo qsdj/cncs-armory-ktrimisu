@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'Comexe_0007' # 平台漏洞编号，留空
+    poc_id = 'c2462087-e4ed-4a59-a0ec-9d4434b0c456'
     name = '科迈RAS标准版客户端页面cmxfolder.php注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -13,15 +13,15 @@ class Vuln(ABVuln):
     desc = '''
         科迈RAS标准版客户端页面cmxfolder.php注入 
     ''' # 漏洞描述
-    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0117921
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0117921
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = '科迈RAS系统'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = 'comexe_0007' # 平台 POC 编号，留空
+    poc_id = '8fd71207-cf92-4a5a-a4a8-da08d311324c'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 

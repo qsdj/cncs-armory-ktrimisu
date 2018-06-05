@@ -8,7 +8,7 @@ import random
 import hashlib
 
 class Vuln(ABVuln):
-    vuln_id = 'Discuz_0029' # 平台漏洞编号，留空
+    poc_id = '46cb825b-e243-490f-b0c4-92476e145fad'
     name = 'Discuz! x3.1 /utility/convert/index.php 代码执行漏洞' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型
@@ -17,8 +17,8 @@ class Vuln(ABVuln):
         Discuz! x3.1 /utility/convert/index.php 代码执行漏洞
     ''' # 漏洞描述
     ref = 'https://www.seebug.org/vuldb/ssvid-62557' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'Discuz!'  # 漏洞应用名称
     product_version = '3.1'  # 漏洞应用版本
 

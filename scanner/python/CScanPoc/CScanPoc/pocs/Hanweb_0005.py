@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'Hanweb_0005' # 平台漏洞编号，留空
+    poc_id = '74d73b99-56f5-4afd-aed4-b9d62ab8f391'
     name = '大汉JCMS 重置管理员密码'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.OTHER # 漏洞类型

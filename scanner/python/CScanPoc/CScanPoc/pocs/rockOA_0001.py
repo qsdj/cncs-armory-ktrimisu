@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'rockOA_0001' # 平台漏洞编号，留空
+    poc_id = '3038e73a-a2ba-461e-97d6-9459fbefa066'
     name = 'rockOA 任意文件上传'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_UPLOAD # 漏洞类型
@@ -13,10 +13,10 @@ class Vuln(ABVuln):
         rockOA ftpupload.php中函数没有用户身份判定，也没有文件类型过滤，导致任意文件上传。
     '''  # 漏洞描述
     ref = 'http://xiaomange.meximas.com/?p=317'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'rockOA'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '6f7f97e7-66dd-4671-b33b-98a6098c4b95'

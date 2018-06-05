@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'Discuz_0002'  # 平台漏洞编号，留空
+    poc_id = '379de323-487d-4804-9208-1d652fd5d9e1'
     name = 'Discuz! X3.0 绝对路径泄露'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK  # 漏洞类型
@@ -14,8 +14,8 @@ class Vuln(ABVuln):
         discuz X3.0 存在多处绝对路径泄露。
     '''  # 漏洞描述
     ref = 'http://www.360doc.com/content/13/0616/13/11029609_293244305.shtml'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'Discuz!'  # 漏洞应用名称
     product_version = 'x3.0'  # 漏洞应用版本
 

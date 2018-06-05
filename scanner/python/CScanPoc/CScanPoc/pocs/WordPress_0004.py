@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'WordPress_0004'  # 平台漏洞编号，留空
+    poc_id = '0d756f65-4e65-479a-be25-2a1dc85fa9bb'
     name = 'WordPress DomXSS'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.XSS  # 漏洞类型
@@ -16,8 +16,8 @@ class Vuln(ABVuln):
         导致出现 DOM XSS，这种攻击将无视浏览器的 XSS Filter 防御。
     '''  # 漏洞描述
     ref = 'http://www.freebuf.com/news/66695.html'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'Wordpress'  # 漏洞应用名称
     product_version = '使用了Genericons包的WordPress插件或主题'  # 漏洞应用版本
 

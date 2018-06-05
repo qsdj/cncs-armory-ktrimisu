@@ -6,7 +6,7 @@ import random
 import urllib
 
 class Vuln(ABVuln):
-    vuln_id = 'Wholeton_0005' # 平台漏洞编号，留空
+    poc_id = 'f43d9dfc-407a-4123-88ef-3da15f4463e0'
     name = '惠尔顿上网行为管理系统命令执行'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型
@@ -18,11 +18,11 @@ class Vuln(ABVuln):
         /base/tpl/delectSSL.php
         /base/user/clearScreenImg.php
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = '惠尔顿上网行为管理系统'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '8c52ee21-c2e9-4158-9168-e0317b250ce7'

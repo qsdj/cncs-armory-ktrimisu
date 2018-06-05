@@ -6,7 +6,7 @@ import urllib,urllib2
 import hashlib
 
 class Vuln(ABVuln):
-    vuln_id = 'Emlog_0000' # 平台漏洞编号，留空
+    poc_id = 'bc53ae48-f271-4b90-874a-508a0d491862'
     name = 'Emlog 5.3.1 /include/lib/js/uploadify/uploadify.swf XSS' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型
@@ -15,8 +15,8 @@ class Vuln(ABVuln):
         Emlog include/lib/js/uploadify/uploadify.swf文件存在FlashXss漏洞。
     ''' # 漏洞描述
     ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=069818' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'Emlog'  # 漏洞应用名称
     product_version = '5.3.1'  # 漏洞应用版本
 

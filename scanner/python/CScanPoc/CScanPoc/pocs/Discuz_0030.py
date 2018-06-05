@@ -6,7 +6,7 @@ import urllib,urllib2
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'Discuz_0030' # 平台漏洞编号，留空
+    poc_id = 'd7caf3d4-2a90-4233-9c4a-c7b2d3b17df4'
     name = 'Discuz! x2.5 /source/plugin/myrepeats/table/table_myrepeats.php 泄漏服务器物理路径' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
@@ -15,8 +15,8 @@ class Vuln(ABVuln):
         Discuz! x2.5 /source/plugin/myrepeats/table/table_myrepeats.php 泄漏服务器物理路径
     ''' # 漏洞描述
     ref = 'https://www.2cto.com/article/201211/171301.html' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'Discuz!'  # 漏洞应用名称
     product_version = 'x2.5'  # 漏洞应用版本
 

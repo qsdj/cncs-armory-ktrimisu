@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'MetInfo_0011' # 平台漏洞编号，留空
+    poc_id = 'ee2902a6-2070-4d6f-85ea-d9b44acece68'
     name = 'MetInfo 5.2 任意文件读取'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_OPERATION # 漏洞类型
@@ -12,9 +12,9 @@ class Vuln(ABVuln):
     desc = '''
         MetInfo 5.2（当前最新版本）的 include/thumb.php 文件本来用来获取缩略图，但是其构造的缩略图路径存在外部可控变量，攻击者可以借此获取任意文件内容。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'MetInfo'  # 漏洞应用名称
     product_version = '5.2'  # 漏洞应用版本
 

@@ -4,18 +4,18 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'Jienuohan_0004' # 平台漏洞编号，留空
+    poc_id = 'b8d76735-d76b-4293-ad99-16702b9c5e2d'
     name = '南京杰诺瀚投稿系统 任意文件下载'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型
-    disclosure_date = ''  # 漏洞公布时间
+    disclosure_date = 'Unkonwn'  # 漏洞公布时间
     desc = '''
         南京杰诺瀚投稿系统任意文件下载。
         /IneduPortal/Components/news/FileDown.aspx
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = '杰诺瀚投稿系统'  # 漏洞应用名称
     product_version = '南京杰诺瀚投稿系统'  # 漏洞应用版本
 

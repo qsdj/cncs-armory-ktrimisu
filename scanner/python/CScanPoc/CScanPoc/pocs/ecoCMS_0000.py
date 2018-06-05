@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'ecoCMS_0000' # 平台漏洞编号
+    poc_id = 'be07d4fa-0455-486d-a3e6-a0a18d816ced'
     name = 'ecoCMS 18.4.2010 - admin.php Cross-Site Scripting Vulnerability' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型

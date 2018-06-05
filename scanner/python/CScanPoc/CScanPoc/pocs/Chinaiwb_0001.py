@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'Chinaiwb_0001'  # 平台漏洞编号，留空
+    poc_id = '0a8d5b01-044a-4abb-8589-31457df5031a'
     name = '皓峰防火墙系统 越权访问'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.OTHER # 漏洞类型
@@ -12,11 +12,11 @@ class Vuln(ABVuln):
     desc = '''
         皓峰硬件防火墙系统 /setdomain.php?action=list 越权访问漏洞。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = '皓峰防火墙'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '26674b4f-2de3-456f-b0f2-9d344bce8d27'

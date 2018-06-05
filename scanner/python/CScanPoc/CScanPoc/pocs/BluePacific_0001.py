@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re, urlparse
 
 class Vuln(ABVuln):
-    vuln_id = 'BluePacific_0001'  # 平台漏洞编号，留空
+    poc_id = '5e638f4b-781a-46d2-8e3f-9dfa118b40e5'
     name = '蓝太平洋网站决策支持系统WebEngine 信息泄露'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
@@ -14,11 +14,11 @@ class Vuln(ABVuln):
         蓝太平洋网站决策支持系统WebEngine存在利用短文件漏洞下载明文系统配置文件(可泄漏管理员明文密码等系统敏感配置信息)
         部分部署安装在 win+apache 环境下存在缺陷通过短文件漏洞实现利用。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = '蓝太平洋'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '64d9d206-6457-4603-891c-b8760dce2381'

@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'Joomla_0049' # 平台漏洞编号
+    poc_id = '32b1d3e5-b08b-46bf-8c7f-2dbcd30677b7'
     name = 'Joomla Component simpledownload 0.9.5 - LFI Vulnerability' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型

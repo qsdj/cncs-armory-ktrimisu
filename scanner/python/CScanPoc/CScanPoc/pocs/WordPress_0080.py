@@ -6,7 +6,7 @@ import re
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'WordPress_0080' # 平台漏洞编号，留空
+    poc_id = '9e6d3580-fcda-4b4a-923a-0ff7ae2ad0b4'
     name = 'WordPress Plugin Fancybox 3.0.2 - Persistent Cross-Site Scripting' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型
@@ -15,14 +15,14 @@ class Vuln(ABVuln):
         WordPress Plugin Fancybox 3.0.2 - Persistent Cross-Site Scripting.
     ''' # 漏洞描述
     ref = 'https://www.exploit-db.com/exploits/36087/' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
     cve_id = 'CVE-2015-1494' #cve编号
     product = 'WordPress'  # 漏洞应用名称
     product_version = 'WordPress Plugin Fancybox 3.0.2'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = 'WordPress_0080' # 平台 POC 编号，留空
+    poc_id = '6015702c-2ea8-4e1d-9f40-7ab992bf9ad3'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 

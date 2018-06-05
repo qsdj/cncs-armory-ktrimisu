@@ -6,7 +6,7 @@ import re
 import urlparse
 
 class Vuln(ABVuln):
-    vuln_id = 'ElasticSearch_0006' # 平台漏洞编号，留空
+    poc_id = '0cabe66c-b14b-4157-8fd0-188db3aa1b3e'
     name = 'ElasticSearch 9200端口 未授权访问漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.OTHER # 漏洞类型
@@ -14,11 +14,11 @@ class Vuln(ABVuln):
     desc = '''
         默认情况，Elasticsearch开启后会监听9200端口可以在未授权的情况下访问，从而导致敏感信息泄漏。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'ElasticSearch'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '91af3c86-31ae-4653-8484-27acf11d5dfe'

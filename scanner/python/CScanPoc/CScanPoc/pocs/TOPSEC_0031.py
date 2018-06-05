@@ -6,7 +6,7 @@ import re
 import time
 
 class Vuln(ABVuln):
-    vuln_id = 'TOPSEC_0031'  # 平台漏洞编号，留空
+    poc_id = '82cffef7-296f-43bf-9e55-e03d0342ff89'
     name = '天融信WEB应用安全网关 任意命令执行'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型
@@ -15,11 +15,11 @@ class Vuln(ABVuln):
         天融信WEB应用安全网关任意命令执行。
         /function/ssh/file_ssh.php
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = '天融信应用安全网关'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'd5ba7bb1-aacc-4a91-9d17-f180c4df1662'

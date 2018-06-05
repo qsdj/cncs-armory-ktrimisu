@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import time, re
 
 class Vuln(ABVuln):
-    vuln_id = 'weaver_0032' # 平台漏洞编号，留空
+    poc_id = '902a46dd-1d4d-46d9-a214-7398e6c2453a'
     name = '泛微e-office 任意文件上传'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_UPLOAD # 漏洞类型
@@ -17,9 +17,9 @@ class Vuln(ABVuln):
         webservice-json/upload/upload.php
         webservice-xml/upload/upload.php
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = '泛微OA'  # 漏洞应用名称
     product_version = '泛微e-office'  # 漏洞应用版本
 

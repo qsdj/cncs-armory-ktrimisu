@@ -7,7 +7,7 @@ import time
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'D-Link_0011' # 平台漏洞编号，留空
+    poc_id = '9a4db83f-a156-4274-82c7-5dd4d8bfc44e'
     name = 'D-Link 未授权访问'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
@@ -15,9 +15,9 @@ class Vuln(ABVuln):
     desc = '''
         D-Link DIR-300 非授权访问相关页面导致路由信息泄露。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'D-Link'  # 漏洞应用名称
     product_version = 'DIR-300'  # 漏洞应用版本
 

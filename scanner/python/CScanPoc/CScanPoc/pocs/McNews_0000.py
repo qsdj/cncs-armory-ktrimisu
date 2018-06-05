@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'McNews_0000' # 平台漏洞编号
+    poc_id = 'd5a77b18-8cd0-4dd9-8054-e75d4b4c533f'
     name = 'McNews 1.x Install.PHP Arbitrary File Include Vulnerability' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

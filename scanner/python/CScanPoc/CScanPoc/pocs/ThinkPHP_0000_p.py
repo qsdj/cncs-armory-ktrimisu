@@ -4,17 +4,17 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'ThinkPHP_0000_p' # 平台漏洞编号，留空
+    poc_id = 'd77a65a0-2018-4e04-80ee-c7a80827f489'
     name = 'ThinkPHP Builder.php SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
-    disclosure_date = ''  # 漏洞公布时间
+    disclosure_date = 'Unkonwn'  # 漏洞公布时间
     desc = '''
         漏洞文件位置 ThinkPHPLibraryThinkDb.class.php,parseWhereItem 函数由于对 between 关键字的正则匹配错误，导致了SQL注入漏洞。
     ''' # 漏洞描述
     ref = 'https://github.com/Medicean/VulApps/tree/master/t/thinkphp/1' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'ThinkPHP'  # 漏洞应用名称
     product_version = 'ThinkPHP <= 3.2.3'  # 漏洞应用版本
 

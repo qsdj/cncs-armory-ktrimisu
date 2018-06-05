@@ -6,18 +6,18 @@ import urllib,urllib2
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'Discuz_0027' # 平台漏洞编号，留空
+    poc_id = 'dc45f774-1278-42b1-a31f-472ca4867bd1'
     name = 'Discuz! X2.5 绝对路径泄露漏洞' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
-    disclosure_date = ''  # 漏洞公布时间
+    disclosure_date = 'Unkonwn'  # 漏洞公布时间
     desc = '''
         Discuz! X2.5 /api.php文件中由于array_key_exists中的第一个参数只能为整数或者字符串，
         当?mod[]=beebeeto时，$mod类型为array，从而导致array_key_exists产生错误信息。
     ''' # 漏洞描述
     ref = 'https://www.webshell.cc/4141.html' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'Discuz!'  # 漏洞应用名称
     product_version = '2.5'  # 漏洞应用版本
 

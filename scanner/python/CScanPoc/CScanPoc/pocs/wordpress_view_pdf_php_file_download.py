@@ -4,7 +4,7 @@ import urllib2
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = '' # 平台漏洞编号，留空
+    vuln_id = 'Unkonwn' # 平台漏洞编号，留空
     name = 'WordPress Acento Theme Arbitrary File Download' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.FILE_OPERATION # 漏洞类型
@@ -13,7 +13,7 @@ class Vuln(ABVuln):
         wp主题插件acento theme 中view-pad.php 文件,可读取任意文件
     ''' # 漏洞描述
     ref = 'http://www.exploit-db.com/exploits/34578/' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
     product = 'WordPress'  # 漏洞应用名称
     product_version = '*'  # 漏洞应用版本
 

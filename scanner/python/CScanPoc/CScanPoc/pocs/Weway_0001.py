@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'Weway_0001' # 平台漏洞编号，留空
+    poc_id = 'f7aad354-924e-4b8a-9003-b440d5b9a384'
     name = '任我行CRM 任意文件下载' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型
@@ -13,15 +13,15 @@ class Vuln(ABVuln):
     desc = '''
         任我行CRM /Common/PictureView1/?picurl=/web.config 任意文件下载。
     ''' # 漏洞描述
-    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0134737
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0134737
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = '任我行CRM'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = 'weway_0000' # 平台 POC 编号，留空
+    poc_id = 'acbbeae3-d7c2-43b1-aa31-47edfa7837d8'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 

@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'Anmai_0001' # 平台漏洞编号，留空
+    poc_id = 'dc0a36d8-c104-46b4-bb29-cb4fcbcf6b7e'
     name = '安脉学校综合管理平台 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -14,11 +14,11 @@ class Vuln(ABVuln):
         /anmai/SF_Manage/tfdeleN.aspx?tfid=%28
         /anmai/RecruitstuManage/hiddenValue.aspx?topicid=1
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = '安脉学校综合管理平台'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'f984d276-cbef-4cab-a923-32f770fe9af0'

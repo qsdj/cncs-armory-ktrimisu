@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import time 
 
 class Vuln(ABVuln):
-    vuln_id = 'MetInfo_0014' # 平台漏洞编号，留空
+    poc_id = 'd2b007a0-f0ac-4c06-97d9-9fc6ec7b3df4'
     name = 'MetInfo5.1 任意文件上传getshell'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_UPLOAD # 漏洞类型
@@ -13,9 +13,9 @@ class Vuln(ABVuln):
     desc = '''
         MetInfo V5.1 任意文件上传，可getshell.
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'MetInfo'  # 漏洞应用名称
     product_version = 'V5.1'  # 漏洞应用版本
 

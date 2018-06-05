@@ -6,7 +6,7 @@ import re
 import time
 
 class Vuln(ABVuln):
-    vuln_id = 'Discuz_0004' # 平台漏洞编号，留空
+    poc_id = '232dc3b7-4377-4743-a57c-e8835b4c0c04'
     name = 'Discuz! X2.5 急诊箱扫描页面弱口令'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
@@ -15,8 +15,8 @@ class Vuln(ABVuln):
         如果急诊箱页面未删除，可能存在默认密码导致被入侵。默认密码：188281MWWxjk.
     '''  # 漏洞描述
     ref = 'https://github.com/heavenK/bbs_new/blob/master/source/plugin/tools/tools.php'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'Discuz!'  # 漏洞应用名称
     product_version = 'Discuz! X2.5 急诊箱扫描页面'  # 漏洞应用版本
 

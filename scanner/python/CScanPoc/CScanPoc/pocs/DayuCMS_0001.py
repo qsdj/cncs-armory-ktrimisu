@@ -7,7 +7,7 @@ import base64
 import hashlib
 
 class Vuln(ABVuln):
-    vuln_id = 'DayuCMS_0001'  # 平台漏洞编号，留空
+    poc_id = '86550a3e-1ba6-4c1a-9795-81277e43acc3'
     name = 'DayuCMS 代码执行漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE  # 漏洞类型
@@ -16,8 +16,8 @@ class Vuln(ABVuln):
         DayuCMS在将字符串转换为数组的函数中直接利用eval，并且存在可控变量，导致任意代码执行。
     '''  # 漏洞描述
     ref = 'https://joychou.org/web/dayucms-1-526-foreground-remote-code-execution.html'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'DayuCMS'  # 漏洞应用名称
     product_version = 'DayuCMS <=1.526'  # 漏洞应用版本
 

@@ -6,18 +6,18 @@ import urlparse
 import time
 
 class Vuln(ABVuln):
-    vuln_id = 'ZTE_0004'  # 平台漏洞编号，留空
+    poc_id = 'eaa46e47-f06c-4d5f-b37e-48157bfe9849'
     name = '中兴ZXV10 MS90视频会议管理系统通用SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
-    disclosure_date = ''  # 漏洞公布时间
+    disclosure_date = 'Unkonwn'  # 漏洞公布时间
     desc = '''
         中兴ZXV10 MS90视频会议管理系统通用SQL注入漏洞。
         /UserOperation
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'ZTE'  # 漏洞应用名称
     product_version = '中兴ZXV10 MS90视频会议管理系统'  # 漏洞应用版本
 

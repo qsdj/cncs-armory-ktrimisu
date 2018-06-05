@@ -6,7 +6,7 @@ import re
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'RocKontrol_0001' # 平台漏洞编号，留空
+    poc_id = 'e8dad5cd-aad0-4a12-91b8-1b702b626f10'
     name = '工控安全之火力发电能耗监测弱口令' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.MISCONFIGURATION # 漏洞类型
@@ -14,15 +14,15 @@ class Vuln(ABVuln):
     desc = '''
         工控安全之火力发电能耗监测弱口令。
     ''' # 漏洞描述
-    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0145739
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0145739
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'RocKontrol'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = 'rockontrol_0000' # 平台 POC 编号，留空
+    poc_id = 'b79a2dbe-984c-4ae0-8a78-8e1b81ac60b1'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 

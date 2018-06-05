@@ -6,7 +6,7 @@ import urllib,urllib2
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'ZeroCMS_0001' # 平台漏洞编号，留空
+    poc_id = 'a90b37c4-a984-4493-b6e1-885b45d1aa88'
     name = 'ZeroCMS 1.0 /zero_transact_user.php XSS' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型
@@ -15,7 +15,7 @@ class Vuln(ABVuln):
         ZeroCMS用户注册页面zero_transact_user.php表单完全没进行过滤。
     ''' # 漏洞描述
     ref = 'https://www.exploit-db.com/exploits/34170/' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
     cve_id = 'CVE-2014-4710' #cve编号
     product = 'ZeroCMS'  # 漏洞应用名称
     product_version = '1.0'  # 漏洞应用版本

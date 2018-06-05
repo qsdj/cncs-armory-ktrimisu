@@ -7,7 +7,7 @@ import socket
 import urllib
 
 class Vuln(ABVuln):
-    vuln_id = 'Huawei_0001'  # 平台漏洞编号，留空
+    poc_id = '4aeb32fa-a5cc-4c65-b048-5045ef81735a'
     name = 'Huawei Home Gateway UPnP/1.0 IGD/1.00 密码泄露'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK  # 漏洞类型
@@ -16,8 +16,8 @@ class Vuln(ABVuln):
         Huawei Home Gateway UPnP/1.0 IGD/1.00 Password Disclosure Exploit.
     '''  # 漏洞描述
     ref = 'https://www.exploit-db.com/exploits/37424/'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = '华为路由器'  # 漏洞应用名称
     product_version = 'Huawei Home Gateway UPnP/1.0 IGD/1.00'  # 漏洞应用版本
 

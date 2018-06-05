@@ -7,7 +7,7 @@ import re
 import hashlib
 
 class Vuln(ABVuln):
-    vuln_id = 'PJBlog_0002' # 平台漏洞编号，留空
+    poc_id = 'f8c87a57-d1dd-436d-89fe-fa38ea1a7c55'
     name = 'PJBlog 3.0.6.170 /Action.asp XSS漏洞' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型
@@ -16,8 +16,8 @@ class Vuln(ABVuln):
         漏洞文件：Action.asp
     ''' # 漏洞描述
     ref = 'https://www.seebug.org/vuldb/ssvid-11236' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'PJBlog'  # 漏洞应用名称
     product_version = '3.0.6.170'  # 漏洞应用版本
 

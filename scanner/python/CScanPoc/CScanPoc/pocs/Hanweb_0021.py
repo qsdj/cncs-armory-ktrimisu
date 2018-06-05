@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import time, random
 
 class Vuln(ABVuln):
-    vuln_id = 'Hanweb_0021' # 平台漏洞编号，留空
+    poc_id = '3b4480d1-d033-4e2d-aafa-17d027553629'
     name = '大汉JCMS /module/voting/down.jsp任意文件下载'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型

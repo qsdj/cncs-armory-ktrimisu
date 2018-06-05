@@ -6,7 +6,7 @@ import urllib,urllib2
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'Shopex_0002' # 平台漏洞编号，留空
+    poc_id = '230d9fcb-cab9-425e-9458-ef45f3f3d826'
     name = 'Shopex 4.8.5.45144 /core/include_v5/crontab.php 代码执行' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型
@@ -15,8 +15,8 @@ class Vuln(ABVuln):
         Shopex 4.8.5.45144 中的\core\include_v5\crontab.php中$this没任何过滤就将错误写入日志文件,且只对linux服务器有用
     ''' # 漏洞描述
     ref = 'https://www.seebug.org/vuldb/ssvid-19798' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'Shopex'  # 漏洞应用名称
     product_version = '4.8.5.45144'  # 漏洞应用版本
 

@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'D-Link_0007'  # 平台漏洞编号，留空
+    poc_id = '7f2b2989-f51c-4d0f-b33d-0f2ae6143dc6'
     name = 'D-Link 未授权信息泄漏漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK  # 漏洞类型
@@ -13,8 +13,8 @@ class Vuln(ABVuln):
         D-Link 多个路由器未授权信息泄漏漏洞。
     '''  # 漏洞描述
     ref = 'http://www.freebuf.com/vuls/64521.html'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'D-Link'  # 漏洞应用名称
     product_version = '''
                         DIR-890L

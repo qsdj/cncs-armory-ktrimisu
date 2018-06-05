@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'EcsCMS_0000' # 平台漏洞编号，留空
+    poc_id = 'ba33b538-1953-4304-abdc-0ae3b060b8bc'
     name = '易创思CMS SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -14,14 +14,14 @@ class Vuln(ABVuln):
         EcsCMS(易创思ECS) SQL注入漏洞，.net+sqlserver注射，影响众多学校及教育机构。
     ''' # 漏洞描述
     ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=088844' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'EcsCMS(易创思ECS)'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = '' # 平台 POC 编号，留空
+    poc_id = 'Unkonwn' # 平台 POC 编号，留空
     author = '国光'  # POC编写者
     create_date = '2018-05-22' # POC创建时间
 

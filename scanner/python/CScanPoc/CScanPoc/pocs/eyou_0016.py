@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'eYou_0016' # 平台漏洞编号，留空
+    poc_id = 'dcfd95e8-3f1e-46df-acb5-f0c3277a8b63'
     name = 'eYou v4 /php/report/include/config.inc 信息泄露' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
@@ -13,15 +13,15 @@ class Vuln(ABVuln):
     desc = '''
         eYou v4 /php/report/include/config.inc 信息泄露漏洞
     ''' # 漏洞描述
-    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0143760
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0143760
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'eYou'  # 漏洞应用名称
     product_version = 'v4'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = 'eyou_0016' # 平台 POC 编号，留空
+    poc_id = 'd1970d42-dcdd-481f-b591-8452268c4006'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 

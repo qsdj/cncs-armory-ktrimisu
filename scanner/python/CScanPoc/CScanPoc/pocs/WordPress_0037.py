@@ -6,7 +6,7 @@ import time
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'WordPress_0037' # 平台漏洞编号，留空
+    poc_id = '4c644521-683e-4ef2-b5d2-5c6d18487b17'
     name = 'WordPress SP Project & Document Manager SQL盲注' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -15,8 +15,8 @@ class Vuln(ABVuln):
        WordPress SP Project & Document Manager 2.5.3 插件 SQL盲注 
     ''' # 漏洞描述
     ref = 'https://www.exploit-db.com/exploits/36576/' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'WordPress'  # 漏洞应用名称
     product_version = 'WordPress SP Project & Document Manager 2.5.3'  # 漏洞应用版本
 

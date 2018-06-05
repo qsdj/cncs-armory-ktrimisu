@@ -5,23 +5,23 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'Hezhong_0001' # 平台漏洞编号，留空
+    poc_id = '8ce33fc1-d11f-4377-aaf3-ffc01afcf667'
     name = '合众商道php系统通用注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
-    disclosure_date = ''  # 漏洞公布时间
+    disclosure_date = 'Unkonwn'  # 漏洞公布时间
     desc = '''
         合众商道php系统通用注入,支持联合查询。
     ''' # 漏洞描述
-    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=083434
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=083434
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = '合众商道php系统'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = 'hezhong_0000' # 平台 POC 编号，留空
+    poc_id = 'ce392e9d-0247-426d-abca-ccd3386aa7fd'
     author = '国光'  # POC编写者
     create_date = '2018-05-22' # POC创建时间
 

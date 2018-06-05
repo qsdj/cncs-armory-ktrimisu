@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'Discuz_0022'  # 平台漏洞编号，留空
+    poc_id = '94d009b5-1c7a-424a-8d55-40c51faf5e9a'
     name = 'Discuz!积分商城插件任意文件包含'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.LFI  # 漏洞类型
@@ -13,11 +13,11 @@ class Vuln(ABVuln):
         Discuz!积分商城插件 action参数未过滤直接传入$file后面的用%00截断即可包含任意文件。
         /plugin.php?action=../../../../../robots.txt%00&id=dc_mall
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'Discuz!'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '5290293e-54a1-4a9b-8ef2-7718e66997c3'

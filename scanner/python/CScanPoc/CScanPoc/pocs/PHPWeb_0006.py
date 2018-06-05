@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'PHPWeb_0006' # 平台漏洞编号，留空
+    poc_id = 'f8117f54-6712-4631-8ede-9800485272f9'
     name = 'PHPWeb伪静态页面注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -14,10 +14,10 @@ class Vuln(ABVuln):
         PHPWeb伪静态页面注入。
     ''' # 漏洞描述
     ref = 'http://www.myhack58.com/Article/html/3/62/2013/36562.htm' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'PHPWeb'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):

@@ -5,17 +5,17 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'Ecshop_0012' # 平台漏洞编号，留空
+    poc_id = '3f0d92e8-bca1-486f-be7b-5fa043e619f1'
     name = 'Ecshop 2.7.2 /category.php SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
-    disclosure_date = ''  # 漏洞公布时间
+    disclosure_date = 'Unkonwn'  # 漏洞公布时间
     desc = '''
         Ecshop 商城系统category页面过滤不严导致SQL注入漏洞
     ''' # 漏洞描述
     ref = 'http://jingpin.jikexueyuan.com/article/15003.html' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'Ecshop'  # 漏洞应用名称
     product_version = '2.72'  # 漏洞应用版本
 

@@ -11,18 +11,18 @@ import re
 from urlparse import urlparse
 
 class Vuln(ABVuln):
-    vuln_id = 'WebLogic_0002'  # 平台漏洞编号，留空
+    poc_id = '330f0e57-6f62-4d68-a2c9-2c9d2054cad5'
     name = 'WebLogic 反序列化漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE  # 漏洞类型
-    disclosure_date = ''  # 漏洞公布时间
+    disclosure_date = 'Unkonwn'  # 漏洞公布时间
     desc = '''
     '''  # 漏洞描述
     ref = 'https://foxglovesecurity.com/2015/11/06/what-do-weblogic-websphere-jboss-jenkins-opennms-and-your-application-have-in-common-this-vulnerability/'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'WebLogic'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '80977255-98c2-41d4-84f9-a42bdb5097c6'

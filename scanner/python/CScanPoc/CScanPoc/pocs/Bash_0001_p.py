@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'Bash_0001_p' # 平台漏洞编号，留空
+    poc_id = 'f6d5685b-b775-4a50-893a-74498be3af43'
     name = 'GNU Bash远程代码执行漏洞' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型

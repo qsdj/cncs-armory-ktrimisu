@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'CmsEasy_0001_p' # 平台漏洞编号，留空
+    poc_id = '14c09677-9544-4bb4-9e66-8375ddb1128d'
     name = 'CmsEasy 5.5_UTF-8_20140802SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -13,8 +13,8 @@ class Vuln(ABVuln):
     CmsEasy 5.5 中 /celive/live/header.php 文件过滤不严存在POST注入
     ''' # 漏洞描述
     ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=70827' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'CmsEasy'  # 漏洞应用名称
     product_version = 'CmsEasy 5.5'  # 漏洞应用版本
 

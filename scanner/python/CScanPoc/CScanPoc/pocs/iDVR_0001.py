@@ -5,17 +5,17 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re, urlparse
 
 class Vuln(ABVuln):
-    vuln_id = 'iDVR_0001'  # 平台漏洞编号，留空
+    poc_id = 'a83bd5e2-a4bc-4792-bfdb-56fca873bb63'
     name = 'iDVR Mobile Video dvr系统任意文件遍历'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_TRAVERSAL # 漏洞类型
-    disclosure_date = ''  # 漏洞公布时间
+    disclosure_date = 'Unkonwn'  # 漏洞公布时间
     desc = '''
         iDVR Mobile Video dvr系统任意文件遍历。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'iDVR'  # 漏洞应用名称
     product_version = 'iDVR Mobile Video dvr'  # 漏洞应用版本
 

@@ -7,7 +7,7 @@ import time
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'ADSLR_0001' # 平台漏洞编号，留空
+    poc_id = 'dda2a614-cf2d-4ec2-99e2-312a1a6ebccf'
     name = '飞鱼星上网行为管理路由器 信息泄露'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
@@ -16,11 +16,11 @@ class Vuln(ABVuln):
         飞鱼星上网行为管理路由器。
         权限管理控制不严谨，直接访问 /.htpasswd 可获取加密后的用户密码。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = '飞鱼星上网行为管理路由器'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '29c16e8a-81b2-401f-a079-4cd4932ca21a'

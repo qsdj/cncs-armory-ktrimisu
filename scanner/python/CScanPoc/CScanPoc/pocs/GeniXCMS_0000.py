@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'GeniXCMS_0000' # 平台漏洞编号
+    poc_id = '785c70ae-ec35-4e03-96bf-f84e45de3922'
     name = 'GeniXCMS 0.0.3 - XSS Vulnerabilities' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型

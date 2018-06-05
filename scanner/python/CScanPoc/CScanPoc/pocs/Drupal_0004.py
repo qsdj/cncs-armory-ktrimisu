@@ -6,7 +6,7 @@ import urllib,urllib2
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'Drupal_0004' # 平台漏洞编号，留空
+    poc_id = '7869874c-e946-4392-934c-f7eeb85b2f10'
     name = 'Drupal 7.31 GetShell via /includes/database/database.inc SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -16,8 +16,8 @@ class Vuln(ABVuln):
         可以添加管理员、造成信息泄露，利用特性也可 getshell。
     ''' # 漏洞描述
     ref = 'https://www.sektioneins.de/en/blog/14-10-15-drupal-sql-injection-vulnerability.html' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'Drupal'  # 漏洞应用名称
     product_version = '<=7.31'  # 漏洞应用版本
 

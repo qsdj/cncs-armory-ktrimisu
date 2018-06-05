@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'Hsort_0006' # 平台漏洞编号，留空
+    poc_id = '514191ce-519b-48ae-81fd-222baed02e3b'
     name = 'Hsort报刊管理系统 post注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -13,15 +13,15 @@ class Vuln(ABVuln):
     desc = '''
         Hsort报刊管理系统 /Comment.aspx post注入。
     ''' # 漏洞描述
-    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0110055
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0110055
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'Hsort'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = 'Hsort_0006'
+    poc_id = 'efb83724-2372-4ee9-ad47-3a3cf34fb957'
     author = '国光'  # POC编写者
     create_date = '2018-05-15' # POC创建时间
 

@@ -6,7 +6,7 @@ import md5
 import urllib2
 
 class Vuln(ABVuln):
-    vuln_id = 'PHPWind_0005' # 平台漏洞编号，留空
+    poc_id = 'b489e5db-e8db-47f8-b4c1-702a31a49e2a'
     name = 'PHPWind 9.0 貝塔 反射XSS'  # 漏洞名称
     level = VulnLevel.LOW  # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型
@@ -14,9 +14,9 @@ class Vuln(ABVuln):
     desc = '''
         漏洞文件：index.php.
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'PHPWind'  # 漏洞应用名称
     product_version = '9.0'  # 漏洞应用版本
 

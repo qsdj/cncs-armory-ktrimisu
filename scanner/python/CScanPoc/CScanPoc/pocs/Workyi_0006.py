@@ -5,23 +5,23 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'Workyi_0006' # 平台漏洞编号，留空
+    poc_id = 'ad370da0-72d6-4bc8-9584-5edf7c1758d7'
     name = 'Workyi人才系统 SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
-    disclosure_date = ''  # 漏洞公布时间
+    disclosure_date = 'Unkonwn'  # 漏洞公布时间
     desc = '''
         Workyi人才系统两处注入,测试版本：2.5.130916
     ''' # 漏洞描述
-    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0115124
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0115124
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'Workyi人才系统'  # 漏洞应用名称
     product_version = '2.5.130916'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = 'workyi_0000' # 平台 POC 编号，留空
+    poc_id = '2258e243-5463-49eb-86ca-aaa73f586df8'
     author = '国光'  # POC编写者
     create_date = '2018-05-22' # POC创建时间
 

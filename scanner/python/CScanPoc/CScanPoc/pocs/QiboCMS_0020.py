@@ -7,7 +7,7 @@ import string
 import hashlib
 
 class Vuln(ABVuln):
-    vuln_id = 'QiboCMS_0020' # 平台漏洞编号，留空
+    poc_id = '6ec10d40-beb4-4ad8-bb3f-0efd067eeda1'
     name = '齐博分类系统 远程代码执行漏洞洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型
@@ -15,9 +15,9 @@ class Vuln(ABVuln):
     desc = '''
         QiboCMS 存在二次SQL注入导致的命令执行，可GetShell.
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'QiboCMS(齐博CMS)'  # 漏洞应用名称
     product_version = '<2015.06.30'  # 漏洞应用版本
 

@@ -6,7 +6,7 @@ import urllib,urllib2
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'XAMPP_0001' # 平台漏洞编号，留空
+    poc_id = '9dca075f-06ea-4c43-b8cb-9c2cf16ae6f0'
     name = 'XAMPP 1.7.3 /xampp/showcode.php 任意文件下载' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型
@@ -16,8 +16,8 @@ class Vuln(ABVuln):
         XAMPP 1.7.3 /xampp/showcode.php 任意文件下载漏洞。
     ''' # 漏洞描述
     ref = 'https://www.exploit-db.com/exploits/15370/' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'XAMPP'  # 漏洞应用名称
     product_version = '1.7.3'  # 漏洞应用版本
 

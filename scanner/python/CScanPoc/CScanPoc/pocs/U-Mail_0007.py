@@ -7,7 +7,7 @@ import re
 import hashlib
 
 class Vuln(ABVuln):
-    vuln_id = 'U-Mail_0007' # 平台漏洞编号，留空
+    poc_id = 'f901c727-c126-4338-b144-bb9d8219a719'
     name = 'U-Mail /webmail/userapply.php 物理路径泄漏' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
@@ -17,11 +17,11 @@ class Vuln(ABVuln):
         Warning: mysql_num_rows(): supplied argument is not a valid MySQL result resource
         in D:\ProgramFiles\umail\WorldClient\html\userapply.php on line 0
     ''' # 漏洞描述
-    ref = '' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'U-Mail'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):

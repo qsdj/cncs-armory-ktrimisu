@@ -6,7 +6,7 @@ import urllib,urllib2
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'JeeCMS_0011' # 平台漏洞编号，留空
+    poc_id = '79068733-2d05-496d-afa2-1eba2813edc4'
     name = 'JeeCMS任意文件下载导致敏感信息泄露' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型
@@ -14,11 +14,11 @@ class Vuln(ABVuln):
     desc = '''
         JeeCMSS中 /download.jspx 文件用于文件下载,fpath及filename参数未做正确过滤限制,导致可下载任意文件
     ''' # 漏洞描述
-    ref = '' # 漏洞来源http://wooyun.org/bugs/wooyun-2014-077960
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源http://wooyun.org/bugs/wooyun-2014-077960
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'JeeCMS'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):

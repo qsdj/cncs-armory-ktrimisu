@@ -6,7 +6,7 @@ import urllib
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'XDCMS_0001' # 平台漏洞编号，留空
+    poc_id = '2bd8922e-38ac-4c02-a40d-c873a1fb42c0'
     name = 'XDCMS网上订餐系统 sql注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -15,11 +15,11 @@ class Vuln(ABVuln):
         旭东企业网站管理系统订餐网站管理系统，主要使用PHP开发的在线订餐门户网站系统，集成在线订餐、团购、积分商城、优惠券、新闻资讯、在线订单、在线支付、生成订单短信/邮箱通知、点评、Baidu地图、无线打印机、手机订餐功能于一体餐饮行业门户。
         XDCMS网上订餐系统 /index.php?m=member&f=register_save SQL注入漏洞。
     ''' # 漏洞描述
-    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=94532
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=94532
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'XDCMS(旭东企业网站管理系统)'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):

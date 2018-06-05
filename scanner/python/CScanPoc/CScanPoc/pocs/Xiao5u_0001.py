@@ -6,7 +6,7 @@ import urllib,urllib2
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'Xiao5u_0001' # 平台漏洞编号，留空
+    poc_id = '709dc67d-aef3-409a-917e-d58c66a1063f'
     name = '校无忧建站系统 /TeachView.asp SQL注入漏洞' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -14,9 +14,9 @@ class Vuln(ABVuln):
     desc = '''
         Xiao5u cms website have sql injection error.
     ''' # 漏洞描述
-    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=065350
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=065350
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'Xiao5u(校无忧)'  # 漏洞应用名称
     product_version = '非商业授权所有版本'  # 漏洞应用版本
 

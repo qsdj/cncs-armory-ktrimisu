@@ -6,7 +6,7 @@ import re
 import urlparse
 
 class Vuln(ABVuln):
-    vuln_id = 'QiboCMS_0001' # 平台漏洞编号，留空
+    poc_id = 'a66c0ac9-8e22-4647-aa31-6a1d7e0016e4'
     name = 'QiboCMS V5.0 本地文件包含漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型
@@ -14,9 +14,9 @@ class Vuln(ABVuln):
     desc = '''
         Qibocms /hr/listperson.php 系统文件包含致无限制Getshell.
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'QiboCMS(齐博CMS)'  # 漏洞应用名称
     product_version = 'V5.0'  # 漏洞应用版本
 

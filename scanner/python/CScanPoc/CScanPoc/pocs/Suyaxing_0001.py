@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'Suyaxing_0001' # 平台漏洞编号，留空
+    poc_id = '4f7b797a-d04c-4021-9362-f92bbf053b69'
     name = '苏亚星校园管理系统 信息泄露'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
@@ -12,11 +12,11 @@ class Vuln(ABVuln):
     desc = '''
         南京苏亚星校园管理系统设计缺陷导致获取任意管理员明文密码（无需登录）。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = '苏亚星校园管理系统'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版
+    product_version = 'Unkonwn'  # 漏洞应用版
 
 class Poc(ABPoc):
     poc_id = '4c35be40-cfbd-4b5d-945e-1612acb52890'

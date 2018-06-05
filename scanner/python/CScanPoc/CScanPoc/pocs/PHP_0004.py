@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'PHP_0004'  # 平台漏洞编号，留空
+    poc_id = '7e998fcb-e951-47c5-b7cc-a0a787969148'
     name = 'PHP-CGI 远程代码执行'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE  # 漏洞类型
@@ -17,7 +17,7 @@ class Vuln(ABVuln):
         其中Apache+mod_php和nginx+php-fpm不受此漏洞影响。
     '''  # 漏洞描述
     ref = 'http://www.venustech.com.cn/NewsInfo/124/13680.Html'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
     cve_id = 'CVE-2012-1823'  # cve编号
     product = 'PHP'  # 漏洞应用名称
     product_version = 'php < 5.3.12 or php < 5.4.2'  # 漏洞应用版本

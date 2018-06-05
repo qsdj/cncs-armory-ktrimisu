@@ -7,7 +7,7 @@ import time
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'WordPress_0046' # 平台漏洞编号，留空
+    poc_id = '4e5ca08d-fd1c-4a62-85f6-4793f4777297'
     name = 'WordPress Simple Ads Manager-Multiple 插件SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -16,7 +16,7 @@ class Vuln(ABVuln):
         WordPress Simple Ads Manager-Multiple 插件SQL注入
     ''' # 漏洞描述
     ref = 'https://www.exploit-db.com/exploits/36613/' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
     cve_id = 'CVE-2015-2824' #cve编号
     product = 'WordPress'  # 漏洞应用名称
     product_version = 'WordPress Simple Ads Manager-Multiple'  # 漏洞应用版本

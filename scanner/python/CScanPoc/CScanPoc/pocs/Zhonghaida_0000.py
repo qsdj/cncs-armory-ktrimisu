@@ -4,18 +4,18 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'Zhonghaida_0000' # 平台漏洞编号，留空
+    poc_id = 'e4b52785-fdec-4296-af51-a4bd845b3fc2'
     name = '中海达VNet6专业型参考站接收机 默认口令登录'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.OTHER # 漏洞类型
-    disclosure_date = ''  # 漏洞公布时间
+    disclosure_date = 'Unkonwn'  # 漏洞公布时间
     desc = '''
         该产品是用于：滑坡监测，尾矿库安全监测，水库大坝安全监测，桥梁健康监测，沉降塌陷监测，建筑监测，机械精密控制，精准农业导航，和精密定位的GNSS接收机。
         中海达VNet6专业型参考站接收机 用默认口令(zhdgps/zhdgps)即可登录成功。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = '中海达VNet6专业型参考站接收机'  # 漏洞应用名称
     product_version = '中海达VNet6专业型参考站接收机'  # 漏洞应用版本
 

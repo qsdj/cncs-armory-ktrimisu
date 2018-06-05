@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'ZFCMS_0001' # 平台漏洞编号，留空
+    poc_id = '7e266c77-f889-48f5-8199-2ddd75d2b1f4'
     name = '政府某通用CMS 任意文件下载' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型
@@ -14,15 +14,15 @@ class Vuln(ABVuln):
         政府某通用CMS任意文件下载导致webshell
         google搜索找到的任意文件下载：inurl:upload/FileDownload.jsp
     ''' # 漏洞描述
-    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=068728
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=068728
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = '政府某通用CMS'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = '' # 平台 POC 编号，留空
+    poc_id = 'Unkonwn' # 平台 POC 编号，留空
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 

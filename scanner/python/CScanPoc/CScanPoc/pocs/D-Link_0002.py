@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'D-Link_0002' # 平台漏洞编号，留空
+    poc_id = '5e64afaa-ff5f-4e3f-82ac-0e3d641651ef'
     name = 'D-Link Authenticated Local File Disclosure'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
@@ -16,8 +16,8 @@ class Vuln(ABVuln):
         to include files from local resources.
     '''  # 漏洞描述
     ref = 'https://www.exploit-db.com/exploits/37516/'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'D-Link'  # 漏洞应用名称
     product_version = 'DSL-2750u / DSL-2730u'  # 漏洞应用版本
 

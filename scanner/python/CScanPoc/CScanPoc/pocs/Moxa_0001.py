@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'Moxa_0001' # 平台漏洞编号，留空
+    poc_id = '46be6662-5112-4fe7-87b8-841ccc43d83a'
     name = 'Moxa NPorts web console! 未授权访问' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.MISCONFIGURATION # 漏洞类型
@@ -14,14 +14,14 @@ class Vuln(ABVuln):
         Moxa NPort's web console! 未授权访问。
     ''' # 漏洞描述
     ref = 'https://nvd.nist.gov/vuln/detail/CVE-2017-16727' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
     cve_id = 'CVE-2017-16727' #cve编号
     product = 'Moxa'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = 'moxa_0000' # 平台 POC 编号，留空
+    poc_id = 'ed2dc24a-4a40-411e-94e5-664a7879782e'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 

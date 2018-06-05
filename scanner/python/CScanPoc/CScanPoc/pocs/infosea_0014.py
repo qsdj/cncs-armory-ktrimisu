@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'Infosea_0014' # 平台漏洞编号，留空
+    poc_id = 'c90269aa-26f3-4bdc-9356-efe6fa68014e'
     name = '北京清大新洋图书检索系统 任意文件下载'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型
@@ -16,9 +16,9 @@ class Vuln(ABVuln):
         module/exceldown.jsp
         module/exceldownload.jsp
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = '清大新洋'  # 漏洞应用名称
     product_version = '北京清大新洋图书检索系统'  # 漏洞应用版本
 

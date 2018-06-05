@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
 class Vuln(ABVuln):
-    vuln_id = 'BlueCMS_0001' # 平台漏洞编号，留空
+    poc_id = 'b0bfb0b7-5c6c-4c17-8a69-178e55eccd7e'
     name = 'BlueCMS v1.6 sp1 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -17,8 +17,8 @@ class Vuln(ABVuln):
         $ad = $db->getone("SELECT * FROM ".table('ad')." WHERE ad_id =".$ad_id); //直接代入查询。
     '''  # 漏洞描述
     ref = 'https://www.seebug.org/vuldb/ssvid-20007'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'BlueCMS'  # 漏洞应用名称
     product_version = 'BlueCMS v1.6 sp1'  # 漏洞应用版本
 

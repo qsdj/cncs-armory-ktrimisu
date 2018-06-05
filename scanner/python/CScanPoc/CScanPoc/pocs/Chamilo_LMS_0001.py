@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
 class Vuln(ABVuln):
-    vuln_id = 'Chamilo_LMS_0001' # 平台漏洞编号，留空
+    poc_id = '7328c9ee-7aa9-461e-9364-2b41bb83ea1f'
     name = 'Chamilo LMS 1.9.10 跨站脚本漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型
@@ -14,8 +14,8 @@ class Vuln(ABVuln):
         Chamilo LMS 1.9.10 /main/calendar/agenda_list.php 跨站脚本漏洞。
     '''  # 漏洞描述
     ref = 'https://www.exploit-db.com/exploits/36435/'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'Chamilo LMS'  # 漏洞应用名称
     product_version = 'Chamilo LMS 1.9.10'  # 漏洞应用版本
 

@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'WordPress_0050' # 平台漏洞编号，留空
+    poc_id = 'db5dd278-44f8-4546-8e37-9567630b3ead'
     name = 'WordPress Business Intelligence 插件SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -14,8 +14,8 @@ class Vuln(ABVuln):
         https://www.exploit-db.com/exploits/36600/
     ''' # 漏洞描述
     ref = 'https://www.exploit-db.com/exploits/36600/' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'WordPress'  # 漏洞应用名称
     product_version = 'WordPress Business Intelligence 1.6.1'  # 漏洞应用版本
 

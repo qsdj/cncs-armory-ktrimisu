@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'ShopBuilder_0000' # 平台漏洞编号，留空
+    poc_id = 'f19ff0a0-4f2a-4af0-9019-f0df6208b0d7'
     name = 'ShopBuilder商城 v5.6.1 sql注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -14,8 +14,8 @@ class Vuln(ABVuln):
         ShopBuilder商城 v5.6.1 sql注入
     ''' # 漏洞描述
     ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=067088' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'ShopBuilder'  # 漏洞应用名称
     product_version = '5.6.1'  # 漏洞应用版本
 

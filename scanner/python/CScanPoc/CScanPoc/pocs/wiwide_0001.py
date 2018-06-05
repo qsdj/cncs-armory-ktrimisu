@@ -6,7 +6,7 @@ import re
 import urllib2
 
 class Vuln(ABVuln):
-    vuln_id = 'Wiwide_0001'  # 平台漏洞编号，留空
+    poc_id = '77501c66-b515-44e3-becd-e73bf939ac14'
     name = '迈外迪wifi Wimaster 1.0 远程密码修改漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.OTHER  # 漏洞类型
@@ -14,11 +14,11 @@ class Vuln(ABVuln):
     desc = '''
         迈外迪wifi的Wimaster未授权直接修改密码漏洞。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = '迈外迪wifi'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'fb3fa839-c5da-446c-afad-10f112fc5643'

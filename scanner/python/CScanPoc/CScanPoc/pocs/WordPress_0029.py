@@ -5,8 +5,8 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'WordPress_0029' # 平台漏洞编号，留空
-    name = '' # 漏洞名称
+    poc_id = 'a807975d-fdad-4906-869d-7d0b99e414b2'
+    name = 'Unkonwn' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2015-01-27'  # 漏洞公布时间
@@ -14,8 +14,8 @@ class Vuln(ABVuln):
         WordPress主题Pagelines和Platform权限提升漏洞。
     ''' # 漏洞描述
     ref = 'http://www.freebuf.com/vuls/57594.html' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'WordPress'  # 漏洞应用名称
     product_version = 'WordPress主题Pagelines和Platform'  # 漏洞应用版本
 

@@ -5,11 +5,11 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import time
 
 class Vuln(ABVuln):
-    vuln_id = 'Joomla_0022' # 平台漏洞编号，留空
+    poc_id = '33ae2823-0fe8-4e81-9fa8-e8cedac9db3e'
     name = 'Joomla! SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
-    disclosure_date = ''  # 漏洞公布时间
+    disclosure_date = 'Unkonwn'  # 漏洞公布时间
     desc = '''
         Joomla! /index.php 存在多处SQL漏洞。
     '''  # 漏洞描述

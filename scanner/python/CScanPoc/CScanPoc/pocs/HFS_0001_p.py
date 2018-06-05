@@ -6,7 +6,7 @@ import urllib,urllib2
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'HFS_0001_p' # 平台漏洞编号，留空
+    poc_id = '5fb55912-436c-43eb-954e-8ddcad637f46'
     name = 'HFS(HttpFileServer)命令执行' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型
@@ -15,8 +15,8 @@ class Vuln(ABVuln):
         HFS(HttpFileServer)设计缺陷,导致命令执行漏洞的产生,严重影响网站服务器安全.
     ''' # 漏洞描述
     ref = 'https://www.seebug.org/vuldb/ssvid-88860' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'HttpFileServer'  # 漏洞应用名称
     product_version = '2.3'  # 漏洞应用版本
 

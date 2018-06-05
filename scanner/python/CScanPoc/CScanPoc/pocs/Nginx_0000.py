@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'Nginx_0000' # 平台漏洞编号，留空
+    poc_id = 'a05f284e-051b-453a-bb71-dc362d68f085'
     name = 'Nginx HTTP请求源码泄露和拒绝服务'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
@@ -16,7 +16,7 @@ class Vuln(ABVuln):
         此外如果在HTTP请求中添加了目录遍历序列的话，就可以覆盖内存寄存器，导致拒绝服务。
     '''  # 漏洞描述
     ref = 'http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-2263'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
     cve_id = 'CVE-2010-2263'  # cve编号
     product = 'Nginx'  # 漏洞应用名称
     product_version = '0.8 before 0.8.40 and 0.7 before 0.7.66'  # 漏洞应用版本

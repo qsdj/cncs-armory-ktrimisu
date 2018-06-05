@@ -6,7 +6,7 @@ import re
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'JCMS_0010' # 平台漏洞编号，留空
+    poc_id = '529e2ad4-4943-4d62-8d58-7f54d9e9fd8b'
     name = '大汉政府信息公开网站群存在getshell的风险' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.MISCONFIGURATION # 漏洞类型
@@ -14,15 +14,15 @@ class Vuln(ABVuln):
     desc = '''
         大汉政府信息公开网站群存在getshell的风险,管理后台权限绕过，进入后台后轻松GetShell.
     ''' # 漏洞描述
-    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0152666
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0152666
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'Hanweb(大汉)'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = 'JCMS_0010'
+    poc_id = '41f669fd-8a1f-4693-8269-83f734eed54b'
     author = '国光'  # POC编写者
     create_date = '2018-05-13' # POC创建时间
 

@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'timber2005_0006' # 平台漏洞编号，留空
+    poc_id = '699379fd-c7a8-4860-a238-b3ed2eea1aed'
     name = '天柏在线培训系统sql注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -13,15 +13,15 @@ class Vuln(ABVuln):
     desc = '''
         天柏在线培训系统 /Web_Org/Class_Info.aspx?courseid=5027 sql注入漏洞。
     ''' # 漏洞描述
-    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0143143
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0143143
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = '天柏在线培训系统'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = 'tianbo_0006' # 平台 POC 编号，留空
+    poc_id = 'e902848b-2d71-41ac-a751-de6dbd2f7b99'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 

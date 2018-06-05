@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'WordPress_0089' # 平台漏洞编号，留空
+    poc_id = 'cf9c1a85-9ba9-4f76-8222-75432154fdfe'
     name = 'WordPress Plugin ShortCode 0.2.3 - Local File Inclusion' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型
@@ -14,14 +14,14 @@ class Vuln(ABVuln):
         WordPress Plugin ShortCode 0.2.3 - Local File Inclusion
     ''' # 漏洞描述
     ref = 'http://www.exploit-db.com/exploits/34436/' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
     cve_id = 'CVE-2014-5465' #cve编号
     product = 'WordPress'  # 漏洞应用名称
     product_version = 'WordPress Plugin ShortCode 0.2.3'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = 'WordPress_0089' # 平台 POC 编号，留空
+    poc_id = 'e4eb910d-d819-425f-b03c-c6014376ca16'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 

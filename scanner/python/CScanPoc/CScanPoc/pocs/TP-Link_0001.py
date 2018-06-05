@@ -7,7 +7,7 @@ import time
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'TP-Link_0001' # 平台漏洞编号，留空
+    poc_id = '60002cc0-403a-45c3-9f2d-646945f5ffcf'
     name = 'TP-Link 信息泄露'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
@@ -15,9 +15,9 @@ class Vuln(ABVuln):
     desc = '''  
         TP-ink TD-8820路由器未授权下载配置文件可解密。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'TP-Link'  # 漏洞应用名称
     product_version = 'TD-8820'  # 漏洞应用版本
 

@@ -6,7 +6,7 @@ import time
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'Comexe_0008' # 平台漏洞编号，留空
+    poc_id = '05d2fedf-bc28-48f6-8bec-3f177527ad43'
     name = '科迈RAS标准版客户端CmxUserMap.php页面a参数注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -14,15 +14,15 @@ class Vuln(ABVuln):
     desc = '''
         科迈RAS标准版客户端 CmxUserMap.php页面a参数注入。
     ''' # 漏洞描述
-    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0117921
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0117921
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = '科迈RAS系统'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = 'comexe_0007' # 平台 POC 编号，留空
+    poc_id = '2940a7c4-e5fe-4d4b-83a2-0305625b7fc6'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 

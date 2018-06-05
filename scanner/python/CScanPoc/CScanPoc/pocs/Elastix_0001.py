@@ -6,7 +6,7 @@ import re
 import time
 
 class Vuln(ABVuln):
-    vuln_id = 'Elastix_0001' # 平台漏洞编号，留空
+    poc_id = 'a7b08e12-a4d3-4e84-9c54-ebaf1efc395d'
     name = 'Elastix 2.x SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -15,7 +15,7 @@ class Vuln(ABVuln):
         Vulnerable Source Code snippet in "a2billing/customer/iridium_threed.php".
     '''  # 漏洞描述
     ref = 'https://www.exploit-db.com/exploits/36305/'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
     cve_id = 'CVE-2015-1875'  # cve编号
     product = 'Elastix'  # 漏洞应用名称
     product_version = '2.x'  # 漏洞应用版本

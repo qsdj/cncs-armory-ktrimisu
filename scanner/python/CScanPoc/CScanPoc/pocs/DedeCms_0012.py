@@ -6,7 +6,7 @@ import urllib,urllib2
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'DedeCms_0012' # 平台漏洞编号，留空
+    poc_id = '9380c125-206a-49c1-91ce-09aa8f3c243f'
     name = '织梦CMS full Path Disclosure' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型

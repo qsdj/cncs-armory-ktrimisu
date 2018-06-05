@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'PHPCMS_0009' # 平台漏洞编号，留空
+    poc_id = 'e4721ed5-58f2-4cf5-9246-347e918e92fa'
     name = 'PHPCMS 搜索跨站脚本' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型
@@ -14,10 +14,10 @@ class Vuln(ABVuln):
         PHPCMS /search/?type= 搜索跨站脚本漏洞。
     ''' # 漏洞描述
     ref = 'https://www.seebug.org/vuldb/ssvid-19058' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'PHPCMS'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):

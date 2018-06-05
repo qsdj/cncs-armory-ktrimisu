@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'AVCON6_0000' # 平台漏洞编号，留空
+    poc_id = '10e32134-9327-4f09-930d-4501b0a14c1e'
     name = 'AVCON6 系统管理平台信息泄漏' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
@@ -14,10 +14,10 @@ class Vuln(ABVuln):
         华平 AVCON6 统一协同通讯系统管理平台 /AvconWebService/fingerprint.jsp 信息泄漏漏洞。
     ''' # 漏洞描述
     ref = 'https://www.secpulse.com/archives/22740.html' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'AVCON6'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):

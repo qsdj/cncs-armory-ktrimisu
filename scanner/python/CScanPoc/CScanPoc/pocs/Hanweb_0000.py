@@ -6,7 +6,7 @@ import urllib,urllib2
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'Hanweb_0000' # 平台漏洞编号，留空
+    poc_id = '62529991-14b2-4ca9-9225-6e3c2b7ff5df'
     name = '大汉JCMS /opr_import_discussion.jsp 任意文件上传漏洞*' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.FILE_UPLOAD # 漏洞类型

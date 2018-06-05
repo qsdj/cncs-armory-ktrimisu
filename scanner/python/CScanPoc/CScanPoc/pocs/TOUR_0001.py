@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 from time import clock
 
 class Vuln(ABVuln):
-    vuln_id = 'TOUR_0001' # 平台漏洞编号，留空
+    poc_id = '9c715004-4a95-43d6-9564-6927bcbb44a7'
     name = 'TOUR旅游网站管理系统 SQL注入漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -13,9 +13,9 @@ class Vuln(ABVuln):
     desc = '''
         TOUR旅游网站管理系统存在SQL注入，服务商、CMS版本不明，很多旅游网站在用。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'TOUR旅游网站管理系统'  # 漏洞应用名称
     product_version = '*'  # 漏洞应用版本
 

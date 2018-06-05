@@ -7,7 +7,7 @@ import re
 import hashlib
 
 class Vuln(ABVuln):
-    vuln_id = 'LotusCMS_0000' # 平台漏洞编号，留空
+    poc_id = 'abfbc226-c291-4de2-8a94-4a12e52ef583'
     name = 'LotusCMS 3.0 /core/lib/router.php 代码执行漏洞' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型
@@ -16,8 +16,8 @@ class Vuln(ABVuln):
         LotusCMS 3.0 /core/lib/router.php 代码执行漏洞
     ''' # 漏洞描述
     ref = 'http://www.freebuf.com/articles/web/53656.html' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'LotusCMS'  # 漏洞应用名称
     product_version = '3.0'  # 漏洞应用版本
 

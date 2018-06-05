@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'WordPress_0034' # 平台漏洞编号，留空
+    poc_id = 'dc26e043-3935-4908-85eb-7e2926b9f896'
     name = 'WordPress NewStatPress Plugin 0.9.8 XSS'  # 漏洞名称
     level = VulnLevel.MED  # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型
@@ -13,8 +13,8 @@ class Vuln(ABVuln):
         WordPress NewStatPress Plugin 0.9.8 /wp-admin/admin.php XSS.
     '''  # 漏洞描述
     ref = 'https://www.exploit-db.com/exploits/37107/'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'WordPress'  # 漏洞应用名称
     product_version = 'NewStatPress Plugin 0.9.8'  # 漏洞应用版本
 

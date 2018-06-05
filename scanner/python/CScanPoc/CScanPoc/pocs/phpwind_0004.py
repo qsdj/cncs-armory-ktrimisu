@@ -6,7 +6,7 @@ import md5
 import urllib2
 
 class Vuln(ABVuln):
-    vuln_id = 'PHPWind_0004' # 平台漏洞编号，留空
+    poc_id = 'c89c2980-6d8f-4805-bdab-ff5670344bb6'
     name = 'PHPWind 9.0 Jplayer.swf XSS'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型
@@ -14,9 +14,9 @@ class Vuln(ABVuln):
     desc = '''
         PHPWind 9.0 /res/js/dev/util_libs/jPlayer/Jplayer.swf 跨站脚本漏洞
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'PHPWind'  # 漏洞应用名称
     product_version = '9.0'  # 漏洞应用版本
 

@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'PHPCMS_0011' # 平台漏洞编号，留空
+    poc_id = '42a2d975-ad77-4219-a2cc-6219bb14a721'
     name = 'PHPCMS 2008黄页模块代码执行'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型
@@ -13,8 +13,8 @@ class Vuln(ABVuln):
         PHPCMS 2008黄页模块 /yp/product.php?pagesize= PHPCMS 代码执行漏洞。
     '''  # 漏洞描述
     ref = 'http://vul.jdsec.com/index.php/vul/JDSEC-POC-20141129-0564'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'PHPCMS'  # 漏洞应用名称
     product_version = 'PHPCMS 2008黄页模块'  # 漏洞应用版本
 

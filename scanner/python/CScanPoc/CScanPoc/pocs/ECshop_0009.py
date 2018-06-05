@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'Ecshop_0009' # 平台漏洞编号，留空
+    poc_id = 'b866fe05-46ca-4cf0-8ae2-25c524a6f082'
     name = 'Ecshop SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -14,8 +14,8 @@ class Vuln(ABVuln):
         Ecshop /api/checkorder.php 注入通杀2.6-2.7 GBK版本。
     ''' # 漏洞描述
     ref = 'http://www.shellsec.com/tech/74933.html' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'Ecshop'  # 漏洞应用名称
     product_version = '2.6-2.7 GBK版本'  # 漏洞应用版本
 

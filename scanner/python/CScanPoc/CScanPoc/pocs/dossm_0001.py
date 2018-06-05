@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re, time
 
 class Vuln(ABVuln):
-    vuln_id = 'DOSSM_0001' # 平台漏洞编号，留空
+    poc_id = '3a6cd3d1-e2f3-4059-892d-bf0842c19ea8'
     name = '广州问途网络营销系统 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -16,11 +16,11 @@ class Vuln(ABVuln):
         问题参数：client_account
         说明：该系统，凡是出现参数 client_account 的链接，都存在SQL注入漏洞。无论 GET or POST 类型。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'DOSSM(广州问途网络营销系统)'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '98cf00c3-930e-4a69-b393-864323e303e1'

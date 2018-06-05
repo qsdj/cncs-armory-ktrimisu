@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'Zabbix_0001_p' # 平台漏洞编号，留空
+    poc_id = 'adcfc763-2b69-4ec8-b3fc-78420b080832'
     name = 'Zabbix httpmon.php SQL 注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -13,9 +13,9 @@ class Vuln(ABVuln):
     desc = '''
     Zabbix 的httpmon.php文件有一个SQL注入漏洞。
     ''' # 漏洞描述
-    ref = '' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'Zabbix'  # 漏洞应用名称
     product_version = ' Zabbix 2.0.8 '  # 漏洞应用版本
 

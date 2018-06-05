@@ -6,7 +6,7 @@ import re
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'Zabbix_0008' # 平台漏洞编号，留空
+    poc_id = '4e63c7c0-8094-4c87-aab0-47751df6abb0'
     name = '极光推送之zabbix注入导致命令执行' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型
@@ -15,11 +15,11 @@ class Vuln(ABVuln):
         极光推送，英文简称 JPush，是一个面向普通开发者开放的，免费的第三方消息推送服务。
         极光推送之zabbix /httpmon.php?applications=2 注入导致命令执行。
     ''' # 漏洞描述
-    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=084877
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=084877
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'Zabbix'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):

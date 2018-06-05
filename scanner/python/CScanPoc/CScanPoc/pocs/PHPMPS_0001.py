@@ -6,7 +6,7 @@ import re
 import urllib2
 
 class Vuln(ABVuln):
-    vuln_id = 'PHPMPS_0001' # 平台漏洞编号，留空
+    poc_id = 'af512ce5-6235-40b7-9b35-398dff5f1cb2'
     name = 'PHPMPS v2.3 /search.php SQL注入漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -14,9 +14,9 @@ class Vuln(ABVuln):
     desc = '''
         PHPMPS 在修复漏洞时误将修复代码注释，造成 SQL 注入漏洞，可以获取管理员账号密码等。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'PHPMPS'  # 漏洞应用名称
     product_version = 'v2.3'  # 漏洞应用版本
 

@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'QiboCMS_0016' # 平台漏洞编号，留空
+    poc_id = 'ddb21ccc-2e27-46fa-922a-37f8a1bd270a'
     name = '齐博CMS XSS' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型
@@ -14,10 +14,10 @@ class Vuln(ABVuln):
         QiboCMS  /search.php?module_db[]=<h1>xss-vulnerable</h1><!-- 跨站脚本攻击漏洞。
     ''' # 漏洞描述
     ref = 'https://www.exploit-db.com/exploits/15370/' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'QiboCMS(齐博CMS)'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):

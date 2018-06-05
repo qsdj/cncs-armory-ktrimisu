@@ -7,7 +7,7 @@ import re
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'Skynj_0029' # 平台漏洞编号，留空
+    poc_id = '1a3f49b2-1b83-4f64-9363-777a99d6a7e0'
     name = '南京擎天政务系统SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -16,15 +16,15 @@ class Vuln(ABVuln):
         南京擎天政务系统SQL注入漏洞：
         /webpages/login_ex.aspx
     ''' # 漏洞描述
-    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0100235
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0100235
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = '擎天政务系统'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = 'skytech_0029'
+    poc_id = '0efabc5c-d919-439a-81a3-0ee98d93fc00'
     author = '国光'  # POC编写者
     create_date = '2018-05-15' # POC创建时间
 

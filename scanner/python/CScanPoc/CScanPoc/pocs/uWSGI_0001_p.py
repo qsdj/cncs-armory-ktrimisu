@@ -5,16 +5,16 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 
 class Vuln(ABVuln):
-    vuln_id = 'uWSGI_0001_p'  # 平台漏洞编号，留空
+    poc_id = 'd05a4900-bc5e-4793-8389-75feb70d8226'
     name = 'uWSGI PHP目录穿越漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_TRAVERSAL  # 漏洞类型
-    disclosure_date = ''  # 漏洞公布时间
+    disclosure_date = 'Unkonwn'  # 漏洞公布时间
     desc = '''
     uWSGI 2.0.17之前的PHP插件，没有正确的处理DOCUMENT_ROOT检测，导致用户可以通过..%2f来跨域目录，读取或运行DOCUMENT_ROOT目录以外的文件。
     '''  # 漏洞描述
     ref = 'https://github.com/vulhub/vulhub/tree/master/uwsgi/CVE-2018-7490'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
     cve_id = 'CVE-2018-7490'  # cve编号
     product = 'uWSGI'  # 漏洞应用名称
     product_version = 'uWSGI < 2.0.17'  # 漏洞应用版本

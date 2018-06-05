@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'joomla_0016' # 平台漏洞编号，留空
+    poc_id = 'c881c5f4-4439-4242-81a5-246dedf38e6c'
     name = 'Joomla! Spider Form Maker <=3.4 SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

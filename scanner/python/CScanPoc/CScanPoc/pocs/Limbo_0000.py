@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'Limbo_0000' # 平台漏洞编号
+    poc_id = 'b562abbd-4512-469b-a215-a4042f3a6978'
     name = 'Limbo CMS Module event 1.0 - Remote File Include Vulnerability' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

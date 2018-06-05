@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'Ecshop_0001' # 平台漏洞编号，留空
+    poc_id = 'bb5f2114-a312-4f42-b7f1-aa8bca5d400d'
     name = 'Ecshop /spellchecker.php 信息泄漏漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
@@ -14,8 +14,8 @@ class Vuln(ABVuln):
         ECShop是国内一款流行的网店管理系统软件，其2.7.3版本某个补丁存在后门文件，攻击者利用后门可以控制网站。
     '''  # 漏洞描述
     ref = 'https://www.cnblogs.com/LittleHann/p/4523793.html'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'Ecshop'  # 漏洞应用名称
     product_version = '2.7.3'  # 漏洞应用版本
 

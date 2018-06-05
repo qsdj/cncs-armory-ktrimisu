@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'WDS_CMS_0001'  # 平台漏洞编号，留空
+    poc_id = '6c6c5b4c-2d32-4dfd-846d-f640af2eccbf'
     name = 'WDS CMS /wds_news/article.php SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION  # 漏洞类型
@@ -14,10 +14,10 @@ class Vuln(ABVuln):
     WDSCMS SQL注入漏洞，漏洞位于/wds_news/article.php。
     '''  # 漏洞描述
     ref = 'https://www.exploit-db.com/exploits/37750/'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'WDS CMS'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '8d732f37-76fb-4ec4-9895-c5b6ece8bc39'

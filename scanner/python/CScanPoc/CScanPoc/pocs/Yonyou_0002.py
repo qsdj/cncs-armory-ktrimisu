@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'Yonyou_0002'  # 平台漏洞编号，留空
+    poc_id = '79d3db70-114c-4c8a-9aa7-3c722393f625'
     name = '用友致远A6协同系统 /isNotInTable.jsp SQL Injection'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION  # 漏洞类型

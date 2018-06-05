@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import time
 
 class Vuln(ABVuln):
-    vuln_id = 'Esafenet_0006'  # 平台漏洞编号，留空
+    poc_id = '17b8ee8c-5acb-4cd1-8372-5dbfcbd00264'
     name = '亿赛通数据泄露防护系统(DLP) SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -13,9 +13,9 @@ class Vuln(ABVuln):
     desc = '''
         亿赛通数据泄露防护系统(DLP)，登录处UserId参数注入，导致SQL注入漏洞。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = '亿赛通'  # 漏洞应用名称
     product_version = '亿赛通数据泄露防护系统(DLP)'  # 漏洞应用版本
 

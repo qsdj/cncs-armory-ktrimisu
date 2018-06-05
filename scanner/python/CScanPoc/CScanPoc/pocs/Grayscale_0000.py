@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'Grayscale_0000' # 平台漏洞编号
+    poc_id = 'b6503b5b-52ad-4d2c-81f9-fb1847d99898'
     name = 'Grayscale BandSite CMS 1.1 footer.php this_year Parameter XSS' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型

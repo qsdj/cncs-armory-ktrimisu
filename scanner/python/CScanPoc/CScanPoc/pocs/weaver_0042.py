@@ -6,7 +6,7 @@ import random
 import base64
 
 class Vuln(ABVuln):
-    vuln_id = 'weaver_0042' # 平台漏洞编号，留空
+    poc_id = '67f08160-57bf-4b52-b535-31ccbaa5d34c'
     name = '泛微e-office getshell'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型
@@ -15,9 +15,9 @@ class Vuln(ABVuln):
         泛微 e-office 前台sql注入导致的 getshell.
         inc/group_user_list/group_xml.php
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = '泛微OA'  # 漏洞应用名称
     product_version = '泛微e-office'  # 漏洞应用版本
 

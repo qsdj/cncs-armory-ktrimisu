@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'PageAdmin_0001'  # 平台漏洞编号，留空
+    poc_id = '4a3be2ad-d302-4d44-b730-7da15c6463a6'
     name = 'PageAdmin v3.0 /e/database/v3.mdb 数据库发现漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.OTHER # 漏洞类型
@@ -12,9 +12,9 @@ class Vuln(ABVuln):
     desc = '''
         PageAdmin数据库下载漏洞 ，可以获取管理员账号，密码、配置信息等非常敏感的信息，可以轻松实现无任何限制获取 WEBSHELL。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'PageAdmin'  # 漏洞应用名称
     product_version = 'v3.0'  # 漏洞应用版本
 

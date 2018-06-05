@@ -6,7 +6,7 @@ import re
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'FSMCMS_0000' # 平台漏洞编号，留空
+    poc_id = '7a2249c3-67eb-446c-a648-da87051cb21e'
     name = 'FSMCMS ColumnID参数注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

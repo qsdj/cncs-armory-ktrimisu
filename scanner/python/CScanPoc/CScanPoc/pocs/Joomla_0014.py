@@ -5,11 +5,11 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'Joomla_0014' # 平台漏洞编号，留空
+    poc_id = '2d7aa34f-9dde-48a2-bbbc-3152cc561f39'
     name = 'Joomla! 命令执行'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型
-    disclosure_date = ''  # 漏洞公布时间
+    disclosure_date = 'Unkonwn'  # 漏洞公布时间
     desc = '''
         Joomla! /index.php 存在命令执行漏洞。
     '''  # 漏洞描述

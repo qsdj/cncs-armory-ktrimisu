@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'ExtMail_0003' # 平台漏洞编号，留空
+    poc_id = '46d33fee-61e3-4ad7-af1b-c26f16d3dabb'
     name = 'ExtMail 反射型XSS'  # 漏洞名称
     level = VulnLevel.LOW  # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型
@@ -13,11 +13,11 @@ class Vuln(ABVuln):
         广州领立斯网络科技 ExtMail 跨站，伪造登陆框。
         /extmail/cgi/index.cgi?__mode=<script>alert(\'testvul\')</script>
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'ExtMail'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '73c36a9c-7aa8-4703-b856-30cba29bc69a'

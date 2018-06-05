@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'EWEBS_0000' # 平台漏洞编号，留空
+    poc_id = '46871340-d259-4188-a262-0fd687cfa791'
     name = '极通EWEBS应用虚拟化系统任意系统文件读取'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型
@@ -13,11 +13,11 @@ class Vuln(ABVuln):
         极通EWEBS应用虚拟化系统任意文件读取利用，文件操作参数未加过滤。
         Language_S=../../../../windows/system32/drivers/etc/hosts
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'EWEBS'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '976e966b-51f8-47ad-8c49-1cda0660662c'

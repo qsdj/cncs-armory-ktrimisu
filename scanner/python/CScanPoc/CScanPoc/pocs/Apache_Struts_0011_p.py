@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'Apache_Struts_0011_p' # 平台漏洞编号，留空
+    poc_id = 'b4db072b-5833-4685-9913-10f3d90ef1db'
     name = 'Apache Struts2 S2-029远程代码执行' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型
@@ -13,7 +13,7 @@ class Vuln(ABVuln):
         Apache Struts2中存在漏洞，Apache在强制时支持框架，对给定的标签执行属性值的双重评估，因此可以传递一个值，该值将在呈现标签属性时再次被评估。  
     ''' # 漏洞描述
     ref = 'https://cwiki.apache.org/confluence/display/WW/S2-029' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
     cve_id = 'CVE-2016-0785' #cve编号
     product = 'Apache Struts'  # 漏洞应用名称
     product_version = 'Struts 2.0.0 - Struts 2.3.24.1 (except 2.3.20.3)'  # 漏洞应用版本

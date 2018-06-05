@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'GlassFish_0001' # 平台漏洞编号，留空
+    poc_id = '47eb154f-0aea-4263-bc48-837dfd91c9d4'
     name = 'GlassFish 任意文件读取' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型
@@ -14,15 +14,15 @@ class Vuln(ABVuln):
         GlassFish 是一款强健的商业兼容应用服务器，达到产品级质量，可免费用于开发、部署和重新分发。开发者可以免费获得源代码，还可以对代码进行更改。
         应用服务器GlassFish /theme/META-INF 存在通用任意文件读取漏洞。
     ''' # 漏洞描述
-    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0144595
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0144595
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'GlassFish'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = 'glassfish_0000' # 平台 POC 编号，留空
+    poc_id = 'ff588de2-91b7-4e69-b0dc-9c5c3a6ebead'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 

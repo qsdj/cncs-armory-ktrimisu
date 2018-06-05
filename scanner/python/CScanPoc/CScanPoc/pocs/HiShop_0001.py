@@ -6,7 +6,7 @@ import urlparse
 import time
 
 class Vuln(ABVuln):
-    vuln_id = 'HiShop_0001' # 平台漏洞编号，留空
+    poc_id = '77b57649-0706-49e8-b9b1-e81c94cfb0cb'
     name = 'HiShop易分销系统 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

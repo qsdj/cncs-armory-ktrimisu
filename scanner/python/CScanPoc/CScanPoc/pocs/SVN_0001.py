@@ -6,7 +6,7 @@ import urllib,urllib2
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'SVN_0001' # 平台漏洞编号，留空
+    poc_id = 'd623ea84-adcd-4a4c-b710-141824e269e6'
     name = 'SVN 信息泄露漏洞' # 漏洞名称
     level = VulnLevel.LOW # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
@@ -15,8 +15,8 @@ class Vuln(ABVuln):
         SVN配置不当导致性信息泄漏漏洞的产生.
     ''' # 漏洞描述
     ref = 'https://wps2015.org/drops/drops/SVN%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E5%8F%8A%E5%AE%89%E5%85%A8%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9.html' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'All site svn configuration wrong'  # 漏洞应用名称
     product_version = '*'  # 漏洞应用版本
 

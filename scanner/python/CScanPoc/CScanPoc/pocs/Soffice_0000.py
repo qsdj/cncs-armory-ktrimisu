@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib, time, re
 
 class Vuln(ABVuln):
-    vuln_id = 'Soffice_0000' # 平台漏洞编号，留空
+    poc_id = 'd2ddb363-a5ba-460e-a3dc-38fa57d967db'
     name = 'Soffice 5 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -13,9 +13,9 @@ class Vuln(ABVuln):
     desc = '''
         赛飞软件Soffice全方位协同办公平台 /advicemanage/sendsuggest.aspx 页面参数过滤不严谨，导致SQL注入漏洞。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'Soffice'  # 漏洞应用名称
     product_version = '5'  # 漏洞应用版本
 

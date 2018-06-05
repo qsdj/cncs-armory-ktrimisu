@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'YXCMS_0003' # 平台漏洞编号，留空
+    poc_id = '8f42efcc-fec5-4f77-a175-d27112e6b86d'
     name = 'YXCMS 文件上传getshell'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_UPLOAD # 漏洞类型
@@ -15,10 +15,10 @@ class Vuln(ABVuln):
         利用ewebeditor上传漏洞可以新建一个1.asp的文件夹，再配合iis的解析漏洞就可以成功的拿到shell.
     '''  # 漏洞描述
     ref = 'https://www.secpulse.com/archives/27317.html'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'YXCMS(新云CMS)'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '0aec51de-9eb7-4f61-8b68-9ce10898b99f'

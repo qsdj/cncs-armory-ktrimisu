@@ -6,7 +6,7 @@ import socket
 import urllib
 
 class Vuln(ABVuln):
-    vuln_id = 'MS08-067_0001_p'  # 平台漏洞编号，留空
+    poc_id = '4cd914da-aba6-4943-bbed-eed4b4feeb1b'
     name = 'MS08-067 NetAPI32.dll 远程缓冲区溢出漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
@@ -24,7 +24,7 @@ class Vuln(ABVuln):
         development.
     '''  # 漏洞描述
     ref = 'https://docs.microsoft.com/en-us/security-updates/SecurityBulletins/2008/ms08-067'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
     cve_id = 'CVE-2008-4250'  # cve编号
     product = 'Windows'  # 漏洞应用名称
     product_version = 'Microsoft Windows 2000、Windows XP 和 Windows Server 2003'  # 漏洞应用版本

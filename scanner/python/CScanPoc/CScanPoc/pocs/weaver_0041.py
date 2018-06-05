@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import time, re
 
 class Vuln(ABVuln):
-    vuln_id = 'weaver_0041' # 平台漏洞编号，留空
+    poc_id = 'ffa4f3a3-4ff8-4794-b223-6246b3d094c3'
     name = '泛微e-office 任意文件读取'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
@@ -15,9 +15,9 @@ class Vuln(ABVuln):
         iweboffice/officeserver.php
         iWebOffice/OfficeServer2.php
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = '泛微OA'  # 漏洞应用名称
     product_version = '泛微e-office'  # 漏洞应用版本
 

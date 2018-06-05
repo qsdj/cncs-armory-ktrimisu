@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
 class Vuln(ABVuln):
-    vuln_id = 'MvMmall_0001' # 平台漏洞编号，留空
+    poc_id = '22e550ee-57fa-4d26-8744-b0cc10e7da64'
     name = 'MvMmall 网店商城系统 /search.php SQL注入漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -13,9 +13,9 @@ class Vuln(ABVuln):
     desc = '''
         MvMmall网店商城系统最新注入0day问题出在搜索search.php这个文件上。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'MvMmall'  # 漏洞应用名称
     product_version = 'MvMmall网店商城系统'  # 漏洞应用版本
 

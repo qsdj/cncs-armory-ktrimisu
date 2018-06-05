@@ -6,7 +6,7 @@ import re
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'PKPMBS_0007' # 平台漏洞编号，留空
+    poc_id = 'bee59b08-339d-4f21-8b2e-9ecb91dc1130'
     name = 'PKPMBS工程质量监督站信息管理系统SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -15,15 +15,15 @@ class Vuln(ABVuln):
         链接guestbook.aspx中参数id未过滤存在SQL注入漏洞：
         /guestbook.aspx?do=show&id=1
     ''' # 漏洞描述
-    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0150084
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0150084
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'PKPMBS'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = 'pkpmbs_0007' # 平台 POC 编号，留空
+    poc_id = 'ae6f9cf4-23a7-409c-b1a9-33dc2174e3f2'
     author = '国光'  # POC编写者
     create_date = '2018-05-22' # POC创建时间
 

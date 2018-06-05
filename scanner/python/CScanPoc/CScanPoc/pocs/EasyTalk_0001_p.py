@@ -6,7 +6,7 @@ import urllib,urllib2
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'EasyTalk_0001_p' # 平台漏洞编号，留空
+    poc_id = '65a3776f-9907-47e6-ba8c-6dca365aae52'
     name = 'EasyTalk 2.4 /Home/Lib/Action/ApiAction.class.php SQL注入漏洞' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -14,9 +14,9 @@ class Vuln(ABVuln):
     desc = '''
         EasyTalk 2.4 /Home/Lib/Action/ApiAction.class.php 文件参数username变量未合适过滤，导致SQL注入漏洞。
     ''' # 漏洞描述
-    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=50344
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=50344
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'EasyTalk'  # 漏洞应用名称
     product_version = '2.4'  # 漏洞应用版本
 

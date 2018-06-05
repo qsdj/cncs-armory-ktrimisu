@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'WordPress_0047' # 平台漏洞编号，留空
+    poc_id = '73fecdcf-14aa-4ad2-95eb-388120147d5f'
     name = 'WordPress Simple Ads Manager 插件信息泄露' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
@@ -14,7 +14,7 @@ class Vuln(ABVuln):
         WordPress Simple Ads Manager 插件信息泄露漏洞.
     ''' # 漏洞描述
     ref = 'https://www.exploit-db.com/exploits/36615/' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
     cve_id = 'CVE-2015-2826' #cve编号
     product = 'WordPress'  # 漏洞应用名称
     product_version = 'WordPress Simple Ads Manager'  # 漏洞应用版本

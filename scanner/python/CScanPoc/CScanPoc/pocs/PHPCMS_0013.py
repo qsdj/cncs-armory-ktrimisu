@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'PHPCMS_0013' # 平台漏洞编号，留空
+    poc_id = '6392027b-b740-433d-a5d2-da6bf0890376'
     name = 'PHPCMS 2008黄页模块 SQL注入漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -15,8 +15,8 @@ class Vuln(ABVuln):
         如果$genre变量进行二次URL编码即可绕过escape()方法的过滤，导致SQL注入漏洞产生。
     '''  # 漏洞描述
     ref = 'http://vul.jdsec.com/index.php/vul/JDSEC-POC-20141129-4547'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'PHPCMS'  # 漏洞应用名称
     product_version = 'PHPCMS 2008'  # 漏洞应用版本
 

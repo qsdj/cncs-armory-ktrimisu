@@ -6,7 +6,7 @@ import re
 import urlparse
 
 class Vuln(ABVuln):
-    vuln_id = 'Seagate_NAS_0001' # 平台漏洞编号，留空
+    poc_id = '2212a316-875d-465d-b5b9-54a0792e073d'
     name = '希捷NAS 管理员密码重置'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.OTHER # 漏洞类型
@@ -16,10 +16,10 @@ class Vuln(ABVuln):
         访问 http://foobar/d41d8cd98f00b204e9800998ecf8427e.php 管理员密码将被重置为admin:admin
     '''  # 漏洞描述
     ref = 'https://www.kb.cert.org/vuls/id/515283'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = '希捷NAS'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '5dffc5a3-1fb1-4bc1-965c-8ecfc6177642'

@@ -6,7 +6,7 @@ import re
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'WordPress_0090' # 平台漏洞编号，留空
+    poc_id = 'e3d6456e-9764-412f-b475-f2c5965c5b99'
     name = 'WordPress Feed Statistics Plugin V 1.4.3 Open Redirect' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.OTHER # 漏洞类型
@@ -15,14 +15,14 @@ class Vuln(ABVuln):
         WordPress Feed Statistics Plugin V 1.4.3 Open Redirect
     ''' # 漏洞描述
     ref = 'https://cxsecurity.com/issue/WLB-2016010048' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'WordPress'  # 漏洞应用名称
     product_version = 'WordPress Feed Statistics Plugin V 1.4.3'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = 'WordPress_0090' # 平台 POC 编号，留空
+    poc_id = '7b788534-3166-4bac-8114-faa9acae3110'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 

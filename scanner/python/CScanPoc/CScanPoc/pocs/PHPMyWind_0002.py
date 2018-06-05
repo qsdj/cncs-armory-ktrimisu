@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'PHPMyWind_0002' # 平台漏洞编号，留空
+    poc_id = '4b9b3d10-c656-4028-bbec-b3280394b97e'
     name = 'PHPMyWind SQL注射漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -12,9 +12,9 @@ class Vuln(ABVuln):
     desc = '''
         5.2beta 2014-12-28 参数没有处理，绕过过滤。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'PHPMyWind'  # 漏洞应用名称
     product_version = '5.2beta'  # 漏洞应用版本
 

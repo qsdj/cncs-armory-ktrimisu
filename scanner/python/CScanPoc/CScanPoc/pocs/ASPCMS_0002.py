@@ -6,7 +6,7 @@ import urllib,urllib2
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'ASPCMS_0002' # 平台漏洞编号，留空
+    poc_id = 'ddda9cbe-88e1-4206-b21a-cbba08dfd04f'
     name = 'ASPCMS /AspCms_AboutEdit.asp SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -14,9 +14,9 @@ class Vuln(ABVuln):
     desc = '''
         后台文件 AspCms_AboutEdit.asp 未进行验证，且未过滤，导致SQL注入漏洞。
     ''' # 漏洞描述
-    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=4214
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=4214
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'ASPCMS'  # 漏洞应用名称
     product_version = '2.2.9'  # 漏洞应用版本
 

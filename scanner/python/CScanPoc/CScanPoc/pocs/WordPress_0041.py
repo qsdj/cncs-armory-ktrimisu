@@ -4,17 +4,17 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'WordPress_0041' # 平台漏洞编号，留空
+    poc_id = 'be8d8619-461f-4657-9273-206379ac97ed'
     name = 'WordPress wp-miniaudioplayer 任意文件下载'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型
-    disclosure_date = ''  # 漏洞公布时间
+    disclosure_date = 'Unkonwn'  # 漏洞公布时间
     desc = '''
         WordPress wp-miniaudioplayer /wp-content/plugins/wp-miniaudioplayer/map_download.php?fileurl= 任意文件下载。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'WordPress'  # 漏洞应用名称
     product_version = 'wp-miniaudioplayer'  # 漏洞应用版本
 

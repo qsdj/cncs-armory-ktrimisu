@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
 class Vuln(ABVuln):
-    vuln_id = 'FanWe_0002' # 平台漏洞编号，留空
+    poc_id = '24944964-968d-4533-ba0b-4dec6f442a57'
     name = '方维团购 v4.3 goods_list.php SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

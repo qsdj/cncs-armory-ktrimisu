@@ -6,7 +6,7 @@ import urllib,urllib2
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'Discuz_0019' # 平台漏洞编号，留空
+    poc_id = '70ca23c6-7f07-41b9-bc61-8437dfb9ebf8'
     name = 'Discuz! 7.2 /post.php 跨站脚本漏洞' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型
@@ -15,8 +15,8 @@ class Vuln(ABVuln):
         Discuz! 中的post.php中handlekey变量传入global.func.php后过滤不严,导致反射XSS漏洞的产生
     ''' # 漏洞描述
     ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=065930' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'Discuz!'  # 漏洞应用名称
     product_version = '7.2'  # 漏洞应用版本
 

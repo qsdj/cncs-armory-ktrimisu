@@ -6,7 +6,7 @@ import hashlib
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'Emlog_0008' # 平台漏洞编号，留空
+    poc_id = '61b1a843-cc78-484b-a9cb-e1cd8df8aa38'
     name = 'Emlog博客前台反射型XSS(无视浏览器filter)' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型
@@ -15,10 +15,10 @@ class Vuln(ABVuln):
         Emlog博客前台反射型XSS(无视浏览器filter)
     ''' # 漏洞描述
     ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=69818' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'Emlog'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):

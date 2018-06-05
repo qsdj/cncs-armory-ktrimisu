@@ -14,7 +14,7 @@ class Vuln(ABVuln):
     desc = '''
         YidaCMS(易达CMS)重置密码时没有对帐号和原密码进行校验,导致可以任意重置任何用户密码
     ''' # 漏洞描述
-    ref = '' # 漏洞来源http://www.wooyun.org/bugs/wooyun-2014-073901
+    ref = 'Unkonwn' # 漏洞来源http://www.wooyun.org/bugs/wooyun-2014-073901
     cnvd_id = 'Unknown' # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'YidaCMS(易达CMS)'  # 漏洞应用名称

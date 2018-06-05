@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'EnableQ_0001' # 平台漏洞编号，留空
+    poc_id = 'b53d99ab-dda2-4272-96b8-7149fac147e1'
     name = 'EnableQ全版本 sql注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -17,9 +17,9 @@ class Vuln(ABVuln):
         快速部署和较少的成本投入
         建立和部署基于Web方式的信息服务门户将变得比以往更快速和高效。相比较大量手工代码编写的程序实现而言，EnableSite提供了通用性极强的内置内容类型直接使用，并且更广泛的内容兼容性和对内容类型的灵活配置也对部署的速度和质量提供了进一步帮助。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'EnableQ'  # 漏洞应用名称
     product_version = '*'  # 漏洞应用版本
 

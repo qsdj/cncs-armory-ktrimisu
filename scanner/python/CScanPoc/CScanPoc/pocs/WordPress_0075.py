@@ -6,7 +6,7 @@ import urllib,urllib2
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'WordPress_0075' # 平台漏洞编号，留空
+    poc_id = 'fb3b5df8-9e63-4ddd-a83e-056c9ee4c1ce'
     name = 'WordPress 3.8.1 /xmlrpc.php 拒绝服务漏洞' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.OTHER # 漏洞类型
@@ -15,8 +15,8 @@ class Vuln(ABVuln):
         WordPress 3.8.1 /xmlrpc.php 文件有ping其他主机的功能，通过这个功能可以请求攻击别的网站。
     ''' # 漏洞描述
     ref = 'https://blog.sucuri.net/2014/03/more-than-162000-wordpress-sites-used-for-distributed-denial-of-service-attack.html' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'WordPress'  # 漏洞应用名称
     product_version = '3.8.1'  # 漏洞应用版本
 

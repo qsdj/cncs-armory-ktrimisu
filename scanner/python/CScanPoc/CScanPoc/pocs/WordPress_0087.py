@@ -6,7 +6,7 @@ import re
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'WordPress_0087' # 平台漏洞编号，留空
+    poc_id = '7475dc9c-f10a-4e90-96ec-1e0be0fe5549'
     name = 'WordPress WooCommerce 2.4.12 PHP Code Injection' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型
@@ -15,14 +15,14 @@ class Vuln(ABVuln):
         WordPress WooCommerce 2.4.12 PHP Code Injection
     ''' # 漏洞描述
     ref = 'https://packetstormsecurity.com/files/135000/WordPress-WooCommerce-2.4.12-PHP-Code-Injection.html' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'WordPress'  # 漏洞应用名称
     product_version = 'WordPress WooCommerce 2.4.12'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = 'WordPress_0087' # 平台 POC 编号，留空
+    poc_id = 'f46f1241-7cd8-499f-8586-30a4536c8c98'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 

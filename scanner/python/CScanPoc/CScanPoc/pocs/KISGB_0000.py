@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'KISGB_0000' # 平台漏洞编号
+    poc_id = 'a589428c-ab6d-47ad-9be1-f899234e96c6'
     name = 'KISGB Local File Inclusion' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型

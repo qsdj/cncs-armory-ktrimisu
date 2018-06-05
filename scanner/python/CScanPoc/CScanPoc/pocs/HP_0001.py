@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re, urlparse
 
 class Vuln(ABVuln):
-    vuln_id = 'HP_0001'  # 平台漏洞编号，留空
+    poc_id = 'e74a9960-1f12-442f-af43-60b4c24c5b90'
     name = 'HP多款打印机 未授权访问'  # 漏洞名称
     level = VulnLevel.LOW  # 漏洞危害级别
     type = VulnType.OTHER # 漏洞类型
@@ -13,9 +13,9 @@ class Vuln(ABVuln):
     desc = '''
         惠普多款打印机设备未设置权限访问，可以直接看到详细的使用信息等，还可以直接选着打印。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = '惠普'  # 漏洞应用名称
     product_version = '惠普款打印机'  # 漏洞应用版本
 

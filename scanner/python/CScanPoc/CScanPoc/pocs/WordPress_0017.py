@@ -7,7 +7,7 @@ import re
 import hashlib
 
 class Vuln(ABVuln):
-    vuln_id = 'WordPress_0017' # 平台漏洞编号，留空
+    poc_id = '5167385a-4b23-46e1-9005-79d1d9a1c713'
     name = 'WordPress HTML 5 MP3 Player with Playlist 插件泄漏服务器物理路径' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
@@ -15,9 +15,9 @@ class Vuln(ABVuln):
     desc = '''
         DORK: inurl:html5plus/html5full.php
     ''' # 漏洞描述
-    ref = '' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'WordPress'  # 漏洞应用名称
     product_version = 'WordPress HTML 5 MP3 Player with Playlist 插件'  # 漏洞应用版本
 

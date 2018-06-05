@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'RuvarOA_0002' # 平台漏洞编号，留空
+    poc_id = '08bc3cc2-e63e-4cb9-abda-de0cb302bdef'
     name = '璐华通用企业版OA系统SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -18,15 +18,15 @@ class Vuln(ABVuln):
         /filemanage/file_memo.aspx?file_id=
         /CorporateCulture/kaizen_download.aspx?file_id=
     ''' # 漏洞描述
-    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0104430
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0104430
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'RuvarOA(璐华OA)'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = 'ruvar_oa_0006' # 平台 POC 编号，留空
+    poc_id = '95d0232a-c241-4966-9b12-2ace739b46fa'
     author = '国光'  # POC编写者
     create_date = '2018-05-22' # POC创建时间
 

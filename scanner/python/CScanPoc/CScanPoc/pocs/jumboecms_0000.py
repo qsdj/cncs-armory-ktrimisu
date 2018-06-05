@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'JumboECMS_0000' # 平台漏洞编号，留空
+    poc_id = '82446c67-e71f-4250-bda0-b9ffac36beec'
     name = 'JumboECMS V1.6.1 注入漏洞' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -13,15 +13,15 @@ class Vuln(ABVuln):
     desc = '''
         JumboECMS V1.6.1 为最新版 ,然后在最新版中依然发现注入漏洞,旧版本同样存在了.
     ''' # 漏洞描述
-    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=062717
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=062717
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'JumboECMS'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = 'jumboecms_0000' # 平台 POC 编号，留空
+    poc_id = '4c599d2d-1fea-473a-bc10-7fc6999093a7'
     author = '国光'  # POC编写者
     create_date = '2018-05-22' # POC创建时间
 

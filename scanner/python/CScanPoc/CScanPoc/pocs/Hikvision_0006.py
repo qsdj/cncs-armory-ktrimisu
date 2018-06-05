@@ -6,7 +6,7 @@ import re
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'Hikvision_0006' # 平台漏洞编号，留空
+    poc_id = '8d54c53f-9b35-4773-9cd4-64fab28078d0'
     name = '海康威视IVMS系列2.0 日志文件包含getshell' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型
@@ -14,9 +14,9 @@ class Vuln(ABVuln):
     desc = '''
         海康威视IVMS系列2.0 日志文件包含getshell.
     ''' # 漏洞描述
-    ref = '' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'Hikvision'  # 漏洞应用名称
     product_version = '海康威视IVMS系列2.0'  # 漏洞应用版本
 

@@ -6,7 +6,7 @@ import re
 import time
 
 class Vuln(ABVuln):
-    vuln_id = 'GeniXCMS_0001' # 平台漏洞编号，留空
+    poc_id = '9077cbfc-72d0-4541-83e1-558f605fff37'
     name = 'GeniXCMS v0.0.1 SQL注入漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -15,7 +15,7 @@ class Vuln(ABVuln):
         GeniXCMS v0.0.1 Remote Unauthenticated SQL Injection Exploite.
     '''  # 漏洞描述
     ref = 'https://www.exploit-db.com/exploits/36321/'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
     cve_id = '''
             CVE-2015-2678
             CVE-2015-2679

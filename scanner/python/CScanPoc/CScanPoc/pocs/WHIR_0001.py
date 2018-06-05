@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
 class Vuln(ABVuln):
-    vuln_id = 'Whir_0001' # 平台漏洞编号，留空
+    poc_id = '8fe56dfb-b027-4c17-8e93-6bc6b49656d7'
     name = '万户OA ezOffice 任意文件下载'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型
@@ -15,11 +15,11 @@ class Vuln(ABVuln):
         参数path=/../时对应/defaultroot/目录，可下载的配置文件包括不限于：
         mailserver.properties/govexchange.properties/systemMark.properties/config.xml
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = '万户OA'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'c2064a22-20fa-45c8-9df6-3ba902b78e4b'

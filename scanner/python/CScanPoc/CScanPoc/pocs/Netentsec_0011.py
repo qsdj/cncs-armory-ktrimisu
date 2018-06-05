@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re, urlparse
 
 class Vuln(ABVuln):
-    vuln_id = 'Netentsec_0011'  # 平台漏洞编号，留空
+    poc_id = '0dc00f9a-4a3c-4255-ae15-69076ff0abfd'
     name = '网康NS-ASG 应用安全网关SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -18,11 +18,11 @@ class Vuln(ABVuln):
         /admin/add_ikev2.php?TunnelId=1
         /admin/configguide/ipsec_guide_1.php?TunnelId=1
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = '网康应用安全网关'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '259df15c-01b6-4657-b4c9-e80cc82d2881'

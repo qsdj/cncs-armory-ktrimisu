@@ -6,7 +6,7 @@ import re
 from urllib import quote
 
 class Vuln(ABVuln):
-    vuln_id = 'Yuysoft_0008' # 平台漏洞编号，留空
+    poc_id = '3bdaff3f-e503-483d-928f-a1ba3cbd449a'
     name = '育友通用数字化校园平台 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -16,11 +16,11 @@ class Vuln(ABVuln):
         '/Resource/search/search.aspx',
         '/Inedu3In1/components/xsjz.aspx',
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = '育友通用数字化校园平台'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 def findVIEWSTATE(url):
     hh = hackhttp.hackhttp()

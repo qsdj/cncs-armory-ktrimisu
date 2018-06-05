@@ -8,7 +8,7 @@ import time
 import datetime
 
 class Vuln(ABVuln):
-    vuln_id = 'weaver_0011' # 平台漏洞编号，留空
+    poc_id = '470a7b07-f15b-48b7-a2c0-71b8b4354c51'
     name = '泛微e-cology未授权访问日志'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_OPERATION # 漏洞类型
@@ -17,11 +17,11 @@ class Vuln(ABVuln):
         1号店OA使用泛微E-COLOGY可未授权访问日志（包含用户名，密码，而且是明码）,造成管理用户帐号外泄。
         泛微同类型的OA产品如果是默认安装的估计都存在该问题。危险。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = '泛微OA'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '8908a568-23df-4303-8325-30d929573d06'

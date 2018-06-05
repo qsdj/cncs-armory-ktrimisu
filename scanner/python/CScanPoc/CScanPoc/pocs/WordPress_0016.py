@@ -7,7 +7,7 @@ import re
 import hashlib
 
 class Vuln(ABVuln):
-    vuln_id = 'WordPress_0016' # 平台漏洞编号，留空
+    poc_id = '2f310f94-4739-441f-9b8a-87afd7e30e96'
     name = 'WordPress CM Download Manager 2.0.0 代码执行漏洞' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型
@@ -16,9 +16,9 @@ class Vuln(ABVuln):
        代码注入漏洞已被发现并在软件内确认为匿名用户。成功的攻击可以让匿名攻击者获得完全控制权。
        应用程序和使用任何可用的操作系统功能的能力脚本环境。 
     ''' # 漏洞描述
-    ref = '' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'WordPress'  # 漏洞应用名称
     product_version = 'WordPress CM Download Manager 2.0.0'  # 漏洞应用版本
 

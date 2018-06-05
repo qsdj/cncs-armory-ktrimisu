@@ -6,7 +6,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 
 class Vuln(ABVuln):
-    vuln_id = 'eYou_0002' # 平台漏洞编号，留空
+    poc_id = 'd2052835-522d-4299-a2b9-3a334453ef3e'
     name = 'eYou v4 /php/report/include/config.inc 信息泄露' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
@@ -14,7 +14,7 @@ class Vuln(ABVuln):
     desc = '''
     漏洞文件：/php/report/include/config.inc .
     ''' # 漏洞描述
-    ref = '' # 漏洞来源http://wooyun.org/bugs/wooyun-2014-058462
+    ref = 'Unkonwn' # 漏洞来源http://wooyun.org/bugs/wooyun-2014-058462
     cnvd_id = 'Unknown' # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'eYou'  # 漏洞应用名称

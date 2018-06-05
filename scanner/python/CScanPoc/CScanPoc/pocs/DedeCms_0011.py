@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests,hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'DedeCMS_0011' # 平台漏洞编号，留空
+    poc_id = '8154c014-653b-4897-ba1d-57200f928281'
     name = '织梦CMS 修改任意管理员'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.OTHER # 漏洞类型

@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'SeawindSolution_0001' # 平台漏洞编号，留空
+    poc_id = '47543c4c-3337-463b-8dd9-b4c9a13ab748'
     name = 'SeawindSolution 万能密码'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.OTHER # 漏洞类型
@@ -15,10 +15,10 @@ class Vuln(ABVuln):
         /adminpanel/index.php 万能密码。
     '''  # 漏洞描述
     ref = 'http://cxsecurity.com/issue/WLB-2015070122'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'SeawindSolution'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '3d2ed21e-8d97-44bd-84b2-2dc03fe58064'

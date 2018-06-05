@@ -7,7 +7,7 @@ import time
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'Ruijie_0011' # 平台漏洞编号，留空
+    poc_id = '9f5a0ba7-e465-4e47-b120-9aef2d11d1b2'
     name = '锐捷网络 RG-EG2000 非法访问敏感信息'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.OTHER # 漏洞类型
@@ -16,9 +16,9 @@ class Vuln(ABVuln):
         锐捷网络2015年新品RG-EG2000系列产品存在授权绕过非法访问敏感信息缺陷。    
         guest用户可越权读取管理员权限才能读取的配置信息，导致配置文件泄漏。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = '锐捷网络'  # 漏洞应用名称
     product_version = 'RG-EG2000'  # 漏洞应用版本
 

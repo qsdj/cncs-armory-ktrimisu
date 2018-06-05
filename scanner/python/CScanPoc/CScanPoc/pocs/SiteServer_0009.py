@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'SiteServer_0009' # 平台漏洞编号，留空
+    poc_id = '506a412c-9fde-4184-9ddf-f52cedaaec8d'
     name = 'SiteServer最新版3.6.4 SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -19,7 +19,7 @@ class Vuln(ABVuln):
         /siteserver/userRole/background_user.aspx
         /siteserver/bbs/background_thread.aspx
     ''' # 漏洞描述
-    ref = '' # 漏洞来源
+    ref = 'Unkonwn' # 漏洞来源
     cnvd_id = 'Unknown' # cnvd漏洞编号
     cve_id = 'Unknown' #cve编号
     product = 'SiteServer'  # 漏洞应用名称

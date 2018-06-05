@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'Zabbix_0002' # 平台漏洞编号，留空
+    poc_id = '9879133e-2d4b-48b5-b639-f8be5e004ec7'
     name = 'Zabbix /popup.php SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -16,7 +16,7 @@ class Vuln(ABVuln):
         required.
     '''  # 漏洞描述
     ref = 'https://www.exploit-db.com/exploits/18155/'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
     cve_id = 'CVE-2011-4674'  # cve编号
     product = 'Zabbix'  # 漏洞应用名称
     product_version = '1.8.4'  # 漏洞应用版本

@@ -7,7 +7,7 @@ import re
 import hashlib
 
 class Vuln(ABVuln):
-    vuln_id = 'Joomla_0008' # 平台漏洞编号，留空
+    poc_id = 'be274e4d-2999-4438-bf4c-a7916ffdada6'
     name = 'Joomla! Multi Calendar 4.0.2 XSS' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型

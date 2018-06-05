@@ -8,7 +8,7 @@ import urllib2
 import time
 
 class Vuln(ABVuln):
-    vuln_id = 'Piwigo_0001' # 平台漏洞编号，留空
+    poc_id = 'aaa62afd-791a-44ac-b678-2ac9d0211483'
     name = 'Piwigo <= v2.7.1 /functions_rate.inc.php SQL注入漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -17,8 +17,8 @@ class Vuln(ABVuln):
         由于functions_rate.inc.php文件中的rate_picture函数没有对传入的$rate变量进行过滤，直接拼接到SQL中执行。
     '''  # 漏洞描述
     ref = 'http://www.freebuf.com/articles/web/55075.html'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'Piwigo'  # 漏洞应用名称
     product_version = '<= v2.7.1'  # 漏洞应用版本
 

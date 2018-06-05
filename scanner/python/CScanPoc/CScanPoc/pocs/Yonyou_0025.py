@@ -6,7 +6,7 @@ import random
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'Yonyou_0025' # 平台漏洞编号，留空
+    poc_id = '091b49a4-74bf-4c5f-b8c7-c69f6b7b0071'
     name = '用友CRM系统 任意文件上传'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_UPLOAD # 漏洞类型

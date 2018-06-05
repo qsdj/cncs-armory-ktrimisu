@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
 class Vuln(ABVuln):
-    vuln_id = 'Ruijie_0001' # 平台漏洞编号，留空
+    poc_id = '937ea54f-a351-4fc8-8b67-b69e62a77f6b'
     name = '锐捷网络NBR部分路由器 cookie欺骗'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.OTHER # 漏洞类型
@@ -13,9 +13,9 @@ class Vuln(ABVuln):
     desc = '''
         锐捷网络NBR部分路由器cookie欺骗权限绕过。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = '锐捷网络'  # 漏洞应用名称
     product_version = 'NBR路由器'  # 漏洞应用版本
 

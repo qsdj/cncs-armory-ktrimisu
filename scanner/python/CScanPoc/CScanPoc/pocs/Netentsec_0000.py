@@ -6,7 +6,7 @@ import re
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'Netentsec_0000' # 平台漏洞编号，留空
+    poc_id = '7aa2d2fd-5d8d-431e-93ca-22693c0204fb'
     name = '网康 NS-ASG 应用安全网关SQL注入漏洞' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -15,10 +15,10 @@ class Vuln(ABVuln):
         网康 NS-ASG 应用安全网关SQL注入漏洞
     ''' # 漏洞描述
     ref = 'https://www.secpulse.com/archives/24145.html' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = '网康应用安全网关'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):

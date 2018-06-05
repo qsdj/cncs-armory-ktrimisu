@@ -6,7 +6,7 @@ import urlparse
 import time
 
 class Vuln(ABVuln):
-    vuln_id = 'JieqiCMS_0006' # 平台漏洞编号，留空
+    poc_id = '71c9d400-111b-40e7-9b51-7425ed8f85fb'
     name = '杰奇小说连载系统1.7版本任意文件下载'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型

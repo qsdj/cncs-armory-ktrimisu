@@ -6,7 +6,7 @@ import re
 import time
 
 class Vuln(ABVuln):
-    vuln_id = 'TOPSEC_0032'  # 平台漏洞编号，留空
+    poc_id = '65f9e7b1-7cc6-40fc-b825-8c49fcf9ed2e'
     name = '天融信网络卫士安全审计系统 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

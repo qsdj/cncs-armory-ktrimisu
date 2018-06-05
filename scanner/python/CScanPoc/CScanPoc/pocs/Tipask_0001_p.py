@@ -6,7 +6,7 @@ import urllib,urllib2
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'Tipask_0001_p' # 平台漏洞编号，留空
+    poc_id = 'f4da283c-0473-41e8-80fc-0337775209f1'
     name = 'Tipask 2.0 /control/question.php SQL注入漏洞' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -16,8 +16,8 @@ class Vuln(ABVuln):
         绕过了前面的过滤和检查，导致SQL注入的产生。
     ''' # 漏洞描述
     ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=025802' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'Tipask'  # 漏洞应用名称
     product_version = '2.0'  # 漏洞应用版本
 

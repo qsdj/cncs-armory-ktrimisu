@@ -7,7 +7,7 @@ import md5
 import time
 
 class Vuln(ABVuln):
-    vuln_id = 'weaver_0003' # 平台漏洞编号，留空
+    poc_id = 'bcd2a83e-ec4c-475a-9898-3c15ca2503fe'
     name = '泛微e-cology SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -15,11 +15,11 @@ class Vuln(ABVuln):
     desc = '''
         泛微e-cology参数过滤不严谨，导致SQL注入漏洞。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = '泛微OA'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '00735700-c4a6-4d14-9610-5e1bac563978'

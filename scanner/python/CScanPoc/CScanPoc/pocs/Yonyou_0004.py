@@ -6,7 +6,7 @@ import re
 import urllib2
 
 class Vuln(ABVuln):
-    vuln_id = 'Yonyou_0004' # 平台漏洞编号，留空
+    poc_id = '262e869c-48b5-402d-bb5f-e83fbedda2c2'
     name = '用友NC /hrss/ELTextFile.load.d 信息泄漏'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型

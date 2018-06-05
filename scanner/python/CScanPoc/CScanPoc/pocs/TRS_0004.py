@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'TRS_0004'  # 平台漏洞编号，留空
+    poc_id = '78396bfd-e27d-49f0-954c-2c41f200ce6c'
     name = '拓尔思身份服务器系统 文件读取'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型

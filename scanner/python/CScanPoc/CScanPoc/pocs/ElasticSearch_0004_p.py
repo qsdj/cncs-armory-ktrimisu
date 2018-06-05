@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import json
 
 class Vuln(ABVuln):
-    vuln_id = 'ElasticSearch_0004_p'  # 平台漏洞编号，留空
+    poc_id = '0c667c86-fd15-4ec6-8193-5ba537c3ff74'
     name = 'ElasticSearch 目录穿越漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_TRAVERSAL  # 漏洞类型
@@ -14,7 +14,7 @@ class Vuln(ABVuln):
         源于程序没有充分过滤用户提交的输入，远程攻击者可借助目录遍历字符‘..’利用该漏洞访问包含敏感信息的任意文件。
     '''  # 漏洞描述
     ref = 'https://github.com/vulhub/vulhub/tree/master/elasticsearch/CVE-2015-5531'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
     cve_id = 'CVE-2015-5531'  # cve编号
     product = 'ElasticSearch'  # 漏洞应用名称
     product_version = '1.6.1以下'  # 漏洞应用版本

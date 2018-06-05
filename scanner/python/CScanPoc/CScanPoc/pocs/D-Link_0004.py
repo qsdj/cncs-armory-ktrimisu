@@ -6,7 +6,7 @@ import re
 import urlparse
 
 class Vuln(ABVuln):
-    vuln_id = 'D-Link_0004' # 平台漏洞编号，留空
+    poc_id = 'a3e0070a-558f-4fda-98e3-5d0f843cb570'
     name = 'D-Link 任意文件下载'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型
@@ -16,8 +16,8 @@ class Vuln(ABVuln):
         读取任意文件。
     '''  # 漏洞描述
     ref = 'http://seclists.org/fulldisclosure/2015/May/129'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'D-Link'  # 漏洞应用名称
     product_version = '2750u/2730u'  # 漏洞应用版本
 

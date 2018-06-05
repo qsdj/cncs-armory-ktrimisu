@@ -6,7 +6,7 @@ import urllib,urllib2
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'PHPOK_0002' # 平台漏洞编号，留空
+    poc_id = 'bf590950-5e0a-46d2-99bb-3532d27bedde'
     name = 'PHPOK 4.0.556 /api.php SQL注入漏' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -15,8 +15,8 @@ class Vuln(ABVuln):
          PHPOK企业站缺陷文件：framework/phpok_call.php line：108
     ''' # 漏洞描述
     ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=64360' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'PHPOK'  # 漏洞应用名称
     product_version = '4.0.556'  # 漏洞应用版本
 

@@ -6,7 +6,7 @@ import urllib,urllib2
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'Discuz_0028' # 平台漏洞编号，留空
+    poc_id = '7c844af5-f413-4be1-a628-e29c5db63804'
     name = 'Discuz! x2 /source/function/function_connect.php 泄漏服务器物理路径' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
@@ -15,8 +15,8 @@ class Vuln(ABVuln):
         Discuz! x2 /source/function/function_connect.php 泄漏服务器物理路径
     ''' # 漏洞描述
     ref = 'https://www.seebug.org/vuldb/ssvid-24254' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'Discuz!'  # 漏洞应用名称
     product_version = 'x2.0'  # 漏洞应用版本
 

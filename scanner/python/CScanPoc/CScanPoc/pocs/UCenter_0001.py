@@ -6,7 +6,7 @@ import re
 import time
 
 class Vuln(ABVuln):
-    vuln_id = 'UCenter_0001' # 平台漏洞编号，留空
+    poc_id = 'fcb44bfc-5d59-4d44-8239-e813e89091ff'
     name = 'UCenter Home 2.0 SQL注入漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -17,7 +17,7 @@ class Vuln(ABVuln):
         Dork 2 : inurl:shop.php?ac=view&shopid=
     '''  # 漏洞描述
     ref = 'http://www.exploit-db.com/exploits/14997/'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
     cve_id = 'CVE-2010-4912'  # cve编号
     product = 'UCenter'  # 漏洞应用名称
     product_version = 'UCenter Home 2.0'  # 漏洞应用版本

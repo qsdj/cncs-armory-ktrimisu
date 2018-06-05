@@ -6,7 +6,7 @@ import re
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'WordPress_0086' # 平台漏洞编号，留空
+    poc_id = '4aeed9dc-5bd2-499c-b6ee-324da70a815f'
     name = 'WordPress Theme Epic - download.php Arbitrary File Download' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型
@@ -15,14 +15,14 @@ class Vuln(ABVuln):
         WordPress Theme Epic - 'download.php' Arbitrary File Download.
     ''' # 漏洞描述
     ref = 'https://www.exploit-db.com/exploits/39298/' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'WordPress'  # 漏洞应用名称
     product_version = 'WordPress Theme Epic'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = 'WordPress_0086' # 平台 POC 编号，留空
+    poc_id = 'e1d3f89d-b84a-4f44-87d5-c2ef96b61df6'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 

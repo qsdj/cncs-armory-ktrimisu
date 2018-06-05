@@ -6,11 +6,11 @@ import re
 import time
 
 class Vuln(ABVuln):
-    vuln_id = 'Yonyou_0043' # 平台漏洞编号，留空
+    poc_id = '7182794c-180e-4be7-a90c-54323e9214ba'
     name = '用友u8 CmxMailSet.php SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
-    disclosure_date = ''  # 漏洞公布时间
+    disclosure_date = 'Unkonwn'  # 漏洞公布时间
     desc = '''
         用友u8 CmxMailSet.php 参数过滤不完整，SQL注入漏洞。
     '''  # 漏洞描述

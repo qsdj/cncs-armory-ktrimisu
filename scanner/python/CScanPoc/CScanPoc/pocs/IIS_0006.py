@@ -8,7 +8,7 @@ import time
 import urllib2
 
 class Vuln(ABVuln):
-    vuln_id = 'IIS_0006' # 平台漏洞编号
+    poc_id = '36be6143-b8fc-40b8-bb59-8a579e776cbb'
     name = 'IIS WebDav 配置不当' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.MISCONFIGURATION # 漏洞类型

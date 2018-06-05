@@ -7,7 +7,7 @@ import os
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'yongyou_0036' # 平台漏洞编号，留空
+    poc_id = '6b4d3093-4132-41ce-ba69-192604c10430'
     name = '用友优谱u8系统.getshell CmxRemoteDesktop.php' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -23,7 +23,7 @@ class Vuln(ABVuln):
 
 
 class Poc(ABPoc):
-    poc_id = 'yongyou_0036' # 平台 POC 编号，留空
+    poc_id = '22328ca9-53eb-4273-8a88-f26111577dd2'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 

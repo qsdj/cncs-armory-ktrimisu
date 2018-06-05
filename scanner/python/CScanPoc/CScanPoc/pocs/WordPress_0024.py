@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
 class Vuln(ABVuln):
-    vuln_id = 'WordPress_0024' # 平台漏洞编号，留空
+    poc_id = 'd7ae6a48-8fd2-499f-bb30-d82921957b2a'
     name = 'WordPress DB-Backup Plugin 4.5 /download.php 任意文件下载漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型
@@ -23,7 +23,7 @@ class Vuln(ABVuln):
         Unsanitized user input to readfile() function.
     '''  # 漏洞描述
     ref = 'http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-9119'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
     cve_id = 'CVE-2014-9119'  # cve编号
     product = 'WordPress'  # 漏洞应用名称
     product_version = 'WordPress DB-Backup Plugin 4.5'  # 漏洞应用版本

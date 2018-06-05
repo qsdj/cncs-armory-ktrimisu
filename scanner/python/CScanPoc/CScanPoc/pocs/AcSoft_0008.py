@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'AcSoft_0008' # 平台漏洞编号，留空
+    poc_id = 'c85a19e4-a650-48a2-ab7a-42c9046b7b59'
     name = '安财软件通用报销系统任意文件下载' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型
@@ -13,15 +13,15 @@ class Vuln(ABVuln):
     desc = '''
         安财软件通用报销系统 /DownLoadPage.aspx?FileName=/web.config 任意文件下载。
     ''' # 漏洞描述
-    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=064190
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=064190
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'AcSoft'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = 'acsoft_0008' # 平台 POC 编号，留空
+    poc_id = '0651fbae-e73a-47c2-8d67-616a3502cf6f'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 

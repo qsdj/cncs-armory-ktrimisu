@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re, urlparse
 
 class Vuln(ABVuln):
-    vuln_id = 'GBcom_0002'  # 平台漏洞编号，留空
+    poc_id = '84580dd7-0951-4d01-9dcd-f6163364fce8'
     name = '上海寰创运营商WLAN产品 未授权访问'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
@@ -14,11 +14,11 @@ class Vuln(ABVuln):
         上海寰创运营商WLAN产品未授权访问导致管理员密码泄露。
         /acUser.shtml?method=getList
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = '上海寰创运营商WLAN'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '2385f89e-60d6-40fe-ab01-367cf1484092'

@@ -7,7 +7,7 @@ import re
 import hashlib
 
 class Vuln(ABVuln):
-    vuln_id = 'StartBBS_0000' # 平台漏洞编号，留空
+    poc_id = '1beebc61-52c4-4108-9c64-b0b9186a0050'
     name = 'StartBBS v1.1.3 物理路径泄漏' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
@@ -15,9 +15,9 @@ class Vuln(ABVuln):
     desc = '''
         http://startbbs/index.php/home/getmore/w.jsp 随意构造一个.jsp爆出数据库查询语句。
     ''' # 漏洞描述
-    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=045780
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=045780
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'StartBBS'  # 漏洞应用名称
     product_version = '1.1.3'  # 漏洞应用版本
 

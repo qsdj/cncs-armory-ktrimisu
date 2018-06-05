@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import time
 
 class Vuln(ABVuln):
-    vuln_id = 'Hanweb_0014' # 平台漏洞编号，留空
+    poc_id = 'cab98738-6a97-4a9d-975b-4504f50f4054'
     name = '大汉JCMS /lm/front/api/opr_datacall.jsp sql注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

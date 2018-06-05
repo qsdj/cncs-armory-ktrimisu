@@ -4,17 +4,17 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'Uniflows_0001'  # 平台漏洞编号，留空
+    poc_id = '0fa85419-2fd8-4aad-b342-796962853f89'
     name = '有图互联数字期刊系统 报错注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
-    disclosure_date = ''  # 漏洞公布时间
+    disclosure_date = 'Unkonwn'  # 漏洞公布时间
     desc = '''
         有图互联数字期刊系统 /epaper/test/login_check.jsp 参数处理不当，导致SQL注入漏洞。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = '有图互联'  # 漏洞应用名称
     product_version = '有图互联数字期刊系统'  # 漏洞应用版本
 

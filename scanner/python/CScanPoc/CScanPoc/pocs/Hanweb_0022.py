@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'Hanweb_0022' # 平台漏洞编号，留空
+    poc_id = 'f97083e7-cb28-4bb8-b734-6cb368397038'
     name = '大汉网站群访问统计系统 arttop_interface.jsp SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

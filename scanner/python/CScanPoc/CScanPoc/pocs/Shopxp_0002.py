@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import random
 
 class Vuln(ABVuln):
-    vuln_id = 'Shopxp_0002'  # 平台漏洞编号，留空
+    poc_id = '9aa2dcc5-5c87-4cf6-92e2-1a2e3e60a426'
     name = 'Shopxp-v10.85 CRSF攻击远程添加管理漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION  # 漏洞类型
@@ -14,8 +14,8 @@ class Vuln(ABVuln):
         savexpadmin.asp添加管理员页未进行身份验证。
     '''  # 漏洞描述
     ref = 'https://blog.csdn.net/oceanark/article/details/51902605'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'shopxp'  # 漏洞应用名称
     product_version = 'v10.85'  # 漏洞应用版本
 

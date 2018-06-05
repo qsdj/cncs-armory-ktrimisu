@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
 class Vuln(ABVuln):
-    vuln_id = 'PHPMoAdmin_0001' # 平台漏洞编号，留空
+    poc_id = 'f3e395af-4958-4d56-b206-a4b443177d23'
     name = 'PHPMoAdmin /moadmin.php 远程命令执行漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型
@@ -15,8 +15,8 @@ class Vuln(ABVuln):
         stripped-down version of the Vork high-performance framework.'
     '''  # 漏洞描述
     ref = 'http://seclists.org/fulldisclosure/2015/Mar/19'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'PHPMoAdmin'  # 漏洞应用名称
     product_version = '*'  # 漏洞应用版本
 

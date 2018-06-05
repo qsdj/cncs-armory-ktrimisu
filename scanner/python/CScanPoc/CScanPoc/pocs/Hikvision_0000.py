@@ -7,7 +7,7 @@ import re
 import hashlib
 
 class Vuln(ABVuln):
-    vuln_id = 'Hikvision_0000' # 平台漏洞编号，留空
+    poc_id = '981f491c-986c-48ce-a18a-37ce32719692'
     name = 'Hikvision /Server/logs/error.log 文件包含导致GETSHELL漏洞' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型
@@ -16,8 +16,8 @@ class Vuln(ABVuln):
         海康威视IVMS系列的监控客户端，不过大部分在内网。
     ''' # 漏洞描述
     ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=072453' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'Hikvision'  # 漏洞应用名称
     product_version = 'iVMS-4200'  # 漏洞应用版本
 

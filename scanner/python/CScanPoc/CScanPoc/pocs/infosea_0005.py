@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'Infosea_0005' # 平台漏洞编号，留空
+    poc_id = '96942966-44be-4ac6-a0a0-78ecf9a17a60'
     name = '北京清大新洋通用图书馆集成系统GLIS9.0 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -17,9 +17,9 @@ class Vuln(ABVuln):
         ggjs/wsfb/getejdw.jsp?yjdw=-1
         ggjs/zdjk/getjstj.jsp?kid=-1
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = '清大新洋'  # 漏洞应用名称
     product_version = '北京清大新洋通用图书馆集成系统GLIS9.0'  # 漏洞应用版本
 

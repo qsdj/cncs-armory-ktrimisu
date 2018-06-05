@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import time
 
 class Vuln(ABVuln):
-    vuln_id = 'Joomla_0011' # 平台漏洞编号，留空
+    poc_id = '900627f8-80b7-495a-8b46-34fdd4db9969'
     name = 'Joomla! com_Myblog Arbitrary File Upload Vulnerability'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_UPLOAD # 漏洞类型

@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'Tomcat_0000' # 平台漏洞编号，留空
+    poc_id = 'cf08ccf4-a201-4dd1-8ef6-e8f38662b815'
     name = 'Tomcat管理路径泄露漏洞' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
@@ -14,10 +14,10 @@ class Vuln(ABVuln):
         Tomcat /manager/html 管理路径泄露漏洞。
     ''' # 漏洞描述
     ref = 'http://www.venustech.com.cn/newsinfo/124/1664.html' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'Tomcat'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):

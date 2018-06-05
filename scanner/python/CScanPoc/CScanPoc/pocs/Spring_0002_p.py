@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'Spring_0002_p' # 平台漏洞编号，留空
+    poc_id = '44f6386c-14cb-4006-b436-e569c37b8783'
     name = 'Spring Boot框架表达式注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -13,8 +13,8 @@ class Vuln(ABVuln):
     Spring Boot框架的SpEL表达式注入通用漏洞曝光，利用该漏洞，远程攻击者在服务器上可执行任意命令.
     ''' # 漏洞描述
     ref = 'http://www.cnnetarmy.com/srchunter一款基于python的开源扫描器/' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'Spring'  # 漏洞应用名称
     product_version = 'Spring Boot版本：1.1-1.3.0'  # 漏洞应用版本
 

@@ -7,7 +7,7 @@ import re
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'SurFilter_0000' # 平台漏洞编号，留空
+    poc_id = 'b6efa281-8f19-4dcb-be06-5348a4dea70c'
     name = '任子行网络安全审计系统任意命令执行&未授权下载配置文件' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型
@@ -17,11 +17,11 @@ class Vuln(ABVuln):
         '/cgi-bin/web_cgi?op_req=apply&module=conf_bakdown',
         '/cgi-bin/web_cgi?op_req=apply&module=syslog_management&opt=down&type=system'
     ''' # 漏洞描述
-    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0102009
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0102009
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = '任子行网络安全审计系统'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):

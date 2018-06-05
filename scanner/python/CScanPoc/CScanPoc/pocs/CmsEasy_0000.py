@@ -7,7 +7,7 @@ import re
 import datetime
 
 class Vuln(ABVuln):
-    vuln_id = 'CmsEasy_0000' # 平台漏洞编号，留空
+    poc_id = 'b30548fc-ef3b-44bb-a816-e4c9a50c87d1'
     name = 'CmsEasy 5.5 <=20140718 /index.php SQL注入漏洞' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -16,8 +16,8 @@ class Vuln(ABVuln):
         CmsEasy 5.5 <=20140718 /lib/table/stats.php中$_SERVER并没有转义，造成了注入.
     ''' # 漏洞描述
     ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=069343' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'CmsEasy'  # 漏洞应用名称
     product_version = '5.5'  # 漏洞应用版本
 

@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'PHPShop_0001' # 平台漏洞编号
+    poc_id = 'a9c50b27-88ba-4b76-9831-a1dfae04c810'
     name = 'phpShop 2.0 - SQL Injection' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

@@ -6,7 +6,7 @@ import re
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'VIEWGOOD_0004' # 平台漏洞编号，留空
+    poc_id = 'ed704526-6e1a-45f4-b4e7-74435f7faf95'
     name = '远古流媒体系统 POST注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -16,15 +16,15 @@ class Vuln(ABVuln):
         /viewgood/Pc/Content/Request.aspx?action=name_check
         /VIEWGOOD/ADI/portal/UserDataSync.aspx
     ''' # 漏洞描述
-    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0146427
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0146427
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = '远古流媒体系统'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = 'viewgood_0008' # 平台 POC 编号，留空
+    poc_id = '28bd1e3c-5c8b-4102-b893-9b8d4c60a734'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 

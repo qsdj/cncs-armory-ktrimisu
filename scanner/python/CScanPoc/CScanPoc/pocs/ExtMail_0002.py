@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'ExtMail_0002' # 平台漏洞编号，留空
+    poc_id = 'e73c81e0-f806-4f69-88f6-789bd2d52376'
     name = 'ExtMail XSS'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型
@@ -14,11 +14,11 @@ class Vuln(ABVuln):
         extmail 是一款部署比较多的开源的webmail系统，但是该系统在处理邮件及其他细节方面存在几个问题，
         导致攻击者可以针对使用该webmail的用户进行攻击，获取mail账户的访问权，或者直接修改密码。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'ExtMail'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'a46ee5af-3f3a-4aec-ba55-cd238e9fe2f7'

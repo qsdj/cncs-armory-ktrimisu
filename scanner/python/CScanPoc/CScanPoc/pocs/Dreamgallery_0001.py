@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'Dreamgallery_0001' # 平台漏洞编号，留空
+    poc_id = 'e07c63f0-0c72-4b3e-b586-f94728691925'
     name = 'Dreamgallery /dream/album.php SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -13,15 +13,15 @@ class Vuln(ABVuln):
     desc = '''
         Dreamgallery /dream/album.php 文件存在SQL注入漏洞。
     ''' # 漏洞描述
-    ref = '' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'Dreamgallery'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = 'dreamgallery_0000' # 平台 POC 编号，留空
+    poc_id = '351babfd-69f8-4a29-945c-e7bf66bf160d'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 

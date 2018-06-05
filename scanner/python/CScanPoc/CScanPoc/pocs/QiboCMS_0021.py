@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
 class Vuln(ABVuln):
-    vuln_id = 'QiboCMS_0021' # 平台漏洞编号，留空
+    poc_id = 'e76667da-ab64-43a3-9ef8-de425a3e2460'
     name = 'Qibo Information V1 /search.php XSS'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型
@@ -13,9 +13,9 @@ class Vuln(ABVuln):
     desc = '''
         Qibo Information(齐博分类信息系统) 由于全局变量可控，通过控制变量可以进行反射型XSS.
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'QiboCMS(齐博CMS)'  # 漏洞应用名称
     product_version = 'V1'  # 漏洞应用版本
 

@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'Apache_Struts_0007_p' # 平台漏洞编号，留空
+    poc_id = 'b65fde53-2307-4250-825d-8ef7b4844039'
     name = 'Apache Struts2 S2-012远程代码执行' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型
@@ -17,7 +17,7 @@ class Vuln(ABVuln):
         一个请求，包括特制的请求参数可以用来为物业注入任意ognl代码，后来作为一个重定向地址请求参数，这将导致进一步的评估。 
     ''' # 漏洞描述
     ref = 'https://cwiki.apache.org/confluence/display/WW/S2-012' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
     cve_id = 'CVE-2013-1965' #cve编号
     product = 'Apache Struts'  # 漏洞应用名称
     product_version = 'Apache Struts2.0.0 - 2.3.13'  # 漏洞应用版本

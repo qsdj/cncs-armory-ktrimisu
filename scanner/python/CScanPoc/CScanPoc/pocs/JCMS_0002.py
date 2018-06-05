@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'JCMS_0002'  # 平台漏洞编号，留空
+    poc_id = '6d96e162-950b-4293-a2be-4d408094d58a'
     name = '大汉JCMS /opr_readfile.jsp 任意文件读取'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD  # 漏洞类型
@@ -14,10 +14,10 @@ class Vuln(ABVuln):
         配置信息等非常敏感的信息，可以轻松实现无任何限制获取 WEBSHELL。
     '''  # 漏洞描述
     ref = 'https://www.secpulse.com/archives/26672.html'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'Hanweb(大汉)'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'c0df664c-eb5a-4b4b-bf5a-e0c1caf3a576'

@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'Zhonghaida_0007' # 平台漏洞编号，留空
+    poc_id = '9f085a9c-2527-4a84-8040-43020d97f874'
     name = '中海达设备 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -14,9 +14,9 @@ class Vuln(ABVuln):
         产品是使用SQLite数据库，在该系统中，有一个获取ip信息的函数get_ip()
         只要调用了这个函数，进入sql查询 均可以造成漏洞，通过搜索发现，该系统的多个文件调用了该函数，均可造成SQL注入漏洞。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = '中海达VNet6专业型参考站接收机'  # 漏洞应用名称
     product_version = '中海达VNet6专业型参考站接收机'  # 漏洞应用版本
 

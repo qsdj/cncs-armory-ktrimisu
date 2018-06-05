@@ -6,7 +6,7 @@ import urllib,urllib2
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'WordPress_0072' # 平台漏洞编号，留空
+    poc_id = '853aa9df-e75e-4f64-9ef4-de15135edfa1'
     name = 'WordPress ShortCode Plugin 1.1 - Local File Inclusion Vulnerability' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型
@@ -15,8 +15,8 @@ class Vuln(ABVuln):
         WordPress shortcode 插件1.1版本存在任意文件下载漏洞
     ''' # 漏洞描述
     ref = 'http://sebug.net/vuldb/ssvid-87214' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'WordPress'  # 漏洞应用名称
     product_version = 'WordPress ShortCode Plugin 1.1'  # 漏洞应用版本
 

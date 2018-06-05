@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'ImagineCMS_0002' # 平台漏洞编号，留空
+    poc_id = '20db912c-1ded-451a-9675-a76cd70f133e'
     name = 'ImagineCMS largerimage.php 注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -14,14 +14,14 @@ class Vuln(ABVuln):
         ImagineCMS 2.50 - SQL Injection
     ''' # 漏洞描述
     ref = 'https://www.exploit-db.com/exploits/14426/' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'ImagineCMS'  # 漏洞应用名称
     product_version = '2.50'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = 'ImagineCMS_0006' # 平台 POC 编号，留空
+    poc_id = '30bdccac-3366-4bd3-866a-4c50086e12fe'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 

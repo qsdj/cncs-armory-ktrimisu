@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'weaver_0044' # 平台漏洞编号，留空
+    poc_id = 'bfb8e5d4-ef65-4bd2-9850-bc35df235e7f'
     name = '泛微e-office 越权遍历'  # 漏洞名称
     level = VulnLevel.MED  # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
@@ -13,9 +13,9 @@ class Vuln(ABVuln):
         泛微 e-office 信息泄露：
         E-mobile/email_page.php?detailid=*** 可以遍历任意邮件
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = '泛微OA'  # 漏洞应用名称
     product_version = '泛微e-office'  # 漏洞应用版本
 

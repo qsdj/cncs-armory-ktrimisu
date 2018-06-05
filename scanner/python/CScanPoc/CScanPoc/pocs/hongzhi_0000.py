@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'Hongzhi_0000' # 平台漏洞编号，留空
+    poc_id = '76a49162-7359-494d-8312-f0b14cac6523'
     name = '弘智科技房产管理系统SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -14,15 +14,15 @@ class Vuln(ABVuln):
         武汉弘智科技房产管理系统SQL注入漏洞。
         /pubinfo/HouseSource.asp?forsearch=1
     ''' # 漏洞描述
-    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=075924
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=075924
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = '弘智房产管理系统'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = 'hongzhi_0000' # 平台 POC 编号，留空
+    poc_id = 'dd0cb446-141b-4b6e-821b-129f8e38ff53'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 

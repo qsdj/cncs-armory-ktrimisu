@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'WordPress_0052' # 平台漏洞编号，留空
+    poc_id = '45e7eaaf-192a-4cc3-9bee-8b9fb84693e1'
     name = 'WordPress Theme Persuasion 2.x 任意文件下载'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型
@@ -15,8 +15,8 @@ class Vuln(ABVuln):
         An attacker can download readable files from the server and also can delete contents of writeable directories.
     '''  # 漏洞描述
     ref = 'https://www.exploit-db.com/exploits/30443/'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'WordPress'  # 漏洞应用名称
     product_version = 'WordPress Theme Persuasion 2.x'  # 漏洞应用版本
 

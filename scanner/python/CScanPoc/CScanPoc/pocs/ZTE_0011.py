@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'ZTE_0011' # 平台漏洞编号，留空
+    poc_id = '1d9f15ed-ca7d-4386-b93c-cc64fa3b0fb5'
     name = 'ZTE-F660 未授权访问'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
@@ -15,9 +15,9 @@ class Vuln(ABVuln):
         wlan_security.gch                不登录情况下直接获取路由ESSID以及WIFI密码
         manager_log_conf_t.gch           不登录情况下直接获取路由日志
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'ZTE'  # 漏洞应用名称
     product_version = 'ZTE-F660'  # 漏洞应用版本
 

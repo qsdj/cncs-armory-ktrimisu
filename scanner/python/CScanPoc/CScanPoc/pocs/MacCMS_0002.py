@@ -6,7 +6,7 @@ import urllib,urllib2
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'MacCMS_0002' # 平台漏洞编号，留空
+    poc_id = 'c3681e71-eac4-4c40-8057-5cab3f99f1d5'
     name = 'MacCMS v8 /inc_ajax.php SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -15,8 +15,8 @@ class Vuln(ABVuln):
         MacCMS V8版本中inc/ajax.php文件ids参数未经过过滤带入SQL语句，导致SQL注入漏洞的发生.
     ''' # 漏洞描述
     ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=063677' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'MacCMS'  # 漏洞应用名称
     product_version = 'v8'  # 漏洞应用版本
 

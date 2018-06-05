@@ -6,7 +6,7 @@ import urllib2
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'Horde_0001' # 平台漏洞编号，留空
+    poc_id = '56bc9d69-b1d8-467b-ae44-5ba4b54a1823'
     name = 'Horde 等地文件包含'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型
@@ -21,7 +21,7 @@ class Vuln(ABVuln):
         the remote host, subject to the privileges of the web server user id.
     '''  # 漏洞描述
     ref = 'https://www.exploit-db.com/exploits/16154/'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
     cve_id = 'CVE-2009-0932'  # cve编号
     product = 'Horde'  # 漏洞应用名称
     product_version = '3.3.2'  # 漏洞应用版本

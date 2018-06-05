@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'TOPSEC_0024'  # 平台漏洞编号，留空
+    poc_id = 'b756cfe3-3248-46f7-a457-bc1a2d4fe9f1'
     name = '天融信 前台无需登录命令执行'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型
@@ -13,11 +13,11 @@ class Vuln(ABVuln):
         天融信负载均衡系统 /acc/debug/bytecache_run_action.php 
         setValue 方法 和 stopByteCacheDebug 方法，参数处理不当，导致命令执行。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = '天融信负载均衡系统'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '105012b2-5367-4105-83e2-a39e9b7eaef0'

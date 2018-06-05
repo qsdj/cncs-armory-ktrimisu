@@ -6,7 +6,7 @@ from ftplib import FTP
 import urlparse
 
 class Vuln(ABVuln):
-    vuln_id = 'PCMan_0001' # 平台漏洞编号，留空
+    poc_id = 'a7fda323-55ae-4c02-9cbc-2225d37bdd4e'
     name = 'PCMan FTP Server 2.0.7 - Directory Traversal'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_TRAVERSAL # 漏洞类型
@@ -15,7 +15,7 @@ class Vuln(ABVuln):
         Directory traversal vulnerability in PCMan's FTP Server 2.0.7 allows remote attackers to read arbitrary files via a ..// (dot dot double slash) in a RETR command.
     '''  # 漏洞描述
     ref = 'https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-7601'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
     cve_id = 'CVE-2015-7601'  # cve编号
     product = 'PCMan FTP Server'  # 漏洞应用名称
     product_version = '2.0.7'  # 漏洞应用版本

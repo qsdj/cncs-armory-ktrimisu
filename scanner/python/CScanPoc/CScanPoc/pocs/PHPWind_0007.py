@@ -6,7 +6,7 @@ import urllib,urllib2
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'PHPWind_0007' # 平台漏洞编号，留空
+    poc_id = 'b044939c-d1f3-43f7-bb1b-ac0a6b314a92'
     name = 'PHPWind 9.0 /res/images/uploader.swf 跨站脚本漏洞' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型
@@ -14,9 +14,9 @@ class Vuln(ABVuln):
     desc = '''
         PHPWind 9.0 /res/images/uploader.swf文件存在FlashXss漏洞。    
     ''' # 漏洞描述
-    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=17728
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=17728
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'PHPWind'  # 漏洞应用名称
     product_version = '9.0'  # 漏洞应用版本
 

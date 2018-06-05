@@ -6,7 +6,7 @@ import re
 import time
 
 class Vuln(ABVuln):
-    vuln_id = 'Shuangyang_0001' # 平台漏洞编号，留空
+    poc_id = '9f25dfe6-419b-4be3-a9f5-1ac719d3def4'
     name = '双杨OA系统 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

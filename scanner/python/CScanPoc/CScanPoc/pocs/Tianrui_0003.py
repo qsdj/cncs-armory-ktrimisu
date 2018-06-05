@@ -6,7 +6,7 @@ import re
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'Tianrui_0003' # 平台漏洞编号，留空
+    poc_id = 'f94cc140-ad9e-4132-87f0-39d9deaa9776'
     name = '天睿电子图书管理系统系统 SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -14,15 +14,15 @@ class Vuln(ABVuln):
     desc = '''
         天睿电子图书管理系统系统 /upfile_tu2.asp?id=1 SQL注入漏洞。
     ''' # 漏洞描述
-    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0121549
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0121549
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = '天睿电子图书管理系统'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = 'tianrui_0007' # 平台 POC 编号，留空
+    poc_id = 'b918b5dc-6e65-44e1-a861-af3ae034202c'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 

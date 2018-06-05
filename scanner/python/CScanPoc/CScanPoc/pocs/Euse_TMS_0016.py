@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'Euse_TMS_0016' # 平台漏洞编号，留空
+    poc_id = 'a89ef0d4-a454-461e-89b4-0faaf0781357'
     name = '易用在线培训系统 SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -15,15 +15,15 @@ class Vuln(ABVuln):
         /NewPortal/download.aspx?fileid=1
         /NewPortal/content_show.aspx?contentid=1
     ''' # 漏洞描述
-    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0118985
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0118985
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'Euse TMS(易用在线培训系统)'  # 漏洞应用名称
     product_version = 'v6'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = 'euse_study_0016' # 平台 POC 编号，留空
+    poc_id = 'ba19f4ea-1ebf-41a7-9df6-6b3f20dfcbac'
     author = '国光'  # POC编写者
     create_date = '2018-05-22' # POC创建时间
 

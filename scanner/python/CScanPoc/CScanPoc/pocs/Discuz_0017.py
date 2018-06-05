@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import hashlib
 
 class Vuln(ABVuln):
-    vuln_id = 'Discuz_0017' # 平台漏洞编号，留空
+    poc_id = '41d9e678-dca8-4ab3-a517-642344d2d275'
     name = 'Discuz! X3.0 static/image/common/focus.swf文件存在FlashXss漏洞。' # 漏洞名称
     level = VulnLevel.LOW # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型
@@ -14,8 +14,8 @@ class Vuln(ABVuln):
         Discuz! x3.0 版本
     ''' # 漏洞描述
     ref = 'https://www.seebug.org/vuldb/ssvid-62509' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'Discuz!'  # 漏洞应用名称
     product_version = 'Discuz! x3.0'  # 漏洞应用版本
 

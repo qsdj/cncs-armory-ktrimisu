@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'Infosea_0004' # 平台漏洞编号，留空
+    poc_id = 'fa83203a-fedc-488f-9c77-66487a083dd4'
     name = '北京清大新洋图书管理系统 任意文件包含'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型
@@ -14,9 +14,9 @@ class Vuln(ABVuln):
         清大新洋图书系统 
         /opac/index.jsp?page=/WEB-INF/web.xml 任意文件包含漏洞，可getshell
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = '清大新洋'  # 漏洞应用名称
     product_version = '北京清大新洋图书管理系统'  # 漏洞应用版本
 

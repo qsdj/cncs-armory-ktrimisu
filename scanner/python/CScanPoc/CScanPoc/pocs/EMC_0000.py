@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'EMC_0000' # 平台漏洞编号
+    poc_id = 'fa376032-0a7b-449a-be39-b285a9b56ddc'
     name = 'EMC Cloud Tiering Appliance v10.0 Unauthenticated XXE Arbitrary File Read' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.XXE # 漏洞类型

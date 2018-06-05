@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'LTPower_0001' # 平台漏洞编号，留空
+    poc_id = '4fbaf239-f17d-46fa-9eab-641039c587f3'
     name = '力拓网络科技高校在用系统通用型SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -15,15 +15,15 @@ class Vuln(ABVuln):
         /QuestionList.aspx?k=a
         /TopicList.aspx?k=a
     ''' # 漏洞描述
-    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=116261
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=116261
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'LTPower(广东力拓软件)'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = 'ltpower_0000' # 平台 POC 编号，留空
+    poc_id = '962c255a-eebb-40e2-b676-d84274a91536'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 

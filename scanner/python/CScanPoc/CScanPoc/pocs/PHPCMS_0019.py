@@ -6,7 +6,7 @@ import re
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'PHPCMS_0019' # 平台漏洞编号，留空
+    poc_id = 'e94d4bed-38c3-4b93-94e6-d8fb7379aa65'
     name = 'PHPCMS V9最新任意读文件' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型
@@ -16,8 +16,8 @@ class Vuln(ABVuln):
         /index.php?m=search&c=index&a=public_get_suggest_keyword&url=asdf&q=
     ''' # 漏洞描述
     ref = 'https://www.2cto.com/article/201207/142839.html' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'PHPCMS'  # 漏洞应用名称
     product_version = 'V9'  # 漏洞应用版本
 

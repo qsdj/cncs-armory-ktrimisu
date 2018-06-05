@@ -7,7 +7,7 @@ import re
 import hashlib
 
 class Vuln(ABVuln):
-    vuln_id = 'WebsiteBakerCMS_0000' # 平台漏洞编号，留空
+    poc_id = '9ad43d51-3c44-411a-8a63-ae845279d7ca'
     name = 'WebsiteBakerCMS <=2.8.3 多个XSS漏洞' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型
@@ -20,8 +20,8 @@ class Vuln(ABVuln):
         /wb/modules/news/modify_settings.php?page_id=1&section_id=2f4"><script>alert(1)</script>bdc8b3919b5
     ''' # 漏洞描述
     ref = 'http://seclists.org/fulldisclosure/2014/Nov/44' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'WebsiteBakerCMS'  # 漏洞应用名称
     product_version = '2.8.3'  # 漏洞应用版本
 

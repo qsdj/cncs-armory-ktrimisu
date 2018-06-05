@@ -6,7 +6,7 @@ import urlparse
 import time
 
 class Vuln(ABVuln):
-    vuln_id = 'OurPHP_0001' # 平台漏洞编号，留空
+    poc_id = '8eaeb617-57aa-457f-bcd9-887c2f4d9dd4'
     name = 'OurPHP SQL盲注'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

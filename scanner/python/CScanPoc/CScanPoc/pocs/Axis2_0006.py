@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
 class Vuln(ABVuln):
-    vuln_id = 'Axis2_0006' # 平台漏洞编号
+    poc_id = '7251b510-e542-4c0c-914b-69fb733566d4'
     name = 'Axis2控制台弱口令' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.MISCONFIGURATION # 漏洞类型

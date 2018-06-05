@@ -6,7 +6,7 @@ import  re
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'ZTE_0006' # 平台漏洞编号，留空
+    poc_id = '92456973-a32a-4430-b91b-0abcf7bbedfc'
     name = 'ZTE某平台弱口令' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型
@@ -15,14 +15,14 @@ class Vuln(ABVuln):
        ZTE某平台弱口令，登录地址为 login.php 默认用户名:admin 默认密码:Admin2010
     ''' # 漏洞描述
     ref = 'http://blog.knownsec.com/2015/01/analysis-of-zte-soho-routerweb_shell_cmd-gch-remote-command-execution/' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'ZTE'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = 'ZTE_0006'
+    poc_id = '22931763-380d-485f-a9a1-a0cc27fabd37'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 

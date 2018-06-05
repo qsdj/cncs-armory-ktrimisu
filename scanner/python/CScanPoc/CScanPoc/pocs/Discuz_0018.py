@@ -6,7 +6,7 @@ import urllib,urllib2
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'Discuz_0018' # 平台漏洞编号，留空
+    poc_id = '3753f23e-5a29-4787-85fd-9fe6735b2cf0'
     name = 'Discuz! 7.2 /faq.php sql注入漏洞' # 漏洞名称
     level = VulnLevel.LOW # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型
@@ -15,8 +15,8 @@ class Vuln(ABVuln):
         Discuz! 7.1 和 7.2 版本的faq.php文件存在sql注入漏洞
     ''' # 漏洞描述
     ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=66095' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'Discuz!'  # 漏洞应用名称
     product_version = 'Discuz! 7.1 7.2'  # 漏洞应用版本
 

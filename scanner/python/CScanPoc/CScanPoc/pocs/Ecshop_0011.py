@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'Ecshop_0011' # 平台漏洞编号，留空
+    poc_id = 'f30c7520-c7ac-4844-9bd2-f80ce7b0ecf4'
     name = 'Ecshop XSS' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型
@@ -13,9 +13,9 @@ class Vuln(ABVuln):
     desc = '''
         Ecshop xss漏洞,2.6-2.7（开启手机商城的）.
     ''' # 漏洞描述
-    ref = '' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'Ecshop'  # 漏洞应用名称
     product_version = '2.6-2.7'  # 漏洞应用版本
 

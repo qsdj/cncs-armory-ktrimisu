@@ -6,19 +6,19 @@ import urlparse
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'PHP168_0011' # 平台漏洞编号，留空
+    poc_id = 'd632c738-480a-4d80-983b-42edb0b0cda5'
     name = 'PHP168 任意文件下载'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型
-    disclosure_date = ''  # 漏洞公布时间
+    disclosure_date = 'Unkonwn'  # 漏洞公布时间
     desc = '''
         PHP168 /job.php 任意文件下载。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'PHP168'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'e999aaa7-be63-4602-8657-0ebb68f0d275'

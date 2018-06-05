@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'Srun_0003' # 平台漏洞编号，留空
+    poc_id = '0d65cf1f-fc7d-4511-b847-3b3ccdde38d0'
     name = 'Srun3000计费系统 命令执行'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型
@@ -13,9 +13,9 @@ class Vuln(ABVuln):
         Srun3000计费系统 /srun3/web/user_info.php 逻辑不严谨，导致命令执行漏洞。
 
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = '深澜软件'  # 漏洞应用名称
     product_version = 'Srun3000'  # 漏洞应用版本
 

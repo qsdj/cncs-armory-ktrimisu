@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'PHPVibe_0000' # 平台漏洞编号，留空
+    poc_id = 'f1b019d7-d63e-4583-9413-d38aab4ee2eb'
     name = 'PHPVibe 4.0 Arbitrary File Disclosure'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
@@ -13,8 +13,8 @@ class Vuln(ABVuln):
         PHPVibe /stream.php?file=TGk0dmRtbGlaVjlqYjI1bWFXY3VjR2h3UUVCdFpXUnBZUT09 任意文件泄露。
     '''  # 漏洞描述
     ref = 'https://packetstormsecurity.com/files/132691/phpvibe4-disclose.txt'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'PHPVibe'  # 漏洞应用名称
     product_version = '4.0'  # 漏洞应用版本
 

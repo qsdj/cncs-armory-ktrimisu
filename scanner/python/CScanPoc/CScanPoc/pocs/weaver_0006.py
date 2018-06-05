@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'weaver_0006' # 平台漏洞编号，留空
+    poc_id = '21cc4851-183d-48d4-bdda-8abc8a0b3d4f'
     name = '泛微Eoffice无需登录直接getshell' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
@@ -13,11 +13,11 @@ class Vuln(ABVuln):
     desc = '''
         泛微Eoffice无需登录，直接获取数据库链接文件，直接拿shell
     ''' # 漏洞描述
-    ref = '' # 漏洞来源/weaver/weaver.email.FileDownloadLocation?download=1&fileid=-2%20or%201=2
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源/weaver/weaver.email.FileDownloadLocation?download=1&fileid=-2%20or%201=2
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = '泛微OA'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):

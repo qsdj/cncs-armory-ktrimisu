@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'Zblog_0003'  # 平台漏洞编号，留空
+    poc_id = '8e99604e-0ad2-4e7c-9110-9926d6946b2a'
     name = 'Zblog1.8 search.asp XSS'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.XSS  # 漏洞类型
@@ -13,9 +13,9 @@ class Vuln(ABVuln):
         Zblog是基于Asp平台的Blog博客(网志)程序
         search.asp在对用户提交数据处理上存在安全漏洞。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'Zblog'  # 漏洞应用名称
     product_version = 'Zblog1.8'  # 漏洞应用版本
 

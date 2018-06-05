@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'Zblog_0001'  # 平台漏洞编号，留空
+    poc_id = '918b11d6-9fb4-41f2-acb1-c8838c1ed384'
     name = 'Zblog 本地文件包含'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.LFI  # 漏洞类型
@@ -13,8 +13,8 @@ class Vuln(ABVuln):
         虽然限制了必须为.php后缀的，但是因为没对POST转义，所以我们可以截断后面的.php。
     '''  # 漏洞描述
     ref = 'https://www.seebug.org/vuldb/ssvid-89658'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'Zblog'  # 漏洞应用名称
     product_version = 'Zblog 2.0'  # 漏洞应用版本
 

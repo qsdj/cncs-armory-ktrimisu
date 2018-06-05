@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import time
 
 class Vuln(ABVuln):
-    vuln_id = 'Haohanjy_0001'  # 平台漏洞编号，留空
+    poc_id = '68111000-d628-4002-af9b-1afff48337f6'
     name = '皓翰教育通用数字化校园平台 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -14,11 +14,11 @@ class Vuln(ABVuln):
         浙江皓翰教育科技有限公司通用数字化校园平台存在SQL注入漏洞。
         /IneduPortal/Components/albums/AlbumShow.aspx?id=1
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = '皓翰数字化校园平台'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '56767962-9765-46c0-850d-af4304bc5400'

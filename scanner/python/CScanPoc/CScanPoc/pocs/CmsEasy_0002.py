@@ -6,7 +6,7 @@ import urllib,urllib2
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'CmsEasy_0002' # 平台漏洞编号，留空
+    poc_id = '0329ea58-373b-4862-949c-74822cd50323'
     name = 'CmsEasy 5.5 /demo.php 跨站脚本漏洞' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型
@@ -15,8 +15,8 @@ class Vuln(ABVuln):
         CmsEasy /demo.php文件存在xss漏洞。
     ''' # 漏洞描述
     ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=069363' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'CmsEasy'  # 漏洞应用名称
     product_version = '<=5.5'  # 漏洞应用版本
 

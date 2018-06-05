@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'WordPress_0079' # 平台漏洞编号，留空
+    poc_id = '1bbf9c05-cfb2-41e9-8e19-a18ed8f5e981'
     name = 'WordPress Plugin Survey and Poll 1.1 - Blind SQL Injection' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -14,14 +14,14 @@ class Vuln(ABVuln):
         WordPress Plugin Survey and Poll 1.1 - Blind SQL Injection.
     ''' # 漏洞描述
     ref = 'https://www.exploit-db.com/exploits/36054/' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
     cve_id = 'CVE-2015-2090' #cve编号
     product = 'WordPress'  # 漏洞应用名称
     product_version = 'WordPress Plugin Survey and Poll 1.1'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = 'WordPress_0079' # 平台 POC 编号，留空
+    poc_id = 'ec755311-917f-492c-b883-64b0ef39a8d5'
     author = '国光'  # POC编写者
     create_date = '2018-05-22' # POC创建时间
 

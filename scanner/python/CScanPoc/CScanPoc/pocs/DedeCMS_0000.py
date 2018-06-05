@@ -7,7 +7,7 @@ import re
 import hashlib
 
 class Vuln(ABVuln):
-    vuln_id = 'DedeCMS_0000' # 平台漏洞编号，留空
+    poc_id = '961bcfa0-5989-426b-a4c1-2d660067a4a0'
     name = '织梦CMS 任意地址跳转' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.OTHER # 漏洞类型

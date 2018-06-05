@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'Comexe_0000' # 平台漏洞编号，留空
+    poc_id = '7ad1d78a-96cc-4eed-8b53-456dd69b73a6'
     name = '科迈RAS远程快速接入方案后台登陆绕过' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.MISCONFIGURATION # 漏洞类型
@@ -14,14 +14,14 @@ class Vuln(ABVuln):
         科迈RAS远程快速接入方案后台 /server/CmxManager.php 登陆绕过。
     ''' # 漏洞描述
     ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=0123807' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = '科迈RAS系统'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = 'comexe_0000' # 平台 POC 编号，留空
+    poc_id = '9c978595-00eb-4086-970e-5107ca32a264'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 

@@ -6,7 +6,7 @@ import urllib2
 import random
 
 class Vuln(ABVuln):
-    vuln_id = 'FineCMS_0001' # 平台漏洞编号，留空
+    poc_id = 'ab358ec9-88c7-41c5-8b5e-5056482589a2'
     name = 'FineCMS免费版无条件getshell'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型
@@ -14,9 +14,9 @@ class Vuln(ABVuln):
     desc = '''
         FineCMS /dayrui/libraries/Chart/ofc_upload_image.php 未做限制，可上传任意文件，getshell.
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'FineCMS'  # 漏洞应用名称
     product_version = '免费版'  # 漏洞应用版本
 

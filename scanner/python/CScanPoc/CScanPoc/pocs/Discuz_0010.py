@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'Discuz_0010' # 平台漏洞编号，留空
+    poc_id = '5b11d321-61cd-45e3-9584-c5a020e2cc39'
     name = 'Discuz! Board X batch.common.php SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -14,10 +14,10 @@ class Vuln(ABVuln):
         Discuz! 是一款用 PHP 编写的，支持 MySQL 和 PostgreSQL 数据库的互联网论坛软件。它是在中国最受欢迎的互联网论坛软件。,Discuz! Board X batch.common.php SQL 注入漏洞
     ''' # 漏洞描述
     ref = 'https://help.aliyun.com/knowledge_detail/37476.html' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'Discuz!'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):

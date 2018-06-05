@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'Netentsec_0009' # 平台漏洞编号，留空
+    poc_id = 'db41e051-e695-4047-b4c1-98d53052c177'
     name = '网康科技应用网关NS—ASG 6.3通用性sql注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -14,14 +14,14 @@ class Vuln(ABVuln):
         网康科技应用网关NS—ASG 6.3通用性sql注入
     ''' # 漏洞描述
     ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=073991' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = '网康应用安全网关'  # 漏洞应用名称
     product_version = '6.3'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = 'NS-ASG_0009'
+    poc_id = 'f29600be-7248-4875-b745-2a2cdfe70bb8'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 

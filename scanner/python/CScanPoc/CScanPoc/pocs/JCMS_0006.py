@@ -6,7 +6,7 @@ import time
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'JCMS_0006' # 平台漏洞编号，留空
+    poc_id = 'a8ebe4fc-3365-499f-bc26-9c87124edccc'
     name = '大汉版通JCMS SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -15,8 +15,8 @@ class Vuln(ABVuln):
         /jcms/m_5_1/que_chooseusers.jsp?que_usergroupid=1 存在SQL注入漏洞的文件。
     ''' # 漏洞描述
     ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=76816' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'Hanweb(大汉)'  # 漏洞应用名称
     product_version = '大汉JCMS 5.1'  # 漏洞应用版本
 

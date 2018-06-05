@@ -6,7 +6,7 @@ import hashlib
 import uuid
 
 class Vuln(ABVuln):
-    vuln_id = 'CouchDB_0001'  # 平台漏洞编号，留空
+    poc_id = 'a60485f8-9611-4e8f-b340-b1ebbcc613b3'
     name = 'CouchDB 垂直权限绕过漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE  # 漏洞类型
@@ -15,7 +15,7 @@ class Vuln(ABVuln):
         在2017年11月15日，CVE-2017-12635和CVE-2017-12636披露，CVE-2017-12635是由于Erlang和JavaScript对JSON解析方式的不同，导致语句执行产生差异性导致的。这个漏洞可以让任意用户创建管理员，属于垂直权限绕过漏洞。
     '''  # 漏洞描述
     ref = 'https://github.com/vulhub/vulhub/tree/master/couchdb/CVE-2017-12635'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
     cve_id = 'CVE-2017-12635'  # cve编号
     product = 'CouchDB'  # 漏洞应用名称
     product_version = '小于 1.7.0 以及 小于 2.1.1'  # 漏洞应用版本

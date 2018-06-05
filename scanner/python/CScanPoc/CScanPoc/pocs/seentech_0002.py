@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'Seentech_0002' # 平台漏洞编号，留空
+    poc_id = '5421a3cf-38d3-4504-9250-b564a2bea494'
     name = '中科新业网络安全审计系统V5.0任意文件下载'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型
@@ -12,9 +12,9 @@ class Vuln(ABVuln):
     desc = '''
         中科新业网络安全审计系统V5.0 /ucenter/include/get_file.php 任意文件可下载。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = '中科新业网络哨兵'  # 漏洞应用名称
     product_version = 'V5.0'  # 漏洞应用版本
 

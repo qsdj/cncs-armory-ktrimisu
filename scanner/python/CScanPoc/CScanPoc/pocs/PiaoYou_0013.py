@@ -7,7 +7,7 @@ import time
 import urllib
 
 class Vuln(ABVuln):
-    vuln_id = 'PiaoYou_0013' # 平台漏洞编号，留空
+    poc_id = '7c24b1c6-fc08-465c-8125-c113209413f8'
     name = '票友订票系统 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -16,11 +16,11 @@ class Vuln(ABVuln):
         票友订票系统存在SQL注入漏洞：
         /member/reg.aspx
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'PiaoYou(票友软件)'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '38fc4f6d-4b8d-4b04-b6cf-7b509c1d0e90'

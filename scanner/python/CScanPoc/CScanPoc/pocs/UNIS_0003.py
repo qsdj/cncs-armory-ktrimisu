@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'UNIS_0003'  # 平台漏洞编号，留空
+    poc_id = '6252ce06-625e-48a0-a55b-5bc7bd705c8e'
     name = '清华紫光硬件防火墙 命令执行'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型
@@ -12,9 +12,9 @@ class Vuln(ABVuln):
     desc = '''
         清华紫光UF3500N防火墙2.70版命令执行漏洞:/cgi-bin/admin_login.cgi
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = '清华紫光硬件防火墙'  # 漏洞应用名称
     product_version = 'UF3504 2.70'  # 漏洞应用版本
 

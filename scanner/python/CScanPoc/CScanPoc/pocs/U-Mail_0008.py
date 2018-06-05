@@ -7,7 +7,7 @@ import re
 import hashlib
 
 class Vuln(ABVuln):
-    vuln_id = 'U-Mail_0008' # 平台漏洞编号，留空
+    poc_id = 'f1eebec3-89e3-41b3-860d-db34b255eea7'
     name = 'U-Mail 20141124 /api/api.php 敏感信息泄漏' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
@@ -16,8 +16,8 @@ class Vuln(ABVuln):
         U-Mail 20141124 /api/api.php 敏感信息泄露。
     ''' # 漏洞描述
     ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=070206' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'U-Mail'  # 漏洞应用名称
     product_version = '20141124'  # 漏洞应用版本
 

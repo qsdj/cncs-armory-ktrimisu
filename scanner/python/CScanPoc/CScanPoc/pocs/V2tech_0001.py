@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'V2tech_0001' # 平台漏洞编号，留空
+    poc_id = '25c63e72-ee7a-4061-84fc-f6c0bc9d6c49'
     name = 'V2视频会议系统某处SQL注射' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -14,14 +14,14 @@ class Vuln(ABVuln):
         威速V2视频会议系统 /Conf/jsp/systembulletin/bulletinAction.do?operator=details&sysId=-1 SQL注射漏洞。
     ''' # 漏洞描述
     ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=0143276' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'v2_conference'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = 'v2_0000' # 平台 POC 编号，留空
+    poc_id = '04308627-7ab0-4cab-b0b0-d90b3c3ae80a'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 

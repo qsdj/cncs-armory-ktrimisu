@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'DirPHP_0000' # 平台漏洞编号
+    poc_id = '39fbcb01-9ec4-4cae-8920-08ae244c519a'
     name = 'DirPHP 1.0 LFI Vulnerability' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型

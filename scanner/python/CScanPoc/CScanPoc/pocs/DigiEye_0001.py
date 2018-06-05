@@ -6,7 +6,7 @@ import socket
 import urlparse
 
 class Vuln(ABVuln):
-    vuln_id = 'DigiEye_0001' # 平台漏洞编号，留空
+    poc_id = '8582834a-fb09-4a7b-8533-bd1a5aff5005'
     name = 'DigiEye 3G(software version 3.19.30004) Backdoor'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.OTHER # 漏洞类型
@@ -21,8 +21,8 @@ class Vuln(ABVuln):
         mechanism.
     '''  # 漏洞描述
     ref = 'http://seclists.org/bugtraq/2014/Jul/17'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'DigiEye 3G'  # 漏洞应用名称
     product_version = 'software version 3.19.30004'  # 漏洞应用版本
 

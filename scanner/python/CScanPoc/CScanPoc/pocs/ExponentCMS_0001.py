@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
 class Vuln(ABVuln):
-    vuln_id = 'ExponentCMS_0001' # 平台漏洞编号，留空
+    poc_id = 'c336402b-d7c8-450e-bc88-ee615d356c32'
     name = 'Exponent CMS 2.3.2 Reflected XSS Vulnerability'  # 漏洞名称
     level = VulnLevel.LOW  # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型
@@ -15,7 +15,7 @@ class Vuln(ABVuln):
         攻击者可利用该漏洞查看文件和以受影响应用程序的权限执行任意本地PHP代码。CMS 2.2.0 beta 3版本中存在漏洞，其他版本也可能受到影响
     '''  # 漏洞描述
     ref = 'http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-3295'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
     cve_id = 'CVE-2013-3295'  # cve编号
     product = 'ExponentCMS'  # 漏洞应用名称
     product_version = '2.3.2'  # 漏洞应用版本

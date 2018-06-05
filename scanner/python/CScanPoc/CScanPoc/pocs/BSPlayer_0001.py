@@ -7,7 +7,7 @@ import socket
 import urlparse
 
 class Vuln(ABVuln):
-    vuln_id = 'BSPlayer_0001' # 平台漏洞编号，留空
+    poc_id = '71a259ce-2bea-4eac-bdb0-521eec4ba85a'
     name = 'BSPlayer2.68 缓冲区溢出漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
@@ -18,8 +18,8 @@ class Vuln(ABVuln):
         address and then used backward jumping to jump to a long jump that eventually land in my shellcode.
     '''  # 漏洞描述
     ref = 'https://www.exploit-db.com/exploits/36477/'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'BSPlayer'  # 漏洞应用名称
     product_version = 'BSPlayer2.68'  # 漏洞应用版本
 

@@ -6,7 +6,7 @@ import urllib,urllib2
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'Joomla_0000' # 平台漏洞编号，留空
+    poc_id = 'b062e32f-aaf1-4c30-90a3-fb489d52bdad'
     name = 'Joomla! Spider Form Maker <=3.4 SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

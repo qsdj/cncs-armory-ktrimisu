@@ -6,7 +6,7 @@ import urllib,urllib2
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'PHPOK_0001' # 平台漏洞编号，留空
+    poc_id = 'f6b3c9e6-96a7-4805-9f4c-b9c70428968d'
     name = 'PHPOK 4.0.315 /framework/ajax/admin_opt.php SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -14,9 +14,9 @@ class Vuln(ABVuln):
     desc = '''
         PHPOK企业站 4.0.315 /framework/ajax/admin_opt.php SQL注入漏洞。
     ''' # 漏洞描述
-    ref = '' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'PHPOK'  # 漏洞应用名称
     product_version = '4.0.315'  # 漏洞应用版本
 

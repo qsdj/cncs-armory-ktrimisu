@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'AlstraSoft_0000' # 平台漏洞编号
+    poc_id = 'f65d3da5-cef4-44ee-9fc7-73d94a79f606'
     name = 'AlstraSoft EPay Pro 2.0 - Remote File Include Vulnerability' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.RFI # 漏洞类型

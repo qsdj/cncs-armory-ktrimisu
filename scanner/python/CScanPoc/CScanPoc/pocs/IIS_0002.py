@@ -6,17 +6,17 @@ import httplib
 import sys
 
 class Vuln(ABVuln):
-    vuln_id = 'IIS_0002' # 平台漏洞编号，留空
+    poc_id = 'eae5c4ec-631e-4ea6-b850-344aed4d01cd'
     name = 'IIS 6.0 PUT 任意文件创建漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
-    disclosure_date = ''  # 漏洞公布时间
+    disclosure_date = 'Unkonwn'  # 漏洞公布时间
     desc = '''
         IIS配置不当导致的任意文件创建漏洞。
     '''  # 漏洞描述
     ref = 'http://www.lijiejie.com/python-iis-put-file/'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'IIS'  # 漏洞应用名称
     product_version = 'IIS 6.0'  # 漏洞应用版本
 

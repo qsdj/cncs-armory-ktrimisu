@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'Insky_0000' # 平台漏洞编号
+    poc_id = 'b6a55c63-59b9-488f-ad49-99d2c6cbb657'
     name = 'Insky CMS 006-0111 - Multiple Remote File Include Vulnerability' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.RFI # 漏洞类型

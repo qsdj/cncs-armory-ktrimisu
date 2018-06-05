@@ -5,19 +5,19 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import time
 
 class Vuln(ABVuln):
-    vuln_id = 'weaver_0023' # 平台漏洞编号，留空
+    poc_id = '21af4d7f-0141-4ab4-9193-9aad44ca11c6'
     name = '泛微OA通用系统 路径遍历'  # 漏洞名称
     level = VulnLevel.LOW  # 漏洞危害级别
     type = VulnType.FILE_TRAVERSAL # 漏洞类型
-    disclosure_date = ''  # 漏洞公布时间
+    disclosure_date = 'Unkonwn'  # 漏洞公布时间
     desc = '''
         泛微OA通用系统设计缺陷导致路径遍历。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = '泛微OA'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '4c7b622d-cab1-4a5f-ae9f-eebfe01e11d8'

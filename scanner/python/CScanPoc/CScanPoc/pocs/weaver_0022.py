@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'weaver_0022' # 平台漏洞编号，留空
+    poc_id = '8e786716-3aec-4d87-908f-fc6d27907d3b'
     name = '泛微e-cology通用型 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -14,11 +14,11 @@ class Vuln(ABVuln):
         泛微e-cology /pweb/careerapply/HrmCareerApplyPerEdit.jsp，/pweb/careerapply/HrmCareerApplyWorkEdit.jsp，
         /web/careerapply/HrmCareerApplyPerEdit.jsp，/web/careerapply/HrmCareerApplyWorkView.jsp 存在通用型SQL注入漏洞。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = '泛微OA'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '4ba4634c-a793-4856-af44-2571bb9af4aa'

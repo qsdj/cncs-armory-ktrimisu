@@ -6,7 +6,7 @@ import urllib,urllib2
 import re
 
 class Vuln(ABVuln):
-    vuln_id = '08CMS_0001' # 平台漏洞编号，留空
+    poc_id = 'f5a1d8cc-f420-4657-90e7-a7654c09341b'
     name = '08CMS 3.1 /include/paygate/alipay/pays.php SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'HeeritOA_0001' # 平台漏洞编号，留空
+    poc_id = '8561bf55-06ab-4600-8912-a43b4b1d9df4'
     name = '北京希尔OA通用型任意文件读取'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_OPERATION # 漏洞类型
@@ -13,11 +13,11 @@ class Vuln(ABVuln):
         北京希尔OA通用型任意文件读取漏洞。
         /vfs?path=../../../../../../../../../../etc/passwd
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'HeeritOA(希尔OA)'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'fac35b39-501b-4237-8870-c184d914f7c4'

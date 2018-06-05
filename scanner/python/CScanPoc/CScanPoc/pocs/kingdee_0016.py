@@ -6,7 +6,7 @@ import time
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'kingdee_0016' # 平台漏洞编号，留空
+    poc_id = '14479d4f-58e7-4209-9cf9-6eb7bca90d4f'
     name = '金蝶AES系统2种Java web配置文件可下载'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.MISCONFIGURATION # 漏洞类型
@@ -15,13 +15,13 @@ class Vuln(ABVuln):
         金蝶AES系统2种Java web配置文件可下载。
     '''  # 漏洞描述
     ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=083323'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = '金蝶协作办公系统'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 class Poc(ABPoc):
-    poc_id = 'kingdee_0016'
+    poc_id = '340504b3-fd4f-4404-bdef-34575b6d2940'
     author = '国光'  # POC编写者
     create_date = '2018-05-25'  # POC创建时间
 

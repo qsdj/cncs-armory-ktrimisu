@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import base64
 
 class Vuln(ABVuln):
-    vuln_id = 'weaver_0012' # 平台漏洞编号，留空
+    poc_id = '3c77355f-8276-4c77-ae47-41509ee676dd'
     name = '泛微OA系统敏感文件未授权访问'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
@@ -13,11 +13,11 @@ class Vuln(ABVuln):
     desc = '''
         泛微OA系统敏感文件未授权访问,可导致所有员工组织架构信息泄露,并可被用来进行暴力破解等一系列利用。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = '泛微OA'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'a0574bd0-746c-416f-b1ed-048146af9532'

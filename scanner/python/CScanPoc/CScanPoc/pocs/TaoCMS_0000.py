@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'TaoCMS_0000' # 平台漏洞编号，留空
+    poc_id = '47aa9112-4717-4dc9-9396-f6fd581b4ab1'
     name = 'TaoCMS 2.5 /index.php SQL注入漏洞' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -14,8 +14,8 @@ class Vuln(ABVuln):
         TaoCMS 2.5 /index.php SQL注入漏洞
     ''' # 漏洞描述
     ref = 'https://www.seebug.org/vuldb/ssvid-62606' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'TaoCMS'  # 漏洞应用名称
     product_version = '2.5'  # 漏洞应用版本
 

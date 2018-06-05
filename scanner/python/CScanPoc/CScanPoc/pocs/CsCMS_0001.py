@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
 class Vuln(ABVuln):
-    vuln_id = 'CsCMS_0001' # 平台漏洞编号，留空
+    poc_id = 'a41949e4-428e-4df3-a821-d6e9432daa70'
     name = 'CsCMS 3.5 SQL注入漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -13,9 +13,9 @@ class Vuln(ABVuln):
     desc = '''
         CsCMS 3.5版本的dance.php中参数未过滤，导致SQL注入的产生。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'CsCMS'  # 漏洞应用名称
     product_version = '3.5'  # 漏洞应用版本
 

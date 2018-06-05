@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'Joomla_0066' # 平台漏洞编号
+    poc_id = '53171692-1e2a-43ff-89ec-d1bfff2ab108'
     name = 'Joomla Spider Calendar <= 3.2.6 SQL Injection' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

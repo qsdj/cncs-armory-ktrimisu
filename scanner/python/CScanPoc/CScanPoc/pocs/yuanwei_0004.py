@@ -6,11 +6,11 @@ import re
 import random
 
 class Vuln(ABVuln):
-    vuln_id = 'Yuanwei_0004' # 平台漏洞编号，留空
+    poc_id = 'f28915bf-1940-45af-a31b-4b0e326ff9ce'
     name = '远为应用安全网关命令执行'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.OTHER # 漏洞类型
-    disclosure_date = ''  # 漏洞公布时间
+    disclosure_date = 'Unkonwn'  # 漏洞公布时间
     desc = '''
         远为应用安全网关多处命令执行。
         /tools/fault/sys_ping.php
@@ -18,11 +18,11 @@ class Vuln(ABVuln):
         /tools/fault/sys_webpacket.php
         tools/fault/arp.php
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = '远为应用安全网关'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'bd70f5ef-421a-47e8-8082-2ca4acf6cedc'

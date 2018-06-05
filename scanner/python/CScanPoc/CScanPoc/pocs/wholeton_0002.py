@@ -6,7 +6,7 @@ import random
 import urllib
 
 class Vuln(ABVuln):
-    vuln_id = 'Wholeton_0005' # 平台漏洞编号，留空
+    poc_id = 'b96b63b7-7590-40ab-92d7-56b67e0e61e2'
     name = '惠尔顿上网行为管理系统命令执行'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型
@@ -21,11 +21,11 @@ class Vuln(ABVuln):
         /base/networking/ipbindmac_gateway.php
         /base/message/ajaxGoAuth.php
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = '惠尔顿上网行为管理系统'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '514bced6-b7fc-4183-9244-8ff94bd729fd'

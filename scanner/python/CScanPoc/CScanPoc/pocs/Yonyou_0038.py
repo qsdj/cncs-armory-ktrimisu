@@ -7,7 +7,7 @@ import os
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'yongyou_0038' # 平台漏洞编号，留空
+    poc_id = '7324b7dc-0e4f-40f7-9f43-63dac2aa302a'
     name = '用友NC-IUFO报表系统部分安全问题' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
@@ -23,7 +23,7 @@ class Vuln(ABVuln):
 
 
 class Poc(ABPoc):
-    poc_id = 'yongyou_0038' # 平台 POC 编号，留空
+    poc_id = 'd1315145-bce5-4e4d-bcd1-8fcd47106b5f'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 

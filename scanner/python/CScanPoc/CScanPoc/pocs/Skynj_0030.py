@@ -7,7 +7,7 @@ import re
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'Skynj_0030' # 平台漏洞编号，留空
+    poc_id = '0ff9212d-8f1d-4c36-9ed7-1ab5f6b44378'
     name = '南京擎天政务系统路径泄露' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -16,15 +16,15 @@ class Vuln(ABVuln):
         南京擎天政务系统路径泄露：
         /index_page/geren_list_page.aspx?server=1%27&refid=
     ''' # 漏洞描述
-    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=075253
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=075253
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = '擎天政务系统'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = 'skytech_0030' # 平台 POC 编号，留空
+    poc_id = 'c9c50484-c268-4f65-83eb-cde1b680291c'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 

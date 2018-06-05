@@ -6,7 +6,7 @@ import urllib,urllib2
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'WordPress_0073' # 平台漏洞编号，留空
+    poc_id = 'f2422eb5-ec04-4938-ba3e-8533839c4996'
     name = 'WordPress Acento主题 任意文件下载' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型
@@ -15,8 +15,8 @@ class Vuln(ABVuln):
         wp主题插件acento theme 中view-pad.php 文件,可读取任意文件
     ''' # 漏洞描述
     ref = 'https://www.exploit-db.com/exploits/34578/' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'WordPress'  # 漏洞应用名称
     product_version = 'WordPress Acento主题'  # 漏洞应用版本
 

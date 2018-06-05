@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re, urlparse
 
 class Vuln(ABVuln):
-    vuln_id = 'Panabit_0001'  # 平台漏洞编号，留空
+    poc_id = '4cb5b587-3416-4097-b5ba-3bde323d8fca'
     name = '派网软件某流量分析管理系统 任意文件下载'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_TRAVERSAL # 漏洞类型
@@ -13,9 +13,9 @@ class Vuln(ABVuln):
     desc = '''
         派网软件（Panabit）某流量分析管理系统任意文件遍历:http://foorbar/download.php?filename=../../../../etc/passwd
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = '派网软件'  # 漏洞应用名称
     product_version = '派网软件某流量分析管理系统'  # 漏洞应用版本
 

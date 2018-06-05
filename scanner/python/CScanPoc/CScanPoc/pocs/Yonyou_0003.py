@@ -6,7 +6,7 @@ import re
 import time
 
 class Vuln(ABVuln):
-    vuln_id = 'Yonyou_0003' # 平台漏洞编号，留空
+    poc_id = '0f8dc2ec-9db7-469c-983d-9815664f6e91'
     name = '用友NC-IUFO系统 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

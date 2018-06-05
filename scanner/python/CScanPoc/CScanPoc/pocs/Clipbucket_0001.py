@@ -7,7 +7,7 @@ import urllib2
 import httplib
 
 class Vuln(ABVuln):
-    vuln_id = 'Clipbucket_0001' # 平台漏洞编号，留空
+    poc_id = 'b8ad9cde-da25-445b-aebf-7bab9979ac21'
     name = 'Clipbucket 2.7 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -22,9 +22,9 @@ class Vuln(ABVuln):
         Whether you are a small fan club or a big Multi Tier Network operator,
         Clipbucket will fulfill your video management needs.
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'Clipbucket'  # 漏洞应用名称
     product_version = 'Clipbucket 2.7'  # 漏洞应用版本
 

@@ -6,7 +6,7 @@ import hashlib
 import urllib2
 
 class Vuln(ABVuln):
-    vuln_id = 'Discuz_0026' # 平台漏洞编号，留空
+    poc_id = 'f3ba037b-2f91-456a-ae61-91ac56bf7bce'
     name = 'Discuz! /static/image/common/flvplayer.swf 跨站脚本' # 漏洞名称
     level = VulnLevel.LOW # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型
@@ -15,8 +15,8 @@ class Vuln(ABVuln):
         Discuz! x3.0 /static/image/common/flvplayer.swf 跨站脚本漏洞。
     ''' # 漏洞描述
     ref = 'http://www.discuz.net/thread-3612752-1-1.html' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'Discuz!'  # 漏洞应用名称
     product_version = 'x3.0'  # 漏洞应用版本
 

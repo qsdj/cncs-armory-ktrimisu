@@ -6,7 +6,7 @@ import urlparse
 import time
 
 class Vuln(ABVuln):
-    vuln_id = 'Network_Security_Audit_System_0001'  # 平台漏洞编号，留空
+    poc_id = '0cc50c4b-2360-4927-a047-0ef2936f2cbf'
     name = '上网行为审计系统 通用型SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -28,9 +28,9 @@ class Vuln(ABVuln):
         网睿兴安日志系统
         艺创专业上网行为管理设备 e-strong ibm
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = '上网行为审计系统'  # 漏洞应用名称
     product_version = '上网行为审计系统'  # 漏洞应用版本
 

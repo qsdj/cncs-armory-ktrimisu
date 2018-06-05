@@ -8,7 +8,7 @@ import string
 import requests
 
 class Vuln(ABVuln):
-    vuln_id = 'WordPress_0008'  # 平台漏洞编号，留空
+    poc_id = '79548af1-be4a-4db1-bf0c-43c1fb5371b1'
     name = 'WordPress 存储型XSS'  # 漏洞名称
     level = VulnLevel.MED  # 漏洞危害级别
     type = VulnType.XSS  # 漏洞类型
@@ -20,8 +20,8 @@ class Vuln(ABVuln):
         依然可以造成页面布局的混乱，形成xss。
     '''  # 漏洞描述
     ref = 'http://www.freebuf.com/news/65926.html'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'WordPress'  # 漏洞应用名称
     product_version = '<4.2.1'  # 漏洞应用版本
 

@@ -7,7 +7,7 @@ import re
 import hashlib
 
 class Vuln(ABVuln):
-    vuln_id = 'PHPStat_0001' # 平台漏洞编号，留空
+    poc_id = 'fff76489-bb81-4a79-8af1-4b036c98598a'
     name = 'PHPStat 1.0 /download.php 任意文件下载' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型
@@ -16,8 +16,8 @@ class Vuln(ABVuln):
         PHPStat v1.0.20141124 /download.php 任意文件下载。
     ''' # 漏洞描述
     ref = 'http://0day5.com/archives/2372/' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'PHPStat'  # 漏洞应用名称
     product_version = '1.0'  # 漏洞应用版本
 

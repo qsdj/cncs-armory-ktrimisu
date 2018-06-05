@@ -6,7 +6,7 @@ import urllib,urllib2
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'WordPress_0074' # 平台漏洞编号，留空
+    poc_id = 'a78b2ebf-f8c3-4cb2-ab45-1e4a2e4accca'
     name = 'WordPress Persuasion Theme 2.x 任意文件下载' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型
@@ -15,8 +15,8 @@ class Vuln(ABVuln):
         WordPress Persuasion Theme 2.x 任意文件下载 ，通过此漏洞可以下载服务器上的任意可读文件。
     ''' # 漏洞描述
     ref = 'http://www.exploit-db.com/exploits/30443/' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'WordPress'  # 漏洞应用名称
     product_version = 'WordPress Persuasion Theme 2.x'  # 漏洞应用版本
 

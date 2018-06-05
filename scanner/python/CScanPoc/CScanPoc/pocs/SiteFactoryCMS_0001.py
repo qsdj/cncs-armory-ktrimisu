@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'SiteFactoryCMS_0001' # 平台漏洞编号，留空
+    poc_id = '76b85e03-0e52-41a4-8ebb-983e84479da7'
     name = 'SiteFactory CMS任意文件下载'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型
@@ -13,8 +13,8 @@ class Vuln(ABVuln):
         SiteFactory CMS 5.5.9 存在任意文件下载漏洞。
     '''  # 漏洞描述
     ref = 'https://www.seebug.org/vuldb/ssvid-89337'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'SiteFactoryCMS'  # 漏洞应用名称
     product_version = '5.5.9'  # 漏洞应用版本
 

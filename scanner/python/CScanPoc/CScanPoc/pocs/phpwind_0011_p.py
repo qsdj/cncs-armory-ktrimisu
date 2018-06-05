@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
 class Vuln(ABVuln):
-    vuln_id = 'PHPWind_0011_p' # 平台漏洞编号，留空
+    poc_id = '7097c3ec-2b07-4a85-b598-4bec189c7221'
     name = 'PHPWind 8.3 /apps/group/admin/manage.php SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -13,9 +13,9 @@ class Vuln(ABVuln):
     desc = '''
         利用前提是得到群组管理员权限，所以需要传入-c参数cookie
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'PHPWind'  # 漏洞应用名称
     product_version = '8.3'  # 漏洞应用版本
 

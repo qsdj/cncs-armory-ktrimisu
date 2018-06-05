@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'sgc8000_0008' # 平台漏洞编号，留空
+    poc_id = '3fa25bea-1e31-4596-a4b0-7ebfc91c443a'
     name = 'sgc8000 大型旋转机监控系统 phpRedisAdmin未授权访问' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
@@ -13,15 +13,15 @@ class Vuln(ABVuln):
     desc = '''
         sgc8000 大型旋转机监控系统 phpRedisAdmin未授权访问
     ''' # 漏洞描述
-    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0135197
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0135197
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'sgc8000'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = 'sgc8000_0008' # 平台 POC 编号，留空
+    poc_id = 'e73073b0-21c7-4061-aed4-23f1e256cd8d'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 

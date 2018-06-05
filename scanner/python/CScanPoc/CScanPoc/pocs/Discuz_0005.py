@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'Discuz_0005' # 平台漏洞编号，留空
+    poc_id = '759d0491-0d5f-456c-966d-afbacc5dd954'
     name = 'Discuz! NT3.1.0 用户相册存储型XSS'  # 漏洞名称
     level = VulnLevel.MED  # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型
@@ -13,9 +13,9 @@ class Vuln(ABVuln):
         Discuz! NT3.1.0 用户相册存储型XSS漏洞。
         /usercpspacemanagealbum.aspx?page=1&mod=edit&albumid=32
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'Discuz!'  # 漏洞应用名称
     product_version = 'Discuz! NT3.1.0'  # 漏洞应用版本
 

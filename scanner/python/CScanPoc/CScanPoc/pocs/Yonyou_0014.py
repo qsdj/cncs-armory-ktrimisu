@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'Yonyou_0014' # 平台漏洞编号，留空
+    poc_id = '963f6fc3-7bf8-45e2-85f9-b7aabfa6cfad'
     name = '用友NC /hrss/ELTextFile.load.d 信息泄漏'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型

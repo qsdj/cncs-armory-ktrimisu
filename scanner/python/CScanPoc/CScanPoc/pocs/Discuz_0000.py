@@ -7,7 +7,7 @@ import re
 import hashlib
 
 class Vuln(ABVuln):
-    vuln_id = 'Discuz_0000' # 平台漏洞编号，留空
+    poc_id = '202f6375-1f78-45b3-a1fa-0c1a7964897e'
     name = 'Discuz! 6.0 /viewthread.php 跨站脚本漏洞' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型
@@ -15,9 +15,9 @@ class Vuln(ABVuln):
     desc = '''
         Cross site scripting has benn found on viewthread.php file.
     ''' # 漏洞描述
-    ref = '' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'Discuz!'  # 漏洞应用名称
     product_version = '6.0'  # 漏洞应用版本
 

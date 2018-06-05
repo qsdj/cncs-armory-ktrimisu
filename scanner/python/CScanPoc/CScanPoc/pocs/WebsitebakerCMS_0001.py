@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
 class Vuln(ABVuln):
-    vuln_id = 'WebsitebakerCMS_0001' # 平台漏洞编号，留空
+    poc_id = '64a00f68-17fe-4b72-9188-238a61f7f064'
     name = 'Websitebaker CMS v2.8.3 Reflecting XSS vulnerability'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型
@@ -14,7 +14,7 @@ class Vuln(ABVuln):
         隐藏表单中引发的反射XSS漏洞。
     '''  # 漏洞描述
     ref = 'http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-0553'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
     cve_id = 'CVE-2015-0553'  # cve编号
     product = 'WebsiteBakerCMS'  # 漏洞应用名称
     product_version = 'v2.8.3'  # 漏洞应用版本

@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re, urlparse
 
 class Vuln(ABVuln):
-    vuln_id = 'PHPB2B_0001'  # 平台漏洞编号，留空
+    poc_id = '78a8a7cb-d10f-4641-ae69-950a009435cc'
     name = 'PHPB2B某处漏洞直接查看mysql密码'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
@@ -13,9 +13,9 @@ class Vuln(ABVuln):
     desc = '''
         PHPB2B 直接访问 install/install.php?step=5&app_lang=zh-cn&do=complete 直接查看mysql密码。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'PHPB2B'  # 漏洞应用名称
     product_version = 'PHPB2B'  # 漏洞应用版本
 

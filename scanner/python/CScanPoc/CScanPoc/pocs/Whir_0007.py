@@ -7,7 +7,7 @@ import time
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'Whir_0007' # 平台漏洞编号，留空
+    poc_id = 'e4a455f1-83cf-4c1a-9185-297405db3197'
     name = '万户OA前台 download.jsp任意文件下载' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型
@@ -15,15 +15,15 @@ class Vuln(ABVuln):
     desc = '''
         万户OA /defaultroot/public/jsp/download.jsp?FileName=mailserver.properties&name=2.jsp&path= 任意文件下载。
     ''' # 漏洞描述
-    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=063711
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=063711
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = '万户OA'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = 'whezeip_0006' # 平台 POC 编号，留空
+    poc_id = '1f307953-f7f0-4832-a626-1d4b734dab62'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 

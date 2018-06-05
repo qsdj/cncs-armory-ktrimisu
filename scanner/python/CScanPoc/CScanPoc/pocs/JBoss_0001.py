@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
 class Vuln(ABVuln):
-    vuln_id = 'JBoss_0001'  # 平台漏洞编号，留空
+    poc_id = '96837011-22c0-4028-bdcd-6541355e45f6'
     name = 'JBoss 目录遍历'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_TRAVERSAL  # 漏洞类型
@@ -14,7 +14,7 @@ class Vuln(ABVuln):
         JBoss Application Server (jbossas)中的DeploymentFileRepository类存在目录遍历漏洞，远程认证用户可以通过和控制台管理器相关的未明向量，读取或修改任意文件并可能执行任意代码。
     '''  # 漏洞描述
     ref = 'http://cve.scap.org.cn/CVE-2006-5750.html'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
     cve_id = 'CVE-2006-5750'  # cve编号
     product = 'JBoss'  # 漏洞应用名称
     product_version = 'JBoss 3.2.4 through 4.0.5'  # 漏洞应用版本

@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'WebLogic_0001' # 平台漏洞编号，留空
+    poc_id = '61145c46-2a75-45b8-8dcf-d3364a112d66'
     name = 'WebLogic SSRF And XSS'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型
@@ -14,14 +14,14 @@ class Vuln(ABVuln):
         Unspecified vulnerability in the Oracle WebLogic Server component in Oracle Fusion Middleware 10.0.2.0 and 10.3.6.0 allows remote attackers to affect integrity via vectors related to WLS - Web Services.
     '''  # 漏洞描述
     ref = 'https://blog.gdssecurity.com/labs/2015/3/30/weblogic-ssrf-and-xss-cve-2014-4241-cve-2014-4210-cve-2014-4.html'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
     cve_id = '''
         CVE-2014-4241, 
         CVE-2014-4210, 
         CVE-2014-4242
     '''  # cve编号
     product = 'WebLogic'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '64f55f8a-4a9b-40c9-8850-bb89f56db607'

@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'Newedos_0001' # 平台漏洞编号，留空
+    poc_id = 'b574b6c1-b139-46de-bde9-00a879aa3d29'
     name = '菲斯特诺期刊系统 SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -15,15 +15,15 @@ class Vuln(ABVuln):
         /select_e.aspx?type=zzdw&content=1
         /select_news.aspx?type=1&content=1
     ''' # 漏洞描述
-    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0125186
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0125186
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'Newedos(菲斯特诺期刊系统)'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = 'newedos_0000' # 平台 POC 编号，留空
+    poc_id = '4dbc88e1-64a9-47bb-b13f-902af0932560'
     author = '国光'  # POC编写者
     create_date = '2018-05-22' # POC创建时间
 

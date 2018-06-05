@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'XAMPP_0006' # 平台漏洞编号，留空
+    poc_id = '7c8fe620-26a0-4c0e-bb54-22790e24c933'
     name = 'XAMPP 1.7.3 文件泄露漏洞' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
@@ -14,8 +14,8 @@ class Vuln(ABVuln):
         XAMPP 1.7.3 /xampp/showcode.php/showcode.php?showcode=1 文件泄露漏。
     ''' # 漏洞描述
     ref = 'https://www.exploit-db.com/exploits/15370/' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'XAMPP'  # 漏洞应用名称
     product_version = '<= 1.7.3'  # 漏洞应用版本
 

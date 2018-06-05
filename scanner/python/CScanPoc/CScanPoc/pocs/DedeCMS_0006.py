@@ -6,7 +6,7 @@ import re
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'DedeCMS_0006' # 平台漏洞编号，留空
+    poc_id = 'f6e29007-9512-4b0a-b26a-409dc0028da8'
     name = '织梦CMS 5.7 guestbook.php sql注射' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

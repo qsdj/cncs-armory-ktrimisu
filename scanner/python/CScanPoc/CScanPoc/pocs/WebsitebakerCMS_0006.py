@@ -6,7 +6,7 @@ import re
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'WebsitebakerCMS_0006' # 平台漏洞编号，留空
+    poc_id = '693db20a-a770-4df6-b6e8-02cdb9b12447'
     name = 'CMS Websitebaker 2.8.3 SP3 Cross Site Scripting' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型
@@ -15,8 +15,8 @@ class Vuln(ABVuln):
         CMS Websitebaker 2.8.3 SP3 Cross Site Scripting
     ''' # 漏洞描述
     ref = 'https://packetstormsecurity.com/files/130008/CMS-Websitebaker-2.8.3-SP3-Cross-Site-Scripting.html' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'WebsiteBakerCMS'  # 漏洞应用名称
     product_version = '2.8.3'  # 漏洞应用版本
 

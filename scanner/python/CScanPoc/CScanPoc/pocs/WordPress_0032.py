@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'WordPress_0032' # 平台漏洞编号，留空
+    poc_id = 'c86283ab-2985-48bb-8878-e10364c88a93'
     name = 'WordPress plugins/wp-symposium 本地文件包含'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型
@@ -14,8 +14,8 @@ class Vuln(ABVuln):
         < site.com/wp-content/themes/mTheme-Unus/css/css.php?files=../../../../wp-config.php>
     '''  # 漏洞描述
     ref = 'https://www.exploit-db.com/exploits/37244/'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'WordPress'  # 漏洞应用名称
     product_version = 'WP Mobile Edition Version 2.2.7 '  # 漏洞应用版本
 

@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'Minerva_0000' # 平台漏洞编号
+    poc_id = '02c047c4-0498-4923-937e-f73af175f17f'
     name = 'Minerva <= 2.0.21 build 238a (phpbb_root_path) File Include Vulnerability' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.RFI # 漏洞类型

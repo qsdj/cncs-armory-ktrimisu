@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'WordPress_0038' # 平台漏洞编号，留空
+    poc_id = '61a926b5-3f5a-492c-b62a-1eb83db3686a'
     name = 'WordPress Work-The-Flow Plugin 2.5.2 文件上传' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.FILE_UPLOAD # 漏洞类型
@@ -14,8 +14,8 @@ class Vuln(ABVuln):
         WordPress Work-The-Flow Plugin 2.5.2 文件上传漏洞。
     ''' # 漏洞描述
     ref = 'https://www.exploit-db.com/exploits/36640/' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'WordPress'  # 漏洞应用名称
     product_version = 'WordPress Work-The-Flow Plugin 2.5.2'  # 漏洞应用版本
 

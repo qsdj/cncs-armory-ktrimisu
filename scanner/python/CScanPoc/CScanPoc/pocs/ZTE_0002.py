@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re, urlparse
 
 class Vuln(ABVuln):
-    vuln_id = 'ZTE_0002'  # 平台漏洞编号，留空
+    poc_id = '5d75b7ff-1f0e-4840-b76e-cad5fde9da6c'
     name = 'ZXV10 W812N路由设置文件未授权访问下载'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型
@@ -13,9 +13,9 @@ class Vuln(ABVuln):
     desc = '''
         中兴ZXV10 W812N路由设置文件未授权访问下载：manager_dev_config_t.gch
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'ZTE'  # 漏洞应用名称
     product_version = '中兴ZXV10 W812N'  # 漏洞应用版本
 

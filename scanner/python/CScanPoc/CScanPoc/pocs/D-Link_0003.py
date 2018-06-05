@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'D-Link_0003' # 平台漏洞编号，留空
+    poc_id = 'f33dadaf-55ab-4cf8-b519-4becbc361d19'
     name = 'D-Link Command_Execution'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型
@@ -17,8 +17,8 @@ class Vuln(ABVuln):
         multiple computers over a secure wireless network.
     '''  # 漏洞描述
     ref = 'http://www.s3cur1ty.de/m1adv2013-003'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'D-Link'  # 漏洞应用名称
     product_version = 'DIR-600/DIR_300'  # 漏洞应用版本
 

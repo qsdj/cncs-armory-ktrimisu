@@ -6,19 +6,19 @@ import re
 import urlparse
 
 class Vuln(ABVuln):
-    vuln_id = 'ASUS_0001' # 平台漏洞编号，留空
+    poc_id = '6d61c928-0c02-4ddf-b899-81ff65ec329d'
     name = '华硕 RT-N16 路由器信息泄露'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
-    disclosure_date = ''  # 漏洞公布时间
+    disclosure_date = 'Unkonwn'  # 漏洞公布时间
     desc = '''
         华硕 RT-N16 - Text-plain Admin Password Disclosure and reflected xss,
         路由器存在管理员密码泄露漏洞，访问http://192.168.1.1/error_page.htm，管理员密码包含在如下的字符串中：
         if('1' == '0' || 'password' == 'admin')。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'ASUS Router'  # 漏洞应用名称
     product_version = 'RT-N16'  # 漏洞应用版本
 

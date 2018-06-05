@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
 class Vuln(ABVuln):
-    vuln_id = 'WordPress_0021' # 平台漏洞编号，留空
+    poc_id = 'fa592489-75d6-4339-988b-196d05689487'
     name = 'WordPress Plugin Pods <= 2.4.3 XSS'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型
@@ -18,7 +18,7 @@ class Vuln(ABVuln):
         http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-7957
     '''  # 漏洞来源
     cnvd_id = 'CVE-2014-7956, CVE-2014-7957'  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'WordPress'  # 漏洞应用名称
     product_version = 'WordPress Plugin Pods <= 2.4.3'  # 漏洞应用版本
 

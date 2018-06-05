@@ -5,11 +5,11 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import time
 
 class Vuln(ABVuln):
-    vuln_id = 'Yonyou_0035' # 平台漏洞编号，留空
+    poc_id = '7d42096e-47f0-4b4e-9241-3dbf8bea3540'
     name = '用友fe SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
-    disclosure_date = ''  # 漏洞公布时间
+    disclosure_date = 'Unkonwn'  # 漏洞公布时间
     desc = '''
         用友fe /mas/schedule.jsp 参数过滤不完整，SQL注入漏洞。
     '''  # 漏洞描述

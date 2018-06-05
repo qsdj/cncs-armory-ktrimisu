@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'WordPress_0061' # 平台漏洞编号，留空
+    poc_id = '10125ac8-c3e3-4fcf-b9ba-0ff036d58184'
     name = 'WordPress LineNity主题 任意文件包含'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型

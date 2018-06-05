@@ -6,11 +6,11 @@ import re
 import random
 
 class Vuln(ABVuln):
-    vuln_id = 'Yuanwei_0011' # 平台漏洞编号，留空
+    poc_id = 'ec4ab3b4-7ff3-4256-b307-bd5f5fb7ec5c'
     name = '远为应用安全网关命令执行'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.OTHER # 漏洞类型
-    disclosure_date = ''  # 漏洞公布时间
+    disclosure_date = 'Unkonwn'  # 漏洞公布时间
     desc = '''
         远为应用安全网关多处命令执行。
         /ipsecconfig/tun/add_tun_write.php
@@ -18,11 +18,11 @@ class Vuln(ABVuln):
         /ipsecconfig/usertun/add_tun_write.php
         /ipsec.bak/usertun/add_tun_write.php
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = '远为应用安全网关'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'ea0a166a-7a53-4712-8c3d-88a98192a2b7'

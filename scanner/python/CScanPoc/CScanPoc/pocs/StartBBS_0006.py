@@ -7,7 +7,7 @@ import re
 import hashlib
 
 class Vuln(ABVuln):
-    vuln_id = 'StartBBS_0006' # 平台漏洞编号，留空
+    poc_id = '81788df7-db7c-48d4-98b2-4e5ebd7cff79'
     name = 'YaBB.pl ?board=news&action=display&num= 任意文件读取漏洞' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型
@@ -20,8 +20,8 @@ class Vuln(ABVuln):
         通过在单个请求中使用上述的这些漏洞，恶意用户可以察看Web服务器可以存取的任何文件。
     ''' # 漏洞描述
     ref = 'https://www.seebug.org/vuldb/ssvid-4308' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'StartBBS'  # 漏洞应用名称
     product_version = '1.1.5.2'  # 漏洞应用版本
 

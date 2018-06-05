@@ -5,18 +5,18 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urlparse
 
 class Vuln(ABVuln):
-    vuln_id = 'Huachuang_0001'  # 平台漏洞编号，留空
+    poc_id = 'aefa3e91-0774-4070-8b5c-3fcfdc09281f'
     name = '华创设备 命令执行'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION  # 漏洞类型
-    disclosure_date = ''  # 漏洞公布时间
+    disclosure_date = 'Unkonwn'  # 漏洞公布时间
     desc = '''
         华创设备  /acc/network/redial_pppoe.php  
                 /acc/tools/enable_tool_debug.php 任意命令执行。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = '华创'  # 漏洞应用名称
     product_version = '华创'  # 漏洞应用版本
 

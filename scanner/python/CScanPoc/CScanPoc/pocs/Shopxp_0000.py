@@ -8,7 +8,7 @@ import math
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'Shopxp_0000' # 平台漏洞编号，留空
+    poc_id = 'd191f28e-bb3f-4d12-8424-cb88b1f70aa1'
     name = 'Shopxp网上购物系统 v10.31 注入漏洞' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -16,9 +16,9 @@ class Vuln(ABVuln):
     desc = '''
         SHOPXP网上购物系统 v10.31 注入漏洞
     ''' # 漏洞描述
-    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=82844
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=82844
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'Shopxp'  # 漏洞应用名称
     product_version = '10.31'  # 漏洞应用版本
 

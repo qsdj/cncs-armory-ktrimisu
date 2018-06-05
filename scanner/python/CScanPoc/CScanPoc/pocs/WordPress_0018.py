@@ -7,7 +7,7 @@ import re
 import hashlib
 
 class Vuln(ABVuln):
-    vuln_id = 'WordPress_0018' # 平台漏洞编号，留空
+    poc_id = '3e525be9-0c17-4bf7-8e72-f40512cb683b'
     name = 'WordPress Google Document Embedder 2.5.16 ~view.php SQL Injection' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -16,7 +16,7 @@ class Vuln(ABVuln):
         漏洞文件：~view.php
     ''' # 漏洞描述
     ref = 'http://www.exploit-db.com/exploits/35447/' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
     cve_id = 'CVE-2014-9173' #cve编号
     product = 'WordPress'  # 漏洞应用名称
     product_version = 'Google Document Embedder 2.5.16'  # 漏洞应用版本

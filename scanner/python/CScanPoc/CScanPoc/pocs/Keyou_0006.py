@@ -6,11 +6,11 @@ import re
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'Keyou_0006' # 平台漏洞编号，留空
+    poc_id = '6b9cc12c-1881-4811-8ef8-ddac969a0e46'
     name = '江南科友堡垒机 爆物理路径' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
-    disclosure_date = ''  # 漏洞公布时间
+    disclosure_date = 'Unkonwn'  # 漏洞公布时间
     desc = '''
         江南科友堡垒机直接获取主机账密/IP/暴漏物理路径:
         '/excel/Spreadsheet/Excel/Writer.php',
@@ -20,11 +20,11 @@ class Vuln(ABVuln):
         '/excel/Spreadsheet/Excel/Writer/Workbook.php',
         '/excel/Spreadsheet/Excel/Writer/Worksheet.php'
     ''' # 漏洞描述
-    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0135704
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0135704
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = '江南科友堡垒机'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):

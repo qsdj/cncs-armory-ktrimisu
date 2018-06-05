@@ -6,7 +6,7 @@ import urllib,urllib2
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'Bonfire_0001_p' # 平台漏洞编号，留空
+    poc_id = '911629f4-a15b-49f6-a2ff-d0ebd67d0354'
     name = 'Bonfire 0.7 /install.php 信息泄露' # 漏洞名称
     level = VulnLevel.LOW # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
@@ -15,8 +15,8 @@ class Vuln(ABVuln):
         由于install.php安装文件对已安装的程序进行检测后没有做好后续处理，导致执行/install/do_install的时候引发重安装而暴露管理员信息。
     ''' # 漏洞描述
     ref = 'http://www.mehmetince.net/ci-bonefire-reinstall-admin-account-vulnerability-analysis-exploit/' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'Bonfire'  # 漏洞应用名称
     product_version = '0.7'  # 漏洞应用版本
 

@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re, urlparse
 
 class Vuln(ABVuln):
-    vuln_id = 'ZTE_0003'  # 平台漏洞编号，留空
+    poc_id = '8186aa07-91b6-40fe-b38f-e9b78054d004'
     name = '中兴ZXHN H168N光猫 任意远程命令执行'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型
@@ -13,9 +13,9 @@ class Vuln(ABVuln):
     desc = '''
         中兴ZXHN H168N光猫任意远程命令执行：web_shell_cmd.gch
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'ZTE'  # 漏洞应用名称
     product_version = '中兴ZXHN H168N光猫'  # 漏洞应用版本
 

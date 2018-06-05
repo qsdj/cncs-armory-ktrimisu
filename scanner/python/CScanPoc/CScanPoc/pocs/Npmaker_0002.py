@@ -6,7 +6,7 @@ import re
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'Npmaker_0002' # 平台漏洞编号，留空
+    poc_id = '8bcb3a61-afbb-4e07-a00a-caab8f4068a5'
     name = 'Npmaker数字报 任意上传getshell(需要解析漏洞)' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.FILE_UPLOAD # 漏洞类型
@@ -15,10 +15,10 @@ class Vuln(ABVuln):
         Npmaker数字报 任意上传getshell(需要解析漏洞)
     ''' # 漏洞描述
     ref = 'https://www.2cto.com/article/201307/231014.html' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'Npmaker'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):

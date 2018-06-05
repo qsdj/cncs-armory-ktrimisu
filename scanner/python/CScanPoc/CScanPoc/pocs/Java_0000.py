@@ -8,7 +8,7 @@ import binascii
 import time
 
 class Vuln(ABVuln):
-    vuln_id = 'Java_0000' # 平台漏洞编号
+    poc_id = '471ee2b0-c3b0-4ad5-b6b9-4ce7ae5942db'
     name = 'Java RMI 反序列化代码执行' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.RFI # 漏洞类型

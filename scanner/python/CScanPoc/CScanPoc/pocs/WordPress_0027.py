@@ -5,17 +5,17 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'WordPress_0027' # 平台漏洞编号，留空
+    poc_id = '3d285ef9-409f-41d4-9ec0-802726c0bf44'
     name = 'WordPress WP Mobile Edition 插件本地文件包含漏洞' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
-    disclosure_date = ''  # 漏洞公布时间
+    disclosure_date = 'Unkonwn'  # 漏洞公布时间
     desc = '''
         WordPress WP Mobile Edition 插件本地文件包含漏洞
     ''' # 漏洞描述
     ref = 'https://www.exploit-db.com/exploits/37244/' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'WordPress'  # 漏洞应用名称
     product_version = 'WordPress WP Mobile Edition 插件'  # 漏洞应用版本
 

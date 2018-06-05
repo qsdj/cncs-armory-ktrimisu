@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'Wanpeng_0001' # 平台漏洞编号，留空
+    poc_id = 'c37b401e-dd8b-4225-b3be-f26807a81808'
     name = '浙江万鹏某通用教育类门户系统存在任意文件下载' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型
@@ -13,15 +13,15 @@ class Vuln(ABVuln):
     desc = '''
         浙江万鹏某通用教育类门户系统 /cnet/servlet/servletupload?domesticfile=WEB-INF/web.xml 任意文件下载漏洞。
     ''' # 漏洞描述
-    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=072693
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=072693
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = '万鹏通用教育类门户系统'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = 'zdsof_0000' # 平台 POC 编号，留空
+    poc_id = '863c6051-16a9-4abe-8699-5eabfa9b86de'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 

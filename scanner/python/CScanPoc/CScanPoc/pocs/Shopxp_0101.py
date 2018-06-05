@@ -16,7 +16,7 @@ class Vuln(ABVuln):
     Shopxp 7.4 textbox2.asp sql injection.
     ''' # 漏洞描述
     ref = 'http://www.sebug.net/vuldb/ssvid-62319' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'Shopxp'  # 漏洞应用名称
     product_version = '7.4'  # 漏洞应用版本

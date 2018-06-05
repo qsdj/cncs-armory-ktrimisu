@@ -6,7 +6,7 @@ import sys
 
 
 class Vuln(ABVuln):
-    vuln_id = 'Nginx_0002'  # 平台漏洞编号，留空
+    poc_id = 'ca21b78e-01da-491d-9415-1c8822765338'
     name = 'Nginx越界读取缓存漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK  # 漏洞类型
@@ -15,7 +15,7 @@ class Vuln(ABVuln):
         当使用Nginx标准模块时，这允许攻击者如果从缓存返回响应，则获取缓存文件头，黑客可以通过缓存文件头获取包含IP地址的后端服务器或其他敏感信息，从而导致信息泄露。
     '''  # 漏洞描述
     ref = 'https://github.com/vulhub/vulhub/tree/master/nginx/CVE-2017-7529'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
     cve_id = 'CVE-2017-7529'  # cve编号
     product = 'Nginx'  # 漏洞应用名称
     product_version = 'Nginx 0.5.6 – 1.13.2'  # 漏洞应用版本

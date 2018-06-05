@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'QZT360_0002' # 平台漏洞编号，留空
+    poc_id = '38a43805-63eb-46e5-8049-e48a796625a3'
     name = '企智通系列上网行为管理设备 目录遍历'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_TRAVERSAL # 漏洞类型

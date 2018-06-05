@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
 class Vuln(ABVuln):
-    vuln_id = 'WordPress_0022' # 平台漏洞编号，留空
+    poc_id = 'c572095f-4a38-4260-9a29-9dad8e7f37f6'
     name = 'WordPress Multiple themes /download.php Arbitrary File Download'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型
@@ -14,8 +14,8 @@ class Vuln(ABVuln):
         download_file" variable is not sanitized.
     '''  # 漏洞描述
     ref = 'https://packetstormsecurity.com/files/129706/wptheme-download.txt'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'WordPress'  # 漏洞应用名称
     product_version = 'WordPress Multiple themes'  # 漏洞应用版本
 

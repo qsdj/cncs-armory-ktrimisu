@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'URP_0008' # 平台漏洞编号，留空
+    poc_id = '92b12cd1-3c4d-478e-b8ea-4cefadd9b1fc'
     name = 'URP综合教务系统任意文件读取and未授权访问' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型
@@ -13,15 +13,15 @@ class Vuln(ABVuln):
     desc = '''
         URP综合教务系统 /servlet/com.runqian.base.util.ReadJavaScriptServlet?file= 任意文件读取and未授权访问。
     ''' # 漏洞描述
-    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=054350
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=054350
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'URP教务系统'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = 'URP_0008' # 平台 POC 编号，留空
+    poc_id = '51d9874b-b84b-4f9c-885a-239da4563b71'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 

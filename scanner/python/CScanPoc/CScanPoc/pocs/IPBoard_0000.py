@@ -7,7 +7,7 @@ import re
 import hashlib
 
 class Vuln(ABVuln):
-    vuln_id = 'IPBoard_0000' # 平台漏洞编号，留空
+    poc_id = 'acb14529-9c6d-45e3-8ffe-a45239d1a25a'
     name = 'IP.Board <= 3.4.7 /ipsconnect.php SQL注入漏洞' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -15,9 +15,9 @@ class Vuln(ABVuln):
     desc = '''
         IP.Board version 3.4.7 (latest) suffers from a SQL injection vulnerability.
     ''' # 漏洞描述
-    ref = '' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'IP.Board'  # 漏洞应用名称
     product_version = '<= 3.4.7'  # 漏洞应用版本
 

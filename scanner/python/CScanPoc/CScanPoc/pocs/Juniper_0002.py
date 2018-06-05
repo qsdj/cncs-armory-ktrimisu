@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urlparse
 
 class Vuln(ABVuln):
-    vuln_id = 'Juniper_0002'  # 平台漏洞编号，留空
+    poc_id = '60c82b66-e78c-4801-91c6-34070f72e078'
     name = 'Juniper VPN 存在缺陷可绕过短信token验证导致漫游内网'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.OTHER # 漏洞类型

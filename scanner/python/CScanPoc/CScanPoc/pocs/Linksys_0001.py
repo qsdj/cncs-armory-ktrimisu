@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'Linksys_0001' # 平台漏洞编号，留空
+    poc_id = '79b66e57-6cbf-4abc-8cb5-af7d0ad43419'
     name = 'Linksys X2000 Command Execution'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型
@@ -13,8 +13,8 @@ class Vuln(ABVuln):
         The Linksys X2000 suffers from a remote, unauthenticated command execution vulnerability that scores root privileges.
     '''  # 漏洞描述
     ref = 'https://packetstormsecurity.com/files/134190/Linksys-X2000-Command-Execution.html'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'Linksys'  # 漏洞应用名称
     product_version = 'X2000'  # 漏洞应用版本
 

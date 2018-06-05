@@ -7,7 +7,7 @@ import socket
 import urllib2
 
 class Vuln(ABVuln):
-    vuln_id = 'FCKeditor_0001' # 平台漏洞编号，留空
+    poc_id = '5d770d48-8220-4462-b899-2536c0215ea1'
     name = 'FCKeditor <= 2.4.3 /upload.asp File Upload'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_UPLOAD # 漏洞类型
@@ -15,9 +15,9 @@ class Vuln(ABVuln):
     desc = '''
         FCKeditor <= 2.4.3版本, upload.asp文件为黑名单过滤, 可绕过上传。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'FCKeditor'  # 漏洞应用名称
     product_version = '<= 2.4.3'  # 漏洞应用版本
 

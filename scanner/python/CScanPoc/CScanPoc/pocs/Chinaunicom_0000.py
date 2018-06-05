@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'Chinaunicom_0000' # 平台漏洞编号，留空
+    poc_id = '6302298e-b105-4f59-901e-75d290a0baa9'
     name = '中国联通某solr服务未授权访问漏洞' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
@@ -15,10 +15,10 @@ class Vuln(ABVuln):
         而且C段几乎全是联通的业务。
     ''' # 漏洞描述
     ref = 'https://www.secpulse.com/archives/31908.html' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0105302
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = '中国联通'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):

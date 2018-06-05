@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
 class Vuln(ABVuln):
-    vuln_id = 'QiboCMS_0002' # 平台漏洞编号，留空
+    poc_id = '5de10b87-214c-4c8a-90ca-0ebc0e5a1d35'
     name = 'QiboCMS V7 任意文件下载漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型
@@ -14,8 +14,8 @@ class Vuln(ABVuln):
         Qibo V7 has File down in do/job.php.
     '''  # 漏洞描述
     ref = 'http://www.2cto.com/Article/201008/54369.html'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'QiboCMS(齐博CMS)'  # 漏洞应用名称
     product_version = '6.3'  # 漏洞应用版本
 

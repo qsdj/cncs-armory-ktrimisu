@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'Modernbill_0000' # 平台漏洞编号
+    poc_id = '80086ea3-39a1-497b-9cd7-8d89afc1f59d'
     name = 'Modernbill <= 1.6 (config.php) Remote File Include Vulnerability' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型

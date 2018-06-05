@@ -6,20 +6,20 @@ import urlparse
 import random
 
 class Vuln(ABVuln):
-    vuln_id = 'STAR-NET_0002' # 平台漏洞编号，留空
+    poc_id = '28ebd8f3-cff7-47e5-bb32-3d4ca8827152'
     name = '星网锐捷语音网关 任意添加管理员'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型
-    disclosure_date = ''  # 漏洞公布时间
+    disclosure_date = 'Unkonwn'  # 漏洞公布时间
     desc = '''
         星网锐捷语音网关（STAR-NET）任意添加管理员。
         /cgi-bin/Form_AddPlusUser
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = '星网锐捷语音网关'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '2732f1d6-44e3-4875-bb6c-e7735f2505cb'

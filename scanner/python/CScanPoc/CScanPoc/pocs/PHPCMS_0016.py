@@ -6,7 +6,7 @@ hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
 <<<<<<< HEAD
-    vuln_id = 'PHPCMS_0016' # 平台漏洞编号，留空
+    poc_id = '7b379f4a-960b-404e-a647-2eeb2c8107d2'
     name = 'PHPCMS 9.5.3 vote_tag.class.php SQL注入漏洞' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -16,8 +16,8 @@ class Vuln(ABVuln):
         需register_globals=on
     ''' # 漏洞描述
     ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=051077' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'PHPCMS'  # 漏洞应用名称
     product_version = '9.5.3'  # 漏洞应用版本
 

@@ -7,7 +7,7 @@ import re
 import cookielib
 
 class Vuln(ABVuln):
-    vuln_id = 'BeesCMS_0001_p' # 平台漏洞编号，留空
+    poc_id = '4e494777-c529-44a9-b482-2934fe782d19'
     name = 'BeesCMS /admin/admin.php 登录绕过' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -15,9 +15,9 @@ class Vuln(ABVuln):
     desc = '''
         BeesCMS v3.4 /includes/fun.php 弱验证导致后台验证绕过漏洞。
     ''' # 漏洞描述
-    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=059180
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=059180
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'BeesCMS'  # 漏洞应用名称
     product_version = '3.4'  # 漏洞应用版本
 

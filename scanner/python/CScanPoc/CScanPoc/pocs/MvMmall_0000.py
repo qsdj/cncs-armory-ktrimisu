@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'MvMmall_0000' # 平台漏洞编号，留空
+    poc_id = '6ea5a029-d02b-4449-9b24-5eb7f1a92587'
     name = 'MvMmall V4.0远程任意PHP代码执行' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型
@@ -14,8 +14,8 @@ class Vuln(ABVuln):
         MvMmall V4.0远程任意PHP代码执行,通过构造特殊的参数，可生成.php文件，并可写入php代码。
     ''' # 漏洞描述
     ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=080042' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'MvMmall'  # 漏洞应用名称
     product_version = '4.0'  # 漏洞应用版本
 

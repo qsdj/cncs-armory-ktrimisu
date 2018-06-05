@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'PHPCMS_0017' # 平台漏洞编号，留空
+    poc_id = '6da6cb9e-1369-4780-a8b2-c70930421c80'
     name = 'phpCMS 2008 V2 SQL注入漏洞' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -14,7 +14,7 @@ class Vuln(ABVuln):
         phpCMS 2008 V2 - 'data.php' 文件SQL注入漏洞。
     ''' # 漏洞描述
     ref = 'https://www.exploit-db.com/exploits/35239/' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
     cve_id = 'CVE-2011-0645' #cve编号
     product = 'PHPCMS'  # 漏洞应用名称
     product_version = '2008 V2'  # 漏洞应用版本

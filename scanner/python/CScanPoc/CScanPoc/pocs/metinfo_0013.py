@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import time 
 
 class Vuln(ABVuln):
-    vuln_id = 'MetInfo_0013' # 平台漏洞编号，留空
+    poc_id = '99513d4b-8e5f-4dcc-b065-f4ce4dd6ebb8'
     name = 'MetInfo V5.3.1 sql注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -13,9 +13,9 @@ class Vuln(ABVuln):
     desc = '''
         MetInfo V5.3.1 sql注入，可重置管理员密码。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'MetInfo'  # 漏洞应用名称
     product_version = 'V5.3.1'  # 漏洞应用版本
 

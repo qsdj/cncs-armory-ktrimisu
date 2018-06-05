@@ -7,7 +7,7 @@ import urllib2
 import cookielib
 
 class Vuln(ABVuln):
-    vuln_id = 'ASPCMS_0001'  # 平台漏洞编号，留空
+    poc_id = 'cbfb304b-95f1-448d-b75f-49d1e7f7dbab'
     name = 'ASPCMS信息泄漏包括管理员帐号'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK  # 漏洞类型
@@ -16,8 +16,8 @@ class Vuln(ABVuln):
         在ASPCMS最新版2.5.2以及ASPCMS2.3.x中，ASPCMS的数据库在/data/目录下，为了防止数据库被下载，把数据库文件data.mdb重新命名为#data.asp，由于设置不当，使用%23编码#即可绕过访问，导致信息泄漏。
     '''  # 漏洞描述
     ref = 'https://www.seebug.org/vuldb/ssvid-90501'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'ASPCMS'  # 漏洞应用名称
     product_version = 'ASPCMS最新版2.5.2以及ASPCMS2.3.x'  # 漏洞应用版本
 

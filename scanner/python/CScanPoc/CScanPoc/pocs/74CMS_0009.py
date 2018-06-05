@@ -7,7 +7,7 @@ import re
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = '74CMS_0009' # 平台漏洞编号，留空
+    poc_id = '320ffd2b-cbe3-44e2-b17f-7d2379b55b04'
     name = '骑士CMS任意文件的读取(XML实体注入)' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -15,15 +15,15 @@ class Vuln(ABVuln):
     desc = '''
         骑士CMS /plus/weixin.php 任意文件的读取(XML实体注入)漏洞。
     ''' # 漏洞描述
-    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=075009
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=075009
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = '74CMS(骑士CMS)'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = '74cms_0009' # 平台 POC 编号，留空
+    poc_id = '39eed310-fd89-468e-8344-61bc2284ce95'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 

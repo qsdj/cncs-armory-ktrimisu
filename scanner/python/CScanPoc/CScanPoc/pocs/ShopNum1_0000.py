@@ -6,7 +6,7 @@ hh = hackhttp.hackhttp()
 
 
 class Vuln(ABVuln):
-    vuln_id = 'ShopNum1_0000' # 平台漏洞编号，留空
+    poc_id = 'b35888d2-ecbf-4a71-bc3e-60d9e7022e19'
     name = 'ShopNum1分销门户系统 api/CheckMemberLogin.ashx注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -15,13 +15,13 @@ class Vuln(ABVuln):
         ShopNum1分销门户系统 api/CheckMemberLogin.ashx注入。
     '''  # 漏洞描述
     ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=0146994'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'ShopNum1'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 class Poc(ABPoc):
-    poc_id = 'ShopNum1_0000'
+    poc_id = 'e575d304-c0d6-4416-b405-ad389e2ea7dd'
     author = '国光'  # POC编写者
     create_date = '2018-05-25'  # POC创建时间
 

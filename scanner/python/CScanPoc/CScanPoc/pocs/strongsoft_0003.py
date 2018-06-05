@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import time
 
 class Vuln(ABVuln):
-    vuln_id = 'StrongSoft_0003' # 平台漏洞编号，留空
+    poc_id = 'cd54a8dc-a638-4671-9122-49532e05c9a9'
     name = '四创灾害预警系统 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -17,11 +17,11 @@ class Vuln(ABVuln):
         /Public/DataAccess/GeneralModule/doDbAccess.ashx
         /Report/AjaxHandle/ReportContent/SpecialContent/DataSourceCZYL.ashx
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = '四创灾害预警系统'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '4c086d3f-8867-484e-bb10-56e9219b3c3b'

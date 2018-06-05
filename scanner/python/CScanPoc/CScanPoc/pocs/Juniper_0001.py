@@ -7,7 +7,7 @@ import time
 import telnetlib
 
 class Vuln(ABVuln):
-    vuln_id = 'Juniper_0001'  # 平台漏洞编号，留空
+    poc_id = '11ed7ffe-1fcf-46d6-a844-63946094c6c6'
     name = 'Juniper ScreenOS认证后门'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.OTHER # 漏洞类型
@@ -20,7 +20,7 @@ class Vuln(ABVuln):
         <<< %s(un='%s') = %u 后门密码
     '''  # 漏洞描述
     ref = 'http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-7755'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
     cve_id = 'CVE-2015-7755'  # cve编号
     product = 'Juniper'  # 漏洞应用名称
     product_version = '6.2.0r15到6.2.0r18和6.3.0r12到6.3.0r20'  # 漏洞应用版本

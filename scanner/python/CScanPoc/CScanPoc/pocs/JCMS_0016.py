@@ -6,7 +6,7 @@ import time
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'JCMS_0016' # 平台漏洞编号，留空
+    poc_id = 'cb50841f-4ee0-4536-8ad4-8734ff6ff70e'
     name = '南京大汉某政府信息公开系统存在通用型SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -14,15 +14,15 @@ class Vuln(ABVuln):
     desc = '''
         南京大汉某政府信息公开系统存在通用型SQL注入
     ''' # 漏洞描述
-    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0150571
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0150571
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'Hanweb(大汉)'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = 'JCMS_0016'
+    poc_id = '84e53478-eccd-4053-a848-bb0a151b9aa0'
     author = '国光'  # POC编写者
     create_date = '2018-05-13' # POC创建时间
 

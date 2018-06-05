@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'Xplus_0002' # 平台漏洞编号，留空
+    poc_id = '90cd4015-4946-4077-a294-395773ed0011'
     name = 'Xplus数字报纸通用型post注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -16,15 +16,15 @@ class Vuln(ABVuln):
         /www/index.php?mod=admin&con=index&act=logindo
         /www/index.php?mod=admin&con=adminuser&act=mypwdpost
     ''' # 漏洞描述
-    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=151537
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=151537
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'Xplus'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = 'xplus_0006' # 平台 POC 编号，留空
+    poc_id = '07ad21ef-b6a9-4947-ad5e-dd40955db4b0'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 

@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'FotoWeb_0000' # 平台漏洞编号
+    poc_id = '707c3d67-adfa-48c7-9373-53c89731fa4e'
     name = 'FotoWeb 6.0 Login.fwx s Parameter XSS' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型

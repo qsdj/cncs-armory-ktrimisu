@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'Apache_Struts_0005_p' # 平台漏洞编号，留空
+    poc_id = 'fd84fc9c-d5b7-44a8-9752-5126829d44c6'
     name = 'Apache Struts2 S2-007远程代码执行' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型
@@ -14,8 +14,8 @@ class Vuln(ABVuln):
         Struts2 S2-007该漏洞用户输入被评为OGNL表达式时，有一个转换误差。这允许恶意用户执行任意代码。
     ''' # 漏洞描述
     ref = 'https://cwiki.apache.org/confluence/display/WW/S2-007' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'Apache Struts'  # 漏洞应用名称
     product_version = 'Apache Struts 2.0.0 - Struts 2.2.3 '  # 漏洞应用版本
 

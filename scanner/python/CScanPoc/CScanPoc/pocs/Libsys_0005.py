@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import datetime
 
 class Vuln(ABVuln):
-    vuln_id = 'Libsys_0005' # 平台漏洞编号，留空
+    poc_id = 'ab359e40-4130-46de-b63c-4c694604abc8'
     name = '汇文图书管理系统 变量覆盖'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.OTHER # 漏洞类型
@@ -18,8 +18,8 @@ class Vuln(ABVuln):
         /top/top_custom.php?_SESSION[ADMIN_USER]=opac_admin
     '''  # 漏洞描述
     ref = 'https://www.seebug.org/vuldb/ssvid-90722'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = '汇文图书管理系统'  # 漏洞应用名称
     product_version = 'V5.5'  # 漏洞应用版本
 

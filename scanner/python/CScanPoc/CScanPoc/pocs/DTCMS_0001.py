@@ -7,7 +7,7 @@ import re
 import hashlib
 
 class Vuln(ABVuln):
-    vuln_id = 'DTCMS_0001' # 平台漏洞编号，留空
+    poc_id = 'c353b116-b1be-455b-800c-29f697cdfaca'
     name = 'DTCMS /scripts/swfupload/swfupload.swf 跨站脚本' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -15,9 +15,9 @@ class Vuln(ABVuln):
     desc = '''
         动力启航DTCMS网站管理系统 3.0 /scripts/swfupload/swfupload.swf文件存在FlashXss漏洞。
     ''' # 漏洞描述
-    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=069817
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=069817
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'DTCMS'  # 漏洞应用名称
     product_version = '3.0'  # 漏洞应用版本
 

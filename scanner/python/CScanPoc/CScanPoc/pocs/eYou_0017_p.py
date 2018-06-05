@@ -8,7 +8,7 @@ import string
 import random
 
 class Vuln(ABVuln):
-    vuln_id = 'eYou_0017_p' # 平台漏洞编号，留空
+    poc_id = '909b254f-8836-45ab-94a4-30ebb04091a3'
     name = 'eYou v4 /storage_explore.php 命令执行' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型
@@ -18,9 +18,9 @@ class Vuln(ABVuln):
         getUserDirPath($uid, $domain)函数，该函数存在的$path = `$cmd`代码
         使得CMD控制台可以直接调用。
     ''' # 漏洞描述
-    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=058301
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=058301
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'eYou'  # 漏洞应用名称
     product_version = 'v4'  # 漏洞应用版本
 

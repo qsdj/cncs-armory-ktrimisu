@@ -7,7 +7,7 @@ import re
 import hashlib
 
 class Vuln(ABVuln):
-    vuln_id = 'CMSimple_0000' # 平台漏洞编号，留空
+    poc_id = '31d1850d-8c91-44c9-a460-89af123a5384'
     name = 'CMSimple 3.54 /whizzywig/wb.php XSS漏洞' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型
@@ -17,8 +17,8 @@ class Vuln(ABVuln):
         允许攻击者构建恶意URI，诱使用户解析，可获得敏感Cookie，劫持会话或在客户端上进行恶意操作。  
     ''' # 漏洞描述
     ref = 'https://www.seebug.org/vuldb/ssvid-61903' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'CMSimple'  # 漏洞应用名称
     product_version = '3.54'  # 漏洞应用版本
 

@@ -7,7 +7,7 @@ import urllib
 import urllib2
 
 class Vuln(ABVuln):
-    vuln_id = 'WebUI_0006'  # 平台漏洞编号，留空
+    poc_id = 'a9f2e60a-abbc-4fef-988d-a8317c126aa2'
     name = 'WebUI 远程代码执行漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE  # 漏洞类型
@@ -16,8 +16,8 @@ class Vuln(ABVuln):
         WebUI 1.5b6 /mainfile.php 远程代码执行漏洞
     '''  # 漏洞描述
     ref = 'https://www.exploit-db.com/exploits/36821/'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'WebUI 1.5b6'  # 漏洞应用名称
     product_version = 'WebUI 1.5b6'  # 漏洞应用版本
 

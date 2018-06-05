@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'Infosea_0013' # 平台漏洞编号，留空
+    poc_id = 'bbcab9c5-4a43-4fad-9181-c2abcbfe2878'
     name = '北京清大新洋通用图书馆集成系统GLIS9.0 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -14,9 +14,9 @@ class Vuln(ABVuln):
         北京清大新洋通用图书馆集成系统GLIS9.0，存在注入漏洞： 
         opac/eaal/eaaldetail.jsp?kzh=zyk0040640
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = '清大新洋'  # 漏洞应用名称
     product_version = '北京清大新洋通用图书馆集成系统GLIS9.0'  # 漏洞应用版本
 

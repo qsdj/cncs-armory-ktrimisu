@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'CTVC_0001' # 平台漏洞编号，留空
+    poc_id = '72daa3db-d4e8-415e-a271-2dddd85b08da'
     name = '华视校园电视 信息泄露'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
@@ -15,11 +15,11 @@ class Vuln(ABVuln):
         可获取到管理员的账户，
         利用此账户登录后可进一步全面控制四所高校近400块屏幕媒体（可上传，播放任意内容）。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = '华视校园电视网'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '803ab7d3-a17b-40fa-bb5b-b1e03f3a5e03'

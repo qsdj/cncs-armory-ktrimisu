@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'PiaoYou_0007' # 平台漏洞编号，留空
+    poc_id = 'ff79f3d5-6e3b-47c2-bf0f-0823ede68d84'
     name = '票友票务系统通用七处sql注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -20,15 +20,15 @@ class Vuln(ABVuln):
         "/System/history.aspx?id=1",
         "/flight/scgq.aspx?id=1",      
     ''' # 漏洞描述
-    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0116851
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0116851
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'PiaoYou(票友软件)'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = 'PiaoYou_0007' # 平台 POC 编号，留空
+    poc_id = '79fefbf6-54f2-453c-b9ea-d4e36c9d283d'
     author = '国光'  # POC编写者
     create_date = '2018-05-22' # POC创建时间
 

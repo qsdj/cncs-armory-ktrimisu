@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import json
 
 class Vuln(ABVuln):
-    vuln_id = 'ElasticSearch_0002'  # 平台漏洞编号，留空
+    poc_id = '2897586b-827a-41cd-bb43-de8a610a3e0d'
     name = 'ElasticSearch Groovy 沙盒绕过 && 代码执行漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE  # 漏洞类型
@@ -15,7 +15,7 @@ class Vuln(ABVuln):
         2014年，曾经被曝出过一个远程代码执行漏洞（CVE-2014-3120），漏洞出现在脚本查询模块，由于搜索引擎支持使用脚本代码（MVEL），作为表达式进行数据操作，攻击者可以通过MVEL构造执行任意java代码。
     '''  # 漏洞描述
     ref = 'https://github.com/vulhub/vulhub/tree/master/elasticsearch/CVE-2015-1427'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
     cve_id = 'CVE-2015-1427'  # cve编号
     product = 'ElasticSearch'  # 漏洞应用名称
     product_version = 'v1.4.2'  # 漏洞应用版本

@@ -6,7 +6,7 @@ import re
 import urlparse
 
 class Vuln(ABVuln):
-    vuln_id = 'Goodo-edu_0007' # 平台漏洞编号，留空
+    poc_id = '5120447a-ceb7-40b8-8180-6e3262614c4c'
     name = '上海鼎创通用型数字校园系统 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -14,11 +14,11 @@ class Vuln(ABVuln):
     desc = '''
         上海鼎创通用型数字校园系统 /EduPlate/VideoOnDemand/Web/search.aspx，nKeyword参数过滤不严谨，导致SQL注入漏洞。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = '上海鼎创通用型数字校园系统'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '9a496735-505c-4a5b-9b53-ae161c56ea9b'

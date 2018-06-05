@@ -6,7 +6,7 @@ import re
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'Yonyou_0006' # 平台漏洞编号，留空
+    poc_id = '9341fc39-9f8d-4861-98ed-42109ba73451'
     name = '用友人力资源管理（e-HR）SQL注入漏洞' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

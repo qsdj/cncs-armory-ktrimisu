@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
 class Vuln(ABVuln):
-    vuln_id = 'YidaCMS_0002' # 平台漏洞编号，留空
+    poc_id = 'd45fdb38-73e0-4a83-bfa5-a37235da8796'
     name = 'YidaCMS v3.2 /Yidacms/admin/admin_fso.asp 任意文件读取漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.OTHER # 漏洞类型
@@ -13,9 +13,9 @@ class Vuln(ABVuln):
     desc = '''
         YidaCMS /Yidacms/admin/admin_fso.asp在读取文件时，没有任何过滤处理，直接拼接文件路径，然后直接读取。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'YidaCMS(易达CMS)'  # 漏洞应用名称
     product_version = 'v3.2'  # 漏洞应用版本
 
@@ -34,7 +34,7 @@ class Poc(ABPoc):
                 target=self.target, vuln=self.vuln))
             
             #this poc need to login, so special cookie for target must be included in http headers.
-            cookie = '' #需要填上对应的cookie
+            cookie = 'Unkonwn' #需要填上对应的cookie
             headers = {
                 'cookie': 'cookie'
             }

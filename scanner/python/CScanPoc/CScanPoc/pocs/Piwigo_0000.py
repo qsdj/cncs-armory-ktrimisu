@@ -7,7 +7,7 @@ import re
 import hashlib
 
 class Vuln(ABVuln):
-    vuln_id = 'Piwigo_0000' # 平台漏洞编号，留空
+    poc_id = '0f2b19e2-e2f6-4ca9-9d17-76489e3719ca'
     name = 'Piwigo <= v2.6.0 /piwigo/include/functions_rate.inc.php SQL注入漏洞' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -16,8 +16,8 @@ class Vuln(ABVuln):
         Piwigo <= v2.6.0 /piwigo/include/functions_rate.inc.php文件存在SQL注入漏洞。
     ''' # 漏洞描述
     ref = 'http://www.freebuf.com/vuls/51401.html' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'Piwigo'  # 漏洞应用名称
     product_version = '<=2.6.0'  # 漏洞应用版本
 

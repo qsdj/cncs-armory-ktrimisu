@@ -7,7 +7,7 @@ import re
 import hashlib
 
 class Vuln(ABVuln):
-    vuln_id = 'YidaCMS_0001' # 平台漏洞编号，留空
+    poc_id = '66e933e3-6610-4396-81da-02491a955d90'
     name = 'Yidacms v3.2 /Yidacms/user/user.asp 信息泄漏' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
@@ -15,9 +15,9 @@ class Vuln(ABVuln):
     desc = '''
         漏洞文件：/Yidacms/admin/admin_syscome.asp
     ''' # 漏洞描述
-    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=074065
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=074065
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'YidaCMS(易达CMS)'  # 漏洞应用名称
     product_version = '3.2'  # 漏洞应用版本
 

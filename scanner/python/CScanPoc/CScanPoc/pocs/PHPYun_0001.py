@@ -6,7 +6,7 @@ import re
 import urllib2
 
 class Vuln(ABVuln):
-    vuln_id = 'PHPYun_0001' # 平台漏洞编号，留空
+    poc_id = '203d0a2d-5d84-479e-96ae-24339d322f98'
     name = 'PHPYun 3.1 /wap/member/model/index.class.php SQL注入漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -14,9 +14,9 @@ class Vuln(ABVuln):
     desc = '''
         /wap/member/model/index.class.php 过滤不严谨。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'PHPYun'  # 漏洞应用名称
     product_version = '3.1'  # 漏洞应用版本
 

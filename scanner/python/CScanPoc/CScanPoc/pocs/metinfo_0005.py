@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'MetInfo_0005' # 平台漏洞编号，留空
+    poc_id = 'd0b0937f-ce5e-4572-8d05-4adc791e273f'
     name = 'MetInfo4.0 任意用户密码修改'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.OTHER # 漏洞类型
@@ -12,9 +12,9 @@ class Vuln(ABVuln):
     desc = '''
         MetInfo4.0注册会员后，可以修改任意用户和管理员密码，影响特别大，百度里可以找到上千用MetInfo4.0的企业站，危害特别严重！
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'MetInfo'  # 漏洞应用名称
     product_version = '4.0'  # 漏洞应用版本
 

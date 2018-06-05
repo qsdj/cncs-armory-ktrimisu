@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import time
 
 class Vuln(ABVuln):
-    vuln_id = 'WordPress_0009'  # 平台漏洞编号，留空
+    poc_id = '419f358f-4e23-4180-8dad-7ae59fd5168a'
     name = 'WordPress NEX-Forms SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION  # 漏洞类型
@@ -15,8 +15,8 @@ class Vuln(ABVuln):
         which could allow the attacker to execute sql queries into database.
     '''  # 漏洞描述
     ref = 'https://www.exploit-db.com/exploits/36800/'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'WordPress'  # 漏洞应用名称
     product_version = 'WordPress Plugin NEX-Forms < 3.0'  # 漏洞应用版本
 

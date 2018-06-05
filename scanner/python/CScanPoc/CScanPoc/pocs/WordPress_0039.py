@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'WordPress_0039' # 平台漏洞编号，留空
+    poc_id = 'bb1965bd-0c2a-4773-8107-e00b2c1b160a'
     name = 'WordPress Simple Ads Manager 2.5.94 插件任意文件上传漏洞' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.FILE_UPLOAD # 漏洞类型
@@ -14,7 +14,7 @@ class Vuln(ABVuln):
         WordPress Simple Ads Manager 2.5.94 插件任意文件上传漏洞.
     ''' # 漏洞描述
     ref = 'https://www.exploit-db.com/exploits/36614/' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
     cve_id = 'CVE-2015-2825 ' #cve编号
     product = 'WordPress'  # 漏洞应用名称
     product_version = 'WordPress Simple Ads Manager 2.5.94'  # 漏洞应用版本

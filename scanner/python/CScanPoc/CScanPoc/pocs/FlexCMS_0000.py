@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'FlexCMS_0000' # 平台漏洞编号
+    poc_id = 'b099be8b-1476-43b7-940a-d088616fba4d'
     name = 'FlexCMS 2.5 - inc-core-admin-editor-previouscolorsjs.php Cross-Site Scripting Vulnerability' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型

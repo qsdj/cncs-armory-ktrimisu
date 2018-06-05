@@ -6,22 +6,22 @@ import re
 import random
 
 class Vuln(ABVuln):
-    vuln_id = 'Gfapki_0009' # 平台漏洞编号，留空
+    poc_id = 'b8015d1c-0c53-4fa2-9367-6dfb7714c3c0'
     name = '国富安应用安全网关命令执行'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.OTHER # 漏洞类型
-    disclosure_date = ''  # 漏洞公布时间
+    disclosure_date = 'Unkonwn'  # 漏洞公布时间
     desc = '''
         国富安应用安全网关多处命令执行。
         /highconfig/ha.php
         /highconfig/ha_old.php
         /highconfig/hot.php
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = '国富安应用安全网关'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '9933fc05-c534-417d-a423-feb3dd541dd7'

@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'EcsCMS_0006' # 平台漏洞编号，留空
+    poc_id = 'bcc3d88a-5e44-4542-be58-919f1beed03b'
     name = '易创思教育建站系统未授权访问可查看所有注册用户' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.MISCONFIGURATION # 漏洞类型
@@ -13,15 +13,15 @@ class Vuln(ABVuln):
     desc = '''
         EcsCMS(易创思ECS)，易创思教育建站系统未授权访问可查看所有注册用户
     ''' # 漏洞描述
-    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=086704
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=086704
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'EcsCMS(易创思ECS)'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = 'esccms_0006' # 平台 POC 编号，留空
+    poc_id = '7c6a2999-76c1-40f2-a659-f8a3db21cc61'
     author = '国光'  # POC编写者
     create_date = '2018-05-22' # POC创建时间
 

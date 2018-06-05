@@ -6,7 +6,7 @@ import re
 import urllib2
 
 class Vuln(ABVuln):
-    vuln_id = 'JCMS_0001'  # 平台漏洞编号，留空
+    poc_id = '23e72a7a-1078-4ada-9580-1eacc87e70d6'
     name = '大汉JCMS v2.6.3 /opr_classajax.jsp SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION  # 漏洞类型
@@ -14,9 +14,9 @@ class Vuln(ABVuln):
     desc = '''
         对参数没有做过滤处理，并且采用拼接SQL语句形式编写代码，导致注入产生。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'Hanweb(大汉)'  # 漏洞应用名称
     product_version = '大汉JCMS v2.6.3'  # 漏洞应用版本
 

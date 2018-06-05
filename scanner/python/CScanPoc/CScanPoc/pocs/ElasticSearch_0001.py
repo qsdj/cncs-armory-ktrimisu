@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import json
 
 class Vuln(ABVuln):
-    vuln_id = 'ElasticSearch_0001'  # 平台漏洞编号，留空
+    poc_id = '8f0b64c3-dd61-4795-8940-04b15c17947a'
     name = 'ElasticSearch 命令执行漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE  # 漏洞类型
@@ -14,7 +14,7 @@ class Vuln(ABVuln):
         ElasticSearch用的脚本引擎是MVEL，这个引擎没有做任何的防护，或者沙盒包装，所以直接可以执行任意代码。
     '''  # 漏洞描述
     ref = 'https://github.com/vulhub/vulhub/tree/master/elasticsearch/CVE-2014-3120'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
     cve_id = 'CVE-2014-3120'  # cve编号
     product = 'ElasticSearch'  # 漏洞应用名称
     product_version = 'v1.1.1'  # 漏洞应用版本

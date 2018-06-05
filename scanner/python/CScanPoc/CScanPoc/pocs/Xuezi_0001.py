@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'Xuezi_0001' # 平台漏洞编号，留空
+    poc_id = '70c4cf4f-bdc7-4bbb-a4d4-6189809d628c'
     name = '学子科技诊断测评系统 未授权访问' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.MISCONFIGURATION # 漏洞类型
@@ -21,15 +21,15 @@ class Vuln(ABVuln):
         /ceping/HouAdmin/MailSection.aspx',
         /ceping/HouAdmin/sendmails.aspx'
     ''' # 漏洞描述
-    ref = '' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'Xuezi(学子科技诊断测评系统)'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = 'xuezi_0000' # 平台 POC 编号，留空
+    poc_id = '80a54bc4-a079-4dd1-80dc-8fdb8a1c3b57'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 

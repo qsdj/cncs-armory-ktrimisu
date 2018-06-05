@@ -6,7 +6,7 @@ import urllib,urllib2
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'PHPMyWind_0003' # 平台漏洞编号，留空
+    poc_id = 'f4386694-b694-4e72-8c0f-17726f2bf025'
     name = 'PHPMyWind 4.6.6 /order.php SQL注入漏洞' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -16,9 +16,9 @@ class Vuln(ABVuln):
         $r = $dosql->GetOne("SELECT `$colname` FROM `$tbname2` WHERE `id`=".$_GET['id']);
         未对$_GET['id']做任何过滤和检查，可以构造语句绕过后续检查进行报错注入。
     ''' # 漏洞描述
-    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=051256
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=051256
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'PHPMyWind'  # 漏洞应用名称
     product_version = '4.6.6'  # 漏洞应用版本
 

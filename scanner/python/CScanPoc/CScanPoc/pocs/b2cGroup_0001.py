@@ -6,7 +6,7 @@ import urlparse
 import time
 
 class Vuln(ABVuln):
-    vuln_id = 'b2cGroup_0001' # 平台漏洞编号，留空
+    poc_id = 'c8c1944b-59d8-4161-a8bc-0bb6df26a5a8'
     name = '珍诚药店管理系统后台 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型

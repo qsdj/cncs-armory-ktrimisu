@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'dotWidget_0000' # 平台漏洞编号
+    poc_id = '6ae3dd79-6964-48d4-8728-4e363e1587ff'
     name = 'dotWidget CMS <= 1.0.6 (file_path) Remote File Include Vulnerabilities' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.RFI # 漏洞类型

@@ -7,7 +7,7 @@ import re
 import hashlib
 
 class Vuln(ABVuln):
-    vuln_id = 'Zblog_0000' # 平台漏洞编号，留空
+    poc_id = '71689923-7545-4263-a229-525533925488'
     name = 'Zblog 1.8 /search.asp XSS' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型
@@ -16,8 +16,8 @@ class Vuln(ABVuln):
         search.asp在对用户提交数据处理上存在安全漏洞。
     ''' # 漏洞描述
     ref = 'https://www.seebug.org/vuldb/ssvid-19246' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'Zblog'  # 漏洞应用名称
     product_version = '1.8'  # 漏洞应用版本
 

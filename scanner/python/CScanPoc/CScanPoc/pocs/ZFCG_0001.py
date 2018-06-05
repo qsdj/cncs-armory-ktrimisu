@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'ZFCG_0001' # 平台漏洞编号，留空
+    poc_id = 'b81cce5a-3f7d-407a-94f8-8269104ab480'
     name = '政府采购系统 任意用户密码获取' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.OTHER # 漏洞类型
@@ -14,15 +14,15 @@ class Vuln(ABVuln):
         政府采购系统通用型任意用户密码获取漏洞,设计缺陷导致漏洞.
         inurl:IndexViewController.do?method=index
     ''' # 漏洞描述
-    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=076710
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=076710
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = '政府采购系统'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = 'zfcg_0000' # 平台 POC 编号，留空
+    poc_id = '81f50615-6633-4161-be96-924fff9c049c'
     author = '国光'  # POC编写者
     create_date = '2018-05-22' # POC创建时间
 

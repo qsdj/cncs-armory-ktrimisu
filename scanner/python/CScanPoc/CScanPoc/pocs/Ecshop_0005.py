@@ -6,7 +6,7 @@ import urllib,urllib2
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'Ecshop_0005' # 平台漏洞编号，留空
+    poc_id = '0c8fdc2b-984b-4ee9-899e-8d55128887ec'
     name = 'Ecshop 2.7.2 /category.php SQL注入漏洞' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -16,8 +16,8 @@ class Vuln(ABVuln):
         没有作任何处理就加入了SQL查询，造成SQL注入。
     ''' # 漏洞描述
     ref = 'https://www.seebug.org/vuldb/ssvid-19574' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'Ecshop'  # 漏洞应用名称
     product_version = '2.7.2'  # 漏洞应用版本
 

@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'ADTsec_0002'  # 平台漏洞编号，留空
+    poc_id = 'd7196f02-1a70-4dcb-b6ec-cdf9a0a95639'
     name = '安达通安全网关 命令执行'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型
@@ -13,11 +13,11 @@ class Vuln(ABVuln):
         “全网行为管理TPN-2G安全网关产品”和“SJW74系列安全网关” 存在一处远程命令执行。
         http://url/lan/admin_getLisence 存在远程命令执行漏洞。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = '安达通安全网关'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '788c7812-5c8f-466d-b1fd-1b72d7f6f417'

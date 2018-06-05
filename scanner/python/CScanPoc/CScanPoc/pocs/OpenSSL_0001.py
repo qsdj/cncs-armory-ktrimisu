@@ -9,7 +9,7 @@ import select
 import urllib
 
 class Vuln(ABVuln):
-    vuln_id = 'OpenSSL_0001' # 平台漏洞编号，留空
+    poc_id = '2fb66ad3-d6f9-4992-a7a7-d4324fa4ca4a'
     name = 'Heartbleed OpenSSL' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型

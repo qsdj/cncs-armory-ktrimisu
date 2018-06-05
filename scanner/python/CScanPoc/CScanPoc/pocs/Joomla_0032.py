@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'Joomla_0032' # 平台漏洞编号，留空
+    poc_id = 'c22a7ed8-f381-43ec-b39b-4ebcb6a0fcae'
     name = 'Joomla! 远程文件包含'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型

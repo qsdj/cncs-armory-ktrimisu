@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
 class Vuln(ABVuln):
-    vuln_id = 'WordPress_0023' # 平台漏洞编号，留空
+    poc_id = 'a3a0ae67-bd5e-4272-98c5-15118746f436'
     name = 'WordPress Ajax Store Locator <= 1.2 /sl_file_download.php 任意文件下载漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型
@@ -14,8 +14,8 @@ class Vuln(ABVuln):
         download_file" variable is not sanitized.
     '''  # 漏洞描述
     ref = 'http://www.exploit-db.com/exploits/35493'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'WordPress'  # 漏洞应用名称
     product_version = 'WordPress Ajax Store Locator <= 1.2'  # 漏洞应用版本
 

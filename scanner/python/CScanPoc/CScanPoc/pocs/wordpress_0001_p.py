@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'WordPress_0001_p' # 平台漏洞编号，留空
+    poc_id = 'cd205e05-c018-411a-a27e-e2941be58a49'
     name = 'WordPress Mailpress Plugin 远程代码执行' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型
@@ -14,8 +14,8 @@ class Vuln(ABVuln):
     Wordpress的Mailpress插件存在越权调用，在不登陆的情况下，可以调用系统某些方法，造成远程命令执行。
     ''' # 漏洞描述
     ref = 'http://0day5.com/archives/3960/' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'WordPress'  # 漏洞应用名称
     product_version = 'WordPress Mailpress Plugin'  # 漏洞应用版本
 

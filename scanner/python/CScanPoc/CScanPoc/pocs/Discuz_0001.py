@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'Discuz_0001'  # 平台漏洞编号，留空
+    poc_id = 'cfac4f07-3df4-45a7-beff-3a9ab3d13367'
     name = 'Discuz!积分商城插件设计缺陷可前台getshell'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.LFI  # 漏洞类型
@@ -13,9 +13,9 @@ class Vuln(ABVuln):
         $file = DISCUZ_ROOT.'./source/plugin/dc_mall/module/index/'.$action.'.inc.php';
         // action参数未过滤直接传入$file后面的用%00截断即可包含任意文件。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'Discuz!'  # 漏洞应用名称
     product_version = 'Discuz!'  # 漏洞应用版本
 

@@ -6,7 +6,7 @@ import urllib2
 import base64
 
 class Vuln(ABVuln):
-    vuln_id = 'Hikvision_0007' # 平台漏洞编号
+    poc_id = '2d1efb10-8ec9-4aaf-86bd-ead19c810af3'
     name = '海康威视摄像头弱口令' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.MISCONFIGURATION # 漏洞类型

@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'WordPress_0036' # 平台漏洞编号，留空
+    poc_id = 'be2451f4-a028-4f79-a9dc-c54389267054'
     name = 'WordPress MiwoFTP 1.0.5 插件任意文件漏洞' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型
@@ -14,8 +14,8 @@ class Vuln(ABVuln):
         WordPress MiwoFTP 1.0.5 插件任意文件漏洞
     ''' # 漏洞描述
     ref = 'https://www.exploit-db.com/exploits/36801/' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'WordPress'  # 漏洞应用名称
     product_version = 'WordPress MiwoFTP 1.0.5'  # 漏洞应用版本
 
