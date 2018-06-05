@@ -20,7 +20,7 @@ class Vuln(ABVuln):
     cnvd_id = 'Unknown' # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'WordPress'  # 漏洞应用名称
-    product_version = '2.x'  # 漏洞应用版本
+    product_version = 'WordPress Persuasion Theme 2.x'  # 漏洞应用版本
 
 
 class Poc(ABPoc):

@@ -7,17 +7,17 @@ hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
     vuln_id = 'Zblog_0006' # 平台漏洞编号，留空
-    name = 'Z-blog前台无需登录包含漏洞' # 漏洞名称
+    name = 'Zblog前台无需登录包含' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型
     disclosure_date = '2015-06-09'  # 漏洞公布时间
     desc = '''
-        Z-blog前台无需登录包含漏洞
+        Zblog /zb_install/index.php 前台无需登录包含漏洞。
     ''' # 漏洞描述
     ref = 'http://0day5.com/archives/3213/' # 漏洞来源
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
-    product = 'Z-blog'  # 漏洞应用名称
+    product = 'Zblog'  # 漏洞应用名称
     product_version = ''  # 漏洞应用版本
 
 

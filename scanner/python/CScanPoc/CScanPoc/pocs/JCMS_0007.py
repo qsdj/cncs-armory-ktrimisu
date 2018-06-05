@@ -6,17 +6,17 @@ hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
     vuln_id = 'JCMS_0007' # 平台漏洞编号，留空
-    name = '大汉版通JCMS XSS跨站脚本漏洞' # 漏洞名称
+    name = '大汉版通JCMS XSS' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型
     disclosure_date = '2014-12-20'  # 漏洞公布时间
     desc = '''
         大汉版通JCMS XSS跨站脚本漏洞,漏洞文件在/m_5_b/selmulti_column.jsp中。
     ''' # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=076816' # 漏洞来源
+    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=076816
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
-    product = 'JCMS'  # 漏洞应用名称
+    product = 'Hanweb(大汉)'  # 漏洞应用名称
     product_version = ''  # 漏洞应用版本
 
 

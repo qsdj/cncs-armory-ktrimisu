@@ -15,7 +15,7 @@ class Vuln(ABVuln):
     ref = 'https://www.seebug.org/vuldb/ssvid-89337'  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = 'SiteFactory CMS'  # 漏洞应用名称
+    product = 'SiteFactoryCMS'  # 漏洞应用名称
     product_version = '5.5.9'  # 漏洞应用版本
 
 class Poc(ABPoc):

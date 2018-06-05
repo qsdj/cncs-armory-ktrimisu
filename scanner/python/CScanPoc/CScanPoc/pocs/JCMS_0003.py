@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
     vuln_id = 'JCMS_0003'  # 平台漏洞编号，留空
-    name = 'JCMS 任意文件下载'  # 漏洞名称
+    name = '大汉JCMS 任意文件下载'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD  # 漏洞类型
     disclosure_date = '2015-01-04'  # 漏洞公布时间
@@ -15,8 +15,8 @@ class Vuln(ABVuln):
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = 'JCMS'  # 漏洞应用名称
-    product_version = 'JCMS'  # 漏洞应用版本
+    product = 'Hanweb(大汉)'  # 漏洞应用名称
+    product_version = ''  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'dbfe99d7-8acd-4fdd-b669-83c9a88c20db'

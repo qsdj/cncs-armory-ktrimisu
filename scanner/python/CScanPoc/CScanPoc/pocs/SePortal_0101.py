@@ -13,7 +13,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2014-11-08'  # 漏洞公布时间
     desc = '''
-    SePortal 2.4 /poll.php SQL注入。
+        SePortal 2.4 /poll.php SQL注入。
     ''' # 漏洞描述
     ref = 'http://sebug.net/vuldb/ssvid-8867' # 漏洞来源
     cnvd_id = 'Unknown' # cnvd漏洞编号

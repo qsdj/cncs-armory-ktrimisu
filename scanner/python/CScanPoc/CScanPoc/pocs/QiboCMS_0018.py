@@ -6,14 +6,14 @@ hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
     vuln_id = 'QiboCMS_0018' # 平台漏洞编号，留空
-    name = 'qibocms 部分系统无需登录注入' # 漏洞名称
+    name = '齐博CMS部分系统无需登录注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2014-12-08'  # 漏洞公布时间
     desc = '''
-        qibocms 部分系统无需登录注入(demo成功)
+        齐博CMS部分系统 /news/js.php 无需登录注入(demo成功)
     ''' # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=075317' # 漏洞来源
+    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=075317
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
     product = 'QiboCMS(齐博CMS)'  # 漏洞应用名称

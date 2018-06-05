@@ -18,7 +18,7 @@ class Vuln(ABVuln):
     ref = 'http://sebug.net/vuldb/ssvid-62399' # 漏洞来源
     cnvd_id = 'Unknown' # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
-    product = 'Southidc(南方数据)'  # 漏洞应用名称
+    product = 'Southidc'  # 漏洞应用名称
     product_version = '11.0'  # 漏洞应用版本
 
 

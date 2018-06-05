@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'strongsoft_0005' # 平台漏洞编号，留空
+    vuln_id = 'StrongSoft_0005' # 平台漏洞编号，留空
     name = '四创灾害预警系统 任意文件操作'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_OPERATION # 漏洞类型
@@ -15,8 +15,8 @@ class Vuln(ABVuln):
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = '四创'  # 漏洞应用名称
-    product_version = '四创灾害预警系统'  # 漏洞应用版本
+    product = '四创灾害预警系统'  # 漏洞应用名称
+    product_version = ''  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '15088e44-c9cb-4a2e-a7e6-e57cdddf3c72'

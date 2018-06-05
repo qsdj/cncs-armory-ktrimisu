@@ -16,7 +16,7 @@ class Vuln(ABVuln):
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'WordPress'  # 漏洞应用名称
-    product_version = 'WordPress'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '1351da62-0a10-45d0-a04f-0623a7b2f81e'

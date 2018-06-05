@@ -16,8 +16,8 @@ class Vuln(ABVuln):
     ref = 'https://www.exploit-db.com/exploits/37244/' # 漏洞来源
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
-    product = 'WordPress WP Mobile Edition Plugin'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product = 'WordPress'  # 漏洞应用名称
+    product_version = 'WordPress WP Mobile Edition 插件'  # 漏洞应用版本
 
 
 class Poc(ABPoc):

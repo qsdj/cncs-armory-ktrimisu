@@ -4,18 +4,19 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'Vicworl_0002' # 平台漏洞编号，留空
-    name = 'Vicworl媒体系统 SQL注入漏洞'  # 漏洞名称
+    vuln_id = 'Vicworl_0003' # 平台漏洞编号，留空
+    name = 'Vicworl媒体系统 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2015-04-03'  # 漏洞公布时间
     desc = '''
+        Vicworl媒体系统 /player.php?id=-3538 SQL注入漏洞。
     '''  # 漏洞描述
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = 'Vicworl媒体系统'  # 漏洞应用名称
-    product_version = '*'  # 漏洞应用版本
+    product = 'Vicworl'  # 漏洞应用名称
+    product_version = ''  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '1c3aadf6-2511-4684-aad5-8650b12a2f83'

@@ -6,17 +6,17 @@ hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
     vuln_id = 'ShopNc_0000' # 平台漏洞编号，留空
-    name = 'shopnc o2o 版三处sql注入' # 漏洞名称
+    name = 'ShopNc o2o 版三处sql注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2015-10-1'  # 漏洞公布时间
     desc = '''
-        shopnc o2o 版三处sql注入,直接出数据.
+        ShopNc o2o 版三处sql注入,直接出数据.
     ''' # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=0125512' # 漏洞来源
+    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0125512
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
-    product = 'ShopNc CMS'  # 漏洞应用名称
+    product = 'ShopNc'  # 漏洞应用名称
     product_version = ''  # 漏洞应用版本
 
 

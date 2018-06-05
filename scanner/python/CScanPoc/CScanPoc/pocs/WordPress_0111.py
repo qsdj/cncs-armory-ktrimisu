@@ -19,7 +19,7 @@ class Vuln(ABVuln):
     cnvd_id = 'Unknown' # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'WordPress'  # 漏洞应用名称
-    product_version = '1.0.10'  # 漏洞应用版本
+    product_version = 'WordPress Calculated Fields Form 1.0.10'  # 漏洞应用版本
 
 
 class Poc(ABPoc):

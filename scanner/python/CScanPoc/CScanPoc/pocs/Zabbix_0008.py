@@ -12,12 +12,13 @@ class Vuln(ABVuln):
     type = VulnType.RCE # 漏洞类型
     disclosure_date = '2014-11-28'  # 漏洞公布时间
     desc = '''
-        极光推送之zabbix注入导致命令执行
+        极光推送，英文简称 JPush，是一个面向普通开发者开放的，免费的第三方消息推送服务。
+        极光推送之zabbix /httpmon.php?applications=2 注入导致命令执行。
     ''' # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=084877' # 漏洞来源
+    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=084877
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
-    product = 'zabbix'  # 漏洞应用名称
+    product = 'Zabbix'  # 漏洞应用名称
     product_version = ''  # 漏洞应用版本
 
 

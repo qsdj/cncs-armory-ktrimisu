@@ -18,7 +18,7 @@ class Vuln(ABVuln):
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
     product = 'ZTE'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = '中兴W-LAN无线接入控制器'  # 漏洞应用版本
 
 
 class Poc(ABPoc):

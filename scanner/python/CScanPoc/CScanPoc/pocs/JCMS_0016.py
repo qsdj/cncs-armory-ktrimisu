@@ -14,10 +14,10 @@ class Vuln(ABVuln):
     desc = '''
         南京大汉某政府信息公开系统存在通用型SQL注入
     ''' # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=0150571' # 漏洞来源
+    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0150571
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
-    product = 'JCMS'  # 漏洞应用名称
+    product = 'Hanweb(大汉)'  # 漏洞应用名称
     product_version = ''  # 漏洞应用版本
 
 

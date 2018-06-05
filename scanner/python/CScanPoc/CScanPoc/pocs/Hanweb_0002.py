@@ -16,8 +16,8 @@ class Vuln(ABVuln):
     ref = 'http://0day5.com/archives/3280/'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
-    product = 'Hanweb'  # 漏洞应用名称
-    product_version = 'Unknown'  # 漏洞应用版本
+    product = 'Hanweb(大汉)'  # 漏洞应用名称
+    product_version = '大汉管理后台系统'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '638fb5a3-dbc5-4902-a6ce-f4a53a433aa4'

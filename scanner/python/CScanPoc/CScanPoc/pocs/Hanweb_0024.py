@@ -15,8 +15,8 @@ class Vuln(ABVuln):
     ref = 'Unknown'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
-    product = 'Hanweb'  # 漏洞应用名称
-    product_version = 'Unknown'  # 漏洞应用版本
+    product = 'Hanweb(大汉)'  # 漏洞应用名称
+    product_version = '大汉网站群访问统计系统'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '07c83559-17c0-4586-9747-6fe8087934c5'

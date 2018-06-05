@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'eyou_0016' # 平台漏洞编号，留空
+    vuln_id = 'eYou_0016' # 平台漏洞编号，留空
     name = 'eYou v4 /php/report/include/config.inc 信息泄露' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型

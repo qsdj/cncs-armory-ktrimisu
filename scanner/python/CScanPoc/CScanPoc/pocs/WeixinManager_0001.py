@@ -16,7 +16,7 @@ class Vuln(ABVuln):
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
     product = '微信管理系统'  # 漏洞应用名称
-    product_version = '*'  # 漏洞应用版本
+    product_version = ''  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'ba7f8e65-a8f9-4f99-bf91-83d7dc459f9d'

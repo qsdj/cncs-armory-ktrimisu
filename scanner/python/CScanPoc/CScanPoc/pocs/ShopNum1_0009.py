@@ -14,7 +14,7 @@ class Vuln(ABVuln):
     desc = '''
         武汉群翔软件有限公司商城系统注入.
     '''  # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=0118447'  # 漏洞来源
+    ref = ''  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0118447
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
     product = 'ShopNum1'  # 漏洞应用名称

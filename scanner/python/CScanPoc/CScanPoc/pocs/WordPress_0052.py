@@ -17,8 +17,8 @@ class Vuln(ABVuln):
     ref = 'https://www.exploit-db.com/exploits/30443/'  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = 'WordPress Theme Persuasion'  # 漏洞应用名称
-    product_version = '2.x'  # 漏洞应用版本
+    product = 'WordPress'  # 漏洞应用名称
+    product_version = 'WordPress Theme Persuasion 2.x'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '223342bb-c4bb-4904-9795-a8cf863e583d'

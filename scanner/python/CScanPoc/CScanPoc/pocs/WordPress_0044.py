@@ -11,6 +11,10 @@ class Vuln(ABVuln):
     type = VulnType.INFO_LEAK # 漏洞类型
     disclosure_date = ''  # 漏洞公布时间
     desc = '''
+        WordPress 配置文件信息泄露。
+        /wp-content/plugins/thecartpress/modules/Miranda.class.php?page=
+        /wp-content/plugins/sell-downloads/sell-downloads.php?file=
+        /wp-content/plugins/advanced-uploader/upload.php?destinations=
     '''  # 漏洞描述
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号

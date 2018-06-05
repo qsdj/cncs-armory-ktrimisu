@@ -6,7 +6,7 @@ import re
 
 class Vuln(ABVuln):
     vuln_id = 'Hanweb_0005' # 平台漏洞编号，留空
-    name = '大汉网络 重置管理员密码'  # 漏洞名称
+    name = '大汉JCMS 重置管理员密码'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.OTHER # 漏洞类型
     disclosure_date = '2015-09-26'  # 漏洞公布时间
@@ -20,8 +20,8 @@ class Vuln(ABVuln):
     ref = 'Unknown'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
-    product = 'JCMS(Hanweb)'  # 漏洞应用名称
-    product_version = 'Unknown'  # 漏洞应用版本
+    product = 'Hanweb(大汉)'  # 漏洞应用名称
+    product_version = '大汉JCMS'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '217d22c9-9ab6-40bd-acd8-46587aa21bc2'

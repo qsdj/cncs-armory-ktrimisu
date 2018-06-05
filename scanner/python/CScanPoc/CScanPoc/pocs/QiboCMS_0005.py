@@ -5,11 +5,12 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
     vuln_id = 'QiboCMS_0005' # 平台漏洞编号，留空
-    name = 'qibocms 分类系统 前台无限制Getshell'  # 漏洞名称
+    name = '齐博CMS分类系统 前台无限制Getshell'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE  # 漏洞类型
     disclosure_date = '2015-06-24'  # 漏洞公布时间
     desc = '''
+        齐博CMS分类系统 /search.php 可任意上传文件，getshe.
     '''  # 漏洞描述
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号

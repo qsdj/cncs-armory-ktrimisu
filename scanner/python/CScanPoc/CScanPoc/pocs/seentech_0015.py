@@ -6,7 +6,7 @@ import random
 import urllib
 
 class Vuln(ABVuln):
-    vuln_id = 'seentech_0015' # 平台漏洞编号，留空
+    vuln_id = 'Seentech_0015' # 平台漏洞编号，留空
     name = '中科新业网络哨兵 远程命令执行'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型

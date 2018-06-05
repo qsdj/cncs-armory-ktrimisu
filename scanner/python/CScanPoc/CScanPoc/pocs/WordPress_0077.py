@@ -16,8 +16,8 @@ class Vuln(ABVuln):
     ref = 'https://www.exploit-db.com/exploits/17704/' # 漏洞来源
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
-    product = 'WordPress UnGallery '  # 漏洞应用名称
-    product_version = '1.5.8'  # 漏洞应用版本
+    product = 'WordPress'  # 漏洞应用名称
+    product_version = 'WordPress Plugin UnGallery 1.5.8'  # 漏洞应用版本
 
 
 class Poc(ABPoc):

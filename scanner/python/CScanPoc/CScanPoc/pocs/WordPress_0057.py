@@ -6,18 +6,18 @@ hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
     vuln_id = 'WordPress_0057' # 平台漏洞编号，留空
-    name = 'WordPress Plugin IP-Logger 3.0 SQL注入漏洞' # 漏洞名称
+    name = 'WordPress Plugin IP-Logger 3.0 SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2011-08-16'  # 漏洞公布时间
     desc = '''
-        WordPress Plugin IP-Logger 3.0 SQL注入漏洞
+        WordPress Plugin IP-Logger 3.0 wp-content/plugins/ip-logger/map-details.php SQL注入漏洞。
     ''' # 漏洞描述
     ref = 'https://www.exploit-db.com/exploits/17673/' # 漏洞来源
     cnvd_id = 'Unknown' # cnvd漏洞编号
     cve_id = 'Unknown' #cve编号
     product = 'WordPress Plugin IP-Logger'  # 漏洞应用名称
-    product_version = '3.0'  # 漏洞应用版本
+    product_version = 'WordPress Plugin IP-Logger 3.0'  # 漏洞应用版本
 
 
 class Poc(ABPoc):

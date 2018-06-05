@@ -18,8 +18,8 @@ class Vuln(ABVuln):
     ref = 'https://www.exploit-db.com/exploits/36613/' # 漏洞来源
     cnvd_id = '' # cnvd漏洞编号
     cve_id = 'CVE-2015-2824' #cve编号
-    product = 'WordPress Simple Ads Manager-Multiple'  # 漏洞应用名称
-    product_version = '2.5.94 , 2.5.96'  # 漏洞应用版本
+    product = 'WordPress'  # 漏洞应用名称
+    product_version = 'WordPress Simple Ads Manager-Multiple'  # 漏洞应用版本
 
 
 class Poc(ABPoc):

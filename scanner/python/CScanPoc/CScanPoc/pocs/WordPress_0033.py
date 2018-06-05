@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
     vuln_id = 'WordPress_0033' # 平台漏洞编号，留空
-    name = 'WordPress DZS-VideoGallery ‘ajax.php’跨站脚本漏洞'  # 漏洞名称
+    name = 'WordPress DZS-VideoGallery ajax.php 跨站脚本'  # 漏洞名称
     level = VulnLevel.MED  # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型
     disclosure_date = '2014-02-24'  # 漏洞公布时间

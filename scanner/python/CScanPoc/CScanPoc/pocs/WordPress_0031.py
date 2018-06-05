@@ -10,12 +10,13 @@ class Vuln(ABVuln):
     type = VulnType.FILE_DOWNLOAD # 漏洞类型
     disclosure_date = ''  # 漏洞公布时间
     desc = '''
+        WordPress plugins/wp-swimteam /wp-content/plugins/wp-swimteam/include/user/download.php?file= 文件下载。
     '''  # 漏洞描述
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
     product = 'WordPress'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'WordPress plugins/wp-swimteam'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'aa2fb6df-117d-4547-b9e8-421b3d903990'

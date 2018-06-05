@@ -6,12 +6,12 @@ hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
     vuln_id = 'QiboCMS_0009' # 平台漏洞编号，留空
-    name = '齐博地方门户系统 SQL注入漏洞' # 漏洞名称
+    name = '齐博地方门户系统 SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2013-02-03'  # 漏洞公布时间
     desc = '''
-        齐博地方门户系统 SQL注入漏洞
+        齐博地方门户系统 /coupon/s.php SQL注入漏洞。
     ''' # 漏洞描述
     ref = '' # 漏洞来源
     cnvd_id = '' # cnvd漏洞编号

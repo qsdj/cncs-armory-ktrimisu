@@ -12,13 +12,13 @@ class Vuln(ABVuln):
     type = VulnType.XSS # 漏洞类型
     disclosure_date = '2014-03-08'  # 漏洞公布时间
     desc = '''
-        emblog include/lib/js/uploadify/uploadify.swf文件存在FlashXss漏洞。
+        /webmail/userapply.php?execadd=333&DomainID=111 路径泄露漏洞。
     ''' # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=049525' # 漏洞来源
+    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=049525
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
     product = 'U-Mail'  # 漏洞应用名称
-    product_version = '*'  # 漏洞应用版本
+    product_version = ''  # 漏洞应用版本
 
 
 class Poc(ABPoc):

@@ -16,7 +16,7 @@ class Vuln(ABVuln):
     ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=062598' # 漏洞来源
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
-    product = 'SiteFactory'  # 漏洞应用名称
+    product = 'SiteFactoryCMS'  # 漏洞应用名称
     product_version = '5.5.9'  # 漏洞应用版本
 
 

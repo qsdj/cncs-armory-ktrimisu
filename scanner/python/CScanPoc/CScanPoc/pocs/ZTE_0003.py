@@ -16,7 +16,7 @@ class Vuln(ABVuln):
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = 'ZXHN_H168N'  # 漏洞应用名称
+    product = 'ZTE'  # 漏洞应用名称
     product_version = '中兴ZXHN H168N光猫'  # 漏洞应用版本
 
 class Poc(ABPoc):

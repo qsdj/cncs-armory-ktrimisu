@@ -7,18 +7,18 @@ import urllib2
 
 class Vuln(ABVuln):
     vuln_id = 'Shopxp_0001'  # 平台漏洞编号，留空
-    name = 'shopxp 7.4 /textbox2.asp SQL Injection'  # 漏洞名称
+    name = 'Shopxp 7.4 /textbox2.asp SQL Injection'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2014-06-10'  # 漏洞公布时间
     desc = '''
-        shopxp 7.4 textbox2.asp sql injection。
+        Shopxp 7.4 textbox2.asp sql injection。
     '''  # 漏洞描述
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = 'shopxp'  # 漏洞应用名称
-    product_version = 'shopxp 7.4'  # 漏洞应用版本
+    product = 'Shopxp'  # 漏洞应用名称
+    product_version = 'Shopxp 7.4'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '3685b60e-5b0f-486d-8002-1fc03aab8c7e'

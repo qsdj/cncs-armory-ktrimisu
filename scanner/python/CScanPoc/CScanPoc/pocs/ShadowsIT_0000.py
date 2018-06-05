@@ -11,12 +11,13 @@ class Vuln(ABVuln):
     type = VulnType.LFI # 漏洞类型
     disclosure_date = '2015-05-25'  # 漏洞公布时间
     desc = '''
-        Shadows-IT Designs本地文件包含
+        Shadows-IT Designs本地文件包含漏洞。
+        /admin/selector.php?page=
     ''' # 漏洞描述
     ref = '' # 漏洞来源
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
-    product = 'shadows-it'  # 漏洞应用名称
+    product = 'ShadowsIT'  # 漏洞应用名称
     product_version = ''  # 漏洞应用版本
 
 

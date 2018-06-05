@@ -12,13 +12,13 @@ class Vuln(ABVuln):
     type = VulnType.FILE_DOWNLOAD # 漏洞类型
     disclosure_date = '2014-09-08'  # 漏洞公布时间
     desc = '''
-        WordPress Theme Epic - 'download.php' Arbitrary File Download
+        WordPress Theme Epic - 'download.php' Arbitrary File Download.
     ''' # 漏洞描述
     ref = 'https://www.exploit-db.com/exploits/39298/' # 漏洞来源
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
     product = 'WordPress'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'WordPress Theme Epic'  # 漏洞应用版本
 
 
 class Poc(ABPoc):

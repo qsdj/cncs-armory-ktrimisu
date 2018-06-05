@@ -7,7 +7,7 @@ import urllib2
 
 class Vuln(ABVuln):
     vuln_id = 'JCMS_0001'  # 平台漏洞编号，留空
-    name = 'JCMS v2.6.3 /opr_classajax.jsp SQL注入'  # 漏洞名称
+    name = '大汉JCMS v2.6.3 /opr_classajax.jsp SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-07-01'  # 漏洞公布时间
@@ -17,8 +17,8 @@ class Vuln(ABVuln):
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = 'JCMS'  # 漏洞应用名称
-    product_version = 'JCMS v2.6.3'  # 漏洞应用版本
+    product = 'Hanweb(大汉)'  # 漏洞应用名称
+    product_version = '大汉JCMS v2.6.3'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'ad00afaf-8c4f-45ac-9b95-3c10baeb4169'

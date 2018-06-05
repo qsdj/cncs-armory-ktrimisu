@@ -12,7 +12,7 @@ class Vuln(ABVuln):
     type = VulnType.XSS # 漏洞类型
     disclosure_date = '2015-02-04'  # 漏洞公布时间
     desc = '''
-    隐藏表单中引发的反射XSS漏洞。
+        隐藏表单中引发的反射XSS漏洞。
     ''' # 漏洞描述
     ref = 'http://packetstormsecurity.com/files/130008/CMS-Websitebaker-2.8.3-SP3-Cross-Site-Scripting.html' # 漏洞来源
     cnvd_id = 'Unknown' # cnvd漏洞编号

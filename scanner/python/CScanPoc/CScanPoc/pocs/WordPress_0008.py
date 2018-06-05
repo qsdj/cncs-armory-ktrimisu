@@ -9,8 +9,8 @@ import requests
 
 class Vuln(ABVuln):
     vuln_id = 'WordPress_0008'  # 平台漏洞编号，留空
-    name = 'WordPress 存储型XSS漏洞'  # 漏洞名称
-    level = VulnLevel.HIGH  # 漏洞危害级别
+    name = 'WordPress 存储型XSS'  # 漏洞名称
+    level = VulnLevel.MED  # 漏洞危害级别
     type = VulnType.XSS  # 漏洞类型
     disclosure_date = '2015-04-27'  # 漏洞公布时间
     desc = '''
@@ -22,7 +22,7 @@ class Vuln(ABVuln):
     ref = 'http://www.freebuf.com/news/65926.html'  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = 'Wordpress'  # 漏洞应用名称
+    product = 'WordPress'  # 漏洞应用名称
     product_version = '<4.2.1'  # 漏洞应用版本
 
 class Poc(ABPoc):

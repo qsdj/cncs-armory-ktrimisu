@@ -8,7 +8,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
     vuln_id = 'XAMPP_0101' # 平台漏洞编号，留空
-    name = 'XAMPP 1.7.3 /xampp/showcode.php 任意文件下载' # 漏洞名称
+    name = 'XAMPP 1.7.3 /xampp/showcode.php 任意文件' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型
     disclosure_date = '2014-10-21'  # 漏洞公布时间

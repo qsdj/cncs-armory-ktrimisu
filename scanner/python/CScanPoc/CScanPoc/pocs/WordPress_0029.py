@@ -11,13 +11,13 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2015-01-27'  # 漏洞公布时间
     desc = '''
-        知名WordPress主题Pagelines和Platform权限提升漏洞
+        WordPress主题Pagelines和Platform权限提升漏洞。
     ''' # 漏洞描述
     ref = 'http://www.freebuf.com/vuls/57594.html' # 漏洞来源
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
     product = 'WordPress'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'WordPress主题Pagelines和Platform'  # 漏洞应用版本
 
 
 class Poc(ABPoc):

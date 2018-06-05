@@ -4,19 +4,19 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'tongdaOA_0011' # 平台漏洞编号，留空
+    vuln_id = 'TongdaOA_0011' # 平台漏洞编号，留空
     name = '通达T9系统 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2015-03-13'  # 漏洞公布时间
     desc = '''
-        T9智能管理平台是基于B/S架构，灵活、稳定、安全、高性能的办公系统。采用自主研发的引擎技术，提供强大的工作流和公文流程管理功能，可完全根据客户需求定制办公门户平台。
+        通达OAT9智能管理平台是基于B/S架构，灵活、稳定、安全、高性能的办公系统。采用自主研发的引擎技术，提供强大的工作流和公文流程管理功能，可完全根据客户需求定制办公门户平台。
         由于参数过滤不严谨，造成SQL注入漏洞。
     '''  # 漏洞描述
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = '通达T9系统'  # 漏洞应用名称
+    product = '通达OA系统'  # 漏洞应用名称
     product_version = ''  # 漏洞应用版本
 
 class Poc(ABPoc):

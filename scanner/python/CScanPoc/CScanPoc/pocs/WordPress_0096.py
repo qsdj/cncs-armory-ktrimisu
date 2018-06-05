@@ -12,13 +12,13 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2016-01-09'  # 漏洞公布时间
     desc = '''
-        Wordpress AzonPop Plugin SQL Injection
+        Wordpress AzonPop Plugin SQL Injection.
     ''' # 漏洞描述
     ref = 'https://cxsecurity.com/issue/WLB-2016010049' # 漏洞来源
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
     product = 'WordPress'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Wordpress AzonPop Plugin'  # 漏洞应用版本
 
 
 class Poc(ABPoc):

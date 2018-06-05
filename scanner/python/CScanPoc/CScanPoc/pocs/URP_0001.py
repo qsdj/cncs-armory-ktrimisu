@@ -11,7 +11,7 @@ class Vuln(ABVuln):
     type = VulnType.FILE_DOWNLOAD # 漏洞类型
     disclosure_date = ''  # 漏洞公布时间
     desc = '''
-        URP教务系统任意文件下载漏洞。
+        URP教务系统 /servlet/com.runqian.base.util.ReadJavaScriptServlet?file= 任意文件下载漏洞。
     '''  # 漏洞描述
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号

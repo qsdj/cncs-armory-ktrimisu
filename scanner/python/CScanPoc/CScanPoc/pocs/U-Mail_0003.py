@@ -17,7 +17,7 @@ class Vuln(ABVuln):
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
     product = 'U-Mail'  # 漏洞应用名称
-    product_version = '*'  # 漏洞应用版本
+    product_version = ''  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'c732f484-0217-42ca-afa6-121886230975'

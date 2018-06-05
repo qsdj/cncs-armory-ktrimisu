@@ -18,7 +18,7 @@ class Vuln(ABVuln):
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
     product = 'WordPress'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'WordPress WooCommerce 2.4.12'  # 漏洞应用版本
 
 
 class Poc(ABPoc):

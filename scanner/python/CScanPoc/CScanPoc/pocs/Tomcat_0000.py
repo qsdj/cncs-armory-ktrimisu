@@ -11,7 +11,7 @@ class Vuln(ABVuln):
     type = VulnType.INFO_LEAK # 漏洞类型
     disclosure_date = '2008-06-04'  # 漏洞公布时间
     desc = '''
-        Tomcat管理路径泄露漏洞
+        Tomcat /manager/html 管理路径泄露漏洞。
     ''' # 漏洞描述
     ref = 'http://www.venustech.com.cn/newsinfo/124/1664.html' # 漏洞来源
     cnvd_id = '' # cnvd漏洞编号

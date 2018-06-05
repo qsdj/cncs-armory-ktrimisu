@@ -8,12 +8,12 @@ import hashlib
 
 class Vuln(ABVuln):
     vuln_id = 'YXTG_0000' # 平台漏洞编号，留空
-    name = '易想团购 v1.4 /ajax.php check_field参数 SQL注入漏洞' # 漏洞名称
+    name = '易想团购 v1.4 /ajax.php check_field参数 SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2014-12-08'  # 漏洞公布时间
     desc = '''
-        易想团购 v1.4 /ajax.php check_field参数 SQL注入漏洞
+        易想团购 v1.4 /ajax.php check_field参数 SQL注入漏洞。
     ''' # 漏洞描述
     ref = 'http://vul.jdsec.com/index.php/vul/JDSEC-POC-20141208-1321' # 漏洞来源
     cnvd_id = '' # cnvd漏洞编号

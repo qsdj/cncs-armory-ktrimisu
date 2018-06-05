@@ -18,8 +18,8 @@ class Vuln(ABVuln):
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = '任子行'  # 漏洞应用名称
-    product_version = '任子行net110网络审计系统'  # 漏洞应用版本
+    product = '任子行网络审计系统'  # 漏洞应用名称
+    product_version = ''  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '63719b8d-41df-4d6d-96a8-030c6de282b2'

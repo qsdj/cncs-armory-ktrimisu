@@ -12,7 +12,7 @@ class Vuln(ABVuln):
     type = VulnType.FILE_DOWNLOAD # 漏洞类型
     disclosure_date = '2013-12-23'  # 漏洞公布时间
     desc = '''
-        泛微e-office 任意文件下载
+        泛微e-office /E-mobile/Data/downfile.php?url=123 任意文件下载。
     ''' # 漏洞描述
     ref = '' # 漏洞来源
     cnvd_id = '' # cnvd漏洞编号

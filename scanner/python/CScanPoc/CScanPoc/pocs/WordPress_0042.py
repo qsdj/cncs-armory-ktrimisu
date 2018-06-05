@@ -5,11 +5,12 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
     vuln_id = 'WordPress_0042' # 平台漏洞编号，留空
-    name = 'WordPress SQL注入漏洞'  # 漏洞名称
+    name = 'WordPress 文件下载'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.FILE_DOWNLOAD # 漏洞类型
     disclosure_date = ''  # 漏洞公布时间
     desc = '''
+        WordPress /wp-content/themes/parallelus-salutation/framework/utilities/download/getfile.php?file= 可下载任意文件。
     '''  # 漏洞描述
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号

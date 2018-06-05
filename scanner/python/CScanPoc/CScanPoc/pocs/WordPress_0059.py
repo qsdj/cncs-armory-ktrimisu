@@ -6,7 +6,7 @@ hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
     vuln_id = 'WordPress_0059' # 平台漏洞编号，留空
-    name = 'WordPress Plugin Evarisk 5.1.3.6 SQL注入漏洞' # 漏洞名称
+    name = 'WordPress Plugin Evarisk 5.1.3.6 SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2011-08-28'  # 漏洞公布时间
@@ -16,8 +16,8 @@ class Vuln(ABVuln):
     ref = 'https://www.exploit-db.com/exploits/17738/' # 漏洞来源
     cnvd_id = 'Unknown' # cnvd漏洞编号
     cve_id = 'Unknown' #cve编号
-    product = 'WordPress Plugin Evarisk'  # 漏洞应用名称
-    product_version = '5.1.3.6'  # 漏洞应用版本
+    product = 'WordPress'  # 漏洞应用名称
+    product_version = 'WordPress Plugin Evarisk 5.1.3.6'  # 漏洞应用版本
 
 
 class Poc(ABPoc):

@@ -6,7 +6,7 @@ hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
     vuln_id = 'WordPress_0066' # 平台漏洞编号，留空
-    name = 'WordPress Plugin Audio Gallery Playlist 0.12 SQL注入漏洞' # 漏洞名称
+    name = 'WordPress Plugin Audio Gallery Playlist 0.12 SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2011-08-30'  # 漏洞公布时间
@@ -16,8 +16,8 @@ class Vuln(ABVuln):
     ref = 'www.exploit-db.com/exploits/17756/' # 漏洞来源
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
-    product = 'WordPress Plugin Audio Gallery Playlist'  # 漏洞应用名称
-    product_version = '0.12'  # 漏洞应用版本
+    product = 'WordPress'  # 漏洞应用名称
+    product_version = 'WordPress Plugin Audio Gallery Playlist 0.12'  # 漏洞应用版本
 
 
 class Poc(ABPoc):

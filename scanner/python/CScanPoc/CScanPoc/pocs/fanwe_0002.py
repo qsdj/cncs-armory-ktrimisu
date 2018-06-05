@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
 class Vuln(ABVuln):
-    vuln_id = 'Fanwe_0002' # 平台漏洞编号，留空
+    vuln_id = 'FanWe_0002' # 平台漏洞编号，留空
     name = '方维团购 v4.3 goods_list.php SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -16,7 +16,7 @@ class Vuln(ABVuln):
     ref = 'https://www.seebug.org/vuldb/ssvid-87131'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
-    product = 'Fanwe O2O'  # 漏洞应用名称
+    product = 'FanWe(方维)'  # 漏洞应用名称
     product_version = 'v4.3'  # 漏洞应用版本
 
 class Poc(ABPoc):

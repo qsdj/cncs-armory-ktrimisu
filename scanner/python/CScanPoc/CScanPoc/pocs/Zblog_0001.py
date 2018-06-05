@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
     vuln_id = 'Zblog_0001'  # 平台漏洞编号，留空
-    name = 'Zblog 本地文件包含漏洞'  # 漏洞名称
+    name = 'Zblog 本地文件包含'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.LFI  # 漏洞类型
     disclosure_date = '2015-06-17'  # 漏洞公布时间

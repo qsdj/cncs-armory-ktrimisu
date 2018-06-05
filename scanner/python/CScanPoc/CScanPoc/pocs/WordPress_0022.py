@@ -16,8 +16,8 @@ class Vuln(ABVuln):
     ref = 'https://packetstormsecurity.com/files/129706/wptheme-download.txt'  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = 'WordPress Multiple themes'  # 漏洞应用名称
-    product_version = '*'  # 漏洞应用版本
+    product = 'WordPress'  # 漏洞应用名称
+    product_version = 'WordPress Multiple themes'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '0999c6cf-6498-453e-9ecc-dfb8340a424c'

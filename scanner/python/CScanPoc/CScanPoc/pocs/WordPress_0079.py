@@ -11,13 +11,13 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2015-02-11'  # 漏洞公布时间
     desc = '''
-        WordPress Plugin Survey and Poll 1.1 - Blind SQL Injection
+        WordPress Plugin Survey and Poll 1.1 - Blind SQL Injection.
     ''' # 漏洞描述
     ref = 'https://www.exploit-db.com/exploits/36054/' # 漏洞来源
     cnvd_id = '' # cnvd漏洞编号
     cve_id = 'CVE-2015-2090' #cve编号
     product = 'WordPress'  # 漏洞应用名称
-    product_version = '1.1'  # 漏洞应用版本
+    product_version = 'WordPress Plugin Survey and Poll 1.1'  # 漏洞应用版本
 
 
 class Poc(ABPoc):

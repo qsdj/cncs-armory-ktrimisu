@@ -13,9 +13,9 @@ class Vuln(ABVuln):
     type = VulnType.INFO_LEAK # 漏洞类型
     disclosure_date = '2014-03-13'  # 漏洞公布时间
     desc = '''
-        http://startbbs/index.php/home/getmore/w.jsp 随意构造一个.jsp爆出数据库查询语句
+        http://startbbs/index.php/home/getmore/w.jsp 随意构造一个.jsp爆出数据库查询语句。
     ''' # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=045780' # 漏洞来源
+    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=045780
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
     product = 'StartBBS'  # 漏洞应用名称

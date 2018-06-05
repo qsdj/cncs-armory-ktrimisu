@@ -16,7 +16,7 @@ class Vuln(ABVuln):
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
     product = '天柏在线培训系统'  # 漏洞应用名称
-    product_version = '天柏在线培训系统'  # 漏洞应用版本
+    product_version = ''  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '36d13357-ae59-47ce-b86d-c45dd3e16141'

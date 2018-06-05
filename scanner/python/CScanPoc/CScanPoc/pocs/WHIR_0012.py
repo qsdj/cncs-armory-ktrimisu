@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import time
 
 class Vuln(ABVuln):
-    vuln_id = 'WHIR_0012' # 平台漏洞编号，留空
+    vuln_id = 'Whir_0012' # 平台漏洞编号，留空
     name = '万户ezOffice协同办公管理平台 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -16,8 +16,8 @@ class Vuln(ABVuln):
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = '万户'  # 漏洞应用名称
-    product_version = '万户ezOffice协同办公管理平台'  # 漏洞应用版本
+    product = '万户OA'  # 漏洞应用名称
+    product_version = ''  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'a7cf5999-ddd5-4b9f-86bd-fa65dac026d4'

@@ -11,7 +11,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2014-10-28'  # 漏洞公布时间
     desc = '''
-        ShopBuilder /?m=product&s=list&ptype SQL注入
+        ShopBuilder /?m=product&s=list&ptype SQL注入l漏洞。
     ''' # 漏洞描述
     ref = '' # 漏洞来源
     cnvd_id = '' # cnvd漏洞编号

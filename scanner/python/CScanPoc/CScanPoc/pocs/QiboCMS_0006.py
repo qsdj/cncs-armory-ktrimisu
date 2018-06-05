@@ -11,9 +11,9 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2015-04-02'  # 漏洞公布时间
     desc = '''
-        齐博CMS博客系统注入.
+        齐博CMS博客系统 /blog/index.php 注入漏洞。
     ''' # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=96449' # 漏洞来源
+    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=96449
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
     product = 'QiboCMS(齐博CMS)'  # 漏洞应用名称

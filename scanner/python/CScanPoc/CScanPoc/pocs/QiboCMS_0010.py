@@ -6,12 +6,12 @@ hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
     vuln_id = 'QiboCMS_0010' # 平台漏洞编号，留空
-    name = 'QiboCMS V7 任意文件下载漏洞' # 漏洞名称
+    name = 'QiboCMS V7 任意文件下载' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型
     disclosure_date = '2013-02-03'  # 漏洞公布时间
     desc = '''
-        QiboCMS V7 任意文件下载漏洞
+        QiboCMS V7 /do/job.php?job=download&url=ZGF0YS9jb25maWcucGg8 任意文件下载漏洞。
     ''' # 漏洞描述
     ref = '' # 漏洞来源
     cnvd_id = '' # cnvd漏洞编号

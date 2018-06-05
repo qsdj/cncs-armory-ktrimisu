@@ -13,7 +13,7 @@ class Vuln(ABVuln):
     desc = '''
         sgc8000 大型旋转机监控系统 phpRedisAdmin未授权访问
     ''' # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=0135197' # 漏洞来源
+    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0135197
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
     product = 'sgc8000'  # 漏洞应用名称

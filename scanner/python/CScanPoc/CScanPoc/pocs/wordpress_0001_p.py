@@ -5,8 +5,8 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'wordpress_0001_p' # 平台漏洞编号，留空
-    name = 'WordPress Mailpress Plugin 远程代码执行漏洞' # 漏洞名称
+    vuln_id = 'WordPress_0001_p' # 平台漏洞编号，留空
+    name = 'WordPress Mailpress Plugin 远程代码执行' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型
     disclosure_date = '2016-06-21'  # 漏洞公布时间
@@ -17,7 +17,7 @@ class Vuln(ABVuln):
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
     product = 'WordPress'  # 漏洞应用名称
-    product_version = '*'  # 漏洞应用版本
+    product_version = 'WordPress Mailpress Plugin'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '6b8a8812-af76-4f80-b457-8bb40c8a4d44'

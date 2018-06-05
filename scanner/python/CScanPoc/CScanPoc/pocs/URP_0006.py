@@ -6,12 +6,12 @@ hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
     vuln_id = 'URP_0006' # 平台漏洞编号，留空
-    name = 'URP综合教务系统代码执行漏洞' # 漏洞名称
+    name = 'URP综合教务系统代码执行' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型
     disclosure_date = '2015-05-17'  # 漏洞公布时间
     desc = '''
-        URP综合教务系统代码执行漏洞
+        URP综合教务系统 /lwUpLoad_action.jsp 代码执行漏洞。
     ''' # 漏洞描述
     ref = '' # 漏洞来源
     cnvd_id = '' # cnvd漏洞编号

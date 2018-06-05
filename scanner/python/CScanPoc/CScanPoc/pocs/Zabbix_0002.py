@@ -6,7 +6,7 @@ import re
 
 class Vuln(ABVuln):
     vuln_id = 'Zabbix_0002' # 平台漏洞编号，留空
-    name = 'Zabbix /popup.php SQL注入漏洞'  # 漏洞名称
+    name = 'Zabbix /popup.php SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2011-11-24'  # 漏洞公布时间

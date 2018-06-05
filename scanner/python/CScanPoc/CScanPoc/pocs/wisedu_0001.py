@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'wisedu_0001' # 平台漏洞编号，留空
+    vuln_id = 'Wisedu_0001' # 平台漏洞编号，留空
     name = '金智教育高校系统存在通用型Oracle注射'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -18,7 +18,7 @@ class Vuln(ABVuln):
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
     product = '金智教育CMS'  # 漏洞应用名称
-    product_version = '*'  # 漏洞应用版本
+    product_version = ''  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'e4c82325-3bcd-40c6-a944-bf97a238c811'

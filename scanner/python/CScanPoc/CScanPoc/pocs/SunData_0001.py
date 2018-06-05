@@ -6,18 +6,19 @@ import urllib2
 
 class Vuln(ABVuln):
     vuln_id = 'SunData_0001' # 平台漏洞编号，留空
-    name = '湖南三唐信息科技 通用型实验管理系统SQL注入漏洞'  # 漏洞名称
+    name = '三唐实验室综合信息管理系统SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2015-04-07'  # 漏洞公布时间
     desc = '''
         湖南三唐信息科技有限公司某学校在用的通用型实验管理系统SQL注入漏洞。
+        /OpenTimsUI/AddOpenBook/AddXM_ExpOpCodeidlabtime.aspx?TaskID=-1
     '''  # 漏洞描述
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = '通用型实验管理系统'  # 漏洞应用名称
-    product_version = '*'  # 漏洞应用版本
+    product = '三唐实验室综合信息管理系统'  # 漏洞应用名称
+    product_version = ''  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'aa25dfda-1007-441c-8574-15cdf4c7c7af'

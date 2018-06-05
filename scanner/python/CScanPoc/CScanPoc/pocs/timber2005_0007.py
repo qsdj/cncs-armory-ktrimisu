@@ -6,14 +6,14 @@ hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
     vuln_id = 'timber2005_0007' # 平台漏洞编号，留空
-    name = '天柏在线培训系统sql注入二' # 漏洞名称
+    name = '天柏在线培训系统sql注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2016-01-11'  # 漏洞公布时间
     desc = '''
-        天柏在线培训系统sql注入二
+        天柏在线培训系统 /Web_Org/TCH_list.aspx?typeid=9 sql注入漏洞。
     ''' # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=0143143' # 漏洞来源
+    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0143143
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
     product = '天柏在线培训系统'  # 漏洞应用名称

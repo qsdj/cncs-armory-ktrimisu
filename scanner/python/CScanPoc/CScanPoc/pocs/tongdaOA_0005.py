@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'tongdaOA_0005' # 平台漏洞编号，留空
+    vuln_id = 'TongdaOA_0005' # 平台漏洞编号，留空
     name = '通达OA系统 信息泄露'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型

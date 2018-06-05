@@ -8,7 +8,7 @@ import hashlib
 
 class Vuln(ABVuln):
     vuln_id = 'U-Mail_0007' # 平台漏洞编号，留空
-    name = 'U-Mail /webmail/userapply.php 物理路径泄漏漏洞' # 漏洞名称
+    name = 'U-Mail /webmail/userapply.php 物理路径泄漏' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
     disclosure_date = '2014-11-23'  # 漏洞公布时间

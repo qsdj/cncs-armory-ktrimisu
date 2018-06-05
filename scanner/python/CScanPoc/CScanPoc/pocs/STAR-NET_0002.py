@@ -18,8 +18,8 @@ class Vuln(ABVuln):
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = '语音网关'  # 漏洞应用名称
-    product_version = '星网锐捷语音网关'  # 漏洞应用版本
+    product = '星网锐捷语音网关'  # 漏洞应用名称
+    product_version = ''  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '2732f1d6-44e3-4875-bb6c-e7735f2505cb'

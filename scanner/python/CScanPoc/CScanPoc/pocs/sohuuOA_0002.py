@@ -4,12 +4,15 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'sohuuOA_0002' # 平台漏洞编号，留空
-    name = '极限OA三处宽字节 SQL注入漏洞'  # 漏洞名称
+    vuln_id = 'SohuuOA_0002' # 平台漏洞编号，留空
+    name = '极限OA 宽字节 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2015-07-16'  # 漏洞公布时间
     desc = '''
+        /inc/finger/use_finger.php?USER_ID=-1%df
+        /general/ems/manage/search_excel.php?LOGIN_USER_ID=1&EMS_TYPE=1%df
+        /general/ems/query/search_excel.php?LOGIN_USER_ID=1%bf
     '''  # 漏洞描述
     ref = ''  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号

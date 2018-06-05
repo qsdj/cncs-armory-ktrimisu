@@ -14,10 +14,10 @@ class Vuln(ABVuln):
     desc = '''
         大汉政府信息公开网站群存在getshell的风险,管理后台权限绕过，进入后台后轻松GetShell.
     ''' # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=0152666' # 漏洞来源
+    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0152666
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
-    product = 'JCMS'  # 漏洞应用名称
+    product = 'Hanweb(大汉)'  # 漏洞应用名称
     product_version = ''  # 漏洞应用版本
 
 

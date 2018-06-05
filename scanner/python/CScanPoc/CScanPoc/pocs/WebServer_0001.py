@@ -6,7 +6,7 @@ import urllib2
 
 class Vuln(ABVuln):
     vuln_id = 'WebServer_0001' # 平台漏洞编号，留空
-    name = 'WebServer处理URL不当导致的任意文件读取漏洞'  # 漏洞名称
+    name = 'WebServer处理URL不当导致的任意文件读取'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_TRAVERSAL # 漏洞类型
     disclosure_date = '2015-01-20'  # 漏洞公布时间
@@ -16,7 +16,7 @@ class Vuln(ABVuln):
     ref = 'http://www.lijiejie.com/python-django-directory-traversal/'  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = 'Other'  # 漏洞应用名称
+    product = 'WebServer'  # 漏洞应用名称
     product_version = 'python和django'  # 漏洞应用版本
 
 class Poc(ABPoc):

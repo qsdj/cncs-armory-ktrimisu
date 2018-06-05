@@ -8,12 +8,12 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
     vuln_id = 'Shopxp_0101' # 平台漏洞编号，留空
-    name = 'shopxp 7.4 /textbox2.asp SQL Injection' # 漏洞名称
+    name = 'Shopxp 7.4 /textbox2.asp SQL Injection' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2015-09-21'  # 漏洞公布时间
     desc = '''
-    shopxp 7.4 textbox2.asp sql injection.
+    Shopxp 7.4 textbox2.asp sql injection.
     ''' # 漏洞描述
     ref = 'http://www.sebug.net/vuldb/ssvid-62319' # 漏洞来源
     cnvd_id = '' # cnvd漏洞编号

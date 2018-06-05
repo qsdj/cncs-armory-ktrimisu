@@ -12,7 +12,7 @@ class Vuln(ABVuln):
     type = VulnType.MISCONFIGURATION # 漏洞类型
     disclosure_date = '2015-11-11'  # 漏洞公布时间
     desc = '''
-        Redis未授权访问漏洞.
+        Redis未授权访问漏洞。
     ''' # 漏洞描述
     ref = 'http://www.freebuf.com/vuls/85188.html' # 漏洞来源
     cnvd_id = '' # cnvd漏洞编号

@@ -22,7 +22,7 @@ class Vuln(ABVuln):
     ref = 'https://www.seebug.org/vuldb/ssvid-4308' # 漏洞来源
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
-    product = 'Startbbs'  # 漏洞应用名称
+    product = 'StartBBS'  # 漏洞应用名称
     product_version = '1.1.5.2'  # 漏洞应用版本
 
 

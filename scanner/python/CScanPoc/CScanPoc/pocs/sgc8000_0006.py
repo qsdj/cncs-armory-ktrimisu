@@ -11,9 +11,9 @@ class Vuln(ABVuln):
     type = VulnType.INFO_LEAK # 漏洞类型
     disclosure_date = '2015-10-05'  # 漏洞公布时间
     desc = '''
-        sgc8000 大型旋转机监控系统 系统超级管理员帐号密码泄漏（最高权限可进后台）
+        sgc8000 大型旋转机监控系统 系统超级管理员帐号密码泄漏（最高权限可进后台）。
     ''' # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=0135197' # 漏洞来源
+    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0135197
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
     product = 'sgc8000'  # 漏洞应用名称

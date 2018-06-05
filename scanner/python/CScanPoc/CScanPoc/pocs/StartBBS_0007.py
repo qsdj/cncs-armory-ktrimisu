@@ -7,14 +7,14 @@ hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
     vuln_id = 'StartBBS_0007' # 平台漏洞编号，留空
-    name = 'StartBBS v1.1.5.2版SQL注入漏洞' # 漏洞名称
+    name = 'StartBBS v1.1.5.2版SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2014-10-04'  # 漏洞公布时间
     desc = '''
-        StartBBS v1.1.5.2版SQL注入漏洞
+        StartBBS v1.1.5.2版 /index.php/home/search?q=1 SQL注入漏洞。
     ''' # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=067853' # 漏洞来源
+    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=067853
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
     product = 'StartBBS'  # 漏洞应用名称

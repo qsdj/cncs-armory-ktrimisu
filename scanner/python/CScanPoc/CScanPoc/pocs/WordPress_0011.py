@@ -6,7 +6,7 @@ import time
 
 class Vuln(ABVuln):
     vuln_id = 'WordPress_0011'  # 平台漏洞编号，留空
-    name = 'WordPress SEO by Yoast 1.7.3.3 SQL注入漏洞'  # 漏洞名称
+    name = 'WordPress SEO by Yoast 1.7.3.3 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2015-03-12'  # 漏洞公布时间
@@ -17,8 +17,8 @@ class Vuln(ABVuln):
     ref = 'http://www.freebuf.com/news/60715.html'  # 漏洞来源
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
-    product = 'WordPress SEO by Yoast'  # 漏洞应用名称
-    product_version = '1.7.3.3'  # 漏洞应用版本
+    product = 'WordPress'  # 漏洞应用名称
+    product_version = 'WordPress SEO by Yoast 1.7.3.3'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'cba2363f-1e1a-41b1-912b-51a86362ec81'

@@ -11,9 +11,9 @@ class Vuln(ABVuln):
     type = VulnType.INFO_LEAK # 漏洞类型
     disclosure_date = '2015-03-24'  # 漏洞公布时间
     desc = '''
-        无需登录，直接获取数据库链接文件，直接拿shell
+        泛微Eoffice无需登录，直接获取数据库链接文件，直接拿shell
     ''' # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=087500' # 漏洞来源
+    ref = '' # 漏洞来源/weaver/weaver.email.FileDownloadLocation?download=1&fileid=-2%20or%201=2
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
     product = '泛微OA'  # 漏洞应用名称

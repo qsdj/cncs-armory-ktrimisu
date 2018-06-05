@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'wordpress_0002_p' # 平台漏洞编号，留空
+    vuln_id = 'WordPress_0002_p' # 平台漏洞编号，留空
     name = 'WordPress Plugin Product Catalog 8 1.2.0 SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -17,7 +17,7 @@ class Vuln(ABVuln):
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
     product = 'WordPress'  # 漏洞应用名称
-    product_version = '*'  # 漏洞应用版本
+    product_version = 'WordPress Plugin Product Catalog 8 1.2.0'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '0c8df916-fd48-459d-a043-b4b57f529345'

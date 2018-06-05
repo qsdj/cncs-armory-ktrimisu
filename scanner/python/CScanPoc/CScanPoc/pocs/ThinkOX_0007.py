@@ -11,7 +11,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2015-06-06'  # 漏洞公布时间
     desc = '''
-        ThinkOK SQL注入漏洞
+        ThinkOK /index.php?s=/forum/lzl/lzllist/to_f_reply_id/1 SQL注入漏洞。
     ''' # 漏洞描述
     ref = '' # 漏洞来源
     cnvd_id = '' # cnvd漏洞编号

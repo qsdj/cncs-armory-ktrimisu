@@ -18,7 +18,7 @@ class Vuln(ABVuln):
     cnvd_id = '' # cnvd漏洞编号
     cve_id = 'CVE-2015-1494	Type: Webapps' #cve编号
     product = 'WordPress'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'WordPress Plugin Fancybox 3.0.2'  # 漏洞应用版本
 
 
 class Poc(ABPoc):

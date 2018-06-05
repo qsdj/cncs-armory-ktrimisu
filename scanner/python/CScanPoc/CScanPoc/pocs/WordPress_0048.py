@@ -6,7 +6,7 @@ hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
     vuln_id = 'WordPress_0048' # 平台漏洞编号，留空
-    name = 'WordPress aspose-doc-exporter 1.0 插件任意文件下载漏洞' # 漏洞名称
+    name = 'WordPress aspose-doc-exporter 1.0 插件任意文件下载' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型
     disclosure_date = '2015-03-30'  # 漏洞公布时间
@@ -16,8 +16,8 @@ class Vuln(ABVuln):
     ref = 'https://www.exploit-db.com/exploits/36559/' # 漏洞来源
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
-    product = 'WordPress aspose-doc-exporter'  # 漏洞应用名称
-    product_version = '1.0'  # 漏洞应用版本
+    product = 'WordPress'  # 漏洞应用名称
+    product_version = 'WordPress aspose-doc-exporter 1.0'  # 漏洞应用版本
 
 
 class Poc(ABPoc):

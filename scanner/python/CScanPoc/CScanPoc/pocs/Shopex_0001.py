@@ -7,7 +7,7 @@ import time
 
 class Vuln(ABVuln):
     vuln_id = 'Shopex_0001' # 平台漏洞编号，留空
-    name = 'Shopex SQL注入漏洞'  # 漏洞名称
+    name = 'Shopex SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2015-03-10'  # 漏洞公布时间

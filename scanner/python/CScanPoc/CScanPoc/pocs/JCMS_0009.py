@@ -13,11 +13,11 @@ class Vuln(ABVuln):
     desc = '''
         大汉JCMS系统SQL注入漏洞 版本
     ''' # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=087751' # 漏洞来源
+    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=087751
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
-    product = 'JCMS'  # 漏洞应用名称
-    product_version = '2.6.3'  # 漏洞应用版本
+    product = 'Hanweb(大汉)'  # 漏洞应用名称
+    product_version = '大汉JCMS 2.6.3'  # 漏洞应用版本
 
 
 class Poc(ABPoc):

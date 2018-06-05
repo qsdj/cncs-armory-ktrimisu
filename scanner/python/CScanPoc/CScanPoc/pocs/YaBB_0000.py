@@ -8,7 +8,7 @@ import hashlib
 
 class Vuln(ABVuln):
     vuln_id = 'YaBB_0000' # 平台漏洞编号，留空
-    name = 'YaBB.pl ?board=news&action=display&num= 任意文件读取漏洞' # 漏洞名称
+    name = 'YaBB.pl ?board=news&action=display&num= 任意文件读取' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型
     disclosure_date = '2008-10-25'  # 漏洞公布时间

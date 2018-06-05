@@ -20,7 +20,7 @@ class Vuln(ABVuln):
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
     product = 'WordPress'  # 漏洞应用名称
-    product_version = '2.0.0'  # 漏洞应用版本
+    product_version = 'WordPress CM Download Manager 2.0.0'  # 漏洞应用版本
 
 
 class Poc(ABPoc):

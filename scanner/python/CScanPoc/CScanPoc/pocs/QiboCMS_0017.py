@@ -7,14 +7,14 @@ hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
     vuln_id = 'QiboCMS_0017' # 平台漏洞编号，留空
-    name = 'qibocms 地方门户系统 两处注入' # 漏洞名称
+    name = '齐博CMS 地方门户系统 SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2015-01-29'  # 漏洞公布时间
     desc = '''
-        qibocms 地方门户系统 两处注入
+        齐博CMS 地方门户系统 /dan/qibodf/2shou/post.php SQL注入漏洞。
     ''' # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=081428' # 漏洞来源
+    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=081428
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
     product = 'QiboCMS(齐博CMS)'  # 漏洞应用名称

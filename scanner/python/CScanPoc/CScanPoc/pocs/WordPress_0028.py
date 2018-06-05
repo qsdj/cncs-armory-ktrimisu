@@ -16,8 +16,8 @@ class Vuln(ABVuln):
     ref = 'https://www.exploit-db.com/exploits/37182/' # 漏洞来源
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
-    product = 'WordPress Plugin LeagueManager'  # 漏洞应用名称
-    product_version = '3.9.11'  # 漏洞应用版本
+    product = 'WordPress'  # 漏洞应用名称
+    product_version = 'WordPress Plugin LeagueManager 3.9.11'  # 漏洞应用版本
 
 
 class Poc(ABPoc):

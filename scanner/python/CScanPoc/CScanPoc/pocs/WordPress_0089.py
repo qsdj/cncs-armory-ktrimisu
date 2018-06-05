@@ -17,7 +17,7 @@ class Vuln(ABVuln):
     cnvd_id = '' # cnvd漏洞编号
     cve_id = 'CVE-2014-5465' #cve编号
     product = 'WordPress'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'WordPress Plugin ShortCode 0.2.3'  # 漏洞应用版本
 
 
 class Poc(ABPoc):

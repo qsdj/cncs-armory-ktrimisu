@@ -13,7 +13,7 @@ class Vuln(ABVuln):
     desc = '''
         getshell，无需登录，可批量。只要一个GET请求.
     ''' # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=0105520' # 漏洞来源
+    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0105520
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
     product = '泛微OA'  # 漏洞应用名称

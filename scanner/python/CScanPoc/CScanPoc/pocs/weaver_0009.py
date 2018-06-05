@@ -15,7 +15,7 @@ class Vuln(ABVuln):
     desc = '''
        泛微某系统通用型SQL注入,无需登录直接注入...全版本通杀... 
     ''' # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=076418' # 漏洞来源
+    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=076418
     cnvd_id = '' # cnvd漏洞编号
     cve_id = '' #cve编号
     product = '泛微OA'  # 漏洞应用名称

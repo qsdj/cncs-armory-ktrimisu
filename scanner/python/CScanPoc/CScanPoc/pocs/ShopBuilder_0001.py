@@ -16,7 +16,7 @@ class Vuln(ABVuln):
     cnvd_id = ''  # cnvd漏洞编号
     cve_id = ''  # cve编号
     product = 'ShopBuilder'  # 漏洞应用名称
-    product_version = '*'  # 漏洞应用版本
+    product_version = ''  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'a23f93bd-6e3f-47d4-a4ff-7b4da850f3d9'
