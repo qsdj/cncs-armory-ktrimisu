@@ -13,7 +13,7 @@ class Vuln(ABVuln):
     desc = '''
         08CMS 汽车房产系统存在 Mysql 报错注入漏洞。
     ''' # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=0110861' # 漏洞来源
+    ref = 'Unknown' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0110861
     cnvd_id = 'Unknown' # cnvd漏洞编号
     cve_id = 'Unknown' #cve编号
     product = '08CMS'  # 漏洞应用名称
@@ -43,8 +43,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
-
+        self.verify()
 
 if __name__ == '__main__':
     Poc().run()

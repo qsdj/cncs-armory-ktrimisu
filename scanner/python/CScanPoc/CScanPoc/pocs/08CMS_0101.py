@@ -46,7 +46,8 @@ class Poc(ABPoc):
             match = pattern.match(content)
             if match:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞;username={username}, password={password}'.format(
-                                target=self.target, name=self.vuln.name))
+                    target=self.target, name=self.vuln.name))
+
         except Exception, e:
             self.output.info('执行异常：{}'.format(e))
 
@@ -66,8 +67,10 @@ class Poc(ABPoc):
                 username = match.group("username")
                 password = match.group("password")
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞;获取到的信息:username={username}, password={password}'.format(
-                                target=self.target, name=self.vuln.name, username=username, password=password))
+                    target=self.target, name=self.vuln.name, username=username, password=password))
+                
         except Exception, e:
             self.output.info('执行异常：{}'.format(e))
+            
 if __name__ == '__main__':
     Poc().run()

@@ -61,7 +61,7 @@ usr=guest&psw=guest&action=1&lang=en&redirect=%2Fpages%2Fen%2Fuser.php
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 if __name__ == '__main__':
     Poc().run()

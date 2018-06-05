@@ -6,7 +6,7 @@ import urllib,urllib2
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'DedeCMS' # 平台漏洞编号，留空
+    vuln_id = 'DedeCMS_0005' # 平台漏洞编号，留空
     name = '织梦CMS /images/swfupload/swfupload.swf XSS' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型
@@ -47,7 +47,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
         
 
 if __name__ == '__main__':
