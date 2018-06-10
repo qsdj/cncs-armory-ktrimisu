@@ -8,16 +8,16 @@ class Vuln(ABVuln):
     name = 'Discuz! 命令执行'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型
-    disclosure_date = 'Unkonwn'  # 漏洞公布时间
+    disclosure_date = '2014-07-03'  # 漏洞公布时间
     desc = '''
         Discuz! 命令执行漏洞。
         /faq.php?action=grouppermission&gids[99]=
     '''  # 漏洞描述
-    ref = 'Unkonwn'  # 漏洞来源
+    ref = 'https://www.sitedirsec.com/exploit-1788.html'  # 漏洞来源
     cnvd_id = 'Unkonwn'  # cnvd漏洞编号
     cve_id = 'Unkonwn'  # cve编号
     product = 'Discuz!'  # 漏洞应用名称
-    product_version = 'Unkonwn'  # 漏洞应用版本
+    product_version = 'Discuz! 7.2以下版本'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '0eb01620-0000-4def-b2d0-d2e93e068ebf'

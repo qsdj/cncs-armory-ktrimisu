@@ -36,9 +36,9 @@ class Poc(ABPoc):
             verify_url = self.target + payload
             r = requests.get(verify_url)
             
-            if r.status_code == 200 and '<driver-class>' and '<driver-properties>' in  r.content:
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                        target=self.target, name=self.vuln.name))
+            if r.status_code == 200 and '<driver-class>' in  r.content and '<driver-properties>' in  r.content:
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
+                    target=self.target, name=self.vuln.name))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))

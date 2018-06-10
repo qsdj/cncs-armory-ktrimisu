@@ -6,7 +6,7 @@ import re
 
 class Vuln(ABVuln):
     vuln_id = 'PHPCMS_0002'  # 平台漏洞编号，留空
-    name = 'PHPCMS V9 /api.php Authkey 信息泄漏漏洞'  # 漏洞名称
+    name = 'PHPCMS V9 /api.php Authkey 信息泄漏'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK  # 漏洞类型
     disclosure_date = '2015-07-17'  # 漏洞公布时间

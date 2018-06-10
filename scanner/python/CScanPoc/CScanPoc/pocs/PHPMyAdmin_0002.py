@@ -39,7 +39,7 @@ class Poc(ABPoc):
                 verify_url = '{target}'.format(target=self.target)+path+payload
                 req = urllib2.Request(verify_url)
                 content = urllib2.urlopen(req).read()
-                if 'getImgPath()' in content and 'Fatal error:' and 'on line' in content:
+                if 'getImgPath()' in content and 'Fatal error:' in content and 'on line' in content:
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target,name=self.vuln.name))
 
         except Exception, e:

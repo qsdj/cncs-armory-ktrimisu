@@ -49,7 +49,7 @@ class Poc(ABPoc):
             #f=open('test.html','a+')
             #print >> f, r
             #f.close()
-            if 'SERVER["REMOTE_ADDR"]' and 'PHP Version' in opener.open(req).read():
+            if 'SERVER["REMOTE_ADDR"]' in opener.open(req).read() and 'PHP Version' in opener.open(req).read():
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 

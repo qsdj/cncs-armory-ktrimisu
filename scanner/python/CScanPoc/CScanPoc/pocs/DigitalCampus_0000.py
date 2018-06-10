@@ -35,7 +35,7 @@ class Poc(ABPoc):
             arg = '{target}'.format(target=self.target)
             url=arg+"/log.txt"
             code,head,res,errcode,_=hh.http(url)
-            if code==200 and 'User' and 'Password' in res:
+            if code==200 and 'User' in res and 'Password' in res:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target,name=self.vuln.name))
 
         except Exception, e:

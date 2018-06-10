@@ -6,7 +6,7 @@ import re,urllib,md5
 
 class Vuln(ABVuln):
     vuln_id = 'PHPCMS_0004' # 平台漏洞编号，留空
-    name = 'PHPCMS v9.4.9 flash xss漏洞'  # 漏洞名称
+    name = 'PHPCMS v9.4.9 flash xss'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型
     disclosure_date = 'Unkonwn'  # 漏洞公布时间

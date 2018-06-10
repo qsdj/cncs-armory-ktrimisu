@@ -36,7 +36,7 @@ class Poc(ABPoc):
             verify_url = self.target + payload
             r = requests.get(verify_url)
 
-            if 'root:' and '/bin:/sbin' in r.content:
+            if 'root:' in r.content and '/bin:/sbin' in r.content:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 

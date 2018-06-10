@@ -14,7 +14,7 @@ class Vuln(ABVuln):
     desc = '''
         CSDJCMS 程式舞曲最新版 SQL注入漏洞。
     ''' # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=059088' # 漏洞来源
+    ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=059088
     cnvd_id = 'Unkonwn' # cnvd漏洞编号
     cve_id = 'Unkonwn' #cve编号
     product = 'CSDJCMS'  # 漏洞应用名称

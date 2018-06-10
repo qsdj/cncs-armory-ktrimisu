@@ -17,7 +17,7 @@ class Vuln(ABVuln):
     cnvd_id = 'Unkonwn'  # cnvd漏洞编号
     cve_id = 'Unkonwn'  # cve编号
     product = 'WordPress'  # 漏洞应用名称
-    product_version = 'Unkonwn'  # 漏洞应用版本
+    product_version = 'WordPress cip4-folder-download-widget'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'aedd2ec2-5e7b-42aa-9d10-d8f392718eb9'

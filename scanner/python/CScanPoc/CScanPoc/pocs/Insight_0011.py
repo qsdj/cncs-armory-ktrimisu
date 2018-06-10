@@ -35,7 +35,7 @@ class Poc(ABPoc):
             arg = '{target}'.format(target=self.target)
             url=arg+"/csccmise/yhgl.asp"
             code,head,res,errcode,_=hh.http(url)
-            if code==200 and 'window.open' and 'csccmise/yhlb.asp?wlhid' in res:
+            if code==200 and 'window.open' in res and 'csccmise/yhlb.asp?wlhid' in res:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 

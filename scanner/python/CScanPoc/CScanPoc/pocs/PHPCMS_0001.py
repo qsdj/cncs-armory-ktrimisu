@@ -6,7 +6,7 @@ import urllib2
 
 class Vuln(ABVuln):
     vuln_id = 'PHPCMS_0001'  # 平台漏洞编号，留空
-    name = 'PHPCMS \phpcms\modules\member\index.php 用户登陆SQL注入漏洞'  # 漏洞名称
+    name = 'PHPCMS \phpcms\modules\member\index.php 用户登陆SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-08-09'  # 漏洞公布时间

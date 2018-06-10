@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
     vuln_id = 'D-Link_0001'  # 平台漏洞编号，留空
-    name = 'D-Link 未授权信息泄漏漏洞'  # 漏洞名称
+    name = 'D-Link 未授权信息泄漏'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK  # 漏洞类型
     disclosure_date = '2015-04-21'  # 漏洞公布时间

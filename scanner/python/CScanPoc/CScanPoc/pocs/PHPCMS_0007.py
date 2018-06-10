@@ -7,7 +7,7 @@ import re
 
 class Vuln(ABVuln):
     vuln_id = 'PHPCMS_0007' # 平台漏洞编号，留空
-    name = 'PHPCMS v9 /index.php 任意文件读取漏洞' # 漏洞名称
+    name = 'PHPCMS v9 /index.php 任意文件读取' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型
     disclosure_date = '2012-07-25'  # 漏洞公布时间

@@ -40,7 +40,7 @@ class Poc(ABPoc):
             req = urllib2.Request(verify_url)
             content = urllib2.urlopen(req).read()
             
-            if 'username' and 'root_pass' in content:
+            if 'username' in content and 'root_pass' in content:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 

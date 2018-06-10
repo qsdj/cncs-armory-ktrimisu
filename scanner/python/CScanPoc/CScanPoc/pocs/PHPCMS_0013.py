@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
     vuln_id = 'PHPCMS_0013' # 平台漏洞编号，留空
-    name = 'PHPCMS 2008黄页模块 SQL注入漏洞'  # 漏洞名称
+    name = 'PHPCMS 2008黄页模块 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2014-11-30'  # 漏洞公布时间

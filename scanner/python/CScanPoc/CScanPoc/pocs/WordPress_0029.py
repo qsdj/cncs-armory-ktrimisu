@@ -6,7 +6,7 @@ hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
     vuln_id = 'WordPress_0029' # 平台漏洞编号，留空
-    name = 'Unkonwn' # 漏洞名称
+    name = 'WordPress主题Pagelines和Platform权限提升' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2015-01-27'  # 漏洞公布时间

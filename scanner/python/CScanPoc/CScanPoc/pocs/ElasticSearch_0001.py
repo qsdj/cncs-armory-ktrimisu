@@ -58,7 +58,7 @@ class Poc(ABPoc):
             } 
             r2 = requests.post('{target}/_search?pretty'.format(target=self.target), headers=head, data=json.dumps(payload))
             #print(r2.text)
-            if 'uid' and 'gid' and 'groups' in r2.text:
+            if 'uid' in r2.text and 'gid' in r2.text and 'groups' in r2.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 

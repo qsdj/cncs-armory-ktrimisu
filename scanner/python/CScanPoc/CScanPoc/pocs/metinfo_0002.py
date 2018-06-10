@@ -38,7 +38,7 @@ class Poc(ABPoc):
             code1, head1,res1, errcode1, _ = hh.http(true_url)
             code2, head2,res2, errcode2, _ = hh.http(false_url)
             
-            if 'not have this language' in res2 and  'not have this language' not in res1:
+            if 'not have this language' in res2 and 'not have this language' not in res1:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 

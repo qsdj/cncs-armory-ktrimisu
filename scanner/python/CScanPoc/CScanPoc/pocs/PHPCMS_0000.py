@@ -7,7 +7,7 @@ import re
 
 class Vuln(ABVuln):
     vuln_id = 'PHPCMS_0000' # 平台漏洞编号，留空
-    name = 'PHPCMS 9.5.3 /phpcms/modules/vote/classes/vote_tag.class.php SQL注入漏洞' # 漏洞名称
+    name = 'PHPCMS 9.5.3 /phpcms/modules/vote/classes/vote_tag.class.php SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2014-05-18'  # 漏洞公布时间
