@@ -6,18 +6,18 @@ hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
     vuln_id = 'WordPress_0038' # 平台漏洞编号，留空
-    name = 'Wordpress Work-The-Flow Plugin 2.5.2 文件上传漏洞' # 漏洞名称
+    name = 'WordPress Work-The-Flow Plugin 2.5.2 文件上传' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.FILE_UPLOAD # 漏洞类型
     disclosure_date = '2015-04-05'  # 漏洞公布时间
     desc = '''
-        Wordpress Work-The-Flow Plugin 2.5.2 文件上传漏洞
+        WordPress Work-The-Flow Plugin 2.5.2 文件上传漏洞。
     ''' # 漏洞描述
     ref = 'https://www.exploit-db.com/exploits/36640/' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
-    product = 'WordPress Work The Flow File Upload'  # 漏洞应用名称
-    product_version = '2.5.2'  # 漏洞应用版本
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
+    product = 'WordPress'  # 漏洞应用名称
+    product_version = 'WordPress Work-The-Flow Plugin 2.5.2'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
@@ -45,7 +45,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 
 if __name__ == '__main__':

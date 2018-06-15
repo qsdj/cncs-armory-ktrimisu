@@ -12,11 +12,11 @@ class Vuln(ABVuln):
     desc = '''
         EcsCMS(易创思CMS) /OperationManage/SubSiteMoreIndex.aspx 通用SQL注入漏洞。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'EcsCMS(易创思CMS)'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '9ef67c1a-6cd1-441b-aa28-cc0366e57daa'
@@ -44,7 +44,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 if __name__ == '__main__':
     Poc().run()

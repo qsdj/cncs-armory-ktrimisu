@@ -8,7 +8,7 @@ import hashlib
 
 class Vuln(ABVuln):
     vuln_id = 'YaBB_0000' # 平台漏洞编号，留空
-    name = 'YaBB.pl ?board=news&action=display&num= 任意文件读取漏洞' # 漏洞名称
+    name = 'YaBB.pl ?board=news&action=display&num= 任意文件读取' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型
     disclosure_date = '2008-10-25'  # 漏洞公布时间
@@ -20,10 +20,10 @@ class Vuln(ABVuln):
         通过在单个请求中使用上述的这些漏洞，恶意用户可以察看Web服务器可以存取的任何文件。
     ''' # 漏洞描述
     ref = 'https://www.seebug.org/vuldb/ssvid-4308' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'YaBB.pl'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
@@ -50,7 +50,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 
 if __name__ == '__main__':

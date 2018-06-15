@@ -16,12 +16,12 @@ class Vuln(ABVuln):
     ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=092339' # 漏洞来源
     cnvd_id = 'Unknown' # cnvd漏洞编号
     cve_id = 'Unknown' #cve编号
-    product = 'Hanweb'  # 漏洞应用名称
-    product_version = 'Unknown'  # 漏洞应用版本
+    product = 'Hanweb(大汉)'  # 漏洞应用名称
+    product_version = '大汉网站群访问统计系统'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = 'hanweb_0006' # 平台 POC 编号，留空
+    poc_id = '237b4b28-0173-4123-9595-3c65538bfbf2'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 
@@ -43,7 +43,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 
 if __name__ == '__main__':

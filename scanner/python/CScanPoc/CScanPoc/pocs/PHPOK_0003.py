@@ -14,9 +14,9 @@ class Vuln(ABVuln):
     desc = '''
          PHPOK企业站 4.2 /framework/www/project_control.php中数组$key在未过滤情况下带入SQL语句
     ''' # 漏洞描述
-    ref = '' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'PHPOK'  # 漏洞应用名称
     product_version = '4.2'  # 漏洞应用版本
 
@@ -46,7 +46,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
         
 
 if __name__ == '__main__':

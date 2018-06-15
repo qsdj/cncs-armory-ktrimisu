@@ -7,16 +7,16 @@ import base64 as b64
 
 class Vuln(ABVuln):
     vuln_id = 'PHPCMS_0003'  # 平台漏洞编号，留空
-    name = 'PHPCMS /phpcms/modules/vote/index.php 代码执行漏洞'  # 漏洞名称
+    name = 'PHPCMS /phpcms/modules/vote/index.php 代码执行'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型
     disclosure_date = '2015-03-27'  # 漏洞公布时间
     desc = '''
         PHPCMS <= 9.5.8 投票处命令执行，可Getshell（需要 PHP <= 5.2）.
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'PHPCMS'  # 漏洞应用名称
     product_version = '<=9.5.8'  # 漏洞应用版本
 
@@ -80,7 +80,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 if __name__ == '__main__':
     Poc().run()

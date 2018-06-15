@@ -10,14 +10,21 @@ class Vuln(ABVuln):
     type = VulnType.LFI # 漏洞类型
     disclosure_date = '2015-06-08'  # 漏洞公布时间
     desc = '''
-        Wordpress Plugin 'WP Mobile Edition' is not filtering data so we can get the configration file in the path 
-        < site.com/wp-content/themes/mTheme-Unus/css/css.php?files=../../../../wp-config.php>
+        WordPress是一款开源的内容管理系统。
+        WordPress WP Symposium插件存在多个输入验证漏洞，允许攻击者利用漏洞进行SQL注入攻击：
+        通过"uid"参数提交给index.php的输入在用于SQL查询之前缺少过滤。
+        多个脚本不正确过滤多个参数数据，可导致SQL注入攻击。受影响脚本包括：
+        http://[host]/wp-content/plugins/wp-symposium/ajax/symposium_groups_functions.php?action=get_group_members&gid
+        http://[host]/wp-content/plugins/wp-symposium/get_album_item.php?size
+        http://[host]/wp-content/plugins/wp-symposium/ajax/symposium_forum_functions.php?action=updateEditDetails&tid
+        http://[host]/wp-content/plugins/wp-symposium/ajax/symposium_forum_functions.php?action=updateEditDetails&topic_category
+        http://[host]/wp-content/plugins/wp-symposium/ajax/symposium_profile_functions.php?action=addFriend&friend_to
     '''  # 漏洞描述
-    ref = 'https://www.exploit-db.com/exploits/37244/'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'http://english.venustech.com.cn/NewsInfo/124/18173.Html'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'WordPress'  # 漏洞应用名称
-    product_version = 'WP Mobile Edition Version 2.2.7 '  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '69326e54-9a7b-4e38-ad4d-57f5a3ec1569'
@@ -45,7 +52,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 if __name__ == '__main__':
     Poc().run()

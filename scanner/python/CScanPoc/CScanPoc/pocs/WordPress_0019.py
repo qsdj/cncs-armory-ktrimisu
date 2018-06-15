@@ -8,7 +8,7 @@ import hashlib
 
 class Vuln(ABVuln):
     vuln_id = 'WordPress_0019' # 平台漏洞编号，留空
-    name = 'WordPress Sexy Squeeze Pages Plugin XSS漏洞' # 漏洞名称
+    name = 'WordPress Sexy Squeeze Pages Plugin XSS' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型
     disclosure_date = '2014-12-08'  # 漏洞公布时间
@@ -16,11 +16,11 @@ class Vuln(ABVuln):
         Cross site scripting has benn found on instasqueeze/lp/index.php
         inurl:wp-content/plugins/instasqueeze
     ''' # 漏洞描述
-    ref = '' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'WordPress'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'WordPress Sexy Squeeze Pages Plugin'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
@@ -47,7 +47,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 
 if __name__ == '__main__':

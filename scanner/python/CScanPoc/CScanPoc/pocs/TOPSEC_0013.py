@@ -12,11 +12,11 @@ class Vuln(ABVuln):
     desc = '''
         天融信负载均衡系统 /acc/network/redial_pppoe.php 参数处理不当，导致命令执行。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
-    product = '负载均衡系统'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
+    product = '天融信负载均衡系统'  # 漏洞应用名称
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '5568fa16-b86c-4c6c-abb0-22ef1a7ec511'
@@ -49,7 +49,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 if __name__ == '__main__':
     Poc().run()

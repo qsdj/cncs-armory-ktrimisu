@@ -16,8 +16,8 @@ class Vuln(ABVuln):
         FCKeditorr 2.6 版本有一个文件上传漏洞.
     ''' # 漏洞描述
     ref = 'http://www.webshell.cc/3459.html' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'FCKeditor'  # 漏洞应用名称
     product_version = '2.6.4'  # 漏洞应用版本
 
@@ -65,7 +65,7 @@ class Poc(ABPoc):
 
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 
 if __name__ == '__main__':

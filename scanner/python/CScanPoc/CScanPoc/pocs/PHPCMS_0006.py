@@ -7,16 +7,16 @@ import re
 
 class Vuln(ABVuln):
     vuln_id = 'PHPCMS_0006' # 平台漏洞编号，留空
-    name = 'PHPCMS 2008 /preview.php SQL注入漏洞' # 漏洞名称
+    name = 'PHPCMS 2008 /preview.php SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
-    disclosure_date = ''  # 漏洞公布时间
+    disclosure_date = 'Unkonwn'  # 漏洞公布时间
     desc = '''
         PHPCMS 2008 /preview.php SQL注入漏洞
     ''' # 漏洞描述
     ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=022112' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'PHPCMS'  # 漏洞应用名称
     product_version = '2008'  # 漏洞应用版本
 
@@ -49,7 +49,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 
 if __name__ == '__main__':

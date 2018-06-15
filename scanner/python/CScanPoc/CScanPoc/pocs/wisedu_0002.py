@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'wisedu_0002' # 平台漏洞编号，留空
+    vuln_id = 'Wisedu_0002' # 平台漏洞编号，留空
     name = '金智教育门户信息系统存在任意文件读取'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型
@@ -13,11 +13,11 @@ class Vuln(ABVuln):
         江苏金智教育门户信息系统存在任意文件读取漏洞。
         /epstar/servlet/RaqFileServer?action=
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = '金智教育CMS'  # 漏洞应用名称
-    product_version = '*'  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '1f51845c-ec3e-47d1-b53a-cf09ae493349'
@@ -47,7 +47,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 if __name__ == '__main__':
     Poc().run()

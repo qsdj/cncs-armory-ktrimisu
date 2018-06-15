@@ -13,9 +13,9 @@ class Vuln(ABVuln):
     desc = '''
         磊科（Netcore）NI360安全路由器,无需密码即可登录路由器.
     ''' # 漏洞描述
-    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0109095
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0109095
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = '磊科路由器'  # 漏洞应用名称
     product_version = 'NI360'  # 漏洞应用版本
 
@@ -50,7 +50,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 
 if __name__ == '__main__':

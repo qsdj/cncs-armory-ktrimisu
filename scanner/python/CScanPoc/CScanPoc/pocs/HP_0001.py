@@ -13,9 +13,9 @@ class Vuln(ABVuln):
     desc = '''
         惠普多款打印机设备未设置权限访问，可以直接看到详细的使用信息等，还可以直接选着打印。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = '惠普'  # 漏洞应用名称
     product_version = '惠普款打印机'  # 漏洞应用版本
 
@@ -48,7 +48,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 if __name__ == '__main__':
     Poc().run()

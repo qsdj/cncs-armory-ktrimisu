@@ -14,9 +14,9 @@ class Vuln(ABVuln):
         PHPCMS V9 WAP模块注入漏洞：
         /index.php?m=wap&c=index&a=comment_list&commentid=content_12
     ''' # 漏洞描述
-    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=011818
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=011818
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'PHPCMS'  # 漏洞应用名称
     product_version = 'V9'  # 漏洞应用版本
 
@@ -46,7 +46,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 
 if __name__ == '__main__':

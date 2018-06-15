@@ -7,7 +7,7 @@ hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
     vuln_id = 'WordPress_0076' # 平台漏洞编号，留空
-    name = 'WordPress DZS Videogallery < 8.60 跨站脚本攻击漏洞' # 漏洞名称
+    name = 'WordPress DZS Videogallery < 8.60 XSS' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型
     disclosure_date = '2016-03-11'  # 漏洞公布时间
@@ -15,10 +15,10 @@ class Vuln(ABVuln):
         WordPress DZS Videogallery < 8.60 跨站脚本攻击漏洞
     ''' # 漏洞描述
     ref = 'https://www.exploit-db.com/exploits/39553/' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
-    product = 'WordPress DZS Videogallery'  # 漏洞应用名称
-    product_version = '8.60'  # 漏洞应用版本
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
+    product = 'WordPress'  # 漏洞应用名称
+    product_version = 'WordPress DZS Videogallery < 8.60'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
@@ -46,7 +46,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 
 if __name__ == '__main__':

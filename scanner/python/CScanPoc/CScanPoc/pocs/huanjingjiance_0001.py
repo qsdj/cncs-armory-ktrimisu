@@ -14,9 +14,9 @@ class Vuln(ABVuln):
     desc = '''
         珠海高凌环境噪声自动监测系统3.0.0-1 参数过滤不严谨，造成SQL注入漏洞。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = '珠海高凌环境监测系统'  # 漏洞应用名称
     product_version = '3.0.0-1'  # 漏洞应用版本
 
@@ -66,7 +66,7 @@ __EVENTTARGET=&__EVENTARGUMENT=&__VIEWSTATE='''+p1+'''&__EVENTVALIDATION='''+p2+
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 if __name__ == '__main__':
     Poc().run()

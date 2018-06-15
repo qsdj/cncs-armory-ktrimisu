@@ -14,9 +14,9 @@ class Vuln(ABVuln):
     desc = '''
         后台文件 AspCms_AboutEdit.asp 未进行验证，且未过滤，导致SQL注入漏洞。
     ''' # 漏洞描述
-    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=4214
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=4214
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'ASPCMS'  # 漏洞应用名称
     product_version = '2.2.9'  # 漏洞应用版本
 

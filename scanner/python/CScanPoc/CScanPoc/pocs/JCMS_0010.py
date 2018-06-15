@@ -14,15 +14,15 @@ class Vuln(ABVuln):
     desc = '''
         大汉政府信息公开网站群存在getshell的风险,管理后台权限绕过，进入后台后轻松GetShell.
     ''' # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=0152666' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
-    product = 'JCMS'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0152666
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
+    product = 'Hanweb(大汉)'  # 漏洞应用名称
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = 'JCMS_0010'
+    poc_id = 'de8011e0-7904-423e-9bb5-99089b8bc1f7'
     author = '国光'  # POC编写者
     create_date = '2018-05-13' # POC创建时间
 
@@ -48,7 +48,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 
 if __name__ == '__main__':

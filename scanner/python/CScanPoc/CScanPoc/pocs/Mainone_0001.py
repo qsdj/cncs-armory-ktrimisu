@@ -13,15 +13,15 @@ class Vuln(ABVuln):
     desc = '''
         铭万B2B门户建站公司存在SQL注入通用漏洞，数据库账户权限过高 字符类型注射。
     ''' # 漏洞描述
-    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0104430
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0104430
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'Mainone'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = 'Mainone_0001' # 平台 POC 编号，留空
+    poc_id = 'cfd7ef8d-3b41-4f9e-9a97-d87d2b63fc7e'
     author = '国光'  # POC编写者
     create_date = '2018-05-22' # POC创建时间
 
@@ -44,7 +44,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 
 if __name__ == '__main__':

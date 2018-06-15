@@ -8,16 +8,16 @@ class Vuln(ABVuln):
     name = 'TerraMaster NAS网络存储服务器 getshell'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型
-    disclosure_date = ''  # 漏洞公布时间
+    disclosure_date = 'Unkonwn'  # 漏洞公布时间
     desc = '''
         铁威马（TerraMaster）NAS网络存储服务器无限制getshell.
         /include/upload.php?targetDir=
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
-    product = 'NAS网络存储服务器'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
+    product = '铁威马NAS网络存储服务器'  # 漏洞应用名称
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '5e76be90-411b-469f-8501-3e75e14ac9ab'
@@ -85,7 +85,7 @@ Submit Query
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 if __name__ == '__main__':
     Poc().run()

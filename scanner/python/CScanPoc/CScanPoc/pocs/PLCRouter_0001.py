@@ -9,15 +9,15 @@ class Vuln(ABVuln):
     name = 'PLC Wireless Router 未授权访问'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.OTHER # 漏洞类型
-    disclosure_date = ''  # 漏洞公布时间
+    disclosure_date = 'Unkonwn'  # 漏洞公布时间
     desc = '''
         PLC Wireless Router 未授权访问 ，可获取和更改路由器所有内容（asdl账号，ssid等）。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'PLCRouter'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '95d0e3d1-7800-4e14-833e-ea4cc77c46b1'
@@ -47,7 +47,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 if __name__ == '__main__':
     Poc().run()

@@ -15,9 +15,9 @@ class Vuln(ABVuln):
     desc = '''
         BeesCMS v3.4 /includes/fun.php 弱验证导致后台验证绕过漏洞。
     ''' # 漏洞描述
-    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=059180
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=059180
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'BeesCMS'  # 漏洞应用名称
     product_version = '3.4'  # 漏洞应用版本
 
@@ -53,7 +53,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
         
 
 if __name__ == '__main__':

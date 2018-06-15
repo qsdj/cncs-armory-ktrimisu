@@ -6,7 +6,7 @@ import urllib2
 
 class Vuln(ABVuln):
     vuln_id = 'PHPCMS_0001'  # 平台漏洞编号，留空
-    name = 'PHPCMS \phpcms\modules\member\index.php 用户登陆SQL注入漏洞'  # 漏洞名称
+    name = 'PHPCMS \phpcms\modules\member\index.php 用户登陆SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-08-09'  # 漏洞公布时间
@@ -14,8 +14,8 @@ class Vuln(ABVuln):
         PHPCMS \phpcms\modules\member\index.php 用户登陆SQL注入漏洞。
     '''  # 漏洞描述
     ref = 'https://www.cnblogs.com/LittleHann/p/4665505.html'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'PHPCMS'  # 漏洞应用名称
     product_version = 'PHPCMS_V9'  # 漏洞应用版本
 
@@ -54,7 +54,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 if __name__ == '__main__':
     Poc().run()

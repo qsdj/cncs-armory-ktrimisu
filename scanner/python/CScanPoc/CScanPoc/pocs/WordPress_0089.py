@@ -14,14 +14,14 @@ class Vuln(ABVuln):
         WordPress Plugin ShortCode 0.2.3 - Local File Inclusion
     ''' # 漏洞描述
     ref = 'http://www.exploit-db.com/exploits/34436/' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
     cve_id = 'CVE-2014-5465' #cve编号
     product = 'WordPress'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'WordPress Plugin ShortCode 0.2.3'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = 'WordPress_0089' # 平台 POC 编号，留空
+    poc_id = '3ed267bd-0810-4403-ada8-22d47e003d91'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 
@@ -43,7 +43,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 
 if __name__ == '__main__':

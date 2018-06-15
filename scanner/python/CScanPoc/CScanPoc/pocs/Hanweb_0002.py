@@ -8,7 +8,7 @@ class Vuln(ABVuln):
     name = '大汉管理后台权限绕过 命令执行'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型
-    disclosure_date = ''  # 漏洞公布时间
+    disclosure_date = 'Unkonwn'  # 漏洞公布时间
     desc = '''
         大汉科技（Hanweb）管理后台权限绕过，进入后台后轻松GetShell，
         经验证通杀所有系统和版本，包括：jcms，jact，jsearch，vipchat，vc，xxgk等等。
@@ -16,8 +16,8 @@ class Vuln(ABVuln):
     ref = 'http://0day5.com/archives/3280/'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
-    product = 'Hanweb'  # 漏洞应用名称
-    product_version = 'Unknown'  # 漏洞应用版本
+    product = 'Hanweb(大汉)'  # 漏洞应用名称
+    product_version = '大汉管理后台系统'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '638fb5a3-dbc5-4902-a6ce-f4a53a433aa4'
@@ -53,7 +53,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 if __name__ == '__main__':
     Poc().run()

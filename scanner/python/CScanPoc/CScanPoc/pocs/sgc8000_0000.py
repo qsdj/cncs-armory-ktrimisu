@@ -6,22 +6,22 @@ hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
     vuln_id = 'sgc8000_0000' # 平台漏洞编号，留空
-    name = 'sgc8000 大型旋转机监控系统报警短信模块泄露 ' # 漏洞名称
+    name = 'sgc8000 大型旋转机监控系统报警短信模块泄露' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
     disclosure_date = '2015-10-05'  # 漏洞公布时间
     desc = '''
-        sgc8000 大型旋转机监控系统报警短信模块泄露 
+        sgc8000 大型旋转机监控系统报警短信模块泄露。
     ''' # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=0135197' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0135197
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'sgc8000'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = 'sgc8000_0000' # 平台 POC 编号，留空
+    poc_id = '160b70bd-6f15-4309-b108-4c93666ce986'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 
@@ -44,7 +44,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 
 if __name__ == '__main__':

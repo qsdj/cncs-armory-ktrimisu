@@ -14,8 +14,8 @@ class Vuln(ABVuln):
         MvMmall V4.0远程任意PHP代码执行,通过构造特殊的参数，可生成.php文件，并可写入php代码。
     ''' # 漏洞描述
     ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=080042' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'MvMmall'  # 漏洞应用名称
     product_version = '4.0'  # 漏洞应用版本
 
@@ -47,7 +47,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 
 if __name__ == '__main__':

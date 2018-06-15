@@ -14,11 +14,11 @@ class Vuln(ABVuln):
         ShopNc SQL注入漏洞。
         /index.php?act=payment&op=notify
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
-    product = 'ShopNc CMS'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
+    product = 'ShopNc'  # 漏洞应用名称
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '7029645a-d9f7-4d9b-9c9f-ab5329229419'
@@ -49,7 +49,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 if __name__ == '__main__':
     Poc().run()

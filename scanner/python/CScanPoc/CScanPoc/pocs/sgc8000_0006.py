@@ -11,17 +11,17 @@ class Vuln(ABVuln):
     type = VulnType.INFO_LEAK # 漏洞类型
     disclosure_date = '2015-10-05'  # 漏洞公布时间
     desc = '''
-        sgc8000 大型旋转机监控系统 系统超级管理员帐号密码泄漏（最高权限可进后台）
+        sgc8000 大型旋转机监控系统 系统超级管理员帐号密码泄漏（最高权限可进后台）。
     ''' # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=0135197' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0135197
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'sgc8000'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = 'sgc8000_0006' # 平台 POC 编号，留空
+    poc_id = 'ba0338b0-1040-4855-b720-e797c1fa1872'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 
@@ -45,7 +45,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 
 if __name__ == '__main__':

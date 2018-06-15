@@ -15,8 +15,8 @@ class Vuln(ABVuln):
         HFS(HttpFileServer)设计缺陷,导致命令执行漏洞的产生,严重影响网站服务器安全.
     ''' # 漏洞描述
     ref = 'https://www.seebug.org/vuldb/ssvid-88860' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'HttpFileServer'  # 漏洞应用名称
     product_version = '2.3'  # 漏洞应用版本
 
@@ -52,7 +52,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
         
 
 if __name__ == '__main__':

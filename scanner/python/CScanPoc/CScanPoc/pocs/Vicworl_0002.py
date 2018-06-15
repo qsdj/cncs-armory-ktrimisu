@@ -5,17 +5,18 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
     vuln_id = 'Vicworl_0002' # 平台漏洞编号，留空
-    name = 'Vicworl媒体系统 SQL注入漏洞'  # 漏洞名称
+    name = 'Vicworl媒体系统 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2015-04-03'  # 漏洞公布时间
     desc = '''
+        Vicworl媒体系统 /home.php?action=article&id=-1 SQL注入漏洞。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
-    product = 'Vicworl媒体系统'  # 漏洞应用名称
-    product_version = '*'  # 漏洞应用版本
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
+    product = 'Vicworl'  # 漏洞应用名称
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '6f5c81d8-7724-479d-a2ff-88719990773b'
@@ -44,7 +45,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 if __name__ == '__main__':
     Poc().run()

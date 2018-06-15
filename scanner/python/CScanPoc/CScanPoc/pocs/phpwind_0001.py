@@ -13,7 +13,7 @@ class Vuln(ABVuln):
         PHPWind 8.7版本，goto.php存在多个跨站脚本漏洞，远程攻击者通过url参数，利用此漏洞可注入任意Web脚本或HTML。
     '''  # 漏洞描述
     ref = 'http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-4135'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
     cve_id = 'CVE-2015-4135'  # cve编号
     product = 'PHPWind'  # 漏洞应用名称
     product_version = '8.7版本'  # 漏洞应用版本
@@ -42,7 +42,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 if __name__ == '__main__':
     Poc().run()

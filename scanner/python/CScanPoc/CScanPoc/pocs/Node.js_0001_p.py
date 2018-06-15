@@ -9,12 +9,12 @@ class Vuln(ABVuln):
     name = 'Node.js 目录穿越漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_TRAVERSAL  # 漏洞类型
-    disclosure_date = ''  # 漏洞公布时间
+    disclosure_date = 'Unkonwn'  # 漏洞公布时间
     desc = '''
         uWSGI 2.0.17之前的PHP插件，没有正确的处理DOCUMENT_ROOT检测，导致用户可以通过..%2f来跨域目录，读取或运行DOCUMENT_ROOT目录以外的文件。
     '''  # 漏洞描述
     ref = 'https://github.com/vulhub/vulhub/tree/master/uwsgi/CVE-2018-7490'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
     cve_id = 'CVE-2017-14849'  # cve编号
     product = 'Node.js'  # 漏洞应用名称
     product_version = 'Node.js 8.5.0 到8.6.0版本'  # 漏洞应用版本

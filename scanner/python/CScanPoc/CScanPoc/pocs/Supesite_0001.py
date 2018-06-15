@@ -6,7 +6,7 @@ import urllib2
 
 class Vuln(ABVuln):
     vuln_id = 'Supesite_0001' # 平台漏洞编号，留空
-    name = 'Supesite 7.0 SQL注入漏洞'  # 漏洞名称
+    name = 'Supesite 7.0 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2014-10-16'  # 漏洞公布时间
@@ -14,8 +14,8 @@ class Vuln(ABVuln):
         /batch.common.php $_GET[name]过滤不严谨。
     '''  # 漏洞描述
     ref = 'https://www.secpulse.com/archives/46521.html'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'Supesite'  # 漏洞应用名称
     product_version = '7.0'  # 漏洞应用版本
 
@@ -46,7 +46,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 if __name__ == '__main__':
     Poc().run()

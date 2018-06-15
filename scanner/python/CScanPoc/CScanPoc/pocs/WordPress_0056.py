@@ -6,18 +6,18 @@ hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
     vuln_id = 'WordPress_0056' # 平台漏洞编号，留空
-    name = 'WordPress Plugin eShop 6.2.8跨站脚本攻击漏洞' # 漏洞名称
+    name = 'WordPress Plugin eShop 6.2.8 XSS' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型
-    disclosure_date = ''  # 漏洞公布时间
+    disclosure_date = 'Unkonwn'  # 漏洞公布时间
     desc = '''
         WordPress Plugin eShop 6.2.8跨站脚本攻击漏洞
     ''' # 漏洞描述
     ref = 'https://www.exploit-db.com/exploits/36038/' # 漏洞来源
     cnvd_id = 'Unknown' # cnvd漏洞编号
     cve_id = 'Unknown' #cve编号
-    product = 'WordPress Plugin eShop'  # 漏洞应用名称
-    product_version = '6.2.8'  # 漏洞应用版本
+    product = 'WordPress'  # 漏洞应用名称
+    product_version = 'WordPress Plugin eShop 6.2.8'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
@@ -46,7 +46,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 
 if __name__ == '__main__':

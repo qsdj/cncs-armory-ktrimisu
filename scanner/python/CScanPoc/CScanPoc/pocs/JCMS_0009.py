@@ -9,15 +9,15 @@ class Vuln(ABVuln):
     name = '大汉JCMS系统SQL注入漏洞 版本' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
-    disclosure_date = ''  # 漏洞公布时间
+    disclosure_date = 'Unkonwn'  # 漏洞公布时间
     desc = '''
         大汉JCMS系统SQL注入漏洞 版本
     ''' # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=087751' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
-    product = 'JCMS'  # 漏洞应用名称
-    product_version = '2.6.3'  # 漏洞应用版本
+    ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=087751
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
+    product = 'Hanweb(大汉)'  # 漏洞应用名称
+    product_version = '大汉JCMS 2.6.3'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
@@ -43,7 +43,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 
 if __name__ == '__main__':

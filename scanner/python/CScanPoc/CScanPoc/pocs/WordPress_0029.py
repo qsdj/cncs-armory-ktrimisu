@@ -6,18 +6,18 @@ hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
     vuln_id = 'WordPress_0029' # 平台漏洞编号，留空
-    name = '' # 漏洞名称
+    name = 'WordPress主题Pagelines和Platform权限提升' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2015-01-27'  # 漏洞公布时间
     desc = '''
-        知名WordPress主题Pagelines和Platform权限提升漏洞
+        WordPress主题Pagelines和Platform权限提升漏洞。
     ''' # 漏洞描述
     ref = 'http://www.freebuf.com/vuls/57594.html' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'WordPress'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'WordPress主题Pagelines和Platform'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
@@ -63,7 +63,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 
 if __name__ == '__main__':

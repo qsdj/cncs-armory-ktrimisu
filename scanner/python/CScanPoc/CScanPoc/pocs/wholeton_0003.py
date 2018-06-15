@@ -6,23 +6,23 @@ import random
 import urllib
 
 class Vuln(ABVuln):
-    vuln_id = 'wholeton_0003' # 平台漏洞编号，留空
+    vuln_id = 'Wholeton_0005' # 平台漏洞编号，留空
     name = '惠尔顿上网行为管理系统命令执行'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型
     disclosure_date = '2015-03-26'  # 漏洞公布时间
     desc = '''
-        惠尔顿（wholeton）上网行为管理系统多处命令执行漏洞：
+        惠尔顿（Wholeton）上网行为管理系统多处命令执行漏洞：
         /base/tpl/delectSSLL.php
         /base/vpn/download_nodes.php
         /base/tpl/delectSSL.php
         /base/user/clearScreenImg.php
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
-    product = '上网行为管理系统'  # 漏洞应用名称
-    product_version = '惠尔顿上网行为管理系统'  # 漏洞应用版本
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
+    product = '惠尔顿上网行为管理系统'  # 漏洞应用名称
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '8c52ee21-c2e9-4158-9168-e0317b250ce7'
@@ -63,7 +63,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 if __name__ == '__main__':
     Poc().run()

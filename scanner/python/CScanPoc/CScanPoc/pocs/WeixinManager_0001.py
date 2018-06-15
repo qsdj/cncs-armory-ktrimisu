@@ -12,11 +12,11 @@ class Vuln(ABVuln):
     desc = '''
         某微信公众帐号管理系统(微网站)存在后门目测受影响300多个站点。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = '微信管理系统'  # 漏洞应用名称
-    product_version = '*'  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'ba7f8e65-a8f9-4f99-bf91-83d7dc459f9d'
@@ -66,7 +66,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 if __name__ == '__main__':
     Poc().run()

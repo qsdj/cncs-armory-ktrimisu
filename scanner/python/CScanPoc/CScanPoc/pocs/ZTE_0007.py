@@ -15,14 +15,14 @@ class Vuln(ABVuln):
        中兴W-LAN无线接入控制器从信息泄露到cmdshell
     ''' # 漏洞描述
     ref = 'http://blog.knownsec.com/2015/01/analysis-of-zte-soho-routerweb_shell_cmd-gch-remote-command-execution/' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'ZTE'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = '中兴W-LAN无线接入控制器'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = 'ZTE_0007'
+    poc_id = '36701094-e475-450d-84a9-1f8608e2979a'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 
@@ -45,7 +45,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 
 if __name__ == '__main__':

@@ -24,7 +24,7 @@ class Vuln(ABVuln):
         development.
     '''  # 漏洞描述
     ref = 'https://docs.microsoft.com/en-us/security-updates/SecurityBulletins/2008/ms08-067'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
     cve_id = 'CVE-2008-4250'  # cve编号
     product = 'Windows'  # 漏洞应用名称
     product_version = 'Microsoft Windows 2000、Windows XP 和 Windows Server 2003'  # 漏洞应用版本
@@ -115,7 +115,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 if __name__ == '__main__':
     Poc().run()

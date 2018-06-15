@@ -6,18 +6,18 @@ hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
     vuln_id = 'URP_0006' # 平台漏洞编号，留空
-    name = 'URP综合教务系统代码执行漏洞' # 漏洞名称
+    name = 'URP综合教务系统代码执行' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型
     disclosure_date = '2015-05-17'  # 漏洞公布时间
     desc = '''
-        URP综合教务系统代码执行漏洞
+        URP综合教务系统 /lwUpLoad_action.jsp 代码执行漏洞。
     ''' # 漏洞描述
-    ref = '' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'URP教务系统'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
@@ -64,7 +64,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 
 if __name__ == '__main__':

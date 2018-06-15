@@ -34,7 +34,7 @@ class Vuln(ABVuln):
             https://github.com/GDSSecurity/Jetleak-Testing-Script/blob/master/jetleak_tester.py
             http://bobao.360.cn/news/detail/1251.html
             '''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
     cve_id = 'CVE-2015-2080'  # cve编号
     product = 'Jetty Web Server'  # 漏洞应用名称
     product_version = '9.2.x-9.3.x'  # 漏洞应用版本
@@ -83,7 +83,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 if __name__ == '__main__':
     Poc().run()

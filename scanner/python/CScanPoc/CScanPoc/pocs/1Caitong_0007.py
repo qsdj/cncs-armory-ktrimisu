@@ -30,7 +30,7 @@ class Vuln(ABVuln):
 
 
 class Poc(ABPoc):
-    poc_id = '1caitong_0007' # 平台 POC 编号，留空
+    poc_id = '23c2b8b1-68ee-43fd-b226-3990796ffa70'
     author = '国光'  # POC编写者
     create_date = '2018-05-22' # POC创建时间
 

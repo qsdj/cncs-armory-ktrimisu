@@ -12,12 +12,12 @@ class Vuln(ABVuln):
     type = VulnType.RCE # 漏洞类型
     disclosure_date = '2014-10-11'  # 漏洞公布时间
     desc = '''
-    Search.html 参数 keyword会在一定条件下会带入eval函数，构造代码可造成代码执行。
+        Search.html 参数 keyword会在一定条件下会带入eval函数，构造代码可造成代码执行。
     ''' # 漏洞描述
     ref = 'Unknown' # 漏洞来源http://www.wooyun.org/bugs/wooyun-2010-048523
     cnvd_id = 'Unknown' # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
-    product = 'WaiKuCMS(歪酷)'  # 漏洞应用名称
+    product = 'WaiKuCMS(歪酷CMS)'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
 
 
@@ -43,7 +43,7 @@ class Poc(ABPoc):
             self.output.info('执行异常：{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 if __name__ == '__main__':
     Poc().run()

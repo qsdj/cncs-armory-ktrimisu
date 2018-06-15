@@ -15,14 +15,14 @@ class Vuln(ABVuln):
        ZTE某平台弱口令，登录地址为 login.php 默认用户名:admin 默认密码:Admin2010
     ''' # 漏洞描述
     ref = 'http://blog.knownsec.com/2015/01/analysis-of-zte-soho-routerweb_shell_cmd-gch-remote-command-execution/' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'ZTE'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = 'ZTE_0006'
+    poc_id = '5b71ce59-c8e4-46d6-8a1a-3ad813c3fdb0'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 
@@ -45,7 +45,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 
 if __name__ == '__main__':

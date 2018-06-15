@@ -15,10 +15,10 @@ class Vuln(ABVuln):
         而且C段几乎全是联通的业务。
     ''' # 漏洞描述
     ref = 'https://www.secpulse.com/archives/31908.html' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0105302
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = '中国联通'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
@@ -43,7 +43,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 
 if __name__ == '__main__':

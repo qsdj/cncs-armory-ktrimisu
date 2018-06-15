@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
 class Vuln(ABVuln):
-    vuln_id = 'Fanwe_0001'  # 平台漏洞编号，留空
+    vuln_id = 'FanWe_0001'  # 平台漏洞编号，留空
     name = '方维O2O商业系统 index.php SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION  # 漏洞类型
@@ -16,7 +16,7 @@ class Vuln(ABVuln):
     ref = 'Unknown'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
-    product = 'Fanwe O2O'  # 漏洞应用名称
+    product = 'FanWe(方维)'  # 漏洞应用名称
     product_version = 'v4.3'  # 漏洞应用版本
 
 class Poc(ABPoc):
@@ -46,7 +46,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 if __name__ == '__main__':
     Poc().run()

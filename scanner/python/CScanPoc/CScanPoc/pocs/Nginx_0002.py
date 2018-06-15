@@ -15,7 +15,7 @@ class Vuln(ABVuln):
         当使用Nginx标准模块时，这允许攻击者如果从缓存返回响应，则获取缓存文件头，黑客可以通过缓存文件头获取包含IP地址的后端服务器或其他敏感信息，从而导致信息泄露。
     '''  # 漏洞描述
     ref = 'https://github.com/vulhub/vulhub/tree/master/nginx/CVE-2017-7529'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
     cve_id = 'CVE-2017-7529'  # cve编号
     product = 'Nginx'  # 漏洞应用名称
     product_version = 'Nginx 0.5.6 – 1.13.2'  # 漏洞应用版本
@@ -51,7 +51,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 if __name__ == '__main__':
     Poc().run()

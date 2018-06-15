@@ -23,10 +23,10 @@ class Vuln(ABVuln):
         Unsanitized user input to readfile() function.
     '''  # 漏洞描述
     ref = 'http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-9119'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
     cve_id = 'CVE-2014-9119'  # cve编号
-    product = 'WordPress DB-Backup Plugin'  # 漏洞应用名称
-    product_version = '4.5'  # 漏洞应用版本
+    product = 'WordPress'  # 漏洞应用名称
+    product_version = 'WordPress DB-Backup Plugin 4.5'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'ced5c830-8c05-413b-ad41-a67895af73c8'
@@ -54,7 +54,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 if __name__ == '__main__':
     Poc().run()

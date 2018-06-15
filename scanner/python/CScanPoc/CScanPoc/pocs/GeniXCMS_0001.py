@@ -15,7 +15,7 @@ class Vuln(ABVuln):
         GeniXCMS v0.0.1 Remote Unauthenticated SQL Injection Exploite.
     '''  # 漏洞描述
     ref = 'https://www.exploit-db.com/exploits/36321/'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
     cve_id = '''
             CVE-2015-2678
             CVE-2015-2679
@@ -48,7 +48,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 if __name__ == '__main__':
     Poc().run()

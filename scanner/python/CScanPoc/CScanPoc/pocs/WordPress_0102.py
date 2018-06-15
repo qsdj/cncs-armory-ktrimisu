@@ -14,10 +14,10 @@ class Vuln(ABVuln):
     type = VulnType.XSS # 漏洞类型
     disclosure_date = '2015-04-27'  # 漏洞公布时间
     desc = '''
-    该问题由 mysql 的一个特性引起，在 mysql 的 utf8 字符集中，一个字符由1~3个字节组成，
-    对于大于3个字节的字符，mysql 使用了 utf8mb4 的形式来存储。
-    如果我们将一个 utf8mb4 字符插入到 utf8 编码的列中，那么在mysql的非strict mode下，
-    他会将后面的内容截断，导致我们可以利用这一缺陷完成 XSS 攻击。
+        该问题由 mysql 的一个特性引起，在 mysql 的 utf8 字符集中，一个字符由1~3个字节组成，
+        对于大于3个字节的字符，mysql 使用了 utf8mb4 的形式来存储。
+        如果我们将一个 utf8mb4 字符插入到 utf8 编码的列中，那么在mysql的非strict mode下，
+        他会将后面的内容截断，导致我们可以利用这一缺陷完成 XSS 攻击。
     ''' # 漏洞描述
     ref = 'Unknown' # 漏洞来源
     cnvd_id = 'Unknown' # cnvd漏洞编号
@@ -66,7 +66,7 @@ class Poc(ABPoc):
             self.output.info('执行异常：{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 if __name__ == '__main__':
     Poc().run()

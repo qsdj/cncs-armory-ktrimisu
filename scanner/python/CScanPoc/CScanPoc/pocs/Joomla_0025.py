@@ -36,7 +36,7 @@ class Poc(ABPoc):
             verify_url = self.target + payload 
             r = requests.get(verify_url)
 
-            if r.status_code == 200 and 'Upload files' and 'P3P: CP="NOI ADM DEV PSAi COM NAV OUR OTRo STP IND DEM"' in r.content:
+            if r.status_code == 200 and 'Upload files' in r.content and 'P3P: CP="NOI ADM DEV PSAi COM NAV OUR OTRo STP IND DEM"' in r.content:
                 #security_hole(url)
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
@@ -46,7 +46,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 if __name__ == '__main__':
     Poc().run()

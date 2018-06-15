@@ -6,18 +6,18 @@ hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
     vuln_id = 'WordPress_0058' # 平台漏洞编号，留空
-    name = 'WordPress Plugin Forum 1.7.8 SQL注入漏洞' # 漏洞名称
+    name = 'WordPress Plugin Forum 1.7.8 SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2011-08-18'  # 漏洞公布时间
     desc = '''
-        WordPress Plugin Forum 1.7.8 SQL注入漏洞
+        WordPress Plugin Forum 1.7.8 SQL注入漏洞。
     ''' # 漏洞描述
     ref = 'https://www.exploit-db.com/exploits/17684/' # 漏洞来源
     cnvd_id = 'Unknown' # cnvd漏洞编号
     cve_id = 'Unknown' #cve编号
-    product = 'WordPress Plugin Forum'  # 漏洞应用名称
-    product_version = '1.7.8'  # 漏洞应用版本
+    product = 'WordPress'  # 漏洞应用名称
+    product_version = 'WordPress Plugin Forum 1.7.8'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
@@ -45,7 +45,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 
 if __name__ == '__main__':

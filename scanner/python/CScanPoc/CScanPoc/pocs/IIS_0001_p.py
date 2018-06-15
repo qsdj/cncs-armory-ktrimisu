@@ -18,7 +18,7 @@ class Vuln(ABVuln):
         若要利用此漏洞，攻击者必须将经特殊设计的 HTTP 请求发送到受影响的系统。 通过修改 Windows HTTP 堆栈处理请求的方式，安装更新可以修复此漏洞。
     '''  # 漏洞描述
     ref = 'https://docs.microsoft.com/zh-cn/security-updates/Securitybulletins/2015/ms15-034'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
     cve_id = 'CVE-2015-1635'  # cve编号
     product = 'IIS'  # 漏洞应用名称
     product_version = '''
@@ -96,7 +96,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 if __name__ == '__main__':
     Poc().run()

@@ -15,8 +15,8 @@ class Vuln(ABVuln):
         Discuz! 中的post.php中handlekey变量传入global.func.php后过滤不严,导致反射XSS漏洞的产生
     ''' # 漏洞描述
     ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=065930' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'Discuz!'  # 漏洞应用名称
     product_version = '7.2'  # 漏洞应用版本
 
@@ -50,7 +50,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
         
 
 if __name__ == '__main__':

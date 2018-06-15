@@ -13,8 +13,8 @@ class Vuln(ABVuln):
     desc = '''
         在安装了具有“site”功能的插件以后，插件目录使用../即可向上跳转，导致目录穿越漏洞，可读取任意文件。没有安装任意插件的elasticsearch不受影响。
     '''  # 漏洞描述
-    ref = 'https://github.com/vulhub/vulhub/tree/master/elasticsearch/CVE-2015-1427'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
+    ref = 'https://www.secpulse.com/archives/6557.html'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
     cve_id = 'CVE-2015-3337'  # cve编号
     product = 'ElasticSearch'  # 漏洞应用名称
     product_version = '1.4.5以下/1.5.2以下'  # 漏洞应用版本
@@ -44,7 +44,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 if __name__ == '__main__':
     Poc().run()

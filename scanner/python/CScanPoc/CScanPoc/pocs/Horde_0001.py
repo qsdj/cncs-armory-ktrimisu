@@ -21,7 +21,7 @@ class Vuln(ABVuln):
         the remote host, subject to the privileges of the web server user id.
     '''  # 漏洞描述
     ref = 'https://www.exploit-db.com/exploits/16154/'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
     cve_id = 'CVE-2009-0932'  # cve编号
     product = 'Horde'  # 漏洞应用名称
     product_version = '3.3.2'  # 漏洞应用版本
@@ -53,7 +53,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 if __name__ == '__main__':
     Poc().run()

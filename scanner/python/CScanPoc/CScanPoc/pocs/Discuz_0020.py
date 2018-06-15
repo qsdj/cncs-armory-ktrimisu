@@ -15,10 +15,10 @@ class Vuln(ABVuln):
         Discuz! 存在一些敏感文件，如果存在备份的话，可能导致UC_KEY的泄露从而进行GETSHELL。
     ''' # 漏洞描述
     ref = 'https://phpinfo.me/2014/01/10/182.html' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'Discuz!'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):

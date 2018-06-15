@@ -14,11 +14,11 @@ class Vuln(ABVuln):
         谷歌搜索：
         http://www.google.co.in/search?q=inurl:Course_Default.aspx%3Ftypeid%3D&newwindow=1&filter=0&biw=1366&bih=642
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = '天柏在线培训系统'  # 漏洞应用名称
-    product_version = '天柏网上教学系统'  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'cf349bdf-34a2-4ffb-9e10-eb6849857b65'
@@ -59,7 +59,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 if __name__ == '__main__':
     Poc().run()

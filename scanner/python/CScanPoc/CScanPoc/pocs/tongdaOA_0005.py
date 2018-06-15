@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'tongdaOA_0005' # 平台漏洞编号，留空
+    vuln_id = 'TongdaOA_0005' # 平台漏洞编号，留空
     name = '通达OA系统 信息泄露'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
@@ -13,11 +13,11 @@ class Vuln(ABVuln):
     desc = '''
         通达OA无需登录即可获得企业所有员工姓名/Email等敏感信息。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = '通达OA系统'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'cade7703-6094-4394-9ce0-dd5bd7ddfdc1'
@@ -59,7 +59,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 if __name__ == '__main__':
     Poc().run()

@@ -13,9 +13,9 @@ class Vuln(ABVuln):
     desc = '''
         TOUR旅游网站管理系统存在SQL注入，服务商、CMS版本不明，很多旅游网站在用。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'TOUR旅游网站管理系统'  # 漏洞应用名称
     product_version = '*'  # 漏洞应用版本
 
@@ -47,7 +47,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 if __name__ == '__main__':
     Poc().run()

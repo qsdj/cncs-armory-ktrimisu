@@ -14,10 +14,10 @@ class Vuln(ABVuln):
         download_file" variable is not sanitized.
     '''  # 漏洞描述
     ref = 'http://www.exploit-db.com/exploits/35493'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
-    product = 'WordPress Ajax Store Locator'  # 漏洞应用名称
-    product_version = '<= 1.2'  # 漏洞应用版本
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
+    product = 'WordPress'  # 漏洞应用名称
+    product_version = 'WordPress Ajax Store Locator <= 1.2'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'a8991fdf-5806-4b46-9bc4-ac3a947c01af'
@@ -46,7 +46,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 if __name__ == '__main__':
     Poc().run()

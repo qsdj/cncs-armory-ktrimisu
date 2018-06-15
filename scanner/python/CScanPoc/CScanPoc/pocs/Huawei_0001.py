@@ -16,8 +16,8 @@ class Vuln(ABVuln):
         Huawei Home Gateway UPnP/1.0 IGD/1.00 Password Disclosure Exploit.
     '''  # 漏洞描述
     ref = 'https://www.exploit-db.com/exploits/37424/'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = '华为路由器'  # 漏洞应用名称
     product_version = 'Huawei Home Gateway UPnP/1.0 IGD/1.00'  # 漏洞应用版本
 
@@ -77,7 +77,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 if __name__ == '__main__':
     Poc().run()

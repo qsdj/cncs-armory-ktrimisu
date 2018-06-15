@@ -14,8 +14,8 @@ class Vuln(ABVuln):
         Hdwiki5.1 SQL注入漏洞s
     ''' # 漏洞描述
     ref = 'http://0day5.com/archives/2978/' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'Hdwiki'  # 漏洞应用名称
     product_version = '5.1'  # 漏洞应用版本
 
@@ -43,7 +43,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 
 if __name__ == '__main__':

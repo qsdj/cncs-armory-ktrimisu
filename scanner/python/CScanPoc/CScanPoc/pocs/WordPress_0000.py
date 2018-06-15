@@ -7,19 +7,19 @@ import re
 import hashlib
 
 class Vuln(ABVuln):
-    vuln_id = 'wordpress_0000' # 平台漏洞编号，留空
-    name = 'Wordpress full Path Disclosure Vulnerability POC' # 漏洞名称
+    vuln_id = 'WordPress_0000' # 平台漏洞编号，留空
+    name = 'WordPress full Path Disclosure Vulnerability' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
     disclosure_date = '2014-11-01'  # 漏洞公布时间
     desc = '''
-        Wordpress信息泄露漏洞，可以爆出路径。
+        WordPress信息泄露漏洞，可以爆出路径。
     ''' # 漏洞描述
-    ref = '' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'WordPress'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
@@ -51,7 +51,7 @@ class Poc(ABPoc):
 
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 
 if __name__ == '__main__':

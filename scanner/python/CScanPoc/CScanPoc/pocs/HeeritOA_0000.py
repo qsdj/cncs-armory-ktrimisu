@@ -16,10 +16,10 @@ class Vuln(ABVuln):
         北京希尔自动化OA管理系统/数据库系统 /bnuoa/info/infoShowAction.do 任意文件下载漏洞
     ''' # 漏洞描述
     ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=058386' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'HeeritOA(希尔OA)'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
@@ -47,7 +47,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 
 if __name__ == '__main__':

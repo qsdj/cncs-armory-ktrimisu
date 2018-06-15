@@ -14,10 +14,10 @@ class Vuln(ABVuln):
         WordPress Simple Ads Manager 2.5.94 插件任意文件上传漏洞.
     ''' # 漏洞描述
     ref = 'https://www.exploit-db.com/exploits/36614/' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
     cve_id = 'CVE-2015-2825 ' #cve编号
-    product = 'WordPress Simple Ads Manager'  # 漏洞应用名称
-    product_version = '2.5.94'  # 漏洞应用版本
+    product = 'WordPress'  # 漏洞应用名称
+    product_version = 'WordPress Simple Ads Manager 2.5.94'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
@@ -57,7 +57,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 
 if __name__ == '__main__':

@@ -17,8 +17,8 @@ class Vuln(ABVuln):
         multiple computers over a secure wireless network.
     '''  # 漏洞描述
     ref = 'http://www.s3cur1ty.de/m1adv2013-003'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'D-Link'  # 漏洞应用名称
     product_version = 'DIR-600/DIR_300'  # 漏洞应用版本
 
@@ -48,7 +48,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 if __name__ == '__main__':
     Poc().run()

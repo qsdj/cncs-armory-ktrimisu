@@ -14,8 +14,8 @@ class Vuln(ABVuln):
         savexpadmin.asp添加管理员页未进行身份验证。
     '''  # 漏洞描述
     ref = 'https://blog.csdn.net/oceanark/article/details/51902605'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'shopxp'  # 漏洞应用名称
     product_version = 'v10.85'  # 漏洞应用版本
 

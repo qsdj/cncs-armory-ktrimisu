@@ -14,7 +14,7 @@ class Vuln(ABVuln):
         JBoss Application Server (jbossas)中的DeploymentFileRepository类存在目录遍历漏洞，远程认证用户可以通过和控制台管理器相关的未明向量，读取或修改任意文件并可能执行任意代码。
     '''  # 漏洞描述
     ref = 'http://cve.scap.org.cn/CVE-2006-5750.html'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
     cve_id = 'CVE-2006-5750'  # cve编号
     product = 'JBoss'  # 漏洞应用名称
     product_version = 'JBoss 3.2.4 through 4.0.5'  # 漏洞应用版本
@@ -52,7 +52,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 if __name__ == '__main__':
     Poc().run()

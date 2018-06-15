@@ -14,11 +14,11 @@ class Vuln(ABVuln):
         蓝太平洋网站决策支持系统WebEngine存在利用短文件漏洞下载明文系统配置文件(可泄漏管理员明文密码等系统敏感配置信息)
         部分部署安装在 win+apache 环境下存在缺陷通过短文件漏洞实现利用。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = '蓝太平洋'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '64d9d206-6457-4603-891c-b8760dce2381'
@@ -47,7 +47,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 if __name__ == '__main__':
     Poc().run()

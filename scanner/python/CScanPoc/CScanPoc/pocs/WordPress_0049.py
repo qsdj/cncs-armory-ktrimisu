@@ -6,18 +6,19 @@ hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
     vuln_id = 'WordPress_0049' # 平台漏洞编号，留空
-    name = 'WordPress LineNity 1.20 主题 本地文件包含漏洞' # 漏洞名称
+    name = 'WordPress LineNity 1.20主题 本地文件包含漏洞' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型
     disclosure_date = '2014-04-14'  # 漏洞公布时间
     desc = '''
-        WordPress LineNity 1.20 主题 本地文件包含漏洞
+        WordPress LineNity 1.20 主题 本地文件包含漏洞。
+        /wp-content/themes/linenity/functions/download.php?imgurl=
     ''' # 漏洞描述
     ref = 'https://www.exploit-db.com/exploits/32861/' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
-    product = 'WordPress LineNity 1.20 Theme'  # 漏洞应用名称
-    product_version = '1.20'  # 漏洞应用版本
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
+    product = 'WordPress'  # 漏洞应用名称
+    product_version = 'WordPress LineNity 1.20主题'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
@@ -44,7 +45,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 
 if __name__ == '__main__':

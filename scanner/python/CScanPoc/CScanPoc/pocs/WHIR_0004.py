@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'WHIR_0004' # 平台漏洞编号，留空
+    vuln_id = 'Whir_0004' # 平台漏洞编号，留空
     name = '万户ezOffice所有版本通用型SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -12,11 +12,11 @@ class Vuln(ABVuln):
     desc = '''
         万户ezOffice /defaultroot/public/select_user/search_org_list.jsp页面过滤不严谨，导致SQL注入漏洞。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
-    product = '万户'  # 漏洞应用名称
-    product_version = '万户ezOffice'  # 漏洞应用版本
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
+    product = '万户OA'  # 漏洞应用名称
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '7e97cbe2-5000-4319-8015-9cc8fcb3047a'
@@ -45,7 +45,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 if __name__ == '__main__':
     Poc().run()

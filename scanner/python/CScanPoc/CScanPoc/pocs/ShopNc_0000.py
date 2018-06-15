@@ -6,22 +6,22 @@ hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
     vuln_id = 'ShopNc_0000' # 平台漏洞编号，留空
-    name = 'shopnc o2o 版三处sql注入' # 漏洞名称
+    name = 'ShopNc o2o 版三处sql注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2015-10-1'  # 漏洞公布时间
     desc = '''
-        shopnc o2o 版三处sql注入,直接出数据.
+        ShopNc o2o 版三处sql注入,直接出数据.
     ''' # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=0125512' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
-    product = 'ShopNc CMS'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0125512
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
+    product = 'ShopNc'  # 漏洞应用名称
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = 'ShopNc_0000' # 平台 POC 编号，留空
+    poc_id = 'be9b8c25-d823-4c8a-bf74-a288f58b70c8'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 
@@ -50,7 +50,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 
 if __name__ == '__main__':

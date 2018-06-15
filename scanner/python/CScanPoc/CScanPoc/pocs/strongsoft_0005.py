@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'strongsoft_0005' # 平台漏洞编号，留空
+    vuln_id = 'StrongSoft_0005' # 平台漏洞编号，留空
     name = '四创灾害预警系统 任意文件操作'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_OPERATION # 漏洞类型
@@ -12,11 +12,11 @@ class Vuln(ABVuln):
     desc = '''
         福建四创软件开发的“山洪灾害预警监测系统”可查询任意数据表数据，并且可任意添加、删除管理员，直接导致预警系统沦陷，系统后台可任意发布预警信息。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
-    product = '四创'  # 漏洞应用名称
-    product_version = '四创灾害预警系统'  # 漏洞应用版本
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
+    product = '四创灾害预警系统'  # 漏洞应用名称
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '15088e44-c9cb-4a2e-a7e6-e57cdddf3c72'
@@ -49,7 +49,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 if __name__ == '__main__':
     Poc().run()

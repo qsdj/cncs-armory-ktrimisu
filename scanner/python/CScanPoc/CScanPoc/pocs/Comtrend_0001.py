@@ -15,8 +15,8 @@ class Vuln(ABVuln):
         康全电讯 ADSL Router CT-5367 C01_R12 - 函数参数过滤不严谨导致 Remote Code Execution.
     '''  # 漏洞描述
     ref = 'https://www.exploit-db.com/exploits/16275/, http://www.exploit-db.com/exploits/18101/'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'Comtrend Router'  # 漏洞应用名称
     product_version = 'CT-5367 C01_R12'  # 漏洞应用版本
 
@@ -55,7 +55,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 if __name__ == '__main__':
     Poc().run()

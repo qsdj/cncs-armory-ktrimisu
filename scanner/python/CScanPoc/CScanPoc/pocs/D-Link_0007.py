@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
     vuln_id = 'D-Link_0007'  # 平台漏洞编号，留空
-    name = 'D-Link 未授权信息泄漏漏洞'  # 漏洞名称
+    name = 'D-Link 未授权信息泄漏'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK  # 漏洞类型
     disclosure_date = '2015-04-21'  # 漏洞公布时间
@@ -13,8 +13,8 @@ class Vuln(ABVuln):
         D-Link 多个路由器未授权信息泄漏漏洞。
     '''  # 漏洞描述
     ref = 'http://www.freebuf.com/vuls/64521.html'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'D-Link'  # 漏洞应用名称
     product_version = '''
                         DIR-890L
@@ -56,7 +56,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 if __name__ == '__main__':
     Poc().run()

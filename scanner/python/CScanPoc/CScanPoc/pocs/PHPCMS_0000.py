@@ -7,7 +7,7 @@ import re
 
 class Vuln(ABVuln):
     vuln_id = 'PHPCMS_0000' # 平台漏洞编号，留空
-    name = 'PHPCMS 9.5.3 /phpcms/modules/vote/classes/vote_tag.class.php SQL注入漏洞' # 漏洞名称
+    name = 'PHPCMS 9.5.3 /phpcms/modules/vote/classes/vote_tag.class.php SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2014-05-18'  # 漏洞公布时间
@@ -16,8 +16,8 @@ class Vuln(ABVuln):
         siteid就变为可控的变量，之后再拼接成$sql变量时也没有进行任何过滤，带入数据库查询就直接导致了SQL注入漏洞。
     ''' # 漏洞描述
     ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=051077' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'PHPCMS'  # 漏洞应用名称
     product_version = '9.5.3'  # 漏洞应用版本
 
@@ -50,7 +50,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 
 if __name__ == '__main__':

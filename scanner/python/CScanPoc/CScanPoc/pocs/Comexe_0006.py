@@ -13,15 +13,15 @@ class Vuln(ABVuln):
     desc = '''
         科迈RAS标准版客户端页面cmxpagedquery.php注入。 
     ''' # 漏洞描述
-    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0117921
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0117921
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = '科迈RAS系统'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = 'comexe_0006' # 平台 POC 编号，留空
+    poc_id = 'fa867b84-bc3c-46bd-9451-353b8288e7cf'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 
@@ -45,7 +45,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 
 if __name__ == '__main__':

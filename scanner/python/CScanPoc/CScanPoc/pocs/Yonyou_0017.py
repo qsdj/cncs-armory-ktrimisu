@@ -21,7 +21,7 @@ class Vuln(ABVuln):
 
 
 class Poc(ABPoc):
-    poc_id = 'yongyou_0017' # 平台 POC 编号，留空
+    poc_id = '50ceaaa1-68b7-41a3-bad8-545b54057355'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 
@@ -42,7 +42,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 
 if __name__ == '__main__':

@@ -8,7 +8,7 @@ import hashlib
 
 class Vuln(ABVuln):
     vuln_id = 'U-Mail_0007' # 平台漏洞编号，留空
-    name = 'U-Mail /webmail/userapply.php 物理路径泄漏漏洞' # 漏洞名称
+    name = 'U-Mail /webmail/userapply.php 物理路径泄漏' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
     disclosure_date = '2014-11-23'  # 漏洞公布时间
@@ -17,11 +17,11 @@ class Vuln(ABVuln):
         Warning: mysql_num_rows(): supplied argument is not a valid MySQL result resource
         in D:\ProgramFiles\umail\WorldClient\html\userapply.php on line 0
     ''' # 漏洞描述
-    ref = '' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'U-Mail'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
@@ -48,7 +48,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 
 if __name__ == '__main__':

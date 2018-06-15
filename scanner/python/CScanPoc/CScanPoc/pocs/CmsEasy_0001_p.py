@@ -13,8 +13,8 @@ class Vuln(ABVuln):
     CmsEasy 5.5 中 /celive/live/header.php 文件过滤不严存在POST注入
     ''' # 漏洞描述
     ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=70827' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'CmsEasy'  # 漏洞应用名称
     product_version = 'CmsEasy 5.5'  # 漏洞应用版本
 
@@ -46,7 +46,7 @@ class Poc(ABPoc):
 
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 if __name__ == '__main__':
     Poc().run()

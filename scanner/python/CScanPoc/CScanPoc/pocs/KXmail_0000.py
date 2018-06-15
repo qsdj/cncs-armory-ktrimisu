@@ -15,14 +15,14 @@ class Vuln(ABVuln):
         科信邮件系统漏洞另一处SQL盲注(无需登录23案例涉及政府部门运营商) 
     ''' # 漏洞描述
     ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=122071' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'KXmail'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = 'KXmail_0000' # 平台 POC 编号，留空
+    poc_id = '8b6049db-2a78-4743-872d-a9a3459e2ff5'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 
@@ -58,7 +58,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 
 if __name__ == '__main__':

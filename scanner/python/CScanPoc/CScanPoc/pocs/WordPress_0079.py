@@ -11,17 +11,17 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2015-02-11'  # 漏洞公布时间
     desc = '''
-        WordPress Plugin Survey and Poll 1.1 - Blind SQL Injection
+        WordPress Plugin Survey and Poll 1.1 - Blind SQL Injection.
     ''' # 漏洞描述
     ref = 'https://www.exploit-db.com/exploits/36054/' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
     cve_id = 'CVE-2015-2090' #cve编号
     product = 'WordPress'  # 漏洞应用名称
-    product_version = '1.1'  # 漏洞应用版本
+    product_version = 'WordPress Plugin Survey and Poll 1.1'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = 'WordPress_0079' # 平台 POC 编号，留空
+    poc_id = 'fb2d09ef-b0c0-4cf6-a4b6-d18d6a23184d'
     author = '国光'  # POC编写者
     create_date = '2018-05-22' # POC创建时间
 
@@ -51,7 +51,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 
 if __name__ == '__main__':

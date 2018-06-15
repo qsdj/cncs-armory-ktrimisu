@@ -36,7 +36,7 @@ class Poc(ABPoc):
             verify_url = self.target + payload
             req = requests.get(verify_url)
             
-            if req.status_code == 200 and 'root' and '/bin/bash' in req.content:
+            if req.status_code == 200 and 'root' in req.content and '/bin/bash' in req.content:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 
@@ -44,7 +44,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 if __name__ == '__main__':
     Poc().run()

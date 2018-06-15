@@ -18,7 +18,7 @@ class Vuln(ABVuln):
     ref = 'Unknown' # 漏洞来源http://wooyun.org/bugs/wooyun-2014-074065
     cnvd_id = 'Unknown' # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
-    product = 'YidaCMS'  # 漏洞应用名称
+    product = 'YidaCMS(易达CMS)'  # 漏洞应用名称
     product_version = '3.2'  # 漏洞应用版本
 
 
@@ -45,7 +45,7 @@ class Poc(ABPoc):
             self.output.info('执行异常：{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 if __name__ == '__main__':
     Poc().run()

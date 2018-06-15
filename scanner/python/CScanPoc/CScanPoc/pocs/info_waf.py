@@ -14,9 +14,9 @@ class Vuln(ABVuln):
     desc = '''
         检测目前市面上常见的Web Waf，依靠返回包里的HTTP状态码的特征来判断Waf是否存在。
     ''' # 漏洞描述
-    ref = '' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'Info_waf'  # 漏洞应用名称
     product_version = '1.0'  # 漏洞应用版本
 

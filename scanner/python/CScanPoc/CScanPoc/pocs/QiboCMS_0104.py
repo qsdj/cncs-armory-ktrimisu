@@ -19,7 +19,7 @@ class Vuln(ABVuln):
     ref = 'Unknown' # 漏洞来源
     cnvd_id = 'Unknown' # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
-    product = 'QiboCMS(齐博)'  # 漏洞应用名称
+    product = 'QiboCMS(齐博CMS)'  # 漏洞应用名称
     product_version = 'V7'
 
 
@@ -48,7 +48,7 @@ class Poc(ABPoc):
             self.output.info('执行异常：{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 if __name__ == '__main__':
     Poc().run()

@@ -15,8 +15,8 @@ class Vuln(ABVuln):
          PHPOK企业站缺陷文件：framework/phpok_call.php line：108
     ''' # 漏洞描述
     ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=64360' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'PHPOK'  # 漏洞应用名称
     product_version = '4.0.556'  # 漏洞应用版本
 

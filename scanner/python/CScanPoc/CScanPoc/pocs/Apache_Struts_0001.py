@@ -53,7 +53,7 @@ class Poc(ABPoc):
 
 
     def exploit(self):
-        #super(Poc, self).exploit()
+        self.verify()
         self.verify()
 
 if __name__ == '__main__':

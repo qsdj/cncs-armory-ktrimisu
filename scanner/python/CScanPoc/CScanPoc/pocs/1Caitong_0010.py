@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = '1Caitong_0006' # 平台漏洞编号，留空
+    vuln_id = '1Caitong_0010' # 平台漏洞编号，留空
     name = '一采通电子采购系统任意文件上传' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.FILE_UPLOAD # 漏洞类型
@@ -21,7 +21,7 @@ class Vuln(ABVuln):
 
 
 class Poc(ABPoc):
-    poc_id = '1caitong_0006' # 平台 POC 编号，留空
+    poc_id = '96b32a31-5f7c-47bf-9c58-4f5175f67f93'
     author = '国光'  # POC编写者
     create_date = '2018-05-22' # POC创建时间
 
@@ -48,10 +48,8 @@ class Poc(ABPoc):
             res = r.text
             verify_url=arg+"9d37b73795649038.cer"
             if  r.status_code==200 and  "9d37b73795649038.cer" in res:
-                self.output.report(self.vuln,
-                                   '发现{target}存在{name}漏洞,在该验证过程中上传了文件地址为:{url},请及时删除。'.format(target=self.target,
-                                                                                              name=self.vuln.name,
-                                                                                              url=verify_url))
+                self.output.report(self.vuln,'发现{target}存在{name}漏洞,在该验证过程中上传了文件地址为:{url},请及时删除。'.format(
+                    target=self.target, name=self.vuln.name, url=verify_url))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
@@ -76,10 +74,8 @@ class Poc(ABPoc):
             res = r.text
             verify_url=arg+"9d37b73795649038.cer"
             if  r.status_code==200:
-                self.output.report(self.vuln,
-                                   '发现{target}存在{name}漏洞,已上传webshell地址:{url}密码为c,请及时删除。'.format(target=self.target,
-                                                                                                name=self.vuln.name,
-                                                                                                url=verify_url))
+                self.output.report(self.vuln,'发现{target}存在{name}漏洞,已上传webshell地址:{url}密码为c,请及时删除。'.format(
+                    target=self.target, name=self.vuln.name, url=verify_url))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))

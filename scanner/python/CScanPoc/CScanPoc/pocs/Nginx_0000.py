@@ -16,7 +16,7 @@ class Vuln(ABVuln):
         此外如果在HTTP请求中添加了目录遍历序列的话，就可以覆盖内存寄存器，导致拒绝服务。
     '''  # 漏洞描述
     ref = 'http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-2263'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
     cve_id = 'CVE-2010-2263'  # cve编号
     product = 'Nginx'  # 漏洞应用名称
     product_version = '0.8 before 0.8.40 and 0.7 before 0.7.66'  # 漏洞应用版本
@@ -63,7 +63,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 if __name__ == '__main__':
     Poc().run()

@@ -16,15 +16,15 @@ class Vuln(ABVuln):
         "/BlackShow.aspx?paperName=1&qnum=1",
         "/admin/B/ajax/showB1.aspx?paperName=%2527",
     ''' # 漏洞描述
-    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0113030
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0113030
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'Hsort'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = 'Hsort_0007'
+    poc_id = '0b37c88d-4f8b-48ad-b27a-6afc3f9efd67'
     author = '国光'  # POC编写者
     create_date = '2018-05-15' # POC创建时间
 
@@ -55,7 +55,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 
 if __name__ == '__main__':

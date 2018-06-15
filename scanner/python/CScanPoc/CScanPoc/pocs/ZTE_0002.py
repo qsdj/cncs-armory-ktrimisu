@@ -13,10 +13,10 @@ class Vuln(ABVuln):
     desc = '''
         中兴ZXV10 W812N路由设置文件未授权访问下载：manager_dev_config_t.gch
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
-    product = 'ZXV10_W812N'  # 漏洞应用名称
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
+    product = 'ZTE'  # 漏洞应用名称
     product_version = '中兴ZXV10 W812N'  # 漏洞应用版本
 
 class Poc(ABPoc):
@@ -68,7 +68,7 @@ Content-Disposition: form-data; name="defcfg"
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 if __name__ == '__main__':
     Poc().run()

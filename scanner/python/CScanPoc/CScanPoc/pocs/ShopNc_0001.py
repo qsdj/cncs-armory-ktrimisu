@@ -15,9 +15,9 @@ class Vuln(ABVuln):
         ShopNc v6.0 /index.php文件存在SQL注入漏洞。
     '''  # 漏洞描述
     ref = 'http://0day5.com/archives/1218/'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
-    product = 'ShopNc CMS'  # 漏洞应用名称
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
+    product = 'ShopNc'  # 漏洞应用名称
     product_version = 'v6.0'  # 漏洞应用版本
 
 class Poc(ABPoc):
@@ -51,7 +51,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 if __name__ == '__main__':
     Poc().run()

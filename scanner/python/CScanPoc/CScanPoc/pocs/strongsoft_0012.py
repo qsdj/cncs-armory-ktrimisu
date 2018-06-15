@@ -5,19 +5,20 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re, urlparse
 
 class Vuln(ABVuln):
-    vuln_id = 'strongsoft_0012' # 平台漏洞编号，留空
+    vuln_id = 'StrongSoft_0012' # 平台漏洞编号，留空
     name = '四创灾害预警系统 文件上传'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_UPLOAD # 漏洞类型
     disclosure_date = '2014-06-05'  # 漏洞公布时间
     desc = '''
         福建四创软件开发的“山洪灾害预警监测系统” 过滤不完整导致任意文件上传。
+        /plan/AjaxHandle/UpLoadFloodPlanFile.ashx?doc=plan
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
-    product = '四创'  # 漏洞应用名称
-    product_version = '四创灾害预警系统'  # 漏洞应用版本
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
+    product = '四创灾害预警系统'  # 漏洞应用名称
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '68de2316-9da6-4436-94e3-fc834c79f46f'
@@ -82,7 +83,7 @@ Submit Query
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 if __name__ == '__main__':
     Poc().run()

@@ -12,17 +12,17 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2016-01-09'  # 漏洞公布时间
     desc = '''
-        Wordpress AzonPop Plugin SQL Injection
+        Wordpress AzonPop Plugin SQL Injection.
     ''' # 漏洞描述
     ref = 'https://cxsecurity.com/issue/WLB-2016010049' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'WordPress'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Wordpress AzonPop Plugin'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = 'WordPress_0096' # 平台 POC 编号，留空
+    poc_id = '9a2d8164-119f-433a-bed0-0d6ac3e13d5c'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 
@@ -46,7 +46,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 
 if __name__ == '__main__':

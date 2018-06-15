@@ -24,14 +24,14 @@ class Vuln(ABVuln):
         "/teacher/teachingtechnology/Course_Record_P.aspx?id=1"
     ''' # 漏洞描述
     ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=0108502' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = '安脉学校综合管理平台'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = 'anmai_0008' # 平台 POC 编号，留空
+    poc_id = 'c5ad779d-c935-432b-9279-1fe4cd71a2b6'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 
@@ -68,7 +68,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 
 if __name__ == '__main__':

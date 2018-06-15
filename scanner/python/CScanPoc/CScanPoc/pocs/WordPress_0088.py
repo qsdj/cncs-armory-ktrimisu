@@ -7,22 +7,22 @@ hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
     vuln_id = 'WordPress_0088' # 平台漏洞编号，留空
-    name = 'Wordpress AzonPop Plugin SQL Injection' # 漏洞名称
+    name = 'WordPress AzonPop Plugin SQL Injection' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2016-01-09'  # 漏洞公布时间
     desc = '''
-        Wordpress AzonPop Plugin SQL Injection
+        WordPress AzonPop Plugin SQL Injection
     ''' # 漏洞描述
     ref = 'https://cxsecurity.com/issue/WLB-2016010049' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'WordPress'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'WordPress AzonPop Plugin'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = 'WordPress_0088' # 平台 POC 编号，留空
+    poc_id = 'fceb69c4-652d-46e0-9374-23b738798b7e'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 
@@ -44,7 +44,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 
 if __name__ == '__main__':

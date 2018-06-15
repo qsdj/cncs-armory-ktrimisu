@@ -6,7 +6,7 @@ import random
 import urllib
 
 class Vuln(ABVuln):
-    vuln_id = 'seentech_0015' # 平台漏洞编号，留空
+    vuln_id = 'Seentech_0015' # 平台漏洞编号，留空
     name = '中科新业网络哨兵 远程命令执行'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型
@@ -15,11 +15,11 @@ class Vuln(ABVuln):
         中科新业网络哨兵系统exchange.php远程命令执行漏洞。
         执行getshell，导致其所监控的网络内网络用户隐私泄露，包括上网记录，邮件，聊天记录等。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = '中科新业网络哨兵'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
@@ -58,7 +58,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 if __name__ == '__main__':
     Poc().run()

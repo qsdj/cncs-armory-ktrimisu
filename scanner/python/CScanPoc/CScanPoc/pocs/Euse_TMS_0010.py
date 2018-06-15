@@ -13,9 +13,9 @@ class Vuln(ABVuln):
     desc = '''
         Euse TMS(易用在线培训系统) /js/mood/xinqing.aspx?action=mood&classid=download&id=1 SQL注入漏洞。
     ''' # 漏洞描述
-    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0118985
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0118985
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'Euse TMS(易用在线培训系统)'  # 漏洞应用名称
     product_version = 'v6'  # 漏洞应用版本
 
@@ -42,7 +42,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 
 if __name__ == '__main__':

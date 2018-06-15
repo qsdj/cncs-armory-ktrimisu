@@ -17,7 +17,7 @@ class Vuln(ABVuln):
         Dork 2 : inurl:shop.php?ac=view&shopid=
     '''  # 漏洞描述
     ref = 'http://www.exploit-db.com/exploits/14997/'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
     cve_id = 'CVE-2010-4912'  # cve编号
     product = 'UCenter'  # 漏洞应用名称
     product_version = 'UCenter Home 2.0'  # 漏洞应用版本
@@ -49,7 +49,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 if __name__ == '__main__':
     Poc().run()

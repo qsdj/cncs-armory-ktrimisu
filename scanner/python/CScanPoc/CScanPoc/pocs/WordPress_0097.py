@@ -15,14 +15,14 @@ class Vuln(ABVuln):
         WordPress Plugin Fancybox 3.0.2 - Persistent Cross-Site Scripting
     ''' # 漏洞描述
     ref = 'https://www.exploit-db.com/exploits/36087/' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
     cve_id = 'CVE-2015-1494	Type: Webapps' #cve编号
     product = 'WordPress'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'WordPress Plugin Fancybox 3.0.2'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = 'WordPress_0097' # 平台 POC 编号，留空
+    poc_id = '8efbbebe-f9e3-48c9-94f2-e37838086aeb'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 
@@ -49,7 +49,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 
 if __name__ == '__main__':

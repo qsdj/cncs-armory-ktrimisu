@@ -5,19 +5,19 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'wordpress_0003_p' # 平台漏洞编号，留空
-    name = 'Wordpress PHPmailer 命令执行漏洞' # 漏洞名称
+    vuln_id = 'WordPress_0003_p' # 平台漏洞编号，留空
+    name = 'WordPress PHPmailer 命令执行' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型
     disclosure_date = '2017-05-03'  # 漏洞公布时间
     desc = '''
-    Wordpress的PHPMailer漏洞利用细节在WordPress核心中的实现。未经授权的攻击者利用漏洞就能实现远程代码执行，针对目标服务器实现即时访问，最终导致目标应用服务器的完全陷落。。
+        WordPress的PHPMailer漏洞利用细节在WordPress核心中的实现。未经授权的攻击者利用漏洞就能实现远程代码执行，针对目标服务器实现即时访问，最终导致目标应用服务器的完全陷落。。
     ''' # 漏洞描述
     ref = 'http://0day5.com/archives/3960/' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
     cve_id = 'CVE-2016-10033' #cve编号
     product = 'WordPress'  # 漏洞应用名称
-    product_version = 'WordPress < 4.7.1'  # 漏洞应用版本
+    product_version = 'WordPress PHPmailer < 4.7.1'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'ce1a2fb0-9058-46cc-b059-6c868d169384'
@@ -52,7 +52,7 @@ class Poc(ABPoc):
 
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 if __name__ == '__main__':
     Poc().run()

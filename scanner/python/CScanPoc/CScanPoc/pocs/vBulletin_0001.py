@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
     vuln_id = 'vBulletin_0001'  # 平台漏洞编号，留空
-    name = 'vBulletin 5.x.x ajax/api 远程代码执行漏洞 POC'  # 漏洞名称
+    name = 'vBulletin 5.x.x ajax/api 远程代码执行'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE  # 漏洞类型
     disclosure_date = '2015-11-05'  # 漏洞公布时间
@@ -52,7 +52,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 if __name__ == '__main__':
     Poc().run()

@@ -9,15 +9,15 @@ class Vuln(ABVuln):
     name = '3gmeeting视讯系统任意文件下载'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型
-    disclosure_date = ''  # 漏洞公布时间
+    disclosure_date = 'Unkonwn'  # 漏洞公布时间
     desc = '''
         3gmeeting视讯系统 /%c0%ae/WEB-INF/web.xml 任意文件下载漏洞。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = '3gmeeting'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'cf0d2373-7943-40af-9646-ec71d0d09b09'
@@ -47,7 +47,7 @@ class Poc(ABPoc):
         except Exception, e:
             self.verify()
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 if __name__ == '__main__':
     Poc().run()

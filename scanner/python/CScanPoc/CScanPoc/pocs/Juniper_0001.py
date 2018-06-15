@@ -20,7 +20,7 @@ class Vuln(ABVuln):
         <<< %s(un='%s') = %u 后门密码
     '''  # 漏洞描述
     ref = 'http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-7755'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
     cve_id = 'CVE-2015-7755'  # cve编号
     product = 'Juniper'  # 漏洞应用名称
     product_version = '6.2.0r15到6.2.0r18和6.3.0r12到6.3.0r20'  # 漏洞应用版本
@@ -66,7 +66,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 if __name__ == '__main__':
     Poc().run()

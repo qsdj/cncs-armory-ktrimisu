@@ -6,7 +6,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = '' # 平台漏洞编号，留空
+    vuln_id = 'Unkonwn' # 平台漏洞编号，留空
     name = 'WordPress Event List插件跨站脚本漏洞(需要登陆)' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型
@@ -42,7 +42,7 @@ class Poc(ABPoc):
 
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 if __name__ == '__main__':
     Poc().run()

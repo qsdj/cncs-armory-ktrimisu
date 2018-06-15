@@ -8,16 +8,16 @@ import hashlib
 
 class Vuln(ABVuln):
     vuln_id = 'SePortal_0000' # 平台漏洞编号，留空
-    name = 'SePortal 2.4 /poll.php SQL注入漏洞' # 漏洞名称
+    name = 'SePortal 2.4 /poll.php SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2008-06-29'  # 漏洞公布时间
     desc = '''
-        SePortal 2.4 /poll.php SQL注入漏洞
+        SePortal 2.4 /poll.php SQL注入漏洞。
     ''' # 漏洞描述
     ref = 'https://www.seebug.org/vuldb/ssvid-8867' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'SePortal'  # 漏洞应用名称
     product_version = '2.4'  # 漏洞应用版本
 

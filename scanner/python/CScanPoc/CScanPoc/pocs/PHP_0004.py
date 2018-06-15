@@ -17,7 +17,7 @@ class Vuln(ABVuln):
         其中Apache+mod_php和nginx+php-fpm不受此漏洞影响。
     '''  # 漏洞描述
     ref = 'http://www.venustech.com.cn/NewsInfo/124/13680.Html'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
     cve_id = 'CVE-2012-1823'  # cve编号
     product = 'PHP'  # 漏洞应用名称
     product_version = 'php < 5.3.12 or php < 5.4.2'  # 漏洞应用版本
@@ -49,7 +49,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 if __name__ == '__main__':
     Poc().run()

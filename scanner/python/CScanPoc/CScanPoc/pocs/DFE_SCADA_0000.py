@@ -14,14 +14,14 @@ class Vuln(ABVuln):
         东方电子数据采集与监视控制系统通用系统文件包含漏洞。
     ''' # 漏洞描述
     ref = 'https://www.secpulse.com/archives/40256.html' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = '东方电子SCADA'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = 'dfe_scada_0000' # 平台 POC 编号，留空
+    poc_id = 'ddd1a6a7-ba34-42ec-96cb-8048577a5a43'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 
@@ -46,7 +46,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 
 if __name__ == '__main__':

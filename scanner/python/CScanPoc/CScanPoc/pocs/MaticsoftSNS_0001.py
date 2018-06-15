@@ -13,9 +13,9 @@ class Vuln(ABVuln):
     desc = '''
         MaticsoftSNS 1.9版本 /CMSUploadFile.aspx 页面任意文件上传漏洞。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'MaticsoftSNS'  # 漏洞应用名称
     product_version = 'MaticsoftSNS 1.9版本'  # 漏洞应用版本
 
@@ -68,7 +68,7 @@ testvul_uploadfile_test
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 if __name__ == '__main__':
     Poc().run()

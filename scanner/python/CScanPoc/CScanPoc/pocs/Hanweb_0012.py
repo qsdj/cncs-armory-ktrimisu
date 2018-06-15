@@ -17,8 +17,8 @@ class Vuln(ABVuln):
     ref = 'Unknown'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
-    product = 'JCMS(Hanweb)'  # 漏洞应用名称
-    product_version = 'Unknown'  # 漏洞应用版本
+    product = 'Hanweb(大汉)'  # 漏洞应用名称
+    product_version = '大汉JCMS'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '1e232679-d0da-4741-9c7c-2e1a4b6588bb'
@@ -51,7 +51,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 if __name__ == '__main__':
     Poc().run()

@@ -7,7 +7,7 @@ import re
 
 class Vuln(ABVuln):
     vuln_id = 'PHPCMS_0007' # 平台漏洞编号，留空
-    name = 'PHPCMS v9 /index.php 任意文件读取漏洞' # 漏洞名称
+    name = 'PHPCMS v9 /index.php 任意文件读取' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型
     disclosure_date = '2012-07-25'  # 漏洞公布时间
@@ -15,8 +15,8 @@ class Vuln(ABVuln):
         PHPCMS v9 /index.php 任意文件读取漏洞。
     ''' # 漏洞描述
     ref = 'https://www.seebug.org/vuldb/ssvid-60295' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'PHPCMS'  # 漏洞应用名称
     product_version = 'V9'  # 漏洞应用版本
 

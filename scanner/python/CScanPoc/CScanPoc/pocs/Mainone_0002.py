@@ -13,15 +13,15 @@ class Vuln(ABVuln):
     desc = '''
         铭万行业门户建站系统存在通用注入漏洞 涉及数十万企业用户。
     ''' # 漏洞描述
-    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0104558
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0104558
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'Mainone'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = 'Mainone_0002' # 平台 POC 编号，留空
+    poc_id = 'ce478452-5d94-47fd-9c4c-e83cd446b329'
     author = '国光'  # POC编写者
     create_date = '2018-05-22' # POC创建时间
 
@@ -42,7 +42,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 
 if __name__ == '__main__':

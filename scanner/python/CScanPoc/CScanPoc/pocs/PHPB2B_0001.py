@@ -13,9 +13,9 @@ class Vuln(ABVuln):
     desc = '''
         PHPB2B 直接访问 install/install.php?step=5&app_lang=zh-cn&do=complete 直接查看mysql密码。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'PHPB2B'  # 漏洞应用名称
     product_version = 'PHPB2B'  # 漏洞应用版本
 
@@ -47,7 +47,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 if __name__ == '__main__':
     Poc().run()

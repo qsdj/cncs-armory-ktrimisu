@@ -8,7 +8,7 @@ import urllib2
 
 class Vuln(ABVuln):
     vuln_id = 'WordPress_MiwoFTP_0005'  # 平台漏洞编号，留空
-    name = 'WordPress MiwoFTP 任意文件下载漏洞'  # 漏洞名称
+    name = 'WordPress MiwoFTP 任意文件下载'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD  # 漏洞类型
     disclosure_date = '2015-04-21'  # 漏洞公布时间
@@ -16,8 +16,8 @@ class Vuln(ABVuln):
         WordPress MiwoFTP Plugin <= 1.0.5 - Arbitrary File Download.
     '''  # 漏洞描述
     ref = 'https://www.exploit-db.com/exploits/36801/'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'Wordpress'  # 漏洞应用名称
     product_version = 'WordPress MiwoFTP Plugin <= 1.0.5'  # 漏洞应用版本
 
@@ -49,7 +49,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 if __name__ == '__main__':
     Poc().run()

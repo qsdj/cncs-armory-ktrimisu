@@ -14,9 +14,9 @@ class Vuln(ABVuln):
         北京清大新洋通用图书馆集成系统GLIS9.0，存在注入漏洞： 
         opac/eaal/eaaldetail.jsp?kzh=zyk0040640
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = '清大新洋'  # 漏洞应用名称
     product_version = '北京清大新洋通用图书馆集成系统GLIS9.0'  # 漏洞应用版本
 
@@ -53,7 +53,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 if __name__ == '__main__':
     Poc().run()

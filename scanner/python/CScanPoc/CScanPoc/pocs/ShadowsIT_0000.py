@@ -11,17 +11,18 @@ class Vuln(ABVuln):
     type = VulnType.LFI # 漏洞类型
     disclosure_date = '2015-05-25'  # 漏洞公布时间
     desc = '''
-        Shadows-IT Designs本地文件包含
+        Shadows-IT Designs本地文件包含漏洞。
+        /admin/selector.php?page=
     ''' # 漏洞描述
-    ref = '' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
-    product = 'shadows-it'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    ref = 'Unkonwn' # 漏洞来源
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
+    product = 'ShadowsIT'  # 漏洞应用名称
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = 'ShadowsIT_0000' # 平台 POC 编号，留空
+    poc_id = '82342210-9cee-4a29-9ce2-9b0ca65db5cc'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 
@@ -44,7 +45,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 
 if __name__ == '__main__':

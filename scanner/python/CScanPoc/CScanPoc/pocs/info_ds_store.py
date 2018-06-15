@@ -8,15 +8,15 @@ class Vuln(ABVuln):
     name = '.DS_Store文件泄露' # 漏洞名称
     level = VulnLevel.LOW # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
-    disclosure_date = ''  # 漏洞公布时间
+    disclosure_date = 'Unkonwn'  # 漏洞公布时间
     desc = '''
         在发布代码钱未删除文件夹中隐藏的.DS_store文件,里面可能包含了某些铭感文件名等信息.
     ''' # 漏洞描述
-    ref = '' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'Info_DS_Store(.DS_Store文件泄露)'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '01cc682c-a047-4d04-9a7b-06050a0ea328'
@@ -38,7 +38,7 @@ class Poc(ABPoc):
 
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 if __name__ == '__main__':
     Poc().run()

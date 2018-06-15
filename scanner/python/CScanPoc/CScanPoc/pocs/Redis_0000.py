@@ -12,13 +12,13 @@ class Vuln(ABVuln):
     type = VulnType.MISCONFIGURATION # 漏洞类型
     disclosure_date = '2015-11-11'  # 漏洞公布时间
     desc = '''
-        Redis未授权访问漏洞.
+        Redis未授权访问漏洞。
     ''' # 漏洞描述
     ref = 'http://www.freebuf.com/vuls/85188.html' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'Redis'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
@@ -49,7 +49,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 
 if __name__ == '__main__':

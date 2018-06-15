@@ -13,9 +13,9 @@ class Vuln(ABVuln):
         迈普ISG1000系列网关，未授权下载配置文件。
         system/maintenance/export.php?type=sc
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = '迈普'  # 漏洞应用名称
     product_version = '迈普ISG1000系列网关'  # 漏洞应用版本
 
@@ -48,7 +48,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 if __name__ == '__main__':
     Poc().run()

@@ -14,14 +14,14 @@ class Vuln(ABVuln):
     desc = '''
         武汉群翔软件有限公司商城系统注入.
     '''  # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=0118447'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0118447
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'ShopNum1'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 class Poc(ABPoc):
-    poc_id = 'ShopNum1_0009'
+    poc_id = '7fff8bc8-db1b-42e6-b066-68d198c3baaa'
     author = '国光'  # POC编写者
     create_date = '2018-05-25'  # POC创建时间
 
@@ -45,7 +45,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 if __name__ == '__main__':
     Poc().run()

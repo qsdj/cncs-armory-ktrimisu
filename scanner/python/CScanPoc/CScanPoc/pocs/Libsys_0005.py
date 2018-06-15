@@ -18,8 +18,8 @@ class Vuln(ABVuln):
         /top/top_custom.php?_SESSION[ADMIN_USER]=opac_admin
     '''  # 漏洞描述
     ref = 'https://www.seebug.org/vuldb/ssvid-90722'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = '汇文图书管理系统'  # 漏洞应用名称
     product_version = 'V5.5'  # 漏洞应用版本
 
@@ -70,7 +70,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 if __name__ == '__main__':
     Poc().run()

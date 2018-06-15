@@ -13,9 +13,9 @@ class Vuln(ABVuln):
         SiteFactory CMS 5.5.9 存在任意文件下载漏洞。
     '''  # 漏洞描述
     ref = 'https://www.seebug.org/vuldb/ssvid-89337'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
-    product = 'SiteFactory CMS'  # 漏洞应用名称
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
+    product = 'SiteFactoryCMS'  # 漏洞应用名称
     product_version = '5.5.9'  # 漏洞应用版本
 
 class Poc(ABPoc):
@@ -43,7 +43,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 if __name__ == '__main__':
     Poc().run()

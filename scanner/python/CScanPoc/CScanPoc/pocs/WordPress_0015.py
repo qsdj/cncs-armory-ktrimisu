@@ -7,7 +7,7 @@ import urllib2
 
 class Vuln(ABVuln):
     vuln_id = 'WordPress_0015' # 平台漏洞编号，留空
-    name = 'WordPress UnGallery plugin 本地文件包含漏洞'  # 漏洞名称
+    name = 'WordPress UnGallery plugin 本地文件包含'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型
     disclosure_date = '2011-08-20'  # 漏洞公布时间
@@ -15,10 +15,10 @@ class Vuln(ABVuln):
          漏洞文件：/wp-content/plugins/ungallery/source_vuln.php.
     '''  # 漏洞描述
     ref = 'https://www.exploit-db.com/exploits/17704/'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
-    product = 'WordPress UnGallery plugin '  # 漏洞应用名称
-    product_version = '<= 1.5.8'  # 漏洞应用版本
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
+    product = 'WordPress'  # 漏洞应用名称
+    product_version = 'WordPress UnGallery plugin <= 1.5.8'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'e88f184e-379d-4e0e-af19-572851a5cae6'
@@ -46,7 +46,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 if __name__ == '__main__':
     Poc().run()

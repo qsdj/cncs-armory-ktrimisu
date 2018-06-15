@@ -5,19 +5,19 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import time
 
 class Vuln(ABVuln):
-    vuln_id = 'WHIR_0013' # 平台漏洞编号，留空
-    name = '万户oa任意sql语句执行'  # 漏洞名称
+    vuln_id = 'Whir_0013' # 平台漏洞编号，留空
+    name = '万户OA任意sql语句执行'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型
     disclosure_date = '2014-06-10'  # 漏洞公布时间
     desc = '''
-        万户oa /defaultroot/GraphReportAction.do?action=showResult 任意sql语句执行，直接返回数据。
+        万户OA /defaultroot/GraphReportAction.do?action=showResult 任意sql语句执行，直接返回数据。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
-    product = '万户'  # 漏洞应用名称
-    product_version = '万户oa'  # 漏洞应用版本
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
+    product = '万户OA'  # 漏洞应用名称
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '135a2be7-f215-429c-937f-ae81af4cd446'
@@ -47,7 +47,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 if __name__ == '__main__':
     Poc().run()

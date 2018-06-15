@@ -21,7 +21,7 @@ class Vuln(ABVuln):
 
 
 class Poc(ABPoc):
-    poc_id = '1caitong_0000' # 平台 POC 编号，留空
+    poc_id = '5c10b24d-e906-470b-bd32-6a89808a1a3c'
     author = '国光'  # POC编写者
     create_date = '2018-05-22' # POC创建时间
 
@@ -77,7 +77,7 @@ class Poc(ABPoc):
                 verify_url=arg+"/library/editornew/Editor/NewImage/"+match.group(1)
                 rg = requests.get(verify_url)
                 if rg.status_code==200 and "testvul"  in rg.text:
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞,在该验证过程中上传了文件地址为:{url},请及时删除。'.format(target=self.target,name=self.vuln.name,url=verify_url))
+                    self.output.report(self.vuln, '发现{target}存在{name}漏洞，在该验证过程中上传了文件地址为:{url},请及时删除。'.format(target=self.target,name=self.vuln.name,url=verify_url))
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
 
@@ -130,10 +130,9 @@ class Poc(ABPoc):
                 verify_url = arg + "/library/editornew/Editor/NewImage/" + match.group(1)
                 rg = requests.get(verify_url)
                 if rg.status_code == 200:
-                    self.output.report(self.vuln,
-                                       '发现{target}存在{name}漏洞,已上传webshell地址:{url}密码为c,请及时删除。'.format(target=self.target,
-                                                                                                 name=self.vuln.name,
-                                                                                                 url=verify_url))
+                    self.output.report(self.vuln,'发现{target}存在{name}漏洞,已上传webshell地址:{url}密码为c,请及时删除。'.format(
+                        target=self.target, name=self.vuln.name, url=verify_url))
+                    
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
 

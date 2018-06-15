@@ -13,11 +13,11 @@ class Vuln(ABVuln):
         华创智能加速路由器，设计缺陷，逻辑错误。
         通过路由WEB登录页面随便填写户名(测试以admin为例)密码为随便（但密码一定要通过burp拦截提交而且密码后面必须带“%26”），就可以随意登录了。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = '华创路由器'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'a67f00e7-9567-43d4-863f-b25499a520c0'
@@ -49,7 +49,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 if __name__ == '__main__':
     Poc().run()

@@ -13,15 +13,15 @@ class Vuln(ABVuln):
     desc = '''
         安财软件通用报销系统 /WS/WebService.asmx/GetFile 任意文件下载。
     ''' # 漏洞描述
-    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0121651
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0121651
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'AcSoft'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = 'acsoft_0000' # 平台 POC 编号，留空
+    poc_id = '22906dcc-e989-4c14-965d-1e4fcec4078d'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 
@@ -43,7 +43,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 
 if __name__ == '__main__':

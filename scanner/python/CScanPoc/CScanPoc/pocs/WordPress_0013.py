@@ -6,7 +6,7 @@ import urllib2
 
 class Vuln(ABVuln):
     vuln_id = 'WordPress_0013' # 平台漏洞编号，留空
-    name = 'WordPress Media Cleaner Plugin 2.2.6 XSS漏洞'  # 漏洞名称
+    name = 'WordPress Media Cleaner Plugin 2.2.6 XSS'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型
     disclosure_date = '2015-03-02'  # 漏洞公布时间
@@ -14,11 +14,11 @@ class Vuln(ABVuln):
         /wordpress/wp-admin/upload.php?s=test&page=wp-media-cleaner&view={XSS}&paged={XSS}&s={XSS}
         parameters: 'view' and 'paged' and 's' are not filtered.
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
-    product = 'WordPress Media Cleaner Plugin'  # 漏洞应用名称
-    product_version = '2.2.6 '  # 漏洞应用版本
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
+    product = 'WordPress'  # 漏洞应用名称
+    product_version = 'WordPress Media Cleaner Plugin 2.2.6 '  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '1fe76b15-dd37-43a8-829c-6b1e9e28f790'
@@ -47,7 +47,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 if __name__ == '__main__':
     Poc().run()

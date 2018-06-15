@@ -11,13 +11,13 @@ class Vuln(ABVuln):
     type = VulnType.LFI # 漏洞类型
     disclosure_date = '2015-06-06'  # 漏洞公布时间
     desc = '''
-        WordPress Simple Backup Plugin 任意下载漏洞s
+        WordPress Simple Backup Plugin 任意下载漏洞。
     ''' # 漏洞描述
-    ref = '' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
-    product = 'WordPress Simple Backup Plugin'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    ref = 'Unkonwn' # 漏洞来源
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
+    product = 'WordPress'  # 漏洞应用名称
+    product_version = 'WordPress Simple Backup Plugin'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
@@ -43,7 +43,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 
 if __name__ == '__main__':

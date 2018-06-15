@@ -7,22 +7,22 @@ hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
     vuln_id = 'weaver_0016' # 平台漏洞编号，留空
-    name = '泛微oa任意目录遍历' # 漏洞名称
+    name = '泛微OA任意目录遍历' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.FILE_TRAVERSAL # 漏洞类型
     disclosure_date = '2015-12-17'  # 漏洞公布时间
     desc = '''
-        泛微oa任意目录遍历
+        泛微OA https://wooyun.shuimugan.com/bug/view?bug_no=0148980 任意目录遍历。
     ''' # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=0148980' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0148980
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = '泛微OA'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = 'weaver_OA_0016' # 平台 POC 编号，留空
+    poc_id = 'b9088281-6e9c-4d2d-91ce-ec7c1ea2b25d'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 
@@ -44,7 +44,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 
 if __name__ == '__main__':

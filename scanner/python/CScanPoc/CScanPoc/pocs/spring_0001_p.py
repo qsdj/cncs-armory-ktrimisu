@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'spring_0001_p' # 平台漏洞编号，留空
+    vuln_id = 'Spring_0001_p' # 平台漏洞编号，留空
     name = 'Spring Data Commons远程代码执行漏洞' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型
@@ -46,7 +46,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 if __name__ == '__main__':
     Poc().run()

@@ -14,9 +14,9 @@ class Vuln(ABVuln):
     desc = '''
         CSDJCMS 3.5 app/controllers/dance.php文件存在SQL注入漏洞。
     ''' # 漏洞描述
-    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=59088
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=59088
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'CSDJCMS'  # 漏洞应用名称
     product_version = '3.5'  # 漏洞应用版本
 

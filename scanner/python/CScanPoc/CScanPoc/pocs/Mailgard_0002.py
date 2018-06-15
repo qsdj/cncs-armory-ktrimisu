@@ -16,10 +16,10 @@ class Vuln(ABVuln):
         深圳市河辰通讯佑友系列邮件网关 ./sync/linkman.php里面有明显的SQL注射,$group_id由于没有包含global.php，所以全局过滤无效并且不需要登录即可访问，如果未开启magic_quotes_gpc则可注入。
     ''' # 漏洞描述
     ref = 'http://0day5.com/archives/3207/' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'Mailgard佑友系列邮件网关'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
@@ -46,7 +46,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 
 if __name__ == '__main__':

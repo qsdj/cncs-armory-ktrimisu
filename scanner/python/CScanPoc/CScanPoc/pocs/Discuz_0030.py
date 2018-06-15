@@ -15,8 +15,8 @@ class Vuln(ABVuln):
         Discuz! x2.5 /source/plugin/myrepeats/table/table_myrepeats.php 泄漏服务器物理路径
     ''' # 漏洞描述
     ref = 'https://www.2cto.com/article/201211/171301.html' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'Discuz!'  # 漏洞应用名称
     product_version = 'x2.5'  # 漏洞应用版本
 
@@ -43,7 +43,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
         
 
 if __name__ == '__main__':

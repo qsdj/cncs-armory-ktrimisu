@@ -15,8 +15,8 @@ class Vuln(ABVuln):
         Discuz! 7.1 和 7.2 版本的faq.php文件存在sql注入漏洞
     ''' # 漏洞描述
     ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=66095' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'Discuz!'  # 漏洞应用名称
     product_version = 'Discuz! 7.1 7.2'  # 漏洞应用版本
 

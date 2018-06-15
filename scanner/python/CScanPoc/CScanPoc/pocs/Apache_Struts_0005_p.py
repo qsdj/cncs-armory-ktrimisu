@@ -14,8 +14,8 @@ class Vuln(ABVuln):
         Struts2 S2-007该漏洞用户输入被评为OGNL表达式时，有一个转换误差。这允许恶意用户执行任意代码。
     ''' # 漏洞描述
     ref = 'https://cwiki.apache.org/confluence/display/WW/S2-007' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'Apache Struts'  # 漏洞应用名称
     product_version = 'Apache Struts 2.0.0 - Struts 2.2.3 '  # 漏洞应用版本
 
@@ -44,7 +44,7 @@ class Poc(ABPoc):
 
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 if __name__ == '__main__':
     Poc().run()

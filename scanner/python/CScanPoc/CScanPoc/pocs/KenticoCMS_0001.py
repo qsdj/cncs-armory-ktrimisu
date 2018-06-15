@@ -13,8 +13,8 @@ class Vuln(ABVuln):
         Kentico CMS version 7.0.75 suffers from a user enumeration vulnerability.
     '''  # 漏洞描述
     ref = 'https://packetstormsecurity.com/files/125632/Kentico-CMS-7.0.75-User-Enumeration.html'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'KenticoCMS'  # 漏洞应用名称
     product_version = '7.0.75'  # 漏洞应用版本
 
@@ -42,7 +42,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 if __name__ == '__main__':
     Poc().run()

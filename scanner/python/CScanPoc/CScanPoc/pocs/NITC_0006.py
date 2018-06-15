@@ -13,15 +13,15 @@ class Vuln(ABVuln):
     desc = '''
         NITC营销系统 /suggestwordList.php?searchWord=a&language=1 SQL注入漏洞。
     ''' # 漏洞描述
-    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0152825
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0152825
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'NITC'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = 'NITC_0006' # 平台 POC 编号，留空
+    poc_id = '74810d0e-5c18-4c15-9d8b-256c43b08948'
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 
@@ -42,7 +42,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 
 if __name__ == '__main__':

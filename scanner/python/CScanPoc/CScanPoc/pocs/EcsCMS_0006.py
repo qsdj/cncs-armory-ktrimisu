@@ -13,15 +13,15 @@ class Vuln(ABVuln):
     desc = '''
         EcsCMS(易创思ECS)，易创思教育建站系统未授权访问可查看所有注册用户
     ''' # 漏洞描述
-    ref = '' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=086704
-    cnvd_id = '' # cnvd漏洞编号
-    cve_id = '' #cve编号
+    ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=086704
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cve_id = 'Unkonwn' #cve编号
     product = 'EcsCMS(易创思ECS)'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = 'esccms_0006' # 平台 POC 编号，留空
+    poc_id = '2704481e-6c28-4f71-bca3-11cc19acb8e8'
     author = '国光'  # POC编写者
     create_date = '2018-05-22' # POC创建时间
 
@@ -42,7 +42,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 
 if __name__ == '__main__':

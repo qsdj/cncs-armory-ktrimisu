@@ -8,7 +8,7 @@ hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
     vuln_id = 'WordPress_0040' # 平台漏洞编号，留空
-    name = 'WordPress 3.3.1 swfupload.swf 跨站脚本攻击漏洞' # 漏洞名称
+    name = 'WordPress 3.3.1 swfupload.swf XSS' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型
     disclosure_date = '2012-11-09'  # 漏洞公布时间
@@ -16,10 +16,10 @@ class Vuln(ABVuln):
         WordPress 3.3.1 swfupload.swf 跨站脚本攻击漏洞.
     ''' # 漏洞描述
     ref = 'https://packetstormsecurity.com/files/118009/WordPress-3.3.1-swfupload.swf-Cross-Site-Scripting.html' # 漏洞来源
-    cnvd_id = '' # cnvd漏洞编号
+    cnvd_id = 'Unkonwn' # cnvd漏洞编号
     cve_id = 'CVE-2012-3414 ' #cve编号
     product = 'WordPress'  # 漏洞应用名称
-    product_version = '2.5 - 3.3.1'  # 漏洞应用版本
+    product_version = 'WordPress 3.3.1 swfupload.swf 3.3.1'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
@@ -46,7 +46,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        super(Poc, self).exploit()
+        self.verify()
 
 
 
