@@ -5,12 +5,12 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
     vuln_id = 'Polycom_0000' # 平台漏洞编号
-    name = '宝利通(Polycom,Inc.)某型号产品存在任意文件包含' # 漏洞名称
+    name = '宝利通(Polycom,Inc.)旗下型号产品存在任意文件包含' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型
     disclosure_date = '2015-12-17'  # 漏洞公布时间
     desc = '''
-        宝利通(Polycom,Inc.)某型号产品存在任意文件包含漏洞，攻击者无需登录可以通过构造恶意语句来读取系统敏感文件信息。
+        宝利通(Polycom,Inc.)旗下型号产品存在任意文件包含漏洞，攻击者无需登录可以通过构造恶意语句来读取系统敏感文件信息。
     ''' # 漏洞描述
     ref = 'Uknown' #https://wooyun.shuimugan.com/bug/view?bug_no=149670
     cnvd_id = 'Uknown' # cnvd漏洞编号

@@ -5,12 +5,12 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
     vuln_id = 'Huatai_0000' # 平台漏洞编号
-    name = '华泰人寿某系统存在任意文件读取' # 漏洞名称
+    name = '华泰人寿系统存在任意文件读取' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型
     disclosure_date = '2016-02-07'  # 漏洞公布时间
     desc = '''
-        华泰人寿某系统存在任意文件读取漏洞。
+        华泰人寿系统存在任意文件读取漏洞。
     ''' # 漏洞描述
     ref = 'Unknown' #https://wooyun.shuimugan.com/bug/view?bug_no=164486
     cnvd_id = 'Unknown' # cnvd漏洞编号

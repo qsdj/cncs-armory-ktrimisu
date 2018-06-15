@@ -5,12 +5,12 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
     vuln_id = 'ZTE_0008' # 平台漏洞编号
-    name = '中兴某网关设备通用型任意文件下载(无需登录)' # 漏洞名称
+    name = '中兴网关设备通用型任意文件下载(无需登录)' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型
     disclosure_date = '2017-08-22'  # 漏洞公布时间
     desc = '''
-        中兴某网关设备通用型任意文件下载(无需登录)，利用PHP的1024截断的特性。
+        中兴网关设备通用型任意文件下载(无需登录)，利用PHP的1024截断的特性。
     ''' # 漏洞描述
     ref = 'Unknown' #https://wooyun.shuimugan.com/bug/view?bug_no=189704
     cnvd_id = 'Unknown' # cnvd漏洞编号

@@ -5,12 +5,12 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
     vuln_id = 'Cqupt_0000' # 平台漏洞编号
-    name = '重庆邮电大学某分站存在文件下载' # 漏洞名称
+    name = '重庆邮电大学分站存在文件下载' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型
     disclosure_date = '2015-12-04'  # 漏洞公布时间
     desc = '''
-        重庆邮电大学某分站存在文件下载漏洞，攻击者可以通过构造恶意语句来下载系统敏感文件信息。
+        重庆邮电大学分站存在文件下载漏洞，攻击者可以通过构造恶意语句来下载系统敏感文件信息。
     ''' # 漏洞描述
     ref = 'Uknown' #https://wooyun.shuimugan.com/bug/view?bug_no=147662
     cnvd_id = 'Uknown' # cnvd漏洞编号

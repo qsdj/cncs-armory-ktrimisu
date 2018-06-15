@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
     vuln_id = 'Tianfu_0007' # 平台漏洞编号
-    name = '天府商品交易所某处XSS' # 漏洞名称
+    name = '天府商品交易所XSS' # 漏洞名称
     level = VulnLevel.LOW # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型
     disclosure_date = '2016-07-08'  # 漏洞公布时间

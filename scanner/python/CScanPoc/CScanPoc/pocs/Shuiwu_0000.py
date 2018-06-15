@@ -5,12 +5,12 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
     vuln_id = 'Shuiwu_0000' # 平台漏洞编号
-    name = '某政府税务系统存在通用型文件包含' # 漏洞名称
+    name = '政府税务系统存在通用型文件包含' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型
     disclosure_date = '2016-04-11'  # 漏洞公布时间
     desc = '''
-        某政府税务系统存在通用型文件包含漏洞。
+        政府税务系统存在通用型文件包含漏洞。
     ''' # 漏洞描述
     ref = '' #https://wooyun.shuimugan.com/bug/view?bug_no=169312
     cnvd_id = 'Unknown' # cnvd漏洞编号

@@ -5,12 +5,12 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
     vuln_id = 'Yonyou_0047' # 平台漏洞编号
-    name = '用友ERP-NC某处通用文件包含' # 漏洞名称
+    name = '用友ERP-NC通用文件包含' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型
     disclosure_date = '2016-01-19'  # 漏洞公布时间
     desc = '''
-        用友ERP-NC某处通用文件包含漏洞，攻击者可以通过构造恶意语句来读取系统敏感文件信息。
+        用友ERP-NC通用文件包含漏洞，攻击者可以通过构造恶意语句来读取系统敏感文件信息。
     ''' # 漏洞描述
     ref = 'Uknown' #https://wooyun.shuimugan.com/bug/view?bug_no=148227
     cnvd_id = 'Uknown' # cnvd漏洞编号

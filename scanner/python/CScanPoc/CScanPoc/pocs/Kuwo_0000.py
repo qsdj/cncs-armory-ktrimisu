@@ -5,12 +5,12 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
     vuln_id = 'Kuwo_0000' # 平台漏洞编号
-    name = '我音乐某系统修复不当存在任意文件包含' # 漏洞名称
+    name = '我音乐旗下系统修复不当存在任意文件包含' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型
     disclosure_date = '	2016-01-11'  # 漏洞公布时间
     desc = '''
-        酷我音乐某系统修复不当存在任意文件包含漏洞，可以构造语句读取敏感文件信息。
+        酷我音乐旗下系统修复不当存在任意文件包含漏洞，可以构造语句读取敏感文件信息。
     ''' # 漏洞描述
     ref = 'Unknown' #https://wooyun.shuimugan.com/bug/view?bug_no=154938
     cnvd_id = 'Unknown' # cnvd漏洞编号

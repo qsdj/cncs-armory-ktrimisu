@@ -5,12 +5,12 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
     vuln_id = 'JK_0000' # 平台漏洞编号
-    name = '某机房监控系统设备存在通用型任意文件遍历' # 漏洞名称
+    name = '机房监控系统设备存在通用型任意文件遍历' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型
     disclosure_date = '2015-12-17'  # 漏洞公布时间
     desc = '''
-        某机房监控系统设备存在通用型任意文件遍历漏洞，可以读取任意敏感文件信息。
+        机房监控系统设备存在通用型任意文件遍历漏洞，可以读取任意敏感文件信息。
     ''' # 漏洞描述
     ref = 'Unknown' #https://wooyun.shuimugan.com/bug/view?bug_no=153725
     cnvd_id = 'Unknown' # cnvd漏洞编号

@@ -5,12 +5,12 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
     vuln_id = 'Cht_0007' # 平台漏洞编号
-    name = '中国电信某门户备份下载' # 漏洞名称
+    name = '中国电信旗下门户备份下载' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型
     disclosure_date = '2016-01-28'  # 漏洞公布时间
     desc = '''
-        中国电信某门户备份下载，漏洞打包可威胁内网。
+        中国电信旗下门户备份下载，漏洞打包可威胁内网。
     ''' # 漏洞描述
     ref = 'Unknown' #https://wooyun.shuimugan.com/bug/view?bug_no=160931
     cnvd_id = 'Unknown' # cnvd漏洞编号
