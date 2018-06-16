@@ -4,7 +4,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
     vuln_id = 'Kuwo_0101' # 平台漏洞编号
-    name = '酷我音乐某站存在sql注入' # 漏洞名称
+    name = '酷我音乐旗下分站存在sql注入' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2016-07-16'  # 漏洞公布时间

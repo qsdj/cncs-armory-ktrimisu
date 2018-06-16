@@ -5,12 +5,12 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
     vuln_id = 'Coolpad_0101' # 平台漏洞编号
-    name = '酷派某站存在SQL盲注漏洞可获取数据库信息' # 漏洞名称
+    name = '酷派旗下分站存在SQL盲注漏洞可获取数据库信息' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2015-09-06'  # 漏洞公布时间
     desc = '''模版漏洞描述
-    酷派某站存在SQL盲注漏洞可获取数据库信息。
+    酷派旗下分站存在SQL盲注漏洞可获取数据库信息。
     ''' # 漏洞描述
     ref = 'Unknown' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=138407
     cnvd_id = 'Unknown' # cnvd漏洞编号

@@ -9,7 +9,7 @@ class Vuln(ABVuln):
     type = VulnType.LFI # 漏洞类型
     disclosure_date = '2011-10-14'  # 漏洞公布时间
     desc = '''模版漏洞描述
-    某模板过滤不当导致任意文件读取。
+    模板过滤不当导致任意文件读取。
     ''' # 漏洞描述
     ref = 'Unknown' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=2817
     cnvd_id = 'Unknown' # cnvd漏洞编号

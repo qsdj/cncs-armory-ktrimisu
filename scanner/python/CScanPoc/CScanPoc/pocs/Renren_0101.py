@@ -6,7 +6,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
     vuln_id = 'Renren_0101' # 平台漏洞编号
-    name = '人人网某站SQL注入' # 漏洞名称
+    name = '人人网旗下分站SQL注入' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2016-05-13'  # 漏洞公布时间
