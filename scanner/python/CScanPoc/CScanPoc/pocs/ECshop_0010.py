@@ -5,18 +5,18 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'ECshop_0010' # 平台漏洞编号，留空
-    name = 'ECshop CMS SQL注入' # 漏洞名称
+    vuln_id = 'Ecshop_0010' # 平台漏洞编号，留空
+    name = 'Ecshop CMS SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = 'Unkonwn'  # 漏洞公布时间
     desc = '''
-        ECshop CMS flow.php 文件，设计缺陷导致SQL注入漏洞的产生。
+        Ecshop CMS flow.php 文件，设计缺陷导致SQL注入漏洞的产生。
     ''' # 漏洞描述
     ref = 'Unkonwn' # 漏洞来源
     cnvd_id = 'Unkonwn' # cnvd漏洞编号
     cve_id = 'Unkonwn' #cve编号
-    product = 'ECshop'  # 漏洞应用名称
+    product = 'Ecshop'  # 漏洞应用名称
     product_version = 'Unkonwn'  # 漏洞应用版本
 
 

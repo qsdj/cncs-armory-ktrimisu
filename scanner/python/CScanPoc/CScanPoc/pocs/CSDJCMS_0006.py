@@ -17,7 +17,7 @@ class Vuln(ABVuln):
     ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=059088
     cnvd_id = 'Unkonwn' # cnvd漏洞编号
     cve_id = 'Unkonwn' #cve编号
-    product = 'CSDJCMS'  # 漏洞应用名称
+    product = 'CSDJCMS(程氏舞曲管理系统)'  # 漏洞应用名称
     product_version = 'Unkonwn'  # 漏洞应用版本
 
 

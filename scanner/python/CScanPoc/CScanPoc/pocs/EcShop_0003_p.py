@@ -6,18 +6,18 @@ import urllib,urllib2
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'EcShop_0003_p' # 平台漏洞编号，留空
-    name = 'EcShop v2.7.3 /flow.php SQL注入' # 漏洞名称
+    vuln_id = 'Ecshop_0003_p' # 平台漏洞编号，留空
+    name = 'Ecshop v2.7.3 /flow.php SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2014-02-09'  # 漏洞公布时间
     desc = '''
-        EcShop v2.7.3 中的flow.php文件代码缺陷，导致SQL注入漏洞。  
+        Ecshop v2.7.3 中的flow.php文件代码缺陷，导致SQL注入漏洞。  
     ''' # 漏洞描述
     ref = 'https://www.waitalone.cn/ec-shop-bulk-injection-exp.html' # 漏洞来源
     cnvd_id = 'Unkonwn' # cnvd漏洞编号
     cve_id = 'Unkonwn' #cve编号
-    product = 'EcShop'  # 漏洞应用名称
+    product = 'Ecshop'  # 漏洞应用名称
     product_version = 'v2.7.3'  # 漏洞应用版本
 
 

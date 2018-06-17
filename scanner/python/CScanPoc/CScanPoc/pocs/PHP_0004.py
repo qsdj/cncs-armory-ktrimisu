@@ -18,7 +18,7 @@ class Vuln(ABVuln):
     '''  # 漏洞描述
     ref = 'http://www.venustech.com.cn/NewsInfo/124/13680.Html'  # 漏洞来源
     cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'CVE-2012-1823'  # cve编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'PHP'  # 漏洞应用名称
     product_version = 'php < 5.3.12 or php < 5.4.2'  # 漏洞应用版本
 

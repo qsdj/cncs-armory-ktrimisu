@@ -6,7 +6,7 @@ import urllib2
 
 class Vuln(ABVuln):
     vuln_id = 'QiboCMS_0002' # 平台漏洞编号，留空
-    name = 'QiboCMS V7 任意文件下载漏洞'  # 漏洞名称
+    name = 'QiboCMS V7 任意文件下载'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型
     disclosure_date = '2015-01-28'  # 漏洞公布时间
@@ -17,12 +17,12 @@ class Vuln(ABVuln):
     cnvd_id = 'Unkonwn'  # cnvd漏洞编号
     cve_id = 'Unkonwn'  # cve编号
     product = 'QiboCMS(齐博CMS)'  # 漏洞应用名称
-    product_version = '6.3'  # 漏洞应用版本
+    product_version = 'V7'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'aabf0c62-1f90-4100-85c7-fe90b3c3e8ce'
-    author = 'QiboCMS'  # POC编写者
-    create_date = 'V7'  # POC创建时间
+    author = '47bwy'  # POC编写者
+    create_date = '2018-05-06'  # POC创建时间
 
     def __init__(self):
         super(Poc, self).__init__(Vuln())

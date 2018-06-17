@@ -10,7 +10,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = 'Unkonwn'  # 漏洞公布时间
     desc = '''
-        ThinkPHP index.php 参数过滤不严谨，导致SQL注入漏洞。 
+        ThinkPHP index.php 多处参数过滤不严谨，导致SQL注入漏洞。 
     ''' # 漏洞描述
     ref = 'Unkonwn' # 漏洞来源
     cnvd_id = 'Unkonwn' # cnvd漏洞编号

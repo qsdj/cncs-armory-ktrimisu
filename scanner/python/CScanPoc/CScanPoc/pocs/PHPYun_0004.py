@@ -7,8 +7,8 @@ import time
 from random import randint
 
 class Vuln(ABVuln):
-    vuln_id = 'PHPYun_0003' # 平台漏洞编号，留空
-    name = 'PHPYun SQL注入漏洞'  # 漏洞名称
+    vuln_id = 'PHPYun_0004' # 平台漏洞编号，留空
+    name = 'PHPYun SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2015-07-20'  # 漏洞公布时间
