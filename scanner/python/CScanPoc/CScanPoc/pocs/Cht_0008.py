@@ -5,12 +5,12 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
     vuln_id = 'Cht_0008' # 平台漏洞编号
-    name = '电信某站任意文件读取' # 漏洞名称
+    name = '电信旗下分站任意文件读取' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型
     disclosure_date = '2015-12-07'  # 漏洞公布时间
     desc = '''
-        电信某站任意文件读取漏洞，攻击者可以通过构造恶意语句来读取系统敏感文件信息。
+        电信旗下分站任意文件读取漏洞，攻击者可以通过构造恶意语句来读取系统敏感文件信息。
     ''' # 漏洞描述
     ref = 'Uknown' #https://wooyun.shuimugan.com/bug/view?bug_no=147894
     cnvd_id = 'Uknown' # cnvd漏洞编号

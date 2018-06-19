@@ -6,12 +6,12 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
     vuln_id = 'Oppein_0101' # 平台漏洞编号
-    name = '欧派集团某核心系统存在SQL且权限为DBA' # 漏洞名称
+    name = '欧派集团旗下核心系统存在SQL且权限为DBA' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2015-10-16'  # 漏洞公布时间
     desc = '''模版漏洞描述
-    欧派集团某核心系统存在SQL且权限为DBA（时间盲注）。
+    欧派集团旗下核心系统存在SQL且权限为DBA（时间盲注）。
     ''' # 漏洞描述
     ref = 'Unknown' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=138297
     cnvd_id = 'Unknown' # cnvd漏洞编号

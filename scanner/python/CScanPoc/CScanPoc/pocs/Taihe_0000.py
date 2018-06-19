@@ -6,12 +6,12 @@ import re
 
 class Vuln(ABVuln):
     vuln_id = 'Taihe_Unknown' # 平台漏洞编号
-    name = '泰合佳通某源码泄露' # 漏洞名称
+    name = '泰合佳通源码泄露' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
     disclosure_date = '2016-07-04'  # 漏洞公布时间
     desc = '''
-        中国联通合作伙伴之泰合佳通某源码泄露/内网数据库/ftp密码泄露可登陆包含大量手机实名日志。
+        中国联通合作伙伴之泰合佳通源码泄露/内网数据库/ftp密码泄露可登陆包含大量手机实名日志。
     ''' # 漏洞描述
     ref = 'Unknown' #https://wooyun.shuimugan.com/bug/view?bug_no=209835
     cnvd_id = 'Unknown' # cnvd漏洞编号

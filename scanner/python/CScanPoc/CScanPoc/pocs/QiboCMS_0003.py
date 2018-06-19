@@ -5,12 +5,12 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
     vuln_id = 'QiboCMS_0003' # 平台漏洞编号，留空
-    name = 'qibocms知道系统 SQL注入'  # 漏洞名称
+    name = 'QiboCMS知道系统 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2015-05-20'  # 漏洞公布时间
     desc = '''
-        
+        QiboCMS知道系统 /zhidao/search.php?&tags= 参数过滤未过滤，导致SQL注入漏洞。
     '''  # 漏洞描述
     ref = 'Unkonwn'  # 漏洞来源
     cnvd_id = 'Unkonwn'  # cnvd漏洞编号

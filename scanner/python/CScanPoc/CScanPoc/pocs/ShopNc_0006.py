@@ -21,7 +21,7 @@ class Vuln(ABVuln):
 
 
 class Poc(ABPoc):
-    poc_id = 'Unkonwn' # 平台 POC 编号，留空
+    poc_id = '66a8074d-b841-4a90-9180-89c952b977c7' # 平台 POC 编号，留空
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 

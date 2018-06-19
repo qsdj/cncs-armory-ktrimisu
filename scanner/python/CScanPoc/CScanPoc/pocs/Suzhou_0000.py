@@ -5,12 +5,12 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
     vuln_id = 'Suzhou_0000' # 平台漏洞编号
-    name = '苏州市烟草专卖局某系统存在任意文件下载、包含' # 漏洞名称
+    name = '苏州市烟草专卖局系统存在任意文件下载、包含' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型
     disclosure_date = '2015-11-14'  # 漏洞公布时间
     desc = '''
-        苏州市烟草专卖局某系统存在任意文件下载、包含漏洞，攻击者可以通过构造恶意语句来读取系统敏感文件信息。
+        苏州市烟草专卖局系统存在任意文件下载、包含漏洞，攻击者可以通过构造恶意语句来读取系统敏感文件信息。
     ''' # 漏洞描述
     ref = 'Uknown' #
     cnvd_id = 'Uknown' # cnvd漏洞编号

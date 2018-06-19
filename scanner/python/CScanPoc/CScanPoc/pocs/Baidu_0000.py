@@ -6,12 +6,12 @@ import re
 
 class Vuln(ABVuln):
     vuln_id = 'Baidu_0000' # 平台漏洞编号
-    name = '百度某站点本地任意文件包含' # 漏洞名称
+    name = '百度分站点本地任意文件包含' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型
     disclosure_date = '2016-05-22'  # 漏洞公布时间
     desc = '''
-        百度某站点本地任意文件包含，可以直接读取铭感文件信息。
+        百度分站点本地任意文件包含，可以直接读取铭感文件信息。
     ''' # 漏洞描述
     ref = 'Unknown' #https://wooyun.shuimugan.com/bug/view?bug_no=193384
     cnvd_id = 'Unknown' # cnvd漏洞编号

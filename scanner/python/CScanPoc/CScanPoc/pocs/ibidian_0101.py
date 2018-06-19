@@ -4,12 +4,12 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
     vuln_id = 'ibidian_0101' # 平台漏洞编号
-    name = '风行某站SQL注入' # 漏洞名称
+    name = '风行旗下分站SQL注入' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = ''  # 漏洞公布时间
     desc = '''模版漏洞描述
-    风行某站SQL注入
+    风行旗下分站SQL注入
     url= self.target + '/pay/pay/get_server_list'
     cookie='login_start=1; user_id=cO5txlA6%2FB1rAAq7YXVGXg%3D%3D; user_name=wooyun; nickname=wooyun; user_icon=http%3A%2F%2Fimg.funshion.com%2Fimg%2Fdefault%2Fhead_s_m.jpg; ads_id=1; page_id=1; cookie_timeout=0; token=JM0lbOGuGr9b7rifs51kqqOY9TJ2br_z_mG-glStU_eDUdX4YBAM7xoSFrYQoGsOcLK4Coke14FATjDcImGVazVEJJP9bceszW5Rltw4NK8; encrypted=cO5txlA6%2FB1rAAq7YXVGXg%3D%3D'
     user_agent='Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.152 Safari/537.36'

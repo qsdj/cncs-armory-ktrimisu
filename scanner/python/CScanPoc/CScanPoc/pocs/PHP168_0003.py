@@ -12,7 +12,7 @@ class Vuln(ABVuln):
     desc = '''
         国微PHP168中出现了一处神奇的array，可致全站用户数据泄露。泄露的内容包括全站用户的密码密文、邮箱、密码salt、IP等敏感信息。
     '''  # 漏洞描述
-    ref = 'Unkonwn'  # 漏洞来源
+    ref = 'http://0day5.com/archives/753/'  # 漏洞来源
     cnvd_id = 'Unkonwn'  # cnvd漏洞编号
     cve_id = 'Unkonwn'  # cve编号
     product = 'PHP168'  # 漏洞应用名称

@@ -5,12 +5,12 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
     vuln_id = 'Sdu_0000' # 平台漏洞编号
-    name = '山东大学某分站任意文件下载导致敏感信息泄漏' # 漏洞名称
+    name = '山东大学分站任意文件下载导致敏感信息泄漏' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型
     disclosure_date = '2016-01-05'  # 漏洞公布时间
     desc = '''
-        山东大学某分站任意文件下载导致敏感信息泄漏。
+        山东大学分站任意文件下载导致敏感信息泄漏。
     ''' # 漏洞描述
     ref = '' #https://wooyun.shuimugan.com/bug/view?bug_no=164818
     cnvd_id = 'Unknown' # cnvd漏洞编号

@@ -13,7 +13,7 @@ class Vuln(ABVuln):
         大汉科技（Hanweb）大汉JCMS内容管理系统由于对文件读取时没有对文件路径进行过滤，
         导致可以直接直接读取数据库配置文件，该产品政府部门以及学校使用较多，可导致数据库泄露或者getshell.
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'http://0day5.com/archives/1153/'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'Hanweb(大汉)'  # 漏洞应用名称

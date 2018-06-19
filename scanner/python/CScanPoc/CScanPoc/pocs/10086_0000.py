@@ -5,12 +5,12 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
     vuln_id = '10086_0000' # 平台漏洞编号
-    name = '中国移动通信集团新疆集团通讯录某处文件包含' # 漏洞名称
+    name = '中国移动通信集团新疆集团通讯录文件包含' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型
     disclosure_date = '2016-06-13'  # 漏洞公布时间
     desc = '''
-        中国移动通信集团新疆集团通讯录某处文件包含导致命令执行Getshell。
+        中国移动通信集团新疆集团通讯录文件包含导致命令执行Getshell。
     ''' # 漏洞描述
     ref = 'Unknown' #https://wooyun.shuimugan.com/bug/view?bug_no=202397
     cnvd_id = 'Unknown' # cnvd漏洞编号

@@ -5,12 +5,12 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
     vuln_id = 'Chaoxing_0000' # 平台漏洞编号
-    name = '超星网某分站存在远程文件包含' # 漏洞名称
+    name = '超星网分站存在远程文件包含' # 漏洞名称
     level = VulnLevel.LOW # 漏洞危害级别
     type = VulnType.RFI # 漏洞类型
     disclosure_date = '	2015-12-25'  # 漏洞公布时间
     desc = '''
-        超星网某分站存在远程文件包漏洞。
+        超星网分站存在远程文件包漏洞。
     ''' # 漏洞描述
     ref = 'Unknown' #https://wooyun.shuimugan.com/bug/view?bug_no=162683
     cnvd_id = 'Unknown' # cnvd漏洞编号

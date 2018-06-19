@@ -7,8 +7,8 @@ import re
 import urllib
 
 class Vuln(ABVuln):
-    vuln_id = 'ECShop_0002' # 平台漏洞编号，留空
-    name = 'ecshop 2.7.3 SQL注入漏洞'  # 漏洞名称
+    vuln_id = 'Ecshop_0002' # 平台漏洞编号，留空
+    name = 'Ecshop 2.7.3 SQL注入漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2015-01-20'  # 漏洞公布时间
@@ -17,7 +17,7 @@ class Vuln(ABVuln):
     ref = 'Unkonwn'  # 漏洞来源
     cnvd_id = 'Unkonwn'  # cnvd漏洞编号
     cve_id = 'Unkonwn'  # cve编号
-    product = 'ECShop'  # 漏洞应用名称
+    product = 'Ecshop'  # 漏洞应用名称
     product_version = '2.7.3'  # 漏洞应用版本
 
 class Poc(ABPoc):

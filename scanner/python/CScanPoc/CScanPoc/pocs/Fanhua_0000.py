@@ -5,12 +5,12 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
     vuln_id = 'Fanhua_0000' # 平台漏洞编号
-    name = '泛华保险某系统存在任意文件包含' # 漏洞名称
+    name = '泛华保险系统存在任意文件包含' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型
     disclosure_date = '	2016-01-25'  # 漏洞公布时间
     desc = '''
-        泛华保险某系统存在任意文件包含漏洞可读敏感信息。
+        泛华保险系统存在任意文件包含漏洞可读敏感信息。
     ''' # 漏洞描述
     ref = 'Unknown' #https://wooyun.shuimugan.com/bug/view?bug_no=160388
     cnvd_id = 'Unknown' # cnvd漏洞编号

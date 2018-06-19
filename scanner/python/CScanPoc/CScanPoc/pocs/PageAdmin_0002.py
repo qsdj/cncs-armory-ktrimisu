@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'PageAdmin_0001'  # 平台漏洞编号，留空
+    vuln_id = 'PageAdmin_0002'  # 平台漏洞编号，留空
     name = 'PageAdmin 伪造变量漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.OTHER # 漏洞类型

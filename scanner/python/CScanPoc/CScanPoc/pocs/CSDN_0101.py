@@ -6,12 +6,12 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
     vuln_id = 'CSDN_0101' # 平台漏洞编号
-    name = 'CSDN某站存在SQL时间盲注' # 漏洞名称
+    name = 'CSDN存在SQL时间盲注' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2015-10-11'  # 漏洞公布时间
     desc = '''模版漏洞描述
-    CSDN某站存在SQL时间盲注漏洞。
+    CSDN存在SQL时间盲注漏洞。
     ''' # 漏洞描述
     ref = 'Unknown' # 漏洞来源
     cnvd_id = 'Unknown' # cnvd漏洞编号
