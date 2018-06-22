@@ -13,8 +13,8 @@ class Vuln(ABVuln):
     desc = '''
         AlstraSoft EPay Pro 2.0远程文件包含漏洞。
     ''' # 漏洞描述
-    ref = 'www.sebug.net/vuldb/ssvid-78990' # 
-    cnvd_id = 'CNNVD-200505-399' # cnvd漏洞编号
+    ref = 'http://www.cnvd.org.cn/flaw/show/CNVD-2005-0747' # 
+    cnvd_id = 'CNVD-2005-0747' # cnvd漏洞编号
     cve_id = 'CVE-2005-0980'  # cve编号
     product = 'AlstraSoft'  # 漏洞组件名称
     product_version = '2.0'  # 漏洞应用版本
