@@ -13,7 +13,7 @@ class Vuln(ABVuln):
     desc = '''
         GrayCMS 1.1 Error.PHP文件存在远程文件包含漏洞。
     ''' # 漏洞描述
-    ref = 'http://alpha.hu0g4.com/' # 
+    ref = 'http://www.cnvd.org.cn/flaw/show/CNVD-2005-0973' # 
     cnvd_id = 'CNVD-2005-0973' # cnvd漏洞编号
     cve_id = 'CVE-2005-1360'  # cve编号
     product = 'GrayCMS'  # 漏洞组件名称

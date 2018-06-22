@@ -13,7 +13,7 @@ class Vuln(ABVuln):
     WordPress是一种使用PHP语言开发的博客平台，用户可以在支持PHP和MySQL数据库的服务器上架设自己的网志。TweetScribe plugin是一款可通过tweetscribe.me网站使用Twitter帐户订阅WordPress博客的插件。
     WordPress插件TweetScribe存在跨站请求伪造漏洞，允许远程攻击者利用漏洞劫持管理员的请求认证。
     ''' # 漏洞描述
-    ref = 'http://packetstormsecurity.com/files/129645/WordPress-TweetScribe-1.1-CSRF-XSS.html, https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-9399' # 漏洞来源
+    ref = 'http://www.cnvd.org.cn/flaw/show/CNVD-2015-00169' # 漏洞来源
     cnvd_id = 'CNVD-2015-00169' # cnvd漏洞编号
     cve_id = 'CVE-2014-9399'  # cve编号
     product = 'WordPress'  # 漏洞组件名称

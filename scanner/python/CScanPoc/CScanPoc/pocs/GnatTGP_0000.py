@@ -13,7 +13,7 @@ class Vuln(ABVuln):
     desc = '''
         Gnat-TGP <= 1.2.20版本远程文件包含漏洞。
     ''' # 漏洞描述
-    ref = 'https://www.seebug.org/vuldb/ssvid-67834' # 
+    ref = 'http://www.cnvd.org.cn/flaw/show/CNVD-2010-4966' # 
     cnvd_id = 'CNVD-2010-4966' # cnvd漏洞编号
     cve_id = 'CVE-2010-1272'  # cve编号
     product = 'Gnat-TGP'  # 漏洞组件名称

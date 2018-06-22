@@ -13,7 +13,7 @@ class Vuln(ABVuln):
     desc = '''
         Mambo com_babackup Component <= 1.1版本存在远程文件包含漏洞。
     ''' # 漏洞描述
-    ref = 'https://www.seebug.org/vuldb/ssvid-63864' # 
+    ref = 'http://www.cnvd.org.cn/flaw/show/CNVD-2006-6440' # 
     cnvd_id = 'CNVD-2006-6440' # cnvd漏洞编号
     cve_id = 'CVE-2006-4296'  # cve编号
     product = 'Mambo'  # 漏洞组件名称

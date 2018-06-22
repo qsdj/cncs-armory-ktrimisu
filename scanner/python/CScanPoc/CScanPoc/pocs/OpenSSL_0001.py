@@ -16,7 +16,7 @@ class Vuln(ABVuln):
     disclosure_date = '2014-04-07'  # 漏洞公布时间
     desc = '''OpenSSL Heartbleed模块存在一个BUG，问题存在于ssl/dl_both.c文件中的心跳部分，当攻击者构造一个特殊的数据包，满足用户心跳包中无法提供足够多的数据会导致memcpy函数把SSLv3记录之后的数据直接输出，该漏洞导致攻击者可以远程读取存在漏洞版本的OpenSSL服务器内存中多达64K的数据。 
     ''' # 漏洞描述
-    ref = 'http://www.cnvd.org.cn/webinfo/show/3398' # 漏洞来源
+    ref = 'http://www.cnvd.org.cn/flaw/show/CNVD-2014-02175' # 漏洞来源
     cnvd_id = 'CNVD-2014-02175' # cnvd漏洞编号
     cve_id = 'CVE-2014-0160' #cve编号
     product = 'OpenSSL'  # 漏洞应用名称

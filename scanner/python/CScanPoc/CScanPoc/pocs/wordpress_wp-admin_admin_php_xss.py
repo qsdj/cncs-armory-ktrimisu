@@ -15,7 +15,7 @@ class Vuln(ABVuln):
     "WordPress是WordPress软件基金会的一套使用PHP语言开发的博客平台，该平台支持在PHP和MySQL的服务器上架设个人博客网站。Event List是其中的一个事件清单插件。
     WordPress Event List插件0.7.9版本中存在跨站脚本漏洞。远程攻击者可利用该漏洞注入任意的Web脚本或HTML。"
     ''' # 漏洞描述
-    ref = 'https://nvd.nist.gov/vuln/detail/CVE-2017-12068' # 漏洞来源
+    ref = 'http://www.cnvd.org.cn/flaw/show/CNVD-2017-25201' # 漏洞来源
     cnvd_id = 'CNVD-2017-25201' # cnvd漏洞编号
     product = 'WordPress'  # 漏洞应用名称
     product_version = '0.7.9'  # 漏洞应用版本

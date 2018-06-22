@@ -13,7 +13,7 @@ class Vuln(ABVuln):
     desc = '''
         Insky CMS 006-0111 存在远程文件包含漏洞。
     ''' # 漏洞描述
-    ref = 'http://www.sebug.net/vuldb/ssvid-68005' # 
+    ref = 'http://www.cnvd.org.cn/flaw/show/CNVD-2006-5445' # 
     cnvd_id = 'CNVD-2006-5445' # cnvd漏洞编号
     cve_id = 'CVE-2010-1335'  # cve编号
     product = 'Insky CMS'  # 漏洞组件名称

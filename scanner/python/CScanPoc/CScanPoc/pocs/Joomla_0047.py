@@ -14,7 +14,7 @@ class Vuln(ABVuln):
         Joomla!的组件JE Event Calendars (com_jeeventcalendar)存在SQL注入漏洞。
         远程攻击者可以借助脚本index.php中的事件操作的event_id参数，执行任意的SQL命令。
     ''' # 漏洞描述
-    ref = 'https://www.seebug.org/vuldb/ssvid-67594' # 
+    ref = 'http://www.cnvd.org.cn/flaw/show/CNVD-2010-5058' # 
     cnvd_id = 'CNVD-2010-5058' # cnvd漏洞编号
     cve_id = 'CVE-2010-0795'  # cve编号
     product = 'Joomla!'  # 漏洞组件名称

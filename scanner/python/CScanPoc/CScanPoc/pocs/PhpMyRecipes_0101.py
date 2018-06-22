@@ -13,7 +13,7 @@ class Vuln(ABVuln):
     phpMyRecipes是一个简单的基于Web的食谱存储和检索的应用程序。
     phpMyRecipes category参数存在SQL注入漏洞，由于phpMyRecipes browse.php脚本未能正确过滤cagegory参数，允许远程攻击者利用漏洞提交特制的SQL查询，操作或获取数据库数据。
     ''' # 漏洞描述
-    ref = 'http://www.exploit-db.com/exploits/35591/, https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-9440' # 漏洞来源
+    ref = 'http://www.cnvd.org.cn/flaw/show/CNVD-2015-00143' # 漏洞来源
     cnvd_id = 'CNVD-2015-00143' # cnvd漏洞编号
     cve_id = 'CVE-2014-9440'  # cve编号
     product = 'PhpMyRecipes'  # 漏洞组件名称

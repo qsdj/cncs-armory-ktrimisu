@@ -13,7 +13,7 @@ class Vuln(ABVuln):
     desc = '''
         Modernbill <= 1.6 (config.php)文件存在远程文件包含漏洞。
     ''' # 漏洞描述
-    ref = 'https://www.seebug.org/vuldb/ssvid-63791' # 
+    ref = 'http://www.cnvd.org.cn/flaw/show/CNVD-2006-6105' # 
     cnvd_id = 'CNVD-2006-6105' # cnvd漏洞编号
     cve_id = 'CVE-2006-4034'  # cve编号
     product = 'Modernbill'  # 漏洞组件名称

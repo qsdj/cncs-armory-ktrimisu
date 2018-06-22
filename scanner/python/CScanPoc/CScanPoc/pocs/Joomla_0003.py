@@ -15,7 +15,7 @@ class Vuln(ABVuln):
     desc = '''
         Joomla! 存在远程命令执行漏洞，攻击者利用漏洞可在Joomla的数据库中自定义用户代理字符串，并在其中植入恶意代码，并远程执行恶意代码。
     '''  # 漏洞描述
-    ref = 'https://www.seebug.org/vuldb/ssvid-93113'  # 漏洞来源
+    ref = 'http://www.cnvd.org.cn/flaw/show/ CNVD-2015-08250'  # 漏洞来源
     cnvd_id = ' CNVD-2015-08250'  # cnvd漏洞编号
     cve_id = 'CVE-2015-8562'  # cve编号
     product = 'Joomla!'  # 漏洞应用名称

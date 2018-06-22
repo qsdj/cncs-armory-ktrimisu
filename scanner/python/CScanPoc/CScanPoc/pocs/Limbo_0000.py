@@ -13,7 +13,7 @@ class Vuln(ABVuln):
     desc = '''
         Limbo CMS Module event 1.0版本存在远程文件包含漏洞。
     ''' # 漏洞描述
-    ref = 'https://www.seebug.org/vuldb/ssvid-64366' # 
+    ref = 'http://www.cnvd.org.cn/flaw/show/CNVD-2006-9416' # 
     cnvd_id = 'CNVD-2006-9416' # cnvd漏洞编号
     cve_id = 'CVE-2006-6800'  # cve编号
     product = 'Limbo CMS'  # 漏洞组件名称

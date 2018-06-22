@@ -13,9 +13,7 @@ class Vuln(ABVuln):
     desc = '''
         Drupal 是一款用量庞大的CMS，其6/7/8版本的Form API中存在一处远程代码执行漏洞。
     '''  # 漏洞描述
-    ref = '''https://github.com/vulhub/vulhub/tree/master/drupal/CVE-2018-7600
-             https://www.exehack.net/5163.html
-    '''  # 漏洞来源
+    ref = 'http://www.cnvd.org.cn/flaw/show/CNVD-2018-06660' #漏洞来源
     cnvd_id = 'CNVD-2018-06660'  # cnvd漏洞编号
     cve_id = 'CVE-2018-7600'  # cve编号
     product = 'Drupal'  # 漏洞应用名称
