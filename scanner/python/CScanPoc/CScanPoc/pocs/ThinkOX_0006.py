@@ -14,7 +14,7 @@ class Vuln(ABVuln):
     desc = '''
         ThinkOX /index.php 参数未经过过滤导致SQL注入漏洞。
     ''' # 漏洞描述
-    ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=087529
+    ref = 'http://0day5.com/archives/3100/' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=087529
     cnvd_id = 'Unkonwn' # cnvd漏洞编号
     cve_id = 'Unkonwn' #cve编号
     product = 'ThinkOX'  # 漏洞应用名称

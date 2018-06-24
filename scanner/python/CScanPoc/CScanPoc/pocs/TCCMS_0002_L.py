@@ -11,7 +11,7 @@ class Vuln(ABVuln):
     name = 'TCCMS sql注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
-    disclosure_date = '2015-06-30'  # 漏洞公布时间
+    disclosure_date = '2014-06-30'  # 漏洞公布时间
     desc = '''
         TCCMS 在/app/model/attackAction.class.php中参数未过滤导致SQL注入漏洞。
     ''' # 漏洞描述

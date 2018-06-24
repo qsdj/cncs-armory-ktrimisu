@@ -7,7 +7,7 @@ import urlparse
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'Mailgard_0001' # 平台漏洞编号，留空
+    vuln_id = 'Mailgard_0002' # 平台漏洞编号，留空
     name = 'Mailgard佑友系列邮件网关 conn.php SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -18,7 +18,7 @@ class Vuln(ABVuln):
     ref = 'http://0day5.com/archives/3207/' # 漏洞来源
     cnvd_id = 'Unkonwn' # cnvd漏洞编号
     cve_id = 'Unkonwn' #cve编号
-    product = 'Mailgard佑友系列邮件网关'  # 漏洞应用名称
+    product = 'Mailgard'  # 漏洞应用名称
     product_version = 'Unkonwn'  # 漏洞应用版本
 
 

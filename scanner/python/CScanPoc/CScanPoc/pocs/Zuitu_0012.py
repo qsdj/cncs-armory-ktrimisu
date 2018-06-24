@@ -13,7 +13,7 @@ class Vuln(ABVuln):
     desc = '''
         最土团购，/ajax/coupon.php 基础函数过滤不全导致注射。
     '''  # 漏洞描述
-    ref = 'Unkonwn'  # 漏洞来源
+    ref = 'http://0day5.com/archives/2245/'  # 漏洞来源
     cnvd_id = 'Unkonwn'  # cnvd漏洞编号
     cve_id = 'Unkonwn'  # cve编号
     product = 'Zuitu(最土团购)'  # 漏洞应用名称
@@ -43,8 +43,8 @@ class Poc(ABPoc):
             content = urllib2.urlopen(req).read()
             
             if 'e165421110ba03099a1c0393373c5b43' in content:
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                        target=self.target, name=self.vuln.name))
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
+                    target=self.target, name=self.vuln.name))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))

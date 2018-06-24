@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'Xier_0000' # 平台漏洞编号
+    vuln_id = 'HeeritOA_0002' # 平台漏洞编号
     name = '希尔协同办公系统高危文件包含' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型
@@ -15,7 +15,7 @@ class Vuln(ABVuln):
     ref = 'Uknown' #https://wooyun.shuimugan.com/bug/view?bug_no=140020
     cnvd_id = 'Uknown' # cnvd漏洞编号
     cve_id = 'Uknown'  # cve编号
-    product = '希尔协同办公'  # 漏洞组件名称
+    product = 'HeeritOA(希尔OA)'  # 漏洞组件名称
     product_version = 'Uknown'  # 漏洞应用版本
 
 class Poc(ABPoc):

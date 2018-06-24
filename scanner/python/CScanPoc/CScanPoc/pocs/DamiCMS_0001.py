@@ -38,8 +38,8 @@ class Poc(ABPoc):
             print(verify_url)
             req = requests.get(verify_url)
             if req.status_code == 200 and 'ca4238a0b923820dcc509a6f75849' in req.content:
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                        target=self.target, name=self.vuln.name))
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
+                    target=self.target, name=self.vuln.name))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))

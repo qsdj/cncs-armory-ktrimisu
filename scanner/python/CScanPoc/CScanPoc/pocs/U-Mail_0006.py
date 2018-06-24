@@ -14,7 +14,7 @@ class Vuln(ABVuln):
     desc = '''
         U-Mail /webmail/client/option/index.php SQL注入漏洞
     ''' # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=073032' # 漏洞来源
+    ref = 'http://0day5.com/archives/2157/' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=073032
     cnvd_id = 'Unkonwn' # cnvd漏洞编号
     cve_id = 'Unkonwn' #cve编号
     product = 'U-Mail'  # 漏洞应用名称
