@@ -148,7 +148,7 @@ class SyncPoc:
         if not self._poc_exists(self.poc.poc_id):
             logger.warn('{} 在数据库中不存在'.format(self.poc))
             return
-        data = (image_name,)
+        data = (image_name, self.poc.poc_id)
 
         sql = ("UPDATE poc SET "
                "image_name=%s "
