@@ -60,3 +60,5 @@ pipenv run python scripts/sync.py --host ... --user ... --db ... --pass ... \
 pipenv run python scripts/sync.py --host ... --user ... --db ... --pass ... \
   --update --poc --vuln --target path/to/pocs/shit_poc.py
 ```
+
+编译镜像，添加参数 `--build-base-image cscan-poc:0.1`

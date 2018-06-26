@@ -143,6 +143,27 @@ class SyncPoc:
         if self.poc.vuln and self.poc.vuln.vuln_id:
             self._create_poc_vuln_map(self.poc.poc_id, self.poc.vuln.vuln_id)
 
+    def update_poc_image(self, image_name):
+        self._pre_check_poc(self.poc)
+        if not self._poc_exists(self.poc.poc_id):
+            logger.warn('{} 在数据库中不存在'.format(self.poc))
+            return
+        data = (image_name,)
+
+        sql = ("UPDATE poc SET "
+               "image_name=%s "
+               "WHERE poc_id=%s")
+        cursor = self.cnx.cursor(buffered=True)
+        logger.info('更新 {} image_name={}'.format(self.poc, image_name))
+        try:
+            cursor.execute(sql, data)
+            self.cnx.commit()
+        except Exception as e:
+            logger.warn('更新失败 {} image_name={}\n%s'.format(self.poc, image_name), e)
+            return
+        finally:
+            cursor.close()
+
 
 class SyncVuln:
     '''同步 POC 静态信息到数据库
