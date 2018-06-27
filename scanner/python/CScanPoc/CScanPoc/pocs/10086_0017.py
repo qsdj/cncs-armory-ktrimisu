@@ -15,7 +15,7 @@ class Vuln(ABVuln):
     ref = 'Uknown' #https://wooyun.shuimugan.com/bug/view?bug_no=2001
     cnvd_id = 'Uknown' # cnvd漏洞编号
     cve_id = 'Uknown'  # cve编号
-    product = '中国移动称'  # 漏洞组件名称
+    product = '中国移动'  # 漏洞组件名称
     product_version = 'Uknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
