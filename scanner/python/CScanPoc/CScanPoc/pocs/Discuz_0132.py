@@ -22,7 +22,7 @@ class Vuln(ABVuln):
     ref = 'https://github.com/coffeehb/Some-PoC-oR-ExP/blob/master/Discuz/DiscuzX1.5X2.5X3%20uc_key%20getshell/exp.py' # 漏洞来源
     cnvd_id = 'Unknown' # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
-    product = 'Discuz'  # 漏洞组件名称
+    product = 'Discuz!'  # 漏洞组件名称
     product_version = 'X1.5X2.5X3'  # 漏洞应用版本
 
 class Poc(ABPoc):

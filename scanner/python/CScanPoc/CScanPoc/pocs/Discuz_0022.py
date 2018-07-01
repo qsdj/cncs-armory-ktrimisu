@@ -13,7 +13,7 @@ class Vuln(ABVuln):
         Discuz!积分商城插件 action参数未过滤直接传入$file后面的用%00截断即可包含任意文件。
         /plugin.php?action=../../../../../robots.txt%00&id=dc_mall
     '''  # 漏洞描述
-    ref = 'Unkonwn'  # 漏洞来源
+    ref = 'http://0day5.com/archives/3467/'  # 漏洞来源
     cnvd_id = 'Unkonwn'  # cnvd漏洞编号
     cve_id = 'Unkonwn'  # cve编号
     product = 'Discuz!'  # 漏洞应用名称

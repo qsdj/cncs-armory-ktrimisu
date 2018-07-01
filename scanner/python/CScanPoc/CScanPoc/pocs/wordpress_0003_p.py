@@ -13,7 +13,7 @@ class Vuln(ABVuln):
     desc = '''
         WordPress的PHPMailer漏洞利用细节在WordPress核心中的实现。未经授权的攻击者利用漏洞就能实现远程代码执行，针对目标服务器实现即时访问，最终导致目标应用服务器的完全陷落。。
     ''' # 漏洞描述
-    ref = 'http://0day5.com/archives/3960/' # 漏洞来源
+    ref = 'http://0day5.com/archives/4204/' # 漏洞来源
     cnvd_id = 'Unkonwn' # cnvd漏洞编号
     cve_id = 'CVE-2016-10033' #cve编号
     product = 'WordPress'  # 漏洞应用名称

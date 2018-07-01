@@ -17,7 +17,7 @@ class Vuln(ABVuln):
     ref = 'http://www.2cto.com/Article/201211/171301.html'# 漏洞来源
     cnvd_id = 'Unknown' # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
-    product = 'Discuz'  # 漏洞应用名称
+    product = 'Discuz!'  # 漏洞应用名称
     product_version = 'x2.5'  # 漏洞应用版本
 
 

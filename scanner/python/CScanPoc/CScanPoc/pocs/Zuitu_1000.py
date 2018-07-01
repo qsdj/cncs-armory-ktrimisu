@@ -15,7 +15,7 @@ class Vuln(ABVuln):
     ''' # 漏洞描述
     ref = 'http://www.moonsec.com/post-11.html' # 漏洞来源
     cnvd_id = 'Unkonwn' # cnvd漏洞编号
-    product = '最土团购'  # 漏洞应用名称
+    product = 'Zuitu(最土团购)'  # 漏洞应用名称
     product_version = 'Unkonwn'  # 漏洞应用版本
 
 

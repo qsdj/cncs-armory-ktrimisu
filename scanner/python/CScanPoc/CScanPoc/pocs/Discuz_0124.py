@@ -18,7 +18,7 @@ class Vuln(ABVuln):
     ref = 'Unknown'# 漏洞来源http://www.wooyun.org/bugs/wooyun-2014-065930
     cnvd_id = 'Unknown' # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
-    product = 'Discuz'  # 漏洞应用名称
+    product = 'Discuz!'  # 漏洞应用名称
     product_version = '7.2'  # 漏洞应用版本
 
 

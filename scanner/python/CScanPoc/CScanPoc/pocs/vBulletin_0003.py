@@ -18,8 +18,8 @@ class Vuln(ABVuln):
         #Version: 5 and above(not older versions)
     '''  # 漏洞描述
     ref = 'http://0day5.com/archives/415/'  # 漏洞来源
-    cnvd_id = ''  # cnvd漏洞编号
-    cve_id = ''  # cve编号
+    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'vBulletin'  # 漏洞应用名称
     product_version = 'vBulletin 55'  # 漏洞应用版本
 

@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
     vuln_id = 'MetInfo_0024' # 平台漏洞编号，留空
-    name = 'MetInfo SQL盲注，可盲注管理员信息。' # 漏洞名称
+    name = 'MetInfo SQL盲注' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2014-02-03'  # 漏洞公布时间

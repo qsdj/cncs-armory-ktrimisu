@@ -17,7 +17,7 @@ class Vuln(ABVuln):
         webservice-json/upload/upload.php
         webservice-xml/upload/upload.php
     '''  # 漏洞描述
-    ref = 'Unkonwn'  # 漏洞来源
+    ref = 'http://0day5.com/archives/3522/'  # 漏洞来源
     cnvd_id = 'Unkonwn'  # cnvd漏洞编号
     cve_id = 'Unkonwn'  # cve编号
     product = '泛微OA'  # 漏洞应用名称

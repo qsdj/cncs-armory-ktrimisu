@@ -13,7 +13,7 @@ class Vuln(ABVuln):
     desc = '''
         WeCenter SQL注射（ROOT SHELL）.
     ''' # 漏洞描述
-    ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0106369
+    ref = 'http://0day5.com/archives/3760/' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0106369
     cnvd_id = 'Unkonwn' # cnvd漏洞编号
     cve_id = 'Unkonwn' #cve编号
     product = 'WeCenter'  # 漏洞应用名称

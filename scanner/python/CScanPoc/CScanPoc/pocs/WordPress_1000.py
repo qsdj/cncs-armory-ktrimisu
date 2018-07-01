@@ -6,7 +6,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'Unkonwn' # 平台漏洞编号，留空
+    vuln_id = 'WordPress_1000' # 平台漏洞编号，留空
     name = 'WordPress Event List插件跨站脚本漏洞(需要登陆)' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型
@@ -17,8 +17,10 @@ class Vuln(ABVuln):
     ''' # 漏洞描述
     ref = 'http://www.cnvd.org.cn/flaw/show/CNVD-2017-25201' # 漏洞来源
     cnvd_id = 'CNVD-2017-25201' # cnvd漏洞编号
+    cve_id = 'Unkonwn'  # cve编号
     product = 'WordPress'  # 漏洞应用名称
     product_version = '0.7.9'  # 漏洞应用版本
+    
 
 class Poc(ABPoc):
     poc_id = '012eeaf8-09dd-4405-96fc-dbc2f0e88bee'
