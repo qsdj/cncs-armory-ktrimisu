@@ -7,7 +7,7 @@ class Vuln(ABVuln):
     vuln_id = 'Zblog_0101' # 平台漏洞编号，留空
     name = 'Zblog /zb_install/index.php 本地文件包含' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
-    type = VulnType.LEI # 漏洞类型
+    type = VulnType.LFI # 漏洞类型
     disclosure_date = '2015-06-17'  # 漏洞公布时间
     desc = '''
     虽然限制了必须为.php后缀的，但是因为没对POST转义，所以我们可以截断后面的.php

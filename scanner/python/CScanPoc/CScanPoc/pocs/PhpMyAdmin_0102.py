@@ -57,7 +57,7 @@ class Poc(ABPoc):
                 token_place = resp.text.find("token=") + 6
                 token = resp.text[token_place:token_place + 32]
             if token is False:
-                self.output.info("Cannot get valid authorization token.")
+                # self.output.info("Cannot get valid authorization token.")
                 sys.exit(1)
 
             if custom_table is False:

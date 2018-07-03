@@ -35,7 +35,7 @@ class Poc(ABPoc):
             url2 = self.target + payload2
             response = requests.get(url)
             response2 = requests.get(url2)
-            if response.text == response2.text:
+            if response.text != response2.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target, name=self.vuln.name))
         except Exception, e:
             self.output.info('执行异常：{}'.format(e))

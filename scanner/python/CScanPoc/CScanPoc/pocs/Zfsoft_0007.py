@@ -33,19 +33,13 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
             arg = '{target}'.format(target=self.target)
-            url1 = arg + 'default_ysdx.aspx'
-            url2 = arg + 'default6.aspx'
-            url3 = arg + 'default5.aspx'
-            code1, head1, res1, errcode1,finalurl1 =  hh.http(url1)
-            code2, head2, res2, errcode2,finalurl2 =  hh.http(url2)
-            code3, head3, res3, errcode3,finalurl3 =  hh.http(url3)
-                       
-            if code1 == 200:
-                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target,name=self.vuln.name))
-            if code2 == 200:
-                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target,name=self.vuln.name))
-            if code3 == 200:
-                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target,name=self.vuln.name))
+            payloads = ['default_ysdx.aspx', 'default6.aspx', 'default5.aspx']
+
+            for payload in payloads:
+                url = arg + payload
+                _response = requests.get(url)
+                if _response.status_code == 200 and url == _response.url:
+                    self.output.report(self.vuln, '发现{target}存在{name}漏洞;url={url}'.format(target=self.target,name=self.vuln.name,url=url))
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
 

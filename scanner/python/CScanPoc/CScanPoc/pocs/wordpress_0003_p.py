@@ -41,10 +41,10 @@ class Poc(ABPoc):
             }
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            request = requests.post('{target}{payload}'.format(target=self.target,payload=payload),data=data,headers=headers)
+            _request = requests.post('{target}{payload}'.format(target=self.target,payload=payload),data=data,headers=headers)
             vulnurl = requests.get('{target}/vuln'.format(target=self.target))
 
-            if vulnurl.status_code == 200:
+            if vulnurl.status_code == 200 and vulnurl.url == self.target+"/vuln":
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target,name=self.vuln.name))
 
         except Exception, e:

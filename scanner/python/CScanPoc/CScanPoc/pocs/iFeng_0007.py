@@ -31,7 +31,7 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
             arg = '{target}'.format(target=self.target)
-            vul_url = arg + payload + '/c?d=ifeng&i=z,0,0&u=http://baidu.com/robots.txt'
+            vul_url = arg + '/c?d=ifeng&i=z,0,0&u=http://baidu.com/robots.txt'
             response = requests.get(vul_url)
             if response.status_code ==200 and 'Baiduspider' in response.content:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target, name=self.vuln.name))

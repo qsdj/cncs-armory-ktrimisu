@@ -41,10 +41,10 @@ class Poc(ABPoc):
             for payload in payloads:
                 target = arg + payload
                 code, head, res1, _, _  = hh.http(target)
-                code, head, res2, _, _  = hh.http("-d %s %s" % (post, target))
+                req = requests.post(target, data=post)
             if code == 200 and '4beed3b9c4a886067de0e3a094246f78' in res1:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target,name=self.vuln.name))
-            elif code == 200 and '4beed3b9c4a886067de0e3a094246f78' in res2:
+            elif req.status_code == 200 and '4beed3b9c4a886067de0e3a094246f78' in req.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target,name=self.vuln.name))
                 
         except Exception, e:

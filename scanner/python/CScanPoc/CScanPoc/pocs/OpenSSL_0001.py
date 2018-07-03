@@ -6,7 +6,7 @@ import struct
 import socket
 import time
 import select
-import urllib
+import urllib, urlparse
 
 class Vuln(ABVuln):
     vuln_id = 'OpenSSL_0001' # 平台漏洞编号，留空
@@ -104,9 +104,10 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target = self.target, vuln = self.vuln))
             #取出地址和端口
-            proto, rest = urllib.splittype(self.target)
-            host, rest = urllib.splithost(rest)
-            host, port = urllib.splitport(host)
+            target_parse = urlparse.urlparse(self.target)
+            host = socket.gethostbyname(target_parse.hostname)
+            port = target_parse.port if target_parse.port else 80
+
             portint = int(port)
             s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             s.connect((host, portint))

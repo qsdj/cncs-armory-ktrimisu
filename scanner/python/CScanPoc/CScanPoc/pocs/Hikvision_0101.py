@@ -9,7 +9,7 @@ class Vuln(ABVuln):
     vuln_id = 'Hikvision_0101' # 平台漏洞编号，留空
     name = 'Hikvision /Server/logs/error.log 文件包含GETSHELL' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
-    type = VulnType.LEI # 漏洞类型
+    type = VulnType.LFI # 漏洞类型
     disclosure_date = '2014-11-21'  # 漏洞公布时间
     desc = '''
     海康威视IVMS系列的监控客户端，不过大部分在内网。

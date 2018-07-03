@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
     vuln_id = 'Info_PHPinfo' # 平台漏洞编号，留空
-    name = '铭感测试页面泄露' # 漏洞名称
+    name = '敏感测试页面泄露' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
     disclosure_date = 'Unkonwn'  # 漏洞公布时间
@@ -33,8 +33,8 @@ class Poc(ABPoc):
             payload_list = ['test.php','phpinfo.php','php.php','info.php','test.cgi']
             for payload in payload_list:
                 request = requests.get('{target}/{payload}'.format(target=self.target,payload=payload))
-                if request.status_code == 200:
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target,name=self.vuln.name))
+                if request.status_code == 200 and payload in request.text:
+                    self.output.report(self.vuln, '发现{target}存在{name}漏洞,phpinfo敏感文件地址为{url}'.format(target=self.target,name=self.vuln.name, url=request.url))
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
 
@@ -46,7 +46,7 @@ class Poc(ABPoc):
             payload_list = ['test.php','phpinfo.php','php.php','info.php','test.cgi']
             for payload in payload_list:
                 request = requests.get('{target}/{payload}'.format(target=self.target,payload=payload))
-                if request.status_code == 200:
+                if request.status_code == 200 and payload in request.text:
                     url = request.url
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞,phpinfo敏感文件地址为{url}'.format(target=self.target,name=self.vuln.name,url=url))
 

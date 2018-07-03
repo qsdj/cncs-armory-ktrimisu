@@ -53,7 +53,7 @@ class Poc(ABPoc):
             )
             url = self.target + payload
             r = requests.get(url, cookies=cookies, headers=headers, timeout=10, verify=False)
-            if r.status_code == 200:
+            if r.status_code == 200 and "alert(cscan)" in r.text:
                 #print ''Success''
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target,name=self.vuln.name))

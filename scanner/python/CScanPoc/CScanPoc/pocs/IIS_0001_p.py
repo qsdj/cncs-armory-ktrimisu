@@ -22,10 +22,10 @@ class Vuln(ABVuln):
     cve_id = 'CVE-2015-1635'  # cve编号
     product = 'IIS'  # 漏洞应用名称
     product_version = '''
-                        Windows7
-                        Windows8
-                        Windows server 2008
-                        Windows server 2012'''  # 漏洞应用版本
+        Windows7
+        Windows8
+        Windows server 2008
+        Windows server 2012'''  # 漏洞应用版本
 
 def _init_user_parser(self):  # 定制命令行参数
         self.user_parser.add_option('-p','--port',
@@ -54,7 +54,7 @@ class Poc(ABPoc):
             #timeout = args['options']['timeout']
 
             o = urlparse.urlparse(self.target)
-            port = o.port
+            port = o.port if o.port else 80
             target = o.hostname
                 
             headers = {

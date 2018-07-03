@@ -51,12 +51,11 @@ class Poc(ABPoc):
                 'cognos',
                 'ftptrace'
                 'ftpsoc')
-                       
-            code, head, res, body, _ = hh.http('-d %s %s' % (payload, url))
-            if code == 200:
+            req = requests.post(url, data=payload)
+            if req.status_code == 200:
                 flag=False
                 for i in range(len(keywords)):
-                    if keywords[i] not in res:
+                    if keywords[i] not in req.text:
                         flag=True
                         break#只要有一个key不在里面就不存在漏洞
                 if flag==False:

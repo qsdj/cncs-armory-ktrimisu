@@ -9,7 +9,7 @@ class Vuln(ABVuln):
     vuln_id = 'Stampi_0101' # 平台漏洞编号，留空
     name = 'StaMPi /path/fotogalerie.php 本地文件包含' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
-    type = VulnType.LEI # 漏洞类型
+    type = VulnType.LFI # 漏洞类型
     disclosure_date = '2015-02-19'  # 漏洞公布时间
     desc = '''
     漏洞文件：/path/fotogalerie.php。

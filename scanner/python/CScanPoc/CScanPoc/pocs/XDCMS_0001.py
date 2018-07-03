@@ -45,9 +45,8 @@ class Poc(ABPoc):
                 "submit": " ? ? "
             }
             payload = urllib.urlencode(data)
-            code, head,res, errcode, _ = hh.http('-d %s %s' % (payload, target))
-                       
-            if code == 200 and "ac59075b964b0715" in res:
+            req = requests.get(target+"?"+payload)
+            if req.status_code == 200 and "ac59075b964b0715" in req.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target,name=self.vuln.name))
 
         except Exception, e:

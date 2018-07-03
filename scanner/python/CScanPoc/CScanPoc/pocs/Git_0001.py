@@ -28,6 +28,7 @@ class Poc(ABPoc):
         super(Poc, self).__init__(Vuln())
 
     def verify(self):
+        flag = False
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))

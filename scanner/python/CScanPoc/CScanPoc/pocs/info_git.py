@@ -18,7 +18,7 @@ class Vuln(ABVuln):
     product = 'Info_Git(Git源码泄露)'  # 漏洞应用名称
     product_version = 'Unkonwn'  # 漏洞应用版本
 
-class Poc(ABPoc):s
+class Poc(ABPoc):
     author = 'cscan'  # POC编写者
     create_date = '2018-04-26' # POC创建时间
 
@@ -30,7 +30,7 @@ class Poc(ABPoc):s
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
             request = requests.get('{target}/.git/'.format(target=self.target))
-            if request.status_code == 200:
+            if request.status_code == 200 and "404" not in request.text and u"不存在" in request.text and "未找到" in request.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target,name=self.vuln.name))
         except Exception, e:
             self.output.info('执行异常{}'.format(e))

@@ -11,7 +11,7 @@ class Vuln(ABVuln):
     vuln_id = 'QiboCMS_0101' # 平台漏洞编号，留空
     name = 'QiboCMS V5.0 /hr/listperson.php 本地文件包含' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
-    type = VulnType.LEI # 漏洞类型
+    type = VulnType.LFI # 漏洞类型
     disclosure_date = '2015-02-01'  # 漏洞公布时间
     desc = '''
     Qibocms /hr/listperson.php 系统文件包含致无限制Getshell。

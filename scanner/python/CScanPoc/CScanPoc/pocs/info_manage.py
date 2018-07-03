@@ -33,13 +33,16 @@ class Poc(ABPoc):
 
             #讲常见的后台地址组成list,循环去请求是否存在默认后台地址
             dict_list = ['admin','manage','manager','administrator','houtai','admin_login.asp','admin_login.php','admin.php','admin.asp','login_admin.asp','login_admin.php','manage.asp','manager.asp','manage.php','manager.php','guanli','guanli.asp','guanli.php','adminlogin','adminadmin','ad','ad.asp','ad.php','ad_login','ad_login.asp','ad_login.php','admin_admin','admin_admin.asp','admin_admin.php','admin_login']
-
+            keywords = ['user', 'passwd', 'username', 'password', 'adminstartor', u'管理', u'后台', u'密码', u'登录']
             for payload in dict_list:
-                request = requests.get('{target}/{payload}'.format(target=self.target,payload=payload))
-                if (request.status_code == 200 and request.status_code != 302) or request.status_code == 403:
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target,name=self.vuln.name))
-                    print request.url
-                    continue
+                url = self.target + "/" +payload
+                request = requests.get(url)
+
+                if request.status_code == 200:
+                    for keyword in keywords:
+                        if keyword in request.text:
+                            self.output.report(self.vuln, '发现{target}存在{name}漏洞;url={url}'.format(target=self.target,name=self.vuln.name, url=url))
+                            continue
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
@@ -51,13 +54,15 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 漏洞利用'.format(
                     target=self.target, vuln=self.vuln))
             dict_list = ['admin','manage','manager','administrator','houtai','admin_login.asp','admin_login.php','admin.php','admin.asp','login_admin.asp','login_admin.php','manage.asp','manager.asp','manage.php','manager.php','guanli','guanli.asp','guanli.php','adminlogin','adminadmin','ad','ad.asp','ad.php','ad_login','ad_login.asp','ad_login.php','admin_admin','admin_admin.asp','admin_admin.php','admin_login']
-
+            keywords = ['user', 'passwd', 'username', 'password', 'adminstartor', u'管理', u'后台', u'密码', u'登录']
             for payload in dict_list:
-                request = requests.get('{target}/{payload}'.format(target=self.target,payload=payload))
-                if (request.status_code == 200 and request.status_code != 302) or request.status_code == 403:
-                    url = request.url
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞,网站当前后台底地址为:\n{url}'.format(target=self.target,name=self.vuln.name,url=request.url))
-                    continue
+                url = self.target + "/" +payload
+                request = requests.get(url)
+                if request.status_code == 200:
+                    for keyword in keywords:
+                        if keyword in request.text:
+                            self.output.report(self.vuln, '发现{target}存在{name}漏洞,网站当前后台底地址为:\n{url}'.format(target=self.target,name=self.vuln.name,url=request.url))
+                            continue
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))

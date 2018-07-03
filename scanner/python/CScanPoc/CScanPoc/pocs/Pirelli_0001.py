@@ -32,7 +32,7 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
             
-            verify_url = "%s/wlsecurity.html" % aself.target
+            verify_url = "%s/wlsecurity.html" % self.target
             req = urllib2.Request(verify_url)
             content = urllib2.urlopen(req).read()
             

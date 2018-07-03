@@ -24,10 +24,10 @@ def findVIEWSTATE(url):
     hh = hackhttp.hackhttp()
     m_values = []
     code, head, res, errcode, _ = hh.http(url)
-    m1 = re.search("__VIEWSTATE.*?value=\"(.*?)\"", res, re.S)
-    m2 = re.search("__EVENTVALIDATION.*?value=\"(.*?)\"", res, re.S)
-    m_values.append(m1.group(1))
-    m_values.append(m2.group(1))
+    m1 = re.search("__VIEWSTATE.*?value=\"(.*?)\"", res, re.S).group(1) if re.search("__VIEWSTATE.*?value=\"(.*?)\"", res, re.S) else ""
+    m2 = re.search("__EVENTVALIDATION.*?value=\"(.*?)\"", res, re.S).group(1) if re.search("__EVENTVALIDATION.*?value=\"(.*?)\"", res, re.S) else ""
+    m_values.append(m1)
+    m_values.append(m2)
     return m_values
 
 class Poc(ABPoc):

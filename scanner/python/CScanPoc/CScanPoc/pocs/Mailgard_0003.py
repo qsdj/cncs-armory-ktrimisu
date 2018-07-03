@@ -50,7 +50,7 @@ Accept: */*
 Referer: {url3}/src/write_mail.php
 Accept-Encoding: gzip, deflate
 Accept-Language: zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4
-Cookie: PHPSESSID=outb98m2mckt5a03pejd1aqra0; _HICOM[LANGUAGE]=zh-cn
+Cookie: PHPSESSID=outb98m2mckt5a03pejd1aqra0;
 
 ------------ei4gL6ae0Ef1GI3ei4KM7ei4Ef1Ij5
 Content-Disposition: form-data; name="Filename"
@@ -108,7 +108,7 @@ Accept: */*
 Referer: {url3}/src/write_mail.php
 Accept-Encoding: gzip, deflate
 Accept-Language: zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4
-Cookie: PHPSESSID=outb98m2mckt5a03pejd1aqra0; _HICOM[LANGUAGE]=zh-cn
+Cookie: PHPSESSID=outb98m2mckt5a03pejd1aqra0;
 
 ------------ei4gL6ae0Ef1GI3ei4KM7ei4Ef1Ij5
 Content-Disposition: form-data; name="Filename"

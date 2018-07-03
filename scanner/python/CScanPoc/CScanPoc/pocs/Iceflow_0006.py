@@ -37,10 +37,9 @@ class Poc(ABPoc):
             #from:http://www.wooyun.org/bugs/wooyun-2010-0134377
             payload = '/log/system.log'
             verify_url = self.target + payload
-            req = urllib2.Request(verify_url)
-            content = urllib2.urlopen(req).read()
+            req = requests.get(verify_url)
             
-            if req.getconde() == 200 and 'login successfully' in content:
+            if req.status_code == 200 and 'login successfully' in req.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 

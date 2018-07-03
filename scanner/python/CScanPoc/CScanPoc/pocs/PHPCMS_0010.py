@@ -1,5 +1,5 @@
 # coding: utf-8
-
+import re
 from CScanPoc.thirdparty import requests,hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()

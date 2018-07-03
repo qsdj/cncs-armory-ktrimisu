@@ -40,8 +40,8 @@ class Poc(ABPoc):
                 ]
             for p in ps:
                 url=arg+p
-                code, head, res, errcode, _ = hh.http(url)
-                if code==200 and "c4ca4238a0b923820dcc" in res:
+                res = requests.get(url)
+                if res.status_code==200 and "c4ca4238a0b923820dcc" in res.text:
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target,name=self.vuln.name))
 
         except Exception, e:

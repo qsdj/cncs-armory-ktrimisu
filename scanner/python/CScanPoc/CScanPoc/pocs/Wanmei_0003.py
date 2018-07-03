@@ -37,9 +37,7 @@ class Poc(ABPoc):
             vul_url2 = arg + payload2
             response1 = requests.get(vul_url1)
             response2 = requests.get(vul_url2)
-
-            print response1.url
-            if response1.text != response2.text:
+            if response1.text != response2.text and (vul_url1 == response1.url or vul_url2 == response2.url) and (response1.status_code == 200 or response2.status_code == 200):
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target, name=self.vuln.name))
 
         except Exception, e:

