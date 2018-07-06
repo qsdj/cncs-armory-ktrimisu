@@ -92,27 +92,29 @@ class SyncPoc:
         self._pre_check_poc(self.poc)
         if self._poc_exists(self.poc.poc_id):
             logger.info('{} 在数据库中已经存在'.format(self.poc))
-            return
-        data = (
-            self.poc.poc_id,
-            self.poc.get_poc_name(),
-            self.poc.author,
-            self.poc.create_date)
+        else:
+            data = (
+                self.poc.poc_id,
+                self.poc.get_poc_name(),
+                self.poc.author,
+                self.poc.create_date)
 
-        sql = ("INSERT INTO poc "
-               "(poc_id, poc_name, author, create_time) "
-               "VALUES(%s, %s, %s, %s)")
-        cursor = self.cnx.cursor(buffered=True)
-        logger.info('插入 {}'.format(self.poc))
-        try:
-            cursor.execute(sql, data)
-            self.cnx.commit()
-        except Exception as e:
-            logger.warning('插入失败 {}\n%s'.format(self.poc), e)
-        finally:
-            cursor.close()
+            sql = ("INSERT INTO poc "
+                   "(poc_id, poc_name, author, create_time) "
+                   "VALUES(%s, %s, %s, %s)")
+            cursor = self.cnx.cursor(buffered=True)
+            logger.info('插入 {}'.format(self.poc))
+            try:
+                cursor.execute(sql, data)
+                self.cnx.commit()
+            except Exception as e:
+                logger.warning('插入失败 {}\n%s'.format(self.poc), e)
+            finally:
+                cursor.close()
 
         if self.poc.vuln and self.poc.vuln.vuln_id:
+            sync_vuln = SyncVuln(self.cnx, self.poc.vuln)
+            sync_vuln.insert()
             self._create_poc_vuln_map(self.poc.poc_id, self.poc.vuln.vuln_id)
 
     def update(self):
@@ -159,7 +161,8 @@ class SyncPoc:
             cursor.execute(sql, data)
             self.cnx.commit()
         except Exception as e:
-            logger.warn('更新失败 {} image_name={}\n%s'.format(self.poc, image_name), e)
+            logger.warn('更新失败 {} image_name={}\n%s'.format(
+                self.poc, image_name), e)
             return
         finally:
             cursor.close()
