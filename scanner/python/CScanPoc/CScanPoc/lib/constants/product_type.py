@@ -22,7 +22,7 @@ PRODUCT_TYPE = {
     '7173游戏门户网': ProductType.others,
     '724CMS': ProductType.cms,
     '74CMS(骑士CMS)': ProductType.cms,
-    '7Stars(深圳北斗星)': ProductType.other,
+    '7Stars(深圳北斗星)': ProductType.others,
     '7k7kbox': ProductType.others,
     '91网': ProductType.others,
     'ACSNO(埃森诺)': ProductType.others,
@@ -210,7 +210,7 @@ PRODUCT_TYPE = {
     'IWMS': ProductType.cms,
     'ImagineCMS': ProductType.cms,
     'Info_Backup(网站备份文件泄露)': ProductType.others,
-    'Info_DS_Store(.DS_Store文件泄露)': ProductType.otehrs,
+    'Info_DS_Store(.DS_Store文件泄露)': ProductType.others,
     'Info_Git(Git源码泄露)': ProductType.others,
     'Info_Manage': ProductType.others,
     'Info_PHPinfo': ProductType.others,
@@ -390,7 +390,7 @@ PRODUCT_TYPE = {
     'SouthSoft': ProductType.cms,
     'Southidc': ProductType.cms,
     'SpeedCMS': ProductType.cms,
-    'Sphider': ProductType.Sphider
+    'Sphider': ProductType.others,
     'Spring': ProductType.middleware,
     'StaMPi': ProductType.others,
     'StartBBS': ProductType.cms,
@@ -403,14 +403,14 @@ PRODUCT_TYPE = {
     'TOM.COM': ProductType.others,
     'TOUR旅游网站管理系统': ProductType.cms,
     'TP-Link': ProductType.device,
-    'TRS IDS(拓尔思身份服务器系统)': ProductType.
+    'TRS IDS(拓尔思身份服务器系统)': ProductType.cms,
     'TRS InfoRadar(拓尔思网络信息雷达系统)': ProductType.cms,
     'TRS WCM(拓尔思内容协作平台)': ProductType.cms,
     'TaoCMS': ProductType.cms,
     'Tencent': ProductType.others,
     'Tenpay(财付通)': ProductType.others,
-    'ThaiWeb': ProductType.ThaiWeb
-    'ThinkOK': ProductType.ThinkOK
+    'ThaiWeb': ProductType.others,
+    'ThinkOK': ProductType.others,
     'ThinkOX': ProductType.cms,
     'ThinkPHP': ProductType.middleware,
     'ThinkSAAS': ProductType.cms,
@@ -505,7 +505,7 @@ PRODUCT_TYPE = {
     'iGENUS(爱琴思邮件系统)': ProductType.cms,
     'iKuai(爱快系统)': ProductType.device,
     'iPowerCMS': ProductType.cms,
-    'iWebshop': ProductType.cms
+    'iWebshop': ProductType.cms,
     'ibidian': ProductType.others,
     'interact': ProductType.others,
     'phpMBBCMS': ProductType.cms,
@@ -656,9 +656,9 @@ PRODUCT_TYPE = {
     '锐捷网络': ProductType.device,
     '长安信托': ProductType.others,
     '鞍山银行': ProductType.others,
-    '淘客帝国CMS': ProductType.cms
-    '网域高校CMS': ProductType.cms
-    '金智教育CMS': ProductType.cms
+    '淘客帝国CMS': ProductType.cms,
+    '网域高校CMS': ProductType.cms,
+    '金智教育CMS': ProductType.cms,
     '宝创科技MSA': ProductType.others,
     '天生创想OA': ProductType.cms,
     '东方电子SCADA': ProductType.others,

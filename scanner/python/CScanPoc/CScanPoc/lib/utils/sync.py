@@ -265,7 +265,7 @@ class SyncVuln:
                " c_id, c_version,"
                " cve_id, cnvd_id, disclosure_date, submit_time,"
                " level, source, detail) "
-               "VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)")
+               "VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)")
         cursor = self.cnx.cursor(buffered=True)
         try:
             data = (
