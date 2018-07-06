@@ -18,7 +18,7 @@ class Vuln(ABVuln):
     cnvd_id = 'Unkonwn'  # cnvd漏洞编号
     cve_id = 'Unkonwn'  # cve编号
     product = 'ShopEx'  # 漏洞应用名称
-    product_version = '*'  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '40d54715-cbd6-4c1e-98c7-3cb57ef98672'

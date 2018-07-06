@@ -3,18 +3,18 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'Kingsof_0102' # 平台漏洞编号
+    vuln_id = 'Kingsofe_0102' # 平台漏洞编号
     name = '金山分站本地文件包含' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型
     disclosure_date = '2012-07-26'  # 漏洞公布时间
-    desc = '''模版漏洞描述
+    desc = '''
     金山站本地文件包含，可查看hosts,passwd等攻击者可以通过本地文件包含来读取系统敏感文件信息。
     ''' # 漏洞描述
     ref = 'Unknown' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=5103
     cnvd_id = 'Unknown' # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
-    product = 'Kingsof'  # 漏洞组件名称
+    product = '金山软件'  # 漏洞组件名称
     product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):

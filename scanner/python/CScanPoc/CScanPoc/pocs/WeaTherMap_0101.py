@@ -12,7 +12,7 @@ class Vuln(ABVuln):
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.OTHER # 漏洞类型
     disclosure_date = 'Unknown'  # 漏洞公布时间
-    desc = '''模版漏洞描述
+    desc = '''
     WeaTherMap插件的editor.php利用参数mapname上传一句话shell。
     ''' # 漏洞描述
     ref = 'Unknown' # 漏洞来源http://zone.wooyun.org/content/28036

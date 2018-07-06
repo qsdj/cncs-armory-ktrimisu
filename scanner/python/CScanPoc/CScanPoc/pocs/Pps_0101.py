@@ -3,18 +3,18 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'Pps_0101' # 平台漏洞编号
+    vuln_id = 'PPS_0101' # 平台漏洞编号
     name = 'pps分站任意文件泄漏' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型
     disclosure_date = '2012-07-05'  # 漏洞公布时间
-    desc = '''模版漏洞描述
+    desc = '''
     pps分站任意文件泄漏，攻击者可以通过任意文件下载来读取系统敏感文件信息。
     ''' # 漏洞描述
     ref = 'Unknown' # 漏洞来源
     cnvd_id = 'Unknown' # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
-    product = 'Pps'  # 漏洞组件名称
+    product = 'PPS'  # 漏洞组件名称
     product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):

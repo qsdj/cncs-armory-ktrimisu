@@ -12,11 +12,11 @@ class Vuln(ABVuln):
     desc = '''
         酷6网某旗下频道sql注入漏洞，攻击者可以通过构造恶意SQL语句泄露出数据库中的重要信息。
     ''' # 漏洞描述
-    ref = 'Uknown' #
-    cnvd_id = 'Uknown' # cnvd漏洞编号
-    cve_id = 'Uknown'  # cve编号
+    ref = 'Unknown' #
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = '酷6网'  # 漏洞组件名称
-    product_version = 'Uknown'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'c2d08b66-db3e-4c0d-9f0f-035188b52030' # 平台 POC 编号

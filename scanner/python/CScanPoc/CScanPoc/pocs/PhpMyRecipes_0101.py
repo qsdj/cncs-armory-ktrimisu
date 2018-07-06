@@ -9,7 +9,7 @@ class Vuln(ABVuln):
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2015-01-07'  # 漏洞公布时间
-    desc = '''模版漏洞描述
+    desc = '''
     phpMyRecipes是一个简单的基于Web的食谱存储和检索的应用程序。
     phpMyRecipes category参数存在SQL注入漏洞，由于phpMyRecipes browse.php脚本未能正确过滤cagegory参数，允许远程攻击者利用漏洞提交特制的SQL查询，操作或获取数据库数据。
     ''' # 漏洞描述

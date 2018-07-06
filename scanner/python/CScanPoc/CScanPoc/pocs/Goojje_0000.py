@@ -12,11 +12,11 @@ class Vuln(ABVuln):
     desc = '''
         谷姐分站多处SQL注入漏洞，攻击者可以通过构造恶意SQL语句泄露出数据库中的重要信息。
     ''' # 漏洞描述
-    ref = 'Uknown' #https://wooyun.shuimugan.com/bug/view?bug_no=1951
-    cnvd_id = 'Uknown' # cnvd漏洞编号
-    cve_id = 'Uknown'  # cve编号
+    ref = 'Unknown' #https://wooyun.shuimugan.com/bug/view?bug_no=1951
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = '谷姐'  # 漏洞组件名称
-    product_version = 'Uknown'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '13b9d01a-eabc-4e56-a1c6-15c8abd1ddff' # 平台 POC 编号

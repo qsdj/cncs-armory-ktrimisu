@@ -12,11 +12,11 @@ class Vuln(ABVuln):
     desc = '''
         完美时空URL跳转，攻击者可以通过构造恶意链接来跳转到恶意网站对用户进行钓鱼攻击。
     ''' # 漏洞描述
-    ref = 'Uknown' #https://wooyun.shuimugan.com/bug/view?bug_no=1015
-    cnvd_id = 'Uknown' # cnvd漏洞编号
-    cve_id = 'Uknown'  # cve编号
+    ref = 'Unknown' #https://wooyun.shuimugan.com/bug/view?bug_no=1015
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = '完美世界'  # 漏洞组件名称
-    product_version = 'Uknown'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '0ce055fc-1026-48e6-848f-34fc494348b2' # 平台 POC 编号

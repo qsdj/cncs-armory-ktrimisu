@@ -12,11 +12,11 @@ class Vuln(ABVuln):
     desc = '''
         互联星空分站SQL注射漏洞，攻击者可以通过构造恶意SQL语句泄露出数据库中的重要信息。
     ''' # 漏洞描述
-    ref = 'Uknown' #
-    cnvd_id = 'Uknown' # cnvd漏洞编号
-    cve_id = 'Uknown'  # cve编号
+    ref = 'Unknown' #
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = '互联星空'  # 漏洞组件名称
-    product_version = 'Uknown'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '7a84af7c-7ac3-425a-ac4b-3494add0e8ac' # 平台 POC 编号

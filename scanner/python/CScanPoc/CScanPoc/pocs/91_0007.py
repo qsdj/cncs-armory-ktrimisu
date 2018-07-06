@@ -5,18 +5,18 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
     vuln_id = '91_0007' # 平台漏洞编号
-    name = '91旗下某频道SQL注入' # 漏洞名称
+    name = '91旗下官方站点SQL注入漏洞' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2010-10-08'  # 漏洞公布时间
     desc = '''
-        91旗下某频道SQL注入漏洞，攻击者可以通过构造恶意SQL语句泄露出数据库中的重要信息。
+        991旗下官方站点SQL注入漏洞，攻击者可以通过构造恶意SQL语句泄露出数据库中的重要信息。
     ''' # 漏洞描述
-    ref = 'Uknown' #https://wooyun.shuimugan.com/bug/view?bug_no=650
-    cnvd_id = 'Uknown' # cnvd漏洞编号
-    cve_id = 'Uknown'  # cve编号
+    ref = 'Unknown' #https://wooyun.shuimugan.com/bug/view?bug_no=650
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = '91网'  # 漏洞组件名称
-    product_version = 'Uknown'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '86fc7661-76c6-4497-8dc0-e1e66d62c220' # 平台 POC 编号

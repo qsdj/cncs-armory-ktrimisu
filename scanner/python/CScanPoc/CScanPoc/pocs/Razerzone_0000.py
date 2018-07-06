@@ -12,11 +12,11 @@ class Vuln(ABVuln):
     desc = '''
         雷蛇官方网站mysql注射漏洞，攻击者可以通过构造恶意SQL语句泄露出数据库中的重要信息。
     ''' # 漏洞描述
-    ref = 'Uknown' #https://wooyun.shuimugan.com/bug/view?bug_no=1402
-    cnvd_id = 'Uknown' # cnvd漏洞编号
-    cve_id = 'Uknown'  # cve编号
+    ref = 'Unknown' #https://wooyun.shuimugan.com/bug/view?bug_no=1402
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = '雷蛇'  # 漏洞组件名称
-    product_version = 'Uknown'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'f3765a3b-323d-4ac2-ba99-9da8cbf3caab' # 平台 POC 编号

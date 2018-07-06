@@ -12,12 +12,12 @@ class Vuln(ABVuln):
     type = VulnType.INFO_LEAK # 漏洞类型
     disclosure_date = '2014-11-21'  # 漏洞公布时间
     desc = '''
-    Eyou sysinfo Information Disclosure.
+    eYou sysinfo Information Disclosure.
     ''' # 漏洞描述
     ref = 'Unknown' # 漏洞来源http://www.wooyun.org/bugs/wooyun-2014-061538
     cnvd_id = 'Unknown' # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
-    product = 'Eyou'  # 漏洞应用名称
+    product = 'eYou'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
 
 

@@ -12,11 +12,11 @@ class Vuln(ABVuln):
     desc = '''
         途牛旅游网任意文件包含漏洞，攻击者可以通过构造恶意语句来读取系统敏感文件信息。
     ''' # 漏洞描述
-    ref = 'Uknown' #https://wooyun.shuimugan.com/bug/view?bug_no=61023 https://wooyun.shuimugan.com/bug/view?bug_no=60816
-    cnvd_id = 'Uknown' # cnvd漏洞编号
-    cve_id = 'Uknown'  # cve编号
+    ref = 'Unknown' #https://wooyun.shuimugan.com/bug/view?bug_no=61023 https://wooyun.shuimugan.com/bug/view?bug_no=60816
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = '途牛'  # 漏洞组件名称
-    product_version = 'Uknown'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '80ea24b8-57f2-438a-8b73-7252b049bd8c' # 平台 POC 编号

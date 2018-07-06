@@ -3,12 +3,12 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'PhpCMS_0111' # 平台漏洞编号
-    name = 'phpcms2008本地文件包括及利用' # 漏洞名称
+    vuln_id = 'PHPCMS_0111' # 平台漏洞编号
+    name = 'PHPCMS2008本地文件包括及利用' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型
     disclosure_date = '2010-10-12'  # 漏洞公布时间
-    desc = '''模版漏洞描述
+    desc = '''
     文件wap/index.php
     action 变量没有判断，造成本地文件包含漏洞。
     利用（其中之一）：
@@ -17,7 +17,7 @@ class Vuln(ABVuln):
     ref = 'Unknown' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=497
     cnvd_id = 'Unknown' # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
-    product = 'PhpCMS'  # 漏洞组件名称
+    product = 'PHPCMS'  # 漏洞组件名称
     product_version = '2008'  # 漏洞应用版本
 
 class Poc(ABPoc):

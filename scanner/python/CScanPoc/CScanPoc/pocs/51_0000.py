@@ -12,11 +12,11 @@ class Vuln(ABVuln):
     desc = '''
         51网站一处跳转漏洞，攻击者可以通过构造恶意链接来跳转到恶意网站对用户进行钓鱼攻击。
     ''' # 漏洞描述
-    ref = 'Uknown' #https://wooyun.shuimugan.com/bug/view?bug_no=846
-    cnvd_id = 'Uknown' # cnvd漏洞编号
-    cve_id = 'Uknown'  # cve编号
-    product = '前程无忧网'  # 漏洞组件名称
-    product_version = 'Uknown'  # 漏洞应用版本
+    ref = 'Unknown' #https://wooyun.shuimugan.com/bug/view?bug_no=846
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
+    product = '51job'  # 漏洞组件名称
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '2ae354f2-6834-4678-813a-0533f749844c' # 平台 POC 编号

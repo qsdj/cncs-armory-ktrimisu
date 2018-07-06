@@ -19,7 +19,7 @@ class Vuln(ABVuln):
     ref = 'https://packetstormsecurity.com/files/128814/WordPress-CP-Multi-View-Event-Calendar-1.01-SQL-Injection.html'  # 漏洞来源
     cnvd_id = 'Unkonwn'  # cnvd漏洞编号
     cve_id = 'Unkonwn'  # cve编号
-    product = 'Wordpress'  # 漏洞应用名称
+    product = 'WordPress'  # 漏洞应用名称
     product_version = 'CP Multi View Event Calendar <= 1.1.4'  # 漏洞应用版本
 
 class Poc(ABPoc):

@@ -18,7 +18,7 @@ class Vuln(ABVuln):
     ref = 'Unknown' # 漏洞来源http://wooyun.org/bugs/wooyun-2010-0110312
     cnvd_id = 'Unknown' # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
-    product = 'Yonyou'  # 漏洞应用名称
+    product = 'Yonyou(用友)'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
 
 

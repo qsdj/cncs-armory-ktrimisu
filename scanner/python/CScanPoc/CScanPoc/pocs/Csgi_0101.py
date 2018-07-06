@@ -8,7 +8,7 @@ class Vuln(ABVuln):
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型
     disclosure_date = '2012-07-27'  # 漏洞公布时间
-    desc = '''模版漏洞描述
+    desc = '''
     由于网站服务器resin版本存在漏洞，导致南方电网国际网页源代码泄漏。
     /resin-doc/viewfile/?file=index.jsp
     ''' # 漏洞描述

@@ -8,7 +8,7 @@ class Vuln(ABVuln):
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2016-07-16'  # 漏洞公布时间
-    desc = '''模版漏洞描述
+    desc = '''
     http://**.**.**/album/h/xinQingViewid=8&device=&user_id=418923
     注入点：id
     注入类型：Type: boolean-based blind

@@ -8,7 +8,7 @@ class Vuln(ABVuln):
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型
     disclosure_date = '2013-06-14'  # 漏洞公布时间
-    desc = '''模版漏洞描述
+    desc = '''
     合法头像地址
     /plugins/index.php?q=imgurl&url=QGltZ3VybEAvZGF0YS9pbWFnZXMvYXZhdGFyL25vYXZhdGFyX21pZGRsZS5naWY&id=112
     发现 url参数是base64_encode 过的字符串，看似与文件路径相关，可利用～

@@ -8,7 +8,7 @@ class Vuln(ABVuln):
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型
     disclosure_date = '2011-07-12'  # 漏洞公布时间
-    desc = '''模版漏洞描述
+    desc = '''
     网易hr网站存在文件包含漏洞。
     payload = "/resin-doc/viwefile/?contextpath=/&servlet[atj=&file=WEB-INF/web.xml"
             url = self.target + payload

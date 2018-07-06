@@ -7,8 +7,8 @@ import re
 import hashlib
 
 class Vuln(ABVuln):
-    vuln_id = 'PlineCMS_0001' # 平台漏洞编号，留空
-    name = 'PlineCMS 5.0.5 Cross Site Scripting' # 漏洞名称
+    vuln_id = 'Plone_0001' # 平台漏洞编号，留空
+    name = 'PloneCMS 5.0.5 Cross Site Scripting' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2019-09-05'  # 漏洞公布时间
@@ -21,8 +21,8 @@ class Vuln(ABVuln):
     ref = 'https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7147' # 漏洞来源
     cnvd_id = 'CVE-2016-7147' # cnvd漏洞编号
     cve_id = 'Unkonwn' #cve编号
-    product = 'PlineCMS'  # 漏洞应用名称
-    product_version = 'PlineCMS 5.0.5'  # 漏洞应用版本
+    product = 'PloneCMS'  # 漏洞应用名称
+    product_version = 'PloneCMS 5.0.5'  # 漏洞应用版本
 
 
 class Poc(ABPoc):

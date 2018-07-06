@@ -17,7 +17,7 @@ class Vuln(ABVuln):
     cnvd_id = 'Unkonwn'  # cnvd漏洞编号
     cve_id = 'Unkonwn'  # cve编号
     product = 'TOUR旅游网站管理系统'  # 漏洞应用名称
-    product_version = '*'  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'a18f706c-9292-49bc-9f1b-3e90ef306d2f'

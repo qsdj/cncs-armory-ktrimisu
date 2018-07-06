@@ -7,8 +7,8 @@ import re
 import urllib2
 
 class Vuln(ABVuln):
-    vuln_id = 'crack_jboss' # 平台漏洞编号
-    name = 'Jboss弱口令' # 漏洞名称
+    vuln_id = 'crack_JBoss' # 平台漏洞编号
+    name = 'JBoss弱口令' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型
     disclosure_date = 'Unknown'  # 漏洞公布时间
@@ -18,7 +18,7 @@ class Vuln(ABVuln):
     ref = 'Unknown' # 
     cnvd_id = 'Unknown' # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
-    product = 'Jboss'  # 漏洞组件名称
+    product = 'JBoss'  # 漏洞组件名称
     product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):

@@ -8,13 +8,13 @@ class Vuln(ABVuln):
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型
     disclosure_date = '2014-01-05'  # 漏洞公布时间
-    desc = '''模版漏洞描述
+    desc = '''
     新浪旗下分站LFI包含漏洞，攻击者可以通过本地文件包含来读取系统敏感文件信息。
     ''' # 漏洞描述
     ref = 'Unknown' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=43658
     cnvd_id = 'Unknown' # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
-    product = 'Sina'  # 漏洞组件名称
+    product = '新浪'  # 漏洞组件名称
     product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):

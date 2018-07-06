@@ -17,10 +17,10 @@ class Vuln(ABVuln):
         没有正确验证dir[inc]变量用户输入，远程攻击者通过包含本地或外部资源的任意文件导致执行任意脚本代码。
     ''' # 漏洞描述
     ref = 'https://www.seebug.org/vuldb/ssvid-63921' # 
-    cnvd_id = 'Unknow' # cnvd漏洞编号
+    cnvd_id = 'Unknown' # cnvd漏洞编号
     cve_id = 'CVE-2006-4583'  # cve编号
-    product = '应用名称'  # 漏洞组件名称
-    product_version = 'FlashChat'  # 漏洞应用版本
+    product = 'FlashChat'  # 漏洞组件名称
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'e8f7db4a-5005-4c66-a2ac-b423dfbc5b98' # 平台 POC 编号

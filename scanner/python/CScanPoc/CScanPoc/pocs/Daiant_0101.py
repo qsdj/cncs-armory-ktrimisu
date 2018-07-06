@@ -10,7 +10,7 @@ class Vuln(ABVuln):
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = ''  # 漏洞公布时间
-    desc = '''模版漏洞描述
+    desc = '''
     参数wt_id 伪静态，
     贷蚂蚁旗下分站时间盲注一枚。
     ''' # 漏洞描述

@@ -10,7 +10,7 @@ class Vuln(ABVuln):
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2015-10-16'  # 漏洞公布时间
-    desc = '''模版漏洞描述
+    desc = '''
     欧派集团旗下核心系统存在SQL且权限为DBA（时间盲注）。
     ''' # 漏洞描述
     ref = 'Unknown' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=138297

@@ -11,12 +11,12 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2015-04-02'  # 漏洞公布时间
     desc = '''
-        EcsCMS(易创思ECS) SQL注入漏洞，.net+sqlserver注射，影响众多学校及教育机构。
+        EcsCMS(易创思CMS) SQL注入漏洞，.net+sqlserver注射，影响众多学校及教育机构。
     ''' # 漏洞描述
     ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=088844' # 漏洞来源
     cnvd_id = 'Unkonwn' # cnvd漏洞编号
     cve_id = 'Unkonwn' #cve编号
-    product = 'EcsCMS(易创思ECS)'  # 漏洞应用名称
+    product = 'EcsCMS(易创思CMS)'  # 漏洞应用名称
     product_version = 'Unkonwn'  # 漏洞应用版本
 
 

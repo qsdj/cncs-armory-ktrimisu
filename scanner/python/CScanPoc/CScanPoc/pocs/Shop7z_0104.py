@@ -18,7 +18,7 @@ class Vuln(ABVuln):
     ref = 'Unknown' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=109753
     cnvd_id = 'Unknown' # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
-    product = 'shop7z'  # 漏洞应用名称
+    product = 'Shop7z'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
 
 

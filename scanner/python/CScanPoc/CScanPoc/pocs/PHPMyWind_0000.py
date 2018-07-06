@@ -6,17 +6,17 @@ hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
     vuln_id = 'PHPMyWind_0000' # 平台漏洞编号，留空
-    name = 'phpMyWind 注入' # 漏洞名称
+    name = 'PHPMyWind 注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2014-02-28'  # 漏洞公布时间
     desc = '''
-        phpMyWind /order.php?id= 注入漏洞。
+        PHPMyWind /order.php?id= 注入漏洞。
     ''' # 漏洞描述
     ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=051256
     cnvd_id = 'Unkonwn' # cnvd漏洞编号
     cve_id = 'Unkonwn' #cve编号
-    product = 'phpMyWind'  # 漏洞应用名称
+    product = 'PHPMyWind'  # 漏洞应用名称
     product_version = 'Unkonwn'  # 漏洞应用版本
 
 

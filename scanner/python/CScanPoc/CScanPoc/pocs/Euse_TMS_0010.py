@@ -6,17 +6,17 @@ hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
     vuln_id = 'Euse_TMS_0010' # 平台漏洞编号，留空
-    name = '易用在线培训系统 SQL注入' # 漏洞名称
+    name = '益用在线培训系统 SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2015-07-24'  # 漏洞公布时间
     desc = '''
-        Euse TMS(易用在线培训系统) /js/mood/xinqing.aspx?action=mood&classid=download&id=1 SQL注入漏洞。
+        Euse TMS(益用在线培训系统) /js/mood/xinqing.aspx?action=mood&classid=download&id=1 SQL注入漏洞。
     ''' # 漏洞描述
     ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0118985
     cnvd_id = 'Unkonwn' # cnvd漏洞编号
     cve_id = 'Unkonwn' #cve编号
-    product = 'Euse TMS(易用在线培训系统)'  # 漏洞应用名称
+    product = 'Euse TMS(益用在线培训系统)'  # 漏洞应用名称
     product_version = 'v6'  # 漏洞应用版本
 
 

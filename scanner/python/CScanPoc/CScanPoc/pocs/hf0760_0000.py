@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'HuafiCMS_0000' # 平台漏洞编号，留空
+    vuln_id = 'hf0760_0000' # 平台漏洞编号，留空
     name = '华飞科技建站系统未授权添加管理员' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
@@ -16,7 +16,7 @@ class Vuln(ABVuln):
     ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=83888
     cnvd_id = 'Unkonwn' # cnvd漏洞编号
     cve_id = 'Unkonwn' #cve编号
-    product = 'HuafiCMS'  # 漏洞应用名称
+    product = 'hf0760'  # 漏洞应用名称
     product_version = 'Unkonwn'  # 漏洞应用版本
 
 

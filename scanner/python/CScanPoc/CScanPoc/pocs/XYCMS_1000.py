@@ -15,7 +15,7 @@ class Vuln(ABVuln):
     ref = 'Unkonwn'  # 漏洞来源
     cnvd_id = 'Unkonwn'  # cnvd漏洞编号
     cve_id = 'Unkonwn'  # cve编号
-    product = 'XYCMS'
+    product = 'XYCMS'   # 漏洞应用名称
     product_version = 'v1.5'
 
 class Poc(ABPoc):

@@ -8,7 +8,7 @@ class Vuln(ABVuln):
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型
     disclosure_date = '2013-12-29'  # 漏洞公布时间
-    desc = '''模版漏洞描述
+    desc = '''
     Loveit推广分站任意文件下载包含漏洞，攻击者可以通过本地文件包含来读取系统敏感文件信息。
     ''' # 漏洞描述
     ref = 'Unknown' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=42899

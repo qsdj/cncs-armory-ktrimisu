@@ -24,7 +24,7 @@ class Vuln(ABVuln):
     ref = 'http://www.webbaozi.com/dmsj/38.html' # 漏洞来源http://0day5.com/archives/4339/
     cnvd_id = 'Unkonwn' # cnvd漏洞编号
     cve_id = 'Unkonwn' #cve编号
-    product = 'DuomiMS'  # 漏洞应用名称
+    product = 'DuomiCMS'  # 漏洞应用名称
     product_version = 'Unkonwn'  # 漏洞应用版本
 
 

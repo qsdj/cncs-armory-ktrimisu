@@ -10,7 +10,7 @@ class Vuln(ABVuln):
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2018-06-07'  # 漏洞公布时间
-    desc = '''模版漏洞描述
+    desc = '''
     WordPress Contact Form Maker Plugin 1.12.20 - SQL Injection.
     WordPress联系人表单制作插件1.12.20 - SQL注入。
     ''' # 漏洞描述

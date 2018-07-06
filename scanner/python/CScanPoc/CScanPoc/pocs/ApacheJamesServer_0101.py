@@ -13,7 +13,7 @@ class Vuln(ABVuln):
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型
     disclosure_date = '2014-10-16'  # 漏洞公布时间
-    desc = '''模版漏洞描述
+    desc = '''
     Info: This exploit works on default installation of Apache James Server 2.3.2
     Info: Example paths that will automatically execute payload on some action: /etc/bash_completion.d , /etc/pm/config.d.
     ''' # 漏洞描述

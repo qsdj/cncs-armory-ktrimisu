@@ -19,7 +19,7 @@ class Vuln(ABVuln):
     ref = 'http://seclists.org/fulldisclosure/2015/Apr/42' # 漏洞来源
     cnvd_id = 'Unkonwn' # cnvd漏洞编号
     cve_id = 'Unkonwn' #cve编号
-    product = '华为软件'  # 漏洞应用名称
+    product = '华为'  # 漏洞应用名称
     product_version = 'Unkonwn'  # 漏洞应用版本
 
 

@@ -11,7 +11,7 @@ class Vuln(ABVuln):
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型
     disclosure_date = '2017-09-05'  # 漏洞公布时间
-    desc = '''模版漏洞描述
+    desc = '''
     "WordPress是WordPress软件基金会的一套使用PHP语言开发的博客平台，该平台支持在PHP和MySQL的服务器上架设个人博客网站。Event List是其中的一个事件清单插件。
     WordPress Event List插件0.7.9版本中存在跨站脚本漏洞。远程攻击者可利用该漏洞注入任意的Web脚本或HTML。"
     ''' # 漏洞描述

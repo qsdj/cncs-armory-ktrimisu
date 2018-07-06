@@ -20,7 +20,7 @@ class Vuln(ABVuln):
     ref = 'https://www.seebug.org/vuldb/ssvid-90722'  # 漏洞来源
     cnvd_id = 'Unkonwn'  # cnvd漏洞编号
     cve_id = 'Unkonwn'  # cve编号
-    product = '汇文图书管理系统'  # 漏洞应用名称
+    product = '汇文软件'  # 漏洞应用名称
     product_version = 'V5.5'  # 漏洞应用版本
 
 def testing(url):

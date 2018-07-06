@@ -8,7 +8,7 @@ class Vuln(ABVuln):
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型
     disclosure_date = '2012-02-06'  # 漏洞公布时间
-    desc = '''模版漏洞描述
+    desc = '''
     北大讲座网SQL文件包含泄漏重要系统文件
     ''' # 漏洞描述
     ref = 'Unknown' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=4251

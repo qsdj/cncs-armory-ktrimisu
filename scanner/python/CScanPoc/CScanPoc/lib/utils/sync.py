@@ -260,7 +260,7 @@ class SyncVuln:
         sql = ("INSERT INTO vuln "
                "(vuln_id, vuln_name, vuln_type,"
                " c_id, c_version,"
-               " cve_id, disclosure_date, submit_time,"
+               " cve_id, cnvd_id, disclosure_date, submit_time,"
                " level, source, detail) "
                "VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)")
         cursor = self.cnx.cursor(buffered=True)
@@ -268,7 +268,7 @@ class SyncVuln:
             data = (
                 vuln.vuln_id, vuln.name, vuln.type.value,
                 product_id, vuln.product_version,
-                vuln.cve_id, vuln.disclosure_date, datetime.now(),
+                vuln.cve_id, vuln.cnvd_id, vuln.disclosure_date, datetime.now(),
                 vuln.level.value, vuln.ref, vuln.desc)
             cursor.execute(sql, data)
             self.cnx.commit()
@@ -291,13 +291,13 @@ class SyncVuln:
             sql = ("UPDATE vuln SET "
                    "vuln_name=%s, vuln_type=%s,"
                    "c_id=%s, c_version=%s,"
-                   "cve_id=%s, disclosure_date=%s, submit_time=%s,"
+                   "cve_id=%s, cnvd_id=%s, disclosure_date=%s, submit_time=%s,"
                    "level=%s, source=%s, detail=%s"
                    "WHERE vuln_id=%s")
             cursor.execute(sql, (
                 vuln.name, vuln.type.value,
                 product_id, vuln.product_version,
-                vuln.cve_id, vuln.disclosure_date, datetime.now(),
+                vuln.cve_id, vuln.cnvd_id, vuln.disclosure_date, datetime.now(),
                 vuln.level.value, vuln.ref, vuln.desc,
                 vuln.vuln_id))
             self.cnx.commit()

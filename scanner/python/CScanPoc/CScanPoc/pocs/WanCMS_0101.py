@@ -9,7 +9,7 @@ class Vuln(ABVuln):
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2016-01-15'  # 漏洞公布时间
-    desc = '''模版漏洞描述
+    desc = '''
     WanCMS sql盲注
     /app/Lib/Action/AccountsAction.class.php。
     ''' # 漏洞描述

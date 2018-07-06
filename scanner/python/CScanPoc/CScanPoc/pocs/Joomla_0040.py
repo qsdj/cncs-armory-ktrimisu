@@ -16,7 +16,7 @@ class Vuln(ABVuln):
     ref = 'http://www.sebug.net/vuldb/ssvid-67513' # 
     cnvd_id = '0000' # cnvd漏洞编号
     cve_id = '0000'  # cve编号
-    product = 'Joomla！'  # 漏洞组件名称
+    product = 'Joomla!'  # 漏洞组件名称
     product_version = 'UNknown'  # 漏洞应用版本
 
 class Poc(ABPoc):

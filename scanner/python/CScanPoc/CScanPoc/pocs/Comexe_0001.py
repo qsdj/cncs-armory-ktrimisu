@@ -15,7 +15,7 @@ class Vuln(ABVuln):
     ref = 'Unkonwn'  # 漏洞来源
     cnvd_id = 'Unkonwn'  # cnvd漏洞编号
     cve_id = 'Unkonwn'  # cve编号
-    product = '科迈'  # 漏洞应用名称
+    product = '科迈RAS系统'  # 漏洞应用名称
     product_version = '科迈RAS系统'  # 漏洞应用版本
 
 class Poc(ABPoc):

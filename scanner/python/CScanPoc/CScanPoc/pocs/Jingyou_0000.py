@@ -12,9 +12,9 @@ class Vuln(ABVuln):
     desc = '''
         北京精友世纪软件系统存在任意文件读取漏洞，攻击者可以通过构造恶意语句来读取系统敏感文件信息。
     ''' # 漏洞描述
-    ref = 'Uknown' #https://wooyun.shuimugan.com/bug/view?bug_no=142978
-    cnvd_id = 'Uknown' # cnvd漏洞编号
-    cve_id = 'Uknown'  # cve编号
+    ref = 'Unknown' #https://wooyun.shuimugan.com/bug/view?bug_no=142978
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = '北京精友'  # 漏洞组件名称
     product_version = 'V2.5-V4.1'  # 漏洞应用版本
 

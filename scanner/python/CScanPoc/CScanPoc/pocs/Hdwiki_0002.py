@@ -5,8 +5,8 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import time
 
 class Vuln(ABVuln):
-    vuln_id = 'Hdwiki_0002' # 平台漏洞编号，留空
-    name = 'Hdwiki gbk SQL注入'  # 漏洞名称
+    vuln_id = 'HDwiki_0002' # 平台漏洞编号，留空
+    name = 'HDwiki gbk SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2015-09-02'  # 漏洞公布时间
@@ -16,7 +16,7 @@ class Vuln(ABVuln):
     ref = 'http://0day5.com/archives/3351/'  # 漏洞来源
     cnvd_id = 'Unkonwn'  # cnvd漏洞编号
     cve_id = 'Unkonwn'  # cve编号
-    product = 'Hdwiki'  # 漏洞应用名称
+    product = 'HDwiki'  # 漏洞应用名称
     product_version = 'Unkonwn'  # 漏洞应用版本
 
 

@@ -10,7 +10,7 @@ class Vuln(ABVuln):
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2015-12-10'  # 漏洞公布时间
-    desc = '''模版漏洞描述
+    desc = '''
     数字型注入
     漏洞文件:/App/Lib/Action/Member/MsgAction.class.php //46行
     ''' # 漏洞描述

@@ -8,7 +8,7 @@ class Vuln(ABVuln):
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型
     disclosure_date = '2014-02-26'  # 漏洞公布时间
-    desc = '''模版漏洞描述
+    desc = '''
     collabnet subversionedge文件包含漏洞，攻击者可以通过本地文件包含来读取系统敏感文件信息。
     ''' # 漏洞描述
     ref = 'Unknown' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=44049

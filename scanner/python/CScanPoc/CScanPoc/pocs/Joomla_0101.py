@@ -17,7 +17,7 @@ class Vuln(ABVuln):
     ref = 'https://www.bugscan.net/#!/x/22738' # 漏洞来源
     cnvd_id = 'Unknown' # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
-    product = 'Joomla'  # 漏洞应用名称
+    product = 'Joomla!'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
 
 

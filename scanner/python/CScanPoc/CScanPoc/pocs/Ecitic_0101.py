@@ -8,7 +8,7 @@ class Vuln(ABVuln):
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型
     disclosure_date = '2016-05-23'  # 漏洞公布时间
-    desc = '''模版漏洞描述
+    desc = '''
     中信银行信用卡中心可绕过浏览器xss过滤漏洞，攻击者可以通过构造恶意语句来读取系统敏感文件信息。
     ''' # 漏洞描述
     ref = 'Unknown' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=192621

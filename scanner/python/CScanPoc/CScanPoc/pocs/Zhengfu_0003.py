@@ -12,11 +12,11 @@ class Vuln(ABVuln):
     desc = '''
         互动中心管理平台存在通用型文件包含包含漏洞，攻击者可以通过构造恶意语句来读取任意文件敏感信息。
     ''' # 漏洞描述
-    ref = 'Uknown' #https://wooyun.shuimugan.com/bug/view?bug_no=120447
-    cnvd_id = 'Uknown' # cnvd漏洞编号
-    cve_id = 'Uknown'  # cve编号
-    product = '思明区政府互动中心管理平台'  # 漏洞组件名称
-    product_version = 'Uknown'  # 漏洞应用版本
+    ref = 'Unknown' #https://wooyun.shuimugan.com/bug/view?bug_no=120447
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
+    product = '电子政务网'  # 漏洞组件名称
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '96a88b47-789f-430e-9149-f1d08946be13' # 平台 POC 编号

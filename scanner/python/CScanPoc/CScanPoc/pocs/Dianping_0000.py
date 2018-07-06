@@ -6,17 +6,17 @@ hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
     vuln_id = 'Dianping_0000' # 平台漏洞编号，留空
-    name = '大众点评某分站存在远程命令执行' # 漏洞名称
+    name = '大众点评分站存在远程命令执行' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型
     disclosure_date = '2014-12-04'  # 漏洞公布时间
     desc = '''
-       大众点评某分站 /struts/webconsole.html 存在远程命令执行漏洞. 
+       大众点评分站 /struts/webconsole.html 存在远程命令执行漏洞. 
     ''' # 漏洞描述
     ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=080076
     cnvd_id = 'Unkonwn' # cnvd漏洞编号
     cve_id = 'Unkonwn' #cve编号
-    product = '大众点评某分站'  # 漏洞应用名称
+    product = '大众点评'  # 漏洞应用名称
     product_version = 'Unkonwn'  # 漏洞应用版本
 
 

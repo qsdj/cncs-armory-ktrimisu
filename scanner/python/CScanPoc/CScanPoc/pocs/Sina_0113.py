@@ -8,13 +8,13 @@ class Vuln(ABVuln):
     level = VulnLevel.LOW # 漏洞危害级别
     type = VulnType.OTHER # 漏洞类型
     disclosure_date = '2014-03-08'  # 漏洞公布时间
-    desc = '''模版漏洞描述
+    desc = '''
     新浪微博子域名url跳转漏洞，攻击者可以通过url跳转将应用程序引导到不安全的第三方区域，从而导致的安全问题。
     ''' # 漏洞描述
     ref = 'Unknown' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=12548
     cnvd_id = 'Unknown' # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
-    product = 'Sina'  # 漏洞组件名称
+    product = '新浪'  # 漏洞组件名称
     product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):

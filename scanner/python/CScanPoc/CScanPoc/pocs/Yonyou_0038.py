@@ -7,7 +7,7 @@ import os
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'yongyou_0038' # 平台漏洞编号，留空
+    vuln_id = 'Yonyou_0038' # 平台漏洞编号，留空
     name = '用友NC-IUFO报表系统部分安全问题' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
@@ -18,7 +18,7 @@ class Vuln(ABVuln):
     ref = 'https://www.secpulse.com/archives/27741.html' # 漏洞来源
     cnvd_id = 'Unknown' # cnvd漏洞编号
     cve_id = 'Unknown' #cve编号
-    product = '用友'  # 漏洞应用名称
+    product = 'Yonyou(用友)'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
 
 

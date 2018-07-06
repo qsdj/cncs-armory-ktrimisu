@@ -10,7 +10,7 @@ class Vuln(ABVuln):
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型
     disclosure_date = '2018-06-07'  # 漏洞公布时间
-    desc = '''模版漏洞描述
+    desc = '''
     MonstraCMS <3.0.4 - 跨站脚本。
     ''' # 漏洞描述
     ref = 'https://www.exploit-db.com/exploits/44855/' # 漏洞来源

@@ -5,19 +5,19 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
 class Vuln(ABVuln):
-    vuln_id = 'ShopNc_0005' # 平台漏洞编号，留空
-    name = 'ShopNc B2B版SQL注入'  # 漏洞名称
+    vuln_id = 'ShopNC_0005' # 平台漏洞编号，留空
+    name = 'ShopNC B2B版SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2015-07-03'  # 漏洞公布时间
     desc = '''
-        ShopNc B2B版SQL注入漏洞。
+        ShopNC B2B版SQL注入漏洞。
         /microshop/index.php?act=
     '''  # 漏洞描述
     ref = 'Unkonwn'  # 漏洞来源
     cnvd_id = 'Unkonwn'  # cnvd漏洞编号
     cve_id = 'Unkonwn'  # cve编号
-    product = 'ShopNc'  # 漏洞应用名称
+    product = 'ShopNC'  # 漏洞应用名称
     product_version = 'Unkonwn'  # 漏洞应用版本
 
 class Poc(ABPoc):

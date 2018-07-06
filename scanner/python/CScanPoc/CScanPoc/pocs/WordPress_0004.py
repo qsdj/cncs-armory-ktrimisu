@@ -18,7 +18,7 @@ class Vuln(ABVuln):
     ref = 'http://www.freebuf.com/news/66695.html'  # 漏洞来源
     cnvd_id = 'Unkonwn'  # cnvd漏洞编号
     cve_id = 'Unkonwn'  # cve编号
-    product = 'Wordpress'  # 漏洞应用名称
+    product = 'WordPress'  # 漏洞应用名称
     product_version = '使用了Genericons包的WordPress插件或主题'  # 漏洞应用版本
 
 class Poc(ABPoc):

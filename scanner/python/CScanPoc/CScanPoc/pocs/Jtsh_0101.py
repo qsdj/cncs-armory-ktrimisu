@@ -8,7 +8,7 @@ class Vuln(ABVuln):
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型
     disclosure_date = '2012-07-27'  # 漏洞公布时间
-    desc = '''模版漏洞描述
+    desc = '''
     上海交通网任意文件下载。
     ''' # 漏洞描述
     ref = 'Unknown' # 漏洞来源

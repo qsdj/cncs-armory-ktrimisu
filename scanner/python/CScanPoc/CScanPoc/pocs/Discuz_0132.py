@@ -16,7 +16,7 @@ class Vuln(ABVuln):
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.OTHER # 漏洞类型
     disclosure_date = 'Unknown'  # 漏洞公布时间
-    desc = '''模版漏洞描述
+    desc = '''
     DiscuzX1.5X2.5X3 uc_key getshell    
     ''' # 漏洞描述
     ref = 'https://github.com/coffeehb/Some-PoC-oR-ExP/blob/master/Discuz/DiscuzX1.5X2.5X3%20uc_key%20getshell/exp.py' # 漏洞来源

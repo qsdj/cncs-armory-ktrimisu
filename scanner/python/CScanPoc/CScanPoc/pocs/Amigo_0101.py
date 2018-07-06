@@ -11,7 +11,7 @@ class Vuln(ABVuln):
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2016-01-30'  # 漏洞公布时间
-    desc = '''模版漏洞描述
+    desc = '''
     注入点h /ami_stat/ami_stat.php?val2=undefined&val1=111*&type=search
     注入参数为val1
     正常检测不出来，需要doubleencode一下。

@@ -15,7 +15,7 @@ class Vuln(ABVuln):
     ref = 'Unknown' #https://wooyun.shuimugan.com/bug/view?bug_no=155648
     cnvd_id = 'Unknown' # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
-    product = '国税'  # 漏洞组件名称
+    product = '电子政务网'  # 漏洞组件名称
     product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):

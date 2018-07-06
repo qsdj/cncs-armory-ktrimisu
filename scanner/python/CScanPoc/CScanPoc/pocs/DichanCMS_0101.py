@@ -8,7 +8,7 @@ class Vuln(ABVuln):
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型
     disclosure_date = ''  # 漏洞公布时间
-    desc = '''模版漏洞描述
+    desc = '''
     新浪地产CMS存设计缺陷和多处sql注入，
     设计缺陷出现在登录时图片验证码使用一次未失效，可撞库和暴破。
     ''' # 漏洞描述

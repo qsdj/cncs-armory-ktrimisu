@@ -15,7 +15,7 @@ class Vuln(ABVuln):
     ref = 'http://sebug.net/vuldb/ssvid-19358' # 漏洞来源
     cnvd_id = 'Unknown' # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
-    product = 'Joomla'  # 漏洞应用名称
+    product = 'Joomla!'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
 
 

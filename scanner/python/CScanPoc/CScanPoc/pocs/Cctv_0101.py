@@ -3,19 +3,19 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'Cctv_0101' # 平台漏洞编号
-    name = 'CCTV分站本地文件包含(phpcms)' # 漏洞名称
+    vuln_id = 'CCTV_0101' # 平台漏洞编号
+    name = 'CCTV分站本地文件包含(PHPCMS)' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型
     disclosure_date = '2013-06-04'  # 漏洞公布时间
-    desc = '''模版漏洞描述
-    CCTV分站本地文件包含(phpcms2007)漏洞，攻击者可以通过文件包含来读取系统敏感文件信息。
+    desc = '''
+    CCTV分站本地文件包含(PHPCMS2007)漏洞，攻击者可以通过文件包含来读取系统敏感文件信息。
     ''' # 漏洞描述
     ref = 'Unknown' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=22217
     cnvd_id = 'Unknown' # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
-    product = 'Phpcms'  # 漏洞组件名称
-    product_version = 'Unknown'  # 漏洞应用版本
+    product = 'PHPCMS'  # 漏洞组件名称
+    product_version = 'PHPCMS2007'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '9d50d766-ed7b-490b-8be6-975dae755e3d' # 平台 POC 编号

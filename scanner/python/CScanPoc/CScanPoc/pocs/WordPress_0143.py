@@ -9,7 +9,7 @@ class Vuln(ABVuln):
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型
     disclosure_date = '2015-01-09'  # 漏洞公布时间
-    desc = '''模版漏洞描述
+    desc = '''
     WordPress是一种使用PHP语言开发的博客平台，用户可以在支持PHP和MySQL数据库的服务器上架设自己的网志。TweetScribe plugin是一款可通过tweetscribe.me网站使用Twitter帐户订阅WordPress博客的插件。
     WordPress插件TweetScribe存在跨站请求伪造漏洞，允许远程攻击者利用漏洞劫持管理员的请求认证。
     ''' # 漏洞描述

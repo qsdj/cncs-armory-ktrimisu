@@ -12,7 +12,7 @@ class Vuln(ABVuln):
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.OTHER # 漏洞类型
     disclosure_date = ''  # 漏洞公布时间
-    desc = '''模版漏洞描述
+    desc = '''
     1 通过redis未授权访问漏洞,向redis插入一条记录,内容是反弹shell的定时任务
     2 通过redis数据导出功能,将含有定时任务代码的数据导出到/var/spool/cron/root
     3 监听端口,获取shell

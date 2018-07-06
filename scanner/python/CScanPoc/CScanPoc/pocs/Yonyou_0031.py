@@ -11,14 +11,12 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2015-05-08'  # 漏洞公布时间
     desc = '''
-        用友FE协作办公系统 DBA权限注入：
-        /fenc/syncsubject.jsp?pk_corp=1
-        /fenc/syncsubject.jsp?pk_corp=1
+        用友FE协作办公系统 DBA权限注入。
     '''  # 漏洞描述
     ref = 'Unknown'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
-    product = '用友'  # 漏洞应用名称
+    product = 'Yonyou(用友)'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):

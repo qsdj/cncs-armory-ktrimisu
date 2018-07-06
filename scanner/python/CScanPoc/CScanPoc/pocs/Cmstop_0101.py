@@ -8,18 +8,18 @@ hh = hackhttp.hackhttp()
 
 
 class Vuln(ABVuln):
-    vuln_id = 'Cmstop_0101' # 平台漏洞编号，留空
-    name = 'Cmstop 1.0 /apps/system/view/template/edit.php Path Disclosure' # 漏洞名称
+    vuln_id = 'CmsTop_0101' # 平台漏洞编号，留空
+    name = 'CmsTop 1.0 /apps/system/view/template/edit.php Path Disclosure' # 漏洞名称
     level = VulnLevel.LOW # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
     disclosure_date = '2014-11-01'  # 漏洞公布时间
     desc = '''
-    Cmstop 1.0 /apps/system/view/template/edit.php Path Disclosure.
+    CmsTop 1.0 /apps/system/view/template/edit.php Path Disclosure.
     ''' # 漏洞描述
     ref = 'https://www.yascanner.com/#!/n/56' # 漏洞来源
     cnvd_id = 'Unknown' # cnvd漏洞编号
     cve_id = 'Unknown' # cve编号
-    product = 'Cmstop'  # 漏洞应用名称
+    product = 'CmsTop'  # 漏洞应用名称
     product_version = '1.0'  # 漏洞应用版本
 
 

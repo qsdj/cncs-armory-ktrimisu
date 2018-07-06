@@ -16,7 +16,7 @@ class Vuln(ABVuln):
     ref = 'https://www.seebug.org/vuldb/ssvid-87242' # 
     cnvd_id = 'Unknown' # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
-    product = 'Joomla！'  # 漏洞组件名称
+    product = 'Joomla!'  # 漏洞组件名称
     product_version = 'Joomla Spider Calendar <= 3.2.6'  # 漏洞应用版本
 
 class Poc(ABPoc):

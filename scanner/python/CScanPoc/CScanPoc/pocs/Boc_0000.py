@@ -12,11 +12,11 @@ class Vuln(ABVuln):
     desc = '''
         中国银行网银业务系统任意文件包含漏洞，攻击者可以通过构造恶意语句来读取任意文件敏感信息。
     ''' # 漏洞描述
-    ref = 'Uknown' #https://wooyun.shuimugan.com/bug/view?bug_no=117025
-    cnvd_id = 'Uknown' # cnvd漏洞编号
-    cve_id = 'Uknown'  # cve编号
+    ref = 'Unknown' #https://wooyun.shuimugan.com/bug/view?bug_no=117025
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = '中国银行'  # 漏洞组件名称
-    product_version = 'Uknown'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '5b03a90f-432e-4b41-81cb-c32dc58d2362' # 平台 POC 编号

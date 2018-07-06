@@ -9,7 +9,7 @@ class Vuln(ABVuln):
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2015-01-10'  # 漏洞公布时间
-    desc = '''模版漏洞描述
+    desc = '''
     Absolut Engine是一个新闻发布系统。
     Absolut Engine存在跨站脚本漏洞。由于程序未能充分过滤用户提供的输入。攻击者可以利用漏洞来窃取基于cookie的认证证书。
     ''' # 漏洞描述

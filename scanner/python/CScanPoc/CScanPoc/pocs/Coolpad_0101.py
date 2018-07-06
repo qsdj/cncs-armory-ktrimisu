@@ -9,7 +9,7 @@ class Vuln(ABVuln):
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2015-09-06'  # 漏洞公布时间
-    desc = '''模版漏洞描述
+    desc = '''
     酷派旗下分站存在SQL盲注漏洞可获取数据库信息。
     ''' # 漏洞描述
     ref = 'Unknown' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=138407

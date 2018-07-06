@@ -16,7 +16,7 @@ class Vuln(ABVuln):
     ref = 'http://www.cnvd.org.cn/flaw/show/CNVD-2014-0161' # 
     cnvd_id = 'CNVD-2014-0161' # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
-    product = 'Huawei E5331'  # 漏洞组件名称
+    product = '华为'  # 漏洞组件名称
     product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):

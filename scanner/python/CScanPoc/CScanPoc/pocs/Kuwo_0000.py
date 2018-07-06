@@ -15,7 +15,7 @@ class Vuln(ABVuln):
     ref = 'Unknown' #https://wooyun.shuimugan.com/bug/view?bug_no=154938
     cnvd_id = 'Unknown' # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
-    product = '酷我音乐'  # 漏洞组件名称
+    product = 'Kuwo(酷我)'  # 漏洞组件名称
     product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):

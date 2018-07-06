@@ -8,7 +8,7 @@ class Vuln(ABVuln):
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD # 漏洞类型
     disclosure_date = '2012-08-01'  # 漏洞公布时间
-    desc = '''模版漏洞描述
+    desc = '''
     “软考”报名网任意文件下载漏洞，攻击者可以通过任意文件下载来读取系统敏感文件信息。
     ''' # 漏洞描述
     ref = 'Unknown' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=8397

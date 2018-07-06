@@ -5,18 +5,18 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'ShopNc_0000' # 平台漏洞编号，留空
-    name = 'ShopNc o2o 版三处sql注入' # 漏洞名称
+    vuln_id = 'ShopNC_0000' # 平台漏洞编号，留空
+    name = 'ShopNC o2o 版三处sql注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2015-10-1'  # 漏洞公布时间
     desc = '''
-        ShopNc o2o 版三处sql注入,直接出数据.
+        ShopNC o2o 版三处sql注入,直接出数据.
     ''' # 漏洞描述
     ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0125512
     cnvd_id = 'Unkonwn' # cnvd漏洞编号
     cve_id = 'Unkonwn' #cve编号
-    product = 'ShopNc'  # 漏洞应用名称
+    product = 'ShopNC'  # 漏洞应用名称
     product_version = 'Unkonwn'  # 漏洞应用版本
 
 

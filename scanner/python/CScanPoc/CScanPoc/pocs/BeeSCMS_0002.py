@@ -9,7 +9,7 @@ hh = hackhttp.hackhttp()
 
 
 class Vuln(ABVuln):
-    vuln_id = 'BEESCMS_0101' # 平台漏洞编号，留空
+    vuln_id = 'BEESCMS_0002' # 平台漏洞编号，留空
     name = 'BEESCMS 3.4 /admin/admin.php 登录绕过' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.OTHER # 漏洞类型

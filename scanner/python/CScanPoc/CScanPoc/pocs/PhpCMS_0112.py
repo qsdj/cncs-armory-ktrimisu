@@ -3,12 +3,12 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'PhpCMS_0112' # 平台漏洞编号
-    name = 'phpcms的phpcms_auth导致的本地文件包含漏洞和任意文件下载' # 漏洞名称
+    vuln_id = 'PHPCMS_0112' # 平台漏洞编号
+    name = 'PHPCMS的phpcms_auth导致的本地文件包含漏洞和任意文件下载' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型
     disclosure_date = '2011-05-02'  # 漏洞公布时间
-    desc = '''模版漏洞描述
+    desc = '''
     phpcms_auth函数是phpcms里面为了增强程序的安全性的一个加密函数，
     用它来对用户提交的加密字符串进行解密，进入程序流程，如果我们可以控制了phpcms_auth函数的解密，
     我们就可以通过注射我们的恶意代码，进行攻击。
@@ -16,7 +16,7 @@ class Vuln(ABVuln):
     ref = 'Unknown' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=497
     cnvd_id = 'Unknown' # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
-    product = 'PhpCMS'  # 漏洞组件名称
+    product = 'PHPCMS'  # 漏洞组件名称
     product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):

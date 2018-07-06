@@ -8,7 +8,7 @@ class Vuln(ABVuln):
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型
     disclosure_date = '2014-02-22'  # 漏洞公布时间
-    desc = '''模版漏洞描述
+    desc = '''
     支付宝后台服务器任意文件读取漏洞，攻击者可以通过本地读取读取系统敏感文件信息。
     ''' # 漏洞描述
     ref = 'Unknown' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=50956

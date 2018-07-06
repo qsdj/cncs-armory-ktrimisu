@@ -8,18 +8,18 @@ import urllib2
 import urlparse
 
 class Vuln(ABVuln):
-    vuln_id = 'Hdwiki_0001' # 平台漏洞编号，留空
-    name = 'Hdwiki 5.1 /control/edition.php SQL注入'  # 漏洞名称
+    vuln_id = 'HDwiki_0001' # 平台漏洞编号，留空
+    name = 'HDwiki 5.1 /control/edition.php SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2015-02-25'  # 漏洞公布时间
     desc = '''
-        Hdwiki 5.1版本 /control/edition.php参数过滤不严谨导致的SQL注入漏洞。
+        HDwiki 5.1版本 /control/edition.php参数过滤不严谨导致的SQL注入漏洞。
     '''  # 漏洞描述
     ref = 'http://0day5.com/archives/2978/'  # 漏洞来源
     cnvd_id = 'Unkonwn'  # cnvd漏洞编号
     cve_id = 'Unkonwn'  # cve编号
-    product = 'Hdwiki'  # 漏洞应用名称
+    product = 'HDwiki'  # 漏洞应用名称
     product_version = '5.1'  # 漏洞应用版本
 
 class Poc(ABPoc):
