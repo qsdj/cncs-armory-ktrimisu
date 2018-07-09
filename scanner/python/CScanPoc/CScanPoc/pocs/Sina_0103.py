@@ -8,13 +8,13 @@ class Vuln(ABVuln):
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型
     disclosure_date = '2016-05-14'  # 漏洞公布时间
-    desc = '''模版漏洞描述
+    desc = '''
     新浪微博反射型XSS漏洞，攻击者可以通过构造恶意语句来读取系统敏感文件信息。
     ''' # 漏洞描述
     ref = 'Unknown' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=190240
     cnvd_id = 'Unknown' # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
-    product = 'Sina'  # 漏洞组件名称
+    product = '新浪'  # 漏洞组件名称
     product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):

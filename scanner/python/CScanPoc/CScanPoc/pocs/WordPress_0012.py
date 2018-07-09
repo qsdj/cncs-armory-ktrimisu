@@ -42,12 +42,11 @@ class Poc(ABPoc):
             for payload in payloads:
                 verify_url += payload
                 start_time = time.time()
-                req = urllib2.Request(verify_url)
-                res_content = urllib2.urlopen(req).read()
+                req = requests.get(verify_url)
 
                 if time.time() - start_time > 5:
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                        target=self.target, name=self.vuln.name))
+                    self.output.report(self.vuln, '发现{target}存在{name}漏洞;url={url}'.format(
+                        target=self.target, name=self.vuln.name, url=verify_url))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))

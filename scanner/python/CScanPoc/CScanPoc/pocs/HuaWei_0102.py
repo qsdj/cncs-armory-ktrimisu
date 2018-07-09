@@ -8,13 +8,13 @@ class Vuln(ABVuln):
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型
     disclosure_date = '2012-10-26'  # 漏洞公布时间
-    desc = '''模版漏洞描述
+    desc = '''
     华为系统文件包含漏洞，攻击者可以通过文件包含读取系统敏感文件信息。
     ''' # 漏洞描述
     ref = 'Unknown' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=12031
     cnvd_id = 'Unknown' # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
-    product = 'HuaWei'  # 漏洞组件名称
+    product = '华为'  # 漏洞组件名称
     product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):

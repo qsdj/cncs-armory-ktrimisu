@@ -12,11 +12,11 @@ class Vuln(ABVuln):
     desc = '''
         天融信负载均衡本地文件包含漏洞，攻击者可以通过构造恶意语句来读取系统敏感文件信息。
     ''' # 漏洞描述
-    ref = 'Uknown' #https://wooyun.shuimugan.com/bug/view?bug_no=118464
-    cnvd_id = 'Uknown' # cnvd漏洞编号
-    cve_id = 'Uknown'  # cve编号
-    product = '应用名称'  # 漏洞组件名称
-    product_version = 'Uknown'  # 漏洞应用版本
+    ref = 'Unknown' #https://wooyun.shuimugan.com/bug/view?bug_no=118464
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
+    product = '天融信负载均衡系统'  # 漏洞组件名称
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '57ae41ee-bab8-4628-bec2-33bce7e8d3aa' # 平台 POC 编号

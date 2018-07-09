@@ -9,11 +9,11 @@ class Vuln(ABVuln):
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2015-01-07'  # 漏洞公布时间
-    desc = '''模版漏洞描述
+    desc = '''
     Software ClassAd是一个在线广告应用。
     Software ClassAd showads.php脚本未正确过滤catid参数，允许远程攻击者利用漏洞提交特制的SQL查询，操作或获取数据库数据。
     ''' # 漏洞描述
-    ref = 'http://packetstormsecurity.com/files/129451/ClassAd-3.0-SQL-Injection.html, https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-9455, https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-9455' # 漏洞来源
+    ref = 'http://www.cnvd.org.cn/flaw/show/CNVD-2015-00130' # 漏洞来源
     cnvd_id = 'CNVD-2015-00130' # cnvd漏洞编号
     cve_id = 'CVE-2014-9455'  # cve编号
     product = 'SoftwareClassAd'  # 漏洞组件名称

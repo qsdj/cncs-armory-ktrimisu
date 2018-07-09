@@ -12,11 +12,11 @@ class Vuln(ABVuln):
     desc = '''
         广州大学任意文件包含漏洞，攻击者可以通过构造恶意语句来读取系统敏感文件信息。
     ''' # 漏洞描述
-    ref = 'Uknown' #https://wooyun.shuimugan.com/bug/view?bug_no=96244
-    cnvd_id = 'Uknown' # cnvd漏洞编号
-    cve_id = 'Uknown'  # cve编号
+    ref = 'Unknown' #https://wooyun.shuimugan.com/bug/view?bug_no=96244
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = '广州大学'  # 漏洞组件名称
-    product_version = 'Uknown'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '9d2e22d9-e022-429c-9cd1-441473b64703' # 平台 POC 编号

@@ -15,7 +15,7 @@ class Vuln(ABVuln):
     ref = 'Unkonwn' # 漏洞来源
     cnvd_id = 'Unkonwn' # cnvd漏洞编号
     cve_id = 'Unkonwn' #cve编号
-    product = 'Info_ PHPmyadmin'  # 漏洞应用名称
+    product = 'Info_PHPmyadmin'  # 漏洞应用名称
     product_version = 'Unkonwn'  # 漏洞应用版本
 
 class Poc(ABPoc):
@@ -31,7 +31,7 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
             request = requests.get('{target}/phpmyadmin/'.format(target=self.target))
-            if request.status_code == 200:
+            if request.status_code == 200 and "phpmyadmin" in request.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target,name=self.vuln.name))
         except Exception, e:
             self.output.info('执行异常{}'.format(e))

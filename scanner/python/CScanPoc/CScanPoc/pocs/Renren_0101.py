@@ -10,7 +10,7 @@ class Vuln(ABVuln):
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2016-05-13'  # 漏洞公布时间
-    desc = '''模版漏洞描述
+    desc = '''
     登陆后注入
     URL：http://...../bolt/member/city.htm?provinceCode=0086130000000000
     人人广告系统 - 中小客户自助系统,provinceCode参数注入
@@ -21,7 +21,7 @@ class Vuln(ABVuln):
     ref = 'Unknown' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=191980
     cnvd_id = 'Unknown' # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
-    product = 'Renren(人人)'  # 漏洞组件名称
+    product = '人人网'  # 漏洞组件名称
     product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):

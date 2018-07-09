@@ -44,7 +44,7 @@ class Poc(ABPoc):
                     if domain == '*':
                         self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target, name=self.vuln.name))
             
-        except Exception, e:s
+        except Exception, e:
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):

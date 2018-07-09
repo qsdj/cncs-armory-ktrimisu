@@ -32,15 +32,15 @@ class Poc(ABPoc):
                 target=self.target, vuln=self.vuln))
 
             #讲常见的后台地址组成list,循环去请求是否存在默认后台地址
-            filename_list = ['www','back','backup','web','temp','data','新建文件夹']
+            filename_list = ['www','back','backup','web','temp','data']
             filetypt_list = ['.rar','.zip','.7z','.tar.gz','.bak','.swp','.txt']
             for filename in filename_list:
                 for filetype in filetypt_list:
                     payload = filename+filetype
                     request = requests.get('{target}/{payload}'.format(target=self.target,payload=payload))
-                    print request.url
-                    if request.status_code == 200 and request.status_code != 302:
-                        self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target,name=self.vuln.name))
+                    # print request.url
+                    if request.status_code == 200 and filename+filetype in request.text:
+                        self.output.report(self.vuln, '发现{target}存在{name}漏洞;存在文件{fname}'.format(target=self.target,name=self.vuln.name,fname=filename+filetype))
                         continue
 
         except Exception, e:
@@ -52,15 +52,15 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 漏洞利用'.format(
                     target=self.target, vuln=self.vuln))
-            filename_list = ['www','back','backup','web','temp','data','新建文件夹']
+            filename_list = ['www','back','backup','web','temp','data']
             filetypt_list = ['.rar','.zip','.7z','.tar.gz','.bak','.swp','.txt']
             for filename in filename_list:
                 for filetype in filetypt_list:
                     payload = filename+filetype
                     request = requests.get('{target}/{payload}'.format(target=self.target,payload=payload))
-                    print request.url
-                    if request.status_code == 200 and request.status_code != 302:
-                        self.output.report(self.vuln, '发现{target}存在{name}漏洞,备份文件URL地址为{url}'.format(target=self.target,name=self.vuln.name,url=url))
+                    # print request.url
+                    if request.status_code == 200 and filename+filetype in request.text:
+                        self.output.report(self.vuln, '发现{target}存在{name}漏洞;存在文件{fname}'.format(target=self.target,name=self.vuln.name,fname=filename+filetype))
                         continue
 
         except Exception, e:

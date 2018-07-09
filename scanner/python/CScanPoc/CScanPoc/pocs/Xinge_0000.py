@@ -12,11 +12,11 @@ class Vuln(ABVuln):
     desc = '''
         中华信鸽网分站任意包含文件读取漏洞，攻击者可以通过构造恶意语句来读取系统敏感文件信息。
     ''' # 漏洞描述
-    ref = 'Uknown' #https://wooyun.shuimugan.com/bug/view?bug_no=129937
-    cnvd_id = 'Uknown' # cnvd漏洞编号
-    cve_id = 'Uknown'  # cve编号
+    ref = 'Unknown' #https://wooyun.shuimugan.com/bug/view?bug_no=129937
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = '中华信鸽网'  # 漏洞组件名称
-    product_version = 'Uknown'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'd2778609-d19d-43b2-9fe0-22f176911704' # 平台 POC 编号

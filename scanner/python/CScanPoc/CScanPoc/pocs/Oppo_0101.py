@@ -8,7 +8,7 @@ class Vuln(ABVuln):
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型
     disclosure_date = '2011-04-01'  # 漏洞公布时间
-    desc = '''模版漏洞描述
+    desc = '''
     OPPO官网的PHP站点，存在大量的PHP文件包含漏洞，可以利用拿到root。
     ''' # 漏洞描述
     ref = 'Unknown' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=1466

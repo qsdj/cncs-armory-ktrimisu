@@ -17,7 +17,7 @@ class Vuln(ABVuln):
     ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=078679' # 漏洞来源
     cnvd_id = 'Unknown' # cnvd漏洞编号
     cve_id = 'Unknown' #cve编号
-    product = '用友'  # 漏洞应用名称
+    product = 'Yonyou(用友)'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
 
 
@@ -45,10 +45,10 @@ class Poc(ABPoc):
             code2, head2, body, _, _ = hh.http("%s" % verify_url2)
             code3, head3, body, _, _ = hh.http("%s" % verify_url3)
             code4, head4, body, _, _ = hh.http("%s" % verify_url4)
-            loc1 = re.search('Location: (.*)', head1).group(1)
-            loc2 = re.search('Location: (.*)', head2).group(1)
-            loc3 = re.search('Location: (.*)', head3).group(1)
-            loc4 = re.search('Location: (.*)', head4).group(1)           
+            loc1 = re.search('Location: (.*)', head1).group(1) if re.search('Location: (.*)', head1) else ''
+            loc2 = re.search('Location: (.*)', head2).group(1) if re.search('Location: (.*)', head2) else ''
+            loc3 = re.search('Location: (.*)', head3).group(1) if re.search('Location: (.*)', head3) else ''
+            loc4 = re.search('Location: (.*)', head4).group(1) if re.search('Location: (.*)', head4) else ''
             if code1 == 302 and "SQLException" in head1 and loc1 != loc2 and code2 == 302:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target,name=self.vuln.name))
             if code1 == 302 and "Error" in head1 and loc1 != loc2 and code2 == 302:

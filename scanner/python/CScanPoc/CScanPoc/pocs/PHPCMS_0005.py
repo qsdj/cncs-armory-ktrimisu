@@ -13,7 +13,7 @@ class Vuln(ABVuln):
         PHPCMS v9 信息泄露：
         phpsso_server/index.php?m=phpsso&c=index&a=getapplist&auth_data=v=1&appid=1&data=
     '''  # 漏洞描述
-    ref = 'Unkonwn'  # 漏洞来源
+    ref = 'http://0day5.com/archives/3565/'  # 漏洞来源
     cnvd_id = 'Unkonwn'  # cnvd漏洞编号
     cve_id = 'Unkonwn'  # cve编号
     product = 'PHPCMS'  # 漏洞应用名称

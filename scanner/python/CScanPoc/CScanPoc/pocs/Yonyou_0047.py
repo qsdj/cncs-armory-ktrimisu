@@ -12,10 +12,10 @@ class Vuln(ABVuln):
     desc = '''
         用友ERP-NC通用文件包含漏洞，攻击者可以通过构造恶意语句来读取系统敏感文件信息。
     ''' # 漏洞描述
-    ref = 'Uknown' #https://wooyun.shuimugan.com/bug/view?bug_no=148227
-    cnvd_id = 'Uknown' # cnvd漏洞编号
-    cve_id = 'Uknown'  # cve编号
-    product = '用友'  # 漏洞组件名称
+    ref = 'Unknown' #https://wooyun.shuimugan.com/bug/view?bug_no=148227
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
+    product = 'Yonyou(用友)'  # 漏洞组件名称
     product_version = 'ERP-NC'  # 漏洞应用版本
 
 class Poc(ABPoc):

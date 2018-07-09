@@ -8,7 +8,7 @@ class Vuln(ABVuln):
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型
     disclosure_date = '2012-04-02'  # 漏洞公布时间
-    desc = '''模版漏洞描述
+    desc = '''
     官方的案例：
     SQL注射
     http://wiki.madio.net/index.php?doc-summary-xxxxxxxxx%27

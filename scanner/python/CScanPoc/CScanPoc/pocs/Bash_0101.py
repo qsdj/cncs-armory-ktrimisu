@@ -18,7 +18,8 @@ class Vuln(ABVuln):
     ''' # 漏洞描述
     ref = 'Unknown'# 漏洞来源
     cnvd_id = 'Unknown' # cnvd漏洞编号
-    product = 'bash'  # 漏洞应用名称
+    cve_id = 'Unknown'  # cve编号
+    product = 'Bash'  # 漏洞应用名称
     product_version = '<=4.3'  # 漏洞应用版本
 
 

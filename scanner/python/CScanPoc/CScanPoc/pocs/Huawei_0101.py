@@ -17,7 +17,7 @@ class Vuln(ABVuln):
     ref = 'https://www.exploit-db.com/exploits/37424/' # 漏洞来源
     cnvd_id = 'Unknown' # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
-    product = 'Huawei(华为)'  # 漏洞应用名称
+    product = '华为'  # 漏洞应用名称
     product_version = 'UPnP/1.0, IGD/1.00'  # 漏洞应用版本
 
 

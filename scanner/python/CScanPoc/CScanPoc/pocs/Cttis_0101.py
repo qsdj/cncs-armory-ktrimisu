@@ -8,7 +8,7 @@ class Vuln(ABVuln):
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型
     disclosure_date = '2011-12-26'  # 漏洞公布时间
-    desc = '''模版漏洞描述
+    desc = '''
     此漏洞影响/admin
     恶意用户可以在这个系统上执行任意代码。可能危及系统的安全。
     攻击的详细信息

@@ -10,7 +10,7 @@ class Vuln(ABVuln):
     vuln_id = 'WordPress_0113' # 平台漏洞编号，留空
     name = 'WordPress UnGallery plugin <= 1.5.8 /source_vuln.php 本地文件包含漏洞' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
-    type = VulnType.LEI # 漏洞类型
+    type = VulnType.LFI # 漏洞类型
     disclosure_date = '2015-03-02'  # 漏洞公布时间
     desc = '''
     漏洞文件：/wp-content/plugins/ungallery/source_vuln.php。

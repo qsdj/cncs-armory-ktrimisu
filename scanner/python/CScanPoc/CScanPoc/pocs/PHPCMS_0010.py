@@ -1,5 +1,5 @@
 # coding: utf-8
-
+import re
 from CScanPoc.thirdparty import requests,hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
@@ -16,7 +16,7 @@ class Vuln(ABVuln):
     ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0105242
     cnvd_id = 'Unkonwn' # cnvd漏洞编号
     cve_id = 'Unkonwn' #cve编号
-    product = '	PHPCMS'  # 漏洞应用名称
+    product = 'PHPCMS'  # 漏洞应用名称
     product_version = 'Unkonwn'  # 漏洞应用版本
 
 

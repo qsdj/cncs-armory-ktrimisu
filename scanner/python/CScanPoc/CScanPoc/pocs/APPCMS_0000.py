@@ -38,8 +38,8 @@ class Poc(ABPoc):
             sqlFile = ['appcms_admin_list_0.sql', 'appcms_app_history_0.sql', 'appcms_app_list_0.sql', 'appcms_cate_relation_0.sql', 'appcms_category_0.sql', 'appcms_flink_0.sql', 'appcms_info_list_0.sql', 'appcms_recommend_area_0.sql', 'appcms_resource_list_0.sql', 'appcms_url_rewrite_0.sql']
             for f in sqlFile:
                 code, head, res, errcode,finalurl = hh.http(url+f)
-                if code == 200:
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target,name=self.vuln.name))
+                if code == 200 and "sql" in res:
+                    self.output.report(self.vuln, '发现{target}存在{name}漏洞, url={url}'.format(target=self.target,name=self.vuln.name,url=url))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))

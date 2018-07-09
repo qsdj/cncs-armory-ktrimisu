@@ -9,11 +9,11 @@ class Vuln(ABVuln):
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2015-01-10'  # 漏洞公布时间
-    desc = '''模版漏洞描述
+    desc = '''
     Absolut Engine是一个新闻发布系统。
     Absolut Engine存在跨站脚本漏洞。由于程序未能充分过滤用户提供的输入。攻击者可以利用漏洞来窃取基于cookie的认证证书。
     ''' # 漏洞描述
-    ref = 'http://seclists.org/fulldisclosure/2014/Dec/131, https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-9435, https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-9434' # 漏洞来源
+    ref = 'http://www.cnvd.org.cn/flaw/show/CNVD-2015-00149' # 漏洞来源
     cnvd_id = 'CNVD-2015-00149' # cnvd漏洞编号
     cve_id = 'CVE-2014-9434'  # cve编号
     product = 'AbsolutEngine'  # 漏洞组件名称

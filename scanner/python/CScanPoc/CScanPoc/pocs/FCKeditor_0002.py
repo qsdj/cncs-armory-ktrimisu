@@ -17,7 +17,7 @@ class Vuln(ABVuln):
     cnvd_id = 'Unkonwn'  # cnvd漏洞编号
     cve_id = 'Unkonwn'  # cve编号
     product = 'FCKeditor'  # 漏洞应用名称
-    product_version = 'Unkonwn'  # 漏洞应用版本
+    product_version = '2.6版本'  # 漏洞应用版本
 
 '''
 fckeditor版本 <= 2.4.3

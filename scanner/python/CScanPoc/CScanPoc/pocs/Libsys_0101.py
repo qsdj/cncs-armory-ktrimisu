@@ -17,7 +17,7 @@ class Vuln(ABVuln):
     ref = 'Unknown' # 漏洞来源 http://www.wooyun.org/bugs/wooyun-2014-059850
     cnvd_id = 'Unknown' # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
-    product = 'Libsys'  # 漏洞应用名称
+    product = '汇文软件'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
 
 

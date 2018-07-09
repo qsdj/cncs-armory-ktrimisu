@@ -12,11 +12,11 @@ class Vuln(ABVuln):
     desc = '''
         哈尔滨工程大学任意文件下载漏洞，攻击者可以通过构造恶意语句来下载系统敏感文件信息。
     ''' # 漏洞描述
-    ref = 'Uknown' #https://wooyun.shuimugan.com/bug/view?bug_no=70485
-    cnvd_id = 'Uknown' # cnvd漏洞编号
-    cve_id = 'Uknown'  # cve编号
-    product = '应用名称'  # 漏洞组件名称
-    product_version = 'Uknown'  # 漏洞应用版本
+    ref = 'Unknown' #https://wooyun.shuimugan.com/bug/view?bug_no=70485
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
+    product = '哈尔滨工程大学'  # 漏洞组件名称
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '2c9ac6b7-87c8-483e-938a-48f7c9608d52' # 平台 POC 编号

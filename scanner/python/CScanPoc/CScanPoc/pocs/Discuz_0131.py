@@ -19,7 +19,7 @@ class Vuln(ABVuln):
     ref = 'http://www.ipuman.com/pm6/137/'# 漏洞来源
     cnvd_id = 'Unknown' # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
-    product = 'Discuz'  # 漏洞应用名称
+    product = 'Discuz!'  # 漏洞应用名称
     product_version = 'x3.0'  # 漏洞应用版本
 
 

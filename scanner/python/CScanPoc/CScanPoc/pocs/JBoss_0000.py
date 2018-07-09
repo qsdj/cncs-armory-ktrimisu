@@ -10,7 +10,7 @@ import urlparse
 
 class Vuln(ABVuln):
     vuln_id = 'JBoss_0000' # 平台漏洞编号
-    name = 'Jboss 认证绕过' # 漏洞名称
+    name = 'JBoss 认证绕过' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.OTHER # 漏洞类型
     disclosure_date = '2014-09-12'  # 漏洞公布时间
@@ -20,7 +20,7 @@ class Vuln(ABVuln):
     ref = 'https://access.redhat.com/solutions/30744' # 
     cnvd_id = 'Unknown' # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
-    product = 'Jboss'  # 漏洞组件名称
+    product = 'JBoss'  # 漏洞组件名称
     product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):

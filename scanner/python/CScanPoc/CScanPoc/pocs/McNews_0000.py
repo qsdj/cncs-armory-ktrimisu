@@ -14,7 +14,7 @@ class Vuln(ABVuln):
         McNews 1.x Install.PHP文件存在远程文件包含漏洞。
         /admin/install.php?l=http://baidu.com/robots.txt
     ''' # 漏洞描述
-    ref = 'https://www.seebug.org/vuldb/ssvid-78899' # 
+    ref = 'http://www.cnvd.org.cn/flaw/show/CNVD-2005-0665' # 
     cnvd_id = 'CNVD-2005-0665' # cnvd漏洞编号
     cve_id = 'CVE-2005-0800'  # cve编号
     product = 'McNews'  # 漏洞组件名称

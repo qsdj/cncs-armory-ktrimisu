@@ -9,14 +9,14 @@ class Vuln(ABVuln):
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2015-10-17'  # 漏洞公布时间
-    desc = '''模版漏洞描述
+    desc = '''
     index.php?r=cmsSite/list&id=11
     参数id可以注入。
     ''' # 漏洞描述
     ref = 'Unknown' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=138513
     cnvd_id = 'Unknown' # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
-    product = 'Hnaahk'  # 漏洞组件名称
+    product = '航空公司官方站点'  # 漏洞组件名称
     product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):

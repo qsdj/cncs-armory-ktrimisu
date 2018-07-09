@@ -6,10 +6,10 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 
 class Vuln(ABVuln):
-    vuln_id = 'Stampi_0101' # 平台漏洞编号，留空
+    vuln_id = 'StaMPi_0101' # 平台漏洞编号，留空
     name = 'StaMPi /path/fotogalerie.php 本地文件包含' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
-    type = VulnType.LEI # 漏洞类型
+    type = VulnType.LFI # 漏洞类型
     disclosure_date = '2015-02-19'  # 漏洞公布时间
     desc = '''
     漏洞文件：/path/fotogalerie.php。
@@ -17,7 +17,7 @@ class Vuln(ABVuln):
     ref = 'http://www.exploit-db.com/exploits/36031/' # 漏洞来源
     cnvd_id = 'Unknown' # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
-    product = 'Stampi'  # 漏洞应用名称
+    product = 'StaMPi'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
 
 

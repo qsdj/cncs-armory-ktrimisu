@@ -5,18 +5,18 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
     vuln_id = '10086_0012' # 平台漏洞编号
-    name = '移动某站敏感配置文件包含导致信息泄露' # 漏洞名称
+    name = '移动敏感配置文件包含导致信息泄露' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型
     disclosure_date = '2015-03-07'  # 漏洞公布时间
     desc = '''
-        移动某站敏感配置文件包含导致信息泄露漏洞，攻击者可以通过构造恶意语句来读取系统敏感文件信息。
+        移动敏感配置文件包含导致信息泄露漏洞，攻击者可以通过构造恶意语句来读取系统敏感文件信息。
     ''' # 漏洞描述
-    ref = 'Uknown' #https://wooyun.shuimugan.com/bug/view?bug_no=93033
-    cnvd_id = 'Uknown' # cnvd漏洞编号
-    cve_id = 'Uknown'  # cve编号
+    ref = 'Unknown' #https://wooyun.shuimugan.com/bug/view?bug_no=93033
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = '中国移动'  # 漏洞组件名称
-    product_version = 'Uknown'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '333704de-a1c8-4d6a-b3aa-e9aca0014c7f' # 平台 POC 编号

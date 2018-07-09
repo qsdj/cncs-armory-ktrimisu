@@ -6,7 +6,7 @@ import time
 
 class Vuln(ABVuln):
     vuln_id = 'Bioknow_0004' # 平台漏洞编号，留空
-    name = '百奥知实验管理信息系统 SQL注射'  # 漏洞名称
+    name = '百奥知实验室综合信息管理系统 SQL注射'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2015-04-16'  # 漏洞公布时间
@@ -19,7 +19,7 @@ class Vuln(ABVuln):
     ref = 'Unkonwn'  # 漏洞来源
     cnvd_id = 'Unkonwn'  # cnvd漏洞编号
     cve_id = 'Unkonwn'  # cve编号
-    product = '百奥知实验管理信息系统'  # 漏洞应用名称
+    product = '百奥知实验室综合信息管理系统'  # 漏洞应用名称
     product_version = 'Unkonwn'  # 漏洞应用版本
 
 class Poc(ABPoc):

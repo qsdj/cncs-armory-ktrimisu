@@ -32,12 +32,13 @@ class Poc(ABPoc):
                 target=self.target, vuln=self.vuln))
             filename_list = ['shell','webshell','ma','caidao','yi','a','muma','dama','xiaoma']
             filetypt_list = ['.asp','.php','.aspx','.asa','.jsp']
+            
             for filename in filename_list:
                 for filetype in filetypt_list:
                     webshell = filename+filetype
                     request = requests.get('{target}/{payload}'.format(target=self.target,payload=webshell))
-                    if request.status_code == 200:
-                        self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target,name=self.vuln.name))
+                    if request.status_code == 200 and "404" not in request.text and u"不存在" in request.text and "未找到" in request.text:
+                        self.output.report(self.vuln, '发现{target}存在{name}漏洞;文件地址为{url}'.format(target=self.target,name=self.vuln.name, url=request.url))
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
 
@@ -52,7 +53,7 @@ class Poc(ABPoc):
                 for filetype in filetypt_list:
                     webshell = filename+filetype
                     request = requests.get('{target}/{payload}'.format(target=self.target,payload=webshell))
-                    if request.status_code == 200:
+                    if request.status_code == 200 and "404" not in request.text and u"不存在" in request.text and "未找到" in request.text:
                         url = request.url
                         self.output.report(self.vuln, '发现{target}存在{name}漏洞,文件地址为{url}'.format(target=self.target,name=self.vuln.name,url=url))
 

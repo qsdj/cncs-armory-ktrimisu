@@ -42,7 +42,8 @@ class Poc(ABPoc):
             conn.request(method='OPTIONS', url='/')
             headers = dict(conn.getresponse().getheaders())
             if headers.get('server', '').find('Microsoft-IIS') < 0:
-                self.output.info('[-] This is not an IIS web server')
+                # self.output.info('[-] This is not an IIS web server')
+                return
             if 'public' in headers and \
                 headers['public'].find('PUT') > 0 and \
                 headers['public'].find('MOVE') > 0:
@@ -70,7 +71,8 @@ class Poc(ABPoc):
             conn.request(method='OPTIONS', url='/')
             headers = dict(conn.getresponse().getheaders())
             if headers.get('server', '').find('Microsoft-IIS') < 0:
-                self.output.info('[-] This is not an IIS web server')
+                # self.output.info('[-] This is not an IIS web server')
+                return
             if 'public' in headers and \
                 headers['public'].find('PUT') > 0 and \
                 headers['public'].find('MOVE') > 0:

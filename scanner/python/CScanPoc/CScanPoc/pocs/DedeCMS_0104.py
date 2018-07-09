@@ -17,7 +17,7 @@ class Vuln(ABVuln):
     ref = 'http://yxmhero1989.blog.163.com/blog/static/1121579562013581535738/'# 漏洞来源
     cnvd_id = 'Unknown' # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
-    product = 'DedeCMS(织梦内容管理系统)'  # 漏洞应用名称
+    product = 'DedeCMS(织梦CMS)'  # 漏洞应用名称
     product_version = '5.7'  # 漏洞应用版本
 
 

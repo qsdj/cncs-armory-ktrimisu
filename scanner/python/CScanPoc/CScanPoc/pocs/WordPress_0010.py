@@ -6,7 +6,7 @@ import re
 
 class Vuln(ABVuln):
     vuln_id = 'WordPress_0010'  # 平台漏洞编号，留空
-    name = 'Wordpress Ajax Store Locator SQL注入'  # 漏洞名称
+    name = 'WordPress Ajax Store Locator SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2015-04-16'  # 漏洞公布时间
@@ -16,8 +16,8 @@ class Vuln(ABVuln):
     ref = 'https://www.exploit-db.com/exploits/36777/'  # 漏洞来源
     cnvd_id = 'Unkonwn'  # cnvd漏洞编号
     cve_id = 'Unkonwn'  # cve编号
-    product = 'Wordpress'  # 漏洞应用名称
-    product_version = 'Wordpress Ajax Store Locator<= 1.2'  # 漏洞应用版本
+    product = 'WordPress'  # 漏洞应用名称
+    product_version = 'WordPress Ajax Store Locator<= 1.2'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'ac4b0875-909a-485f-be09-50a0d0ff277c'

@@ -9,16 +9,16 @@ class Vuln(ABVuln):
     name = '华创设备 命令执行'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION  # 漏洞类型
-    disclosure_date = 'Unkonwn'  # 漏洞公布时间
+    disclosure_date = '2016-01-23'  # 漏洞公布时间
     desc = '''
         华创设备  /acc/network/redial_pppoe.php  
                 /acc/tools/enable_tool_debug.php 任意命令执行。
     '''  # 漏洞描述
-    ref = 'Unkonwn'  # 漏洞来源
+    ref = 'http://0day5.com/archives/3728/'  # 漏洞来源
     cnvd_id = 'Unkonwn'  # cnvd漏洞编号
     cve_id = 'Unkonwn'  # cve编号
     product = '华创'  # 漏洞应用名称
-    product_version = '华创'  # 漏洞应用版本
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'd3c55ca4-85f6-4701-a915-fcc62a6a0b2f'

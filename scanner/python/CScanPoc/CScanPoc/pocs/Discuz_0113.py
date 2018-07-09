@@ -17,7 +17,7 @@ class Vuln(ABVuln):
     ref = 'http://www.2cto.com/Article/201211/171301.html'# 漏洞来源
     cnvd_id = 'Unknown' # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
-    product = 'Discuz'  # 漏洞应用名称
+    product = 'Discuz!'  # 漏洞应用名称
     product_version = 'x2.5'  # 漏洞应用版本
 
 
@@ -35,7 +35,7 @@ class Poc(ABPoc):
                     target=self.target, vuln=self.vuln))
             verify_url = self.target + '/source/plugin/myrepeats/table/table_myrepeats.php'
             req = urllib2.Request(verify_url)
-            erify_urcontent = urllib2.urlopen(req).read()
+            content = urllib2.urlopen(req).read()
             if '<b>Fatal error</b>:' in content and '/table_myrepeats.php</b>' in content:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                             target=self.target, name=self.vuln.name))

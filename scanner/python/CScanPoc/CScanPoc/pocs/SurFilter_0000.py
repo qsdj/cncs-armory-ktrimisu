@@ -20,7 +20,7 @@ class Vuln(ABVuln):
     ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0102009
     cnvd_id = 'Unkonwn' # cnvd漏洞编号
     cve_id = 'Unkonwn' #cve编号
-    product = '任子行网络安全审计系统'  # 漏洞应用名称
+    product = '任子行网络审计系统'  # 漏洞应用名称
     product_version = 'Unkonwn'  # 漏洞应用版本
 
 

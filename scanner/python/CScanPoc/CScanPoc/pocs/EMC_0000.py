@@ -15,7 +15,7 @@ class Vuln(ABVuln):
         归档和迁移解决方案。该方案通过自动化文件分层、文件归档和文件迁移等功能优化网络存储（NAS）基础架构。
         该架构的v10.0版本的/api/login处存在XXE漏洞，导致可以读取任意文件。
     ''' # 漏洞描述
-    ref = 'https://www.seebug.org/vuldb/ssvid-85903' # 
+    ref = 'http://www.cnvd.org.cn/flaw/show/CNVD-2014-02523' # 
     cnvd_id = 'CNVD-2014-02523' # cnvd漏洞编号
     cve_id = 'CVE-2014-0644'  # cve编号
     product = 'EMC Cloud Tiering Appliance'  # 漏洞组件名称

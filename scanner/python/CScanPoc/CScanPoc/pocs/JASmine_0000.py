@@ -13,7 +13,7 @@ class Vuln(ABVuln):
     desc = '''
         JASmine <= 0.0.2版本中的index.php文件存在远程代码执行漏洞。
     ''' # 漏洞描述
-    ref = 'https://www.seebug.org/vuldb/ssvid-64073' # 
+    ref = 'http://www.cnvd.org.cn/flaw/show/CNVD-2006-7871' # 
     cnvd_id = 'CNVD-2006-7871' # cnvd漏洞编号
     cve_id = 'CVE-2006-5318'  # cve编号
     product = 'JASmine'  # 漏洞组件名称

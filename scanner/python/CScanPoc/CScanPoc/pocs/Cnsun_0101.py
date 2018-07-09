@@ -8,7 +8,7 @@ class Vuln(ABVuln):
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型
     disclosure_date = '2011-07-12'  # 漏洞公布时间
-    desc = '''模版漏洞描述
+    desc = '''
     php代码没有对include文件的路径进行判断，导致能够读取服务器敏感文件.
     或者可通过include apache日志 获取一个webshell 或者包含content_help.php文件本身造成死循环..CC攻击
     ''' # 漏洞描述

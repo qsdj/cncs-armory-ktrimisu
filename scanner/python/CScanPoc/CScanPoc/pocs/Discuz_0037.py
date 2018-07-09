@@ -12,11 +12,11 @@ class Vuln(ABVuln):
     desc = '''
         Discuz插件设计缺陷导致文件包含漏洞，攻击者可以通过构造恶意语句来读取系统敏感文件信息。
     ''' # 漏洞描述
-    ref = 'Uknown' #https://wooyun.shuimugan.com/bug/view?bug_no=131386
-    cnvd_id = 'Uknown' # cnvd漏洞编号
-    cve_id = 'Uknown'  # cve编号
+    ref = 'Unknown' #https://wooyun.shuimugan.com/bug/view?bug_no=131386
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'Discuz!'  # 漏洞组件名称
-    product_version = 'Uknown'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'c358441f-c02c-4b51-8ecd-3254fba65851' # 平台 POC 编号

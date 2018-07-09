@@ -13,12 +13,12 @@ class Vuln(ABVuln):
     type = VulnType.XSS # 漏洞类型
     disclosure_date = '2014-10-11'  # 漏洞公布时间
     desc = '''
-    cmseasy /demo.php文件存在xss漏洞。
+    CmsEasy /demo.php文件存在xss漏洞。
     ''' # 漏洞描述
     ref = 'Unknown',# 漏洞来源http://www.wooyun.org/bugs/wooyun-2014-069363
     cnvd_id = 'Unknown' # cnvd漏洞编号
     cve_id = 'Unknown' # cve编号
-    product = 'cmseasy'  # 漏洞应用名称
+    product = 'CmsEasy'  # 漏洞应用名称
     product_version = '<=5.5'  # 漏洞应用版本
 
 

@@ -15,7 +15,7 @@ class Vuln(ABVuln):
     ref = 'Unkonwn'  # 漏洞来源
     cnvd_id = 'Unkonwn'  # cnvd漏洞编号
     cve_id = 'Unkonwn'  # cve编号
-    product = 'Mailgard佑友系列邮件网关'  # 漏洞应用名称
+    product = 'Mailgard'  # 漏洞应用名称
     product_version = 'Unkonwn'  # 漏洞应用版本
 
 class Poc(ABPoc):

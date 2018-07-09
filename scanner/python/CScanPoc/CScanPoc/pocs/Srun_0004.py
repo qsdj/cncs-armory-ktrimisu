@@ -15,8 +15,8 @@ class Vuln(ABVuln):
     ref = 'Unkonwn'  # 漏洞来源
     cnvd_id = 'Unkonwn'  # cnvd漏洞编号
     cve_id = 'Unkonwn'  # cve编号
-    product = '深澜软件'  # 漏洞应用名称
-    product_version = 'Srun网关'  # 漏洞应用版本
+    product = '深澜认证平台'  # 漏洞应用名称
+    product_version = 'Unkonwn'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '0221d322-3f44-43c6-85f9-1eaf5813fde2'

@@ -14,4 +14,4 @@ WORKDIR /app
 COPY . /app
 
 COPY Pipfile Pipfile
-RUN pipenv install --skip-lock && pipenv install '-e .' --dev --skip-lock
+RUN pipenv install && pipenv install '-e .' --dev

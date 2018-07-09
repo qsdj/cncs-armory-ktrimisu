@@ -6,17 +6,17 @@ import time
 
 class Vuln(ABVuln):
     vuln_id = 'kingdee_0011' # 平台漏洞编号，留空
-    name = '金蝶协作办公系统 任意文件上传'  # 漏洞名称
+    name = '金蝶协同办公系统 任意文件上传'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_UPLOAD # 漏洞类型
     disclosure_date = 'Unkonwn'  # 漏洞公布时间
     desc = '''
-        金蝶协作办公系统 /kingdee/document/upphoto_action.jsp 可上传任意文件。
+        金蝶协同办公系统 /kingdee/document/upphoto_action.jsp 可上传任意文件。
     '''  # 漏洞描述
     ref = 'Unkonwn'  # 漏洞来源
     cnvd_id = 'Unkonwn'  # cnvd漏洞编号
     cve_id = 'Unkonwn'  # cve编号
-    product = '金蝶协作办公系统'  # 漏洞应用名称
+    product = '金蝶协同办公系统'  # 漏洞应用名称
     product_version = 'Unkonwn'  # 漏洞应用版本
 
 class Poc(ABPoc):

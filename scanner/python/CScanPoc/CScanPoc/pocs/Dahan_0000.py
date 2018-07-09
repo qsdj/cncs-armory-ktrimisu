@@ -12,11 +12,11 @@ class Vuln(ABVuln):
     desc = '''
         大汉互动管理平台文件包含漏洞，攻击者可以通过构造恶意语句来读取系统敏感文件信息。
     ''' # 漏洞描述
-    ref = 'Uknown' #https://wooyun.shuimugan.com/bug/view?bug_no=148311
-    cnvd_id = 'Uknown' # cnvd漏洞编号
-    cve_id = 'Uknown'  # cve编号
-    product = '南京大汉网络有限公司'  # 漏洞组件名称
-    product_version = 'Uknown'  # 漏洞应用版本
+    ref = 'Unknown' #https://wooyun.shuimugan.com/bug/view?bug_no=148311
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
+    product = 'Hanweb(大汉)'  # 漏洞组件名称
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'a5db4871-69f8-4208-897a-fe7a7cb93bc1' # 平台 POC 编号

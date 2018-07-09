@@ -64,7 +64,7 @@ class Poc(ABPoc):
                 url = 'http://%s:%d' % (target, port)
             r = requests.get(url, verify=False, headers=headers, timeout=timeout)
             if not r.headers.get('server') or "Microsoft" not in r.headers.get('server'):
-                self.output.info('[-] Not IIS')
+                # self.output.info('[-] Not IIS')
                 return
     
             hexAllFfff = '18446744073709551615'

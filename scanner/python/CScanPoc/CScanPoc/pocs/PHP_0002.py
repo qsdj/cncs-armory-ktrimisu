@@ -15,7 +15,7 @@ class Vuln(ABVuln):
         PHP F1 Max's Image Uploader 1.0版本的maxImageUpload/index.php中存在无限制文件上传漏洞。
         当Apache未被设置来处理具有pjpeg或jpeg扩展名的拟态文件时，远程攻击者可以通过上传具有一个pjpeg或jpeg扩展名的文件，执行任意代码，并借助对original/的一个直接请求来访问该文件。
     ''' # 漏洞描述
-    ref = 'https://www.seebug.org/vuldb/ssvid-67514' # 
+    ref = 'http://www.cnvd.org.cn/flaw/show/CNVD-2010-5310' # 
     cnvd_id = 'CNVD-2010-5310' # cnvd漏洞编号
     cve_id = 'CVE-2010-0390'  # cve编号
     product = 'PHP'  # 漏洞组件名称

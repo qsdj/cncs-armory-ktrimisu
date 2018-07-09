@@ -38,13 +38,12 @@ class Poc(ABPoc):
             
             url_dic = dict()
             version_url = self.target + '/editor/dialog/fck_about.html'
-            print version_url
             version_resp = urllib2.urlopen(version_url).read()
             re_version = re.compile('<b>(\d\.\d[\.\d]*).{0,10}<\/b>')
             parr = re_version.findall(version_resp)
-            version_number = parr[0]
 
-            if version_number <= '2.4.3':
+            if parr:
+                if parr[0] <= '2.4.3':
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                         target=self.target, name=self.vuln.name))
 

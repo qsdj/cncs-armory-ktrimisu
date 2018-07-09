@@ -14,7 +14,7 @@ class Vuln(ABVuln):
         Joomla!的JE Quotation Form (com_jequoteform)组件存在目录遍历漏洞。
 		远程攻击者可以借助脚本index.php中的view参数中的".."符读取任意的文件，也可能导致其他未明影响。
     ''' # 漏洞描述
-    ref = 'https://www.seebug.org/vuldb/ssvid-68611' # 
+    ref = 'http://www.cnvd.org.cn/flaw/show/CNVD-2010-4376' # 
     cnvd_id = 'CNVD-2010-4376' # cnvd漏洞编号
     cve_id = 'CVE-2010-2128'  # cve编号
     product = 'Joomla!'  # 漏洞组件名称

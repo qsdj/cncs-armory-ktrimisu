@@ -31,7 +31,7 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
             request = requests.get('{target}/.hg/'.format(target=self.target))
-            if request.status_code == 200:
+            if request.status_code == 200 and "404" not in request.text and u"不存在" in request.text and "未找到" in request.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target,name=self.vuln.name))
         except Exception, e:
             self.output.info('执行异常{}'.format(e))

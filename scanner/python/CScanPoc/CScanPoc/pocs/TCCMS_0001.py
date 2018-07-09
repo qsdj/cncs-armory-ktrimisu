@@ -43,12 +43,12 @@ class Poc(ABPoc):
             url = self.target + payload
 
             r1 = requests.post(url, data=data1)
-            if '添加成功' in r1.text:
+            if u'添加成功' in r1.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target,name=self.vuln.name))
 
             r2 = requests.post(url, data=data2)
-            if '标题不能重复' in r2.text:
+            if u'标题不能重复' in r2.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target,name=self.vuln.name))
 

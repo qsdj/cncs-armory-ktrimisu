@@ -11,12 +11,12 @@ class Vuln(ABVuln):
     type = VulnType.MISCONFIGURATION # 漏洞类型
     disclosure_date = '2015-03-11'  # 漏洞公布时间
     desc = '''
-        EcsCMS(易创思ECS)，易创思教育建站系统未授权访问可查看所有注册用户
+        EcsCMS(易创思CMS)，易创思教育建站系统未授权访问可查看所有注册用户
     ''' # 漏洞描述
     ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=086704
     cnvd_id = 'Unkonwn' # cnvd漏洞编号
     cve_id = 'Unkonwn' #cve编号
-    product = 'EcsCMS(易创思ECS)'  # 漏洞应用名称
+    product = 'EcsCMS(易创思CMS)'  # 漏洞应用名称
     product_version = 'Unkonwn'  # 漏洞应用版本
 
 

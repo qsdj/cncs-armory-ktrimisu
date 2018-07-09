@@ -48,11 +48,10 @@ class Poc(ABPoc):
                 }
             for payload in payloads:
                 target_url = arg= arg + payload
-                code, head, res,errcode,_ = hh.http(target_url)
-                       
-                if code == 200 and "202cb962ac59075b964b07152d234b70"in res:
+                req = requests.get(target_url)
+                if req.status_code == 200 and "202cb962ac59075b964b07152d234b70"in req.text:
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞，漏洞地址为{url}'.format(
-                        target=self.target,name=self.vuln.name, url=url))
+                        target=self.target,name=self.vuln.name, url=target_url))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))

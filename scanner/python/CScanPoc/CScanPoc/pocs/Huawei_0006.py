@@ -19,7 +19,7 @@ class Vuln(ABVuln):
     ref = 'http://seclists.org/fulldisclosure/2015/Apr/42' # 漏洞来源
     cnvd_id = 'Unkonwn' # cnvd漏洞编号
     cve_id = 'Unkonwn' #cve编号
-    product = '华为软件'  # 漏洞应用名称
+    product = '华为'  # 漏洞应用名称
     product_version = 'Unkonwn'  # 漏洞应用版本
 
 
@@ -51,12 +51,11 @@ class Poc(ABPoc):
                 'cognos',
                 'ftptrace'
                 'ftpsoc')
-                       
-            code, head, res, body, _ = hh.http('-d %s %s' % (payload, url))
-            if code == 200:
+            req = requests.post(url, data=payload)
+            if req.status_code == 200:
                 flag=False
                 for i in range(len(keywords)):
-                    if keywords[i] not in res:
+                    if keywords[i] not in req.text:
                         flag=True
                         break#只要有一个key不在里面就不存在漏洞
                 if flag==False:

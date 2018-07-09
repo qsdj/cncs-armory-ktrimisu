@@ -13,7 +13,7 @@ class Vuln(ABVuln):
     desc = '''
         Mafia Moblog 6 Big.PHP文件存在远程文件包含漏洞。
     ''' # 漏洞描述
-    ref = 'https://www.seebug.org/vuldb/ssvid-81940' # 
+    ref = 'http://www.cnvd.org.cn/flaw/show/CNVD-2006-6279' # 
     cnvd_id = 'CNVD-2006-6279' # cnvd漏洞编号
     cve_id = 'CVE-2006-4156'  # cve编号
     product = 'Mafia Moblog'  # 漏洞组件名称

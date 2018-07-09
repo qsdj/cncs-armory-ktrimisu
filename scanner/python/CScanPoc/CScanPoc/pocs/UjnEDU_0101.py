@@ -8,7 +8,7 @@ class Vuln(ABVuln):
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型
     disclosure_date = '2011-06-11'  # 漏洞公布时间
-    desc = '''模版漏洞描述
+    desc = '''
     济南大学主站本地文件包含导致代码执行,
     长文件名截断导致任意文件包含，没找到上传，但可以让php代码记录到lighttpd日志中，然后包含日志文件，导致任意代码执行。
     ''' # 漏洞描述

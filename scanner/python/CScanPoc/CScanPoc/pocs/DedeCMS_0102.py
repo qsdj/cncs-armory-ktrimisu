@@ -18,7 +18,7 @@ class Vuln(ABVuln):
     ref = 'http://sebug.net/vuldb/ssvid-62607'# 漏洞来源
     cnvd_id = 'Unknown' # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
-    product = 'DedeCMS(织梦内容管理系统)'  # 漏洞应用名称
+    product = 'DedeCMS(织梦CMS)'  # 漏洞应用名称
     product_version = '5.7'  # 漏洞应用版本
 
 

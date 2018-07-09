@@ -13,7 +13,7 @@ class Vuln(ABVuln):
     desc = '''
         Mambo cropimage Component <= 1.0版本存在远程文件包含漏洞。
     ''' # 漏洞描述
-    ref = 'https://www.seebug.org/vuldb/ssvid-63857' # 
+    ref = 'http://www.cnvd.org.cn/flaw/show/CNVD-2006-6550' # 
     cnvd_id = 'CNVD-2006-6550' # cnvd漏洞编号
     cve_id = 'CVE-2006-4363'  # cve编号
     product = 'Mambo'  # 漏洞组件名称

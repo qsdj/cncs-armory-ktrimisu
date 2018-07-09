@@ -8,14 +8,14 @@ class Vuln(ABVuln):
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.LFI # 漏洞类型
     disclosure_date = '2011-12-26'  # 漏洞公布时间
-    desc = '''模版漏洞描述
+    desc = '''
     360游戏中心任意文件下载，
     能够访问/etc/passwd 文件，重要敏感信息泄露。
     ''' # 漏洞描述
     ref = 'Unknown' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=4251
     cnvd_id = 'Unknown' # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
-    product = '360'  # 漏洞组件名称
+    product = '360游戏中心'  # 漏洞组件名称
     product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):

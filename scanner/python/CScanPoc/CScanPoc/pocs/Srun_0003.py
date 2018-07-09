@@ -16,7 +16,7 @@ class Vuln(ABVuln):
     ref = 'Unkonwn'  # 漏洞来源
     cnvd_id = 'Unkonwn'  # cnvd漏洞编号
     cve_id = 'Unkonwn'  # cve编号
-    product = '深澜软件'  # 漏洞应用名称
+    product = '深澜深澜计费引擎'  # 漏洞应用名称
     product_version = 'Srun3000'  # 漏洞应用版本
 
 class Poc(ABPoc):

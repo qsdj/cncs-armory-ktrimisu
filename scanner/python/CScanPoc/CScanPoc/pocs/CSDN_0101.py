@@ -10,7 +10,7 @@ class Vuln(ABVuln):
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2015-10-11'  # 漏洞公布时间
-    desc = '''模版漏洞描述
+    desc = '''
     CSDN存在SQL时间盲注漏洞。
     ''' # 漏洞描述
     ref = 'Unknown' # 漏洞来源

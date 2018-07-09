@@ -11,7 +11,7 @@ class Vuln(ABVuln):
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.OTHER # 漏洞类型
     disclosure_date = 'Unknown'  # 漏洞公布时间
-    desc = '''模版漏洞描述
+    desc = '''
     Sangfor(深信服) VSP外置数据中心getshell。
     ''' # 漏洞描述
     ref = 'Unknown' # 漏洞来源

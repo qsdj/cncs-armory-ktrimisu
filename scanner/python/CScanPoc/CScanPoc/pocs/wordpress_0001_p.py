@@ -53,8 +53,9 @@ class Poc(ABPoc):
                 target=self.target, vuln=self.vuln))
             request1 = requests.post('{target}{url}'.format(target=self.target,url=url),data=data)
 
-            id = re.search(r"""id='(.?.)'""",request1.text).group(1)
-                        
+            id = re.search(r"""id='(.?.)'""",request1.text)
+            if id:
+                id.group(1)
             request2 = requests.get('{target}{url}{payload}{id}'.format(target=self.target,url=url,payload=payload,id=id))            
             r = request2.text
 

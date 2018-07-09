@@ -13,7 +13,7 @@ class Vuln(ABVuln):
     desc = '''
         Joomla Kochsuite Component <= 0.9.4版本存在远程文件包含漏洞。
     ''' # 漏洞描述
-    ref = 'https://www.seebug.org/vuldb/ssvid-63855' # 
+    ref = 'http://www.cnvd.org.cn/flaw/show/CNVD-2006-6478' # 
     cnvd_id = 'CNVD-2006-6478' # cnvd漏洞编号
     cve_id = 'CVE-2006-4348'  # cve编号
     product = 'Joomla!'  # 漏洞组件名称

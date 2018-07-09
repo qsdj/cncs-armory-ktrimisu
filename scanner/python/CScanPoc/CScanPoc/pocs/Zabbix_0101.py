@@ -11,7 +11,7 @@ class Vuln(ABVuln):
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型
     disclosure_date = ''  # 漏洞公布时间
-    desc = '''模版漏洞描述
+    desc = '''
     Zabbix RCE with API JSON-RPC.
     Zabbix versions 2.2 through 3.0.3 suffer from a remote command execution vulnerability in the JSON-RPC API.
     ''' # 漏洞描述

@@ -13,8 +13,8 @@ class Vuln(ABVuln):
     desc = '''
         Angelo-emlak 1.0数据库泄漏。
     ''' # 漏洞描述
-    ref = 'https://www.seebug.org/vuldb/ssvid-67229' # 
-    cnvd_id = 'CNNVD-201004-436 ' # cnvd漏洞编号
+    ref = 'http://www.cnvd.org.cn/flaw/show/CNVD-2010-4742' # 
+    cnvd_id = 'CNVD-2010-4742' # cnvd漏洞编号
     cve_id = 'CVE-2009-4820 '  # cve编号
     product = 'Angelo-emlak'  # 漏洞组件名称
     product_version = '1.0'  # 漏洞应用版本

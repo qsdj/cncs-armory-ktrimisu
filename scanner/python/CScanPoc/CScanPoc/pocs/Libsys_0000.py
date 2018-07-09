@@ -12,11 +12,11 @@ class Vuln(ABVuln):
     desc = '''
         Libsys任意文件包含漏洞，攻击者可以通过构造恶意语句来读取系统敏感文件信息。
     ''' # 漏洞描述
-    ref = 'Uknown' #https://wooyun.shuimugan.com/bug/view?bug_no=67400
-    cnvd_id = 'Uknown' # cnvd漏洞编号
-    cve_id = 'Uknown'  # cve编号
-    product = 'Libsys'  # 漏洞组件名称
-    product_version = 'Uknown'  # 漏洞应用版本
+    ref = 'Unknown' #https://wooyun.shuimugan.com/bug/view?bug_no=67400
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
+    product = '汇文软件'  # 漏洞组件名称
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '7e9abe25-57a9-474e-af9a-fe2765a7f18b' # 平台 POC 编号

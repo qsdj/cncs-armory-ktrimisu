@@ -13,7 +13,7 @@ class Vuln(ABVuln):
     desc = '''
         齐博CMS 下载系统，页面参数过滤不严，导致SQL注入。
     '''  # 漏洞描述
-    ref = 'Unkonwn'  # 漏洞来源
+    ref = 'http://0day5.com/archives/1651/'  # 漏洞来源
     cnvd_id = 'Unkonwn'  # cnvd漏洞编号
     cve_id = 'Unkonwn'  # cve编号
     product = 'QiboCMS(齐博CMS)'  # 漏洞应用名称

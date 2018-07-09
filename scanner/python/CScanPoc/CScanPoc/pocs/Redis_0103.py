@@ -17,7 +17,7 @@ class Vuln(ABVuln):
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.OTHER # 漏洞类型
     disclosure_date = 'Unknown'  # 漏洞公布时间
-    desc = '''模版漏洞描述
+    desc = '''
     1 生成一对用于ssh验证的密钥对
     2 通过redis未授权访问漏洞,向redis插入一条记录,内容为已生成的公钥
     3 通过redis数据导出功能,将含有公钥的数据导出到/root/.ssh/authorized_keys
