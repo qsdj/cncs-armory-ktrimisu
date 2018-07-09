@@ -13,8 +13,8 @@ class Vuln(ABVuln):
         Struts2 是Apache软件基金会负责维护的一个基于MVC设计模式的Web应用框架开源项目。 
         Apache Struts2存在S2-053远程代码执行漏洞，在Freemarker标记中使用错误的表达式而不是字符串文字时，导致攻击者远程执行代码攻击。
     ''' # 漏洞描述
-    ref = 'https://cwiki.apache.org/confluence/display/WW/S2-048' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    ref = 'http://www.cnvd.org.cn/flaw/show/CNVD-2017-13259' # 漏洞来源
+    cnvd_id = 'CNVD-2017-13259' # cnvd漏洞编号
     cve_id = 'CVE-2017-9791' #cve编号
     product = 'Apache Struts'  # 漏洞应用名称
     product_version = 'Struts 2.3.x with Struts 1 plugin and Struts 1 action'  # 漏洞应用版本

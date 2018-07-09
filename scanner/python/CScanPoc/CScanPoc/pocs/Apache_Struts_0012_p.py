@@ -12,8 +12,8 @@ class Vuln(ABVuln):
     desc = '''
         Apache Struts2中存在漏洞，Apache当启用动态方法调用时，可以传递恶意的表达式，该恶意表达式可用于在服务器端执行任意代码。  
     ''' # 漏洞描述
-    ref = 'https://cwiki.apache.org/confluence/display/WW/S2-032' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    ref = 'http://www.cnvd.org.cn/flaw/show/CNVD-2016-02506' # 漏洞来源
+    cnvd_id = 'CNVD-2016-02506' # cnvd漏洞编号
     cve_id = 'CVE-2016-3081' #cve编号
     product = 'Apache Struts'  # 漏洞应用名称
     product_version = 'Struts 2.3.20 - Struts Struts 2.3.28 (except 2.3.20.3 and 2.3.24.3)'  # 漏洞应用版本
