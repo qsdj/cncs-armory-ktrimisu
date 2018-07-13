@@ -48,7 +48,6 @@ class Poc(ABPoc):
           
             code1, head, res1, errcode, _ = hh.http(url1)
             code2, head, res2, errcode, _ = hh.http(url2)
-          
             if (code1 == 200) and res1 not in res2 :
                 #security_hole(url1 + ' SQL injection')
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
