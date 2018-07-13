@@ -16,7 +16,7 @@ class Vuln(ABVuln):
         漏洞文件：~view.php
     ''' # 漏洞描述
     ref = 'http://www.exploit-db.com/exploits/35447/' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cnvd_id = 'Unknown' # cnvd漏洞编号
     cve_id = 'CVE-2014-9173' #cve编号
     product = 'WordPress'  # 漏洞应用名称
     product_version = 'Google Document Embedder 2.5.16'  # 漏洞应用版本

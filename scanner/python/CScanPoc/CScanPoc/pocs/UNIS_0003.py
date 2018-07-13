@@ -12,9 +12,9 @@ class Vuln(ABVuln):
     desc = '''
         清华紫光UF3500N防火墙2.70版命令执行漏洞:/cgi-bin/admin_login.cgi
     '''  # 漏洞描述
-    ref = 'Unkonwn'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    ref = 'Unknown'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = '清华紫光硬件防火墙'  # 漏洞应用名称
     product_version = 'UF3504 2.70'  # 漏洞应用版本
 

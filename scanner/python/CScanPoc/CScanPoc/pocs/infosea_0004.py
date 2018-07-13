@@ -14,9 +14,9 @@ class Vuln(ABVuln):
         清大新洋图书系统 
         /opac/index.jsp?page=/WEB-INF/web.xml 任意文件包含漏洞，可getshell
     '''  # 漏洞描述
-    ref = 'Unkonwn'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    ref = 'Unknown'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = '清大新洋'  # 漏洞应用名称
     product_version = '北京清大新洋图书管理系统'  # 漏洞应用版本
 

@@ -14,8 +14,8 @@ class Vuln(ABVuln):
         WordPress主题Pagelines和Platform权限提升漏洞。
     ''' # 漏洞描述
     ref = 'http://www.freebuf.com/vuls/57594.html' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
-    cve_id = 'Unkonwn' #cve编号
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
     product = 'WordPress'  # 漏洞应用名称
     product_version = 'WordPress主题Pagelines和Platform'  # 漏洞应用版本
 

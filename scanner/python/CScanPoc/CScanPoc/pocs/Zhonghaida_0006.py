@@ -14,9 +14,9 @@ class Vuln(ABVuln):
         问题产品存在目录遍历，产品是使用SQLite数据库，从目录遍历发现管理员账号密码存储在这个位置“browse/browse_user_db.php”
         而且密码为普通的md5加密可破解，造成信息泄露(管理员密码)。
     '''  # 漏洞描述
-    ref = 'Unkonwn'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    ref = 'Unknown'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = '中海达VNet6专业型参考站接收机'  # 漏洞应用名称
     product_version = '中海达VNet6专业型参考站接收机'  # 漏洞应用版本
 

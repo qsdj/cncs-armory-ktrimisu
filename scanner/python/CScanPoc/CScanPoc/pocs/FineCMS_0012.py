@@ -15,10 +15,10 @@ class Vuln(ABVuln):
         无任何限制，可以直接上传。
     ''' # 漏洞描述
     ref = 'http://0day5.com/archives/3314/' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
-    cve_id = 'Unkonwn' #cve编号
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
     product = 'FineCMS'  # 漏洞应用名称
-    product_version = 'Unkonwn'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 
 def verifyShell(target, fileName):

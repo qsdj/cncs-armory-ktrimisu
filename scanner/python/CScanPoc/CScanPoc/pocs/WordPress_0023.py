@@ -14,8 +14,8 @@ class Vuln(ABVuln):
         download_file" variable is not sanitized.
     '''  # 漏洞描述
     ref = 'http://www.exploit-db.com/exploits/35493'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'WordPress'  # 漏洞应用名称
     product_version = 'WordPress Ajax Store Locator <= 1.2'  # 漏洞应用版本
 

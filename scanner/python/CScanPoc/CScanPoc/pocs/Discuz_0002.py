@@ -14,8 +14,8 @@ class Vuln(ABVuln):
         discuz X3.0 存在多处绝对路径泄露。
     '''  # 漏洞描述
     ref = 'http://www.360doc.com/content/13/0616/13/11029609_293244305.shtml'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'Discuz!'  # 漏洞应用名称
     product_version = 'x3.0'  # 漏洞应用版本
 

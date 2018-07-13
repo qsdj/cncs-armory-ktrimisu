@@ -15,8 +15,8 @@ class Vuln(ABVuln):
         文件并未define function文件 并直接调用函数导致报错。
     '''  # 漏洞描述
     ref = 'http://0day5.com/archives/2765/'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'UWA'  # 漏洞应用名称
     product_version = '2.X'  # 漏洞应用版本
 

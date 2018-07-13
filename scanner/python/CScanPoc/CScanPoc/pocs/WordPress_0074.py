@@ -15,8 +15,8 @@ class Vuln(ABVuln):
         WordPress Persuasion Theme 2.x 任意文件下载 ，通过此漏洞可以下载服务器上的任意可读文件。
     ''' # 漏洞描述
     ref = 'http://www.exploit-db.com/exploits/30443/' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
-    cve_id = 'Unkonwn' #cve编号
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
     product = 'WordPress'  # 漏洞应用名称
     product_version = 'WordPress Persuasion Theme 2.x'  # 漏洞应用版本
 

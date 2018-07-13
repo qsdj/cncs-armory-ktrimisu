@@ -13,7 +13,7 @@ class Vuln(ABVuln):
         Apache Struts2中存在漏洞，Apache当使用REST插件时，有可能传递一个恶意的表达式，它可以用于在服务器端执行任意代码。 
     ''' # 漏洞描述
     ref = 'https://cwiki.apache.org/confluence/display/WW/S2-037' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cnvd_id = 'Unknown' # cnvd漏洞编号
     cve_id = 'CVE-2016-4438' #cve编号
     product = 'Apache Struts'  # 漏洞应用名称
     product_version = 'Struts 2.3.20 - Struts Struts 2.3.28.1'  # 漏洞应用版本

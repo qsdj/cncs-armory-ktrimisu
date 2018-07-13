@@ -15,8 +15,8 @@ class Vuln(ABVuln):
         /jcms/m_5_1/que_chooseusers.jsp?que_usergroupid=1 存在SQL注入漏洞的文件。
     ''' # 漏洞描述
     ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=76816' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
-    cve_id = 'Unkonwn' #cve编号
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
     product = 'Hanweb(大汉)'  # 漏洞应用名称
     product_version = '大汉JCMS 5.1'  # 漏洞应用版本
 

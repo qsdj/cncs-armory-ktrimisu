@@ -15,10 +15,10 @@ class Vuln(ABVuln):
                 /acc/tools/enable_tool_debug.php 任意命令执行。
     '''  # 漏洞描述
     ref = 'http://0day5.com/archives/3728/'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = '华创'  # 漏洞应用名称
-    product_version = 'Unkonwn'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'd3c55ca4-85f6-4701-a915-fcc62a6a0b2f'

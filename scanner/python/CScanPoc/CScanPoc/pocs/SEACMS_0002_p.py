@@ -17,8 +17,8 @@ class Vuln(ABVuln):
         该漏洞成因在于search.php没有对用户输入内容进行过滤，导致攻击者提交的order参数可进入parseIf函数中执行eval.
     ''' # 漏洞描述
     ref = 'https://www.sitedirsec.com/exploit-1967.html' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
-    cve_id = 'Unkonwn' #cve编号
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
     product = 'SEACMS(海洋CMS)'  # 漏洞应用名称
     product_version = '6.54'  # 漏洞应用版本
 

@@ -14,8 +14,8 @@ class Vuln(ABVuln):
         json_str_iconv函数没过滤，SQL语句没有单引号包含，这样就能直接注射了。
     ''' # 漏洞描述
     ref = 'http://0day5.com/archives/4004/' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
-    cve_id = 'Unkonwn' #cve编号
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
     product = 'Ecshop'  # 漏洞应用名称
     product_version = '3.0'  # 漏洞应用版本
 

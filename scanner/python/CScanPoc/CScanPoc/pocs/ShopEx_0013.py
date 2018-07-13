@@ -17,10 +17,10 @@ class Vuln(ABVuln):
         类型，规格，品牌等，进行添加，删除和修改，过滤不当还可造成注入
     ''' # 漏洞描述
     ref = 'https://www.waitalone.cn/ShopEx-api-injection-with-exp.html' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
-    cve_id = 'Unkonwn' #cve编号
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
     product = 'ShopEx'  # 漏洞应用名称
-    product_version = 'Unkonwn'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 
 class Poc(ABPoc):

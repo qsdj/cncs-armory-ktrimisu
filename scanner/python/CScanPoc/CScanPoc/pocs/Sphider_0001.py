@@ -16,7 +16,7 @@ class Vuln(ABVuln):
         sphider admin.php PHP 代码存在注入漏洞缺陷,直接造成命令执行漏洞的产生。
     ''' # 漏洞描述
     ref = 'http://www.exploit-db.com/exploits/34189/' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cnvd_id = 'Unknown' # cnvd漏洞编号
     cve_id = 'CVE-2014-5082' #cve编号
     product = 'Sphider'  # 漏洞应用名称
     product_version = '1.3.6'  # 漏洞应用版本

@@ -16,7 +16,7 @@ class Vuln(ABVuln):
         导致语句执行产生差异性导致的。这个漏洞可以让任意用户创建管理员，属于垂直权限绕过漏洞。
     '''  # 漏洞描述
     ref = 'https://github.com/vulhub/vulhub/tree/master/couchdb/CVE-2017-12635'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'CVE-2017-12635'  # cve编号
     product = 'CouchDB'  # 漏洞应用名称
     product_version = '小于 1.7.0 以及 小于 2.1.1'  # 漏洞应用版本

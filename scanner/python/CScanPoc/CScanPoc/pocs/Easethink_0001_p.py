@@ -14,8 +14,8 @@ class Vuln(ABVuln):
         在注册的时候，输入用户名后台会验证用户名是否存在，当然是通过ajax去验证的也就是ajax.php。很多程序多会忽略这个导致存在SQL注入。
     ''' # 漏洞描述
     ref = 'http://0day5.com/archives/534/' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
-    cve_id = 'Unkonwn' #cve编号
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
     product = 'Easethink(易想团购管理系统)'  # 漏洞应用名称
     product_version = 'Easethink_free_v1.4'  # 漏洞应用版本
 

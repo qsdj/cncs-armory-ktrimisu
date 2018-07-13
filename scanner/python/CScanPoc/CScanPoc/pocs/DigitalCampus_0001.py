@@ -13,9 +13,9 @@ class Vuln(ABVuln):
     desc = '''
         武汉英福ETMV9数字化校园平台 /ETMDCP/CuteSoft_Client/CuteEditor/Load.ashx?type=image&file=../../../web.config 任意下载漏洞。
     ''' # 漏洞描述
-    ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0100796
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
-    cve_id = 'Unkonwn' #cve编号
+    ref = 'Unknown' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0100796
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
     product = 'DigitalCampus'  # 漏洞应用名称
     product_version = 'V9'  # 漏洞应用版本
 

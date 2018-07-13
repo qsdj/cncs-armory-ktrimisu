@@ -14,7 +14,7 @@ class Vuln(ABVuln):
         在 F:WWWmaccmsinccommontemplate.php 里面可以看到 ifex() 方法里，$strif参数未过滤直接带入PHP语句，导致命令执行漏洞。
     ''' # 漏洞描述
     ref = 'http://0day5.com/archives/4383/' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cnvd_id = 'Unknown' # cnvd漏洞编号
     product = 'MacCMS'  # 漏洞应用名称
     product_version = 'v8.x'  # 漏洞应用版本
 

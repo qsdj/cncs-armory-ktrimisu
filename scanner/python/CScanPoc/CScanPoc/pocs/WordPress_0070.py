@@ -14,8 +14,8 @@ class Vuln(ABVuln):
         WordPress Plugin SEO by Yoast 1.7.3.3 - Blind SQL Injection
     ''' # 漏洞描述
     ref = 'https://www.exploit-db.com/exploits/36413/' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
-    cve_id = 'Unkonwn' #cve编号
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
     product = 'WordPress'  # 漏洞应用名称
     product_version = 'WordPress Plugin SEO by Yoast <= 1.7.3.3'  # 漏洞应用版本
 

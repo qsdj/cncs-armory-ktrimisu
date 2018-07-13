@@ -13,9 +13,9 @@ class Vuln(ABVuln):
     desc = '''
         亿赛通数据泄露防护系统(DLP)，登录处UserId参数注入，导致SQL注入漏洞。
     '''  # 漏洞描述
-    ref = 'Unkonwn'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    ref = 'Unknown'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = '亿赛通'  # 漏洞应用名称
     product_version = '亿赛通数据泄露防护系统(DLP)'  # 漏洞应用版本
 

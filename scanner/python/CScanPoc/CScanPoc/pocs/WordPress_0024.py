@@ -23,7 +23,7 @@ class Vuln(ABVuln):
         Unsanitized user input to readfile() function.
     '''  # 漏洞描述
     ref = 'http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-9119'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'CVE-2014-9119'  # cve编号
     product = 'WordPress'  # 漏洞应用名称
     product_version = 'WordPress DB-Backup Plugin 4.5'  # 漏洞应用版本

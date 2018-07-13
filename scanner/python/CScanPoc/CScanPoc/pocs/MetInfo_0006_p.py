@@ -13,8 +13,8 @@ class Vuln(ABVuln):
         MetInfo CMS中 search_sql 变量没有过滤直接带入 SQL 语句导致注入，可以获取管理员的账号密码，造成信息泄露甚至数据库被拖。
     ''' # 漏洞描述
     ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=70827' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
-    cve_id = 'Unkonwn' #cve编号
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
     product = 'MetInfo'  # 漏洞应用名称
     product_version = 'MetInfo 5.3'  # 漏洞应用版本
 

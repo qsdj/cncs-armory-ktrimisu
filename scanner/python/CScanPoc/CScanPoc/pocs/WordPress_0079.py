@@ -14,7 +14,7 @@ class Vuln(ABVuln):
         WordPress Plugin Survey and Poll 1.1 - Blind SQL Injection.
     ''' # 漏洞描述
     ref = 'https://www.exploit-db.com/exploits/36054/' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cnvd_id = 'Unknown' # cnvd漏洞编号
     cve_id = 'CVE-2015-2090' #cve编号
     product = 'WordPress'  # 漏洞应用名称
     product_version = 'WordPress Plugin Survey and Poll 1.1'  # 漏洞应用版本

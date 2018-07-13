@@ -15,7 +15,7 @@ class Vuln(ABVuln):
         ZeroCMS用户注册页面zero_transact_user.php表单完全没进行过滤。
     ''' # 漏洞描述
     ref = 'https://www.exploit-db.com/exploits/34170/' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cnvd_id = 'Unknown' # cnvd漏洞编号
     cve_id = 'CVE-2014-4710' #cve编号
     product = 'ZeroCMS'  # 漏洞应用名称
     product_version = '1.0'  # 漏洞应用版本

@@ -14,8 +14,8 @@ class Vuln(ABVuln):
         CSDJCMS(程氏舞曲管理系统) V2.5 admin_loginstate.php文件中，如果s_login 的值等于 四个cookie 相加的md5加密，即可直接通过验证。
     '''  # 漏洞描述
     ref = 'http://www.it165.net/safe/html/201304/509.html'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'CSDJCMS(程氏舞曲管理系统)'  # 漏洞应用名称
     product_version = 'CSDJCMS(程氏舞曲管理系统) V2.5'  # 漏洞应用版本
 

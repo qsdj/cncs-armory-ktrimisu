@@ -9,7 +9,7 @@ class Vuln(ABVuln):
     name = '汇文软件 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
-    disclosure_date = 'Unkonwn'  # 漏洞公布时间
+    disclosure_date = 'Unknown'  # 漏洞公布时间
     desc = '''
         汇文（Libsys）软件由于参数过滤不严谨，导致多处存在SQL注入漏洞。
         /opac/cls_browsing_book.php
@@ -18,11 +18,11 @@ class Vuln(ABVuln):
         /opac/peri_nav_cls_peri.php
         /opac/sci_browsing_book.php
     '''  # 漏洞描述
-    ref = 'Unkonwn'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    ref = 'Unknown'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = '汇文软件'  # 漏洞应用名称
-    product_version = 'Unkonwn'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '5fe53a65-c501-427a-af09-44be5fd60232'

@@ -15,10 +15,10 @@ class Vuln(ABVuln):
         数据库中当usertype为3时即为管理员权限，由代码可看出当lang=metinfo时，usertype=3，此时可直接注册账号切权限为管理员权限。
     ''' # 漏洞描述
     ref = 'http://0day5.com/archives/1386/' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
-    cve_id = 'Unkonwn' #cve编号
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
     product = 'MetInfo'  # 漏洞应用名称
-    product_version = 'Unkonwn'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 
 class Poc(ABPoc):

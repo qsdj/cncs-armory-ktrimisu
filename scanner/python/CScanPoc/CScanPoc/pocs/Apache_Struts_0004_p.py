@@ -14,8 +14,8 @@ class Vuln(ABVuln):
         Struts2 S2-001该漏洞因为用户提交表单数据并且验证失败时，后端会将用户之前提交的参数值使用 OGNL 表达式 %{value} 进行解析，然后重新填充到对应的表单数据中。例如注册或登录页面，提交失败后端一般会默认返回之前提交的数据，由于后端使用 %{value} 对提交的数据执行了一次 OGNL 表达式解析，所以可以直接构造 Payload 进行命令执行
     ''' # 漏洞描述
     ref = 'https://cwiki.apache.org/confluence/display/WW/S2-001' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
-    cve_id = 'Unkonwn' #cve编号
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
     product = 'Apache Struts'  # 漏洞应用名称
     product_version = 'Apache Struts2 2.0.0 - 2.0.8'  # 漏洞应用版本
 

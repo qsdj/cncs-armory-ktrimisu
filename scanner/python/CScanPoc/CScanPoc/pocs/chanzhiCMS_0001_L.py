@@ -18,8 +18,8 @@ class Vuln(ABVuln):
         后台这里上传文件的时候，没有判断文件后缀，直接通过move_uploaded_file移动到package目录下了。而这里没有token，所以可以通过CSRF漏洞getshell。
     ''' # 漏洞描述
     ref = 'http://0day5.com/archives/3890/' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
-    cve_id = 'Unkonwn' #cve编号
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
     product = 'chanzhiCMS(蝉知CMS)'  # 漏洞应用名称
     product_version = '5.3'  # 漏洞应用版本
 

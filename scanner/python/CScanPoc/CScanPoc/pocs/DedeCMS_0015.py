@@ -14,8 +14,8 @@ class Vuln(ABVuln):
         织梦CMS 在/include/payment/alipay.php(lines:125-161) 过滤参数不严谨，导致SQL注入漏洞。
     '''  # 漏洞描述
     ref = 'https://www.sitedirsec.com/exploit-1800.html'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'DedeCMS(织梦CMS)'  # 漏洞应用名称
     product_version = '织梦CMS-V5.7-UTF8-SP1'  # 漏洞应用版本
 

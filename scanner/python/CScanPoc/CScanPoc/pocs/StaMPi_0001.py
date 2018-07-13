@@ -14,10 +14,10 @@ class Vuln(ABVuln):
         漏洞文件：/path/fotogalerie.php.
     '''  # 漏洞描述
     ref = 'https://www.exploit-db.com/exploits/36031/'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'StaMPi'  # 漏洞应用名称
-    product_version = 'Unkonwn'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '4359da4e-ed4c-4d45-8621-90c58ace35be'

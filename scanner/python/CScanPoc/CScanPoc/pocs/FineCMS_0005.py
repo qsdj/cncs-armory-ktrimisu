@@ -15,8 +15,8 @@ class Vuln(ABVuln):
         FineCMS 2.3.0 /dayrui/models/Search_model.php文件中,catid没有过滤
     ''' # 漏洞描述
     ref = 'https://www.seebug.org/vuldb/ssvid-62681' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
-    cve_id = 'Unkonwn' #cve编号
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
     product = 'FineCMS'  # 漏洞应用名称
     product_version = '2.3.0'  # 漏洞应用版本
 

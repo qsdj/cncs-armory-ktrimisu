@@ -15,8 +15,8 @@ class Vuln(ABVuln):
         漏洞在shoppingcart.php文件大约152行处，$goods变量是从cookie中取出的shoppingcart字段值直接反序列化后的内容，没有进行任何的过滤和校验。最终造成SQL注入漏洞。
     ''' # 漏洞描述
     ref = 'http://0day5.com/archives/1146/' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
-    cve_id = 'Unkonwn' #cve编号
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
     product = 'PHPMyAdmin'  # 漏洞应用名称
     product_version = 'PHPMyAdmin4.6.6'  # 漏洞应用版本
 

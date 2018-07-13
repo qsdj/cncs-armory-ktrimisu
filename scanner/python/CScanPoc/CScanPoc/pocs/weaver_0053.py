@@ -15,8 +15,8 @@ class Vuln(ABVuln):
         其中，参数 ATTACHMENT_NAME 未有效的控制其范围，导致任意文件下载。
     '''  # 漏洞描述
     ref = 'http://0day5.com/archives/797/'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = '泛微OA'  # 漏洞应用名称
     product_version = '泛微e-office'  # 漏洞应用版本
 

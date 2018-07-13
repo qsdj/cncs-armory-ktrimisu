@@ -15,8 +15,8 @@ class Vuln(ABVuln):
         /general/crm/studio/modules/EntityRelease/release.php 由于参数过滤不严谨，造成注入命令执行。
     '''  # 漏洞描述
     ref = 'http://0day5.com/archives/357/'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = '通达OA系统'  # 漏洞应用名称
     product_version = '通达OA 2011-2013'  # 漏洞应用版本
 

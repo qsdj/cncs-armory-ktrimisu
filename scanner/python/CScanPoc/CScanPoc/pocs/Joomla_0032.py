@@ -20,7 +20,7 @@ class Vuln(ABVuln):
     product_version = 'Shape 5 MP3 Player 2.0'  # 漏洞应用版本
 
 class Poc(ABPoc):
-    poc_id = '6aee9f6a-757f-4436-a300-5fe32382c00b'
+    poc_id = 'e34f389d-f309-41aa-8dae-f9f272639a4f'
     author = '47bwy'  # POC编写者
     create_date = '2018-05-18'  # POC创建时间
 

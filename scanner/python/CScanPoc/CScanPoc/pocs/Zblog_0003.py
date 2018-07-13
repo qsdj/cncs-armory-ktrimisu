@@ -13,9 +13,9 @@ class Vuln(ABVuln):
         Zblog是基于Asp平台的Blog博客(网志)程序
         search.asp在对用户提交数据处理上存在安全漏洞。
     '''  # 漏洞描述
-    ref = 'Unkonwn'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    ref = 'Unknown'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'Zblog'  # 漏洞应用名称
     product_version = 'Zblog1.8'  # 漏洞应用版本
 

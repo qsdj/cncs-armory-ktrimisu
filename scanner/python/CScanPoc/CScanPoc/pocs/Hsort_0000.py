@@ -15,10 +15,10 @@ class Vuln(ABVuln):
         /Admin/fileManage.aspx?action=UPLOAD&value1=~/
     ''' # 漏洞描述
     ref = 'http://0day5.com/archives/3756/' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0141695
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
-    cve_id = 'Unkonwn' #cve编号
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
     product = 'Hsort'  # 漏洞应用名称
-    product_version = 'Unkonwn'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 
 class Poc(ABPoc):

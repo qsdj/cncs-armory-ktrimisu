@@ -15,7 +15,7 @@ class Vuln(ABVuln):
         Given the right circumstances, this allowed a cross-site scripting attack. This vulnerability shouldn't affect most production sites since you shouldn't run with "DEBUG = True" (which makes this page accessible) in your production settings.
     ''' # 漏洞描述
     ref = 'http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-12794' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cnvd_id = 'Unknown' # cnvd漏洞编号
     cve_id = 'CVE-2017-12794' #cve编号
     product = 'Django'  # 漏洞应用名称
     product_version = 'Django 1.10.x before 1.10.8 and 1.11.x before 1.11.5'  # 漏洞应用版本

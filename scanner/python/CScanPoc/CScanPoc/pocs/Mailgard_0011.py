@@ -19,11 +19,11 @@ class Vuln(ABVuln):
         exec("cd '".$dir."'; cp '".$file_name."' '".$movefile."'",$rs,$res);
         虽然exec函数里$file_name有单引号包含，但是$file_name = urldecode($_POST['file_name']);，可以2次urlencode单引号绕过addslashes
     '''  # 漏洞描述
-    ref = '223eda81-c299-47b6-9353-8d3b8c587485'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    ref = 'http://0day5.com/archives/3042/'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'Mailgard'  # 漏洞应用名称
-    product_version = 'Unkonwn'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 
 def login(target,username,password):
@@ -46,7 +46,7 @@ def login(target,username,password):
         return False
 
 class Poc(ABPoc):
-    poc_id = '7de2ab79-1025-4433-ade9-280167ea6bec'
+    poc_id = '96f14640-9451-4eb6-89d3-fdeecab7a8b8'
     author = '47bwy'  # POC编写者
     create_date = '2018-06-21'  # POC创建时间
 

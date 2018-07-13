@@ -13,11 +13,11 @@ class Vuln(ABVuln):
         方正Apabi数字资源平台 /DLib/List1.asp 页面：
         /DLib/List1.asp?lang=gb&act=CategoryBrowse&DocGroupID=2&CategoryTypeID=1 存在MSSQL SQL注射漏洞。
     '''  # 漏洞描述
-    ref = 'Unkonwn'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    ref = 'Unknown'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = '方正Apabi数字资源平台'  # 漏洞应用名称
-    product_version = 'Unkonwn'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'af7872d9-ea51-4057-b723-39137733f561'

@@ -14,7 +14,7 @@ class Vuln(ABVuln):
     ''' # 漏洞描述
     ref = 'https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-6878' # 漏洞来源
     cnvd_id = 'CVE-2017-6878' # cnvd漏洞编号
-    cve_id = 'Unkonwn' #cve编号
+    cve_id = 'Unknown' #cve编号
     product = 'MetInfo'  # 漏洞应用名称
     product_version = '5.3.15'  # 漏洞应用版本
 

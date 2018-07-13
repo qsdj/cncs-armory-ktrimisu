@@ -15,7 +15,7 @@ class Vuln(ABVuln):
         WordPress Plugin Fancybox 3.0.2 - Persistent Cross-Site Scripting.
     ''' # 漏洞描述
     ref = 'https://www.exploit-db.com/exploits/36087/' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cnvd_id = 'Unknown' # cnvd漏洞编号
     cve_id = 'CVE-2015-1494' #cve编号
     product = 'WordPress'  # 漏洞应用名称
     product_version = 'WordPress Plugin Fancybox 3.0.2'  # 漏洞应用版本

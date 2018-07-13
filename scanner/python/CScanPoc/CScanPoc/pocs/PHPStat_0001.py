@@ -16,8 +16,8 @@ class Vuln(ABVuln):
         PHPStat v1.0.20141124 /download.php 任意文件下载。
     ''' # 漏洞描述
     ref = 'http://0day5.com/archives/2372/' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
-    cve_id = 'Unkonwn' #cve编号
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
     product = 'PHPStat'  # 漏洞应用名称
     product_version = '1.0'  # 漏洞应用版本
 

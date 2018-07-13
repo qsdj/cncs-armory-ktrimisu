@@ -17,8 +17,8 @@ class Vuln(ABVuln):
         key被带入select语句，全局没有过滤。
     ''' # 漏洞描述
     ref = 'http://0day5.com/archives/3833/' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
-    cve_id = 'Unkonwn' #cve编号
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
     product = 'SEACMS(海洋CMS)'  # 漏洞应用名称
     product_version = '6.25'  # 漏洞应用版本
 

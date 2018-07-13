@@ -17,8 +17,8 @@ class Vuln(ABVuln):
         由于functions_rate.inc.php文件中的rate_picture函数没有对传入的$rate变量进行过滤，直接拼接到SQL中执行。
     '''  # 漏洞描述
     ref = 'http://www.freebuf.com/articles/web/55075.html'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'Piwigo'  # 漏洞应用名称
     product_version = '<= v2.7.1'  # 漏洞应用版本
 

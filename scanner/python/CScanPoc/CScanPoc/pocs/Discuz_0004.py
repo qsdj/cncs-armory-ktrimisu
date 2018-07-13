@@ -15,8 +15,8 @@ class Vuln(ABVuln):
         如果急诊箱页面未删除，可能存在默认密码导致被入侵。默认密码：188281MWWxjk.
     '''  # 漏洞描述
     ref = 'https://github.com/heavenK/bbs_new/blob/master/source/plugin/tools/tools.php'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'Discuz!'  # 漏洞应用名称
     product_version = 'Discuz! X2.5 急诊箱扫描页面'  # 漏洞应用版本
 

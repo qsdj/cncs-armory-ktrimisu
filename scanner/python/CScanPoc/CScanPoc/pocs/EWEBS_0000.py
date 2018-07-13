@@ -13,11 +13,11 @@ class Vuln(ABVuln):
         极通EWEBS应用虚拟化系统任意文件读取利用，文件操作参数未加过滤。
         Language_S=../../../../windows/system32/drivers/etc/hosts
     '''  # 漏洞描述
-    ref = 'Unkonwn'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    ref = 'Unknown'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'EWEBS'  # 漏洞应用名称
-    product_version = 'Unkonwn'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '976e966b-51f8-47ad-8c49-1cda0660662c'

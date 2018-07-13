@@ -14,11 +14,11 @@ class Vuln(ABVuln):
         /anmai/SF_Manage/tfdeleN.aspx?tfid=%28
         /anmai/RecruitstuManage/hiddenValue.aspx?topicid=1
     '''  # 漏洞描述
-    ref = 'Unkonwn'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    ref = 'Unknown'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = '安脉学校综合管理平台'  # 漏洞应用名称
-    product_version = 'Unkonwn'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'f984d276-cbef-4cab-a923-32f770fe9af0'

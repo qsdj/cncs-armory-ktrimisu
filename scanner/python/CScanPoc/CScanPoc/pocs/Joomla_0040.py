@@ -14,8 +14,8 @@ class Vuln(ABVuln):
         Joomla Component com_pc存在本地问价包含漏洞。
     ''' # 漏洞描述
     ref = 'http://www.sebug.net/vuldb/ssvid-67513' # 
-    cnvd_id = '0000' # cnvd漏洞编号
-    cve_id = '0000'  # cve编号
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'Joomla!'  # 漏洞组件名称
     product_version = 'UNknown'  # 漏洞应用版本
 

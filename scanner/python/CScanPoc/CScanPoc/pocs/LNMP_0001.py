@@ -16,8 +16,8 @@ class Vuln(ABVuln):
         添加成功后即可访问ftp的面板，接着我们就可以添加ftp的用户等一系列操作。
     '''  # 漏洞描述
     ref = 'http://0day5.com/archives/913/'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'LNMP'  # 漏洞应用名称
     product_version = 'LNMP一键环境包0.9'  # 漏洞应用版本
 

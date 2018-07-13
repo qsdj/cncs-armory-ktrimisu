@@ -13,11 +13,11 @@ class Vuln(ABVuln):
     desc = '''
         泛微Eoffice无需登录，直接获取数据库链接文件，直接拿shell
     ''' # 漏洞描述
-    ref = 'Unkonwn' # 漏洞来源/weaver/weaver.email.FileDownloadLocation?download=1&fileid=-2%20or%201=2
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
-    cve_id = 'Unkonwn' #cve编号
+    ref = 'Unknown' # 漏洞来源/weaver/weaver.email.FileDownloadLocation?download=1&fileid=-2%20or%201=2
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
     product = '泛微OA'  # 漏洞应用名称
-    product_version = 'Unkonwn'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 
 class Poc(ABPoc):

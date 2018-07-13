@@ -15,9 +15,9 @@ class Vuln(ABVuln):
         它可以很好解决异步上传、多文件异步上传的问题，很快这个插件就红遍了cms界，各大cms都使用这个swf来处理上传问题。
         但是，这个swf却是一颗含有xss问题的定时炸弹！
     '''  # 漏洞描述
-    ref = 'Unkonwn'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    ref = 'Unknown'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'CMS通用插件swf'  # 漏洞应用名称
     product_version = 'swfupload.swf/uploadify.swf'  # 漏洞应用版本
 

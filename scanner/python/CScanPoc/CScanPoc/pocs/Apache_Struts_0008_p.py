@@ -13,7 +13,7 @@ class Vuln(ABVuln):
         Apache Struts2中存在漏洞，该漏洞产生于配置了 Action 通配符 *，并将其作为动态值时，解析时会将其内容执行 OGNL 表达式
     ''' # 漏洞描述
     ref = 'https://cwiki.apache.org/confluence/display/WW/S2-008' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cnvd_id = 'Unknown' # cnvd漏洞编号
     cve_id = 'CVE-2013-2135' #cve编号
     product = 'Apache Struts'  # 漏洞应用名称
     product_version = 'Struts 2.0.0 - Struts 2.3.14.2  '  # 漏洞应用版本

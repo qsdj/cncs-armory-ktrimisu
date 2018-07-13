@@ -14,7 +14,7 @@ class Vuln(ABVuln):
         Pirelli路由漏洞', 'Pirelli信息泄漏漏洞', '/wlsecurity.html. Tested on firmware version PDG_TEF_SP_4.06L.6.
     '''  # 漏洞描述
     ref = 'https://www.exploit-db.com/exploits/35721/'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'CVE-2015-0554'  # cve编号
     product = 'Pirelli'  # 漏洞应用名称
     product_version = 'ADSL2/2+'  # 漏洞应用版本

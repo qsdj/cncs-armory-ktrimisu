@@ -21,8 +21,8 @@ class Vuln(ABVuln):
         first_name,last_name,gender,address,zipcode,qq,icq,msn,yahoo,skype,tel,fax,mobile,site_url,area_id 等未过滤。
     '''  # 漏洞描述
     ref = 'http://0day5.com/archives/2482/'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'PHPB2B'  # 漏洞应用名称
     product_version = '官方最新版本'  # 漏洞应用版本
 

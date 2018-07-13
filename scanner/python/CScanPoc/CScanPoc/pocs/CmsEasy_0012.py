@@ -13,10 +13,10 @@ class Vuln(ABVuln):
         CmsEasy /demo.php 处反射型XSS 无视360webscan&浏览器filter.
     '''  # 漏洞描述
     ref = 'https://www.2cto.com/article/201409/334119.html'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'CmsEasy'  # 漏洞应用名称
-    product_version = 'Unkonwn'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '0abe7113-94a4-4337-b33e-dc5d4847eafd'

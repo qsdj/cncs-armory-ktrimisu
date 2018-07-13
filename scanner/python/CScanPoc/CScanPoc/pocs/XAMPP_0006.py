@@ -14,8 +14,8 @@ class Vuln(ABVuln):
         XAMPP 1.7.3 /xampp/showcode.php/showcode.php?showcode=1 文件泄露漏。
     ''' # 漏洞描述
     ref = 'https://www.exploit-db.com/exploits/15370/' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
-    cve_id = 'Unkonwn' #cve编号
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
     product = 'XAMPP'  # 漏洞应用名称
     product_version = '<= 1.7.3'  # 漏洞应用版本
 

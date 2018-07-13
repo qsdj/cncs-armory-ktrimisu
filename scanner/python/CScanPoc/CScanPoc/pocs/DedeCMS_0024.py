@@ -15,10 +15,10 @@ class Vuln(ABVuln):
         DedeCMS会员中心短消息SQL注射漏洞，成功利用此漏洞可获得管理员密码等。
     '''  # 漏洞描述
     ref = 'http://0day5.com/archives/305/'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'DedeCMS(织梦CMS)'  # 漏洞应用名称
-    product_version = 'Unkonwn'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '552f87cb-d9fa-4628-a44d-b64ee0f1cd4e'

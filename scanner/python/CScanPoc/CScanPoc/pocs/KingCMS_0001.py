@@ -15,8 +15,8 @@ class Vuln(ABVuln):
         注入参数：data_one,data,count,newid,getdir,getfile
     '''  # 漏洞描述
     ref = 'http://0day5.com/archives/3486/'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'KingCMS'  # 漏洞应用名称
     product_version = '<9.00.0015版'  # 漏洞应用版本
 

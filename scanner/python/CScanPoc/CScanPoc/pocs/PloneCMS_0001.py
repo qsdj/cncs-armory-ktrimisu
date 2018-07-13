@@ -20,7 +20,7 @@ class Vuln(ABVuln):
     ''' # 漏洞描述
     ref = 'https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7147' # 漏洞来源
     cnvd_id = 'CVE-2016-7147' # cnvd漏洞编号
-    cve_id = 'Unkonwn' #cve编号
+    cve_id = 'Unknown' #cve编号
     product = 'PloneCMS'  # 漏洞应用名称
     product_version = 'PloneCMS 5.0.5'  # 漏洞应用版本
 

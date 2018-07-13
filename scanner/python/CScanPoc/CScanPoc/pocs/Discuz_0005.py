@@ -13,9 +13,9 @@ class Vuln(ABVuln):
         Discuz! NT3.1.0 用户相册存储型XSS漏洞。
         /usercpspacemanagealbum.aspx?page=1&mod=edit&albumid=32
     '''  # 漏洞描述
-    ref = 'Unkonwn'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    ref = 'Unknown'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'Discuz!'  # 漏洞应用名称
     product_version = 'Discuz! NT3.1.0'  # 漏洞应用版本
 

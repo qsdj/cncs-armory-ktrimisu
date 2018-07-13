@@ -13,8 +13,8 @@ class Vuln(ABVuln):
         wecenter 3.1.9 /app/m/weixin.php 文件中，对传入的参数反序列化后直接构造SQL语句进行查询，导致SQL注入漏洞。
     ''' # 漏洞描述
     ref = 'http://0day5.com/archives/4341/' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
-    cve_id = 'Unkonwn' #cve编号
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
     product = 'WeCenter'  # 漏洞应用名称
     product_version = '3.1.9'  # 漏洞应用版本
 

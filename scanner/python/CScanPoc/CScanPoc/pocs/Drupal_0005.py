@@ -14,7 +14,7 @@ class Vuln(ABVuln):
         把原来id为1的管理，替换成名字为owned，密码是thanks的管理员。
     '''  # 漏洞描述
     ref = 'http://0day5.com/archives/2310/'    # 漏洞来源
-    cnvd_id = 'Unkonwn'    # cnvd漏洞编号
+    cnvd_id = 'Unknown'    # cnvd漏洞编号
     cve_id = 'CVE-2014-3704'    # cve编号
     product = 'Drupal'  # 漏洞应用名称
     product_version = '7.31'  # 漏洞应用版本

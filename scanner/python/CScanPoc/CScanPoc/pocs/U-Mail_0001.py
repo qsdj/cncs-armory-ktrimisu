@@ -13,9 +13,9 @@ class Vuln(ABVuln):
     desc = '''
         U-Mail /webmail/getpass.php 邮箱明文密码泄露。
     '''  # 漏洞描述
-    ref = 'Unkonwn'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    ref = 'Unknown'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'U-Mail'  # 漏洞应用名称
     product_version = 'v9.8.57'  # 漏洞应用版本
 

@@ -16,8 +16,8 @@ class Vuln(ABVuln):
          WordPress CodeArt Google MP3 Player Plugin has file download in do/direct_download.php.
     '''  # 漏洞描述
     ref = 'https://www.exploit-db.com/exploits/35460/'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'WordPress'  # 漏洞应用名称
     product_version = 'WordPress CodeArt Google MP3 Player Plugin <=1.0.11'  # 漏洞应用版本
 

@@ -19,7 +19,7 @@ class Vuln(ABVuln):
         /siteserver/userRole/background_user.aspx
         /siteserver/bbs/background_thread.aspx
     ''' # 漏洞描述
-    ref = 'Unkonwn' # 漏洞来源
+    ref = 'Unknown' # 漏洞来源
     cnvd_id = 'Unknown' # cnvd漏洞编号
     cve_id = 'Unknown' #cve编号
     product = 'SiteServer'  # 漏洞应用名称

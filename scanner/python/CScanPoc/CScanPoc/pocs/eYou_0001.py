@@ -13,9 +13,9 @@ class Vuln(ABVuln):
     desc = '''
         亿邮邮件系统存在严重的越权，漏洞文件：/php/report/include/config.inc
     '''  # 漏洞描述
-    ref = 'Unkonwn'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    ref = 'Unknown'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'eYou'  # 漏洞应用名称
     product_version = 'V4'  # 漏洞应用版本
 

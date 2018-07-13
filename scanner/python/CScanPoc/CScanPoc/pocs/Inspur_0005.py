@@ -13,11 +13,11 @@ class Vuln(ABVuln):
     desc = '''
         首先确保photo_id的数字对应的图片存在，之后修改photo_size的值导致下载任意文件（包括passwd、shadow、还有各类敏感配置文件）。
     '''  # 漏洞描述
-    ref = 'Unkonwn'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    ref = 'Unknown'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = '浪潮通用型电商系统'  # 漏洞应用名称
-    product_version = 'Unkonwn'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'ee3fae5d-0a73-4d95-a75a-be2eebb7f469'

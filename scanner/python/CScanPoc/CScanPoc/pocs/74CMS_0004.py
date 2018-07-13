@@ -14,10 +14,10 @@ class Vuln(ABVuln):
         骑士CMS /wap/wap-company-show.php 参数未过滤完整，导致SQL注入漏洞。
     '''  # 漏洞描述
     ref = 'https://www.sitedirsec.com/exploit-1840.html'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = '74CMS(骑士CMS)'  # 漏洞应用名称
-    product_version = 'Unkonwn'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '80aa152f-c75b-4f37-9cd7-1c6e742515c5'

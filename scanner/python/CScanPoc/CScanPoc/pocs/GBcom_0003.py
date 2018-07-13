@@ -14,11 +14,11 @@ class Vuln(ABVuln):
         上海寰创运营商WLAN产品未授权访问导致AP信息泄露。
         /accessApInfo.shtml?method=getAccessAps
     '''  # 漏洞描述
-    ref = 'Unkonwn'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    ref = 'Unknown'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = '上海寰创运营商WLAN'  # 漏洞应用名称
-    product_version = 'Unkonwn'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'af612ee2-3fa7-425e-a3bd-ad0d9e8ff62f'

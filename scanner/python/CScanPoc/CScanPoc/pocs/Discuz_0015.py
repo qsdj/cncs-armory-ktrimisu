@@ -14,8 +14,8 @@ class Vuln(ABVuln):
         /faq.php?action=grouppermission&gids[99]=
     '''  # 漏洞描述
     ref = 'https://www.sitedirsec.com/exploit-1788.html'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'Discuz!'  # 漏洞应用名称
     product_version = 'Discuz! 7.2以下版本'  # 漏洞应用版本
 

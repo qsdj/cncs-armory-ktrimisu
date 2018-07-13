@@ -19,8 +19,8 @@ class Vuln(ABVuln):
         FROM THIS VULNERABILITY WE CAN EVEN change /configuration.php whatever we want (PHP code included).
     ''' # 漏洞描述
     ref = 'http://0day5.com/archives/801/' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
-    cve_id = 'Unkonwn' #cve编号
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
     product = 'WHMCS'  # 漏洞应用名称
     product_version = 'WHMCS <=5.2.8'  # 漏洞应用版本
 

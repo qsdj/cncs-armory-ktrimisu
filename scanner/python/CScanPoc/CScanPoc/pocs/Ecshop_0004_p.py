@@ -16,8 +16,8 @@ class Vuln(ABVuln):
         而在flow.php中并没有对密码进行判断或者初始化。可以只通过账号就可以实现登录。
     ''' # 漏洞描述
     ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=063655' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
-    cve_id = 'Unkonwn' #cve编号
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
     product = 'Ecshop'  # 漏洞应用名称
     product_version = '2.7.3'  # 漏洞应用版本
 

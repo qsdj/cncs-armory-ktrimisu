@@ -17,8 +17,8 @@ class Vuln(ABVuln):
         parseif函数中： @eval("if(".$strIf.") { \$ifFlag=true;} else{ \$ifFlag=false;}");//就是这里了,@eval 可直接执行任意命令。
     ''' # 漏洞描述
     ref = 'http://0day5.com/archives/4180/' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
-    cve_id = 'Unkonwn' #cve编号
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
     product = 'SEACMS(海洋CMS)'  # 漏洞应用名称
     product_version = 'V6.28'  # 漏洞应用版本
 

@@ -13,8 +13,8 @@ class Vuln(ABVuln):
         PHPCMS /phpcmsv9/index.php?m=member&c=member&a=delete&pc_hash=GlyB7G&id SQL注入漏洞。
     ''' # 漏洞描述
     ref = 'http://0day5.com/archives/638/' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
-    cve_id = 'Unkonwn' #cve编号
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
     product = 'PHPCMS'  # 漏洞应用名称
     product_version = 'PHPCMSV9'  # 漏洞应用版本
 

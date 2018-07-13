@@ -17,8 +17,8 @@ class Vuln(ABVuln):
         在<title>标签中要echo三个变量，其中会检查$topTitle是否为空，我们再控制器文件login.php中并未找到$topTitle的定义或初始化，由于之前参数输入特性，可以进行变量覆盖。
     ''' # 漏洞描述
     ref = 'http://0day5.com/archives/4062/' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
-    cve_id = 'Unkonwn' #cve编号
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
     product = 'ZCNCMS'  # 漏洞应用名称
     product_version = '1.2.14'  # 漏洞应用版本
 

@@ -8,13 +8,13 @@ class Vuln(ABVuln):
     name = 'ThinkPHP Builder.php SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
-    disclosure_date = 'Unkonwn'  # 漏洞公布时间
+    disclosure_date = 'Unknown'  # 漏洞公布时间
     desc = '''
         漏洞文件位置 ThinkPHPLibraryThinkDb.class.php,parseWhereItem 函数由于对 between 关键字的正则匹配错误，导致了SQL注入漏洞。
     ''' # 漏洞描述
     ref = 'https://github.com/Medicean/VulApps/tree/master/t/thinkphp/1' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
-    cve_id = 'Unkonwn' #cve编号
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
     product = 'ThinkPHP'  # 漏洞应用名称
     product_version = 'ThinkPHP <= 3.2.3'  # 漏洞应用版本
 

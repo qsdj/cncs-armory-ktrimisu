@@ -15,8 +15,8 @@ class Vuln(ABVuln):
         wp主题插件acento theme 中view-pad.php 文件,可读取任意文件
     ''' # 漏洞描述
     ref = 'https://www.exploit-db.com/exploits/34578/' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
-    cve_id = 'Unkonwn' #cve编号
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
     product = 'WordPress'  # 漏洞应用名称
     product_version = 'WordPress Acento主题'  # 漏洞应用版本
 

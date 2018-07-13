@@ -12,11 +12,11 @@ class Vuln(ABVuln):
     desc = '''
         南京苏亚星校园管理系统后台未授权访问到SQL注入再到Getshell.
     '''  # 漏洞描述
-    ref = 'Unkonwn'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    ref = 'Unknown'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = '苏亚星校园管理系统'  # 漏洞应用名称
-    product_version = 'Unkonwn'  # 漏洞应用版
+    product_version = 'Unknown'  # 漏洞应用版
 
 class Poc(ABPoc):
     poc_id = '830a1167-f621-4a56-9dac-d3ece89d0f78'

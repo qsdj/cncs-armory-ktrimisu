@@ -15,8 +15,8 @@ class Vuln(ABVuln):
         SVN配置不当导致性信息泄漏漏洞的产生.
     ''' # 漏洞描述
     ref = 'https://wps2015.org/drops/drops/SVN%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E5%8F%8A%E5%AE%89%E5%85%A8%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9.html' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
-    cve_id = 'Unkonwn' #cve编号
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
     product = 'SVN'  # 漏洞应用名称
     product_version = '*'  # 漏洞应用版本
 

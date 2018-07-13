@@ -12,12 +12,12 @@ class Vuln(ABVuln):
     name = 'Apache Tomcat 远程代码执行' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型
-    disclosure_date = 'Unkonwn'  # 漏洞公布时间
+    disclosure_date = 'Unknown'  # 漏洞公布时间
     desc = '''
         攻击者可以利用该漏洞，获取用户服务器上 JSP 文件的源代码，或是通过精心构造的攻击请求，向用户服务器上传恶意JSP文件，通过上传的 JSP 文件 ，可在用户服务器上执行任意代码，从而导致数据泄露或获取服务器权限，存在高安全风险
     ''' # 漏洞描述
     ref = 'https://mp.weixin.qq.com/s/dgWT3Cgf1mQs-IYxeID_Mw' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cnvd_id = 'Unknown' # cnvd漏洞编号
     cve_id = 'CVE-2017-12615' #cve编号
     product = 'Apache Tomcat'  # 漏洞应用名称
     product_version = 'Apache Tomcat 7.0.0 - 7.0.79'  # 漏洞应用版本

@@ -21,8 +21,8 @@ class Vuln(ABVuln):
         6. "/plus/ad_js.php"、"/plus/mytag_js.php"会从数据库中查询出刚才被注入的PHP Code，将写过写入缓存文件中，并include执行，最终导致代码执行
     '''  # 漏洞描述
     ref = 'https://www.unhonker.com/bug/1272.html，http://www.cnblogs.com/LittleHann/p/4236517.html'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'DedeCMS(织梦CMS)'  # 漏洞应用名称
     product_version = '20130425'  # 漏洞应用版本
 

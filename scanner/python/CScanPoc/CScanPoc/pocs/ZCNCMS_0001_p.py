@@ -17,8 +17,8 @@ class Vuln(ABVuln):
         在$parentid != $infoold[‘parentid’]中，用的’!=’，很明显如果我们要控制$parentid的值，这个不等式肯定成立。但是errorinfo会使程序退出，所以这里需要一个在数据库不存在的parentid，使得取出$List为空，从而产生SQL注入漏洞。
     ''' # 漏洞描述
     ref = 'http://0day5.com/archives/4053/' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
-    cve_id = 'Unkonwn' #cve编号
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
     product = 'ZCNCMS'  # 漏洞应用名称
     product_version = '1.2.14'  # 漏洞应用版本
 

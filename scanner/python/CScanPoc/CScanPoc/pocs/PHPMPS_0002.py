@@ -18,8 +18,8 @@ class Vuln(ABVuln):
         /phpmps/member.php?act=check_info_gold&table=phpmps_member
     '''  # 漏洞描述
     ref = 'http://0day5.com/archives/1464/'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'PHPMPS'  # 漏洞应用名称
     product_version = 'v2.3'  # 漏洞应用版本
 

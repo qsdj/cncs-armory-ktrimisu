@@ -29,11 +29,11 @@ class Vuln(ABVuln):
         "/Asset/House/Add_HouseSort.aspx?radiobutton=1&Action=Edit&HousetypeID=1",
         "/OA/news/viewAffiche.aspx?id=1"
     '''  # 漏洞描述
-    ref = 'Unkonwn'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    ref = 'Unknown'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = '安脉学校综合管理平台'  # 漏洞应用名称
-    product_version = 'Unkonwn'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '7cf18915-8594-48df-8248-b1dbb1994c70'

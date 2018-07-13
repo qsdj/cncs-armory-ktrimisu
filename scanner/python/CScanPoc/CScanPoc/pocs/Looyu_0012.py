@@ -14,15 +14,15 @@ class Vuln(ABVuln):
     desc = '''
         乐语客服系统任意文件下载漏洞
     ''' # 漏洞描述
-    ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0150444
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
-    cve_id = 'Unkonwn' #cve编号
+    ref = 'Unknown' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0150444
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
     product = '乐语客服系统'  # 漏洞应用名称
-    product_version = 'Unkonwn'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = 'Unkonwn' # 平台 POC 编号，留空
+    poc_id = '0f9301ec-8853-440d-993c-8d077fd3e695' # 平台 POC 编号，留空
     author = '国光'  # POC编写者
     create_date = '2018-05-22' # POC创建时间
 

@@ -4,18 +4,16 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'Unkonwn' # 平台漏洞编号，留空
-    name = '安达通网关3g/g3/log命中执行漏洞' # 漏洞名称
+    vuln_id = 'andatong_exec_1' # 平台漏洞编号，留空
+    name = '安达通网关默认口令' # 漏洞名称
     level = VulnLevel.SEVERITY # 漏洞危害级别
-    type = VulnType.RCE # 漏洞类型
+    type = VulnType.MISCONFIGURATION # 漏洞类型
     disclosure_date = '2017-08-22'  # 漏洞公布时间
     desc = '''
         安达通网关系统存在默认口令，用户名root 密码changeit。
-        可通过该账户登录系统,在'3g/g3/log'页面存在命令执行漏洞，
-        可直接执行系统命令,来获取系统权限。
     ''' # 漏洞描述
     ref = 'http://vul.hu0g4.com/index.php/2017/11/21/5.html' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cnvd_id = 'Unknown' # cnvd漏洞编号
     product = 'IAM网关控制台'  # 漏洞应用名称
     product_version = 'x.6.660'  # 漏洞应用版本
 

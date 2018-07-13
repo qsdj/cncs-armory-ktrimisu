@@ -14,7 +14,7 @@ class Vuln(ABVuln):
         open source project that allows you to create a classifieds sites.
     '''  # 漏洞描述
     ref = 'https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-6308'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'CVE-2014-6308'  # cve编号
     product = 'OSClass'  # 漏洞应用名称
     product_version = '3.4.1'  # 漏洞应用版本

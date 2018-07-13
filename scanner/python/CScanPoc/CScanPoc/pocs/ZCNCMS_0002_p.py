@@ -18,8 +18,8 @@ class Vuln(ABVuln):
         但是当$a == ‘edit’时，$products->GetInfo('',' id = '.$productid)，$productid被直接拼接到where语句中且没有单引号保护，导致SQL注入。
     ''' # 漏洞描述
     ref = 'http://0day5.com/archives/4062/' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
-    cve_id = 'Unkonwn' #cve编号
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
     product = 'ZCNCMS'  # 漏洞应用名称
     product_version = '1.2.14'  # 漏洞应用版本
 

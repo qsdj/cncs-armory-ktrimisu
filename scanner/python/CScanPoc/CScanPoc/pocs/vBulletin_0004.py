@@ -14,7 +14,7 @@ class Vuln(ABVuln):
         VBulletin程序中并不直接使用$_GET等全局变量获取输入数据，而是使用clean_gpc() 和 clean_array_gpc() 函数来过滤输入数据，而这两个函数并未对STRING类型做严格过滤，而传入的参数postids是作为SRING类型解析，参数postids随后拼接在SQL语句中进行查询，导致SQL注入漏洞。
     '''  # 漏洞描述
     ref = 'http://0day5.com/archives/4156/'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'CVE-2016-6195'  # cve编号
     product = 'vBulletin'  # 漏洞应用名称
     product_version = 'forumrunner'  # 漏洞应用版本

@@ -6,7 +6,7 @@ import re
 hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
-    vuln_id = 'Unkonwn' # 平台漏洞编号，留空
+    vuln_id = 'Yonyou_0016' # 平台漏洞编号，留空
     name = '用友icc客服系统路径泄露' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
@@ -22,7 +22,7 @@ class Vuln(ABVuln):
 
 
 class Poc(ABPoc):
-    poc_id = 'Unkonwn' # 平台 POC 编号，留空
+    poc_id = 'ac0264e7-749e-461e-bbbb-866fd7a0cca1' # 平台 POC 编号，留空
     author = '国光'  # POC编写者
     create_date = '2018-05-22' # POC创建时间
 

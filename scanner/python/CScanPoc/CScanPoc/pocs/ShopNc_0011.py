@@ -13,8 +13,8 @@ class Vuln(ABVuln):
         ShopNC 6.0 单用户版本SQL注入。
     ''' # 漏洞描述
     ref = 'http://0day5.com/archives/1218/' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
-    cve_id = 'Unkonwn' #cve编号
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
     product = 'ShopNC'  # 漏洞应用名称
     product_version = 'ShopNC6.0 单用户版本'  # 漏洞应用版本
 

@@ -13,9 +13,9 @@ class Vuln(ABVuln):
     desc = '''
         QiboCMS V7 /do/job.php?job=download&url=ZGF0YS9jb25maWcucGg8 任意文件下载漏洞。
     ''' # 漏洞描述
-    ref = 'Unkonwn' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
-    cve_id = 'Unkonwn' #cve编号
+    ref = 'Unknown' # 漏洞来源
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
     product = 'QiboCMS(齐博CMS)'  # 漏洞应用名称
     product_version = 'V7'  # 漏洞应用版本
 

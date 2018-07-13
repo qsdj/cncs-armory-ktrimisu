@@ -15,8 +15,8 @@ class Vuln(ABVuln):
         WordPress中的CuckooTap和eShop主题中image_view.class.php文件传入的img参数未经过过滤直接下载，造成任意文件下载，以至信息泄露。
     ''' # 漏洞描述
     ref = 'https://www.exploit-db.com/exploits/34511/' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
-    cve_id = 'Unkonwn' #cve编号
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
     product = 'WordPress'  # 漏洞应用名称
     product_version = 'WordPress CuckooTap&eShop Themes'  # 漏洞应用版本
 

@@ -4,7 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
-    vuln_id = 'Ecshop_0014' # 平台漏洞编号，留空
+    vuln_id = 'Ecshop_0015' # 平台漏洞编号，留空
     name = 'Ecshop V2.7.3版本 XSS' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型
@@ -13,8 +13,8 @@ class Vuln(ABVuln):
         漏洞存在于站外广告统计功能(对应管理后台的报表统计->站外投放JS)，即/affiche.php页面，将from参数(网站来源referer)存储到了数据库表ecs_adsense，而在后台的“站外投放JS”读取出来未过滤又进入了sql语句，导致二次注入，同时，输出时未对字段referer过滤，导致存储XSS。
     ''' # 漏洞描述
     ref = 'http://0day5.com/archives/676/' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
-    cve_id = 'Unkonwn' #cve编号
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
     product = 'Ecshop'  # 漏洞应用名称
     product_version = 'V2.7.3'  # 漏洞应用版本
 

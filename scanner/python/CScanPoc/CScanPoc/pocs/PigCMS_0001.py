@@ -16,10 +16,10 @@ class Vuln(ABVuln):
         index.php $sql 变量未初始化导致注入。
     '''  # 漏洞描述
     ref = 'https://www.sitedirsec.com/exploit-1881.html'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'PigCMS(小猪CMS)'  # 漏洞应用名称
-    product_version = 'Unkonwn'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'c2e8c527-b737-453a-9197-fe539e413c62'

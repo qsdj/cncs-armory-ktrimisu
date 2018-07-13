@@ -21,10 +21,10 @@ class Vuln(ABVuln):
         http://[host]/wp-content/plugins/wp-symposium/ajax/symposium_profile_functions.php?action=addFriend&friend_to
     '''  # 漏洞描述
     ref = 'http://english.venustech.com.cn/NewsInfo/124/18173.Html'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'WordPress'  # 漏洞应用名称
-    product_version = 'Unkonwn'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '69326e54-9a7b-4e38-ad4d-57f5a3ec1569'

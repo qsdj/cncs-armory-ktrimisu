@@ -14,8 +14,8 @@ class Vuln(ABVuln):
         织梦CMS 在/plus/advancedsearch.php $sql 变量未初始化导致注入。
     '''  # 漏洞描述
     ref = 'https://www.sitedirsec.com/exploit-1220.html'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'DedeCMS(织梦CMS)'  # 漏洞应用名称
     product_version = 'V5.6'  # 漏洞应用版本
 

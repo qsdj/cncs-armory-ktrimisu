@@ -15,8 +15,8 @@ class Vuln(ABVuln):
         Shopxp v7.4版本中的textbox2.asp文件设计缺陷导致SQL注入漏洞的产生,严重威胁网站以及服务器的安全.
     ''' # 漏洞描述
     ref = 'https://www.webshell.cc/1154.html' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
-    cve_id = 'Unkonwn' #cve编号
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
     product = 'Shopxp'  # 漏洞应用名称
     product_version = '7.4'  # 漏洞应用版本
 

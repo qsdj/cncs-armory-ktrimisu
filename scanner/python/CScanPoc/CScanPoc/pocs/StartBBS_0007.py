@@ -14,9 +14,9 @@ class Vuln(ABVuln):
     desc = '''
         StartBBS v1.1.5.2版 /index.php/home/search?q=1 SQL注入漏洞。
     ''' # 漏洞描述
-    ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=067853
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
-    cve_id = 'Unkonwn' #cve编号
+    ref = 'Unknown' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=067853
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
     product = 'StartBBS'  # 漏洞应用名称
     product_version = '1.1.5.2'  # 漏洞应用版本
 

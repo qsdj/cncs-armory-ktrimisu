@@ -21,8 +21,8 @@ class Vuln(ABVuln):
         mechanism.
     '''  # 漏洞描述
     ref = 'http://seclists.org/bugtraq/2014/Jul/17'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'DigiEye 3G'  # 漏洞应用名称
     product_version = 'software version 3.19.30004'  # 漏洞应用版本
 

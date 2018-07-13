@@ -19,7 +19,7 @@ class Vuln(ABVuln):
     product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
-    poc_id = '53e63646-374e-45af-928e-288b65c790a4' # 平台 POC 编号
+    poc_id = '6fdb3ef2-be72-40c7-9e16-f1f8e6583493' # 平台 POC 编号
     author = '国光'  # POC编写者
     create_date = '2018-06-22' # POC创建时间
 

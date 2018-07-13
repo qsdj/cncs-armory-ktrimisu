@@ -15,13 +15,13 @@ class Vuln(ABVuln):
         这里$this->config['coding']默认为null，当我们只提交两个元素的数组时，$arr[2]也为null，因此$arr[2]==$this->config['coding']，条件成立进入判断所以注入发生。
     '''  # 漏洞描述
     ref = 'http://0day5.com/archives/1235/'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'PHPYun'  # 漏洞应用名称
-    product_version = 'Unkonwn'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
-    poc_id = '8237829d-8a14-4a27-9b53-6e3ac3b4785c'
+    poc_id = '271b1804-ee28-4edb-abd3-2296829806ab'
     author = '47bwy'  # POC编写者
     create_date = '2018-06-15'  # POC创建时间
 

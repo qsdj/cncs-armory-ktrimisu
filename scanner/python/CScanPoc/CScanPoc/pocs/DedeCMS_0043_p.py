@@ -13,14 +13,14 @@ class Vuln(ABVuln):
         DedeCMS 在/plus/guestbook.php中存在注入漏洞，可直接发布留言。
     '''  # 漏洞描述
     ref = 'http://0day5.com/archives/1319/'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'DedeCMS(织梦CMS)'  # 漏洞应用名称
-    product_version = 'Unkonwn'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = 'd886b9e6-756d-44df-abb1-7d2917afa578'
+    poc_id = 'de3f5e3b-fd61-4328-b9a0-16ab49fa252d'
     author = '47bwy'  # POC编写者
     create_date = '2018-06-15'  # POC创建时间
 

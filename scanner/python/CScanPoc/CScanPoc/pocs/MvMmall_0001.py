@@ -13,9 +13,9 @@ class Vuln(ABVuln):
     desc = '''
         MvMmall网店商城系统最新注入0day问题出在搜索search.php这个文件上。
     '''  # 漏洞描述
-    ref = 'Unkonwn'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    ref = 'Unknown'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'MvMmall'  # 漏洞应用名称
     product_version = 'MvMmall网店商城系统'  # 漏洞应用版本
 

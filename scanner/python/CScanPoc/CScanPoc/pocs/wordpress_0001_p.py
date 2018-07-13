@@ -14,8 +14,8 @@ class Vuln(ABVuln):
     Wordpress的Mailpress插件存在越权调用，在不登陆的情况下，可以调用系统某些方法，造成远程命令执行。
     ''' # 漏洞描述
     ref = 'http://0day5.com/archives/3960/' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
-    cve_id = 'Unkonwn' #cve编号
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
     product = 'WordPress'  # 漏洞应用名称
     product_version = 'WordPress Mailpress Plugin'  # 漏洞应用版本
 

@@ -14,8 +14,8 @@ class Vuln(ABVuln):
         PHPCMS V9 /api.php Authkey 信息泄漏。
     '''  # 漏洞描述
     ref = 'http://www.cnblogs.com/LittleHann/p/4624198.html'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'PHPCMS'  # 漏洞应用名称
     product_version = 'PHPCMS_V9'  # 漏洞应用版本
 

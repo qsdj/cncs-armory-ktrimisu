@@ -15,8 +15,8 @@ class Vuln(ABVuln):
         而此文件只有WordPress管理员、编辑和特权作者才能访问。
     '''  # 漏洞描述
     ref = 'http://www.freebuf.com/news/60715.html'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'WordPress'  # 漏洞应用名称
     product_version = 'WordPress SEO by Yoast 1.7.3.3'  # 漏洞应用版本
 

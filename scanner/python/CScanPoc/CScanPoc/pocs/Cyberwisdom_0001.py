@@ -14,10 +14,10 @@ class Vuln(ABVuln):
         汇思e-Learning平台wizBank 网站配置不当，导致可以直接下载应用配置信息。
     '''  # 漏洞描述
     ref = 'https://www.secpulse.com/archives/44850.html'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'Cyberwisdom(汇思软件)'  # 漏洞应用名称
-    product_version = 'Unkonwn'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'beb5ab0d-fc64-498a-a4fb-237c98993cfd'

@@ -16,10 +16,10 @@ class Vuln(ABVuln):
         利用mysql的报错特性进行注入，当1=1会正在，1=2就会异常了，其实mysql会抛出一个Subquery returns more than 1 row的异常，利用这个特性，我们可以进行注入
     '''  # 漏洞描述
     ref = 'http://0day5.com/archives/3502/'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'CmsTop'  # 漏洞应用名称
-    product_version = 'Unkonwn'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 
 class Poc(ABPoc):

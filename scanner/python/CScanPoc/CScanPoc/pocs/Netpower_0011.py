@@ -12,11 +12,11 @@ class Vuln(ABVuln):
     desc = '''
         中科网威防火墙 /direct/polling/CommandsPolling.php 函数逻辑错误，导致任意文件遍历。
     '''  # 漏洞描述
-    ref = 'Unkonwn'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    ref = 'Unknown'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = '中科网威防火墙'  # 漏洞应用名称
-    product_version = 'Unkonwn'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '73745102-3872-49c3-a1b2-dd2c21acf97a'

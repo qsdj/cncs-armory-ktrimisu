@@ -15,8 +15,8 @@ class Vuln(ABVuln):
         利用环境比较鸡肋，代码执行需要关闭short_open_tag.
     ''' # 漏洞描述
     ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=057665' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
-    cve_id = 'Unkonwn' #cve编号
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
     product = 'PHPDisk'  # 漏洞应用名称
     product_version = '2.5'  # 漏洞应用版本
 

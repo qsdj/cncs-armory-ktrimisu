@@ -14,7 +14,7 @@ class Vuln(ABVuln):
         隐藏表单中引发的反射XSS漏洞。
     '''  # 漏洞描述
     ref = 'http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-0553'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'CVE-2015-0553'  # cve编号
     product = 'WebsiteBakerCMS'  # 漏洞应用名称
     product_version = 'v2.8.3'  # 漏洞应用版本

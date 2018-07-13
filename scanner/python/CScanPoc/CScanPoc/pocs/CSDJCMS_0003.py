@@ -14,10 +14,10 @@ class Vuln(ABVuln):
         CSDJCMS(程氏舞曲管理系统) /user/do.php?ac=edit@op=zl。
     '''  # 漏洞描述
     ref = 'http://0day5.com/archives/894/'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'CSDJCMS(程氏舞曲管理系统)'  # 漏洞应用名称
-    product_version = 'Unkonwn'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '316cadca-b0db-45c8-a2a4-5424eb088cdc'

@@ -12,11 +12,11 @@ class Vuln(ABVuln):
     desc = '''
         该邮件系统存在任意用户登录、且存在注入，从而可以无限制完美getshell（getshell过程只需简单三个请求）。
     '''  # 漏洞描述
-    ref = 'Unkonwn'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    ref = 'Unknown'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'U-Mail'  # 漏洞应用名称
-    product_version = 'Unkonwn'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '9af15cd2-bdf2-4ca6-ab05-b56cd23f90cd'

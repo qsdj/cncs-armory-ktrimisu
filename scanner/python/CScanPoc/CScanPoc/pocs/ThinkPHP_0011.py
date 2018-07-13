@@ -15,8 +15,8 @@ class Vuln(ABVuln):
         对于使用标准模式或者其他模式的用户不存在此漏洞，敬请放心。3.2版本已经对扩展重新设计（原来的模式扩展、引擎扩展均不再支持），也不存在此问题。
     ''' # 漏洞描述
     ref = 'http://0day5.com/archives/1402/' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
-    cve_id = 'Unkonwn' #cve编号
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
     product = 'ThinkPHP'  # 漏洞应用名称
     product_version = 'ThinkPHP 3.0-3.1版'  # 漏洞应用版本
 

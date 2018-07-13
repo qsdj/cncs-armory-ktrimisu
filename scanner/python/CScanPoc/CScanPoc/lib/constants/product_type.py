@@ -764,7 +764,10 @@ PRODUCT_TYPE = {
     '飞鱼星上网行为管理路由器': ProductType.device,
     '三唐实验室综合信息管理系统': ProductType.cms,
     '上海鼎创通用型数字校园系统': ProductType.cms,
-    '百奥知实验室综合信息管理系统': ProductType.cms
+    '百奥知实验室综合信息管理系统': ProductType.cms,
+    'ILIAS': ProductType.cms,
+    'FrogCMS': ProductType.cms,
+    'POSCMS': ProductType.cms
 }
 
 __warned = {}

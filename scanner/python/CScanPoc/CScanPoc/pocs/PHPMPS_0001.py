@@ -15,8 +15,8 @@ class Vuln(ABVuln):
         PHPMPS 在修复漏洞时误将修复代码注释，造成 SQL 注入漏洞，可以获取管理员账号密码等。
     '''  # 漏洞描述
     ref = 'https://www.sitedirsec.com/exploit-1828.html'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'PHPMPS'  # 漏洞应用名称
     product_version = 'v2.3'  # 漏洞应用版本
 
