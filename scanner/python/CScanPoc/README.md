@@ -6,8 +6,8 @@ CScan Poc 开发文档。
 
 接口集中在 `CScanPoc.lib.api` 中定义。
 
-* `ABVuln` : 漏洞抽象类，定义漏洞相关字段，具体的漏洞应该继承该类
-* `ABPoc` : 漏洞验证扫描抽象类，定义 POC 的接口，具体的 POC 继承它，实现相关接口，使用 `output` 输出执行、报告数据。一般来说一个`ABPoc`（扫描程序）实现对一个`ABVuln`（漏洞）的验证；一个 POC 也可以关联、实现多个漏洞的扫描。
+- `ABVuln` : 漏洞抽象类，定义漏洞相关字段，具体的漏洞应该继承该类
+- `ABPoc` : 漏洞验证扫描抽象类，定义 POC 的接口，具体的 POC 继承它，实现相关接口，使用 `output` 输出执行、报告数据。一般来说一个`ABPoc`（扫描程序）实现对一个`ABVuln`（漏洞）的验证；一个 POC 也可以关联、实现多个漏洞的扫描。
 
 ## 使用说明
 
@@ -207,7 +207,9 @@ class Poc(ABPoc):
 python CScanPoc/pocs/andatong_exec_1.py -u http://221.224.120.187:8080
 ```
 
-### Docker 支持
+# 编译与发布
+
+## Docker 支持
 
 编译 CScanPoc 基础镜像，进入项目根目录，执行 `docker build -t cscanpoc .`。
 
@@ -227,3 +229,12 @@ python CScanPoc/pocs/andatong_exec_1.py -u http://221.224.120.187:8080
 
 4.  在目录中执行 `docker build -t andatong_exec .` 生成名为`andatong_exec` 的镜像
 5.  测试执行： `docker run --rm andatong_exec -u http://221.224.120.187:8080`
+
+## 批量编译与同步
+
+```sh
+root@Scan:~/CScan-POC/scanner/python/CScanPoc# pwd
+/root/CScan-POC/scanner/python/CScanPoc
+
+root@Scan:~/CScan-POC/scanner/python/CScanPoc# pipenv run python scripts/sync.py --host rm-bp1917k62kyd0f29u5o.mysql.rds.aliyuncs.com --user root --db cscan --pass CScanConfig1314 --target CScanPoc/pocs/ --vuln --poc --insert --build-base-image cscan-poc-base:0.1
+```
