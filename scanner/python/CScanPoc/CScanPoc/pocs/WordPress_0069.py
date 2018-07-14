@@ -15,8 +15,8 @@ class Vuln(ABVuln):
         WordPress Like Dislike Counter插件 ajax_counter.php多个SQL注入漏洞
     ''' # 漏洞描述
     ref = 'https://www.exploit-db.com/exploits/34553/' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
-    cve_id = 'Unkonwn' #cve编号
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
     product = 'WordPress'  # 漏洞应用名称
     product_version = 'WordPress Like Dislike Counter 1.2.3 '  # 漏洞应用版本
 

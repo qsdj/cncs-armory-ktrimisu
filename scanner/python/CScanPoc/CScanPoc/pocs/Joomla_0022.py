@@ -9,7 +9,7 @@ class Vuln(ABVuln):
     name = 'Joomla! SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
-    disclosure_date = 'Unkonwn'  # 漏洞公布时间
+    disclosure_date = 'Unknown'  # 漏洞公布时间
     desc = '''
         Joomla! /index.php 存在多处SQL漏洞。
     '''  # 漏洞描述

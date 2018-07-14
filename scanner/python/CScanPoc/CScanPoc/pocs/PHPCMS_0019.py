@@ -16,8 +16,8 @@ class Vuln(ABVuln):
         /index.php?m=search&c=index&a=public_get_suggest_keyword&url=asdf&q=
     ''' # 漏洞描述
     ref = 'https://www.2cto.com/article/201207/142839.html' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
-    cve_id = 'Unkonwn' #cve编号
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
     product = 'PHPCMS'  # 漏洞应用名称
     product_version = 'V9'  # 漏洞应用版本
 

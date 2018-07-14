@@ -9,13 +9,13 @@ class Vuln(ABVuln):
     name = 'Workyi人才系统 SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
-    disclosure_date = 'Unkonwn'  # 漏洞公布时间
+    disclosure_date = 'Unknown'  # 漏洞公布时间
     desc = '''
         Workyi人才系统两处注入,测试版本：2.5.130916
     ''' # 漏洞描述
-    ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0115124
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
-    cve_id = 'Unkonwn' #cve编号
+    ref = 'Unknown' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0115124
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
     product = 'Workyi人才系统'  # 漏洞应用名称
     product_version = '2.5.130916'  # 漏洞应用版本
 

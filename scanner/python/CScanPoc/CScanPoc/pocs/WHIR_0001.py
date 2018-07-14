@@ -15,11 +15,11 @@ class Vuln(ABVuln):
         参数path=/../时对应/defaultroot/目录，可下载的配置文件包括不限于：
         mailserver.properties/govexchange.properties/systemMark.properties/config.xml
     '''  # 漏洞描述
-    ref = 'Unkonwn'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    ref = 'Unknown'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = '万户OA'  # 漏洞应用名称
-    product_version = 'Unkonwn'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'c2064a22-20fa-45c8-9df6-3ba902b78e4b'

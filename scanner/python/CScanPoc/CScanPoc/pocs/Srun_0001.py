@@ -15,9 +15,9 @@ class Vuln(ABVuln):
         漏洞文件，
         /srun3/srun/services/modules/login/controller/login_controller.php
     '''  # 漏洞描述
-    ref = 'Unkonwn'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    ref = 'Unknown'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = '深澜计费引擎'  # 漏洞应用名称
     product_version = 'Srun3000 [3.00rc14.17.4]'  # 漏洞应用版本
 

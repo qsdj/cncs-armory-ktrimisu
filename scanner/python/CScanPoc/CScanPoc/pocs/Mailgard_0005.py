@@ -16,10 +16,10 @@ class Vuln(ABVuln):
         直接毁了magic_quotes_gpc和addslashes的防护（系统自身带了全局过滤，代码抄袭discuz的），导致getshell
     '''  # 漏洞描述
     ref = 'http://0day5.com/archives/3042/'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'Mailgard'  # 漏洞应用名称
-    product_version = 'Unkonwn'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 
 def login(target,username,password):

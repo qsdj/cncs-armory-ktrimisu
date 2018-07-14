@@ -13,9 +13,9 @@ class Vuln(ABVuln):
     desc = '''
         锐捷网络NBR部分路由器cookie欺骗权限绕过。
     '''  # 漏洞描述
-    ref = 'Unkonwn'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    ref = 'Unknown'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = '锐捷网络'  # 漏洞应用名称
     product_version = 'NBR路由器'  # 漏洞应用版本
 

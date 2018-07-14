@@ -15,9 +15,9 @@ class Vuln(ABVuln):
         wlan_security.gch                不登录情况下直接获取路由ESSID以及WIFI密码
         manager_log_conf_t.gch           不登录情况下直接获取路由日志
     '''  # 漏洞描述
-    ref = 'Unkonwn'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    ref = 'Unknown'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'ZTE'  # 漏洞应用名称
     product_version = 'ZTE-F660'  # 漏洞应用版本
 

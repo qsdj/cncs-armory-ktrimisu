@@ -17,8 +17,8 @@ class Vuln(ABVuln):
         将$sys[“closeinfo”]后面的单引号转义，使之和$sys[“webtitle”]的第一个单引号闭合，这样$sys[“webtitle”]的值就摆脱了单引号，再利用注释符”//“注释掉后面的单引号，中间直接可以写shell。
     ''' # 漏洞描述
     ref = 'http://0day5.com/archives/4062/' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
-    cve_id = 'Unkonwn' #cve编号
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
     product = 'ZCNCMS'  # 漏洞应用名称
     product_version = '1.2.14'  # 漏洞应用版本
 

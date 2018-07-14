@@ -14,10 +14,10 @@ class Vuln(ABVuln):
         PHPCMS 2007 /digg_add.php SQL注入漏洞。
     ''' # 漏洞描述
     ref = 'http://vul.1aq.com/index.php/vul/JDSEC-POC-20141129-4654' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
-    cve_id = 'Unkonwn' #cve编号
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
     product = 'PHPCMS'  # 漏洞应用名称
-    product_version = 'Unkonwn'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 
 class Poc(ABPoc):

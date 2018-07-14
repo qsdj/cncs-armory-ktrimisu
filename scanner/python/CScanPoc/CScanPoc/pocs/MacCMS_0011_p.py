@@ -14,7 +14,7 @@ class Vuln(ABVuln):
         MacCMS V8版本中index.php中 be函数 参数未经过过滤带入SQL语句，导致SQL注入漏洞发生。
     ''' # 漏洞描述
     ref = 'http://0day5.com/archives/1874/' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cnvd_id = 'Unknown' # cnvd漏洞编号
     product = 'MacCMS'  # 漏洞应用名称
     product_version = 'v8'  # 漏洞应用版本
 

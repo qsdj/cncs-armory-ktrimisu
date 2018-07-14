@@ -16,8 +16,8 @@ class Vuln(ABVuln):
         U-Mail 20141124 /api/api.php 敏感信息泄露。
     ''' # 漏洞描述
     ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=070206' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
-    cve_id = 'Unkonwn' #cve编号
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
     product = 'U-Mail'  # 漏洞应用名称
     product_version = '20141124'  # 漏洞应用版本
 

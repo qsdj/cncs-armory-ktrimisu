@@ -9,13 +9,13 @@ class Vuln(ABVuln):
     name = 'Ecshop 2.7.2 /category.php SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
-    disclosure_date = 'Unkonwn'  # 漏洞公布时间
+    disclosure_date = 'Unknown'  # 漏洞公布时间
     desc = '''
         Ecshop 商城系统category页面过滤不严导致SQL注入漏洞
     ''' # 漏洞描述
     ref = 'http://jingpin.jikexueyuan.com/article/15003.html' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
-    cve_id = 'Unkonwn' #cve编号
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
     product = 'Ecshop'  # 漏洞应用名称
     product_version = '2.72'  # 漏洞应用版本
 

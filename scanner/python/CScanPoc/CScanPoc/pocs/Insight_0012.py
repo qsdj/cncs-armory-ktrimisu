@@ -15,11 +15,11 @@ class Vuln(ABVuln):
         /gjdcx/yhgl.asp
         信息泄露。
     '''  # 漏洞描述
-    ref = 'Unkonwn'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    ref = 'Unknown'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'Insight(英赛特仓储管理系统)'  # 漏洞应用名称
-    product_version = 'Unkonwn'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'ae0f00bf-0873-4b91-a8cd-46a8a874ce1e'

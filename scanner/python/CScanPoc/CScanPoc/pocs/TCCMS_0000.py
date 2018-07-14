@@ -15,9 +15,9 @@ class Vuln(ABVuln):
     desc = '''
         TCCMS V9.0.20140818 /system/core/controller.class.php文件存在SQL注入漏洞。
     ''' # 漏洞描述
-    ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=072625
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
-    cve_id = 'Unkonwn' #cve编号
+    ref = 'Unknown' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=072625
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
     product = 'TCCMS'  # 漏洞应用名称
     product_version = '9.0'  # 漏洞应用版本
 

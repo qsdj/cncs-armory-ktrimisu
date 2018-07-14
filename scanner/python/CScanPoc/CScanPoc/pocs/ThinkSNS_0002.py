@@ -14,8 +14,8 @@ class Vuln(ABVuln):
         Thinksns 2.5 getshell漏洞。
     '''  # 漏洞描述
     ref = 'http://blog.sina.com.cn/s/blog_a5cc961a01016ebb.html'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'ThinkSNS'  # 漏洞应用名称
     product_version = 'ThinkSNS 2.5'  # 漏洞应用版本
 

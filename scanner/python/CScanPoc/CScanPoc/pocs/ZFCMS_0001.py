@@ -14,15 +14,15 @@ class Vuln(ABVuln):
         政府某通用CMS任意文件下载导致webshell
         google搜索找到的任意文件下载：inurl:upload/FileDownload.jsp
     ''' # 漏洞描述
-    ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=068728
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
-    cve_id = 'Unkonwn' #cve编号
+    ref = 'Unknown' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=068728
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
     product = '政府某通用CMS'  # 漏洞应用名称
-    product_version = 'Unkonwn'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = 'Unkonwn' # 平台 POC 编号，留空
+    poc_id = '62b57ea0-b387-4e6d-ac0c-ac7434c9df78' # 平台 POC 编号，留空
     author = '国光'  # POC编写者
     create_date = '2018-05-25' # POC创建时间
 

@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re, urlparse
 
 class Vuln(ABVuln):
-    vuln_id = 'PHPB2B_0005'  # 平台漏洞编号，留空
+    vuln_id = 'PHPB2B_0011'  # 平台漏洞编号，留空
     name = 'PHPB2B某处注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
@@ -20,8 +20,8 @@ class Vuln(ABVuln):
         .sort_id,name等未过滤。
     '''  # 漏洞描述
     ref = 'http://0day5.com/archives/2482/'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'PHPB2B'  # 漏洞应用名称
     product_version = '官方最新版本'  # 漏洞应用版本
 

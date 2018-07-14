@@ -21,8 +21,8 @@ class Vuln(ABVuln):
         原因是类的parseIf函数中存在漏洞。
     ''' # 漏洞描述
     ref = 'https://blog.csdn.net/qq_35078631/article/details/76595817' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
-    cve_id = 'Unkonwn' #cve编号
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
     product = 'SEACMS(海洋CMS)'  # 漏洞应用名称
     product_version = '<6.45'  # 漏洞应用版本
 

@@ -13,8 +13,8 @@ class Vuln(ABVuln):
         Discuz! /discuz/plugin.php?id=v63shop:goods&pac=info SQL注入漏洞。
     '''  # 漏洞描述
     ref = 'http://0day5.com/archives/419/'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'Discuz!'  # 漏洞应用名称
     product_version = ' Discuz X2.5'  # 漏洞应用版本
 

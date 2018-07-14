@@ -15,8 +15,8 @@ class Vuln(ABVuln):
         WordPress WooCommerce 2.4.12 PHP Code Injection
     ''' # 漏洞描述
     ref = 'https://packetstormsecurity.com/files/135000/WordPress-WooCommerce-2.4.12-PHP-Code-Injection.html' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
-    cve_id = 'Unkonwn' #cve编号
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
     product = 'WordPress'  # 漏洞应用名称
     product_version = 'WordPress WooCommerce 2.4.12'  # 漏洞应用版本
 

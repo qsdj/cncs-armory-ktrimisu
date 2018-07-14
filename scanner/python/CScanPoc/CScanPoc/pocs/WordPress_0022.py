@@ -18,8 +18,8 @@ class Vuln(ABVuln):
         target url checking your wp-config.php file.
     '''  # 漏洞描述
     ref = 'https://packetstormsecurity.com/files/129706/wptheme-download.txt'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'WordPress'  # 漏洞应用名称
     product_version = 'WordPress Multiple themes'  # 漏洞应用版本
 

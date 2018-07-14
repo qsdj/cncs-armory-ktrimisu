@@ -14,14 +14,14 @@ class Vuln(ABVuln):
         其中发现对$_GET['auid']的取值仅仅是直接传入就加入了sql语句，只要满足了$_GET['auid']不为空就可以直接代入，导致了sql注入发生
     ''' # 漏洞描述
     ref = 'http://0day5.com/archives/4050/' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
-    cve_id = 'Unkonwn' #cve编号
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
     product = 'Ecshop'  # 漏洞应用名称
-    product_version = 'Unkonwn'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = '366296e7-20bc-4f95-bedc-e49a1ed6c35c'
+    poc_id = 'd87cb096-01d8-4df3-af21-e720dd935924'
     author = '47bwy'  # POC编写者
     create_date = '2018-06-26' # POC创建时间
 

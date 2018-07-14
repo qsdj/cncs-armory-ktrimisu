@@ -16,8 +16,8 @@ class Vuln(ABVuln):
         $session_id 直接从get或者post中获取，没有进行任何过滤。
     '''  # 漏洞描述
     ref = 'http://0day5.com/archives/2638/'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'PHPOK'  # 漏洞应用名称
     product_version = '4.x'  # 漏洞应用版本
 

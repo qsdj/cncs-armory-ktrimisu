@@ -15,11 +15,11 @@ class Vuln(ABVuln):
         中科新业网络哨兵系统exchange.php远程命令执行漏洞。
         执行getshell，导致其所监控的网络内网络用户隐私泄露，包括上网记录，邮件，聊天记录等。
     '''  # 漏洞描述
-    ref = 'Unkonwn'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    ref = 'Unknown'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = '中科新业网络哨兵'  # 漏洞应用名称
-    product_version = 'Unkonwn'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 
 class Poc(ABPoc):

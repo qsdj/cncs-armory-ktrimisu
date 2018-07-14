@@ -14,11 +14,11 @@ class Vuln(ABVuln):
         extmail 是一款部署比较多的开源的webmail系统，但是该系统在处理邮件及其他细节方面存在几个问题，
         导致攻击者可以针对使用该webmail的用户进行攻击，获取mail账户的访问权，或者直接修改密码。
     '''  # 漏洞描述
-    ref = 'Unkonwn'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    ref = 'Unknown'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'ExtMail'  # 漏洞应用名称
-    product_version = 'Unkonwn'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'a46ee5af-3f3a-4aec-ba55-cd238e9fe2f7'

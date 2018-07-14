@@ -15,7 +15,7 @@ class Vuln(ABVuln):
         远程攻击者可借助向CFIDE/administrator/中的CFIDE/administrator/settings/mappings.cfm，logging/settings.cfm，datasources/index.cfm，j2eepackaging/editarchive.cfm和enter.cfm发送的locale参数读取任意文件。
     ''' # 漏洞描述
     ref = 'http://cve.mitre.org/cgi-bin/cvename.cgi?name=cve-2010-2861' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cnvd_id = 'Unknown' # cnvd漏洞编号
     cve_id = 'CVE-2010-2861' #cve编号
     product = 'Adobe'  # 漏洞应用名称
     product_version = 'Adobe ColdFusion 8、9'  # 漏洞应用版本

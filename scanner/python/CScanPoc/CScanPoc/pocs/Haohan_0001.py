@@ -14,11 +14,11 @@ class Vuln(ABVuln):
         浙江皓翰教育科技有限公司通用数字化校园平台存在SQL注入漏洞。
         /IneduPortal/Components/albums/AlbumShow.aspx?id=1
     '''  # 漏洞描述
-    ref = 'Unkonwn'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    ref = 'Unknown'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = '皓翰数字化校园平台'  # 漏洞应用名称
-    product_version = 'Unkonwn'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '56767962-9765-46c0-850d-af4304bc5400'

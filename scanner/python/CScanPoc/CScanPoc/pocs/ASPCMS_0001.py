@@ -16,8 +16,8 @@ class Vuln(ABVuln):
         在ASPCMS最新版2.5.2以及ASPCMS2.3.x中，ASPCMS的数据库在/data/目录下，为了防止数据库被下载，把数据库文件data.mdb重新命名为#data.asp，由于设置不当，使用%23编码#即可绕过访问，导致信息泄漏。
     '''  # 漏洞描述
     ref = 'https://www.seebug.org/vuldb/ssvid-90501'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'ASPCMS'  # 漏洞应用名称
     product_version = 'ASPCMS最新版2.5.2以及ASPCMS2.3.x'  # 漏洞应用版本
 

@@ -13,11 +13,11 @@ class Vuln(ABVuln):
         埃森诺网络服务质量检测系统 Struts2 命令执行。
         /usercfg/user_loginUI.do
     '''  # 漏洞描述
-    ref = 'Unkonwn'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    ref = 'Unknown'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'ACSNO(埃森诺)'  # 漏洞应用名称
-    product_version = 'Unkonwn'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '8f26924e-f7b5-4a28-99eb-8d4693eca404'

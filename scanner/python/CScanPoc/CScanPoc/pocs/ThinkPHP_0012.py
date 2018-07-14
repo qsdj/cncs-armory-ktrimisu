@@ -14,8 +14,8 @@ class Vuln(ABVuln):
         preg_match('/IN/i',$val[0]) //该正则没有起始符和终止符，xxxxinxxxxx等任意包含in的字符串都可以匹配成功，因而构成了注入。
     ''' # 漏洞描述
     ref = 'http://0day5.com/archives/2701/' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
-    cve_id = 'Unkonwn' #cve编号
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
     product = 'ThinkPHP'  # 漏洞应用名称
     product_version = 'ThinkPHP 3.1-3.2'  # 漏洞应用版本
 

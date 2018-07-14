@@ -14,10 +14,10 @@ class Vuln(ABVuln):
         u-mail中某个文件由于参数过滤不严谨导致产生了SQL注入，通过此漏洞可以将shell写入到web目录下，可批量getshell.
     '''  # 漏洞描述
     ref = 'https://www.unhonker.com/bug/1513.html'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'U-Mail'  # 漏洞应用名称
-    product_version = 'Unkonwn'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'ce4de019-3543-4001-8fb8-b155138026af'

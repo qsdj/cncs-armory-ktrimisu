@@ -14,10 +14,10 @@ class Vuln(ABVuln):
         Moxa NPort's web console! 未授权访问。
     ''' # 漏洞描述
     ref = 'https://nvd.nist.gov/vuln/detail/CVE-2017-16727' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cnvd_id = 'Unknown' # cnvd漏洞编号
     cve_id = 'CVE-2017-16727' #cve编号
     product = 'Moxa'  # 漏洞应用名称
-    product_version = 'Unkonwn'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 
 class Poc(ABPoc):

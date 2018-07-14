@@ -13,10 +13,10 @@ class Vuln(ABVuln):
         rockOA ftpupload.php中函数没有用户身份判定，也没有文件类型过滤，导致任意文件上传。
     '''  # 漏洞描述
     ref = 'http://xiaomange.meximas.com/?p=317'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'rockOA'  # 漏洞应用名称
-    product_version = 'Unkonwn'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '6f7f97e7-66dd-4671-b33b-98a6098c4b95'

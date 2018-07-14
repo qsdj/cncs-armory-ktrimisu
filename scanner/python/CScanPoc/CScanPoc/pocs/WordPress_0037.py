@@ -15,8 +15,8 @@ class Vuln(ABVuln):
        WordPress SP Project & Document Manager 2.5.3 插件 SQL盲注 
     ''' # 漏洞描述
     ref = 'https://www.exploit-db.com/exploits/36576/' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
-    cve_id = 'Unkonwn' #cve编号
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
     product = 'WordPress'  # 漏洞应用名称
     product_version = 'WordPress SP Project & Document Manager 2.5.3'  # 漏洞应用版本
 

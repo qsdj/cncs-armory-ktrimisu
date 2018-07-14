@@ -16,11 +16,11 @@ class Vuln(ABVuln):
         M('Comments')->where("comment_id IN ($cids) AND (user_id='".$this->my['user_id']."' OR comment_uid='".$this->my['user_id']."')")->delete();
         带入查询，导致SQL注入漏洞。
     ''' # 漏洞描述
-    ref = 'Unkonwn' # https://wooyun.shuimugan.com/bug/view?bug_no=50344
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
-    cve_id = 'Unkonwn' #cve编号
+    ref = 'Unknown' # https://wooyun.shuimugan.com/bug/view?bug_no=50344
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
     product = 'EasyTalk'  # 漏洞应用名称
-    product_version = 'Unkonwn'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 
 class Poc(ABPoc):

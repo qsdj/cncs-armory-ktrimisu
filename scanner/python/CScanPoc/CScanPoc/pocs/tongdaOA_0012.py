@@ -13,11 +13,11 @@ class Vuln(ABVuln):
         通达OAT9智能管理平台是基于B/S架构，灵活、稳定、安全、高性能的办公系统。采用自主研发的引擎技术，提供强大的工作流和公文流程管理功能，可完全根据客户需求定制办公门户平台。
         由于参数过滤不严谨，造成SQL注入漏洞。
     '''  # 漏洞描述
-    ref = 'Unkonwn'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    ref = 'Unknown'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = '通达OA系统'  # 漏洞应用名称
-    product_version = 'Unkonwn'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'd8a93e7e-56eb-4ca2-bf36-c2bb5d8f341e'

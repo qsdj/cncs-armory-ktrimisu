@@ -15,8 +15,8 @@ class Vuln(ABVuln):
         'ShopV8 10.48 SQL注入漏洞出现在pinglun.asp文件.
     ''' # 漏洞描述
     ref = 'http://www.yunsec.net/a/security/bugs/script/2010/0417/3407.html' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
-    cve_id = 'Unkonwn' #cve编号
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
     product = 'Shopv8商城系统'  # 漏洞应用名称
     product_version = '10.48'  # 漏洞应用版本
 

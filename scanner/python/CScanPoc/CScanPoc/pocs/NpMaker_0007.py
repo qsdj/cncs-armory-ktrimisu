@@ -15,8 +15,8 @@ class Vuln(ABVuln):
         NpMaker数字报 任意上传getshell(需要解析漏洞)
     ''' # 漏洞描述
     ref = 'https://www.2cto.com/article/201307/231014.html' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
-    cve_id = 'Unkonwn' #cve编号
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
     product = 'NpMaker'  # 漏洞应用名称
     product_version = '2003系统'  # 漏洞应用版本
 

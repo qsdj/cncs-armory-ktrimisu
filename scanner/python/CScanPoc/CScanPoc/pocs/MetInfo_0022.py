@@ -13,8 +13,8 @@ class Vuln(ABVuln):
         MetInfo 5.1.7 about/index.php 文件结合metinfo的全局变量覆盖机制，可以包含文件。
     ''' # 漏洞描述
     ref = 'http://0day5.com/archives/612/' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
-    cve_id = 'Unkonwn' #cve编号
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
     product = 'MetInfo'  # 漏洞应用名称
     product_version = 'MetInfo 5.1.7'  # 漏洞应用版本
 

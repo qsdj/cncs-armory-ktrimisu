@@ -18,8 +18,8 @@ class Vuln(ABVuln):
         address and then used backward jumping to jump to a long jump that eventually land in my shellcode.
     '''  # 漏洞描述
     ref = 'https://www.exploit-db.com/exploits/36477/'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'BSPlayer'  # 漏洞应用名称
     product_version = 'BSPlayer2.68'  # 漏洞应用版本
 

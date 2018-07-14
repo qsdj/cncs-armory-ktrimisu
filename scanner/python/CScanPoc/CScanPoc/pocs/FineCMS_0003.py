@@ -17,9 +17,9 @@ class Vuln(ABVuln):
         目前该cms有v1.x和v2.x两个内核的版本，貌似从官方论坛看到两个版本都在更新维护和发布，属于两个不同产品，
         v2.x是采用的CI框架编写，v1.x 最新版本是1.8 ，更新日期是2014.3.23，其中v1.x版本存在代码执行漏洞，可执行任意代码。
     '''  # 漏洞描述
-    ref = 'Unkonwn'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    ref = 'Unknown'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'FineCMS'  # 漏洞应用名称
     product_version = 'v1.x'  # 漏洞应用版本
 

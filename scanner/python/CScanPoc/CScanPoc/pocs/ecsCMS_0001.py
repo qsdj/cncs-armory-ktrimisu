@@ -12,11 +12,11 @@ class Vuln(ABVuln):
     desc = '''
         EcsCMS(易创思CMS) /OperationManage/SubSiteMoreIndex.aspx 通用SQL注入漏洞。
     '''  # 漏洞描述
-    ref = 'Unkonwn'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    ref = 'Unknown'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'EcsCMS(易创思CMS)'  # 漏洞应用名称
-    product_version = 'Unkonwn'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '9ef67c1a-6cd1-441b-aa28-cc0366e57daa'

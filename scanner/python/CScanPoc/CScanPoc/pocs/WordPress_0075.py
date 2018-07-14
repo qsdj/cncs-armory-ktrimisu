@@ -15,8 +15,8 @@ class Vuln(ABVuln):
         WordPress 3.8.1 /xmlrpc.php 文件有ping其他主机的功能，通过这个功能可以请求攻击别的网站。
     ''' # 漏洞描述
     ref = 'https://blog.sucuri.net/2014/03/more-than-162000-wordpress-sites-used-for-distributed-denial-of-service-attack.html' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
-    cve_id = 'Unkonwn' #cve编号
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
     product = 'WordPress'  # 漏洞应用名称
     product_version = '3.8.1'  # 漏洞应用版本
 

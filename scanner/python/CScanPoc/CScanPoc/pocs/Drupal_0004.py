@@ -16,8 +16,8 @@ class Vuln(ABVuln):
         可以添加管理员、造成信息泄露，利用特性也可 getshell。
     ''' # 漏洞描述
     ref = 'https://www.sektioneins.de/en/blog/14-10-15-drupal-sql-injection-vulnerability.html' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
-    cve_id = 'Unkonwn' #cve编号
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
     product = 'Drupal'  # 漏洞应用名称
     product_version = '<=7.31'  # 漏洞应用版本
 

@@ -15,14 +15,14 @@ class Vuln(ABVuln):
         CmsEasy /demo.php文件存在xss漏洞。
     ''' # 漏洞描述
     ref = 'https://github.com/Medicean/VulApps/tree/master/c/cmseasy/1' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
-    cve_id = 'Unkonwn' #cve编号
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
     product = 'CmsEasy'  # 漏洞应用名称
     product_version = '<=5.5'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = '1316bced-b4dd-42a5-91ff-9473e6a3a249'
+    poc_id = '5e05d13d-987e-4523-8f50-44ce473f2328'
     author = '47bwy'  # POC编写者
     create_date = '2018-06-06' # POC创建时间
 

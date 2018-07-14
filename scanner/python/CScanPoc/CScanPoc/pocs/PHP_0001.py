@@ -15,8 +15,8 @@ class Vuln(ABVuln):
         远程攻击者通过发送恶意构造的multipart/form-data请求，导致服务器CPU资源被耗尽，从而远程DOS服务器。
     '''  # 漏洞描述
     ref = 'https://blog.csdn.net/u010517901/article/details/46486365'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'PHP'  # 漏洞应用名称
     product_version = '所有版本'  # 漏洞应用版本
 

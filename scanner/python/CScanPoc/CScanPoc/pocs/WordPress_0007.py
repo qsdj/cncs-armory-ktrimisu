@@ -20,8 +20,8 @@ class Vuln(ABVuln):
         他会将后面的内容截断，导致我们可以利用这一缺陷完成 XSS 攻击。
     '''  # 漏洞描述
     ref = 'https://cedricvb.be/post/wordpress-stored-xss-vulnerability-4-1-2/'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'WordPress'  # 漏洞应用名称
     product_version = '<4.1.2'  # 漏洞应用版本
 

@@ -14,8 +14,8 @@ class Vuln(ABVuln):
         phpsso_server/index.php?m=phpsso&c=index&a=getapplist&auth_data=v=1&appid=1&data=
     '''  # 漏洞描述
     ref = 'http://0day5.com/archives/3565/'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'PHPCMS'  # 漏洞应用名称
     product_version = 'v9'  # 漏洞应用版本
 

@@ -14,10 +14,10 @@ class Vuln(ABVuln):
         KesionCMS 方法为UnEscape()函数过滤混乱导致注入。
     '''  # 漏洞描述
     ref = 'http://www.phpfensi.com/cms/20150324/8831.html'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'KesionCMS'  # 漏洞应用名称
-    product_version = 'Unkonwn'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'b9bfe2b5-10c9-483e-be4d-1af2fae56cd4'

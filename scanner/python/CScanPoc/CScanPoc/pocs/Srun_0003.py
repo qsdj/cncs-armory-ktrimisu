@@ -13,9 +13,9 @@ class Vuln(ABVuln):
         Srun3000计费系统 /srun3/web/user_info.php 逻辑不严谨，导致命令执行漏洞。
 
     '''  # 漏洞描述
-    ref = 'Unkonwn'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    ref = 'Unknown'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = '深澜深澜计费引擎'  # 漏洞应用名称
     product_version = 'Srun3000'  # 漏洞应用版本
 

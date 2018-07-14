@@ -18,7 +18,7 @@ class Vuln(ABVuln):
         http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-7957
     '''  # 漏洞来源
     cnvd_id = 'CVE-2014-7956, CVE-2014-7957'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    cve_id = 'Unknown'  # cve编号
     product = 'WordPress'  # 漏洞应用名称
     product_version = 'WordPress Plugin Pods <= 2.4.3'  # 漏洞应用版本
 

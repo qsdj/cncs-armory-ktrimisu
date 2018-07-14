@@ -10,17 +10,17 @@ class Vuln(ABVuln):
     name = 'fcgi 暴露于公网'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.OTHER # 漏洞类型
-    disclosure_date = 'Unkonwn'  # 漏洞公布时间
+    disclosure_date = 'Unknown'  # 漏洞公布时间
     desc = '''
         由于fcgi和webserver对script路径级参数的理解不同出现的问题。
         除此之外，由于fcgi和webserver是通过网络进行沟通的，因此目前越来越多的集群将fcgi直接绑定在公网上，所有人都可以对其进行访问。
         这样就意味着，任何人都可以伪装成webserver，让fcgi执行我们想执行的脚本内容。
     '''  # 漏洞描述
-    ref = 'Unkonwn'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    ref = 'Unknown'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'fcgi'  # 漏洞应用名称
-    product_version = 'Unkonwn'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'c423d49c-8d56-4ffe-83ab-d5c38db600e5'

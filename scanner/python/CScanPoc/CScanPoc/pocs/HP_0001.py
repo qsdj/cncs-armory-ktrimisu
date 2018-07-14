@@ -13,9 +13,9 @@ class Vuln(ABVuln):
     desc = '''
         惠普多款打印机设备未设置权限访问，可以直接看到详细的使用信息等，还可以直接选着打印。
     '''  # 漏洞描述
-    ref = 'Unkonwn'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    ref = 'Unknown'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = '惠普'  # 漏洞应用名称
     product_version = '惠普款打印机'  # 漏洞应用版本
 

@@ -16,7 +16,7 @@ class Vuln(ABVuln):
         LiteCart发现的几个跨站点脚本漏洞,一个允许你创建电子商务网站的开源项目。
     ''' # 漏洞描述
     ref = 'https://www.netsparker.com/web-applications-advisories/xss-vulnerabilities-in-litecart/' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cnvd_id = 'Unknown' # cnvd漏洞编号
     cve_id = 'CVE-2014-7183' #cve编号
     product = 'LiteCart'  # 漏洞应用名称
     product_version = '1.1.2.1'  # 漏洞应用版本

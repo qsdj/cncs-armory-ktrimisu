@@ -9,7 +9,7 @@ class Vuln(ABVuln):
     name = 'WordPress Plugin eShop 6.2.8 XSS' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型
-    disclosure_date = 'Unkonwn'  # 漏洞公布时间
+    disclosure_date = 'Unknown'  # 漏洞公布时间
     desc = '''
         WordPress Plugin eShop 6.2.8跨站脚本攻击漏洞
     ''' # 漏洞描述

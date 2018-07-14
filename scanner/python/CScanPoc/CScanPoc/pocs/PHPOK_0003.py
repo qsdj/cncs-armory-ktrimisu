@@ -14,9 +14,9 @@ class Vuln(ABVuln):
     desc = '''
          PHPOK企业站 4.2 /framework/www/project_control.php中数组$key在未过滤情况下带入SQL语句
     ''' # 漏洞描述
-    ref = 'Unkonwn' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
-    cve_id = 'Unkonwn' #cve编号
+    ref = 'Unknown' # 漏洞来源
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
     product = 'PHPOK'  # 漏洞应用名称
     product_version = '4.2'  # 漏洞应用版本
 

@@ -16,8 +16,8 @@ class Vuln(ABVuln):
         DayuCMS在将字符串转换为数组的函数中直接利用eval，并且存在可控变量，导致任意代码执行。
     '''  # 漏洞描述
     ref = 'https://joychou.org/web/dayucms-1-526-foreground-remote-code-execution.html'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'DayuCMS'  # 漏洞应用名称
     product_version = 'DayuCMS <=1.526'  # 漏洞应用版本
 

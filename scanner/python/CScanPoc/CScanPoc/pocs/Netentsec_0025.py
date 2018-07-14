@@ -13,9 +13,9 @@ class Vuln(ABVuln):
     desc = '''
         网康安全网关NS—ASG 6.3默认账户密码。
     '''  # 漏洞描述
-    ref = 'Unkonwn'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    ref = 'Unknown'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = '网康应用安全网关'  # 漏洞应用名称
     product_version = '网康NS-ASG 6.3'  # 漏洞应用版本
 

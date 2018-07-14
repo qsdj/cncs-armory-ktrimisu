@@ -12,11 +12,11 @@ class Vuln(ABVuln):
     desc = '''
         金盘大型图书馆系统 /opac/rss/do.jsp?marcType=1 SQL注射漏洞。
     '''  # 漏洞描述
-    ref = 'Unkonwn'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    ref = 'Unknown'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = '金盘图书馆系统'  # 漏洞应用名称
-    product_version = 'Unkonwn'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '78325c91-3a34-435b-98af-b3835b93c1f3'

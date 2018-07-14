@@ -14,10 +14,10 @@ class Vuln(ABVuln):
         简单CMS 可上传任意文件导致getshell.
     '''  # 漏洞描述
     ref = 'http://0day5.com/archives/859/'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'JiandanCMS(简单CMS)'  # 漏洞应用名称
-    product_version = 'Unkonwn'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '59a38229-515b-4bea-8a1a-c7adec08b17b'

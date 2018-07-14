@@ -13,9 +13,9 @@ class Vuln(ABVuln):
     desc = '''
         EspCMS(易思CMS) v5.0 /wap/index.php，attr[jobnum]造成了注入。
     '''  # 漏洞描述
-    ref = 'Unkonwn'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    ref = 'Unknown'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'EspCMS(易思CMS)'  # 漏洞应用名称
     product_version = 'v5.0'  # 漏洞应用版本
 

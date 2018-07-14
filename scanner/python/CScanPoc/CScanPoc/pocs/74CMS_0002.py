@@ -8,13 +8,13 @@ class Vuln(ABVuln):
     name = '骑士CMS 反射型XSS'  # 漏洞名称
     level = VulnLevel.LOW  # 漏洞危害级别
     type = VulnType.XSS # 漏洞类型
-    disclosure_date = 'Unkonwn'  # 漏洞公布时间
+    disclosure_date = 'Unknown'  # 漏洞公布时间
     desc = '''
         骑士CMS /jobs/jobs-list.php?key=%22%20autofocus%20onfocus=alert%281%29%20style=%22%22 反射型XSS漏洞。
     '''  # 漏洞描述
-    ref = 'Unkonwn'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    ref = 'Unknown'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = '74CMS(骑士CMS)'  # 漏洞应用名称
     product_version = '74cms'  # 漏洞应用版本
 

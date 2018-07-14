@@ -14,8 +14,8 @@ class Vuln(ABVuln):
         Discuz! x3.0 版本
     ''' # 漏洞描述
     ref = 'https://www.seebug.org/vuldb/ssvid-62509' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
-    cve_id = 'Unkonwn' #cve编号
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
     product = 'Discuz!'  # 漏洞应用名称
     product_version = 'Discuz! x3.0'  # 漏洞应用版本
 

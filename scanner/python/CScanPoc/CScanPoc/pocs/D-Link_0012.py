@@ -16,9 +16,9 @@ class Vuln(ABVuln):
         D-Link任意SQL命令执行(可直接获取管理员密码)。
         影响“DAR-8000 系列上网行为审计网关”和“DAR-7000 系列上网行为审计网关”两款网关。
     '''  # 漏洞描述
-    ref = 'Unkonwn'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    ref = 'Unknown'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'D-Link'  # 漏洞应用名称
     product_version = 'DAR-8000/DAR-7000'  # 漏洞应用版本
 

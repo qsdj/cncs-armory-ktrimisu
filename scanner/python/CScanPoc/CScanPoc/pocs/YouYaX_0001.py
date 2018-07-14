@@ -15,8 +15,8 @@ class Vuln(ABVuln):
         对传入的param参数没有进行过滤，导致存在SQL注入危险。
     '''  # 漏洞描述
     ref = 'http://0day5.com/archives/1847/'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'YouYaX'  # 漏洞应用名称
     product_version = 'V5.47'  # 漏洞应用版本
 

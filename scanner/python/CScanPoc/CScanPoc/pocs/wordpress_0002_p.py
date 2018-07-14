@@ -14,8 +14,8 @@ class Vuln(ABVuln):
     WordPress Product Catalog 8 插件 1.2.0 版本中, includes/ajax-functions.php 文件中 UpdateCategoryList 函数中 selectedCategory 参数未经过滤，直接拼接 SQL 语句，导致 SQL 注入漏洞。
     ''' # 漏洞描述
     ref = 'https://www.exploit-db.com/exploits/40783/' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
-    cve_id = 'Unkonwn' #cve编号
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
     product = 'WordPress'  # 漏洞应用名称
     product_version = 'WordPress Plugin Product Catalog 8 1.2.0'  # 漏洞应用版本
 

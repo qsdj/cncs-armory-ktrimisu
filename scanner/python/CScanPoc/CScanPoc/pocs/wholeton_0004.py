@@ -6,21 +6,21 @@ import random
 import urllib
 
 class Vuln(ABVuln):
-    vuln_id = 'Wholeton_0005' # 平台漏洞编号，留空
+    vuln_id = 'Wholeton_0004' # 平台漏洞编号，留空
     name = '惠尔顿上网行为管理系统 信息泄露'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
-    disclosure_date = 'Unkonwn'  # 漏洞公布时间
+    disclosure_date = 'Unknown'  # 漏洞公布时间
     desc = '''
         惠尔顿（Wholeton）上网行为管理系统多处未授权访问，造成信息泄露：
         /base/web/ExportXml.php?type=1
         /base/vpn/download_bak.php
     '''  # 漏洞描述
-    ref = 'Unkonwn'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    ref = 'Unknown'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = '惠尔顿上网行为管理系统'  # 漏洞应用名称
-    product_version = 'Unkonwn'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'e4e9cbee-d3c0-48d1-8493-bd7d129b2006'

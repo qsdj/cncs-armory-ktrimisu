@@ -12,11 +12,11 @@ class Vuln(ABVuln):
     desc = '''
         EcsCMS(易创思CMS) file参数没有对下载文件进行严格验证。
     '''  # 漏洞描述
-    ref = 'Unkonwn'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    ref = 'Unknown'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'EcsCMS(易创思CMS)'  # 漏洞应用名称
-    product_version = 'Unkonwn'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '39d61ca2-9ad7-47e6-aa47-9b4c919b58c3'

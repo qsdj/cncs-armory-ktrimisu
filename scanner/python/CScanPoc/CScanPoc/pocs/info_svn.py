@@ -8,15 +8,15 @@ class Vuln(ABVuln):
     name = 'SVN 源码泄露' # 漏洞名称
     level = VulnLevel.MED # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
-    disclosure_date = 'Unkonwn'  # 漏洞公布时间
+    disclosure_date = 'Unknown'  # 漏洞公布时间
     desc = '''
         当前大量开发人员使用svn进行版本控制，对站点自动部署。如果配置不当，可能会将.svn文件夹直接部署到线上环境。这就引起了svn泄露漏洞。
     ''' # 漏洞描述
-    ref = 'Unkonwn' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
-    cve_id = 'Unkonwn' #cve编号
+    ref = 'Unknown' # 漏洞来源
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
     product = 'Info_SVN'  # 漏洞应用名称
-    product_version = 'Unkonwn'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '59246e6d-a31e-480b-89a2-4599942b2027'

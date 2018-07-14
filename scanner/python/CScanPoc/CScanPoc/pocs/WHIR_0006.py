@@ -13,10 +13,10 @@ class Vuln(ABVuln):
         万户ezEIP任意文件下载漏，可以获取管理员账号，密码明文、数据库密码明文、配置信息等非常敏感的信息，可以轻松实现无任何限制获取 WEBSHELL。
     '''  # 漏洞描述
     ref = 'https://www.secpulse.com/archives/23875.html'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = '万户OA'  # 漏洞应用名称
-    product_version = 'Unkonwn'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '6361bbd4-dc7f-475d-ac44-eb58a6655b12'

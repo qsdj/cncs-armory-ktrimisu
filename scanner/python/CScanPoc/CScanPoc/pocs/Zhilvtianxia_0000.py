@@ -15,10 +15,10 @@ class Vuln(ABVuln):
         智旅天下景区分销系统，注入点：/Account/IsEmailExists?Email=admin%40qq.com&UserName=admin
     '''  # 漏洞描述
     ref = 'https://www.secpulse.com/archives/42866.html'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = '智旅天下景区分销系统'  # 漏洞应用名称
-    product_version = 'Unkonwn'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '941c14be-33ca-477e-9ecd-5b7bbc00ce66'

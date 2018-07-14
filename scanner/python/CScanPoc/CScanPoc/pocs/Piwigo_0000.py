@@ -16,8 +16,8 @@ class Vuln(ABVuln):
         Piwigo <= v2.6.0 /piwigo/include/functions_rate.inc.php文件存在SQL注入漏洞。
     ''' # 漏洞描述
     ref = 'http://www.freebuf.com/vuls/51401.html' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
-    cve_id = 'Unkonwn' #cve编号
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
     product = 'Piwigo'  # 漏洞应用名称
     product_version = '<=2.6.0'  # 漏洞应用版本
 

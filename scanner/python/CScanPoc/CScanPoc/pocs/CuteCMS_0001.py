@@ -15,10 +15,10 @@ class Vuln(ABVuln):
         search.php 参数未过滤导致SQL注入。
     '''  # 漏洞描述
     ref = 'http://0day5.com/archives/1167/'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'CuteCMS'  # 漏洞应用名称
-    product_version = 'Unkonwn'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '7923e6ea-d9ea-4e8c-b7c1-287dc3d90fbe'

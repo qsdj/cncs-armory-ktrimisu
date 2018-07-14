@@ -15,10 +15,10 @@ class Vuln(ABVuln):
         虽然index check.php 等文件都验证 唯独重要的setconf.php没有，造成未授权重装漏洞。
     '''  # 漏洞描述
     ref = 'http://0day5.com/archives/2986/'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'YunGouCMS(云购CMS)'  # 漏洞应用名称
-    product_version = 'Unkonwn'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 
 class Poc(ABPoc):

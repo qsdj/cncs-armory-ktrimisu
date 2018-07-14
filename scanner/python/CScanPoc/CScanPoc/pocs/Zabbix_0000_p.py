@@ -15,7 +15,7 @@ class Vuln(ABVuln):
     ''' # 漏洞描述
     ref = 'http://www.cnvd.org.cn/flaw/show/CNVD-2016-06408' # 漏洞来源
     cnvd_id = 'CNVD-2016-06408' # cnvd漏洞编号
-    cve_id = 'Unkonwn' #cve编号
+    cve_id = 'Unknown' #cve编号
     product = 'Zabbix'  # 漏洞应用名称
     product_version = ' Zabbix 3.0.x ,Zabbix 2.2.13 '  # 漏洞应用版本
 

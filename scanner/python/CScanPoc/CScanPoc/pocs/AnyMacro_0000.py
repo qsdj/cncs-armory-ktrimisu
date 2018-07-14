@@ -13,8 +13,8 @@ class Vuln(ABVuln):
         AnyMacro Mail邮件系统存在文件包含，可任意读取敏感信息。
     ''' # 漏洞描述
     ref = 'Unknown' #https://wooyun.shuimugan.com/bug/view?bug_no=153123
-    cnvd_id = '0000' # cnvd漏洞编号
-    cve_id = '0000'  # cve编号
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'AnyMacro Mail邮件系统'  # 漏洞组件名称
     product_version = '应用版本'  # 漏洞应用版本
 

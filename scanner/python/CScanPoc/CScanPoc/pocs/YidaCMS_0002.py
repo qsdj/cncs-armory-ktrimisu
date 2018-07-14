@@ -13,9 +13,9 @@ class Vuln(ABVuln):
     desc = '''
         YidaCMS /Yidacms/admin/admin_fso.asp在读取文件时，没有任何过滤处理，直接拼接文件路径，然后直接读取。
     '''  # 漏洞描述
-    ref = 'Unkonwn'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    ref = 'Unknown'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'YidaCMS(易达CMS)'  # 漏洞应用名称
     product_version = 'v3.2'  # 漏洞应用版本
 
@@ -34,7 +34,7 @@ class Poc(ABPoc):
                 target=self.target, vuln=self.vuln))
             
             #this poc need to login, so special cookie for target must be included in http headers.
-            cookie = 'Unkonwn' #需要填上对应的cookie
+            cookie = 'Unknown' #需要填上对应的cookie
             headers = {
                 'cookie': 'cookie'
             }

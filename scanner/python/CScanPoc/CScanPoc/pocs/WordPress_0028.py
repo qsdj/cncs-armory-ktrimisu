@@ -14,8 +14,8 @@ class Vuln(ABVuln):
         WordPress LeagueManager 3.9.11 Plugin SQL注入漏洞
     ''' # 漏洞描述
     ref = 'https://www.exploit-db.com/exploits/37182/' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
-    cve_id = 'Unkonwn' #cve编号
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
     product = 'WordPress'  # 漏洞应用名称
     product_version = 'WordPress Plugin LeagueManager 3.9.11'  # 漏洞应用版本
 

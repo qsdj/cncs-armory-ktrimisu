@@ -8,7 +8,7 @@ class Vuln(ABVuln):
     name = '安达通安全网关 信息泄露'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
-    disclosure_date = 'Unkonwn'  # 漏洞公布时间
+    disclosure_date = 'Unknown'  # 漏洞公布时间
     desc = '''
         SJW74系列安全网关 和 全网行为管理TPN-2G安全网关 在线用户。
         /monitor/onlineuser.html
@@ -30,11 +30,11 @@ class Vuln(ABVuln):
 
         因为页面采用的js加载请求服务，对身份进行了简单的验证 ，可以绕过。
     '''  # 漏洞描述
-    ref = 'Unkonwn'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    ref = 'Unknown'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = '安达通安全网关'  # 漏洞应用名称
-    product_version = 'Unkonwn'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'e58b934b-ebc6-4708-98a7-e30017305739'

@@ -16,8 +16,8 @@ class Vuln(ABVuln):
         海康威视IVMS系列的监控客户端，不过大部分在内网。
     ''' # 漏洞描述
     ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=072453' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
-    cve_id = 'Unkonwn' #cve编号
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
     product = 'Hikvision'  # 漏洞应用名称
     product_version = 'iVMS-4200'  # 漏洞应用版本
 

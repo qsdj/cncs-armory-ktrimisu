@@ -13,11 +13,11 @@ class Vuln(ABVuln):
         汇文软件（Libsys）汇文软件图书检索系统Oracle盲注。
         /opac/virtual_shelf_lst.php?CLASS_ID=1
     '''  # 漏洞描述
-    ref = 'Unkonwn'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    ref = 'Unknown'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = '汇文软件'  # 漏洞应用名称
-    product_version = 'Unkonwn'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '33698465-4406-4302-a923-71539a4b199d'

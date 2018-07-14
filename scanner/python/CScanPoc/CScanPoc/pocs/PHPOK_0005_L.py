@@ -14,8 +14,8 @@ class Vuln(ABVuln):
         phpokcms存在csrf漏洞，管理员查看会员列表时不知不觉会自动添加新的系统管理员。
     '''  # 漏洞描述
     ref = 'http://0day5.com/archives/1890/'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'PHPOK'  # 漏洞应用名称
     product_version = '4.x'  # 漏洞应用版本
 

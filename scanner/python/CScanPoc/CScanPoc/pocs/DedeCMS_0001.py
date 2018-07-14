@@ -13,7 +13,7 @@ class Vuln(ABVuln):
         DedeCMS /install/index.php 远程文件包含漏洞。
     '''  # 漏洞描述
     ref = 'http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-4553'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'CVE-2015-4553'  # cve编号
     product = 'DedeCMS(织梦CMS)'  # 漏洞应用名称
     product_version = '< 5.7-sp1'  # 漏洞应用版本

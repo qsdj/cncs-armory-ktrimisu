@@ -13,11 +13,11 @@ class Vuln(ABVuln):
     desc = '''
         金山旗下"KingGate"硬件防火墙产品（新版）存在设计缺陷无需登录情况下可任意添加管理员。
     '''  # 漏洞描述
-    ref = 'Unkonwn'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    ref = 'Unknown'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = '金山软件'  # 漏洞应用名称
-    product_version = 'Unkonwn'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '62827609-acc4-4eef-ac4d-3d1499540ad4'

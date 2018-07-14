@@ -3,20 +3,8 @@
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
-class AdtDefaultAuthInfoVuln(ABVuln):
-    vuln_id = 'Unkonwn' # 平台漏洞编号，留空
-    name = '安达通网关默认口令' # 漏洞名称
-    level = VulnLevel.SEVERITY # 漏洞危害级别
-    type = VulnType.MISCONFIGURATION # 漏洞类型
-    disclosure_date = '2017-08-22'  # 漏洞公布时间
-    desc = '''安达通网关系统存在默认口令，用户名root 密码changeit。''' # 漏洞描述
-    ref = 'http://vul.hu0g4.com/index.php/2017/11/21/5.html' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
-    product = 'IAM网关控制台'  # 漏洞应用名称
-    product_version = 'x.6.660'  # 漏洞应用版本
-
-class AdtRCEVuln(ABVuln):
-    vuln_id = 'Unkonwn' # 平台漏洞编号，留空
+class Vuln(ABVuln):
+    vuln_id = 'andatong_exec_1' # 平台漏洞编号，留空
     name = '安达通网关命令执行' # 漏洞名称
     level = VulnLevel.SEVERITY # 漏洞危害级别
     type = VulnType.MISCONFIGURATION # 漏洞类型
@@ -26,7 +14,7 @@ class AdtRCEVuln(ABVuln):
         可执行系统命令获取系统权限。
     ''' # 漏洞描述
     ref = 'http://vul.hu0g4.com/index.php/2017/11/21/5.html' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cnvd_id = 'Unknown' # cnvd漏洞编号
     product = 'IAM网关控制台'  # 漏洞应用名称
     product_version = 'x.6.660'  # 漏洞应用版本
 
@@ -37,10 +25,7 @@ class Poc(ABPoc):
     create_date = '2018-3-24' #POC创建时间
 
     def __init__(self):
-        super(Poc, self).__init__({
-            'auth': AdtDefaultAuthInfoVuln(),
-            'rce': AdtRCEVuln()
-        })
+        super(Poc, self).__init__(Vuln())
 
     def verify(self):
         post_data = {'username': 'root', 'password': 'changeit'}

@@ -15,11 +15,11 @@ class Vuln(ABVuln):
         EasyTalk 在topicaction.class.php中
         $topic = D('Topic')->where("topicname='$keyword'")->find(); 未过滤，直接带入查询，导致SQL注入漏洞。
     ''' # 漏洞描述
-    ref = 'Unkonwn' # https://wooyun.shuimugan.com/bug/view?bug_no=50338
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
-    cve_id = 'Unkonwn' #cve编号
+    ref = 'Unknown' # https://wooyun.shuimugan.com/bug/view?bug_no=50338
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
     product = 'EasyTalk'  # 漏洞应用名称
-    product_version = 'Unkonwn'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 
 class Poc(ABPoc):

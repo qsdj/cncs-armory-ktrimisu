@@ -15,8 +15,8 @@ class Vuln(ABVuln):
         代码里面就直接 explode 函数对路径进行了切割，这里取出了倒数第二个参数，并且未经过处理就带入了 sql 语句，最终造成注入漏洞。
     ''' # 漏洞描述
     ref = 'http://0day5.com/archives/4193/' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
-    cve_id = 'Unkonwn' #cve编号
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
     product = 'MetInfo'  # 漏洞应用名称
     product_version = '5.3.12'  # 漏洞应用版本
 

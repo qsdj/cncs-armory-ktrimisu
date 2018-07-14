@@ -15,8 +15,8 @@ class Vuln(ABVuln):
         remote_image_f函数没对远程文件后缀做检查直接保存到本地。
     '''  # 漏洞描述
     ref = 'https://www.secpulse.com/archives/25006.html'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'PHPOK'  # 漏洞应用名称
     product_version = '4.0.515'  # 漏洞应用版本
 

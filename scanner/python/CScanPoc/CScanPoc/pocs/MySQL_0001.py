@@ -23,12 +23,12 @@ class Vuln(ABVuln):
     '''  # 漏洞描述
     ref = 'https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-3599'  # 漏洞来源
     cnvd_id = 'CVE-2017-3599'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    cve_id = 'Unknown'  # cve编号
     product = 'MySQL'  # 漏洞应用名称
     product_version = '< 5.6.35 / < 5.7.17'  # 漏洞应用版本
 
 class Poc(ABPoc):
-    poc_id = 'fc3ed3b2-bcde-40df-b6fc-98b27c4e9c0c'
+    poc_id = '43118ea7-b29d-42aa-a687-8f25f17181b9'
     author = '47bwy'  # POC编写者
     create_date = '2018-06-08'  # POC创建时间
 

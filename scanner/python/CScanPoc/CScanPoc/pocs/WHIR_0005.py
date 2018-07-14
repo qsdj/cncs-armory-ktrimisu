@@ -14,10 +14,10 @@ class Vuln(ABVuln):
         万户OA系统 /defaultroot/work_flow/jsFileUpload.jsp页面未做限制，可上传任意文件。
     '''  # 漏洞描述
     ref = 'https://www.secpulse.com/archives/41373.html'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = '万户OA'  # 漏洞应用名称
-    product_version = 'Unkonwn'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'da2d5670-ec2d-4c4c-8650-429cdc894ac4'

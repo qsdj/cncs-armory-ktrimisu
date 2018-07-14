@@ -30,9 +30,9 @@ class Vuln(ABVuln):
         网睿兴安日志系统
         艺创专业上网行为管理设备 e-strong ibm
     '''  # 漏洞描述
-    ref = 'Unkonwn'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    ref = 'Unknown'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = '上网行为审计系统'  # 漏洞应用名称
     product_version = '上网行为审计系统'  # 漏洞应用版本
 

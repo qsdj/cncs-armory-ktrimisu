@@ -15,8 +15,8 @@ class Vuln(ABVuln):
         $keyword进入explode函数，将空格拆分了，所以使用/**/替换，导致SQL注入漏洞。
     '''  # 漏洞描述
     ref = 'http://0day5.com/archives/2675/'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'QiboCMS(齐博CMS)'  # 漏洞应用名称
     product_version = '5.1.30'  # 漏洞应用版本
 

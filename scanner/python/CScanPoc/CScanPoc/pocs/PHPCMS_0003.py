@@ -14,9 +14,9 @@ class Vuln(ABVuln):
     desc = '''
         PHPCMS <= 9.5.8 投票处命令执行，可Getshell（需要 PHP <= 5.2）.
     '''  # 漏洞描述
-    ref = 'Unkonwn'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    ref = 'Unknown'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'PHPCMS'  # 漏洞应用名称
     product_version = '<=9.5.8'  # 漏洞应用版本
 

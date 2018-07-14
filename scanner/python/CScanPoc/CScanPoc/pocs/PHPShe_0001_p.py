@@ -14,8 +14,8 @@ class Vuln(ABVuln):
         PHPShe v1.1 /phpshe/index.php?mod=../../robots.txt%00 文件包含漏洞。
     '''  # 漏洞描述
     ref = 'https://www.secpulse.com/archives/15124.html'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'PHPShe'  # 漏洞应用名称
     product_version = 'PHPShe v1.1'  # 漏洞应用版本
 

@@ -13,9 +13,9 @@ class Vuln(ABVuln):
     desc = '''
         MaticsoftSNS 1.9版本 /CMSUploadFile.aspx 页面任意文件上传漏洞。
     '''  # 漏洞描述
-    ref = 'Unkonwn'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    ref = 'Unknown'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'MaticsoftSNS'  # 漏洞应用名称
     product_version = 'MaticsoftSNS 1.9版本'  # 漏洞应用版本
 

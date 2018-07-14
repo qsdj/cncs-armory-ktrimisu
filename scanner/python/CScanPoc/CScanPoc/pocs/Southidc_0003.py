@@ -15,8 +15,8 @@ class Vuln(ABVuln):
         Southidc v10.0到v11.0版本中NewsType.asp文件对SmallClass参数没有适当过滤，导致SQL注入漏洞。
     ''' # 漏洞描述
     ref = 'Southidc南方数据 v11.0 /NewsType.asp SQL注入漏洞' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
-    cve_id = 'Unkonwn' #cve编号
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
     product = 'Southidc'  # 漏洞应用名称
     product_version = '11.0'  # 漏洞应用版本
 

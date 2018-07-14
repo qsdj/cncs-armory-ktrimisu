@@ -16,8 +16,8 @@ class Vuln(ABVuln):
         to include files from local resources.
     '''  # 漏洞描述
     ref = 'https://www.exploit-db.com/exploits/37516/'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'D-Link'  # 漏洞应用名称
     product_version = 'DSL-2750u / DSL-2730u'  # 漏洞应用版本
 

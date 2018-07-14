@@ -15,8 +15,8 @@ class Vuln(ABVuln):
         结合报错注入和获取管理员账号密码。
     '''  # 漏洞描述
     ref = 'http://0day5.com/archives/1468/'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = '天生创想OA'  # 漏洞应用名称
     product_version = '天生创想OA 2.0'  # 漏洞应用版本
 

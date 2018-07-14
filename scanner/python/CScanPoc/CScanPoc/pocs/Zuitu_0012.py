@@ -14,10 +14,10 @@ class Vuln(ABVuln):
         最土团购，/ajax/coupon.php 基础函数过滤不全导致注射。
     '''  # 漏洞描述
     ref = 'http://0day5.com/archives/2245/'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'Zuitu(最土团购)'  # 漏洞应用名称
-    product_version = 'Unkonwn'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '2c0f3b86-e6e0-488a-9090-a28d671c54d0'

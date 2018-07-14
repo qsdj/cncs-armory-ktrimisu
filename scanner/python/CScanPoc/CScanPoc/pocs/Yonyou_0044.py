@@ -9,7 +9,7 @@ class Vuln(ABVuln):
     name = '用友致远A6协同系统 账号密码泄露'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
-    disclosure_date = 'Unkonwn'  # 漏洞公布时间
+    disclosure_date = 'Unknown'  # 漏洞公布时间
     desc = '''
         用友致远A6协同系统 /yyoa/ext/https/getSessionList.jsp?cmd=getAll 导致账号密码泄露。
     '''  # 漏洞描述

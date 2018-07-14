@@ -15,8 +15,8 @@ class Vuln(ABVuln):
         ShopEx 4.8.5.45144 中的\core\include_v5\crontab.php中$this没任何过滤就将错误写入日志文件,且只对linux服务器有用
     ''' # 漏洞描述
     ref = 'https://www.seebug.org/vuldb/ssvid-19798' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
-    cve_id = 'Unkonwn' #cve编号
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
     product = 'ShopEx'  # 漏洞应用名称
     product_version = '4.8.5.45144'  # 漏洞应用版本
 

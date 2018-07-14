@@ -16,9 +16,9 @@ class Vuln(ABVuln):
        代码注入漏洞已被发现并在软件内确认为匿名用户。成功的攻击可以让匿名攻击者获得完全控制权。
        应用程序和使用任何可用的操作系统功能的能力脚本环境。 
     ''' # 漏洞描述
-    ref = 'Unkonwn' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
-    cve_id = 'Unkonwn' #cve编号
+    ref = 'Unknown' # 漏洞来源
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
     product = 'WordPress'  # 漏洞应用名称
     product_version = 'WordPress CM Download Manager 2.0.0'  # 漏洞应用版本
 

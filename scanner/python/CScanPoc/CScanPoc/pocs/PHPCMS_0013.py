@@ -15,8 +15,8 @@ class Vuln(ABVuln):
         如果$genre变量进行二次URL编码即可绕过escape()方法的过滤，导致SQL注入漏洞产生。
     '''  # 漏洞描述
     ref = 'http://vul.jdsec.com/index.php/vul/JDSEC-POC-20141129-4547'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'PHPCMS'  # 漏洞应用名称
     product_version = 'PHPCMS 2008'  # 漏洞应用版本
 

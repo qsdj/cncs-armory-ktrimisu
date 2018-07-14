@@ -15,9 +15,9 @@ class Vuln(ABVuln):
         /news_view.aspx
         /news_view.aspx
     '''  # 漏洞描述
-    ref = 'Unkonwn'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    ref = 'Unknown'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'PiaoYou(票友软件)'  # 漏洞应用名称
     product_version = '票友订票系统'  # 漏洞应用版本
 

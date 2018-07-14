@@ -20,8 +20,8 @@ class Vuln(ABVuln):
         依然可以造成页面布局的混乱，形成xss。
     '''  # 漏洞描述
     ref = 'http://www.freebuf.com/news/65926.html'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'WordPress'  # 漏洞应用名称
     product_version = '<4.2.1'  # 漏洞应用版本
 

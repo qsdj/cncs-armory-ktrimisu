@@ -13,9 +13,9 @@ class Vuln(ABVuln):
     desc = '''
         东软通用门户软件 UniPortal 1.2存在通用型未授权访问
     ''' # 漏洞描述
-    ref = 'Unkonwn' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
-    cve_id = 'Unkonwn' #cve编号
+    ref = 'Unknown' # 漏洞来源
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
     product = 'UniPortal'  # 漏洞应用名称
     product_version = '1.2'  # 漏洞应用版本
 

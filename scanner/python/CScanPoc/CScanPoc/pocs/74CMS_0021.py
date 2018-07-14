@@ -14,8 +14,8 @@ class Vuln(ABVuln):
         文件位置： ajax_user.php，当act为get_pass_check时，出现了注入。
     '''  # 漏洞描述
     ref = 'http://0day5.com/archives/3981/'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = '74CMS(骑士CMS)'  # 漏洞应用名称
     product_version = 'v3.6_20150902'  # 漏洞应用版本
 

@@ -16,8 +16,8 @@ class Vuln(ABVuln):
         WebUI 1.5b6 /mainfile.php 远程代码执行漏洞
     '''  # 漏洞描述
     ref = 'https://www.exploit-db.com/exploits/36821/'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'WebUI'  # 漏洞应用名称
     product_version = 'WebUI 1.5b6'  # 漏洞应用版本
 

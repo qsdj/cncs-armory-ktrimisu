@@ -14,8 +14,8 @@ class Vuln(ABVuln):
         Qibo V7 has File down in do/job.php.
     '''  # 漏洞描述
     ref = 'http://www.2cto.com/Article/201008/54369.html'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'QiboCMS(齐博CMS)'  # 漏洞应用名称
     product_version = 'V7'  # 漏洞应用版本
 

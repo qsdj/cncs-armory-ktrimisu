@@ -8,15 +8,15 @@ class Vuln(ABVuln):
     name = 'phpmyadmin 泄露' # 漏洞名称
     level = VulnLevel.LOW # 漏洞危害级别
     type = VulnType.INFO_LEAK # 漏洞类型
-    disclosure_date = 'Unkonwn'  # 漏洞公布时间
+    disclosure_date = 'Unknown'  # 漏洞公布时间
     desc = '''
     phpmyadmin 是一个Web端的MySQL管理工具,可以直接在Web端对MySQL进行操作管理,直接暴露在外端具有一定MySQL数据安全的的风险。
     ''' # 漏洞描述
-    ref = 'Unkonwn' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
-    cve_id = 'Unkonwn' #cve编号
+    ref = 'Unknown' # 漏洞来源
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
     product = 'Info_PHPmyadmin'  # 漏洞应用名称
-    product_version = 'Unkonwn'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'a6fb6f80-1bd7-4876-b047-30fb9692dd69'

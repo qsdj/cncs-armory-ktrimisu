@@ -14,9 +14,9 @@ class Vuln(ABVuln):
     desc = '''
         PHPWind 9.0 res/js/dev/util_libs/syntaxHihglighter/scripts/clipboard.swf文件存在FlashXss漏洞。    
     ''' # 漏洞描述
-    ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=038433
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
-    cve_id = 'Unkonwn' #cve编号
+    ref = 'Unknown' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=038433
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
     product = 'PHPWind'  # 漏洞应用名称
     product_version = '9.0'  # 漏洞应用版本
 

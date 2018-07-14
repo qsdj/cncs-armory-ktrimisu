@@ -14,11 +14,11 @@ class Vuln(ABVuln):
         网域高校CMS数据库任意下载。
         /editor/db/%23%23%23wygk20012%23%23%23editor.mdb
     '''  # 漏洞描述
-    ref = 'Unkonwn'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    ref = 'Unknown'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = '网域高校CMS'  # 漏洞应用名称
-    product_version = 'Unkonwn'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'd74cd1c1-244a-4ebb-abeb-de11ea80fa1a'

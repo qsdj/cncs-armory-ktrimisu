@@ -13,8 +13,8 @@ class Vuln(ABVuln):
         PHPVibe /stream.php?file=TGk0dmRtbGlaVjlqYjI1bWFXY3VjR2h3UUVCdFpXUnBZUT09 任意文件泄露。
     '''  # 漏洞描述
     ref = 'https://packetstormsecurity.com/files/132691/phpvibe4-disclose.txt'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'PHPVibe'  # 漏洞应用名称
     product_version = '4.0'  # 漏洞应用版本
 

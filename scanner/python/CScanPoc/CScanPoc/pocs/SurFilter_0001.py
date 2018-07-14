@@ -9,17 +9,17 @@ class Vuln(ABVuln):
     name = '任子行net110网络审计系统无需登录任意命令执行'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型
-    disclosure_date = 'Unkonwn'  # 漏洞公布时间
+    disclosure_date = 'Unknown'  # 漏洞公布时间
     desc = '''
         任子行net110网络审计系统无需登录任意命令执行（疑似后门）。
         一般系统登录会判断Cookie值，而Cookie一般会随登录随机变化或随密码固定不变。
         如果Cookie不正确会提示登录等等未授权信息或提示重新登录信息，但是“任子行”NET 110网络安全审计系统很奇怪，居然把Cookie整个值删除后再访问就能获取相关信息。
     '''  # 漏洞描述
-    ref = 'Unkonwn'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    ref = 'Unknown'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = '任子行网络审计系统'  # 漏洞应用名称
-    product_version = 'Unkonwn'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '63719b8d-41df-4d6d-96a8-030c6de282b2'

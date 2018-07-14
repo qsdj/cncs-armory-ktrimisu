@@ -15,8 +15,8 @@ class Vuln(ABVuln):
         $filter['sort_order'] = empty($_REQUEST['sort_order']) ? 'DESC' : trim($_REQUEST['sort_order']);//未过滤
     ''' # 漏洞描述
     ref = 'http://0day5.com/archives/2289/' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
-    cve_id = 'Unkonwn' #cve编号
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
     product = 'Ecshop'  # 漏洞应用名称
     product_version = 'V2.7.3'  # 漏洞应用版本
 

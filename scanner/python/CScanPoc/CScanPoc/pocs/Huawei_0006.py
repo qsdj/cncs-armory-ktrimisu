@@ -17,10 +17,10 @@ class Vuln(ABVuln):
         Huawei SEQ Analyst - XML External Entity Injection XML注入漏洞。
     ''' # 漏洞描述
     ref = 'http://seclists.org/fulldisclosure/2015/Apr/42' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
-    cve_id = 'Unkonwn' #cve编号
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
     product = '华为'  # 漏洞应用名称
-    product_version = 'Unkonwn'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 
 class Poc(ABPoc):

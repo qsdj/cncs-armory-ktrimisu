@@ -14,9 +14,9 @@ class Vuln(ABVuln):
     desc = '''
         Xiao5u cms website have sql injection error.
     ''' # 漏洞描述
-    ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=065350
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
-    cve_id = 'Unkonwn' #cve编号
+    ref = 'Unknown' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=065350
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
     product = 'Xiao5u(校无忧)'  # 漏洞应用名称
     product_version = '非商业授权所有版本'  # 漏洞应用版本
 

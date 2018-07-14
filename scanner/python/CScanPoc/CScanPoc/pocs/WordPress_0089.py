@@ -14,7 +14,7 @@ class Vuln(ABVuln):
         WordPress Plugin ShortCode 0.2.3 - Local File Inclusion
     ''' # 漏洞描述
     ref = 'http://www.exploit-db.com/exploits/34436/' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cnvd_id = 'Unknown' # cnvd漏洞编号
     cve_id = 'CVE-2014-5465' #cve编号
     product = 'WordPress'  # 漏洞应用名称
     product_version = 'WordPress Plugin ShortCode 0.2.3'  # 漏洞应用版本

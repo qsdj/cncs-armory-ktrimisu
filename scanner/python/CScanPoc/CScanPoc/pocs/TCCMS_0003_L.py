@@ -20,10 +20,10 @@ class Vuln(ABVuln):
         if (Config::get("checkHack") &&　IN_ADMIN != TRUE) 逻辑不成立 导致 sql过滤函数调用失败。
     ''' # 漏洞描述
     ref = 'http://0day5.com/archives/2064/' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
-    cve_id = 'Unkonwn' #cve编号
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
     product = 'TCCMS'  # 漏洞应用名称
-    product_version = 'Unkonwn'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 
 class Poc(ABPoc):

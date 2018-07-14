@@ -20,8 +20,8 @@ class Vuln(ABVuln):
         /wb/modules/news/modify_settings.php?page_id=1&section_id=2f4"><script>alert(1)</script>bdc8b3919b5
     ''' # 漏洞描述
     ref = 'http://seclists.org/fulldisclosure/2014/Nov/44' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
-    cve_id = 'Unkonwn' #cve编号
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
     product = 'WebsiteBakerCMS'  # 漏洞应用名称
     product_version = '2.8.3'  # 漏洞应用版本
 

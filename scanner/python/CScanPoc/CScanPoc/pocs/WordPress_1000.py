@@ -17,7 +17,7 @@ class Vuln(ABVuln):
     ''' # 漏洞描述
     ref = 'http://www.cnvd.org.cn/flaw/show/CNVD-2017-25201' # 漏洞来源
     cnvd_id = 'CNVD-2017-25201' # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    cve_id = 'Unknown'  # cve编号
     product = 'WordPress'  # 漏洞应用名称
     product_version = '0.7.9'  # 漏洞应用版本
     

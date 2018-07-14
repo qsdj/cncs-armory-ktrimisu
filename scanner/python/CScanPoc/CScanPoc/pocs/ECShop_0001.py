@@ -14,8 +14,8 @@ class Vuln(ABVuln):
         ECShop是国内一款流行的网店管理系统软件，其2.7.3版本某个补丁存在后门文件，攻击者利用后门可以控制网站。
     '''  # 漏洞描述
     ref = 'https://www.cnblogs.com/LittleHann/p/4523793.html'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'Ecshop'  # 漏洞应用名称
     product_version = '2.7.3'  # 漏洞应用版本
 

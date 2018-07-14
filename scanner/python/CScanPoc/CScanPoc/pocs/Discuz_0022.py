@@ -14,10 +14,10 @@ class Vuln(ABVuln):
         /plugin.php?action=../../../../../robots.txt%00&id=dc_mall
     '''  # 漏洞描述
     ref = 'http://0day5.com/archives/3467/'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'Discuz!'  # 漏洞应用名称
-    product_version = 'Unkonwn'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '5290293e-54a1-4a9b-8ef2-7718e66997c3'

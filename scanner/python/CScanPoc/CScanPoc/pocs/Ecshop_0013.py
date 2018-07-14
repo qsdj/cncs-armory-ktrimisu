@@ -13,10 +13,10 @@ class Vuln(ABVuln):
         Ecshop \includes\modules\payment\alipay.php  过滤不严导致SQL注入漏洞。
     ''' # 漏洞描述
     ref = 'http://0day5.com/archives/383/' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
-    cve_id = 'Unkonwn' #cve编号
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
     product = 'Ecshop'  # 漏洞应用名称
-    product_version = 'Unkonwn'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = 'b9ca7e12-f3cb-4486-82bc-bd06d5c27a6f'

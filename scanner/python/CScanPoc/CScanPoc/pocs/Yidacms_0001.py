@@ -15,9 +15,9 @@ class Vuln(ABVuln):
     desc = '''
         漏洞文件：/Yidacms/admin/admin_syscome.asp
     ''' # 漏洞描述
-    ref = 'Unkonwn' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=074065
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
-    cve_id = 'Unkonwn' #cve编号
+    ref = 'Unknown' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=074065
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
     product = 'YidaCMS(易达CMS)'  # 漏洞应用名称
     product_version = '3.2'  # 漏洞应用版本
 

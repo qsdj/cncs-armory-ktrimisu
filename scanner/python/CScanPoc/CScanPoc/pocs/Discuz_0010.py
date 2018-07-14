@@ -14,10 +14,10 @@ class Vuln(ABVuln):
         Discuz! 是一款用 PHP 编写的，支持 MySQL 和 PostgreSQL 数据库的互联网论坛软件。它是在中国最受欢迎的互联网论坛软件。,Discuz! Board X batch.common.php SQL 注入漏洞
     ''' # 漏洞描述
     ref = 'https://help.aliyun.com/knowledge_detail/37476.html' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
-    cve_id = 'Unkonwn' #cve编号
+    cnvd_id = 'Unknown' # cnvd漏洞编号
+    cve_id = 'Unknown' #cve编号
     product = 'Discuz!'  # 漏洞应用名称
-    product_version = 'Unkonwn'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 
 class Poc(ABPoc):

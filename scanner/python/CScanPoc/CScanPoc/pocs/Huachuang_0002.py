@@ -14,10 +14,10 @@ class Vuln(ABVuln):
         华创设备 /acc/vpn/download.php 任意文件下载。
     '''  # 漏洞描述
     ref = 'http://0day5.com/archives/3728/'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = '华创'  # 漏洞应用名称
-    product_version = 'Unkonwn'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '2d1bc8bd-0e38-4548-8fcc-bfd5a93da85d'

@@ -16,7 +16,7 @@ class Vuln(ABVuln):
         the xss code has be implemented.
     ''' # 漏洞描述
     ref = 'http://cve.scap.org.cn/CVE-2013-5939.html' # 漏洞来源
-    cnvd_id = 'Unkonwn' # cnvd漏洞编号
+    cnvd_id = 'Unknown' # cnvd漏洞编号
     cve_id = 'CVE-2013-5939' #cve编号
     product = 'PHPCMS'  # 漏洞应用名称
     product_version = 'PHPCMS 1.2.2'  # 漏洞应用版本

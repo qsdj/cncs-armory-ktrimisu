@@ -13,8 +13,8 @@ class Vuln(ABVuln):
         虽然限制了必须为.php后缀的，但是因为没对POST转义，所以我们可以截断后面的.php。
     '''  # 漏洞描述
     ref = 'https://www.seebug.org/vuldb/ssvid-89658'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'Zblog'  # 漏洞应用名称
     product_version = 'Zblog 2.0'  # 漏洞应用版本
 

@@ -17,7 +17,7 @@ class Vuln(ABVuln):
     cnvd_id = 'Unknown' # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'Cacti'  # 漏洞组件名称
-    product_version = 'Unkonwn'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '8822bc61-fac0-417f-97fa-59aa6ccbce7f' # 平台 POC 编号

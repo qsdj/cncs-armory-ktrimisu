@@ -14,8 +14,8 @@ class Vuln(ABVuln):
         主要是由于开发人员在python代码中不安全地使用open函数引起，而且低版本的django自身也存在漏洞。
     '''  # 漏洞描述
     ref = 'http://www.lijiejie.com/python-django-directory-traversal/'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'WebServer'  # 漏洞应用名称
     product_version = 'python和django'  # 漏洞应用版本
 

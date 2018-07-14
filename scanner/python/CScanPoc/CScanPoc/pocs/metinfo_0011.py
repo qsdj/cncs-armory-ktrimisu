@@ -12,9 +12,9 @@ class Vuln(ABVuln):
     desc = '''
         MetInfo 5.2（当前最新版本）的 include/thumb.php 文件本来用来获取缩略图，但是其构造的缩略图路径存在外部可控变量，攻击者可以借此获取任意文件内容。
     '''  # 漏洞描述
-    ref = 'Unkonwn'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    ref = 'Unknown'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'MetInfo'  # 漏洞应用名称
     product_version = '5.2'  # 漏洞应用版本
 

@@ -14,10 +14,10 @@ class Vuln(ABVuln):
         齐博CMS /do/s_rpc.php文件queryString 没过滤导致SQL注入漏洞。
     '''  # 漏洞描述
     ref = 'http://0day5.com/archives/870/'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'QiboCMS(齐博CMS)'  # 漏洞应用名称
-    product_version = 'Unkonwn'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '8d2d4969-b9ea-4d58-b748-ee86918a005a'

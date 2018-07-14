@@ -16,10 +16,10 @@ class Vuln(ABVuln):
         /member/record.php?action=pay&mid=-1
     '''  # 漏洞描述
     ref = 'http://0day5.com/archives/867/'  # 漏洞来源
-    cnvd_id = 'Unkonwn'  # cnvd漏洞编号
-    cve_id = 'Unkonwn'  # cve编号
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'AiJiaCMS(爱家CMS)'  # 漏洞应用名称
-    product_version = 'Unkonwn'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 class Poc(ABPoc):
     poc_id = '233955f0-6a31-4981-96e6-1f83b8073769'
