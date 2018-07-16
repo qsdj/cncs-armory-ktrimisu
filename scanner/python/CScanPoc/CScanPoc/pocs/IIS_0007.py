@@ -8,17 +8,16 @@ import urlparse
 
 class Vuln(ABVuln):
     vuln_id = 'IIS_0007' # 平台漏洞编号
-    name = 'IIS WebDav RCE' # 漏洞名称
+    name = 'IIS缓冲区溢出漏洞(CNVD-2017-03467)' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型
     disclosure_date = '2017-08-22'  # 漏洞公布时间
     desc = '''
-        CVE-2017-7269,Windows Server 2003R2版本IIS6.0的WebDAV服务中的ScStoragePathFromUrl
-        函数存在缓存区溢出漏洞，远程攻击者通过以“If: <http://”开头的长header PROPFIND请求，执行任意代码，
-        进而导致服务器被入侵控制。
+        Microsoft Windows Server 2003 R2是美国微软（Microsoft）公司发布的一套服务器操作系统。Internet Information Services（IIS）是一套运行于Microsoft Windows中的互联网基本服务。
+        在Windows Server 2003 R2的IIS 6.0版本中的WebDAV服务的ScStoragePathFromUrl函数存在缓冲区溢出漏洞，攻击者可通过一个以“If: <http://”开始的较长header头的PROPFIND请求执行任意代码。
     ''' # 漏洞描述
-    ref = 'http://www.freebuf.com/vuls/130531.html' # 
-    cnvd_id = 'Unkown ' # cnvd漏洞编号
+    ref = 'http://www.cnvd.org.cn/flaw/show/CNVD-2017-03467' # 
+    cnvd_id = 'CNVD-2017-03467' # cnvd漏洞编号
     cve_id = 'CVE-2017-7269'  # cve编号
     product = 'IIS'  # 漏洞组件名称
     product_version = 'IIS WebDav RCE'  # 漏洞应用版本

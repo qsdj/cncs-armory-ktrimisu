@@ -51,7 +51,6 @@ PRODUCT_TYPE = {
     'Apache ActiveMQ': ProductType.middleware,
     'Apache Axis2': ProductType.middleware,
     'Apache Struts': ProductType.middleware,
-    'Apache Tomcat': ProductType.middleware,
     'ApacheJamesServer': ProductType.others,
     'Autohome(汽车之家)': ProductType.others,
     'AzenoCMS': ProductType.cms,

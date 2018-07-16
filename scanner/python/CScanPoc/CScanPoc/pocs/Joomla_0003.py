@@ -8,15 +8,16 @@ import cookielib,sys
 
 class Vuln(ABVuln):
     vuln_id = 'Joomla_0003'  # 平台漏洞编号，留空
-    name = 'Joomla! 远程命令执行'  # 漏洞名称
+    name = 'Joomla! 远程命令执行漏洞(CNVD-2015-08250)'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE  # 漏洞类型
     disclosure_date = ' 2015-12-15'  # 漏洞公布时间
     desc = '''
+        Joomla是一套基于PHP的开源内容管理系统(CMS)。可用于搭建商业网站、个人博客、信息管理系统、Web 服务等，还可进行二次开发以扩充使用范围。
         Joomla! 存在远程命令执行漏洞，攻击者利用漏洞可在Joomla的数据库中自定义用户代理字符串，并在其中植入恶意代码，并远程执行恶意代码。
     '''  # 漏洞描述
-    ref = 'http://www.cnvd.org.cn/flaw/show/ CNVD-2015-08250'  # 漏洞来源
-    cnvd_id = ' CNVD-2015-08250'  # cnvd漏洞编号
+    ref = 'http://www.cnvd.org.cn/flaw/show/CNVD-2015-08250'  # 漏洞来源
+    cnvd_id = 'CNVD-2015-08250'  # cnvd漏洞编号
     cve_id = 'CVE-2015-8562'  # cve编号
     product = 'Joomla!'  # 漏洞应用名称
     product_version = 'Joomla Joomla 1.5.0-3.4.5'  # 漏洞应用版本

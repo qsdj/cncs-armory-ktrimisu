@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
     vuln_id = 'Bash_0001_p' # 平台漏洞编号，留空
-    name = 'GNU Bash远程代码执行漏洞' # 漏洞名称
+    name = 'GNU Bash远程代码执行漏洞(CNVD-2014-06345)' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型
     disclosure_date = '2014-09-25'  # 漏洞公布时间

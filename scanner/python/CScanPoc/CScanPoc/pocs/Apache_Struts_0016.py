@@ -8,7 +8,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 class Vuln(ABVuln):
     vuln_id = 'Apache_Struts_0016' # 平台漏洞编号，留空
     name = 'Apache Struts2存在S2-045远程代码执行' # 漏洞名称
-    level = VulnLevel.MED # 漏洞危害级别
+    level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型
     disclosure_date = '2017-03-07'  # 漏洞公布时间
     desc = '''

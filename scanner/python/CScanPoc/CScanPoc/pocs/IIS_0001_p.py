@@ -7,18 +7,17 @@ import random
 import urlparse
 
 class Vuln(ABVuln):
-    vuln_id = 'IIS_0001_p.py' # 平台漏洞编号，留空
+    vuln_id = 'IIS_0001_p' # 平台漏洞编号，留空
     name = 'IIS HTTP.sys 远程代码执行漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型
     disclosure_date = '2015-04-14'  # 漏洞公布时间
     desc = '''
-        远程执行代码漏洞存在于 HTTP 协议堆栈 (HTTP.sys) 中，当 HTTP.sys 未正确分析经特殊设计的 HTTP 请求
-        时会导致此漏洞。 成功利用此漏洞的攻击者可以在系统帐户的上下文中执行任意代码。
+        远程执行代码漏洞存在于 HTTP 协议堆栈 (HTTP.sys) 中，当 HTTP.sys 未正确分析经特殊设计的 HTTP 请求时会导致此漏洞。 成功利用此漏洞的攻击者可以在系统帐户的上下文中执行任意代码。
         若要利用此漏洞，攻击者必须将经特殊设计的 HTTP 请求发送到受影响的系统。 通过修改 Windows HTTP 堆栈处理请求的方式，安装更新可以修复此漏洞。
     '''  # 漏洞描述
     ref = 'https://docs.microsoft.com/zh-cn/security-updates/Securitybulletins/2015/ms15-034'  # 漏洞来源
-    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cnvd_id = 'CNVD-2015-02422'  # cnvd漏洞编号
     cve_id = 'CVE-2015-1635'  # cve编号
     product = 'IIS'  # 漏洞应用名称
     product_version = '''

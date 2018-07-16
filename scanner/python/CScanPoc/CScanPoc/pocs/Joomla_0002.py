@@ -7,16 +7,17 @@ import re
 
 class Vuln(ABVuln):
     vuln_id = 'Joomla_0002'  # 平台漏洞编号，留空
-    name = 'Joomla! 未授权创建特权用户'  # 漏洞名称
+    name = 'Joomla!存在账号创建漏洞(CNVD-2016-10055)'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2016-10-24'  # 漏洞公布时间
     desc = '''
-        Joomla! 3.4.4到3.6.3的版本中，攻击者可以在网站关闭注册的情况下注册用户。
+        Joomla!是一套基于PHP的开源内容管理系统(CMS)。可用于搭建商业网站、个人博客、信息管理系统、Web服务等，还可进行二次开发以扩充使用范围。
+        Joomla!存在账号创建漏洞。不严格的检查允许用户在网站不允许注册时注册账号，远程攻击者利用漏洞可创建账号。
     '''  # 漏洞描述
-    ref = 'https://github.com/SecWiki/CMS-Hunter/tree/master/Joomla'  # 漏洞来源
-    cnvd_id = 'Unknown'  # cnvd漏洞编号
-    cve_id = 'CVE-2016-8869'  # cve编号
+    ref = 'http://www.cnvd.org.cn/flaw/show/CNVD-2016-10055'  # 漏洞来源
+    cnvd_id = 'CNVD-2016-10055'  # cnvd漏洞编号
+    cve_id = 'CVE-2016-8870'  # cve编号
     product = 'Joomla!'  # 漏洞应用名称
     product_version = 'Joomla! 3.4.4 - 3.6.3'  # 漏洞应用版本
     
@@ -32,6 +33,8 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
+
+            #https://github.com/Medicean/VulApps/tree/master/j/joomla/1
             s = requests.session()
             # get cookie
             r = s.get(self.target+'/index.php/component/users/?task=registration.register') 

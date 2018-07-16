@@ -10,11 +10,13 @@ import urllib, urlparse
 
 class Vuln(ABVuln):
     vuln_id = 'OpenSSL_0001' # 平台漏洞编号，留空
-    name = 'Heartbleed OpenSSL' # 漏洞名称
+    name = 'OpenSSL TLS和DTLS扩展包处理外界读内存泄露漏洞(CNVD-2014-02175)' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.RCE # 漏洞类型
     disclosure_date = '2014-04-07'  # 漏洞公布时间
-    desc = '''OpenSSL Heartbleed模块存在一个BUG，问题存在于ssl/dl_both.c文件中的心跳部分，当攻击者构造一个特殊的数据包，满足用户心跳包中无法提供足够多的数据会导致memcpy函数把SSLv3记录之后的数据直接输出，该漏洞导致攻击者可以远程读取存在漏洞版本的OpenSSL服务器内存中多达64K的数据。 
+    desc = '''
+        OpenSSL是一款开放源码的SSL实现，用来实现网络通信的高强度加密。
+        OpenSSL TLS和DTLS扩展包处理存在外界读内存泄露漏洞。由于程序未能正确处理Heartbeart扩展包，允许远程攻击者可以通过制作的数据包，读取服务器内存中的敏感信息(如用户名、密码、Cookie、私钥等)。仅OpenSSL的1.0.1及1.0.2-beta版本受到影响，包括：1.0.1f及1.0.2-beta1版本。
     ''' # 漏洞描述
     ref = 'http://www.cnvd.org.cn/flaw/show/CNVD-2014-02175' # 漏洞来源
     cnvd_id = 'CNVD-2014-02175' # cnvd漏洞编号
@@ -103,6 +105,8 @@ class Poc(ABPoc):
             
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target = self.target, vuln = self.vuln))
+
+            #https://github.com/Medicean/VulApps/tree/master/o/openssl/heartbleed_CVE-2014-0160
             #取出地址和端口
             target_parse = urlparse.urlparse(self.target)
             host = socket.gethostbyname(target_parse.hostname)
