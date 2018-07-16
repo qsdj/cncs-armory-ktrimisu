@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
+
 class Vuln(ABVuln):
-    vuln_id = 'YidaCMS_0002' # 平台漏洞编号，留空
+    vuln_id = 'YidaCMS_0002'  # 平台漏洞编号，留空
     name = 'YidaCMS v3.2 /Yidacms/admin/admin_fso.asp 任意文件读取漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.OTHER # 漏洞类型
+    type = VulnType.OTHER  # 漏洞类型
     disclosure_date = '2014-08-27'  # 漏洞公布时间
     desc = '''
         YidaCMS /Yidacms/admin/admin_fso.asp在读取文件时，没有任何过滤处理，直接拼接文件路径，然后直接读取。
@@ -18,6 +19,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'YidaCMS(易达CMS)'  # 漏洞应用名称
     product_version = 'v3.2'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '4e6bfa56-2c3f-4d62-83a3-b7991651af98'
@@ -29,12 +31,12 @@ class Poc(ABPoc):
 
     def verify(self):
         try:
-            #属于验证后台漏洞，所以需要登录并且获取cookie，详情参考对应的PDF
+            # 属于验证后台漏洞，所以需要登录并且获取cookie，详情参考对应的PDF
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #this poc need to login, so special cookie for target must be included in http headers.
-            cookie = 'Unknown' #需要填上对应的cookie
+
+            # this poc need to login, so special cookie for target must be included in http headers.
+            cookie = 'Unknown'  # 需要填上对应的cookie
             headers = {
                 'cookie': 'cookie'
             }
@@ -55,6 +57,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

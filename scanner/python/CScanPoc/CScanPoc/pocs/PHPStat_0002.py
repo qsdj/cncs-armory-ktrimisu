@@ -4,18 +4,19 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import time
 
+
 class Vuln(ABVuln):
-    vuln_id = 'PHPStat_0002' # 平台漏洞编号，留空
-    name = 'PHPStat SQL注入' # 漏洞名称
-    level = VulnLevel.HIGH # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    vuln_id = 'PHPStat_0002'  # 平台漏洞编号，留空
+    name = 'PHPStat SQL注入'  # 漏洞名称
+    level = VulnLevel.HIGH  # 漏洞危害级别
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-09-28'  # 漏洞公布时间
     desc = '''
         漏洞文件：show_today.php，其中参数：searchtype、searchkey、orderstr均存在延时注入。
-    ''' # 漏洞描述
-    ref = 'http://0day5.com/archives/3751/' # 漏洞来源
-    cnvd_id = 'Unknown' # cnvd漏洞编号
-    cve_id = 'Unknown' #cve编号
+    '''  # 漏洞描述
+    ref = 'http://0day5.com/archives/3751/'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'PHPStat'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
 
@@ -23,7 +24,7 @@ class Vuln(ABVuln):
 class Poc(ABPoc):
     poc_id = 'f87af49a-03f5-4677-871b-0795d34ad8ca'
     author = '47bwy'  # POC编写者
-    create_date = '2018-06-25' # POC创建时间
+    create_date = '2018-06-25'  # POC创建时间
 
     def __init__(self):
         super(Poc, self).__init__(Vuln())
@@ -45,7 +46,7 @@ class Poc(ABPoc):
 
             if (time_end_sleep-time_end_normal) - (time_end_normal-time_start) > 9:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                    target=self.target,name=self.vuln.name))
+                    target=self.target, name=self.vuln.name))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))

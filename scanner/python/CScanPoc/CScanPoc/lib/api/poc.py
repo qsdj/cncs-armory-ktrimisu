@@ -21,6 +21,24 @@ class ABPoc:
     # POC 名
     poc_name = None
 
+    # 执行参数定义
+    option_def = {
+        'path': {
+            'type': 'string',
+            'defaultV': '/'
+        }
+    }
+
+    def get_option(self, k, defaultV=None):
+        '''
+        对于选项 k, 如果在 option_def 中定义了，获取其值;
+        如果没有定义，但是给定了 defaultV, 返回 defaultV;
+        否则抛出异常
+        '''
+        if (defaultV is not None):
+            return defaultV
+        raise Exception('Unknown option: ' + k)
+
     def get_poc_name(self):
         '''当前 poc 名未指定的话，尝试使用其对应漏洞的名字（针对只扫描一个漏洞的 poc）'''
         if self.poc_name == None or self.poc_name.strip() == '':

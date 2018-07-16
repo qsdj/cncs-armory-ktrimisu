@@ -2,13 +2,15 @@
 
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
-import re, urlparse
+import re
+import urlparse
+
 
 class Vuln(ABVuln):
     vuln_id = 'Kyocera_0001'  # 平台漏洞编号，留空
     name = '京瓷打印机任意文件读取'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.FILE_TRAVERSAL # 漏洞类型
+    type = VulnType.FILE_TRAVERSAL  # 漏洞类型
     disclosure_date = '2015-11-08'  # 漏洞公布时间
     desc = '''
         京瓷（Kyocera）打印机存在任意文件遍历漏洞(无需登录)。
@@ -18,6 +20,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = '京瓷打印机'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '4f7727cc-6162-4e9d-9fe9-4432c4f40abc'
@@ -47,6 +50,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

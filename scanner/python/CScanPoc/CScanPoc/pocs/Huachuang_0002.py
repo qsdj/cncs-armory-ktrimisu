@@ -4,6 +4,7 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urlparse
 
+
 class Vuln(ABVuln):
     vuln_id = 'Huachuang_0002'  # 平台漏洞编号，留空
     name = '华创设备 任意文件下载'  # 漏洞名称
@@ -18,6 +19,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = '华创'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '2d1bc8bd-0e38-4548-8fcc-bfd5a93da85d'
@@ -46,6 +48,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

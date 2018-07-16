@@ -1,21 +1,22 @@
 # coding: utf-8
 
-from CScanPoc.thirdparty import requests,hackhttp
+from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
+
 class Vuln(ABVuln):
-    vuln_id = 'PHPCMS_0026' # 平台漏洞编号，留空
-    name = 'PHPCMS 2007 /digg_add.php SQL注入' # 漏洞名称
-    level = VulnLevel.HIGH # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    vuln_id = 'PHPCMS_0026'  # 平台漏洞编号，留空
+    name = 'PHPCMS 2007 /digg_add.php SQL注入'  # 漏洞名称
+    level = VulnLevel.HIGH  # 漏洞危害级别
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2014-11-30'  # 漏洞公布时间
     desc = '''
         PHPCMS 2007 /digg_add.php SQL注入漏洞。
-    ''' # 漏洞描述
-    ref = 'http://vul.1aq.com/index.php/vul/JDSEC-POC-20141129-4654' # 漏洞来源
-    cnvd_id = 'Unknown' # cnvd漏洞编号
-    cve_id = 'Unknown' #cve编号
+    '''  # 漏洞描述
+    ref = 'http://vul.1aq.com/index.php/vul/JDSEC-POC-20141129-4654'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'PHPCMS'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
 
@@ -23,7 +24,7 @@ class Vuln(ABVuln):
 class Poc(ABPoc):
     poc_id = 'fa17e854-112c-4fa7-af3f-f84c4a3625b8'
     author = '国光'  # POC编写者
-    create_date = '2018-05-25' # POC创建时间
+    create_date = '2018-05-25'  # POC创建时间
 
     def __init__(self):
         super(Poc, self).__init__(Vuln())

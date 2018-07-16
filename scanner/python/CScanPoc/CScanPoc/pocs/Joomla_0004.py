@@ -4,6 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
+
 class Vuln(ABVuln):
     vuln_id = 'Joomla_0004'  # 平台漏洞编号，留空
     name = 'Joomla! /index.php com_memorix SQL 注入'  # 漏洞名称
@@ -18,6 +19,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'Joomla!'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '7224bc64-80d9-4f67-b37d-9dbfcf1939c9'
@@ -40,14 +42,15 @@ class Poc(ABPoc):
             req = urllib2.urlopen(verify_url)
             content = req.read()
             if 'c4ca4238a0b923820dcc509a6f75849b' in content:
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                        target=self.target, name=self.vuln.name))
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
+                    target=self.target, name=self.vuln.name))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

@@ -3,6 +3,7 @@
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
     vuln_id = 'TRS_0002'  # 平台漏洞编号，留空
     name = '拓尔思内容协作平台 /wcm/services/ 任意文件上传'  # 漏洞名称
@@ -18,6 +19,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'TRS WCM(拓尔思内容协作平台)'  # 漏洞应用名称
     product_version = '6.X'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '3acaf8b3-33af-4a04-aedd-db2915089a0c'
@@ -45,6 +47,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

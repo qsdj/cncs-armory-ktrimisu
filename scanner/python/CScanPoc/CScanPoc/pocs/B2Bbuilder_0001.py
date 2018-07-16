@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
-    vuln_id = 'B2Bbuilder_0001' # 平台漏洞编号，留空
+    vuln_id = 'B2Bbuilder_0001'  # 平台漏洞编号，留空
     name = 'B2Bbuilder SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2014-07-28'  # 漏洞公布时间
     desc = '''
         B2Bbuilder /index.php 存在SQL注入漏洞。
@@ -17,6 +18,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'B2Bbuilder'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '7dc84a90-2ee7-4dfd-9056-ce4f89d75728'
@@ -30,8 +32,8 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #refer:http://www.wooyun.org/bugs/wooyun-2010-069790
+
+            # refer:http://www.wooyun.org/bugs/wooyun-2010-069790
             s = requests.session()
             verify_url = self.target + "/index.php"
             r = s.get(verify_url)
@@ -49,6 +51,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

@@ -2,13 +2,15 @@
 
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
-import sys, time
+import sys
+import time
+
 
 class Vuln(ABVuln):
-    vuln_id = 'FanWe_0013' # 平台漏洞编号，留空
+    vuln_id = 'FanWe_0013'  # 平台漏洞编号，留空
     name = '方维O2O商业系统SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-10-03'  # 漏洞公布时间
     desc = '''
         /cpapi/qxtapi.php
@@ -57,6 +59,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

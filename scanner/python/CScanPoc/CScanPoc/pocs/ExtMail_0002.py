@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
-    vuln_id = 'ExtMail_0002' # 平台漏洞编号，留空
+    vuln_id = 'ExtMail_0002'  # 平台漏洞编号，留空
     name = 'ExtMail XSS'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.XSS # 漏洞类型
+    type = VulnType.XSS  # 漏洞类型
     disclosure_date = '2012-02-27'  # 漏洞公布时间
     desc = '''
         ExtMail最初以WebMail软件为主，后逐步完善配套并形成了ExtMail邮件系统，提供完整的SMTP/POP/IMAP/Web和管理支持。目前装机量超过2万台。
@@ -19,6 +20,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'ExtMail'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = 'a46ee5af-3f3a-4aec-ba55-cd238e9fe2f7'
@@ -32,14 +34,14 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #Refer http://www.wooyun.org/bugs/wooyun-2012-04854
+
+            # Refer http://www.wooyun.org/bugs/wooyun-2012-04854
             hh = hackhttp.hackhttp()
             payload = '/extmail/cgi/env.cgi'
             code, head, res, errcode, _ = hh.http(self.target + payload)
 
             if code == 200 and 'SERVER_ADMIN' in res:
-                #security_info(arg+payload) 
+                # security_info(arg+payload)
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 
@@ -48,6 +50,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

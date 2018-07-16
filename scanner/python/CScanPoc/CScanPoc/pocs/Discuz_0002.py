@@ -4,6 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
+
 class Vuln(ABVuln):
     vuln_id = 'Discuz_0002'  # 平台漏洞编号，留空
     name = 'Discuz! X3.0 绝对路径泄露'  # 漏洞名称
@@ -18,6 +19,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'Discuz!'  # 漏洞应用名称
     product_version = 'x3.0'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '0232304a-dae4-4072-9859-b6975ab3ceb9'
@@ -57,6 +59,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

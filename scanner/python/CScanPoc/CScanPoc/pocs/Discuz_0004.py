@@ -5,11 +5,12 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 import time
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Discuz_0004' # 平台漏洞编号，留空
+    vuln_id = 'Discuz_0004'  # 平台漏洞编号，留空
     name = 'Discuz! X2.5 急诊箱扫描页面弱口令'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INFO_LEAK # 漏洞类型
+    type = VulnType.INFO_LEAK  # 漏洞类型
     disclosure_date = '2015-03-24'  # 漏洞公布时间
     desc = '''
         如果急诊箱页面未删除，可能存在默认密码导致被入侵。默认密码：188281MWWxjk.
@@ -19,6 +20,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'Discuz!'  # 漏洞应用名称
     product_version = 'Discuz! X2.5 急诊箱扫描页面'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '136146b3-5429-4606-b5f7-d47df6c09227'
@@ -32,19 +34,20 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             verify_url = '%s/source/plugin/tools/tools.php' % self.target
 
             req = requests.get(verify_url)
             if req.status_code == 200 and '<title>Discuz!' in req.content:
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                        target=self.target, name=self.vuln.name))
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
+                    target=self.target, name=self.vuln.name))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

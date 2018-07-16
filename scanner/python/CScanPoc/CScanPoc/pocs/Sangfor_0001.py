@@ -2,26 +2,27 @@
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Sangfor_0001' # 平台漏洞编号
-    name = 'Sangfor(深信服)数据中心2.0 命令执行' # 漏洞名称
-    level = VulnLevel.HIGH # 漏洞危害级别
-    type = VulnType.RCE # 漏洞类型
+    vuln_id = 'Sangfor_0001'  # 平台漏洞编号
+    name = 'Sangfor(深信服)数据中心2.0 命令执行'  # 漏洞名称
+    level = VulnLevel.HIGH  # 漏洞危害级别
+    type = VulnType.RCE  # 漏洞类型
     disclosure_date = '2016-07-08'  # 漏洞公布时间
     desc = '''
         漏洞文件:/src/acloglogin.php 其实就是引入的弱口令检测存在问题。
-    ''' # 漏洞描述
-    ref = 'http://0day5.com/archives/3950/' # 漏洞来源
-    cnvd_id = 'Unknown' # cnvd漏洞编号
+    '''  # 漏洞描述
+    ref = 'http://0day5.com/archives/3950/'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'Sangfor(深信服)'  # 漏洞组件名称
     product_version = '数据中心2.0'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = 'c5ac0503-9375-417a-920f-298977be991c' # 平台 POC 编号
+    poc_id = 'c5ac0503-9375-417a-920f-298977be991c'  # 平台 POC 编号
     author = '47bwy'  # POC编写者
-    create_date = '2018-06-26' # POC创建时间
+    create_date = '2018-06-26'  # POC创建时间
 
     def __init__(self):
         super(Poc, self).__init__(Vuln())
@@ -45,6 +46,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

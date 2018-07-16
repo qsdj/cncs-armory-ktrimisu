@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
+
 class Vuln(ABVuln):
-    vuln_id = '74CMS_0023' # 平台漏洞编号，留空
+    vuln_id = '74CMS_0023'  # 平台漏洞编号，留空
     name = '骑士CMS 后台SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2016-08-02'  # 漏洞公布时间
     desc = '''
         在admin_baiduxml.php文件中，当act是setsave时，执行了如下语句：
@@ -51,6 +52,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

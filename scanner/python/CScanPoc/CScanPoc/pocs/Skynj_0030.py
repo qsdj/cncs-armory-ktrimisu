@@ -1,24 +1,25 @@
 # coding: utf-8
 
-from CScanPoc.thirdparty import requests,hackhttp
+from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import time
 import re
 hh = hackhttp.hackhttp()
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Skynj_0030' # 平台漏洞编号，留空
-    name = '南京擎天政务系统路径泄露' # 漏洞名称
-    level = VulnLevel.HIGH # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    vuln_id = 'Skynj_0030'  # 平台漏洞编号，留空
+    name = '南京擎天政务系统路径泄露'  # 漏洞名称
+    level = VulnLevel.HIGH  # 漏洞危害级别
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2014-12-08'  # 漏洞公布时间
     desc = '''
         南京擎天政务系统路径泄露：
         /index_page/geren_list_page.aspx?server=1%27&refid=
-    ''' # 漏洞描述
-    ref = 'Unknown' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=075253
-    cnvd_id = 'Unknown' # cnvd漏洞编号
-    cve_id = 'Unknown' #cve编号
+    '''  # 漏洞描述
+    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=075253
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = '擎天政务系统'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
 
@@ -26,7 +27,7 @@ class Vuln(ABVuln):
 class Poc(ABPoc):
     poc_id = '0edab9c9-53a7-4ed2-8fd1-a3c373548b1b'
     author = '国光'  # POC编写者
-    create_date = '2018-05-25' # POC创建时间
+    create_date = '2018-05-25'  # POC创建时间
 
     def __init__(self):
         super(Poc, self).__init__(Vuln())

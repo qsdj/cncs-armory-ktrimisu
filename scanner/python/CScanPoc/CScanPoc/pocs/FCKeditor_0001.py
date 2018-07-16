@@ -6,11 +6,12 @@ import re
 import socket
 import urllib2
 
+
 class Vuln(ABVuln):
-    vuln_id = 'FCKeditor_0001' # 平台漏洞编号，留空
+    vuln_id = 'FCKeditor_0001'  # 平台漏洞编号，留空
     name = 'FCKeditor <= 2.4.3 /upload.asp File Upload'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.FILE_UPLOAD # 漏洞类型
+    type = VulnType.FILE_UPLOAD  # 漏洞类型
     disclosure_date = '2011-03-22'  # 漏洞公布时间
     desc = '''
         FCKeditor <= 2.4.3版本, upload.asp文件为黑名单过滤, 可绕过上传。
@@ -20,7 +21,6 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'FCKeditor'  # 漏洞应用名称
     product_version = '<= 2.4.3'  # 漏洞应用版本
-
 
 
 class Poc(ABPoc):
@@ -35,7 +35,7 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             url_dic = dict()
             version_url = self.target + '/editor/dialog/fck_about.html'
             version_resp = urllib2.urlopen(version_url).read()
@@ -52,6 +52,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

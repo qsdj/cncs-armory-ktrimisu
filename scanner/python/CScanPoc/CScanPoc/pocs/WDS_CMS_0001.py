@@ -4,6 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
+
 class Vuln(ABVuln):
     vuln_id = 'WDS_CMS_0001'  # 平台漏洞编号，留空
     name = 'WDS CMS /wds_news/article.php SQL注入'  # 漏洞名称
@@ -18,6 +19,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'WDS CMS'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '8d732f37-76fb-4ec4-9895-c5b6ece8bc39'
@@ -38,14 +40,15 @@ class Poc(ABPoc):
 
             req = requests.get(verify_url)
             if '99C5E07B4D5DE9D18C350CDF64C5AA3D' in req.content:
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                        target=self.target, name=self.vuln.name))
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
+                    target=self.target, name=self.vuln.name))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

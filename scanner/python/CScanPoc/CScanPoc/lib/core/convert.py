@@ -25,6 +25,7 @@ PICKLE_REDUCE_WHITELIST = (
     types.ListType, types.LongType, types.NoneType, types.StringType,
     types.TupleType, types.UnicodeType, types.XRangeType, type(set()))
 
+
 def base64decode(value):
     """
     Decodes string value from Base64 to plain format
@@ -34,6 +35,7 @@ def base64decode(value):
 
     return base64.b64decode(value)
 
+
 def base64encode(value):
     """
     Encodes string value from plain to Base64 format
@@ -42,6 +44,7 @@ def base64encode(value):
     """
 
     return base64.b64encode(value)
+
 
 def base64pickle(value):
     """
@@ -62,9 +65,11 @@ def base64pickle(value):
         try:
             retVal = base64encode(pickle.dumps(value))
         except:
-            retVal = base64encode(pickle.dumps(str(value), pickle.HIGHEST_PROTOCOL))
+            retVal = base64encode(pickle.dumps(
+                str(value), pickle.HIGHEST_PROTOCOL))
 
     return retVal
+
 
 def base64unpickle(value, unsafe=False):
     """
@@ -98,6 +103,7 @@ def base64unpickle(value, unsafe=False):
 
     return retVal
 
+
 def hexdecode(value):
     """
     Decodes string value from hex to plain format
@@ -108,6 +114,7 @@ def hexdecode(value):
     value = value.lower()
     return (value[2:] if value.startswith("0x") else value).decode("hex")
 
+
 def hexencode(value, encoding=None):
     """
     Encodes string value from plain to hex format
@@ -116,6 +123,7 @@ def hexencode(value, encoding=None):
     """
 
     return unicodeencode(value, encoding).encode("hex")
+
 
 def unicodeencode(value, encoding=None):
     """
@@ -132,6 +140,7 @@ def unicodeencode(value, encoding=None):
             retVal = value.encode(UNICODE_ENCODING, "replace")
     return retVal
 
+
 def utf8encode(value):
     """
     Returns 8-bit string representation of the supplied UTF-8 value
@@ -140,6 +149,7 @@ def utf8encode(value):
     """
 
     return unicodeencode(value, "utf-8")
+
 
 def utf8decode(value):
     """
@@ -150,6 +160,7 @@ def utf8decode(value):
 
     return value.decode("utf-8")
 
+
 def htmlunescape(value):
     """
     Returns (basic conversion) HTML unescaped value
@@ -159,18 +170,22 @@ def htmlunescape(value):
 
     retVal = value
     if value and isinstance(value, basestring):
-        codes = (("&lt;", '<'), ("&gt;", '>'), ("&quot;", '"'), ("&nbsp;", ' '), ("&amp;", '&'), ("&apos;", "'"))
+        codes = (("&lt;", '<'), ("&gt;", '>'), ("&quot;", '"'),
+                 ("&nbsp;", ' '), ("&amp;", '&'), ("&apos;", "'"))
         retVal = reduce(lambda x, y: x.replace(y[0], y[1]), codes, retVal)
         try:
-            retVal = re.sub(r"&#x([^ ;]+);", lambda match: unichr(int(match.group(1), 16)), retVal)
+            retVal = re.sub(
+                r"&#x([^ ;]+);", lambda match: unichr(int(match.group(1), 16)), retVal)
         except ValueError:
             pass
     return retVal
+
 
 def singleTimeWarnMessage(message):  # Cross-linked function
     sys.stdout.write(message)
     sys.stdout.write("\n")
     sys.stdout.flush()
+
 
 def stdoutencode(data):
     retVal = None
@@ -196,9 +211,11 @@ def stdoutencode(data):
         else:
             retVal = data.encode(sys.stdout.encoding)
     except:
-        retVal = data.encode(UNICODE_ENCODING) if isinstance(data, unicode) else data
+        retVal = data.encode(UNICODE_ENCODING) if isinstance(
+            data, unicode) else data
 
     return retVal
+
 
 def jsonize(data):
     """
@@ -208,6 +225,7 @@ def jsonize(data):
     """
 
     return json.dumps(data, sort_keys=False, indent=4)
+
 
 def dejsonize(data):
     """

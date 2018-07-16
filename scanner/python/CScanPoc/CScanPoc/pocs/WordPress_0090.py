@@ -1,22 +1,23 @@
 # coding: utf-8
 
-from CScanPoc.thirdparty import requests,hackhttp
+from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 hh = hackhttp.hackhttp()
 
+
 class Vuln(ABVuln):
-    vuln_id = 'WordPress_0090' # 平台漏洞编号，留空
-    name = 'WordPress Feed Statistics Plugin V 1.4.3 Open Redirect' # 漏洞名称
-    level = VulnLevel.HIGH # 漏洞危害级别
-    type = VulnType.OTHER # 漏洞类型
+    vuln_id = 'WordPress_0090'  # 平台漏洞编号，留空
+    name = 'WordPress Feed Statistics Plugin V 1.4.3 Open Redirect'  # 漏洞名称
+    level = VulnLevel.HIGH  # 漏洞危害级别
+    type = VulnType.OTHER  # 漏洞类型
     disclosure_date = '2016-01-09'  # 漏洞公布时间
     desc = '''
         WordPress Feed Statistics Plugin V 1.4.3 Open Redirect
-    ''' # 漏洞描述
-    ref = 'https://cxsecurity.com/issue/WLB-2016010048' # 漏洞来源
-    cnvd_id = 'Unknown' # cnvd漏洞编号
-    cve_id = 'Unknown' #cve编号
+    '''  # 漏洞描述
+    ref = 'https://cxsecurity.com/issue/WLB-2016010048'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'WordPress'  # 漏洞应用名称
     product_version = 'WordPress Feed Statistics Plugin V 1.4.3'  # 漏洞应用版本
 
@@ -24,7 +25,7 @@ class Vuln(ABVuln):
 class Poc(ABPoc):
     poc_id = 'd28dede9-ebcd-407c-9930-4ac834453dc3'
     author = '国光'  # POC编写者
-    create_date = '2018-05-25' # POC创建时间
+    create_date = '2018-05-25'  # POC创建时间
 
     def __init__(self):
         super(Poc, self).__init__(Vuln())

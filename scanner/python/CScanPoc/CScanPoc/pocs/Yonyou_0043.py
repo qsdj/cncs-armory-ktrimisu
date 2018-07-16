@@ -5,11 +5,12 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 import time
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Yonyou_0043' # 平台漏洞编号，留空
+    vuln_id = 'Yonyou_0043'  # 平台漏洞编号，留空
     name = '用友u8 CmxMailSet.php SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = 'Unknown'  # 漏洞公布时间
     desc = '''
         用友u8 CmxMailSet.php 参数过滤不完整，SQL注入漏洞。
@@ -19,6 +20,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'Yonyou(用友)'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = 'd256799f-8736-4773-a119-f6fd6af432fe'
@@ -32,7 +34,7 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             hh = hackhttp.hackhttp()
             arg = self.target
             url = arg + "/Server/CmxMailSet.php"
@@ -51,13 +53,13 @@ class Poc(ABPoc):
                 #security_hole(url + '  sql injection!')
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
-                           
+
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
         self.verify()
 
+
 if __name__ == '__main__':
     Poc().run()
-

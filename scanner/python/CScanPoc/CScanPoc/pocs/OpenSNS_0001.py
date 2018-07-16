@@ -2,28 +2,29 @@
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
-    vuln_id = 'OpenSNS_0001' # 平台漏洞编号
-    name = 'OpenSNS前台无限制注入(无需登录无视GPC)' # 漏洞名称
-    level = VulnLevel.HIGH # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    vuln_id = 'OpenSNS_0001'  # 平台漏洞编号
+    name = 'OpenSNS前台无限制注入(无需登录无视GPC)'  # 漏洞名称
+    level = VulnLevel.HIGH  # 漏洞危害级别
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2016-07-23'  # 漏洞公布时间
     desc = '''
         漏洞触发点在/Application/People/Controller/IndexController.class.php中第48行：
         $arearank有这样一个赋值操作：$arearank = I('get.arearank', 0);
         直接将$arearank与upid=做拼接然后组装到了where语句中，周围并无引号进行包裹，是一个数字型的注入。
-    ''' # 漏洞描述
-    ref = 'http://0day5.com/archives/3973/' # 漏洞来源
-    cnvd_id = 'Unknown' # cnvd漏洞编号
+    '''  # 漏洞描述
+    ref = 'http://0day5.com/archives/3973/'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'OpenSNS'  # 漏洞组件名称
     product_version = 'Unknown'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = 'b44df684-9688-4cfc-b11d-275d2afe69aa' # 平台 POC 编号
+    poc_id = 'b44df684-9688-4cfc-b11d-275d2afe69aa'  # 平台 POC 编号
     author = '47bwy'  # POC编写者
-    create_date = '2018-06-26' # POC创建时间
+    create_date = '2018-06-26'  # POC创建时间
 
     def __init__(self):
         super(Poc, self).__init__(Vuln())
@@ -49,6 +50,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

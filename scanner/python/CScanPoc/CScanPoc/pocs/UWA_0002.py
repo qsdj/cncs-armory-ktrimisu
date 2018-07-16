@@ -4,6 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
+
 class Vuln(ABVuln):
     vuln_id = 'UWA_0002'  # 平台漏洞编号，留空
     name = 'UWA 2.X通用建站系统 敏感路径泄露'  # 漏洞名称
@@ -47,6 +48,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

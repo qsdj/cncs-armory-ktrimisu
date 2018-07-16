@@ -12,11 +12,12 @@ import string
 import getopt
 import urlparse
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Jetty_Web_Server_0001' # 平台漏洞编号，留空
+    vuln_id = 'Jetty_Web_Server_0001'  # 平台漏洞编号，留空
     name = 'Jetty Web Server 9.2.x-9.3.x 共享缓存区远程泄露漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INFO_LEAK # 漏洞类型
+    type = VulnType.INFO_LEAK  # 漏洞类型
     disclosure_date = '2015-02-24'  # 漏洞公布时间
     desc = '''
             GDS安全公司发现了一个Jetty web server共享缓存区远程泄露漏洞，
@@ -39,6 +40,7 @@ class Vuln(ABVuln):
     product = 'Jetty Web Server'  # 漏洞应用名称
     product_version = '9.2.x-9.3.x'  # 漏洞应用版本
 
+
 class Poc(ABPoc):
     poc_id = '36e25628-f881-4b96-8e44-979d8750e932'
     author = '47bwy'  # POC编写者
@@ -57,7 +59,7 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-                
+
             conn = None
             target_pare = urlparse.urlparse(self.target)
             port = target_pare.port if target_pare.port else 80
@@ -78,13 +80,14 @@ class Poc(ABPoc):
             if (r1.status == 400 and ("Illegal character 0x0 in state" in r1.reason)):
                 #args['success'] = True
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                        target=self.target, name=self.vuln.name))
+                    target=self.target, name=self.vuln.name))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

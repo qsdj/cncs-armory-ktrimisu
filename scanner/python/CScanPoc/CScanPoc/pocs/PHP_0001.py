@@ -4,6 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import datetime
 
+
 class Vuln(ABVuln):
     vuln_id = 'PHP_0001'  # 平台漏洞编号，留空
     name = 'PHP 远程DOS漏洞'  # 漏洞名称
@@ -19,6 +20,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'PHP'  # 漏洞应用名称
     product_version = '所有版本'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '6d479fbe-3bfb-472c-8e8a-1fdf6b5a56a3'
@@ -45,14 +47,15 @@ class Poc(ABPoc):
             endtime = datetime.datetime.now()
             usetime = (endtime - starttime).seconds
             if usetime > 6:
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                        target=self.target, name=self.vuln.name))
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
+                    target=self.target, name=self.vuln.name))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

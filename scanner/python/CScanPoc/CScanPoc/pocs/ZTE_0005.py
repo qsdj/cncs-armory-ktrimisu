@@ -5,11 +5,12 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urlparse
 import time
 
+
 class Vuln(ABVuln):
     vuln_id = 'ZTE_0005'  # 平台漏洞编号，留空
     name = '中兴某系统 通用SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = 'Unknown'  # 漏洞公布时间
     desc = '''
         中兴120数据查询统计系统，
@@ -22,6 +23,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'ZTE'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '397e5578-a9ec-4e90-b8cd-6181bda5d5d3'
@@ -49,7 +51,7 @@ class Poc(ABPoc):
             code2, head, res, errcode, _ = hh.http(url2)
             flase_time = time.time() - start_time2
             if code1 == 200 and code2 == 200 and flase_time > 5 > true_time:
-                #security_hole(url2)
+                # security_hole(url2)
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 
@@ -58,6 +60,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

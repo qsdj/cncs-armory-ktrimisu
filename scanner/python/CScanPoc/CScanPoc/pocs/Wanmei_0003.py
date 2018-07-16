@@ -3,25 +3,27 @@
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Wanmei_0003' # 平台漏洞编号
-    name = '完美时空客服自助平台SQL注射' # 漏洞名称
-    level = VulnLevel.HIGH # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    vuln_id = 'Wanmei_0003'  # 平台漏洞编号
+    name = '完美时空客服自助平台SQL注射'  # 漏洞名称
+    level = VulnLevel.HIGH  # 漏洞危害级别
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2010-08-22'  # 漏洞公布时间
     desc = '''
         完美时空客服自助平台SQL注射漏洞，攻击者可以通过构造恶意链接来跳转到恶意网站对用户进行钓鱼攻击。
-    ''' # 漏洞描述
-    ref = 'Unknown' #https://wooyun.shuimugan.com/bug/view?bug_no=73
-    cnvd_id = 'Unknown' # cnvd漏洞编号
+    '''  # 漏洞描述
+    ref = 'Unknown'  # https://wooyun.shuimugan.com/bug/view?bug_no=73
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '完美时空'  # 漏洞组件名称
     product_version = 'Unknown'  # 漏洞应用版本
 
+
 class Poc(ABPoc):
-    poc_id = 'f2b74d5b-2b2d-4eb0-b5b0-dbd2b012e94c' # 平台 POC 编号
+    poc_id = 'f2b74d5b-2b2d-4eb0-b5b0-dbd2b012e94c'  # 平台 POC 编号
     author = '国光'  # POC编写者
-    create_date = '2018-06-22' # POC创建时间
+    create_date = '2018-06-22'  # POC创建时间
 
     def __init__(self):
         super(Poc, self).__init__(Vuln())
@@ -38,13 +40,15 @@ class Poc(ABPoc):
             response1 = requests.get(vul_url1)
             response2 = requests.get(vul_url2)
             if response1.text != response2.text and (vul_url1 == response1.url or vul_url2 == response2.url) and (response1.status_code == 200 or response2.status_code == 200):
-                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target, name=self.vuln.name))
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
+                    target=self.target, name=self.vuln.name))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

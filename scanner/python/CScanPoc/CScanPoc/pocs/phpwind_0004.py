@@ -5,11 +5,12 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import md5
 import urllib2
 
+
 class Vuln(ABVuln):
-    vuln_id = 'PHPWind_0004' # 平台漏洞编号，留空
+    vuln_id = 'PHPWind_0004'  # 平台漏洞编号，留空
     name = 'PHPWind 9.0 Jplayer.swf XSS'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.XSS # 漏洞类型
+    type = VulnType.XSS  # 漏洞类型
     disclosure_date = '2013-01-23'  # 漏洞公布时间
     desc = '''
         PHPWind 9.0 /res/js/dev/util_libs/jPlayer/Jplayer.swf 跨站脚本漏洞
@@ -19,6 +20,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'PHPWind'  # 漏洞应用名称
     product_version = '9.0'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '3e8da538-3472-41eb-8d87-7b7089bea472'
@@ -32,7 +34,7 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             flash_md5 = "769d053b03973d380da80be5a91c59c2"
             file_path = "/res/js/dev/util_libs/jPlayer/Jplayer.swf"
             verify_url = self.target + file_path
@@ -52,6 +54,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

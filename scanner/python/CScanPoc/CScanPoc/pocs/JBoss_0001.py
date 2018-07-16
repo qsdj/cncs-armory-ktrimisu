@@ -4,6 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
+
 class Vuln(ABVuln):
     vuln_id = 'JBoss_0001'  # 平台漏洞编号，留空
     name = 'JBoss 目录遍历'  # 漏洞名称
@@ -18,6 +19,7 @@ class Vuln(ABVuln):
     cve_id = 'CVE-2006-5750'  # cve编号
     product = 'JBoss'  # 漏洞应用名称
     product_version = 'JBoss 3.2.4 through 4.0.5'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = 'c75a3ea3-a86b-4c27-a608-857ef76623a3'
@@ -45,14 +47,15 @@ class Poc(ABPoc):
             response = urllib2.urlopen(request)
             page_content = response.read()
             if 'this_is_not_exist_9.1314923' in page_content:
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                        target=self.target, name=self.vuln.name))
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
+                    target=self.target, name=self.vuln.name))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

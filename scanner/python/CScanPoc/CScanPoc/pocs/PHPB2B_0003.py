@@ -2,13 +2,15 @@
 
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
-import re, urlparse
+import re
+import urlparse
+
 
 class Vuln(ABVuln):
     vuln_id = 'PHPB2B_0003'  # 平台漏洞编号，留空
     name = 'PHPB2B某处注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2014-11-23'  # 漏洞公布时间
     desc = '''
         PHPB2B 漏洞文件/virtual-office/company.php
@@ -35,6 +37,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'PHPB2B'  # 漏洞应用名称
     product_version = '官方最新版本'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '547719a2-ba01-4d3f-aaa6-c3c904dbcbd7'
@@ -83,6 +86,7 @@ class Poc(ABPoc):
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
+
 
 if __name__ == '__main__':
     Poc().run()

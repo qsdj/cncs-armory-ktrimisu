@@ -2,8 +2,10 @@
 
 import argparse
 
+
 def create_poc_cmd_parser():
-    parser = argparse.ArgumentParser(formatter_class=argparse.RawTextHelpFormatter)
+    parser = argparse.ArgumentParser(
+        formatter_class=argparse.RawTextHelpFormatter)
     parser.add_argument(
         "-u", "--url", dest="url", required=True,
         help="目标 URL (e.g. \"http://www.shit.com/\")")

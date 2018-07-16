@@ -1,24 +1,25 @@
 # coding: utf-8
 
-from CScanPoc.thirdparty import requests,hackhttp
+from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib
 import re
 hh = hackhttp.hackhttp()
 
+
 class Vuln(ABVuln):
-    vuln_id = 'DFE_SCADA_0008' # 平台漏洞编号，留空
-    name = '东方电子SCADA通用系统默认密码' # 漏洞名称
-    level = VulnLevel.HIGH # 漏洞危害级别
-    type = VulnType.INFO_LEAK # 漏洞类型
+    vuln_id = 'DFE_SCADA_0008'  # 平台漏洞编号，留空
+    name = '东方电子SCADA通用系统默认密码'  # 漏洞名称
+    level = VulnLevel.HIGH  # 漏洞危害级别
+    type = VulnType.INFO_LEAK  # 漏洞类型
     disclosure_date = '2015-11-05'  # 漏洞公布时间
     desc = '''
         东方电子SCADA通用系统默认密码：
         /modules/authen/server/login.php?userName=root&userPwd=admin&moduleId=1&loginMode=byUser
-    ''' # 漏洞描述
-    ref = 'Unknown' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0131500
-    cnvd_id = 'Unknown' # cnvd漏洞编号
-    cve_id = 'Unknown' #cve编号
+    '''  # 漏洞描述
+    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0131500
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = '东方电子SCADA'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
 
@@ -26,7 +27,7 @@ class Vuln(ABVuln):
 class Poc(ABPoc):
     poc_id = '56a51dba-9d74-49e1-90aa-0fa043efbd45'
     author = '国光'  # POC编写者
-    create_date = '2018-05-25' # POC创建时间
+    create_date = '2018-05-25'  # POC创建时间
 
     def __init__(self):
         super(Poc, self).__init__(Vuln())

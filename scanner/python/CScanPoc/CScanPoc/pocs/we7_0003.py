@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
+
 class Vuln(ABVuln):
-    vuln_id = 'we7_0003' # 平台漏洞编号，留空
+    vuln_id = 'we7_0003'  # 平台漏洞编号，留空
     name = '微擎科技 无需登录sql注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2016-07-13'  # 漏洞公布时间
     desc = '''
         漏洞文件：\payment\unionpay\notify.php
@@ -48,6 +49,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

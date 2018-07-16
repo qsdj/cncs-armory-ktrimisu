@@ -1,21 +1,22 @@
 # coding: utf-8
 
-from CScanPoc.thirdparty import requests,hackhttp
+from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Ecshop_0011' # 平台漏洞编号，留空
-    name = 'Ecshop XSS' # 漏洞名称
-    level = VulnLevel.MED # 漏洞危害级别
-    type = VulnType.XSS # 漏洞类型
+    vuln_id = 'Ecshop_0011'  # 平台漏洞编号，留空
+    name = 'Ecshop XSS'  # 漏洞名称
+    level = VulnLevel.MED  # 漏洞危害级别
+    type = VulnType.XSS  # 漏洞类型
     disclosure_date = '2013-10-30'  # 漏洞公布时间
     desc = '''
         Ecshop xss漏洞,2.6-2.7（开启手机商城的）.
-    ''' # 漏洞描述
-    ref = 'Unknown' # 漏洞来源
-    cnvd_id = 'Unknown' # cnvd漏洞编号
-    cve_id = 'Unknown' #cve编号
+    '''  # 漏洞描述
+    ref = 'Unknown'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'Ecshop'  # 漏洞应用名称
     product_version = '2.6-2.7'  # 漏洞应用版本
 
@@ -23,7 +24,7 @@ class Vuln(ABVuln):
 class Poc(ABPoc):
     poc_id = 'fde03a9a-d059-43dd-9fdb-23e3aba510a7'
     author = '国光'  # POC编写者
-    create_date = '2018-05-13' # POC创建时间
+    create_date = '2018-05-13'  # POC创建时间
 
     def __init__(self):
         super(Poc, self).__init__(Vuln())
@@ -39,7 +40,8 @@ class Poc(ABPoc):
             body = req.text
             if req.status_code == 200:
                 if body and body.find('<script>alert(123456)</script>') != -1:
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target,name=self.vuln.name))
+                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
+                        target=self.target, name=self.vuln.name))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))

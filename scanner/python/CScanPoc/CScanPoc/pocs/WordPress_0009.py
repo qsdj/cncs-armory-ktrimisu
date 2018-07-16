@@ -4,6 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import time
 
+
 class Vuln(ABVuln):
     vuln_id = 'WordPress_0009'  # 平台漏洞编号，留空
     name = 'WordPress NEX-Forms SQL注入'  # 漏洞名称
@@ -19,6 +20,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'WordPress'  # 漏洞应用名称
     product_version = 'WordPress Plugin NEX-Forms < 3.0'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = 'afc7d0ae-a18f-4a9c-a32e-f9be808ae6de'
@@ -52,6 +54,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

