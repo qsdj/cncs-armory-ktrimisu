@@ -10,13 +10,13 @@ python main.py -u <ip> -p <port(端口, 默认如下)> -r <rate(masscan的并发
 ```
 ## 输出之后结果都写在了 tmp 目录下
 
-- Assets.json --- 资产结果
-- SCA.json  --- 服务组件结果
-- Whatweb.json  --- 服务提供组件/应用组件结果
+- Assets.json --- 资产结果
+- SCA.json  --- 服务组件结果
+- Whatweb.json  --- 服务提供组件/应用组件结果
 
 
-# 结果说明
-## 资产结果说明
+# 结果说明
+## 资产结果说明
 ```
 tmp = {
 	"assets": ["192.168.1.2", "192.168.1.1"]
@@ -48,11 +48,11 @@ tmp = {
 	}]
 }
 
-tmp 字典中的 key为"SCA"的 value 是list；其中的每个元素都是字典，其key是ip，value 是list,存放多个端口
+tmp 字典中的 key为"SCA"的 value 是list；其中的每个元素都是字典，其key是ip，value 是list,存放多个端口
 ```
 
 # 服务提供组件/应用组件结果
-> whatweb扫出的东西比较复杂(固定取值会出现漏取得)，我只能过滤掉不想要的字段，
+> whatweb扫出的东西比较复杂(固定取值会出现漏取得)，我只能过滤掉不想要的字段，
 ```
 tmp = {
 	"whatweb": [{
@@ -82,5 +82,5 @@ tmp = {
 	}]
 }
 
-tmp 字典中的 key为"whatweb"的 value 是 list；其中的每个元素都是字典，其key是扫描的 ip加端口 ，value 为 字典, 其value存放中存放着 扫出提供组件/应用组件
+tmp 字典中的 key为"whatweb"的 value 是 list；其中的每个元素都是字典，其key是扫描的 ip加端口 ，value 为 字典, 其value存放中存放着 扫出提供组件/应用组件
 ```
