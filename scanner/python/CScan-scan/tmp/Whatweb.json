@@ -1,0 +1,1 @@
+{"whatweb":[{"http://192.168.1.1:80":{"Boa-WebServer":{"version":["0.94.13"]},"HTTPServer":{"string":["Boa/0.94.13"]},"Script":{"string":["javascript>top.location.replace("]}}},{"http://192.168.1.1:8080":{"HTTPServer":{"string":["Jetty(6.1.x)"]},"Jetty":{"version":["6.1.x"]},"PoweredBy":{"string":["Jetty://"]}}}]}
