@@ -7,16 +7,18 @@ name = "pypi"
 colorama = "*"
 requests = "*"
 "enum34" = "*"
-"e1839a8" = {path = ".", editable = true}
 mysql-connector = "*"
 pymango = "*"
 pymongo = "*"
+redis = "*"
+paramiko = "*"
+pypinyin = "*"
 
 [dev-packages]
 twine = "*"
-"e1839a8" = {path = ".", editable = true}
 pylint = "*"
 "autopep8" = "*"
+rope = "*"
 
 [requires]
 python_version = "2.7"

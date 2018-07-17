@@ -44,7 +44,7 @@ class ABVuln(object):
         pass
 
     @abstractproperty
-    def level():
+    def level(self):
         '''漏洞危害级别
 
         CScanPoc.lib.core.enums.VulnLevel

@@ -16,4 +16,8 @@ def create_poc_cmd_parser():
     parser.add_argument(
         '--mode', required=False, default="verify", choices=["verify", "exploit"],
         help="POC 执行模式, default: verify")
+
+    # 执行参数解析
+    parser.add_argument('--exec-option', metavar='KEY=VALUE', type=str, nargs='+',
+                        help='执行参数定义')
     return parser
