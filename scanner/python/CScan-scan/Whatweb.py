@@ -105,8 +105,49 @@ class WhatWeb(CScanScan):
                     target = {}
                     plugins = {}
                     for name in ipyu["plugins"].keys():
-                        if name != "Country" and name != "IP" and name!= "UncommonHeaders" and name!= "Title" and name != "Cookies" and ipyu["plugins"][name]!= {}:
-                            plugins[name] = ipyu["plugins"][name]
+                        if name == "HTTPServer":
+                            if " " in ipyu["plugins"][name]["string"][0]:
+                                httpserverinfo = ipyu["plugins"][name]["string"][0].split(" ")[0]
+                            else:
+                                httpserverinfo = ipyu["plugins"][name]["string"][0]
+                            if "/" in httpserverinfo:
+                                plugins["HTTPServer"] = {}
+                                plugins["HTTPServer"]["name"] = httpserverinfo.split('/')[0]
+                                plugins["HTTPServer"]["version"] = httpserverinfo.split('/')[1]
+
+                            else:
+                                plugins["HTTPServer"] = {}
+                                plugins["HTTPServer"]["name"] = httpserverinfo
+
+
+                        if name == "MetaGenerator":
+                            if " " in ipyu["plugins"][name]["string"][0]:
+                                print 1
+                                productinfo = ipyu["plugins"][name]["string"][0]
+                                print productinfo
+                                plugins["product"] = {}
+                                plugins["product"]["name"] = productinfo.split(" ")[0]
+                                plugins["product"]["version"] = productinfo.split(" ")[1]
+                                plugins["product"]["deploy_path"] = "/"
+
+                            else:
+                                productinfo = ipyu["plugins"][name]["string"][0]
+                                plugins["product"] = {}
+                                plugins["product"]["name"] = productinfo
+                                plugins["product"]["deploy_path"] = "/"
+
+
+                        if name == "X-Powered-By":
+                            if "/" in ipyu["plugins"][name]["string"][0]:
+                                plugins["PL"] = {}
+                                plugins["PL"]["name"] = ipyu["plugins"][name]["string"][0].split('/')[0]
+                                plugins["PL"]["version"] = ipyu["plugins"][name]["string"][0].split('/')[1]
+
+                            else:
+                                plugins["PL"] = {}
+                                plugins["PL"]["name"] = ipyu["plugins"][name]["string"][0]
+
+                                
                     target[ipyu["target"]] = plugins
                     WhatWeb.append(target)
             result["whatweb"] = WhatWeb
