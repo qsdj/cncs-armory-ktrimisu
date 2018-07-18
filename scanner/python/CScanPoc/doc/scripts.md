@@ -1,64 +1,47 @@
-# Docker 镜像
-
-项目根目录
-
-`docker build -t cscanpoc -f ./Dockerfile-bundle .`
-
-执行如下命令获取 `poc_id` -> `POC_MODULE` 的映射（JSON 文件）
-
-`pipenv run python scripts/indexing.py CScanPoc/pocs <输出JSON文件>`
-
-执行 POC:
-
-`docker run -e POC_MODULE=<对应上面脚本获取 POC_MODULE> -e POC_ARGS='-u http://www.shit.com' --rm cscanpoc`
-
-例如
-
-`docker run -e POC_MODULE=CScanPoc.pocs.info_webinf -e POC_ARGS='-u http://www.baidu.com' --rm cscanpoc`
-
-# 同步
+# 功能脚本
 
 ```sh
-pipenv run python scripts/sync.py --help
-usage: sync.py [-h] --host HOST --user USER --db DB [--pass PASSWD] [--update]
-               [--insert] [--poc] [--vuln] --target TARGET [-v] [-vv]
+$ python scripts/utils.py
+usage: utils.py [-h] [--sort] [--host HOST] [--user USER] [--db DB]
+                [--port PORT] [--pass PASSWD] --poc-dir POC_DIR [-v] [-vv]
+                [--index-dir INDEX_DIR] [--skip-indexing] [--update]
 
 optional arguments:
-  -h, --help       show this help message and exit
-  --host HOST      数据库地址
-  --user USER      数据库用户
-  --db DB          数据库名
-  --pass PASSWD    数据库密码
-  --update         执行更新操作
-  --insert         执行插入操作
-  --poc            设定 poc 为操作对象，可以和 --vuln 选项同时使用
-  --vuln           设定 vuln 为操作对象，可以和 --poc 选项同时使用
-  --target TARGET  目标目录/文件
-  -v               verbose
-  -vv              very verbose
+  -h, --help            show this help message and exit
+  --sort                整理 POC 将所有 POC 放置到 产品类型/产品名 目录中
+  --host HOST           数据库地址
+  --user USER           数据库用户
+  --db DB               数据库名
+  --port PORT           数据库端口
+  --pass PASSWD         数据库密码
+  --poc-dir POC_DIR     目标目录，将递归处理目录下所有 .py 结尾文件
+  -v                    verbose
+  -vv                   very verbose
+  --index-dir INDEX_DIR
+                        索引信息存放目录，默认当前目录 index 目录下
+  --skip-indexing       创建索引
+  --update              如果数据存在，执行更新操作
 ```
 
-示例：
+## 整理 POC 目录
 
-插入目录 `path/to/pocs` 中所有的 poc 和 vuln 到数据库：
+将 POC 整理到 '组件类型/组件名' 目录下
 
 ```sh
-pipenv run python scripts/sync.py --host ... --user ... --db ... --pass ... \
-  --insert --poc --vuln --target path/to/pocs
+python scripts/utils.py -v --sort --poc-dir CScanPoc/pocs
 ```
 
-更新目录 `path/to/pocs` 中所有的 poc 和 vuln 到数据库：
+## 更新数据到数据库
 
 ```sh
-pipenv run python scripts/sync.py --host ... --user ... --db ... --pass ... \
-  --update --poc --vuln --target path/to/pocs
+python scripts/utils.py -v \
+  --host ... --user ... --db ...  --pass \          # 数据库配置
+  --poc-dir CScanPoc/pocs \
+  --update # 如果加该参数，对于数据库中已有的数据，进行更新；否则对于已有数据就跳过
 ```
 
-也可以只更新某个文件 `/path/to/pocs/shit_poc.py`：
+更新过程是先创建相关元数据数据（indexing）到 `--index-dir`(默认 `index` 下)，然后使用该
+元数据对数据库进行更新。
 
-```sh
-pipenv run python scripts/sync.py --host ... --user ... --db ... --pass ... \
-  --update --poc --vuln --target path/to/pocs/shit_poc.py
-```
-
-编译镜像，添加参数 `--build-base-image cscan-poc:0.1`
+如果执行过程中因为数据库连接发生中断，下次执行时可以添加 `--skip-indexing` 跳过元数据创建这
+一步加快执行速度。
