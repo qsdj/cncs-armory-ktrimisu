@@ -15,9 +15,16 @@ CScan Poc 开发文档。
 
 依赖使用 [pipenv](https://github.com/pypa/pipenv) 管理，具体安装参见[pipenv#installation](https://github.com/pypa/pipenv#installation)。PyCharm 中设定 pipenv 可见[这里](https://stackoverflow.com/questions/46251411/how-do-i-properly-setup-pipenv-in-pycharm)。
 
-pipenv 安装好之后，进入项目根目录（含有 Pipfile 文件的目录），执行`pipenv install --skip-lock`，然后执行`pipenv install '-e .' --dev --skip-lock` 安装 CScanPoc 到本地环境。执行`pipenv shell`在当前虚拟环境中启动 shell。
+建议添加环境变量 `PIPENV_VENV_IN_PROJECT=1` （比如在 `~/.bashrc` 中加 `export PIPENV_VENV_IN_PROJECT=1`），这样，virtualenv 将被安装到项目根目录 ~.venv~ 中。
+
+pipenv 安装好之后，进入项目根目录（含有 Pipfile 文件的目录），执行`pipenv install`，然后执行`pipenv install '-e .' --dev` 安装 CScanPoc 到本地环境。执行`pipenv shell`在当前虚拟环境中启动 shell。
 
 这时，你可以执行 `python CScanPoc/template.py -u http://www.targetsite.com` 执行测试代码。
+
+格式化代码：`./.venv/bin/autopep8 --in-place <要格式化的文件>`
+
+或者格式化一个目录中所有代码： `for i in $(find <要格式化的目录> -name '*.py'); do echo $i; ./.venv/bin/autopep8 --in-place $i; done`
+
 
 ### 漏洞编写
 
