@@ -38,8 +38,8 @@ python main.py -u <ip> -p <port(端口, 默认如下)> -r <rate(masscan的并发
 
 ```python
 {
-	"assets": 									# 资产 :·
-    ["192.168.1.2", "192.168.1.1"]				#资产ip列表
+	"assets": 					# 资产 :·
+    ["192.168.1.2", "192.168.1.1"]			#资产ip列表
 
 }
 
@@ -54,12 +54,12 @@ python main.py -u <ip> -p <port(端口, 默认如下)> -r <rate(masscan的并发
 ```python
 {
 
-    "SCA": [{									#服务组件 : 
-        "192.168.1.2": [{						# 资产ip
+    "SCA": [{						#服务组件 : 
+        "192.168.1.2": [{				# 资产ip
 
-            "port": "3306",						# 开启的端口
+            "port": "3306",				# 开启的端口
 
-            "name": "mysql"						# 端口对应的服务名
+            "name": "mysql"				# 端口对应的服务名
 
         }]
 
@@ -100,9 +100,9 @@ python main.py -u <ip> -p <port(端口, 默认如下)> -r <rate(masscan的并发
 
 ```python
 {
-	"whatweb": [{									# 服务提供组件/应用组件
-		"http://192.168.1.2:8000": {				# 目标ip+端口(http)
-			"HTTPServer": {							# http 服务器
+	"whatweb": [{					# 服务提供组件/应用组件
+		"http://192.168.1.2:8000": {		# 目标ip+端口(http)
+			"HTTPServer": {			# http 服务器
 				"version": "0.14.1",
 				"name": "Werkzeug"
 			}
@@ -112,7 +112,7 @@ python main.py -u <ip> -p <port(端口, 默认如下)> -r <rate(masscan的并发
 			"HTTPServer": {
 				"name": "nginx"
 			},
-			"PL": {									# 编程语言
+			"PL": {				# 编程语言
 				"version": "5.3.29",
 				"name": "PHP"
 			}
@@ -132,10 +132,10 @@ python main.py -u <ip> -p <port(端口, 默认如下)> -r <rate(masscan的并发
 		}
 	}, {
 		"http://www.discuz.net/forum.php": {
-			"product": {							# 组件:
-				"deploy_path": "/",					# 程序安装目录
-				"version": "X3.3",					# 版本
-				"name": "Discuz!"					# 组件名称
+			"product": {			# 组件:
+				"deploy_path": "/",	# 程序安装目录（目前扫目录功能还没有做，默认为 "/" ）
+				"version": "X3.3",	# 版本
+				"name": "Discuz!"	# 组件名称
 			},
 			"HTTPServer": {
 				"name": "nginx"
