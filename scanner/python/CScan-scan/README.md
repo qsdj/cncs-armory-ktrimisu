@@ -96,63 +96,69 @@ python main.py -u <ip> -p <port(端口, 默认如下)> -r <rate(masscan的并发
 
 > 从`资产服务组件`结果中，过滤出`http`服务扫出 `服务提供组件/应用组件`
 
-> 没有显示`PL` 或`product` 或`HTTPServer`, 没有扫出
-
 ```python
 {
-	"whatweb": [{					# 服务提供组件/应用组件
-		"http://192.168.1.2:8000": {		# 目标ip+端口(http)
-			"HTTPServer": {			# http 服务器
-				"version": "0.14.1",
-				"name": "Werkzeug"
-			}
-		}
-	}, {
-		"http://www.discuz.net:80": {
-			"HTTPServer": {
-				"name": "nginx"
+	"whatweb": [{
+		"192.168.1.2": {
+			"http": {
+				"port": 8000
 			},
-			"PL": {				# 编程语言
-				"version": "5.3.29",
-				"name": "PHP"
+			"Werkzeug": {
+				"version": "0.14.1"
 			}
 		}
 	}, {
-		"http://www.miui.com:80": {
-			"HTTPServer": {
-				"version": "1.12.2",
-				"name": "Server"
-			}
-		}
-	}, {
-		"http://www.seebug.org:80": {
-			"HTTPServer": {
-				"name": "nginx"
-			}
-		}
-	}, {
-		"http://www.discuz.net/forum.php": {
-			"product": {			# 组件:
-				"deploy_path": "/",	# 程序安装目录（目前扫目录功能还没有做，默认为 "/" ）
-				"version": "X3.3",	# 版本
-				"name": "Discuz!"	# 组件名称
+		"www.discuz.net": {
+			"nginx": {},
+			"http": {
+				"port": 80
 			},
-			"HTTPServer": {
-				"name": "nginx"
-			},
-			"PL": {
-				"version": "5.3.29",
-				"name": "PHP"
+			"web": {
+				"pl_version": "5.3.29",
+				"pl": "PHP"
 			}
 		}
 	}, {
-		"http://www.czqsy.net:80": {
-			"HTTPServer": {
-				"version": "6.0",
-				"name": "Microsoft-IIS"
+		"www.miui.com": {
+			"http": {
+				"port": 80
 			},
-			"PL": {
-				"name": "ASP.NET"
+			"Server": {
+				"version": "1.12.2"
+			}
+		}
+	}, {
+		"www.seebug.org": {
+			"nginx": {},
+			"http": {
+				"port": 80
+			}
+		}
+	}, {
+		"www.discuz.net": {				   #资产(ip/域名)
+			"Discuz!": {					#组件名：
+                							  #组件属性：
+				"home_page": "/forum.php",	    #家目录
+				"deploy_path": "/",			    #部署路径
+				"version": "X3.3",				#组件版本
+				"pl_version": "5.3.29",			#编程语言版本
+				"pl": "PHP"						#编程语言
+			},
+			"nginx": {},				   #提供服务(service_provider)
+			"http": {					   #服务(service)
+				"port": 80
+			}
+		}
+	}, {
+		"www.czqsy.net": {
+			"web": {					   #发现不了组件时,默认用web代替
+				"pl": "ASP.NET"
+			},
+			"Microsoft-IIS": {
+				"version": "6.0"
+			},
+			"http": {
+				"port": 80
 			}
 		}
 	}]
