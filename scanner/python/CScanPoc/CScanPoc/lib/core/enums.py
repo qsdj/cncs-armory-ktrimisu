@@ -36,3 +36,5 @@ class ProductType(Enum):
     middleware = 3
     database = 4
     device = 5
+    service = 6
+    service_provider = 7
