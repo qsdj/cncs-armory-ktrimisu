@@ -28,8 +28,21 @@ class Poc(ABPoc):
 
     def __init__(self):
         super(Poc, self).__init__(Vuln())
-
+        self.option_schema = {
+            'properties': {
+                'base_path': {
+                    'type': 'string',
+                    'description': '部署路径',
+                    'default': '',
+                    '$default_ref': {
+                        'property': 'deploy_path'
+                    }
+                }
+            }
+        }
+                    
     def verify(self):
+        self.target = self.target.rstrip('/') + '/' + (self.get_option('base_path').lstrip('/'))
         try:
             # 属于验证后台漏洞，所以需要登录并且获取cookie，详情参考对应的PDF
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(

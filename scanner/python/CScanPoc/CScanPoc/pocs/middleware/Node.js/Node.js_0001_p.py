@@ -27,8 +27,21 @@ class Poc(ABPoc):
 
     def __init__(self):
         super(Poc, self).__init__(Vuln())
-
+        self.option_schema = {
+            'properties': {
+                'base_path': {
+                    'type': 'string',
+                    'description': '部署路径',
+                    'default': '',
+                    '$default_ref': {
+                        'property': 'deploy_path'
+                    }
+                }
+            }
+        }
+                    
     def verify(self):
+        self.target = self.target.rstrip('/') + '/' + (self.get_option('base_path').lstrip('/'))
         try:
             # 根据payload的不同，输出数据也会不同，所以后期再根据系统定制化参数的功能对payload做通用性处理
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
@@ -45,6 +58,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
+        self.target = self.target.rstrip('/') + '/' + (self.get_option('base_path').lstrip('/'))
         try:
             # 这里是poc利用，这次是输出了/etc/passwd结果，后期可添加参数，用户将可以定制化自己提供的参数
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(

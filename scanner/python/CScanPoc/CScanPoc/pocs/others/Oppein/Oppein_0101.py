@@ -22,14 +22,27 @@ class Vuln(ABVuln):
 
 
 class Poc(ABPoc):
-    poc_id = ''  # 平台 POC 编号
+    poc_id = 'cb75d5e5-8730-4495-a3e3-ea2e3876426f'  # 平台 POC 编号
     author = 'hyhmnn'  # POC编写者
     create_date = '2018-06-08'  # POC创建时间
 
     def __init__(self):
         super(Poc, self).__init__(Vuln())
-
+        self.option_schema = {
+            'properties': {
+                'base_path': {
+                    'type': 'string',
+                    'description': '部署路径',
+                    'default': '',
+                    '$default_ref': {
+                        'property': 'deploy_path'
+                    }
+                }
+            }
+        }
+                    
     def verify(self):
+        self.target = self.target.rstrip('/') + '/' + (self.get_option('base_path').lstrip('/'))
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))

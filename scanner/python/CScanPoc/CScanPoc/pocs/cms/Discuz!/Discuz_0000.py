@@ -38,15 +38,14 @@ class Poc(ABPoc):
                     'description': '部署路径',
                     'default': '',
                     '$default_ref': {
-                        'property': 'base_path'
+                        'property': 'deploy_path'
                     }
                 }
             }
         }
 
     def verify(self):
-        target = self.target.rstrip('/') + '/' + \
-            (self.get_option('base_path').lstrip('/'))
+        self.target = self.target.rstrip('/') + '/' + (self.get_option('base_path').lstrip('/'))
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))

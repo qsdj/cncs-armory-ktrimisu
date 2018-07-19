@@ -31,7 +31,19 @@ class Poc(ABPoc):
 
     def __init__(self):
         super(Poc, self).__init__(Vuln())
-
+        self.option_schema = {
+            'properties': {
+                'base_path': {
+                    'type': 'string',
+                    'description': '部署路径',
+                    'default': '',
+                    '$default_ref': {
+                        'property': 'deploy_path'
+                    }
+                }
+            }
+        }
+                    
     def random_str(len):
         str1 = ""
         for i in range(len):
@@ -39,6 +51,7 @@ class Poc(ABPoc):
         return str1
 
     def verify(self):
+        self.target = self.target.rstrip('/') + '/' + (self.get_option('base_path').lstrip('/'))
         # 这里是输入ip进行测试，不需要输入 http:// 或者直接输入域名也可以 不加 http://
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
@@ -67,6 +80,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
+        self.target = self.target.rstrip('/') + '/' + (self.get_option('base_path').lstrip('/'))
         try:
             self.output.info('开始对 {target} 进行 {vuln} 漏洞利用'.format(
                 target=self.target, vuln=self.vuln))

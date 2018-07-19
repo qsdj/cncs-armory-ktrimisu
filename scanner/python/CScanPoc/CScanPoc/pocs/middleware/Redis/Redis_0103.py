@@ -38,7 +38,19 @@ class Poc(ABPoc):
 
     def __init__(self):
         super(Poc, self).__init__(Vuln())
-        self.public_key = 'ssh-rsa ====='
+        self.option_schema = {
+            'properties': {
+                'base_path': {
+                    'type': 'string',
+                    'description': '部署路径',
+                    'default': '',
+                    '$default_ref': {
+                        'property': 'deploy_path'
+                    }
+                }
+            }
+        }
+                            self.public_key = 'ssh-rsa ====='
         self.private_key = """
         -----BEGIN RSA PRIVATE KEY-----
         =====
@@ -68,6 +80,7 @@ class Poc(ABPoc):
             return False
 
     def verify(self):
+        self.target = self.target.rstrip('/') + '/' + (self.get_option('base_path').lstrip('/'))
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
