@@ -18,7 +18,7 @@ class Vuln(ABVuln):
     ref = 'http://www.cnvd.org.cn/flaw/show/CNVD-2018-08556'  # 漏洞来源
     cnvd_id = 'CNVD-2018-08556'  # cnvd漏洞编号
     cve_id = 'CVE-2018-10318 '  # cve编号
-    product = 'Frog CMS'  # 漏洞应用名称
+    product = 'FrogCMS'  # 漏洞应用名称
     product_version = '0.9.5版'  # 漏洞应用版本
 
 
