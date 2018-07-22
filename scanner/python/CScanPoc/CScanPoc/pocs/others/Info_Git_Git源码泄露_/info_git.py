@@ -21,6 +21,7 @@ class Vuln(ABVuln):
 
 
 class Poc(ABPoc):
+    poc_id = '5d6a1e2d-29b4-45df-88ae-07a3a15c17cc'
     author = 'cscan'  # POC编写者
     create_date = '2018-04-26'  # POC创建时间
 

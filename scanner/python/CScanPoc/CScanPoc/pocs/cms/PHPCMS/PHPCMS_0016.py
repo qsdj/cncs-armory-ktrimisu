@@ -25,7 +25,7 @@ class Vuln(ABVuln):
 class Poc(ABPoc):
     author = '国光'  # POC编写者
     create_date = '2018-05-15'  # POC创建时间
-    poc_id = ""
+    poc_id = "38dc06d5-9a6b-48ee-8b5f-b5d42f468331"
 
     def __init__(self):
         super(Poc, self).__init__(Vuln())
