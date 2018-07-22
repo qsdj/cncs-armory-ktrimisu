@@ -170,7 +170,7 @@ class ABPoc:
                     if '=' not in opt:
                         self.set_option(opt, True)
                     else:
-                        (k, v) = opt.split('=')
+                        (k, v) = opt.split('=', 1)
                         self.set_option(k, v)
             self.target = args.url
             mode = args.mode
