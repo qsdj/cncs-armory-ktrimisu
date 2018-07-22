@@ -15,7 +15,7 @@ class Vuln(ABVuln):
     http://127.0.0.1/jcms/m_5_e/module/idea/opr_import_discussion.jsp?typeid=0&fn_billstatus=S
     可上传文件,未限制上传文件类型,导致任意文件上传漏洞。
     '''  # 漏洞描述
-    ref = 'Unknown',  # 漏洞来源http://wooyun.org/bugs/wooyun-2014-075585
+    ref = 'Unknown'  # 漏洞来源http://wooyun.org/bugs/wooyun-2014-075585
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'Hanweb(大汉)'  # 漏洞应用名称

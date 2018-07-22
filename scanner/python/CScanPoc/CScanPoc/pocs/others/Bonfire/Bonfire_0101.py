@@ -16,7 +16,7 @@ class Vuln(ABVuln):
     desc = '''
     由于install.php安装文件对已安装的程序进行检测后没有做好后续处理，导致执行/install/do_install的时候引发重安装而暴露管理员信息。
     '''  # 漏洞描述
-    ref = 'http://www.mehmetince.net/ci-bonefire-reinstall-admin-account-vulnerability-analysis-exploit/',  # 漏洞来源
+    ref = 'http://www.mehmetince.net/ci-bonefire-reinstall-admin-account-vulnerability-analysis-exploit/'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'Bonfire'  # 漏洞应用名称

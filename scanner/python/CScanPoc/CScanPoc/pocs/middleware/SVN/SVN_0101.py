@@ -15,7 +15,7 @@ class Vuln(ABVuln):
     desc = '''
     use svn incorrect cause site information disclosure.
     '''  # 漏洞描述
-    ref = 'Unknown',  # 漏洞来源http://drops.wooyun.org/tips/352
+    ref = 'Unknown'  # 漏洞来源http://drops.wooyun.org/tips/352
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'SVN'  # 漏洞应用名称

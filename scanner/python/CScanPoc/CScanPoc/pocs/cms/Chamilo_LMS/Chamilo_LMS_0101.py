@@ -16,7 +16,7 @@ class Vuln(ABVuln):
     desc = '''
     Chamilo LMS 1.9.10 /main/calendar/agenda_list.php 跨站脚本漏洞。
     '''  # 漏洞描述
-    ref = 'http://www.exploit-db.com/exploits/36435/',  # 漏洞来源
+    ref = 'http://www.exploit-db.com/exploits/36435/'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'Chamilo_LMS'  # 漏洞应用名称

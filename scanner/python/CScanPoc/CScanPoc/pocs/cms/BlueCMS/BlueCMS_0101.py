@@ -18,7 +18,7 @@ $ad_id = !empty($_GET['ad_id']) ? trim($_GET['ad_id']) : ''; //根目录下其�
 对数字型变量几乎都用了intval()做限制，唯独漏了这个文件，居然只是用了trim()去除头尾空格。
 $ad = $db->getone("SELECT * FROM ".table('ad')." WHERE ad_id =".$ad_id); //直接代入查询。
     '''  # 漏洞描述
-    ref = 'http://www.myhack58.com/Article/html/3/7/2010/27774_2.htm',  # 漏洞来源
+    ref = 'http://www.myhack58.com/Article/html/3/7/2010/27774_2.htm'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'BlueCMS'  # 漏洞应用名称

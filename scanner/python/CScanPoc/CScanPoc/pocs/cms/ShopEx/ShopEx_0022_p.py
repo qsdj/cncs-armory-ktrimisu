@@ -12,7 +12,7 @@ class Vuln(ABVuln):
     desc = '''
         ShopEx4.85最新版本SQL注入，无需登录，过GPC，可直接查询管理员密码并回显。
     '''  # 漏洞描述
-    ref = 'http://0day5.com/archives/730/',  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=32753
+    ref = 'http://0day5.com/archives/730/'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=32753
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'ShopEx'  # 漏洞应用名称

@@ -15,7 +15,7 @@ class Vuln(ABVuln):
     desc = '''
     DTCMS 3.0 /scripts/swfupload/swfupload.swf文件存在FlashXss漏洞。
     '''  # 漏洞描述
-    ref = 'http://www.wooyun.org/bugs/wooyun-2010-069817',  # 漏洞来源
+    ref = 'http://www.wooyun.org/bugs/wooyun-2010-069817'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'DTCMS'  # 漏洞应用名称

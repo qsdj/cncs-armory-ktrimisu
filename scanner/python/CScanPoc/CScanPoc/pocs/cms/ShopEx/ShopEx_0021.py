@@ -13,7 +13,7 @@ class Vuln(ABVuln):
         在\shopex\core\admin\controller\ctl.passport.php中跟踪后台登陆验证流程，
         在参数sess_id传递的时候没有做任何的处理，直接带入查询了。
     '''  # 漏洞描述
-    ref = 'http://0day5.com/archives/673/',  # 漏洞来源
+    ref = 'http://0day5.com/archives/673/'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'ShopEx'  # 漏洞应用名称

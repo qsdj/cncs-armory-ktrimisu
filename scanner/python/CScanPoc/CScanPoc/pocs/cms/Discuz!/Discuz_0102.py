@@ -14,7 +14,7 @@ class Vuln(ABVuln):
     desc = '''
     discuz X2.5 存在多处绝对路径泄露。
     '''  # 漏洞描述
-    ref = 'Unknown',  # 漏洞来源
+    ref = 'Unknown'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'Discuz!'  # 漏洞应用名称

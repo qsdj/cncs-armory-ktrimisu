@@ -14,7 +14,7 @@ class Vuln(ABVuln):
     desc = '''
         PHPCMS 2007 /digg_add.php mod参数未过滤带入sql语句导致SQL注入。
     '''  # 漏洞描述
-    ref = 'Unknown',  # 漏洞来源
+    ref = 'Unknown'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'PHPCMS'  # 漏洞应用名称

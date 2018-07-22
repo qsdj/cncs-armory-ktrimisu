@@ -15,7 +15,7 @@ class Vuln(ABVuln):
     Joomla Spider Form Maker <=3.4 SQL注入漏洞:
     Joomla 3.4 /index.php 文件"id" 变量没有进行过滤。
     '''  # 漏洞描述
-    ref = 'http://www.exploit-db.com/exploits/34637/',  # 漏洞来源
+    ref = 'http://www.exploit-db.com/exploits/34637/'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'Joomla!'  # 漏洞应用名称

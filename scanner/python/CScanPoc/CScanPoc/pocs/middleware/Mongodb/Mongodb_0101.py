@@ -15,7 +15,7 @@ class Vuln(ABVuln):
     desc = '''
     mongodb启动时未加 --auth选项，导致无需认证即可连接mongodb数据库，从而导致一系列安全问题。
     '''  # 漏洞描述
-    ref = 'Unknown',  # 漏洞来源
+    ref = 'Unknown'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'Mongodb'  # 漏洞应用名称
