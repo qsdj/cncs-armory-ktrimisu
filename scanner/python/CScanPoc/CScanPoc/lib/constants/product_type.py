@@ -3836,7 +3836,7 @@ PRODUCT_INFO = {
         "desc": None
     },
     "FrogCMS": {
-        "type": ProductType.cms,
+        "type": ProductType.cms,
         "producer": None,
         "desc": "Frog CMS是软件开发者Philippe Archambault所研发的一套内容管理系统（CMS）。该系统提供页面模板、用户权限管理以及文件管理所需的工具。"
     },
