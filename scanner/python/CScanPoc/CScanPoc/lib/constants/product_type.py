@@ -3836,63 +3836,63 @@ PRODUCT_INFO = {
         "desc": None
     },
     "FrogCMS": {
-      "type": ProductType.cms,
-      "producer": None,
-      "desc": "Frog CMS是软件开发者Philippe Archambault所研发的一套内容管理系统（CMS）。该系统提供页面模板、用户权限管理以及文件管理所需的工具。"
+        "type": ProductType.cms,
+        "producer": None,
+        "desc": "Frog CMS是软件开发者Philippe Archambault所研发的一套内容管理系统（CMS）。该系统提供页面模板、用户权限管理以及文件管理所需的工具。"
     },
     "GxlCMS": {
-      "type": ProductType.cms,
-      "producer": None,
-      "desc": "GxlcmsQY系统是针对企业用户量身打造的一款快速搭建网站的cms。"
+        "type": ProductType.cms,
+        "producer": None,
+        "desc": "GxlcmsQY系统是针对企业用户量身打造的一款快速搭建网站的cms。"
     },
     "WuZhiCMS": {
-      "type": ProductType.cms,
-      "producer": None,
-      "desc": "WUZHI CMS是中国五指（WUZHI）互联科技公司的一套基于PHP和MySQL的开源内容管理系统（CMS）"
+        "type": ProductType.cms,
+        "producer": None,
+        "desc": "WUZHI CMS是中国五指（WUZHI）互联科技公司的一套基于PHP和MySQL的开源内容管理系统（CMS）"
     },
     "EasyCMS": {
-      "type": ProductType.cms,
-      "producer": None,
-      "desc": "EasyCMS是一套使用PHP语言编写的、轻量级可扩展的开源内容管理系统（CMS）。"
+        "type": ProductType.cms,
+        "producer": None,
+        "desc": "EasyCMS是一套使用PHP语言编写的、轻量级可扩展的开源内容管理系统（CMS）。"
     },
     "joyplus-cms": {
-      "type": ProductType.cms,
-      "producer": None,
-      "desc": "joyplus-cms（悦视频）是一套基于PHP和MySQL的开源视频后台管理系统。该系统具有视频资源采集、用户反馈管理、地址自动解析和消息推送管理等功能。 "
+        "type": ProductType.cms,
+        "producer": None,
+        "desc": "joyplus-cms（悦视频）是一套基于PHP和MySQL的开源视频后台管理系统。该系统具有视频资源采集、用户反馈管理、地址自动解析和消息推送管理等功能。 "
     },
     "Dripal avatar_uploader": {
-      "type": ProductType.cms,
-      "producer": None,
-      "desc": "avatar_uploader是Drupal社区所维护的一套内容管理系统中的用于实现上传用户图片功能的模块。 "
+        "type": ProductType.cms,
+        "producer": None,
+        "desc": "avatar_uploader是Drupal社区所维护的一套内容管理系统中的用于实现上传用户图片功能的模块。 "
     },
     "BeayAdmin": {
-      "type": ProductType.cms,
-      "producer": None,
-      "desc": "BearAdmin是一套基于ThinkPHP5和AdminLTE的后台管理系统。 "
+        "type": ProductType.cms,
+        "producer": None,
+        "desc": "BearAdmin是一套基于ThinkPHP5和AdminLTE的后台管理系统。 "
     },
     "GreenCMS": {
-      "type": ProductType.cms,
-      "producer": None,
-      "desc": "GreenCMS是一套基于ThinkPHP开发的内容管理系统（CMS）。"
+        "type": ProductType.cms,
+        "producer": None,
+        "desc": "GreenCMS是一套基于ThinkPHP开发的内容管理系统（CMS）。"
     },
     "CMSMS": {
-     "type": ProductType.cms,
-     "producer": None,
-     "desc": "CMS Made Simple(简称CMSMS)是一款优秀的轻量级开源内容管理系统(CMS)。"
+        "type": ProductType.cms,
+        "producer": None,
+        "desc": "CMS Made Simple(简称CMSMS)是一款优秀的轻量级开源内容管理系统(CMS)。"
     },
     'WolfCMS': {
-     "type": ProductType.cms,
-     "producer": None,
-     "desc": "Wolf CMS是Wolf CMS团队开发的一套基于PHP的开源内容管理系统（CMS）。该系统提供用户界面、模板、用户管理和权限管理等功能。 "
+        "type": ProductType.cms,
+        "producer": None,
+        "desc": "Wolf CMS是Wolf CMS团队开发的一套基于PHP的开源内容管理系统（CMS）。该系统提供用户界面、模板、用户管理和权限管理等功能。 "
     },
-    'CraftedWeb': {
-     "type": ProductType.cms,
-     "producer": None,
-     "desc": "CraftedWeb是一套游戏服务器的CMS（内容管理系统）。"
+    "CraftedWeb": {
+        "type": ProductType.cms,
+        "producer": None,
+        "desc": "CraftedWeb是一套游戏服务器的CMS（内容管理系统）。"
     },
-    'OneFileCMS': {
-     "type": ProductType.cms,
-     "producer": None,
-     "desc": "OneFileCMS是一款只有一个文件的轻量级CMS系统。"
+    "OneFileCMS": {
+        "type": ProductType.cms,
+        "producer": None,
+        "desc": "OneFileCMS是一款只有一个文件的轻量级CMS系统。"
     }
 }
