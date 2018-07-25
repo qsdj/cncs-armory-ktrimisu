@@ -1,7 +1,17 @@
 # 使用
 
- 
+## 替换执行文件(masscan&&nmap)
+**masscan&&nmap下的可执行文件是在ubuntu下编译的**
+- 删除masscan`目录`和nmap`目录`
+- 分别执行安装脚本
 
+```shell
+sh installMasscan.sh
+sh installNmap.sh
+```
+
+
+## 运行扫描
 ```shell
 
 python main.py -h

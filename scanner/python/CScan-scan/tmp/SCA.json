@@ -1,1 +1,1 @@
-{"SCA":[{"www.discuz.net":[{"port":"80","name":"http"}]}, {"www.seebug.org":[{"port":"80","name":"http"}]}, {"www.miui.com":[{"port":"80","name":"http"}]},{"192.168.1.2":[{"port":"8000","name":"http"}]}, {"www.czqsy.net":[{"port":"80","name":"http"}] }]}
+{"SCA":[{"192.168.1.1":[{"port":"53","name":"domain"},{"port":"80","name":"http"},{"port":"8080","name":"http-proxy"}]}]}
