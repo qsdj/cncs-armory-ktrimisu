@@ -1,10 +1,19 @@
 # coding: utf-8
 
 import logging
+import copy
 from pypinyin import Style, pinyin
 from CScanPoc.lib.core.enums import ProductType
 
 _warned = {}
+
+
+def get_product_property_schema(name):
+    '''获取指定组件的属性定义'''
+    if name in PRODUCT_INFO:
+        return copy.deepcopy(PRODUCT_INFO[name].get('properties', {}))
+    else:
+        return {}
 
 
 def get_product_info(name, log_unknown=True):
@@ -16,17 +25,17 @@ def get_product_info(name, log_unknown=True):
         return None
     result = {}
     if name in PRODUCT_INFO:
-        result = PRODUCT_INFO[name]
+        result = copy.deepcopy(PRODUCT_INFO[name])
     else:
-        result = {"type": ProductType.others}
+        result = {"type": ProductType.others, "name": name}
 
-    if log_unknown and name not in _warned:
-        _warned[name] = True
-        try:
-            logging.warn(
-                u'组件类型信息未定义: {} 可以在 CScanPoc.lib.constatants.product_type.PRODUCT_INFO 中定义'.format(name))
-        except:
-            logging.warn(name)
+        if log_unknown and name not in _warned:
+            _warned[name] = True
+            try:
+                logging.warn(
+                    u'组件类型信息未定义: {} 可以在 CScanPoc.lib.constatants.product_type.PRODUCT_INFO 中定义'.format(name))
+            except:
+                logging.warn(name)
     result['name_pinyin_first'] = __get_pinyin_first_letter(name)
     return result
 
@@ -3268,7 +3277,14 @@ PRODUCT_INFO = {
     "CmsEasy": {
         "type": ProductType.cms,
         "producer": "四平市九州易通科技有限公司",
-        "desc": "是一款基于 PHP+Mysql 架构的网站内容管理系统，也是一个 PHP 开发平台。 采用模块化方式开发，功能易用便于扩展，可面向大中型站点提供重量级网站建设解决方案。"
+        "desc": "是一款基于 PHP+Mysql 架构的网站内容管理系统，也是一个 PHP 开发平台。 采用模块化方式开发，功能易用便于扩展，可面向大中型站点提供重量级网站建设解决方案。",
+        "properties": {
+            "deploy_path": {
+                "type": "string",
+                "description": "部署路径",
+                "default": "/fuck"
+            }
+        }
     },
     "Hr163": {
         "type": ProductType.others,

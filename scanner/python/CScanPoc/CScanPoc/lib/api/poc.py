@@ -5,6 +5,8 @@ from datetime import datetime
 from vuln import ABVuln
 from CScanPoc.lib.core.log import CScanOutputer
 from CScanPoc.lib.parse.args import create_poc_cmd_parser
+from CScanPoc.lib.utils.schema_utils import set_dict_value_with_schema_check
+from CScanPoc.lib.constants.product_type import get_product_property_schema
 
 argparser = create_poc_cmd_parser()
 
@@ -68,6 +70,9 @@ class ABPoc:
     # 执行参数：应该满足 option_schema 的定义
     _exec_option = {}
 
+    # 组件属性
+    _components_properties = {}
+
     def _check_and_get_option_schema(self, k):
         property_schemas = self.option_schema.get('properties')
         if property_schemas is None:
@@ -77,9 +82,29 @@ class ABPoc:
             raise Exception('该 POC 不支持该执行参数 {}'.format(k))
         return property_schema
 
+    def get_component_property(self, name, prop, defaultV=None):
+        '''获取指定组件的属性
+
+        :param name: 组件名
+        :param property: 属性名
+        '''
+        properties_schema = get_product_property_schema(name)
+        if prop not in properties_schema:
+            raise Exception('组件属性未定义 {} {}'.format(name, prop))
+        property_schema = properties_schema.get(prop, {})
+        properties = self._components_properties.get(name, {})
+
+        if prop not in properties and 'default' not in property_schema:
+            return defaultV
+        else:
+            if prop in properties:
+                return properties[prop]
+            else:
+                return properties_schema['default']
+
     def get_option(self, k, defaultV=None):
         '''获取执行参数
-        
+
         1. 如果参数设定了，返回设定的参数值
         2. 如果存在 '$default_ref' 尝试返回引用的组件属性值
         3. 如果引用的组件属性值不存在，查看是否存在 'default'， 存在就返回该值
@@ -89,33 +114,33 @@ class ABPoc:
 
         if k in self._exec_option:
             return self._exec_option.get(k)
-        else:
+
+        if '$default_ref' in property_schema:
+            # 如果存在 '$default_ref' 尝试从组件属性中获取该值
+            ref_component = property_schema['$default_ref']
+            return self.get_component_property(
+                ref_component.get('component', self.vuln.product),
+                ref_component['property'],
+                property_schema.get('default', defaultV))
+
+        if 'default' in property_schema:
             return property_schema.get('default', defaultV)
-        # TODO: 如果存在 '$default_ref' 尝试从组件属性中获取该值
 
     def set_option(self, k, v):
         property_schema = self._check_and_get_option_schema(k)
-        typ = property_schema.get('type', 'string')
-        if typ == 'string':
-            self._exec_option[k] = str(v)
-        elif typ == 'boolean':
-            try:
-                self._exec_option[k] = bool(v)
-            except:
-                raise Exception(
-                    '执行参数 {} 不是 bool [POC 定义该执行参数为 boolean]'.format(v))
-        elif typ == 'number':
-            try:
-                v = int(v)
-            except:
-                try:
-                    v = float(v)
-                except:
-                    raise Exception(
-                        '执行参数 {} 不是 number [POC 定义该执行参数为 number]'.format(v))
-            self._exec_option[k] = v
-        else:
-            raise Exception('POC 定义错误：无效属性类型 {}'.format(typ))
+        set_dict_value_with_schema_check(
+            self._exec_option, k, v, property_schema, '执行参数定义')
+
+    def set_component_property(self, component_name, k, v):
+        if component_name not in self._components_properties:
+            self._components_properties[component_name] = {}
+        set_dict_value_with_schema_check(
+            self._components_properties[component_name],
+            k,
+            v,
+            get_product_property_schema(
+                component_name),
+            '组件 {} 属性定义'.format(component_name))
 
     def get_poc_name(self):
         '''当前 poc 名未指定的话，尝试使用其对应漏洞的名字（针对只扫描一个漏洞的 poc）'''
@@ -153,7 +178,27 @@ class ABPoc:
         # 扫描目标
         self.target = None
 
-    def run(self, target=None, mode='verify'):
+    def _parse_args(self, args):
+
+        self.target = args.url
+        for opt in args.exec_option or []:
+            (k, v) = (opt, True)
+            if '=' in opt:
+                (k, v) = opt.split('=', 1)
+            self.set_option(k, v)
+
+        for opt in args.component_properties or []:
+            (k, v) = (opt, True)
+            if '=' in opt:
+                (k, v) = opt.split('=', 1)
+
+            (component_name, prop) = (self.vuln.product, k)
+            if '.' in k:
+                (component_name, prop) = k.split('.', 1)
+
+            self.set_component_property(component_name, prop, v)
+
+    def run(self, target=None, mode='verify', exec_option={}, components_properties={}):
         """执行扫描操作
 
         当 target=None 时，忽略函数参数，解析命令行参数获取执行参数
@@ -165,17 +210,12 @@ class ABPoc:
         """
         if target is None:
             args = argparser.parse_args()
-            if args.exec_option is not None:
-                for opt in args.exec_option:
-                    if '=' not in opt:
-                        self.set_option(opt, True)
-                    else:
-                        (k, v) = opt.split('=', 1)
-                        self.set_option(k, v)
-            self.target = args.url
             mode = args.mode
+            self._parse_args(args)
         else:
             self.target = target
+            self._exec_option = exec_option
+            self._components_properties = components_properties
 
         if not self.target:
             return

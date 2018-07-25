@@ -2,6 +2,7 @@
 
 import os
 import imp
+import json
 import uuid
 import logging
 from CScanPoc import ABPoc, ABVuln
@@ -32,11 +33,18 @@ def poc_to_dict(poc):
         'poc_id': poc.poc_id,
         'name': poc.get_poc_name(),
         'author': poc.author,
-        'create_date': poc.create_date
+        'create_date': poc.create_date,
+        'option_schema': json.dumps(poc.option_schema)
     }
 
 
 def find_vuln_poc(mod):
+    '''给定加载的 module (load_poc_file_as_module 结果)
+
+    返回其中的 ABVuln 和 ABPoc 实例
+
+    :return: (vuln, poc)
+    '''
     vuln = None
     poc = None
     for attr in dir(mod):
@@ -57,7 +65,15 @@ def find_vuln_poc(mod):
     return (vuln, poc)
 
 
-def load_poc_file_as_module(dir, name):
+def load_poc_file_as_module(dir_or_file, filename=None):
+    '''加载 POC 文件为 Python module
+
+    :return: imp.load_source 的结果
+    '''
+    if filename is None:
+        (dir, name) = (os.path.dirname(dir_or_file), os.path.basename(dir_or_file))
+    else:
+        (dir, name) = (dir_or_file, filename)
     mod_name = '{}-{}'.format(
         os.path.basename(name).rstrip('.py'),
         str(uuid.uuid4())
@@ -69,6 +85,7 @@ def load_poc_file_as_module(dir, name):
             'CScanPoc.{}'.format(mod_name), poc_file)
     except Exception as e:
         logging.error('Error loading {} {}'.format(poc_file, e))
+        raise e
 
 
 def load_modules(dir):
@@ -76,6 +93,8 @@ def load_modules(dir):
         for poc_file in files:
             if not poc_file.endswith('.py'):
                 continue
-            mod = load_poc_file_as_module(root, poc_file)
-            if mod is not None:
+            try:
+                mod = load_poc_file_as_module(root, poc_file)
                 yield (mod, root, poc_file)
+            except:
+                pass
