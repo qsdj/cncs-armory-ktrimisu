@@ -69,9 +69,9 @@ class Poc(ABPoc):
             resp = requests.get(url=vulurl, headers=httphead, timeout=50)
 
             # 检查是否含有特征字符串
-            if 'Duplicate entry' in resp.content:
+            if 'Duplicate entry' in resp.text:
                 # 提取信息
-                match = re.search(parttern, resp.content, re.M | re.I)
+                match = re.search(parttern, resp.text, re.M | re.I)
                 if match:
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                         target=self.target, name=self.vuln.name))
@@ -106,9 +106,9 @@ class Poc(ABPoc):
             resp = requests.get(url=vulurl, headers=httphead, timeout=50)
 
             # 检查是否含有特征字符串
-            if 'Duplicate entry' in resp.content:
+            if 'Duplicate entry' in resp.text:
                 # 提取信息
-                match = re.search(parttern, resp.content, re.M | re.I)
+                match = re.search(parttern, resp.text, re.M | re.I)
                 if match:
                     dbusername = match.group(1)
                     dbversion = match.group(2)

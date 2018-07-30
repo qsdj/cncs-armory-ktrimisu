@@ -58,7 +58,7 @@ class Poc(ABPoc):
             for payload in payloads:
                 #code, head, res, errcode, _ = curl.curl2(arg+payload)
                 r = requests.get(self.target + payload)
-                if r.status_code == 200 and ('_upload.jsp' in r.content or 'uploadnexturl' in r.content):
+                if r.status_code == 200 and ('_upload.jsp' in r.text or 'uploadnexturl' in r.text):
                     #security_hole('Arbitrary file upload vulnerability '+ arg + payload)
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                         target=self.target, name=self.vuln.name))

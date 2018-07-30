@@ -53,7 +53,7 @@ class Poc(ABPoc):
             verify_url1 = self.target + path1 + payload1
             r1 = requests.get(verify_url1)
 
-            if 'qvkvqMicrosoft SQL Server' in r1.content:
+            if 'qvkvqMicrosoft SQL Server' in r1.text:
                 # security_hole(arg+path1)
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
@@ -63,7 +63,7 @@ class Poc(ABPoc):
             verify_url2 = self.target + path2 + payload2
             r2 = requests.get(verify_url2)
 
-            if 'qvzbqMicrosoft SQL Server' in r2.content:
+            if 'qvzbqMicrosoft SQL Server' in r2.text:
                 # security_hole(arg+path2)
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))

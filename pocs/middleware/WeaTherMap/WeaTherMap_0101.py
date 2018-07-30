@@ -47,7 +47,7 @@ class Poc(ABPoc):
         # md5(666) = fae0b27c451c728867a567e8c1bb4e53
         s = requests.session()
         res = s.get(shell_url)
-        if "fae0b27c451c728867a567e8c1bb4e53" in res.content:
+        if "fae0b27c451c728867a567e8c1bb4e53" in res.text:
             return True
         else:
             return False

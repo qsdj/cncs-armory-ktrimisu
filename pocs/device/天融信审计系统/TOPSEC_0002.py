@@ -51,7 +51,7 @@ class Poc(ABPoc):
             # ref http://wooyun.org/bugs/wooyun-2015-0116821
             verify_url = self.target + '/log/log_export.php'
             req = requests.get(verify_url)
-            content = req.content
+            content = req.text
 
             if req.status_code == 200 and '\tsuperman\t' in content and '<p>' not in content:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(

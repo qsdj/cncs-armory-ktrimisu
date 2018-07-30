@@ -52,7 +52,7 @@ class Poc(ABPoc):
             req = requests.get(verify_url)
             if req.status_code == 200:
                 m = re.search(
-                    'in <b>([^<]+)</b> on line <b>(\d+)</b>', req.content)
+                    'in <b>([^<]+)</b> on line <b>(\d+)</b>', req.text)
                 if m:
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                         target=self.target, name=self.vuln.name))

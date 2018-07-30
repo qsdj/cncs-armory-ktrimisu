@@ -57,8 +57,8 @@ class Poc(ABPoc):
             # 获取token
             p = re.compile(
                 r'<input type="hidden" name="([0-9a-f]+)" value="1" />')
-            if p.findall(r.content):
-                token = p.findall(r.content)[0]
+            if p.findall(r.text):
+                token = p.findall(r.text)[0]
                 # 生成随机注册信息
                 randstr = '_' + str(random.randint(1, 10000))
                 #print('[*] create user: {}'.format('admin'+randstr))
@@ -96,8 +96,8 @@ class Poc(ABPoc):
             # 获取token
             p = re.compile(
                 r'<input type="hidden" name="([0-9a-f]+)" value="1" />')
-            if p.findall(r.content):
-                token = p.findall(r.content)[0]
+            if p.findall(r.text):
+                token = p.findall(r.text)[0]
                 # 生成随机注册信息
                 randstr = '_' + str(random.randint(1, 10000))
                 info = 'admin' + randstr

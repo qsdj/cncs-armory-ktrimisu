@@ -54,7 +54,7 @@ class Poc(ABPoc):
             verify_url = arg + payload + getdata
             r = requests.get(verify_url)
 
-            if "应用程序中的服务器错误" in r.content:
+            if "应用程序中的服务器错误" in r.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 

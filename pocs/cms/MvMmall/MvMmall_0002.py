@@ -64,7 +64,7 @@ class Poc(ABPoc):
                 verify_url = self.target + payload
                 r = requests.get(verify_url)
 
-                if 'b15835f133ff2e27c7cb28117bfae8f' in r.content:
+                if 'b15835f133ff2e27c7cb28117bfae8f' in r.text:
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                         target=self.target, name=self.vuln.name))
 

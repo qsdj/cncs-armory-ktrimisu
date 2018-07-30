@@ -51,7 +51,7 @@ class Poc(ABPoc):
             for payload in payloads:
                 vul_url = arg + payload + 'http://baidu.com/robots.txt'
                 response = requests.get(vul_url)
-                if response.status_code == 200 and 'Baiduspider' in response.content:
+                if response.status_code == 200 and 'Baiduspider' in response.text:
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞;payload={payload}'.format(
                         target=self.target, name=self.vuln.name, payload=payload))
 

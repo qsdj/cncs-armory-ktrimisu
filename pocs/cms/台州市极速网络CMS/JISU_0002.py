@@ -58,7 +58,7 @@ class Poc(ABPoc):
             requests.post(login_url, data=login_data)
             # return page
             verify_url = '%s/data/log/passlog.php' % url
-            content = requests.get(verify_url).content
+            content = requests.get(verify_url).text
             if 'cfcd208495d565ef66e7dff9f98764da' in content:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))

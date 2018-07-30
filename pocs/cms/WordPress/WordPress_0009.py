@@ -57,7 +57,7 @@ class Poc(ABPoc):
                 verify_url += payload
                 start_time = time.time()
 
-                req = requests.get(verify_url).content
+                req = requests.get(verify_url).text
                 if time.time() - start_time > 5:
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                         target=self.target, name=self.vuln.name))

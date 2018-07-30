@@ -63,7 +63,7 @@ class Poc(ABPoc):
                      }
             req = requests.get(target_url, files=files)
             verify_req = requests.get(verify_url)
-            content = verify_req.content
+            content = verify_req.text
 
             if verify_req.status_code == 200 and 'payload=true' in content:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(

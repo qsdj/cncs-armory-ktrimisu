@@ -59,7 +59,7 @@ class Poc(ABPoc):
             }
             resp = requests.get(vul_url, headers=httphead, timeout=50)
             # md5('3.1416')=d4d7a6b8b3ed8ed86db2ef2cd728d8ec
-            match = re.search('d4d7a6b8b3ed8ed86db2ef2cd728d8ec', resp.content)
+            match = re.search('d4d7a6b8b3ed8ed86db2ef2cd728d8ec', resp.text)
             # 如果成功匹配到md5('3.1416'),证明漏洞验证成功
             if match:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(

@@ -60,7 +60,7 @@ class Poc(ABPoc):
             }
 
             response = requests.post(verify_url, data=data)
-            content = response.content
+            content = response.text
             if 'alert(\'ä¿®æ¹æåï¼\');location.replace(\'user_pass.asp\')' in content.decode('GBK'):
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))

@@ -48,7 +48,7 @@ class Poc(ABPoc):
                 target=self.target, vuln=self.vuln))
             arg = '{target}'.format(target=self.target)
             vul_url = arg + '/ryansecret/reprostservice/blob/83d246d34d8e2b0d6e3c124ef99976bef341dbcd/UpLoadLogFile/App.config'
-            response = requests.get(vul_url).content
+            response = requests.get(vul_url).text
             if 'ftpUserName' in response or 'ftpPwd' in response:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))

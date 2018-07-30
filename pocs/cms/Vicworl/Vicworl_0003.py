@@ -52,7 +52,7 @@ class Poc(ABPoc):
             #code, head, body, errcode, final_url = curl.curl2(target);
             r = requests.get(target)
 
-            if 'c4ca4238a0b923820dcc509a6f75849' in r.content:
+            if 'c4ca4238a0b923820dcc509a6f75849' in r.text:
                 # security_hole(target)
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))

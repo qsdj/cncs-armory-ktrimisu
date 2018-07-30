@@ -58,7 +58,7 @@ class Poc(ABPoc):
             #code, head,res2, errcode, _ = curl.curl2(false_url)
             r1 = requests.get(true_url)
             r2 = requests.get(false_url)
-            if check in r1.content and check not in r2.content:
+            if check in r1.text and check not in r2.text:
                 # security_hole(true_url)
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))

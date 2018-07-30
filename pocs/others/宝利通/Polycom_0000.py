@@ -71,7 +71,7 @@ class Poc(ABPoc):
             </RMX1000_UI>
             '''
             response = requests.post(vul_url)
-            if response.status_code == 200 and 'localhost' in response.content:
+            if response.status_code == 200 and 'localhost' in response.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 

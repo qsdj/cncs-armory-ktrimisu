@@ -67,7 +67,7 @@ class Poc(ABPoc):
                 response = requests.get(payload)
                 if response.status_code == 200:
                     response1 = requests.get(verify)
-                    if response1.status_code == 200 and 'testvul' in response1.content:
+                    if response1.status_code == 200 and 'testvul' in response1.text:
                         #print payload+"存在命令执行漏洞"
                         self.output.report(self.vuln, '发现{target}存在{name}漏洞，，漏洞地址为{url}'.format(
                             target=self.target, name=self.vuln.name, url=verify))

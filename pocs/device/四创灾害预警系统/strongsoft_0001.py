@@ -59,12 +59,12 @@ class Poc(ABPoc):
             verify_url2 = self.target + payload2 + getdata2
 
             req1 = requests.get(verify_url1)
-            if req1.status_code == 500 and 'master' in req1.content:
+            if req1.status_code == 500 and 'master' in req1.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 
             req2 = requests.get(verify_url2)
-            if req2.status_code == 500 and 'master' in req2.content:
+            if req2.status_code == 500 and 'master' in req2.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 

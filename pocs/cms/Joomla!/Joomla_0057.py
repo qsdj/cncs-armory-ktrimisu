@@ -71,7 +71,7 @@ class Poc(ABPoc):
             # 判断返回结果
             if resp.status_code == 200:
                 match = re.search('root:.+?:0:0:.+?:.+?:.+?',
-                                  resp.content, re.I | re.M)
+                                  resp.text, re.I | re.M)
                 # 读取文件成功
                 if match:
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
@@ -104,9 +104,9 @@ class Poc(ABPoc):
             # 发送请求
             resp = requests.get(url=vulurl, headers=httphead, timeout=50)
             # 检查是否含有特征字符串
-            if '$~~~$' in resp.content:
+            if '$~~~$' in resp.text:
                 # 提取信息
-                match = re.search(parttern, resp.content, re.M | re.I)
+                match = re.search(parttern, resp.text, re.M | re.I)
                 if match:
                     username = match.group(1)
                     password = match.group(2)

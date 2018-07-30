@@ -68,7 +68,7 @@ class Poc(ABPoc):
                 #code2, head, res2, errcode, _ = curl.curl2(url+'%27')
                 r1 = requests.get(verify_url)
                 r2 = requests.get(verify_url + getdata)
-                if r1.status_code == 200 and r2.status_code == 200 and (r2.content != r1.content):
+                if r1.status_code == 200 and r2.status_code == 200 and (r2.text != r1.text):
                     #security_hole(arg+payload+": found sql Injection")
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                         target=self.target, name=self.vuln.name))

@@ -67,8 +67,8 @@ class Poc(ABPoc):
             # 访问
             resp = requests.get(url=vulurl, headers=httphead, timeout=50)
             # 检查是否有特殊字符串
-            if '$~~~$' in resp.content:
-                match = re.search(par, resp.content, re.I | re.M)
+            if '$~~~$' in resp.text:
+                match = re.search(par, resp.text, re.I | re.M)
                 if match:
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                         target=self.target, name=self.vuln.name))

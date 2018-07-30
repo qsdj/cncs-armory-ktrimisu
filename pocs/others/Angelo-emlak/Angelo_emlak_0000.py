@@ -48,7 +48,7 @@ class Poc(ABPoc):
                 target=self.target, vuln=self.vuln))
             arg = '{target}'.format(target=self.target)
             vul_url = arg + '/veribaze/angelo.mdb'
-            response = requests.get(vul_url).content
+            response = requests.get(vul_url).text
 
             if re.search('Standard Jet DB', response):
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(

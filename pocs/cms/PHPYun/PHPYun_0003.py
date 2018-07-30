@@ -54,7 +54,7 @@ class Poc(ABPoc):
                 #code, head, body, errcode, final_url = curl.curl2(target);
                 r = requests.get(target)
 
-                if r.status_code == 200 and '#dbname:' in r.content and 'CREATE TABLE' in content:
+                if r.status_code == 200 and '#dbname:' in r.text and 'CREATE TABLE' in content:
                     # security_warning(target)
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                         target=self.target, name=self.vuln.name))

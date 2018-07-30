@@ -95,13 +95,13 @@ class Poc(ABPoc):
             })
             r = requests.get(url, verify=False,
                              headers=headers, timeout=timeout)
-            if "Requested Range Not Satisfiable" in r.content:
+            if "Requested Range Not Satisfiable" in r.text:
                 #print "[+] Looks Vulnerability!"
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
                 #args['success'] = True
                 #args['poc_ret']['vulnerability'] = '%s:%d' % (target, port)
-            elif "The request has an invalid header name" in r.content:
+            elif "The request has an invalid header name" in r.text:
                 #args['poc_ret']['error'] = "[-] Looks Patched"
                 pass
             else:

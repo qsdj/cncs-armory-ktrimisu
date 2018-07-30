@@ -58,7 +58,7 @@ class Poc(ABPoc):
                     (target.scheme, target.netloc, plugin)
                 response = requests.get(
                     es_test, timeout=8, allow_redirects=False)
-                if "ES_JAVA_OPTS" in response.content:
+                if "ES_JAVA_OPTS" in response.text:
                     req = requests.get(verify_url, timeout=8)
                     if req.status_code == 200:
                         self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
@@ -80,7 +80,7 @@ class Poc(ABPoc):
                     (target.scheme, target.netloc, plugin)
                 response = requests.get(
                     es_test, timeout=8, allow_redirects=False)
-                if "ES_JAVA_OPTS" in response.content:
+                if "ES_JAVA_OPTS" in response.text:
                     req = requests.get(verify_url, timeout=8)
                     if req.status_code == 200:
                         self.output.report(self.vuln, '发现{target}存在{name}漏洞;获取信息：vul_url={verify_url}'.format(

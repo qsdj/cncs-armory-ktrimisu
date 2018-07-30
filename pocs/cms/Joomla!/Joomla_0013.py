@@ -81,7 +81,7 @@ class Poc(ABPoc):
             _Count = 0
             for i in range(10):
                 _Req = requests.get(_Host, cookies=_Cookies, headers=HEADER)
-                _TmpContent = _Req.content
+                _TmpContent = _req.text
                 if len(_TmpContent) > _Count:
                     _Count = len(_TmpContent)
                     #args['success'] = False

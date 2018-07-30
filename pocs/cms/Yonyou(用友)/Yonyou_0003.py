@@ -58,7 +58,7 @@ class Poc(ABPoc):
             verify_url = url + payload
 
             req = requests.get(verify_url)
-            content = req.content
+            content = req.text
             if req.status_code == 500 and 'qczgq1qnoiq' in content:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))

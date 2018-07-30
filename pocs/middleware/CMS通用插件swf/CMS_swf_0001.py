@@ -76,7 +76,7 @@ class Poc(ABPoc):
                 verify_url = self.target + payload
                 r = requests.get(verify_url)
                 if r.status_code == 200:
-                    md5_value = hashlib.md5(r.content).hexdigest()
+                    md5_value = hashlib.md5(r.text).hexdigest()
                     if md5_value in md5_list:
                         #security_warning(arg + '?movieName=%22]%29}catch%28e%29{if%28!window.x%29{window.x=1;alert%28document.cookie%29}}// flash xss')
                         self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(

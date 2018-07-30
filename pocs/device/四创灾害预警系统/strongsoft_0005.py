@@ -51,12 +51,12 @@ class Poc(ABPoc):
             verify_url1 = self.target + payload1
             verify_url2 = self.target + payload2
             r1 = requests.get(verify_url1)
-            if r1.status_code == 200 and "name: 'UserID'" in r1.content:
+            if r1.status_code == 200 and "name: 'UserID'" in r1.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 
             r2 = requests.get(verify_url2)
-            if r2.status_code == 200 and "name: 'RoleName'" in r2.content:
+            if r2.status_code == 200 and "name: 'RoleName'" in r2.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 

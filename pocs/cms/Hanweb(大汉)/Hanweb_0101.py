@@ -66,7 +66,7 @@ class Poc(ABPoc):
 
             response = requests.post(target_url, files=files)  # \u4e0a\u4f20
             response = requests.get(verify_url)  # \u9a8c\u8bc1
-            content = response.content
+            content = response.text
             if '00799a96dcc29282dd74e23e49b647a6a' in content:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))

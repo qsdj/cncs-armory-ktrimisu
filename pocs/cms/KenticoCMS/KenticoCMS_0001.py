@@ -49,7 +49,7 @@ class Poc(ABPoc):
             payload = "/CMSModules/Messaging/CMSPages/PublicMessageUserSelector.aspx"
             r = requests.get(self.target + payload)
 
-            if r.status_code == 200 and '<td style="white-space:nowrap;">' in r.content:
+            if r.status_code == 200 and '<td style="white-space:nowrap;">' in r.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 

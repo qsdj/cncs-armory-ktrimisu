@@ -55,7 +55,7 @@ class Poc(ABPoc):
 
             res = requests.get(vul_url, timeout=5)
 
-            if '>alert(/SebugTest/)' in res.content:
+            if '>alert(/SebugTest/)' in res.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 

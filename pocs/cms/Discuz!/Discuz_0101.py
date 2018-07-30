@@ -60,7 +60,7 @@ class Poc(ABPoc):
             for payload in payloads:
                 verify_url = self.target + payload
                 req = requests.get(verify_url)
-                match = pathinfo.findall(req.content)
+                match = pathinfo.findall(req.text)
                 if match:
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                         target=self.target, name=self.vuln.name))

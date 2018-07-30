@@ -55,7 +55,7 @@ class Poc(ABPoc):
             r1 = requests.get(self.target + payload_and_false)
 
             if r1.status_code == 200:
-                m = re.findall("e327b894f7c7782b9a3ce3697556902a", r1.content)
+                m = re.findall("e327b894f7c7782b9a3ce3697556902a", r1.text)
                 if len(m) == 3:
                     # test true
                     #code, head, res, errcode, _ = curl.curl(url + payload_and_true)
@@ -63,7 +63,7 @@ class Poc(ABPoc):
 
                     if r2.status_code == 200:
                         m = re.findall(
-                            "e327b894f7c7782b9a3ce3697556902a", r2.content)
+                            "e327b894f7c7782b9a3ce3697556902a", r2.text)
                         if len(m) == 2:
                             # security_info(url)
                             self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(

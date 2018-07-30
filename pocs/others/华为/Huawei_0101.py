@@ -65,7 +65,7 @@ class Poc(ABPoc):
 
             response = requests.post(target_url, files=files)
             response = requests.get(verify_url)
-            content = response.content
+            content = response.text
             if '00799a96dcc29282dd74e23e49b647a6a' in content:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
@@ -96,7 +96,7 @@ class Poc(ABPoc):
 
             response = requests.post(target_url, files=files)
             response = requests.get(verify_url)
-            content = response.content
+            content = response.text
             if '00799a96dcc29282dd74e23e49b647a6a' in content:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞;获取信息:vul_url={verify_url}'.format(
                     target=self.target, name=self.vuln.name, verify_url=verify_url))

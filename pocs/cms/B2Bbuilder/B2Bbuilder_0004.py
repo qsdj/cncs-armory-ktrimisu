@@ -51,7 +51,7 @@ class Poc(ABPoc):
             url = self.target + payload
             r = requests.get(url)
 
-            if 'PHP Version' in r.content and 'system' in r.content:
+            if 'PHP Version' in r.text and 'system' in r.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 

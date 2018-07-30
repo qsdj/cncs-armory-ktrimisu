@@ -54,7 +54,7 @@ class Poc(ABPoc):
             url = arg + param_data
             r = requests.get(url)
 
-            if 'Useage' in r.content and 'Whoami' in r.content and 'WebPath' in r.content:
+            if 'Useage' in r.text and 'Whoami' in r.text and 'WebPath' in r.text:
                 #task_push('struts' ,url)
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))

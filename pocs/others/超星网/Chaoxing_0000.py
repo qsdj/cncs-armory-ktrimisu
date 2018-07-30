@@ -48,7 +48,7 @@ class Poc(ABPoc):
             arg = '{target}'.format(target=self.target)
             vul_url = arg + '/space/index.shtml?ename=zne_sc_icon&burl=http://www.baidu.com/robots.txt'
             response = requests.get(vul_url)
-            if 'Baiduspider' in response.content or 'Googlebot' in response.content:
+            if 'Baiduspider' in response.text or 'Googlebot' in response.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 

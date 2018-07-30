@@ -69,7 +69,7 @@ class Poc(ABPoc):
             # 发送请求，并返回结果
             resp = requests.get(vulurl, headers=httphead, timeout=50)
             # 根据状态码和返回文件的内容，判断是否利用成功
-            if resp.status_code == 200 and re.match('root:.+?:0:0:.+?:.+?:.+?', resp.content):
+            if resp.status_code == 200 and re.match('root:.+?:0:0:.+?:.+?:.+?', resp.text):
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 

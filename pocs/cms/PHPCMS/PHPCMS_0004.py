@@ -58,7 +58,7 @@ class Poc(ABPoc):
             #code, head, res, errcode, _ = curl.curl(url+payload)
             r = requests.get(self.target + payload)
             if r.status_code == 200:
-                md5_buff = hashlib.md5(r.content).hexdigest()
+                md5_buff = hashlib.md5(r.text).hexdigest()
                 self.output.info('Payload md5 {}'.format(md5_buff))
                 if md5_buff in md5_check_value:
                     #security_info(url + 'phpcms v9.4.9 flash xss')

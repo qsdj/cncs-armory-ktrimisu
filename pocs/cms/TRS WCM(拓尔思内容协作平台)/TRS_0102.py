@@ -48,7 +48,7 @@ class Poc(ABPoc):
             payload = '/wcm/services/trs:templateservicefacade?wsdl'
             verify_url = url + payload
             req = requests.get(verify_url)
-            if req.status_code == 200 and 'writeFile' in req.content and 'writeSpecFile' in req.content:
+            if req.status_code == 200 and 'writeFile' in req.text and 'writeSpecFile' in req.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 

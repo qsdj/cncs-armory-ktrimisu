@@ -52,7 +52,7 @@ class Poc(ABPoc):
             for path in paths:
                 vul_url = arg + path
                 res = requests.get(vul_url)
-                if "admin_default.asp" in res.url and "href='admin_login.asp'" in res.content and "eWebEditor" in res.content:
+                if "admin_default.asp" in res.url and "href='admin_login.asp'" in res.text and "eWebEditor" in res.text:
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                         target=self.target, name=self.vuln.name))
 

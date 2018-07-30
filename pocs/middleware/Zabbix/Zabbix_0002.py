@@ -57,7 +57,7 @@ class Poc(ABPoc):
             verify_url = self.target + '/flow.php?step=update_cart'
             req = requests.post(verify_url, data=payload)
 
-            if req.status_code == 200 and '63e1f04640e83605c1d177544a5a0488' in req.content:
+            if req.status_code == 200 and '63e1f04640e83605c1d177544a5a0488' in req.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 

@@ -27,7 +27,7 @@ def get_vote_links(cls, args):
     vote_url = vul_url + '/index.php?m=vote'
     resp = requests.get(vote_url)
     ids = []
-    for miter in re.finditer(r'<a href=.*?subjectid=(?P<id>\d+)', resp.content, re.DOTALL):
+    for miter in re.finditer(r'<a href=.*?subjectid=(?P<id>\d+)', resp.text, re.DOTALL):
         ids.append(miter.group('id'))
 
     if len(ids) == 0:

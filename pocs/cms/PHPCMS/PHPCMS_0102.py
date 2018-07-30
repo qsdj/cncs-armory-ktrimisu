@@ -52,7 +52,7 @@ class Poc(ABPoc):
             verify_url = self.target + payload
             req = requests.get(verify_url)
             pathinfo = re.compile(r'aaaaa\(\[",(.*),,,"\]\)')
-            match = pathinfo.findall(req.content)
+            match = pathinfo.findall(req.text)
             if match:
                 path = match[0]
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞;获取信息:path={path}'.format(

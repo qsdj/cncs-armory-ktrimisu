@@ -61,7 +61,7 @@ class Poc(ABPoc):
                 'Connection': 'keep-alive'
             }
             response = requests.get(
-                vul_url, headers=httphead, timeout=50).content
+                vul_url, headers=httphead, timeout=50).text
             # 检查
             if 'Duplicate entry' in response:
                 # 尝试提取信息
@@ -91,7 +91,7 @@ class Poc(ABPoc):
                 'Connection': 'keep-alive'
             }
             response = requests.get(
-                vul_url, headers=httphead, timeout=50).content
+                vul_url, headers=httphead, timeout=50).text
             # 检查
             if 'Duplicate entry' in response:
                 # 尝试提取信息

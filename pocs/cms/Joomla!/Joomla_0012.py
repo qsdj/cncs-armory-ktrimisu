@@ -53,7 +53,7 @@ class Poc(ABPoc):
             r = requests.get(verify_url)
 
             if r.status_code == 200:
-                res = re.findall('<b>([^<]+)</b> on line <b>', r.content)
+                res = re.findall('<b>([^<]+)</b> on line <b>', r.text)
                 if (len(res) > 0):
                     # security_warning(res[0])
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(

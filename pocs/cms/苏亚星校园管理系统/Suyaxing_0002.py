@@ -51,7 +51,7 @@ class Poc(ABPoc):
             #code, head, res, errcode, _ = curl.curl2(arg+payload)
             r = requests.get(self.target + payload)
 
-            if r.status_code == 200 and 'zip' in r.content:
+            if r.status_code == 200 and 'zip' in r.text:
                 #security_hole('未经授权访问 '+arg+payload)
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))

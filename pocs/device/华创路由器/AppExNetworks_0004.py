@@ -54,7 +54,7 @@ class Poc(ABPoc):
 
             if r.status_code == 200:
                 r = requests.get(self.target + '/acc/debug/bug.txt')
-                if r.status_code == 200 and 'testvul' in r.content:
+                if r.status_code == 200 and 'testvul' in r.text:
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                         target=self.target, name=self.vuln.name))
 

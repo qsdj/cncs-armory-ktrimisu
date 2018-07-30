@@ -49,7 +49,7 @@ class Poc(ABPoc):
             verify_url = ('%s/e/database/v3.mdb') % self.target
 
             req = requests.get(verify_url)
-            if req.status_code == 200 and 'configuration' in req.content:
+            if req.status_code == 200 and 'configuration' in req.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 

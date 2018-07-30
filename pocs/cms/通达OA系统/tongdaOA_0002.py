@@ -51,7 +51,7 @@ class Poc(ABPoc):
             verify_url = self.target + payload
             req = requests.get(verify_url)
 
-            if req.status_code == 200 and '3b712de48137572f3849aabd5666a4e3' in req.content:
+            if req.status_code == 200 and '3b712de48137572f3849aabd5666a4e3' in req.text:
                 # 如果EXT_USER在返回值里，那么USER_ID=存在注入
                 # security_hole(url)
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(

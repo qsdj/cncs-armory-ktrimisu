@@ -51,7 +51,7 @@ class Poc(ABPoc):
             #code, head, res, errcode, _ = curl.curl2(url)
             r = requests.get(verify_url)
 
-            if r.status_code == 200 and '<USERNAME>' in r.content and '<PASSWORD>' in r.content:
+            if r.status_code == 200 and '<USERNAME>' in r.text and '<PASSWORD>' in r.text:
                 #security_hole('<WCM> getshell '+ arg + payload)
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))

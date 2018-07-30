@@ -65,7 +65,7 @@ class Poc(ABPoc):
             # 访问
             resp = requests.get(vulurl, headers=httphead, timeout=50)
             # 判断返回结果
-            if resp.status_code == 200 and '<script>alert(/'+strxss+'/)</script>' in resp.content:
+            if resp.status_code == 200 and '<script>alert(/'+strxss+'/)</script>' in resp.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 

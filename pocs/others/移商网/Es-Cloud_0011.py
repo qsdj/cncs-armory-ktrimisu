@@ -53,7 +53,7 @@ class Poc(ABPoc):
             #code, head, body, errcode, final_url = curl.curl2(target)
             r = requests.get(verify_url)
 
-            if r.status_code == 500 and 'master' in r.content:
+            if r.status_code == 500 and 'master' in r.text:
                 # security_hole(target)
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))

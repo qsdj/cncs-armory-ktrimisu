@@ -55,7 +55,7 @@ class Poc(ABPoc):
             verify_url = self.target + payload
             r = requests.get(verify_url)
             m = re.search(
-                'weblogic.uddi.client.structures.exception.XML_SoapException', r.content)
+                'weblogic.uddi.client.structures.exception.XML_SoapException', r.text)
             if m:
                 # security_warning(url)
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(

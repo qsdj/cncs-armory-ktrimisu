@@ -83,7 +83,7 @@ class Poc(ABPoc):
                     verify_url = self.target + payload + payload2
                 #code, head, res, errcode, _ = curl.curl2(url)
                 r = requests.get(verify_url)
-                m = re.search('master', r.content)
+                m = re.search('master', r.text)
 
                 if r.status_code == 500 and m:
                     #security_hole(arg + payload + "   :found sql Injection")

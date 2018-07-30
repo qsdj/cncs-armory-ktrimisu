@@ -71,7 +71,7 @@ class Poc(ABPoc):
             if resp.status_code == 200:
                 # 匹配内容
                 match = re.search(
-                    'nobody:.+?:[0-9]+:[0-9]+:.*:.*:.*', resp.content, re.S | re.M)
+                    'nobody:.+?:[0-9]+:[0-9]+:.*:.*:.*', resp.text, re.S | re.M)
                 if match:
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                         target=self.target, name=self.vuln.name))

