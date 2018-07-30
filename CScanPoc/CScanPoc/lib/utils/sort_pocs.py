@@ -41,7 +41,7 @@ def sort_pocs(poc_base_dir):
         component = Component.get_component(prd)
         typ = component.type
         should_be_in = os.path.join(
-            poc_base_dir, typ.name, prd)
+            poc_base_dir, typ.name, prd.replace(' ', '_'))
 
         if should_be_in != d:
             if not os.path.exists(should_be_in):

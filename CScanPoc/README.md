@@ -218,30 +218,4 @@ python CScanPoc/pocs/andatong_exec_1.py -u http://221.224.120.187:8080
 
 ## Docker 支持
 
-编译 CScanPoc 基础镜像，进入项目根目录，执行 `docker build -t cscanpoc .`。
-
-新建 poc 镜像，例如 `andatong_exec.py`，
-
-1.  新建目录，如 `andatong`
-2.  将 `andatong_exec.py` 拷入该目录
-3.  在目录中新建 `Dockerfile` 文件，添加内容：
-
-    ```Dockerfile
-    FROM cscanpoc
-
-    COPY andatong_exec.py /app/main.py
-
-    ENTRYPOINT [ "pipenv",  "run", "python", "main.py" ]
-    ```
-
-4.  在目录中执行 `docker build -t andatong_exec .` 生成名为`andatong_exec` 的镜像
-5.  测试执行： `docker run --rm andatong_exec -u http://221.224.120.187:8080`
-
-## 批量编译与同步
-
-```sh
-root@Scan:~/CScan-POC/scanner/python/CScanPoc# pwd
-/root/CScan-POC/scanner/python/CScanPoc
-
-root@Scan:~/CScan-POC/scanner/python/CScanPoc# pipenv run python scripts/sync.py --host rm-bp1917k62kyd0f29u5o.mysql.rds.aliyuncs.com --user root --db cscan --pass CScanConfig1314 --target CScanPoc/pocs/ --vuln --poc --insert --build-base-image cscan-poc-base:0.1
-```
+编译：`./build.sh ../pocs`

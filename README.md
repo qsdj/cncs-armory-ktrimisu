@@ -5,7 +5,7 @@
 - [vulns](./vulns): 漏洞说明
 - [utility](./utility): 系统功能（资产发现，资产识别等）
 
-## POC 开发说明
+## POC 开发环境说明
 
 POC 现在放在 `pocs` 目录下，和主体框架 `CScanPoc` 代码分离，开发时还是使用 `CScanPoc` 的虚拟环境。
 
@@ -15,3 +15,17 @@ POC 现在放在 `pocs` 目录下，和主体框架 `CScanPoc` 代码分离，�
 4. 运行 `pipenv shell`，获得的 shell 可以进行 POC 的执行测试
 
 如果用的是 PyCharm，在开发的时候需要选择解释器为虚拟环境中的解释器 `CScanPoc/CScanPoc/.venv/bin/python`。
+
+## 静态检查工具说明
+
+```sh
+./tools/autopep8.sh pocs # 自动检查 pocs 目录下的 py 文件，修改到满足 pep8 的格式
+                         # 也可以指定修复单个文件格式
+./tools/autopep8.sh pocs/cms/CmsEasy/CmsEasy0001.py
+```
+
+```sh
+./tools/pylint.sh pocs # 使用 pylint 对 pocs 下的 py 文件进行静态分析找到错误
+                       # 也可以指定单个文件
+./tools/pylint.sh pocs/cms/CmsEasy/CmsEasy0001.py
+```
