@@ -3,6 +3,7 @@
 import logging
 import sys
 import colorlog
+from pythonjsonlogger import jsonlogger
 
 
 class CScanOutputLevel:
@@ -38,6 +39,14 @@ class CScanOutputer:
     OUTPUT.addHandler(OUTPUT_HANDLER)
     OUTPUT.setLevel(CScanOutputLevel.INFO)
 
+    JSON_OUTPUT = False
+
+    @staticmethod
+    def set_json_output():
+        CScanOutputer.JSON_OUTPUT = True
+        formatter = jsonlogger.JsonFormatter()
+        CScanOutputer.OUTPUT_HANDLER.setFormatter(formatter)
+
     @staticmethod
     def info(msg):
         '''
@@ -56,13 +65,22 @@ class CScanOutputer:
         '''
         输出扫出的和漏洞 vuln 相关的疑似漏洞信息
         '''
-        CScanOutputer.OUTPUT.log(
-            CScanOutputLevel.WARN, '{vuln} {msg}'.format(vuln=vuln, msg=msg))
+        if CScanOutputer.JSON_OUTPUT:
+            CScanOutputer.OUTPUT.log(
+                CScanOutputLevel.WARN, msg, extra={'vuln_id': vuln.vuln_id})
+        else:
+            CScanOutputer.OUTPUT.log(
+                CScanOutputLevel.WARN, '{vuln} {msg}'.format(vuln=vuln, msg=msg))
 
     @staticmethod
     def report(vuln, msg):
         '''
         输出扫出的和漏洞 vuln 相关的漏洞信息
         '''
-        CScanOutputer.OUTPUT.log(
-            CScanOutputLevel.REPORT, '{vuln} {msg}'.format(vuln=vuln, msg=msg))
+        if CScanOutputer.JSON_OUTPUT:
+            CScanOutputer.OUTPUT.log(
+                CScanOutputLevel.REPORT, msg, extra={'vuln_id': vuln.vuln_id})
+        else:
+            CScanOutputer.OUTPUT.log(
+                CScanOutputLevel.REPORT,
+                '{vuln} {msg}'.format(vuln=vuln, msg=msg))

@@ -19,6 +19,10 @@ def create_poc_cmd_parser():
     parser.add_argument(
         '--index-dir', required=False, dest='index_dir',
         help='POC 索引目录')
+    parser.add_argument(
+        '--json-output', required=False, dest='json_output',
+        action='store_true', default=False,
+        help='日志输出 JSON')
 
     # 执行参数解析
     parser.add_argument('--exec-option', metavar='KEY=VALUE', type=str, nargs='+',

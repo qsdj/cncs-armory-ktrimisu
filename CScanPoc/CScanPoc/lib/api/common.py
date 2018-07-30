@@ -3,6 +3,7 @@ from abc import ABCMeta, abstractproperty
 from CScanPoc.lib.parse.args import create_poc_cmd_parser, parse_args
 from .component import Component
 from .schema import ObjectSchema, ValueNotFound
+from CScanPoc.lib.core.log import CScanOutputer
 
 
 class RuntimeOptionSupport(metaclass=ABCMeta):
@@ -101,6 +102,8 @@ class RuntimeOptionSupport(metaclass=ABCMeta):
         if args is None:
             argparser = create_poc_cmd_parser()
             args = argparser.parse_args()
+        if args.json_output:
+            CScanOutputer.set_json_output()
         self.target = args.url
         parse_args(args, self.set_option,
                    self.set_component_property,
