@@ -59,7 +59,7 @@ class Poc(ABPoc):
             try:
                 request = urllib.request.Request(verify_url)
                 response = urllib.request.urlopen(request)
-                content = response.read()
+                content = str(response.read())
             except urllib.error.HTTPError as e:
                 content = e.read()
 

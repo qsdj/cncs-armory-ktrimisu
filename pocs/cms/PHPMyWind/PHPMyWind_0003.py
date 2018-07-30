@@ -65,7 +65,7 @@ class Poc(ABPoc):
                 request = urllib.request.Request(
                     verify_url, headers=user_agent)
                 response = urllib.request.urlopen(request)
-                content = response.read()
+                content = str(response.read())
                 results = re.findall(
                     'Duplicate entry \'qgveq\|(.+):split:([a-fA-F0-9]{32})\|qkagq', content)
                 if results:
@@ -91,7 +91,7 @@ class Poc(ABPoc):
                 request = urllib.request.Request(
                     verify_url, headers=user_agent)
                 response = urllib.request.urlopen(request)
-                content = response.read()
+                content = str(response.read())
                 results = re.findall(
                     'Duplicate entry \'qgveq\|(.+):split:([a-fA-F0-9]{32})\|qkagq', content)
                 if results:

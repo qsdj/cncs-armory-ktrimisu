@@ -63,7 +63,7 @@ class Poc(ABPoc):
 
             request = urllib.request.Request(xml_url, post_content)
             response = urllib.request.urlopen(request)
-            page_content = response.read()
+            page_content = str(response.read())
             if '<methodResponse>' in page_content:
                 if ('>17<' in page_content) or ('>32<' in page_content):
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(

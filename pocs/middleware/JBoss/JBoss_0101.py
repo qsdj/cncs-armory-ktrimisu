@@ -60,7 +60,7 @@ class Poc(ABPoc):
             page_content = ''
             request = urllib.request.Request(verify_url, verify_data)
             response = urllib.request.urlopen(request)
-            page_content = response.read()
+            page_content = str(response.read())
             if 'this_is_not_exist_9.1314923' in page_content:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))

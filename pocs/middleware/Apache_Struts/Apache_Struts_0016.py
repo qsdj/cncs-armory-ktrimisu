@@ -58,7 +58,7 @@ class Poc(ABPoc):
                 headers = {'User-Agent': 'Mozilla/5.0',
                            'Content-Type': payload}
                 request = urllib.request.Request(self.target, headers=headers)
-                r = urllib.request.urlopen(request).read()
+                r = str(urllib.request.urlopen(request).read())
             except http.client.IncompleteRead as e:
                 r = e.partial
 
@@ -81,7 +81,7 @@ class Poc(ABPoc):
                 headers = {'User-Agent': 'Mozilla/5.0',
                            'Content-Type': payload}
                 request = urllib.request.Request(self.target, headers=headers)
-                r = urllib.request.urlopen(request).read()
+                r = str(urllib.request.urlopen(request).read())
             except http.client.IncompleteRead as e:
                 r = e.partial
             if '92933839f1efb2da9a4799753ee8d79c' in r:

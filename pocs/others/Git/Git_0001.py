@@ -56,7 +56,7 @@ class Poc(ABPoc):
 
             resquest = urllib.request.Request(vul_url)
             response = urllib.request.urlopen(resquest)
-            content = response.read()
+            content = str(response.read())
 
             for word in keyword:
                 if word in content:

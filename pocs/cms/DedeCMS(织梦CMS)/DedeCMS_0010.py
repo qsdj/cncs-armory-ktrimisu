@@ -64,7 +64,7 @@ class Poc(ABPoc):
             response = urllib.request.urlopen(request)
             if response.getcode() == 200:
                 dmin_result = ""
-                content = response.read()
+                content = str(response.read())
                 reg_admin = re.compile("(?<=\^\$).*?(?=\$\^)")
                 admin_info = reg_admin.findall(content)
                 admin_info_duplicate = sorted(
@@ -92,7 +92,7 @@ class Poc(ABPoc):
             response = urllib.request.urlopen(request)
             if response.getcode() == 200:
                 dmin_result = ""
-                content = response.read()
+                content = str(response.read())
                 reg_admin = re.compile("(?<=\^\$).*?(?=\$\^)")
                 admin_info = reg_admin.findall(content)
                 admin_info_duplicate = sorted(

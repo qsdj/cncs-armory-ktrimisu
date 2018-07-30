@@ -56,7 +56,7 @@ class Poc(ABPoc):
             request = urllib.request.Request(verify_url)
             response = urllib.request.urlopen(request)
             reg = re.compile("webdb\\['mymd5'\\]")
-            if reg.findall(response.read()):
+            if reg.findall(str(response.read())):
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 

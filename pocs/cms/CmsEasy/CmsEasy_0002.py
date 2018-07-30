@@ -57,7 +57,7 @@ class Poc(ABPoc):
                 target=self.target)+"/demo.php?time=alert('f4aa169c58007f317b2de0b73cecbd92')"
             request = urllib.request.Request(verify_url)
             response = urllib.request.urlopen(request)
-            content = response.read()
+            content = str(response.read())
             if "time:alert('f4aa169c58007f317b2de0b73cecbd92')," in content:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))

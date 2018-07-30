@@ -52,7 +52,7 @@ class Poc(ABPoc):
             attack_url = self.target + '/sysinfo.html'
             request = urllib.request.Request(attack_url)
             response = urllib.request.urlopen(request)
-            content = response.read()
+            content = str(response.read())
             if 'Hostname:' in content and 'eyou' in content:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))

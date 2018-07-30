@@ -54,7 +54,7 @@ class Poc(ABPoc):
         opener = urllib.request.build_opener(
             urllib.request.HTTPCookieProcessor())
         response = opener.open(req, data)
-        return response.read()
+        return str(response.read())
 
     def verify(self):
         self.target = self.target.rstrip(

@@ -56,7 +56,7 @@ class Poc(ABPoc):
 
             request = urllib.request.Request(
                 self.target + payload, data=pocdata)
-            response = urllib.request.urlopen(request).read()
+            response = str(urllib.request.urlopen(request).read())
             if 'success' in response:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))

