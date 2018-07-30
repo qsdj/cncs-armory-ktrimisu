@@ -6,7 +6,8 @@ import re
 import sys
 import json
 import subprocess
-from CScanScan import Coptions,CScanScan
+from CScanScan import Coptions, CScanScan
+
 
 class FindAssetsoptions(Coptions):
     def parameterFilter(self, ports):
@@ -19,16 +20,18 @@ class FindAssetsoptions(Coptions):
             self.parser.error("max rate is 1500000")
         if self.options.ports == None:
             self.options.ports = ",".join([str(port) for port in ports])
-    
-    def getoptions(self,ports):
+
+    def getoptions(self, ports):
         (self.options, _args) = self.parser.parse_args()
         self.parameterFilter(ports)
         return self.options
+
 
 class FindAssets(CScanScan):
     '''
     发现资产
     '''
+
     def options(self):
         usage = '''"python %prog -u <hosts> -p <ports> -r <rate> -h help"'''
         opt = FindAssetsoptions(usage)
@@ -38,6 +41,7 @@ class FindAssets(CScanScan):
         return opt.getoptions(self.CommonlyPorts)
 
     def clearoutfile(self, outfile):
+        os.makedirs('tmp')
         if os.path.exists(outfile):
             with open(outfile, 'w') as f:
                 f.truncate()
@@ -46,7 +50,8 @@ class FindAssets(CScanScan):
         try:
             self.outfile = "tmp/Assets.json"
             self.clearoutfile(self.outfile)
-            shell = "{masscanRun} {hosts} -p {ports} --rate {rate} -oL {outfile} > /dev/null".format(masscanRun=self.RunPath, hosts=hosts, ports=ports, rate=rate, outfile=self.outfile)
+            shell = "{masscanRun} {hosts} -p {ports} --rate {rate} -oL {outfile} > /dev/null".format(
+                masscanRun=self.RunPath, hosts=hosts, ports=ports, rate=rate, outfile=self.outfile)
             os.system(shell)
         except Exception, e:
             sys.exit(e)
@@ -63,7 +68,8 @@ class FindAssets(CScanScan):
         }
         '''
         try:
-            ippattern = re.compile(r'((?:(?:25[0-5]|2[0-4]\d|(?:1\d{2}|[1-9]?\d))\.){3}(?:25[0-5]|2[0-4]\d|(?:1\d{2}|[1-9]?\d)))')
+            ippattern = re.compile(
+                r'((?:(?:25[0-5]|2[0-4]\d|(?:1\d{2}|[1-9]?\d))\.){3}(?:25[0-5]|2[0-4]\d|(?:1\d{2}|[1-9]?\d)))')
             options = self.options()
             self.run(options.hosts, options.ports, options.rate)
             # 处理masscan输出信息~
@@ -76,8 +82,9 @@ class FindAssets(CScanScan):
                 return json.dumps(result, separators=(',', ':'))
             else:
                 sys.exit("未扫描到资产")
-        except Exception,e:
+        except Exception, e:
             sys.exit(e)
+
 
 def main(runpath, outputFile):
     result = str(FindAssets(runpath).getResult())
@@ -85,6 +92,12 @@ def main(runpath, outputFile):
     tmp = open(outputFile, "w")
     tmp.write(result)
     tmp.close()
+    sys.stdout.flush()
+    print('RESULT_START')
+    print(result)
+    print('RESULT_END')
+    sys.stdout.flush()
+
 
 if __name__ == '__main__':
     main("masscan/masscan", "tmp/Assets.json")
