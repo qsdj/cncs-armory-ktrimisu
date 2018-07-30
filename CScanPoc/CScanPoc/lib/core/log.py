@@ -42,7 +42,8 @@ class CScanOutputer:
         if json_output:
             CScanOutputer.JSON_OUTPUT = True
             output_handler = logging.StreamHandler(sys.stdout)
-            formatter = jsonlogger.JsonFormatter()
+            formatter = jsonlogger.JsonFormatter(
+                '(asctime) (vuln) (levelname) (message)')
             output_handler.setFormatter(formatter)
             CScanOutputer.OUTPUT.addHandler(output_handler)
         else:
