@@ -31,21 +31,25 @@ class CScanOutputer:
     logging.addLevelName(CScanOutputLevel.WARN, 'WARN')
     logging.addLevelName(CScanOutputLevel.REPORT, 'REPORT')
 
-    OUTPUT_HANDLER = colorlog.StreamHandler(sys.stdout)
-    OUTPUT_HANDLER.setFormatter(colorlog.ColoredFormatter(
-        '%(log_color)s[%(asctime)s] [%(levelname)s] %(message)s'))
-
+    JSON_OUTPUT = False
     OUTPUT = logging.getLogger("CScanOutputer")
-    OUTPUT.addHandler(OUTPUT_HANDLER)
     OUTPUT.setLevel(CScanOutputLevel.INFO)
 
-    JSON_OUTPUT = False
-
     @staticmethod
-    def set_json_output():
-        CScanOutputer.JSON_OUTPUT = True
-        formatter = jsonlogger.JsonFormatter()
-        CScanOutputer.OUTPUT_HANDLER.setFormatter(formatter)
+    def init_output(json_output=False):
+        CScanOutputer.OUTPUT.handlers.clear()
+        logging.getLogger().handlers.clear()
+        if json_output:
+            CScanOutputer.JSON_OUTPUT = True
+            output_handler = logging.StreamHandler(sys.stdout)
+            formatter = jsonlogger.JsonFormatter()
+            output_handler.setFormatter(formatter)
+            CScanOutputer.OUTPUT.addHandler(output_handler)
+        else:
+            output_handler = colorlog.StreamHandler(sys.stdout)
+            output_handler.setFormatter(colorlog.ColoredFormatter(
+                '%(log_color)s[%(asctime)s] [%(levelname)s] %(message)s'))
+            CScanOutputer.OUTPUT.addHandler(output_handler)
 
     @staticmethod
     def info(msg):

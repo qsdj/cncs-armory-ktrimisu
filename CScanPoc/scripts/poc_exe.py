@@ -12,8 +12,6 @@ def create_parser():
                         help='verbose')
     parser.add_argument('-vv', dest='very_verbose', action='store_true',
                         help='very verbose')
-    parser.add_argument('--index-dir', dest='index_dir', required=False,
-                        help='索引信息存放目录，默认当前目录 index 目录下')
     parser.add_argument('--poc-id', dest='poc_id', required=True,
                         help='要执行的 POC 的 ID')
 

@@ -102,8 +102,7 @@ class RuntimeOptionSupport(metaclass=ABCMeta):
         if args is None:
             argparser = create_poc_cmd_parser()
             args = argparser.parse_args()
-        if args.json_output:
-            CScanOutputer.set_json_output()
+        CScanOutputer.init_output(args.json_output)
         self.target = args.url
         parse_args(args, self.set_option,
                    self.set_component_property,
