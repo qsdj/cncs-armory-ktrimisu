@@ -56,9 +56,10 @@ class Poc(ABPoc):
                 }
             }
         }
-                    
+
     def verify(self):
-        self.target = self.target.rstrip('/') + '/' + (self.get_option('base_path').lstrip('/'))
+        self.target = self.target.rstrip(
+            '/') + '/' + (self.get_option('base_path').lstrip('/'))
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
@@ -96,7 +97,7 @@ class Poc(ABPoc):
             r = requests.get(url, verify=False,
                              headers=headers, timeout=timeout)
             if "Requested Range Not Satisfiable" in r.text:
-                #print "[+] Looks Vulnerability!"
+                # print "[+] Looks Vulnerability!"
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
                 #args['success'] = True

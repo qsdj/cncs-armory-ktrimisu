@@ -2,8 +2,12 @@
 
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
-import urllib.request, urllib.parse, urllib.error
-import urllib.request, urllib.error, urllib.parse
+import urllib.request
+import urllib.parse
+import urllib.error
+import urllib.request
+import urllib.error
+import urllib.parse
 import re
 import hashlib
 
@@ -43,9 +47,10 @@ class Poc(ABPoc):
                 }
             }
         }
-                    
+
     def verify(self):
-        self.target = self.target.rstrip('/') + '/' + (self.get_option('base_path').lstrip('/'))
+        self.target = self.target.rstrip(
+            '/') + '/' + (self.get_option('base_path').lstrip('/'))
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
@@ -55,7 +60,8 @@ class Poc(ABPoc):
             for file_path in url_list:
                 verify_url = '{target}'.format(target=self.target)+file_path
                 try:
-                    urllib.request.urlopen(urllib.request.Request(verify_url, data=payload))
+                    urllib.request.urlopen(
+                        urllib.request.Request(verify_url, data=payload))
                 except urllib.error.HTTPError as e:
                     if e.code == 503:
                         if 'There appears to be an error with the database.' in e.read():

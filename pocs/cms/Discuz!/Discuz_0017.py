@@ -40,9 +40,10 @@ class Poc(ABPoc):
                 }
             }
         }
-                    
+
     def verify(self):
-        self.target = self.target.rstrip('/') + '/' + (self.get_option('base_path').lstrip('/'))
+        self.target = self.target.rstrip(
+            '/') + '/' + (self.get_option('base_path').lstrip('/'))
         try:
             flash_md5 = "c16a7c6143f098472e52dd13de85527f"
             file_path = "/static/image/common/focus.swf"

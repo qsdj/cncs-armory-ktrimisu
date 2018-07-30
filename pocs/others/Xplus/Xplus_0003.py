@@ -48,9 +48,10 @@ class Poc(ABPoc):
                 }
             }
         }
-                    
+
     def verify(self):
-        self.target = self.target.rstrip('/') + '/' + (self.get_option('base_path').lstrip('/'))
+        self.target = self.target.rstrip(
+            '/') + '/' + (self.get_option('base_path').lstrip('/'))
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
@@ -71,7 +72,7 @@ class Poc(ABPoc):
                   ]
             for p in ps:
                 url = arg + p
-                #print url
+                # print url
                 code2, head, res, errcode, _ = hh.http(url)
             # print res
                 if (code2 == 200) and ('ODBC SQL Server Driver' in res) and ('SQLExecute' in res) and ('GAO JI' in res):

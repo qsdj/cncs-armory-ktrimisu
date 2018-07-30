@@ -1,6 +1,8 @@
 # coding: utf-8
 import re
-import urllib.request, urllib.error, urllib.parse
+import urllib.request
+import urllib.error
+import urllib.parse
 
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
@@ -41,13 +43,14 @@ class Poc(ABPoc):
                 }
             }
         }
-                    
+
     def match_patter(self, content, pattern=r'Warning.*?((?:[a-z]:\\(?:[\\\w|\s|\-|\.|\x81-\xfe|\x40-\xfe]+?)global\.func\.php)|(?:/[^<>]+?global\.func\.php))'):
         match = re.findall(pattern, content, re.I | re.M)
         return match
 
     def verify(self):
-        self.target = self.target.rstrip('/') + '/' + (self.get_option('base_path').lstrip('/'))
+        self.target = self.target.rstrip(
+            '/') + '/' + (self.get_option('base_path').lstrip('/'))
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))

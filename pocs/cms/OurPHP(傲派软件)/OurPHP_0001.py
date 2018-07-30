@@ -41,9 +41,10 @@ class Poc(ABPoc):
                 }
             }
         }
-                    
+
     def verify(self):
-        self.target = self.target.rstrip('/') + '/' + (self.get_option('base_path').lstrip('/'))
+        self.target = self.target.rstrip(
+            '/') + '/' + (self.get_option('base_path').lstrip('/'))
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
@@ -62,7 +63,7 @@ class Poc(ABPoc):
             start_time2 = time.time()
             code2, head, res, errcode, _ = hh.http(url)
             flase_time = time.time() - start_time2
-            #print flase_time ,true_time
+            # print flase_time ,true_time
             if code1 == 200 and code2 == 200 and flase_time/true_time > 10:
                 # security_hole(url)
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(

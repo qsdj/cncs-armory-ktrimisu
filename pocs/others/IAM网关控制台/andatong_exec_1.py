@@ -39,9 +39,10 @@ class Poc(ABPoc):
                 }
             }
         }
-                    
+
     def verify(self):
-        self.target = self.target.rstrip('/') + '/' + (self.get_option('base_path').lstrip('/'))
+        self.target = self.target.rstrip(
+            '/') + '/' + (self.get_option('base_path').lstrip('/'))
         post_data = {'username': 'root', 'password': 'changeit'}
         code_exec = {'line': '1|echo \'vuln\''}
 

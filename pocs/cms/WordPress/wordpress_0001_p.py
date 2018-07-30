@@ -40,9 +40,10 @@ class Poc(ABPoc):
                 }
             }
         }
-                    
+
     def verify(self):
-        self.target = self.target.rstrip('/') + '/' + (self.get_option('base_path').lstrip('/'))
+        self.target = self.target.rstrip(
+            '/') + '/' + (self.get_option('base_path').lstrip('/'))
         try:
             # 利用的是WordPress Mailpress Plugin漏洞，一般漏洞的地址是:wp-content/plugins/mailpress/mp-includes/action.php
             url = '''/wp-content/plugins/mailpress/mp-includes/action.php'''

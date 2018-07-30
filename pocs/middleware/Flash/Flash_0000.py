@@ -3,7 +3,9 @@
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 from xml.dom import minidom
-import urllib.request, urllib.error, urllib.parse
+import urllib.request
+import urllib.error
+import urllib.parse
 
 
 class Vuln(ABVuln):
@@ -41,15 +43,17 @@ class Poc(ABPoc):
                 }
             }
         }
-                    
+
     def verify(self):
-        self.target = self.target.rstrip('/') + '/' + (self.get_option('base_path').lstrip('/'))
+        self.target = self.target.rstrip(
+            '/') + '/' + (self.get_option('base_path').lstrip('/'))
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
             arg = '{target}'.format(target=self.target)
             vul_url = arg + '/crossdomain.xml'
-            html = urllib.request.urlopen(urllib.request.Request(vul_url)).read()
+            html = urllib.request.urlopen(
+                urllib.request.Request(vul_url)).read()
             if not '<cross-domain-polic' in html:
                 return
             else:

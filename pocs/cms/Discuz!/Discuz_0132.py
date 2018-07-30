@@ -3,8 +3,12 @@ import hashlib
 import time
 import math
 import base64
-import urllib.request, urllib.parse, urllib.error
-import urllib.request, urllib.error, urllib.parse
+import urllib.request
+import urllib.parse
+import urllib.error
+import urllib.request
+import urllib.error
+import urllib.parse
 import sys
 
 from CScanPoc.thirdparty import requests
@@ -46,7 +50,7 @@ class Poc(ABPoc):
                 }
             }
         }
-                    
+
     def microtime(self, get_as_float=False):
         if get_as_float:
             return time.time()
@@ -89,7 +93,8 @@ class Poc(ABPoc):
         return keyc + base64.b64encode(result).replace('=', '')
 
     def verify(self):
-        self.target = self.target.rstrip('/') + '/' + (self.get_option('base_path').lstrip('/'))
+        self.target = self.target.rstrip(
+            '/') + '/' + (self.get_option('base_path').lstrip('/'))
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))

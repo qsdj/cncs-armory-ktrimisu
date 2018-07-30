@@ -16,7 +16,7 @@ class Vuln(ABVuln):
     Yxcms building system (compatible cell phone)1.4.7版本中存在跨站脚本漏洞。
     远程攻击者可通过向index.php?r=default/column/index&col=guestbook请求中的protected\apps\default\view\default\extend_guestbook.php或
     protected\apps\default\view\mobile\extend_guestbook.php文件发送‘content’参数利用该漏洞向网页中注入恶意代码。
-    '''# 漏洞描述
+    '''  # 漏洞描述
     ref = 'http://www.cnvd.org.cn/flaw/show/CNVD-2018-06865'  # 漏洞来源
     cnvd_id = 'CNVD-2018-06865'  # cnvd漏洞编号
     cve_id = 'CVE-2018-8805 '  # cve编号
@@ -43,9 +43,10 @@ class Poc(ABPoc):
                 }
             }
         }
-                    
+
     def verify(self):
-        self.target = self.target.rstrip('/') + '/' + (self.get_option('base_path').lstrip('/'))
+        self.target = self.target.rstrip(
+            '/') + '/' + (self.get_option('base_path').lstrip('/'))
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))

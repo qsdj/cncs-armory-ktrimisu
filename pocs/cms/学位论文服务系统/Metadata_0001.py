@@ -43,9 +43,10 @@ class Poc(ABPoc):
                 }
             }
         }
-                    
+
     def verify(self):
-        self.target = self.target.rstrip('/') + '/' + (self.get_option('base_path').lstrip('/'))
+        self.target = self.target.rstrip(
+            '/') + '/' + (self.get_option('base_path').lstrip('/'))
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
@@ -62,7 +63,7 @@ class Poc(ABPoc):
             t1 = time.time()
             code, head, res, err, _ = hh.http(
                 url, post=delay_0, header=content_type)
-            #print code, head
+            # print code, head
             if code != 200:
                 return False
             t2 = time.time()

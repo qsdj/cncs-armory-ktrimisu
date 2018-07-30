@@ -40,9 +40,11 @@ class Poc(ABPoc):
                 }
             }
         }
-                    
+
     def verify(self):
-        self.target = self.target.rstrip('/') + '/' + (self.get_option('base_path').lstrip('/'))
+        self.target = self.target.rstrip(
+            '/') + '/' + (self.get_option('base_path').lstrip('/'))
+
         def getString(res):
             import re
             Regular = "Duplicate entry \'qgveq\|(.+):split:([a-fA-F0-9]{32})\|qkagq"

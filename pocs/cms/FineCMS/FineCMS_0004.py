@@ -6,8 +6,12 @@ import hashlib
 import time
 import math
 import base64
-import urllib.request, urllib.parse, urllib.error
-import urllib.request, urllib.error, urllib.parse
+import urllib.request
+import urllib.parse
+import urllib.error
+import urllib.request
+import urllib.error
+import urllib.parse
 
 
 class Vuln(ABVuln):
@@ -55,9 +59,10 @@ class Poc(ABPoc):
                 }
             }
         }
-                    
+
     def verify(self):
-        self.target = self.target.rstrip('/') + '/' + (self.get_option('base_path').lstrip('/'))
+        self.target = self.target.rstrip(
+            '/') + '/' + (self.get_option('base_path').lstrip('/'))
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
@@ -125,7 +130,8 @@ class Poc(ABPoc):
                     </root>
                 '''
                 try:
-                    req = urllib.request.Request(url, data=data1, headers=headers)
+                    req = urllib.request.Request(
+                        url, data=data1, headers=headers)
                     ret = urllib.request.urlopen(req)
                 except:
                     return "error"
@@ -136,7 +142,8 @@ class Poc(ABPoc):
                     </root>
                 '''
                 try:
-                    req = urllib.request.Request(url, data=data2, headers=headers)
+                    req = urllib.request.Request(
+                        url, data=data2, headers=headers)
                     ret = urllib.request.urlopen(req)
                 except:
                     return "error"
