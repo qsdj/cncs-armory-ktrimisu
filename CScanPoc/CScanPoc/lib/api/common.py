@@ -5,7 +5,7 @@ from .component import Component
 from .schema import ObjectSchema, ValueNotFound
 
 
-class RuntimeOptionSupport(ABCMeta):
+class RuntimeOptionSupport(metaclass=ABCMeta):
     '''运行时参数支持
 
     - 执行参数
