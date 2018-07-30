@@ -49,7 +49,7 @@ class Poc(ABPoc):
             vul_url = arg + payload
             response = requests.get(vul_url)
             if response.status_code ==200 and 'localhost' in response.text:
-                self.output.info('读取/etc/hosts文件信息成功')<Paste>
+                self.output.info('读取/etc/hosts文件信息成功')
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target, name=self.vuln.name))
         except Exception as e:
             self.output.info('执行异常{}'.format(e))
