@@ -16,6 +16,9 @@ def create_poc_cmd_parser():
     parser.add_argument(
         '--mode', required=False, default="verify", choices=["verify", "exploit"],
         help="POC 执行模式, default: verify")
+    parser.add_argument(
+        '--index-dir', required=False, dest='index_dir',
+        help='POC 索引目录')
 
     # 执行参数解析
     parser.add_argument('--exec-option', metavar='KEY=VALUE', type=str, nargs='+',

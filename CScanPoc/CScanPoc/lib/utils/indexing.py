@@ -28,23 +28,24 @@ class INDEX_CONFIG:
         return self.__file('vuln', index_dir)
 
 
+def _iter_json_lines(filepath):
+    for line in open(filepath):
+        if line is None or line.strip() == '':
+            continue
+        yield json.loads(line)
+
+
 def load_index(index_dir=None):
     '''
     :return: Tuple<Dict<vuln_id, vuln_dict>, Dict<poc_id, poc_dict>, Dict<poc_id, vuln_id>>
     '''
-    def iter_ind(f):
-        for line in open(f):
-            if line is None or line.strip() == '':
-                continue
-            yield json.loads(line)
-
     vuln_ind = {}
     poc_ind = {}
 
-    for i in iter_ind(INDEX_CONFIG.get_vuln_index_file(index_dir)):
+    for i in _iter_json_lines(INDEX_CONFIG.get_vuln_index_file(index_dir)):
         vuln_ind[i['vuln_id']] = i
 
-    for i in iter_ind(INDEX_CONFIG.get_poc_index_file(index_dir)):
+    for i in _iter_json_lines(INDEX_CONFIG.get_poc_index_file(index_dir)):
         poc_ind[i['poc_id']] = i
 
     return (vuln_ind, poc_ind)
@@ -92,11 +93,26 @@ def indexing(poc_dir, index_dir=None):
 
 def find_poc(poc_id, index_dir=None):
     '''根据 POC ID 查找 poc 实例'''
-    (_, poc_ind) = load_index(index_dir)
-    poc_dict = poc_ind[poc_id]
+    poc_dict = None
+    for i in _iter_json_lines(INDEX_CONFIG.get_poc_index_file(index_dir)):
+        if i.get('poc_id') == poc_id:
+            poc_dict = i
+            break
+    if poc_dict is None:
+        raise Exception('Poc[id={}] not found'.format(poc_id))
+
     poc_file = poc_dict.get('__file__')
-    try:
-        mod = load_file_as_module(poc_file)
-        return getattr(mod, poc_dict.get('__class__'))()
-    except Exception:
-        raise
+    mod = load_file_as_module(poc_file)
+    return getattr(mod, poc_dict.get('__class__'))()
+
+
+def iter_pocs_of_component(component_name, index_dir=None):
+    for poc_dict in _iter_json_lines(INDEX_CONFIG.get_poc_index_file(index_dir)):
+        try:
+            poc_file = poc_dict.get('__file__')
+            mod = load_file_as_module(poc_file)
+            poc = getattr(mod, poc_dict.get('__class__'))()
+            if poc.vuln.product == component_name:
+                yield poc
+        except:
+            continue
