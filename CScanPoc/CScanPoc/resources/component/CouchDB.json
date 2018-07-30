@@ -1,0 +1,5 @@
+{
+  "type": "database",
+  "producer": "Apache软件基金会",
+  "desc": "Apache CouchDB 是一个开源数据库，专注于易用性和成为\"完全拥抱web的数据库\"。它是一个使用JSON作为存储格式，JavaScript作为查询语言，MapReduce和HTTP作为API的NoSQL数据库。其中一个显著的功能就是多主复制。CouchDB 的第一个版本发布在2005年，在2008年成为了Apache的项目。"
+}

@@ -1,0 +1,5 @@
+{
+  "type": "cms",
+  "producer": "BlueCMS",
+  "desc": "BlueCMS(地方分类信息门户专用CMS系统) 基于当今最流行的开源组合PHP＋MYSQL开发 每个分类均可单独设置Title、Keywords、Description，方便SEO 强力模板引擎，显示风格自由定义，随心所欲 多功能模块插件，操作简单方便 智能缓存技术，提高网站性能 多属性模型自定义，栏目功能强大。"
+}

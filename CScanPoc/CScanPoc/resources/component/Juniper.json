@@ -1,0 +1,5 @@
+{
+  "type": "device",
+  "producer": "Juniper",
+  "desc": "Juniper网络设备。"
+}

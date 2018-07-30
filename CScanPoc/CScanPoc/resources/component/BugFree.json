@@ -1,0 +1,5 @@
+{
+  "type": "cms",
+  "producer": "BugFree",
+  "desc": "BugFree是借鉴微软的研发流程和Bug管理理念，使用PHP+MySQL独立写出的一个Bug管理 系统。简单实用、免费并且开放源代码(遵循GNU GPL)。 命名BugFree 有两层意思：一是希望软件中的缺陷越来越少直到没有，Free嘛；二是表示它是免费且开放源代码的，大家可以自由使用传播。"
+}

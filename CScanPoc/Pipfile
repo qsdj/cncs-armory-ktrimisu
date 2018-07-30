@@ -1,0 +1,29 @@
+[[source]]
+url = "https://mirrors.ustc.edu.cn/pypi/web/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+colorama = "*"
+requests = "*"
+mysql-connector = "*"
+pymango = "*"
+pymongo = "*"
+redis = "*"
+paramiko = "*"
+pypinyin = "*"
+docker = "*"
+colorlog = "*"
+
+[dev-packages]
+twine = "*"
+pylint = "*"
+"autopep8" = "*"
+rope = "*"
+cscanpoc = {editable = true, path = "."}
+ipython = "*"
+pytest = "*"
+pytest-watch = "*"
+
+[requires]
+python_version = "3"
