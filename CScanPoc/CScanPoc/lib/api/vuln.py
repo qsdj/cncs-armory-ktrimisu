@@ -13,7 +13,7 @@ class VulnType(Enum):
     XXE = 3  # xml外部实体攻击
     FILE_UPLOAD = 4  # 任意文件上传
     FILE_OPERATION = 5  # 任意文件操作
-    FILE_DOWNLOAD = 6  # 意文件下载
+    FILE_DOWNLOAD = 6  # 任意文件下载
     FILE_TRAVERSAL = 7  # 目录遍历
     RCE = 8  # 远程命令/代码执行
     LFI = 9  # 本地文件包含
