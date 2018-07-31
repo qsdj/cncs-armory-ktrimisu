@@ -53,4 +53,4 @@ CScan Poc 开发文档。
 ## 日志
 
 - `CScanPoc.lib.core.log.CSCAN_LOGGER` 用于记录系统执行日志的 logger。
-- `CScanPoc.lib.core.log.CSCAN_OUTPUTER` 用于记录系统扫描输出。
+- `CScanPoc.lib.core.log.get_scan_outputer` 用于创建记录系统扫描输出的 outputer。

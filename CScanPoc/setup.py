@@ -9,4 +9,5 @@ setup(name='CScanPoc',
       url='',
       packages=find_packages(),
       package_data={'': ['*.json']},
-      scripts=['scripts/poc_exe.py'])
+      scripts=['scripts/poc_exe.py',
+               'scripts/strategy_exe.py'])

@@ -39,6 +39,9 @@ class StrategyStaticDefinition(metaclass=ABCMeta):
         '''策略创建时间'''
         return datetime.now()
 
+    def __str__(self):
+        return '[Strategy {}]'.format(self.name)
+
 
 class ABStrategy(StrategyStaticDefinition, RuntimeOptionSupport):
     '''策略'''
@@ -58,7 +61,8 @@ class ABStrategy(StrategyStaticDefinition, RuntimeOptionSupport):
         注意每次执行获取将得到一个新的实例
         '''
         from ..utils.indexing import find_poc
-        return find_poc(poc_id, self.index_dir)
+        poc = find_poc(poc_id, self.index_dir)
+        poc.output.strategy = self
 
     @property
     def index_dir(self):

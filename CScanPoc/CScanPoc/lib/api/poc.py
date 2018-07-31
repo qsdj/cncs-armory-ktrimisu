@@ -2,7 +2,7 @@
 '''POC'''
 
 from abc import abstractmethod, abstractproperty, ABCMeta
-from CScanPoc.lib.core.log import CSCAN_OUTPUTER
+from CScanPoc.lib.core.log import get_scan_outputer
 from .vuln import ABVuln
 from .common import RuntimeOptionSupport
 
@@ -87,7 +87,7 @@ class ABPoc(PocStaticDefinition, RuntimeOptionSupport):
         RuntimeOptionSupport.__init__(self)
 
         # 漏洞扫描输出
-        self.output = CSCAN_OUTPUTER
+        self.output = get_scan_outputer(poc=self)
 
         # 扫描目标
         self.target = None
@@ -139,4 +139,4 @@ class ABPoc(PocStaticDefinition, RuntimeOptionSupport):
         self.verify()
 
     def __str__(self):
-        return '<Poc id={0} name={1}>'.format(self.poc_id, self.poc_name)
+        return '[Poc {}]'.format(self.poc_name)

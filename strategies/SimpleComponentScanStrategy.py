@@ -2,6 +2,7 @@
 
 from CScanPoc import ABStrategy
 from CScanPoc.lib.utils.indexing import iter_pocs_of_component
+from CScanPoc.lib.core.log import CSCAN_LOGGER as logger
 
 
 class SimpleComponentScanStrategy(ABStrategy):
@@ -31,7 +32,10 @@ class SimpleComponentScanStrategy(ABStrategy):
     def pocs(self):
         if self.component_name is None:
             return []
-        return iter_pocs_of_component(self.component_name, self.index_dir)
+        logger.info('遍历查找组件 %s 的 POC', self.component_name)
+        for poc in iter_pocs_of_component(self.component_name, self.index_dir):
+            poc.output.strategy = self
+            yield poc
 
 
 if __name__ == '__main__':

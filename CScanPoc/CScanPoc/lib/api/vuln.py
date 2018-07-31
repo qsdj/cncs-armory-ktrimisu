@@ -122,4 +122,4 @@ class ABVuln(metaclass=ABCMeta):
         return err_msgs
 
     def __str__(self):
-        return '<Vuln id={0} name={1} level={2}>'.format(self.vuln_id, self.name, self.level)
+        return '[Vuln {}]'.format(self.name)

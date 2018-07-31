@@ -4,7 +4,6 @@ import logging
 import sys
 import colorlog
 from pythonjsonlogger import jsonlogger
-from CScanPoc.lib.api.vuln import ABVuln
 
 # CScan 日志记录
 CSCAN_LOGGER = logging.getLogger('CScanPocLogger')
@@ -54,17 +53,38 @@ class CScanOutputLevel:
 class CScanOutputer:
     '''CScan 结果输出记录器'''
 
-    def __init__(self, logger):
+    def __init__(self, logger, poc=None, strategy=None):
         '''
         :param logger: 日志记录器
         '''
         self.logger = logger
+        self.poc = poc
+        self.strategy = strategy
+
+    def get_extra(self, vuln=None):
+        extra = {'hello': 'world'}
+        if self.poc:
+            extra['poc'] = self.poc
+        if self.strategy:
+            extra['strategy'] = self.strategy
+        if vuln:
+            extra['vuln'] = vuln
+        return extra
+
+    def msg_with_extra(self, msg):
+        if self.poc:
+            msg = '%s %s' % (self.poc, msg)
+        if self.strategy:
+            msg = '%s %s' % (self.strategy, msg)
+        return msg
 
     def info(self, msg):
         '''
         输出漏洞扫描过程中一般执行日志、流程信息
         '''
-        self.logger.log(CScanOutputLevel.INFO, msg)
+        self.logger.log(CScanOutputLevel.INFO,
+                        self.msg_with_extra(msg),
+                        extra=self.get_extra())
 
     def warning(self, vuln, msg):
         '''
@@ -74,26 +94,45 @@ class CScanOutputer:
 
     def warn(self, vuln, msg):
         '''同 warning'''
-        self.logger.log(CScanOutputLevel.WARN, msg, extra={'vuln': vuln})
+        self.logger.log(CScanOutputLevel.WARN,
+                        self.msg_with_extra(msg),
+                        extra=self.get_extra(vuln))
 
     def report(self, vuln, msg):
         '''
         输出扫出的和漏洞 vuln 相关的漏洞信息
         '''
-        self.logger.log(CScanOutputLevel.REPORT, msg, extra={'vuln': vuln})
+        self.logger.log(CScanOutputLevel.REPORT,
+                        self.msg_with_extra(msg),
+                        extra=self.get_extra(vuln))
 
 
-def _json_translate(obj):
-    '''JSON logger translate'''
-    if isinstance(obj, ABVuln):
-        return {"vuln_id", obj.vuln_id}
+def _get_json_translate():
+    from CScanPoc.lib.api.vuln import ABVuln
+    from CScanPoc.lib.api.poc import ABPoc
+    from CScanPoc.lib.api.strategy import ABStrategy
+
+    def _json_translate(obj):
+        '''JSON logger translate'''
+        if isinstance(obj, ABVuln):
+            return obj.vuln_id
+        if isinstance(obj, ABPoc):
+            return obj.poc_id
+        if isinstance(obj, ABStrategy):
+            return obj.strategy_id
+
+    return _json_translate
 
 
 # CScan 输出记录器使用的 logger
 __CSCAN_OUTPUT_LOGGER = logging.getLogger('CScanOutputer')
 
 
-def setup_cscan_outputer(json_output=False):
+def get_scan_outputer(poc=None, strategy=None):
+    return CScanOutputer(__CSCAN_OUTPUT_LOGGER, poc=poc, strategy=strategy)
+
+
+def setup_cscan_outputer(json_output=False, poc=None, strategy=None):
     '''设定 CScan 结果输出记录器'''
     logging.addLevelName(CScanOutputLevel.INFO, 'INFO')
     logging.addLevelName(CScanOutputLevel.WARN, 'WARN')
@@ -110,14 +149,9 @@ def setup_cscan_outputer(json_output=False):
     __CSCAN_OUTPUT_LOGGER.setLevel(CScanOutputLevel.INFO)
 
     if json_output:
+        CSCAN_LOGGER.info('输出 JSON')
         output_handler = logging.StreamHandler(sys.stdout)
         output_handler.setFormatter(jsonlogger.JsonFormatter(
-            '(asctime) (vuln) (levelname) (message)',
-            json_default=_json_translate))
+            '(asctime) (vuln) (poc) (strategy) (hello) (levelname) (message)',
+            json_default=_get_json_translate()))
         __CSCAN_OUTPUT_LOGGER.addHandler(output_handler)
-    return CSCAN_OUTPUTER
-
-
-
-# CScan 输出记录器
-CSCAN_OUTPUTER = CScanOutputer(__CSCAN_OUTPUT_LOGGER)

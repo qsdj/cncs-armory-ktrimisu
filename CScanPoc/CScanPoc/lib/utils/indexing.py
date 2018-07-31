@@ -154,6 +154,20 @@ def find_poc(poc_id, index_dir=None):
     return getattr(mod, poc_dict.get('__class__'))()
 
 
+def find_strategy(strategy_id, index_dir=None):
+    '''根据 Strategy ID 查找 Strategy 实例'''
+    strategy_dict = None
+    for i in _iter_json_lines(INDEX_CONFIG.get_strategy_index_file(index_dir)):
+        if i.get('strategy_id') == strategy_id:
+            strategy_dict = i
+            break
+    if strategy_dict is None:
+        raise Exception('Strategy[id={}] not found'.format(strategy_id))
+    filepath = strategy_dict.get('__file__')
+    mod = load_file_as_module(filepath)
+    return getattr(mod, strategy_dict.get('__class__'))()
+
+
 def iter_pocs_of_component(component_name, index_dir=None):
     for poc_dict in _iter_json_lines(INDEX_CONFIG.get_poc_index_file(index_dir)):
         try:

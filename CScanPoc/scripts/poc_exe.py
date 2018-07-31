@@ -20,7 +20,11 @@ def create_parser():
 
 def main():
     '''POC 执行入口'''
-    args = create_parser().parse_args()
+    args = None
+    try:
+        args = create_parser().parse_args()
+    except:
+        return
     setup_cscan_poc_logger(verbose=args.verbose,
                            very_verbose=args.very_verbose)
     (poc_id, index_dir) = (args.poc_id, args.index_dir)
