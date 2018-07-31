@@ -64,5 +64,4 @@ target/
 
 .index
 .DS_Store
-pocs
-.pocs
+.resources

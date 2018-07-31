@@ -29,3 +29,31 @@ POC 现在放在 `pocs` 目录下，和主体框架 `CScanPoc` 代码分离，�
                        # 也可以指定单个文件
 ./tools/pylint.sh pocs/cms/CmsEasy/CmsEasy0001.py
 ```
+
+## 镜像编译
+
+```sh
+./build.sh ../pocs ../strategies
+```
+
+得到 `cscan:0.1`。
+
+策略推荐：
+
+```sh
+docker run --rm cscan:0.1 strategy_exe.py \
+       --recommend \
+       -u http://www.baidu.com  \
+       --component-property CmsEasy.deploy_path=/tmp
+```
+
+策略执行
+
+```sh
+docker run cscan:0.1 strategy_exe.py \
+       -u http://www.baidu.com \
+       --strategy-id simple-component-scan-strategy \
+       --component CmsEasy \
+       --component-property CmsEasy.deploy_path=/tmp \
+       --json-output
+```
