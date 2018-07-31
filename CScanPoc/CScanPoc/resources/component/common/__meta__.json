@@ -1,0 +1,16 @@
+{
+  "derivation": [
+    {
+      "match": {
+        "type": "cms"
+      },
+      "derive_from": ["cms"]
+    },
+    {
+      "match": {
+        "type": "middleware"
+      },
+      "derive_from": ["middleware"]
+    }
+  ]
+}

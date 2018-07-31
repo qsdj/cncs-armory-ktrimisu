@@ -1,0 +1,10 @@
+{
+  "type": "cms",
+  "desc": "内容管理系统",
+  "properties": {
+    "deploy_path": {
+      "type": "string",
+      "default": "/"
+    }
+  }
+}

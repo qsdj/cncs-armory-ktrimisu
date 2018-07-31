@@ -1,0 +1,5 @@
+{
+  "type": "service_provider",
+  "desc": "OpenSSH",
+  "derive_from": ["ssh"]
+}
