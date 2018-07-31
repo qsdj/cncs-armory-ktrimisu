@@ -86,22 +86,26 @@ class CScanOutputer:
                         self.msg_with_extra(msg),
                         extra=self.get_extra())
 
-    def warning(self, vuln, msg):
+    def warning(self, vuln, msg=None):
         '''
         输出扫出的和漏洞 vuln 相关的疑似漏洞的警告信息
         '''
         self.warn(vuln, msg)
 
-    def warn(self, vuln, msg):
+    def warn(self, vuln, msg=None):
         '''同 warning'''
+        if msg is None and isinstance(vuln, str):
+            (msg, vuln) = (vuln, None)
         self.logger.log(CScanOutputLevel.WARN,
                         self.msg_with_extra(msg),
                         extra=self.get_extra(vuln))
 
-    def report(self, vuln, msg):
+    def report(self, vuln, msg=None):
         '''
         输出扫出的和漏洞 vuln 相关的漏洞信息
         '''
+        if msg is None and isinstance(vuln, str):
+            (msg, vuln) = (vuln, None)
         self.logger.log(CScanOutputLevel.REPORT,
                         self.msg_with_extra(msg),
                         extra=self.get_extra(vuln))
@@ -137,16 +141,11 @@ def setup_cscan_outputer(json_output=False, poc=None, strategy=None):
     logging.addLevelName(CScanOutputLevel.INFO, 'INFO')
     logging.addLevelName(CScanOutputLevel.WARN, 'WARN')
     logging.addLevelName(CScanOutputLevel.REPORT, 'REPORT')
+    __CSCAN_OUTPUT_LOGGER.setLevel(CScanOutputLevel.INFO)
 
     __CSCAN_OUTPUT_LOGGER.handlers.clear()
     # 清除 logging 默认日志输出
     logging.getLogger().handlers.clear()
-
-    output_handler = colorlog.StreamHandler(sys.stdout)
-    output_handler.setFormatter(colorlog.ColoredFormatter(
-        '> %(log_color)s[%(asctime)s] [%(levelname)s] %(message)s'))
-    __CSCAN_OUTPUT_LOGGER.addHandler(output_handler)
-    __CSCAN_OUTPUT_LOGGER.setLevel(CScanOutputLevel.INFO)
 
     if json_output:
         CSCAN_LOGGER.info('输出 JSON')
@@ -154,4 +153,9 @@ def setup_cscan_outputer(json_output=False, poc=None, strategy=None):
         output_handler.setFormatter(jsonlogger.JsonFormatter(
             '(asctime) (vuln) (poc) (strategy) (hello) (levelname) (message)',
             json_default=_get_json_translate()))
+        __CSCAN_OUTPUT_LOGGER.addHandler(output_handler)
+    else:
+        output_handler = colorlog.StreamHandler(sys.stdout)
+        output_handler.setFormatter(colorlog.ColoredFormatter(
+            '%(log_color)s> [%(asctime)s] [%(levelname)s] %(message)s'))
         __CSCAN_OUTPUT_LOGGER.addHandler(output_handler)
