@@ -2,8 +2,8 @@
 
 import imp
 import uuid
-import logging
 from os import path, walk
+from CScanPoc.lib.core.log import CSCAN_LOGGER as logger
 
 
 def load_file_as_module(dir_or_file, filename=None):
@@ -24,11 +24,11 @@ def load_file_as_module(dir_or_file, filename=None):
     ).replace('.', '_')
     poc_file = path.join(dirpath, name)
     try:
-        logging.debug('Loading %s', poc_file)
+        logger.debug('Loading %s', poc_file)
         return imp.load_source(
             'CScanPoc.{}'.format(mod_name), poc_file)
     except Exception as err:
-        logging.error('Error loading %s %s', poc_file, err)
+        logger.error('Error loading %s %s', poc_file, err)
         raise
 
 

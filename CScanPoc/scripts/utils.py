@@ -1,11 +1,11 @@
 # coding: utf-8
 
-import logging
 import argparse
 import mysql.connector
 from CScanPoc.lib.utils.sort_pocs import sort_pocs
 from CScanPoc.lib.utils.cscan_db import CScanDb
 from CScanPoc.lib.utils.indexing import indexing
+from CScanPoc.lib.core.log import setup_cscan_poc_logger, CSCAN_LOGGER as logger
 
 
 def create_parser():
@@ -43,29 +43,21 @@ def create_parser():
     return parser
 
 
-def setup_logger(args):
-    if args.very_verbose:
-        logging.basicConfig(level=logging.DEBUG)
-    elif args.verbose:
-        logging.basicConfig(level=logging.INFO)
-    else:
-        logging.basicConfig(level=logging.WARN)
-
-
 def main():
     args = create_parser().parse_args()
-    setup_logger(args)
+    setup_cscan_poc_logger(verbose=args.verbose,
+                           very_verbose=args.very_verbose)
 
     if args.sort:
         sort_pocs(args.poc_dir)
         return
 
     if not args.skip_indexing:
-        logging.info('Indexing...')
+        logger.info('Indexing...')
         indexing(args.poc_dir)
 
     if not args.skip_syncing:
-        logging.info('Syncing...')
+        logger.info('Syncing...')
         cnx = mysql.connector.connect(
             user=args.user,
             password=args.passwd,
@@ -84,4 +76,4 @@ if __name__ == '__main__':
     try:
         main()
     except:
-        logging.exception('执行出错')
+        logger.exception('执行出错')

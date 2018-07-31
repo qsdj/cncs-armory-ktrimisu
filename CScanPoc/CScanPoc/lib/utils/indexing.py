@@ -1,7 +1,7 @@
 # encoding: utf-8
 import os
 import json
-import logging
+from CScanPoc.lib.core.log import CSCAN_LOGGER as logger
 from CScanPoc.lib.api.utils import dump_poc_to_dict, dump_vuln_to_dict, load_poc_mod
 from CScanPoc.lib.core.utils import load_file_as_module, iter_modules
 from .progress import progress
@@ -62,7 +62,7 @@ def indexing(poc_dir, index_dir=None):
     vuln_ids = set({})
     poc_ids = set({})
 
-    logging.info('开始查找 %s 下的 POC 信息', poc_dir)
+    logger.info('开始查找 %s 下的 POC 信息', poc_dir)
     with open(poc_ind_file, 'w') as poc_ind, \
             open(vuln_ind_file, 'w') as vuln_ind:
         mod_count = 0
@@ -75,7 +75,7 @@ def indexing(poc_dir, index_dir=None):
             try:
                 (vuln, pocs) = load_poc_mod(mod)
             except Exception:
-                logging.exception('模块加载出错')
+                logger.exception('模块加载出错')
             if vuln is not None and vuln.vuln_id not in vuln_ids:
                 vuln_ids.add(vuln.vuln_id)
                 write_obj(vuln_ind, dump_vuln_to_dict(vuln))
@@ -87,8 +87,8 @@ def indexing(poc_dir, index_dir=None):
                     poc_dict['__class__'] = poc.__class__.__name__
                     write_obj(poc_ind, poc_dict)
             successful_count += 1
-    logging.info('***********成功加载 %s 个模块【共计 %s 个】**********',
-                 successful_count, mod_count)
+    logger.info('***********成功加载 %s 个模块【共计 %s 个】**********',
+                successful_count, mod_count)
 
 
 def find_poc(poc_id, index_dir=None):

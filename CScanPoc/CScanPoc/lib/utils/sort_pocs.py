@@ -1,10 +1,10 @@
 # encoding: utf-8
 import os
-import logging
-from .progress import progress
-from CScanPoc.lib.core.utils import load_file_as_module, iter_modules
+from CScanPoc.lib.core.log import CSCAN_LOGGER as logger
+from CScanPoc.lib.core.utils import iter_modules
 from CScanPoc.lib.api.utils import load_poc_mod
 from CScanPoc.lib.api.component import Component
+from .progress import progress
 
 
 def _clean_up_poc_dirs(path):
@@ -23,7 +23,7 @@ def _clean_up_poc_dirs(path):
                 os.remove(fullpath)
     # if folder empty, delete it
     if len(os.listdir(path)) == 0:
-        logging.info('Remove empty dir: {}'.format(path))
+        logger.info('Remove empty dir: {}'.format(path))
         os.rmdir(path)
 
 
@@ -48,9 +48,9 @@ def sort_pocs(poc_base_dir):
                 os.makedirs(should_be_in)
             src_file = os.path.join(d, file_name)
             dst_file = os.path.join(should_be_in, file_name)
-            logging.info('move from {} to {}'.format(src_file, dst_file))
+            logger.info('move from {} to {}'.format(src_file, dst_file))
             os.rename(src_file, dst_file)
 
-    logging.info(
+    logger.info(
         '********* Clean up poc dir: {} ************'.format(poc_base_dir))
     _clean_up_poc_dirs(poc_base_dir)

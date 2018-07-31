@@ -1,7 +1,6 @@
 # coding: utf-8
 
 import json
-import logging
 from enum import Enum
 from pkg_resources import resource_filename, resource_exists
 
@@ -36,7 +35,8 @@ class Component:
         if self.__warned.get(k):
             return
         self.__warned[k] = True
-        logging.warning(msg)
+        from ..core.log import CSCAN_LOGGER as logger
+        logger.warning(msg)
 
     def __init__(self, name):
         '''组件信息

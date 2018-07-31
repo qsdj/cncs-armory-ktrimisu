@@ -2,10 +2,10 @@
 
 import uuid
 import json
-import logging
 import datetime
 from pypinyin import Style, pinyin
 from CScanPoc.lib.api.component import Component
+from CScanPoc.lib.core.log import CSCAN_LOGGER as logger
 from .progress import progress
 from .indexing import load_index
 
@@ -81,14 +81,14 @@ class CScanDb:
     def insert_component(self, component_name_set):
         if (len(component_name_set) == 0):
             return
-        logging.info('开始插入 Component [count={}]'.format(
+        logger.info('开始插入 Component [count={}]'.format(
             len(component_name_set)))
         component_insert_sql = '''INSERT INTO component
             (c_id, c_name, c_first, c_type, `desc`, producer,
              properties, created_at, updated_at)
             VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s)'''
 
-        logging.info('准备要插入的 Component 数据')
+        logger.info('准备要插入的 Component 数据')
         now = datetime.datetime.now()
         name_infos = [name_info for name_info in [(n, get_product_info(
             n)) for n in component_name_set] if name_info[1] is not None]
@@ -106,21 +106,21 @@ class CScanDb:
                 cursor.execute(component_insert_sql, [info.get(k) for k in [
                     'c_id', 'c_name', 'name_pinyin_first', 'type', 'desc', 'producer', 'properties', 'created_at', 'updated_at']])
             except Exception as e:
-                logging.warn('组件插入失败: {} {}\n{}'.format(n, info, e))
+                logger.warn('组件插入失败: {} {}\n{}'.format(n, info, e))
         self.cnx.commit()
-        logging.info('成功插入 Component [count={}]'.format(
+        logger.info('成功插入 Component [count={}]'.format(
             len(component_name_set)))
 
     def update_component(self, component_name_set):
         if (len(component_name_set) == 0):
             return
-        logging.info('更新 Component [count={}]'.format(len(component_name_set)))
+        logger.info('更新 Component [count={}]'.format(len(component_name_set)))
 
         component_update_sql = '''UPDATE component
             SET c_first=%s, c_type=%s, `desc`=%s, producer=%s, properties=%s, updated_at=%s
             WHERE c_name=%s'''
 
-        logging.info('准备要更新的 Component 数据')
+        logger.info('准备要更新的 Component 数据')
         now = datetime.datetime.now()
         name_infos = [name_info for name_info in [(n, get_product_info(
             n)) for n in component_name_set] if name_info[1] is not None]
@@ -138,23 +138,23 @@ class CScanDb:
                 cursor.execute(component_update_sql, [info.get(k) for k in [
                     'name_pinyin_first', 'type', 'desc', 'producer', 'properties', 'updated_at', 'c_name']])
             except Exception as e:
-                logging.warn('Component 更新失败: {} {}\n{}'.format(n, info, e))
+                logger.warn('Component 更新失败: {} {}\n{}'.format(n, info, e))
 
         self.cnx.commit()
-        logging.info('成功更新 Component [count={}]'.format(
+        logger.info('成功更新 Component [count={}]'.format(
             len(component_name_set)))
 
     def insert_vuln(self, vuln_id_set):
         if (len(vuln_id_set) == 0):
             return
-        logging.info('开始插入 Vuln [count={}]'.format(len(vuln_id_set)))
+        logger.info('开始插入 Vuln [count={}]'.format(len(vuln_id_set)))
 
         vuln_insert_sql = '''INSERT INTO vuln
             (vuln_id, vuln_name, vuln_type, c_id, c_version, cve_id, disclosure_date,
              submit_time, level, source, detail, created_at, updated_at)
             VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)'''
 
-        logging.info('准备要插入的 Vuln 数据')
+        logger.info('准备要插入的 Vuln 数据')
         vuln_infos = [info for info in [self.vuln_ind[vuln_id]
                                         for vuln_id in vuln_id_set] if info is not None]
         now = datetime.datetime.now()
@@ -175,19 +175,19 @@ class CScanDb:
                 cursor.execute(vuln_insert_sql, [vuln_info.get(k) for k in ['vuln_id', 'name', 'type', 'c_id', 'product_version',
                                                                             'cve_id', 'disclosure_date', 'submit_time', 'level', 'ref', 'desc', 'created_at', 'updated_at']])
             except Exception as e:
-                logging.warn('Vuln 插入失败: {}\n{}'.format(vuln_info, e))
+                logger.warn('Vuln 插入失败: {}\n{}'.format(vuln_info, e))
         self.cnx.commit()
-        logging.info('成功插入 Vuln [count={}]'.format(len(vuln_id_set)))
+        logger.info('成功插入 Vuln [count={}]'.format(len(vuln_id_set)))
 
     def update_vuln(self, vuln_id_set):
         if (len(vuln_id_set) == 0):
             return
-        logging.info('开始更新漏洞 [count={}]'.format(len(vuln_id_set)))
+        logger.info('开始更新漏洞 [count={}]'.format(len(vuln_id_set)))
         vuln_update_sql = '''UPDATE vuln
             SET vuln_name=%s, vuln_type=%s, c_id=%s, c_version=%s, cve_id=%s, disclosure_date=%s, level=%s, source=%s, detail=%s, updated_at=%s
             WHERE vuln_id=%s'''
 
-        logging.info('准备要更新的 Vuln 数据')
+        logger.info('准备要更新的 Vuln 数据')
         vuln_infos = [info for info in [self.vuln_ind[vuln_id]
                                         for vuln_id in vuln_id_set] if info is not None]
         now = datetime.datetime.now()
@@ -204,15 +204,15 @@ class CScanDb:
                 cursor.execute(vuln_update_sql, [vuln_info.get(k) for k in [
                     'name', 'type', 'c_id', 'product_version', 'cve_id', 'disclosure_date', 'level', 'ref', 'desc', 'updated_at', 'vuln_id']])
             except Exception as e:
-                logging.warn('Vuln 更新失败: {}\n{}'.format(vuln_info, e))
+                logger.warn('Vuln 更新失败: {}\n{}'.format(vuln_info, e))
 
         self.cnx.commit()
-        logging.info('成功更新漏洞 [count={}]'.format(len(vuln_id_set)))
+        logger.info('成功更新漏洞 [count={}]'.format(len(vuln_id_set)))
 
     def insert_pocs(self, poc_id_set):
         if (len(poc_id_set) == 0):
             return
-        logging.info('开始插入 POC [count={}]'.format(len(poc_id_set)))
+        logger.info('开始插入 POC [count={}]'.format(len(poc_id_set)))
 
         self.sync_vuln(
             set([self.poc_vuln_ind[poc_id] for poc_id in poc_id_set]))
@@ -221,7 +221,7 @@ class CScanDb:
             (poc_id, poc_name, author, vuln_id, created_at, updated_at, args)
             VALUES(%s, %s, %s, %s, %s, %s, %s)'''
 
-        logging.info('准备要插入的 POC 数据')
+        logger.info('准备要插入的 POC 数据')
         now = datetime.datetime.now()
         poc_infos = [x for x in [self.poc_ind[x]
                                  for x in poc_id_set] if x is not None]
@@ -244,15 +244,15 @@ class CScanDb:
                 cursor.execute(poc_insert_sql,
                                [poc_info.get(k) for k in ['poc_id', 'name', 'author', 'vuln_id', 'created_at', 'updated_at', 'args']])
             except Exception as e:
-                logging.warn('POC 插入失败: {}\n{}'.format(poc_info, e))
+                logger.warn('POC 插入失败: {}\n{}'.format(poc_info, e))
 
         self.cnx.commit()
-        logging.info('成功插入 POC [count={}]'.format(len(poc_id_set)))
+        logger.info('成功插入 POC [count={}]'.format(len(poc_id_set)))
 
     def update_pocs(self, poc_id_set):
         if (len(poc_id_set) == 0):
             return
-        logging.info('开始更新 POC [count={}]'.format(len(poc_id_set)))
+        logger.info('开始更新 POC [count={}]'.format(len(poc_id_set)))
 
         self.sync_vuln(
             set([self.poc_vuln_ind[poc_id] for poc_id in poc_id_set]))
@@ -261,7 +261,7 @@ class CScanDb:
             SET poc_name=%s, author=%s, vuln_id=%s, updated_at=%s, args=%s
             WHERE poc_id=%s'''
 
-        logging.info('准备要更新的 POC 数据 [count={}]'.format(len(poc_id_set)))
+        logger.info('准备要更新的 POC 数据 [count={}]'.format(len(poc_id_set)))
         now = datetime.datetime.now()
         poc_infos = [x for x in [self.poc_ind[x]
                                  for x in poc_id_set] if x is not None]
@@ -282,14 +282,14 @@ class CScanDb:
                 cursor.execute(poc_update_sql,
                                [poc_info.get(k) for k in ['name', 'author', 'vuln_id', 'updated_at', 'args', 'poc_id']])
             except Exception as e:
-                logging.warn('POC 更新失败: {}\n{}\n{}'.format(
+                logger.warn('POC 更新失败: {}\n{}\n{}'.format(
                     poc_info, e, poc_update_sql))
 
         self.cnx.commit()
-        logging.info('成功更新 POC [count={}]'.format(len(poc_id_set)))
+        logger.info('成功更新 POC [count={}]'.format(len(poc_id_set)))
 
     def sync_components(self):
-        logging.info('同步组件数据')
+        logger.info('同步组件数据')
         existed_c_names = set(
             [x[1] for x in self.fetch_component_id_names()])
         all_product_names = set(
@@ -299,10 +299,10 @@ class CScanDb:
             self.update_component(
                 all_product_names.intersection(existed_c_names))
         self.component_synced = True
-        logging.info('完成组件数据同步')
+        logger.info('完成组件数据同步')
 
     def sync_vuln(self, vuln_id_set):
-        logging.info('同步 Vuln 数据')
+        logger.info('同步 Vuln 数据')
         all_vuln_ids = set(self.vuln_ind.keys())
         existed_vuln_ids = self.fetch_vuln_ids()
 
@@ -315,10 +315,10 @@ class CScanDb:
 
         self.vuln_synced = True
         self.synced_vuln_ids_in_db = self.fetch_vuln_ids()
-        logging.info('完成漏洞数据同步')
+        logger.info('完成漏洞数据同步')
 
     def sync_poc(self):
-        logging.info('同步 POC 数据')
+        logger.info('同步 POC 数据')
         existed_poc_vuln_ind = {}
         for item in self.fetch_poc_and_related_vuln_ids():
             existed_poc_vuln_ind[item[0]] = item[1]
@@ -330,4 +330,4 @@ class CScanDb:
         if self.update_poc_when_exists:
             self.update_pocs(all_poc_ids.intersection(
                 existed_poc_ids))
-        logging.info('完成 POC 数据同步')
+        logger.info('完成 POC 数据同步')
