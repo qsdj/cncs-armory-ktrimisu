@@ -58,9 +58,11 @@ class Component:
                 pth = resource_filename(COMPONENT_RESOURCE_MODULE, filename)
                 self._info = json.load(open(pth))
             else:
+                pth = resource_filename(COMPONENT_RESOURCE_MODULE, '')
                 self.__warn_once(self.name,
-                                 '组件[name={}]定义文件不存在 {}，组件信息将使用默认值'.format(
-                                     self.name, pth))
+                                 ('组件[name={}]定义文件不存在，组件信息将使用默认值：'
+                                  '可以在 {} 创建 {} 文件定义').format(
+                                     self.name, pth, filename))
         except Exception as err:
             self.__warn_once(self.name,
                              '组件[name={}]定义加载出错({})：{}'.format(

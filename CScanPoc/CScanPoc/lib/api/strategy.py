@@ -2,17 +2,21 @@
 '''执行策略'''
 
 from abc import abstractproperty, ABCMeta
-from CScanPoc.lib.utils.indexing import find_poc
+from datetime import datetime
 from .common import RuntimeOptionSupport
 
 
 class StrategyStaticDefinition(metaclass=ABCMeta):
-    def __init__(self):
-        '''Strategy 静态信息定义'''
+    '''Strategy 静态信息定义'''
 
     @abstractproperty
     def name(self):
         '''策略名'''
+        pass
+
+    @abstractproperty
+    def author(self):
+        '''作者'''
         pass
 
     @abstractproperty
@@ -28,7 +32,12 @@ class StrategyStaticDefinition(metaclass=ABCMeta):
     @property
     def description(self):
         '''策略描述，可为空'''
-        return None
+        pass
+
+    @property
+    def create_date(self):
+        '''策略创建时间'''
+        return datetime.now()
 
 
 class ABStrategy(StrategyStaticDefinition, RuntimeOptionSupport):
@@ -36,8 +45,9 @@ class ABStrategy(StrategyStaticDefinition, RuntimeOptionSupport):
 
     def __init__(self):
         '''
-        :param index_dir: POC 索引目录
+        : param index_dir: POC 索引目录
         '''
+        StrategyStaticDefinition.__init__(self)
         RuntimeOptionSupport.__init__(self)
         self._index_dir = None
         self.target = None
@@ -47,6 +57,7 @@ class ABStrategy(StrategyStaticDefinition, RuntimeOptionSupport):
 
         注意每次执行获取将得到一个新的实例
         '''
+        from ..utils.indexing import find_poc
         return find_poc(poc_id, self.index_dir)
 
     @property

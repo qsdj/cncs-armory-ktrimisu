@@ -7,9 +7,13 @@ from CScanPoc.lib.utils.indexing import iter_pocs_of_component
 class SimpleComponentScanStrategy(ABStrategy):
     '''组件 POC 按序扫描策略'''
 
-    def __init__(self, component_name):
+    def __init__(self, component_name=None):
         ABStrategy.__init__(self)
-        self._name = component_name
+        self.component_name = component_name
+
+    @property
+    def author(self):
+        return 'lotuc'
 
     @property
     def strategy_id(self):
@@ -25,7 +29,9 @@ class SimpleComponentScanStrategy(ABStrategy):
 
     @property
     def pocs(self):
-        return iter_pocs_of_component(self.name, self.index_dir)
+        if self.component_name is None:
+            return []
+        return iter_pocs_of_component(self.component_name, self.index_dir)
 
 
 if __name__ == '__main__':

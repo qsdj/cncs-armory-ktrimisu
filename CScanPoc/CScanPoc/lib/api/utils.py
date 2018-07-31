@@ -4,21 +4,24 @@ import json
 from datetime import datetime
 from .vuln import ABVuln
 from .poc import ABPoc
+from .strategy import ABStrategy
+from ..core.log import CSCAN_LOGGER as logger
+
+
+def __process_date(date, to_string=False):
+    if isinstance(date, str):
+        try:
+            date = datetime.strptime(date, '%Y-%m-%d')
+        except:
+            pass
+    if not isinstance(date, datetime):
+        return None
+    return date.strftime('%Y-%m-%d') if to_string else date
 
 
 def dump_vuln_to_dict(vuln):
     '''ABVuln -> Dict'''
     if isinstance(vuln, ABVuln):
-        disclosure_date = vuln.disclosure_date
-        if isinstance(disclosure_date, str):
-            try:
-                disclosure_date = datetime.strptime(
-                    disclosure_date, '%Y-%m-%d')
-            except Exception:
-                pass
-        if not isinstance(disclosure_date, datetime):
-            disclosure_date = None
-
         product_versions = vuln.product_version
         if product_versions is None:
             product_versions = []
@@ -35,7 +38,7 @@ def dump_vuln_to_dict(vuln):
             'name': vuln.name,
             'type': vuln.type.value,
             'level': vuln.level.value,
-            'disclosure_date': disclosure_date.strftime('%Y-%m-%d') if disclosure_date is not None else None,
+            'disclosure_date': __process_date(vuln.disclosure_date, True),
             'desc': vuln.desc,
             'ref': vuln.ref,
             'product': vuln.product,
@@ -58,6 +61,37 @@ def dump_poc_to_dict(poc):
     raise Exception('Not ABPoc')
 
 
+def dump_strategy_to_dict(strategy):
+    '''ABStrategy -> Dict'''
+    if isinstance(strategy, ABStrategy):
+        return {
+            'strategy_id': strategy.strategy_id,
+            'author': strategy.author,
+            'name': strategy.name,
+            'poc_ids': strategy.poc_ids,
+            'create_date': __process_date(strategy.create_date, True),
+            'desc': strategy.description
+        }
+    raise Exception('Not ABStrategy')
+
+
+def load_strategy_mod(mod):
+    '''给定加载的 module 返回其中的 strategy
+
+    现在默认一个模块只包含一个 strategy
+    '''
+    for attr in dir(mod):
+        logger.debug('处理 %s', attr)
+        val = None
+        try:
+            val = getattr(mod, attr)()
+        except:
+            continue
+        if isinstance(val, ABStrategy):
+            return val
+    raise Exception('模块中未找到策略')
+
+
 def load_poc_mod(mod):
     '''给定加载的 module
 
@@ -71,6 +105,7 @@ def load_poc_mod(mod):
     vuln = None
     pocs = []
     for attr in dir(mod):
+        val = None
         try:
             val = getattr(mod, attr)()
         except:
