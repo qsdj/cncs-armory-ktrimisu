@@ -7,9 +7,11 @@
 
 import argparse
 from abc import ABCMeta, abstractproperty
-from CScanPoc.lib.core.log import setup_cscan_outputer, setup_cscan_poc_logger
+from CScanPoc.lib.core.log import (setup_cscan_outputer,
+                                   setup_cscan_poc_logger,
+                                   CSCAN_LOGGER as logger)
 from .component import Component
-from .schema import ObjectSchema, ValueNotFound
+from .schema import ObjectSchema, ValueNotFound, SchemaException
 
 
 def create_cmd_parser():
@@ -46,6 +48,48 @@ def create_cmd_parser():
                         dest='component_properties',
                         help='组件属性定义')
     return parser
+
+
+def parse_properties(args,
+                     set_option=None,
+                     set_component_property=None,
+                     default_component=None,
+                     exec_options=None,
+                     components_properties=None):
+    if components_properties is not None:
+        def _set_component_property(component_name, key, val):
+            if component_name not in components_properties:
+                components_properties[component_name] = {}
+            Component.get_component(component_name).property_schema_handle.set_val(
+                components_properties[component_name], key, val)
+        set_component_property = _set_component_property
+
+    '''解析参数中的执行参数和组件属性'''
+    if set_option:
+        # 执行参数解析
+        for opt in args.exec_option or []:
+            (key, val) = (opt, True)
+            if '=' in opt:
+                (key, val) = opt.split('=', 1)
+            try:
+                set_option(key, val)
+            except SchemaException as err:
+                logger.warning('执行参数设定错误: %s', err)
+
+    if set_component_property:
+        # 组件属性解析
+        for opt in args.component_properties or []:
+            (key, val) = (opt, True)
+            if '=' in opt:
+                (key, val) = opt.split('=', 1)
+            (component_name, prop) = (default_component, key)
+            if '.' in key:
+                (component_name, prop) = key.split('.', 1)
+            try:
+                set_component_property(component_name, prop, val)
+                logger.debug('解析设定组件 %s 属性：%s=%s', component_name, prop, val)
+            except SchemaException as err:
+                logger.warning('组件属性设定错误: %s', err)
 
 
 class RuntimeOptionSupport(metaclass=ABCMeta):
@@ -152,21 +196,8 @@ class RuntimeOptionSupport(metaclass=ABCMeta):
                                very_verbose=args.very_verbose)
         setup_cscan_outputer(args.json_output)
 
-        # 执行参数解析
-        for opt in args.exec_option or []:
-            (key, val) = (opt, True)
-            if '=' in opt:
-                (key, val) = opt.split('=', 1)
-            self.set_option(key, val)
-
-        # 组件属性解析
-        for opt in args.component_properties or []:
-            (key, val) = (opt, True)
-            if '=' in opt:
-                (key, val) = opt.split('=', 1)
-            (component_name, prop) = (self.default_component, key)
-            if '.' in key:
-                (component_name, prop) = key.split('.', 1)
-            self.set_component_property(component_name, prop, val)
-
+        parse_properties(args,
+                         self.set_option,
+                         self.set_component_property,
+                         self.default_component)
         return args
