@@ -1,11 +1,11 @@
 # coding: utf-8
 
-import logging
 import argparse
 import mysql.connector
 from CScanPoc.lib.utils.sort_pocs import sort_pocs
 from CScanPoc.lib.utils.cscan_db import CScanDb
-from CScanPoc.lib.utils.indexing import indexing
+from CScanPoc.lib.utils.indexing import indexing_pocs, indexing_strategies
+from CScanPoc.lib.core.log import setup_cscan_poc_logger, CSCAN_LOGGER as logger
 
 
 def create_parser():
@@ -22,8 +22,10 @@ def create_parser():
 
     parser.add_argument('--skip-syncing', dest='skip_syncing',
                         action='store_true', help='跳过同步')
-    parser.add_argument('--poc-dir', dest='poc_dir', required=True,
+    parser.add_argument('--poc-dir', dest='poc_dir',
                         help='目标目录，将递归处理目录下所有 .py 结尾文件')
+    parser.add_argument('--strategy-dir', dest='strategy_dir',
+                        help='处理目录下所有的 .py 策略文件')
     parser.add_argument('-v', dest='verbose', action='store_true',
                         help='verbose')
     parser.add_argument('-vv', dest='very_verbose', action='store_true',
@@ -31,6 +33,10 @@ def create_parser():
 
     parser.add_argument('--skip-indexing', dest='skip_indexing',
                         action='store_true', help='跳过索引创建')
+    parser.add_argument('--skip-indexing-poc', dest='skip_indexing_poc',
+                        action='store_true')
+    parser.add_argument('--skip-indexing-strategy',
+                        dest='skip_indexing_strategy', action='store_true')
     parser.add_argument('--index-dir', dest='index_dir',
                         help='索引信息存放目录，默认当前目录 index 目录下')
     parser.add_argument('--update', dest='update',
@@ -43,29 +49,34 @@ def create_parser():
     return parser
 
 
-def setup_logger(args):
-    if args.very_verbose:
-        logging.basicConfig(level=logging.DEBUG)
-    elif args.verbose:
-        logging.basicConfig(level=logging.INFO)
-    else:
-        logging.basicConfig(level=logging.WARN)
-
-
 def main():
-    args = create_parser().parse_args()
-    setup_logger(args)
+    (parser, args) = (None), None
+    try:
+        parser = create_parser()
+        args = parser.parse_args()
+    except:
+        return
+    setup_cscan_poc_logger(verbose=args.verbose,
+                           very_verbose=args.very_verbose)
 
     if args.sort:
+        if not args.doc_dir:
+            logger.warning('未指定 --poc-dir')
+            parser.print_usage()
+            return
         sort_pocs(args.poc_dir)
         return
 
     if not args.skip_indexing:
-        logging.info('Indexing...')
-        indexing(args.poc_dir)
+        if not args.skip_indexing_poc and args.poc_dir:
+            logger.info('开始索引 POC ...')
+            indexing_pocs(args.poc_dir, args.index_dir)
+        if not args.skip_indexing_strategy and args.strategy_dir:
+            logger.info('开始索引策略 ...')
+            indexing_strategies(args.strategy_dir, args.index_dir)
 
     if not args.skip_syncing:
-        logging.info('Syncing...')
+        logger.info('开始同步数据...')
         cnx = mysql.connector.connect(
             user=args.user,
             password=args.passwd,
@@ -73,15 +84,13 @@ def main():
             database=args.db,
             port=args.port,
             charset='utf8')
-        CScanDb(cnx,
-                args.index_dir,
-                args.update,
-                args.update,
-                args.update).sync_poc()
+        cscan_db = CScanDb(cnx, args.index_dir, args.update)
+        cscan_db.sync_poc()
+        cscan_db.sync_strategy()
 
 
 if __name__ == '__main__':
     try:
         main()
     except:
-        logging.exception('执行出错')
+        logger.exception('执行出错')

@@ -4,8 +4,8 @@ import os
 import imp
 import json
 import uuid
-import logging
 from CScanPoc import ABPoc, ABVuln
+from CScanPoc.lib.core.log import CSCAN_LOGGER as logger
 
 
 def vuln_to_dict(vuln):
@@ -54,12 +54,12 @@ def find_vuln_poc(mod):
                 if val.poc_id is not None and val.poc_id.strip() != '':
                     poc = val
                 else:
-                    logging.warn('POC ID 为空: {} - {}'.format(val, mod))
+                    logger.warn('POC ID 为空: {} - {}'.format(val, mod))
             elif isinstance(val, ABVuln):
                 if val.vuln_id is not None and val.vuln_id.strip() != '':
                     vuln = val
                 else:
-                    logging.warn('Vuln ID 为空: {} - {}'.format(val, mod))
+                    logger.warn('Vuln ID 为空: {} - {}'.format(val, mod))
         except:
             continue
     return (vuln, poc)
@@ -80,11 +80,11 @@ def load_poc_file_as_module(dir_or_file, filename=None):
     ).replace('.', '_')
     poc_file = os.path.join(dir, name)
     try:
-        logging.debug('Loading {}'.format(poc_file))
+        logger.debug('Loading {}'.format(poc_file))
         return imp.load_source(
             'CScanPoc.{}'.format(mod_name), poc_file)
     except Exception as e:
-        logging.error('Error loading {} {}'.format(poc_file, e))
+        logger.error('Error loading {} {}'.format(poc_file, e))
         raise e
 
 

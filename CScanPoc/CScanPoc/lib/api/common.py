@@ -1,9 +1,51 @@
 # coding: utf-8
+'''POC/策略运行时支持
+
+- 执行参数定义、解析
+- 组件属性参数定义、解析
+'''
+
+import argparse
 from abc import ABCMeta, abstractproperty
-from CScanPoc.lib.parse.args import create_poc_cmd_parser, parse_args
+from CScanPoc.lib.core.log import setup_cscan_outputer, setup_cscan_poc_logger
 from .component import Component
 from .schema import ObjectSchema, ValueNotFound
-from CScanPoc.lib.core.log import CScanOutputer
+
+
+def create_cmd_parser():
+    '''创建命令行解析器'''
+    parser = argparse.ArgumentParser(
+        formatter_class=argparse.RawTextHelpFormatter)
+    parser.add_argument(
+        "-u", "--url", dest="url", required=True,
+        help="目标 URL (e.g. \"http://lotuc.org/\")")
+    parser.add_argument(
+        '--log-level', required=False, default='DEBUG',
+        choices=['DEBUG', 'INFO', 'WARN', 'ERROR', 'SUCCESS', 'REPORT'],
+        help="日志级别, default: DEBUG")
+    parser.add_argument(
+        '--mode', required=False, default="verify", choices=["verify", "exploit"],
+        help="POC 执行模式, default: verify")
+    parser.add_argument(
+        '--index-dir', required=False, dest='index_dir',
+        help='POC 索引目录')
+    parser.add_argument(
+        '--json-output', required=False, dest='json_output',
+        action='store_true', default=False,
+        help='输出 JSON 格式结果')
+    parser.add_argument('-v', dest='verbose', action='store_true',
+                        help='系统日志配置')
+    parser.add_argument('-vv', dest='very_verbose', action='store_true',
+                        help='系统日志配置')
+    # 执行参数解析
+    parser.add_argument('--exec-option', metavar='KEY=VALUE', type=str, nargs='+',
+                        help='执行参数定义')
+    # 组件属性定义
+    parser.add_argument('--component-property', metavar='COMPONENT.PROPERTY=VALUES',
+                        type=str, nargs='+',
+                        dest='component_properties',
+                        help='组件属性定义')
+    return parser
 
 
 class RuntimeOptionSupport(metaclass=ABCMeta):
@@ -14,6 +56,7 @@ class RuntimeOptionSupport(metaclass=ABCMeta):
     '''
 
     def __init__(self):
+        self.target = None
         # 执行参数
         self._exec_option = {}
         self._option_schema = {}
@@ -100,11 +143,30 @@ class RuntimeOptionSupport(metaclass=ABCMeta):
         :type mode: 'verify' | 'exploit'
         """
         if args is None:
-            argparser = create_poc_cmd_parser()
+            argparser = create_cmd_parser()
             args = argparser.parse_args()
-        CScanOutputer.init_output(args.json_output)
+        # 执行目标
         self.target = args.url
-        parse_args(args, self.set_option,
-                   self.set_component_property,
-                   self.default_component)
+        # 日志配置
+        setup_cscan_poc_logger(verbose=args.verbose,
+                               very_verbose=args.very_verbose)
+        setup_cscan_outputer(args.json_output)
+
+        # 执行参数解析
+        for opt in args.exec_option or []:
+            (key, val) = (opt, True)
+            if '=' in opt:
+                (key, val) = opt.split('=', 1)
+            self.set_option(key, val)
+
+        # 组件属性解析
+        for opt in args.component_properties or []:
+            (key, val) = (opt, True)
+            if '=' in opt:
+                (key, val) = opt.split('=', 1)
+            (component_name, prop) = (self.default_component, key)
+            if '.' in key:
+                (component_name, prop) = key.split('.', 1)
+            self.set_component_property(component_name, prop, val)
+
         return args

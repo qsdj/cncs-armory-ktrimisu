@@ -1,18 +1,56 @@
 # coding: utf-8
 '''执行策略'''
 
-from abc import abstractproperty
-from CScanPoc.lib.utils.indexing import find_poc
+from abc import abstractproperty, ABCMeta
+from datetime import datetime
 from .common import RuntimeOptionSupport
 
 
-class ABStrategy(RuntimeOptionSupport):
+class StrategyStaticDefinition(metaclass=ABCMeta):
+    '''Strategy 静态信息定义'''
+
+    @abstractproperty
+    def name(self):
+        '''策略名'''
+        pass
+
+    @abstractproperty
+    def author(self):
+        '''作者'''
+        pass
+
+    @abstractproperty
+    def strategy_id(self):
+        '''策略 ID'''
+        pass
+
+    @abstractproperty
+    def poc_ids(self):
+        '''使用到的 POC ID'''
+        pass
+
+    @property
+    def description(self):
+        '''策略描述，可为空'''
+        pass
+
+    @property
+    def create_date(self):
+        '''策略创建时间'''
+        return datetime.now()
+
+    def __str__(self):
+        return '[Strategy {}]'.format(self.name)
+
+
+class ABStrategy(StrategyStaticDefinition, RuntimeOptionSupport):
     '''策略'''
 
     def __init__(self):
         '''
-        :param index_dir: POC 索引目录
+        : param index_dir: POC 索引目录
         '''
+        StrategyStaticDefinition.__init__(self)
         RuntimeOptionSupport.__init__(self)
         self._index_dir = None
         self.target = None
@@ -22,7 +60,9 @@ class ABStrategy(RuntimeOptionSupport):
 
         注意每次执行获取将得到一个新的实例
         '''
-        return find_poc(poc_id, self.index_dir)
+        from ..utils.indexing import find_poc
+        poc = find_poc(poc_id, self.index_dir)
+        poc.output.strategy = self
 
     @property
     def index_dir(self):
@@ -32,11 +72,6 @@ class ABStrategy(RuntimeOptionSupport):
     @index_dir.setter
     def index_dir(self, val):
         self._index_dir = val
-
-    @abstractproperty
-    def name(self):
-        '''策略名'''
-        pass
 
     @property
     def poc_ids(self):
@@ -59,32 +94,24 @@ class ABStrategy(RuntimeOptionSupport):
     def default_component(self):
         return None
 
-    def run(self, target=None, exec_option={}, components_properties={}, args=None):
-        '''执行策略
-
-        :param index_dir: POC 索引目录
-        '''
-
-    def run(self, target=None, mode='verify', exec_option={}, components_properties={}, args=None):
+    def run(self, target=None, args=None, index_dir=None, exec_option={}, components_properties={}):
         """执行扫描操作
 
         当 target=None 时，忽略函数参数，解析命令行参数获取执行参数
 
         :param target: 扫描目标
-        :param mode: 扫描模式
         :type target: str, None 默认为 None
-        :type mode: 'verify' | 'exploit'
         """
 
         if target is None:
             args = super().parse_args(args)
             self.target = args.url
             self.index_dir = args.index_dir
-            mode = args.mode
         else:
             self.target = target
             self.exec_option = exec_option
             self.components_properties = components_properties
+            self.index_dir = index_dir
 
         if not self.target:
             return
