@@ -62,7 +62,7 @@ class CScanOutputer:
         self.strategy = strategy
 
     def get_extra(self, vuln=None):
-        extra = {'hello': 'world'}
+        extra = {}
         if self.poc:
             extra['poc'] = self.poc
         if self.strategy:
@@ -151,7 +151,7 @@ def setup_cscan_outputer(json_output=False, poc=None, strategy=None):
         CSCAN_LOGGER.info('输出 JSON')
         output_handler = logging.StreamHandler(sys.stdout)
         output_handler.setFormatter(jsonlogger.JsonFormatter(
-            '(asctime) (vuln) (poc) (strategy) (hello) (levelname) (message)',
+            '(asctime) (vuln) (poc) (strategy) (levelname) (message)',
             json_default=_get_json_translate()))
         __CSCAN_OUTPUT_LOGGER.addHandler(output_handler)
     else:

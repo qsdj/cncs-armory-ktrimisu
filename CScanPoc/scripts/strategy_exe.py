@@ -40,20 +40,23 @@ def recommend(args):
     '''返回推荐执行策略任务
 
     strategy_exe 参数列表
+
+    :return: {'strategy_id': '',
+              'exec_option': [str]}
     '''
     setup_cscan_poc_logger(verbose=args.verbose,
                            very_verbose=args.very_verbose)
     components_properties = {}
     outputer = get_scan_outputer()
     parse_properties(args, components_properties=components_properties)
-    for component in components_properties:
-        scan_args = ['-u', args.url,
-                     '--strategy-id', 'simple-component-scan-strategy',
-                     '--component', component]
+    # args.url: 目标
+    # components_properties: 资产当前所有组件及其属性
 
-        scan_args.append('--component-property')
-        scan_args.extend(components_properties_to_args(components_properties))
-        outputer.report(json.dumps(scan_args))
+    for component in components_properties:
+        outputer.report(json.dumps({
+            'strategy_id': 'simple-component-scan-strategy',
+            'exec_option': ['--component', component]
+        }))
 
 
 def main():
