@@ -362,6 +362,9 @@ class CScanDb:
             [x[1] for x in self.fetch_component_id_names()])
         all_product_names = set(
             [x['product'] for x in list(self.vuln_ind.values())])
+        for common_component in Component.get_common_components():
+            logger.info('通用组件：%s', common_component)
+            all_product_names.add(common_component)
         self.insert_component(all_product_names.difference(existed_c_names))
         if self.updating:
             self.update_component(

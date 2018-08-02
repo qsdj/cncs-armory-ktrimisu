@@ -1,5 +1,6 @@
 # coding: utf-8
 
+import os
 import json
 from enum import Enum
 from pkg_resources import resource_filename, resource_exists
@@ -33,6 +34,20 @@ class Component:
         if name not in Component.__component_cache:
             Component.__component_cache[name] = Component(name)
         return Component.__component_cache[name]
+
+    @staticmethod
+    def get_common_components():
+        '''通用组件'''
+        try:
+            common_pth = resource_filename(
+                COMMON_COMPONENT_RESOURCE_MODULE, '')
+            return map(lambda filename: filename[:-5],
+                       filter(lambda filename:
+                              filename.endswith('.json')
+                              and filename != '__meta__.json',
+                              os.listdir(common_pth)))
+        except:
+            return []
 
     def __warn_once(self, k, msg):
         if self.__warned.get(k):

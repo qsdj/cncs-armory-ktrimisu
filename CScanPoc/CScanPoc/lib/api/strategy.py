@@ -3,6 +3,7 @@
 
 from abc import abstractproperty, ABCMeta
 from datetime import datetime
+from CScanPoc.lib.core.log import get_scan_outputer, CSCAN_LOGGER as logger
 from .common import RuntimeOptionSupport
 
 
@@ -53,7 +54,7 @@ class ABStrategy(StrategyStaticDefinition, RuntimeOptionSupport):
         StrategyStaticDefinition.__init__(self)
         RuntimeOptionSupport.__init__(self)
         self._index_dir = None
-        self.target = None
+        self.output = get_scan_outputer(strategy=self)
 
     def get_poc(self, poc_id):
         '''根据 poc_id 获取 POC
@@ -63,6 +64,7 @@ class ABStrategy(StrategyStaticDefinition, RuntimeOptionSupport):
         from ..utils.indexing import find_poc
         poc = find_poc(poc_id, self.index_dir)
         poc.output.strategy = self
+        return poc
 
     @property
     def index_dir(self):
@@ -84,6 +86,7 @@ class ABStrategy(StrategyStaticDefinition, RuntimeOptionSupport):
     @property
     def pocs(self):
         '''ABPoc 迭代器，此属性和 poc_ids 属性至少有一个被覆盖'''
+        logger.info('poc_ids: %s', self.poc_ids)
         for poc_id in self.poc_ids:
             try:
                 yield self.get_poc(poc_id)
@@ -126,4 +129,4 @@ class ABStrategy(StrategyStaticDefinition, RuntimeOptionSupport):
                         exec_option=self.exec_option,
                         components_properties=self.components_properties)
             except:
-                continue
+                logger.exception('POC 执行出错：%s', poc)
