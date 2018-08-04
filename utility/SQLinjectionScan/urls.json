@@ -1,0 +1,22 @@
+{
+    "getallurls": {
+        "sublimetext.iaixue.com": [
+            "http://sublimetext.iaixue.com/connect.php?mod=login&op=init&referer=index.php&statfrom=login_simple",
+            "http://sublimetext.iaixue.com/forum.php?mod=viewthread&tid=479&from=announce",
+            "http://sublimetext.iaixue.com/forum.php?mod=viewthread&tid=479",
+            "http://sublimetext.iaixue.com/connect.php?mod=login&op=init&referer=forum.php%3Fmod%3Dviewthread%26tid%3D479%26from%3Dannounce&statfrom=login_simple",
+            "http://sublimetext.iaixue.com/uc_server/avatar.php?uid=2&size=middle",
+            "http://sublimetext.iaixue.com/home.php?mod=spacecp&ac=plugin&id=qqconnect:spacecp&pluginop=share&sh_type=4&thread_id=479",
+            "http://sublimetext.iaixue.com/uc_server/avatar.php?uid=13909&size=middle",
+            "http://sublimetext.iaixue.com/uc_server/avatar.php?uid=3189&size=middle",
+            "http://sublimetext.iaixue.com/uc_server/avatar.php?uid=8917&size=middle",
+            "http://sublimetext.iaixue.com/uc_server/avatar.php?uid=13809&size=middle",
+            "http://sublimetext.iaixue.com/uc_server/avatar.php?uid=12591&size=middle",
+            "http://sublimetext.iaixue.com/uc_server/avatar.php?uid=13991&size=middle",
+            "http://sublimetext.iaixue.com/uc_server/avatar.php?uid=7740&size=middle",
+            "http://sublimetext.iaixue.com/connect.php?mod=login&op=init&referer=forum.php%3Fmod%3Dviewthread%26tid%3D479%26from%3Dannounce&statfrom=login",
+            "http://sublimetext.iaixue.com/connect.php?mod=login&op=init&referer=forum.php%3Fmod%3Dviewthread%26tid%3D479&statfrom=login_simple",
+            "http://sublimetext.iaixue.com/connect.php?mod=login&op=init&referer=forum.php%3Fmod%3Dviewthread%26tid%3D479&statfrom=login"
+        ]
+    }
+}
