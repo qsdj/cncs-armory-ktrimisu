@@ -3,14 +3,13 @@
 
 '''策略执行'''
 
-import sys
 import json
+import sys
+
+from CScanPoc.lib.api.common import create_cmd_parser, parse_properties
+from CScanPoc.lib.core.log import CSCAN_LOGGER as logger
+from CScanPoc.lib.core.log import get_scan_outputer, setup_cscan_poc_logger
 from CScanPoc.lib.utils.indexing import find_strategy
-from CScanPoc.lib.api.common import (create_cmd_parser,
-                                     parse_properties)
-from CScanPoc.lib.core.log import (get_scan_outputer,
-                                   CSCAN_LOGGER as logger,
-                                   setup_cscan_poc_logger)
 
 
 def create_parser():
@@ -24,6 +23,7 @@ def create_parser():
 
 
 def components_properties_to_args(components_properties):
+    '''组件属性转换成参数列表'''
     args = []
     for component in components_properties:
         properties = components_properties[component]
@@ -39,6 +39,8 @@ def components_properties_to_args(components_properties):
 def recommend(args):
     '''返回推荐执行策略任务
 
+    针对特定资产进行推荐
+
     strategy_exe 参数列表
 
     :return: {'strategy_id': '',
@@ -46,6 +48,8 @@ def recommend(args):
     '''
     setup_cscan_poc_logger(verbose=args.verbose,
                            very_verbose=args.very_verbose)
+    # 组件名:
+    #   属性 -> 属性值
     components_properties = {}
     outputer = get_scan_outputer()
     parse_properties(args, components_properties=components_properties)

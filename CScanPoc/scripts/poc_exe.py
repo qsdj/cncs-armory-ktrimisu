@@ -1,18 +1,21 @@
 #!/usr/bin/env python3
-# encoding: utf-8
+# coding: utf-8
 
-'''POC 执行'''
+'''POC 啊'''
 
 import sys
-from CScanPoc.lib.utils.indexing import find_poc
+
 from CScanPoc.lib.api.common import create_cmd_parser
-from CScanPoc.lib.core.log import setup_cscan_poc_logger, CSCAN_LOGGER as logger
+from CScanPoc.lib.core.log import CSCAN_LOGGER as logger
+from CScanPoc.lib.core.log import setup_cscan_poc_logger
+from CScanPoc.lib.utils.indexing import find_poc
 
 
 def create_parser():
     '''创建命令行解析'''
+
     parser = create_cmd_parser()
-    parser.add_argument('--poc-id', dest='poc_id', required=True,
+    parser.add_argument('--poc-id', dest='poc_id', required=False,
                         help='要执行的 POC 的 ID')
 
     return parser
@@ -21,9 +24,19 @@ def create_parser():
 def main():
     '''POC 执行入口'''
     args = None
+    parser = create_parser()
     try:
-        args = create_parser().parse_args()
+        args = parser.parse_args()
     except:
+        logger.exception('解析错误')
+        raise
+    if not args.url:
+        parser.print_usage()
+        logger.warning('参数解析错误: url 为空')
+        return
+    if not args.poc_id:
+        parser.print_usage()
+        logger.warning('参数解析错误: poc-id 为空')
         return
     setup_cscan_poc_logger(verbose=args.verbose,
                            very_verbose=args.very_verbose)

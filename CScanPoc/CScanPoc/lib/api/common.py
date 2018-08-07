@@ -6,12 +6,30 @@
 '''
 
 import argparse
+import json
+import os
 from abc import ABCMeta, abstractproperty
-from CScanPoc.lib.core.log import (setup_cscan_outputer,
-                                   setup_cscan_poc_logger,
-                                   CSCAN_LOGGER as logger)
+
+from CScanPoc.lib.core.log import CSCAN_LOGGER as logger
+from CScanPoc.lib.core.log import setup_cscan_outputer, setup_cscan_poc_logger
+
 from .component import Component
-from .schema import ObjectSchema, ValueNotFound, SchemaException
+from .schema import ObjectSchema, SchemaException, ValueNotFound
+
+
+class LoadFromFile(argparse.Action):
+    '''从文件加载参数列表'''
+
+    def __call__(self, parser, namespace, values, option_string=None):
+        with values as argfile:
+            parser.parse_args(argfile.read().split(), namespace)
+
+
+class LoadComponentsProperties(argparse.Action):
+    '''从文件加载组件属性'''
+
+    def __call__(self, parser, namespace, values, option_string=None):
+        pass
 
 
 def create_cmd_parser():
@@ -19,7 +37,14 @@ def create_cmd_parser():
     parser = argparse.ArgumentParser(
         formatter_class=argparse.RawTextHelpFormatter)
     parser.add_argument(
-        "-u", "--url", dest="url", required=True,
+        '--arg-file', required=False, type=open,
+        help='参数文件，如果指定了该参数，其它参数值从文件读取',
+        action=LoadFromFile)
+    parser.add_argument(
+        '--component-property-file',
+        dest='component_property_file', help='组件属性文件')
+    parser.add_argument(
+        "-u", "--url", dest="url", required=False,
         help="目标 URL (e.g. \"http://lotuc.org/\")")
     parser.add_argument(
         '--log-level', required=False, default='DEBUG',
@@ -54,8 +79,9 @@ def parse_properties(args,
                      set_option=None,
                      set_component_property=None,
                      default_component=None,
-                     exec_options=None,
                      components_properties=None):
+    '''解析参数中的执行参数和组件属性'''
+
     if components_properties is not None:
         def _set_component_property(component_name, key, val):
             if component_name not in components_properties:
@@ -64,7 +90,6 @@ def parse_properties(args,
                 components_properties[component_name], key, val)
         set_component_property = _set_component_property
 
-    '''解析参数中的执行参数和组件属性'''
     if set_option:
         # 执行参数解析
         for opt in args.exec_option or []:
@@ -77,6 +102,26 @@ def parse_properties(args,
                 logger.warning('执行参数设定错误: %s', err)
 
     if set_component_property:
+        if args.component_property_file:
+            if not os.path.exists(args.component_property_file):
+                raise Exception('属性文件 {} 不存在'.format(
+                    args.component_property_file))
+            properties = None
+            try:
+                with open(args.component_property_file) as fh:
+                    properties = json.load(fh)
+            except Exception as err:
+                raise Exception('属性文件 {} 解析错误'.format(
+                    args.component_property_file), err)
+            for component_name in properties:
+                for prop in properties[component_name]:
+                    try:
+                        set_component_property(
+                            component_name, prop, properties[component_name][prop])
+                    except SchemaException as err:
+                        logger.warning('组件属性设定错误: %s [%s]',
+                                       err, args.component_property_file)
+
         # 组件属性解析
         for opt in args.component_properties or []:
             (key, val) = (opt, True)
@@ -189,6 +234,9 @@ class RuntimeOptionSupport(metaclass=ABCMeta):
         if args is None:
             argparser = create_cmd_parser()
             args = argparser.parse_args()
+
+        if not args.url:
+            raise Exception('未指定执行目标[-u/--url]')
         # 执行目标
         self.target = args.url
         # 日志配置

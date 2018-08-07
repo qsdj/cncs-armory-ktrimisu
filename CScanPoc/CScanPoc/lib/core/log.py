@@ -2,6 +2,7 @@
 
 import logging
 import sys
+
 import colorlog
 from pythonjsonlogger import jsonlogger
 
@@ -16,6 +17,7 @@ def setup_cscan_poc_logger(level=None, verbose=False, very_verbose=False):
     output_handler = colorlog.StreamHandler(sys.stdout)
     output_handler.setFormatter(colorlog.ColoredFormatter(
         '%(log_color)s[%(asctime)s] [%(levelname)s] %(message)s'))
+    CSCAN_LOGGER.handlers.clear()
     CSCAN_LOGGER.addHandler(output_handler)
     if level is not None:
         CSCAN_LOGGER.setLevel(level)

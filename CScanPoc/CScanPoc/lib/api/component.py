@@ -137,10 +137,6 @@ class Component:
     @property
     def property_schema(self):
         '''属性定义'''
-        schema = {
-            'name': self.name,
-            'properties': self._info.get('properties', {})
-        }
         # 组件定义文件中定义的属性
         properties = self._info.get('properties', {})
 
