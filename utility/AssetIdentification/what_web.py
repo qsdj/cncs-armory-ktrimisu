@@ -1,9 +1,9 @@
 #!/usr/bin/python
 # coding: utf-8
 
+import os
 import json
 import logging
-import os
 import tempfile
 from urlparse import urlparse
 
@@ -53,10 +53,30 @@ class WhatWebResultParser(object):
             (name, version) = (item, None)
             if '/' in item:
                 name, version = item.split('/', 1)
+            elif '(' in item:
+                name, _version = item.split('(')
+                version = _version.split(')')[0]
+            name = self._common_name_calibration(name)
             info = self.components.get(name, {})
             if version:
                 info['version'] = version
             self.components[name] = info
+    
+    def _common_name_calibration(self, name, component_path=None):
+        '''转译组件名'''
+        # 默认组件位置
+        if not component_path:
+            CScan_POC_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+            component_path = os.path.join(CScan_POC_dir, "CScanPoc/CScanPoc/resources/component")
+        all_component = os.listdir(component_path)
+        for component in all_component:
+            if component.endswith(".json"):
+                component_name = component.split('.json')[0]
+                if name.upper() in component_name.upper():
+                    return component_name
+                else:
+                    return name
+
 
     def _parse_meta_generator(self, json_obj, pth=None):
         '''MetaGenerator 结果的解析'''
