@@ -1,13 +1,13 @@
 #!/usr/bin/python
 # coding: utf-8
 
-import argparse
 import json
 import logging
 import os
-import sys
 import tempfile
 from urlparse import urlparse
+
+from common import create_cmd_parser, print_result, setup_logger
 
 WHAT_WEB_CMD = '{what_web_bin} {url} --log-json {output_file}'
 
@@ -17,31 +17,6 @@ def run_whatweb(url, outfile, what_web_bin):
         what_web_bin=what_web_bin, url=url, output_file=outfile)
     logging.info('执行: %s', cmd)
     os.system(cmd)
-
-
-def setup_logger():
-    '''设定日志记录'''
-    root = logging.getLogger()
-    root.setLevel(logging.DEBUG)
-    handler = logging.StreamHandler(sys.stdout)
-    handler.setLevel(logging.DEBUG)
-    formatter = logging.Formatter(
-        '%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-    handler.setFormatter(formatter)
-    root.addHandler(handler)
-
-
-def create_cmd_parser():
-    '''创建命令行解析器'''
-    parser = argparse.ArgumentParser(
-        formatter_class=argparse.RawTextHelpFormatter)
-    parser.add_argument(
-        '-u', '--url', required=False, dest='url',
-        help='识别目标主机 URL/IP/域名')
-    parser.add_argument(
-        '--json-out-file', required=False, dest='json_out_file',
-        help='以 JSON 格式输出结果到文件')
-    return parser
 
 
 class WhatWebResultParser(object):
@@ -95,17 +70,6 @@ class WhatWebResultParser(object):
                 info['version'] = version
             info['deploy_path'] = pth or '/'
             self.components[name] = info
-
-
-def print_result(result, json_out_file=None):
-    '''打印最终结果'''
-    if json_out_file is not None:
-        with open(json_out_file, 'w') as out:
-            json.dump(result, out)
-    else:
-        print('RESULT_START')
-        print(json.dumps(result))
-        print('RESULT_END')
 
 
 def main(what_web_bin='WhatWeb/whatweb'):
