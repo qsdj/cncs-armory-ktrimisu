@@ -26,6 +26,11 @@ class WhatWebResultParser(object):
             self.whatweb_result = json.load(outfile)
         self.components = {}
 
+        self.has_attr_MetaGenerator = False
+        self.component_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "component")
+        self.all_components = [component.split(".json")[0] for component in os.listdir(self.component_path) if component.endswith(".json")]
+        self.upper_all_components = [component.upper() for component in self.all_components]
+
     def parse(self):
         for item in self.whatweb_result:
             self._parse_one(item)
@@ -43,7 +48,20 @@ class WhatWebResultParser(object):
             if name in ("HTTPServer", "X-Powered-By"):
                 self._parse_common(plugins[name])
             elif name == "MetaGenerator":
+                self.has_attr_MetaGenerator = True
                 self._parse_meta_generator(plugins[name], pth)
+            elif not self.has_attr_MetaGenerator and (name.upper() in self.upper_all_components):
+                self._parse_in_plugins_common(plugins[name], name)
+
+
+    def _parse_in_plugins_common(self, json_obj, name):
+        """组件结果 直接显示在plugins里"""
+        version = json_obj.get("version", "")
+        name = self._common_name_calibration(name)
+        info = self.components.get(name, {})
+        if version:
+            info["version"] = version
+        self.components[name] = info
 
     def _parse_common(self, json_obj):
         """结果为 组件名/版本 的形式的结果的解析"""
@@ -61,19 +79,13 @@ class WhatWebResultParser(object):
                 info["version"] = version
             self.components[name] = info
 
-    def _common_name_calibration(self, name, component_path=None):
+    def _common_name_calibration(self, name):
         '''转译组件名'''
-        if not component_path:
-            CScan_POC_dir = os.path.dirname(os.path.abspath(__file__))
-            component_path = os.path.join(CScan_POC_dir, "component")
-        all_component = os.listdir(component_path)
-        for component in all_component:
-            if component.endswith(".json"):
-                component_name = component.split(".json")[0]
-                if name.upper() in component_name.upper():
-                    return component_name
-                else:
-                    return name
+        for component in self.all_components:
+            if name.upper() in component.upper():
+                return component
+            else:
+                return name
 
     def _parse_meta_generator(self, json_obj, pth=None):
         """MetaGenerator 结果的解析"""
@@ -82,6 +94,7 @@ class WhatWebResultParser(object):
             if " " in item:
                 (name, version) = item.split(" ", 1)
             name = item.split(" ")[0]
+            name = self._common_name_calibration(name)
             info = self.components.get(name, {})
             if version:
                 info["version"] = version
