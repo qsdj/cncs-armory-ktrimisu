@@ -1,0 +1,5 @@
+{
+  "type": "middleware",
+  "producer": "Zabbix LLC",
+  "desc": "Zabbix 是由 Alexei Vladishev 开发的一种网络监视、管理系统，基于 Server-Client 架构。可用于监视各种网络服务、服务器和网络机器等状态。\nZabbix 使用 MySQL、PostgreSQL、SQLite、Oracle 或 IBM DB2 储存资料。Server 端基于 C语言、Web 前端则是基于 PHP 所制作的。Zabbix 可以使用多种方式监视。可以只使用 Simple Check 不需要安装 Client 端，亦可基于 SMTP 或 HTTP 等各种协定做死活监视。在客户端如 UNIX、Windows 中安装 Zabbix Agent 之后，可监视 CPU 负荷、网络使用状况、硬盘容量等各种状态。而就算没有安装 Agent 在监视对象中，Zabbix 也可以经由 SNMP、TCP、ICMP检查，以及利用 IPMI、SSH、telnet 对目标进行监视。另外，Zabbix 包含 XMPP 等各种 Item 警示功能。"
+}

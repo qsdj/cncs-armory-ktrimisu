@@ -1,0 +1,10 @@
+{
+  "type": "middleware",
+  "desc": "中间件",
+  "properties": {
+    "deploy_path": {
+      "type": "string",
+      "default": "/"
+    }
+  }
+}

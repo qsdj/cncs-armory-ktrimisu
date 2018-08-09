@@ -1,0 +1,5 @@
+{
+  "type": "others",
+  "producer": "CKSource",
+  "desc": "FCKeditor是一个专门使用在网页上属于开放源代码的所见即所得文字编辑器。它志于轻量化，不需要太复杂的安装步骤即可使用。它可和PHP、 JavaScript、ASP、ASP.NET、ColdFusion、Java、以及ABAP等不同的编程语言相结合。“FCKeditor”名称中的 “FCK” 是这个编辑器的作者的名字Frederico Caldeira Knabben的缩写。FCKeditor 相容于绝大部分的网页浏览器，像是 : Internet Explorer 5.5+ (Windows)、Mozilla Firefox 1.0+、Mozilla 1.3+ 和 Netscape 7+。在未来的版本也将会加入对 Opera 的支援。"
+}

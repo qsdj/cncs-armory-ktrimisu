@@ -1,0 +1,5 @@
+{
+  "type": "cms",
+  "producer": "The Cacti Group, Inc.",
+  "desc": "Cacti是一套基于PHP,MySQL,SNMP及RRDTool开发的网络流量监测图形分析工具。"
+}

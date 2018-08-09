@@ -1,0 +1,10 @@
+{
+  "type": "service",
+  "desc": "SSH 服务",
+  "properties": {
+    "port": {
+      "type": "number",
+      "default": 22
+    }
+  }
+}

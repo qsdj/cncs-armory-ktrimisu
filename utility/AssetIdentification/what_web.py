@@ -62,15 +62,10 @@ class WhatWebResultParser(object):
             self.components[name] = info
 
     def _common_name_calibration(self, name, component_path=None):
-        """转译组件名"""
-        # 默认组件位置
+        '''转译组件名'''
         if not component_path:
-            CScan_POC_dir = os.path.dirname(
-                os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-            )
-            component_path = os.path.join(
-                CScan_POC_dir, "CScanPoc/CScanPoc/resources/component"
-            )
+            CScan_POC_dir = os.path.dirname(os.path.abspath(__file__))
+            component_path = os.path.join(CScan_POC_dir, "component")
         all_component = os.listdir(component_path)
         for component in all_component:
             if component.endswith(".json"):

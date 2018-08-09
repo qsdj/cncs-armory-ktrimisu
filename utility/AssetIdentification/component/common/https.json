@@ -1,0 +1,10 @@
+{
+  "type": "service",
+  "desc": "HTTPS 服务",
+  "properties": {
+    "port": {
+      "type": "number",
+      "default": 443
+    }
+  }
+}

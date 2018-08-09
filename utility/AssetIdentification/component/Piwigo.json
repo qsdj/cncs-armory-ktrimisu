@@ -1,0 +1,5 @@
+{
+  "type": "cms",
+  "producer": null,
+  "desc": "Piwigo是一个基于MySQL5与PHP5开发的相册系统.提供基本的发布和管理照片功能,按多种方式浏览如类别,标签,时间等。"
+}

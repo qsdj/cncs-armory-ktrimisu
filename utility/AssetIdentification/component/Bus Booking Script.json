@@ -1,0 +1,5 @@
+{
+    "type": "cms",
+    "producer": "Advanced",
+    "desc": "Advanced Bus Booking脚本存在SQL注入漏洞，允许攻击者利用漏洞获取数据库敏感信息。"
+  }

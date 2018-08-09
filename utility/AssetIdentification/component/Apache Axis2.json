@@ -1,0 +1,5 @@
+{
+  "type": "middleware",
+  "producer": "Apache软件基金会",
+  "desc": "Apache Axis2是WebService的一种框架，是在Apache Axis全功能Web服务框架基础上重构的版本，支持SOAP1.2/REST。"
+}

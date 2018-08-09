@@ -1,0 +1,5 @@
+{
+  "type": "cms",
+  "producer": "FlatNuke",
+  "desc": "FlatNuke是一个PHP开发的内容管理系统，无须数据库支持，使用的是文本文件来保存内容。"
+}

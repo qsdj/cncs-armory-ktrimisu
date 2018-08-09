@@ -1,0 +1,5 @@
+{
+  "type": "cms",
+  "producer": "重庆图腾软件发展有限公司",
+  "desc": " 整个系统采用国际流行的Browser / WebServer / DBServer 三层或 Client / Server 双层体系结构， 后台选用大型关系数据库Sql Server 2000 作为系统平台（并全面支持Sybase和Oracle数据库）。"
+}
