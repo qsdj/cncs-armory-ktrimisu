@@ -93,7 +93,9 @@ class WhatWebResultParser(object):
             (name, version) = (item, None)
             if " " in item:
                 (name, version) = item.split(" ", 1)
-            name = item.split(" ")[0]
+            elif "." in item:
+                name = item.split(".")[0]
+            # name = item.split(" ")[0]
             name = self._common_name_calibration(name)
             info = self.components.get(name, {})
             if version:
