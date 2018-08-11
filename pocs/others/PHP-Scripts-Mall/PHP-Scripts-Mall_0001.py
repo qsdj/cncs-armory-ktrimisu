@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 
 class Vuln(ABVuln):
-    vuln_id = 'PHP_Scripts_Mall_0001'  # 平台漏洞编号，留空
+    vuln_id = 'PHP-Scripts-Mall_0001'  # 平台漏洞编号，留空
     name = 'PHP Scripts Mall Basic B2B Script SQL注入漏洞'  # 漏洞名称
     level = VulnLevel.HIGH   # 漏洞危害级别
     type = VulnType.INJECTION  # 漏洞类型
@@ -17,7 +17,7 @@ class Vuln(ABVuln):
     ref = 'http://www.cnvd.org.cn/flaw/show/CNVD-2017-37213'  # 漏洞来源
     cnvd_id = 'CNVD-2017-37213'  # cnvd漏洞编号
     cve_id = 'CVE-2017-17600'  # cve编号
-    product = 'PHP Scripts Mall'  # 漏洞应用名称
+    product = 'PHP-Scripts-Mall'  # 漏洞应用名称
     product_version = ' 2.0.8'  # 漏洞应用版本
 
 

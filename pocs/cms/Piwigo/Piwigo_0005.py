@@ -5,7 +5,7 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 
 class Vuln(ABVuln):
-    vuln_id = 'Piwigo_0001'  # 平台漏洞编号，留空
+    vuln_id = 'Piwigo_0005'  # 平台漏洞编号，留空
     name = 'Piwigo多个跨站脚本执行漏洞'  # 漏洞名称
     level = VulnLevel.MED   # 漏洞危害级别
     type = VulnType.XSS  # 漏洞类型
