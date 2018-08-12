@@ -1,0 +1,10 @@
+{
+  "type": "database",
+  "desc": "数据库系统",
+  "properties": {
+    "deploy_path": {
+      "type": "string",
+      "default": "/"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "type": "others",
+  "desc": "其他系统",
+  "properties": {
+    "deploy_path": {
+      "type": "string",
+      "default": "/"
+    }
+  }
+}

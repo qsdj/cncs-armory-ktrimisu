@@ -1,0 +1,5 @@
+{
+  "type": "cms",
+  "producer": null,
+  "desc": "Premium Penny Auction Script中的allauctions.php中的aid参数、news.php中的nid参数以及productdetails.php中的aid参数都存在SQL注入漏洞，攻击者可利用该漏洞读取数据库中的敏感信息。"
+}

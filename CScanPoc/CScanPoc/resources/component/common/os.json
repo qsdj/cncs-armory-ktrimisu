@@ -1,0 +1,10 @@
+{
+  "type": "os",
+  "desc": "主机操作系统",
+  "properties": {
+    "deploy_path": {
+      "type": "string",
+      "default": "/"
+    }
+  }
+}

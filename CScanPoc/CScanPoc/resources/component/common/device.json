@@ -1,0 +1,10 @@
+{
+  "type": "device",
+  "desc": "设备",
+  "properties": {
+    "deploy_path": {
+      "type": "string",
+      "default": "/"
+    }
+  }
+}

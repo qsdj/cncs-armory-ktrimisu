@@ -11,6 +11,30 @@
         "type": "middleware"
       },
       "derive_from": ["middleware"]
+    },
+    {
+      "match": {
+        "type": "others"
+      },
+      "derive_from": ["others"]
+    },
+    {
+      "match": {
+        "type": "database"
+      },
+      "derive_from": ["database"]
+    },
+    {
+      "match": {
+        "type": "device"
+      },
+      "derive_from": ["device"]
+    },
+    {
+      "match": {
+        "type": "os"
+      },
+      "derive_from": ["os"]
     }
   ]
 }
