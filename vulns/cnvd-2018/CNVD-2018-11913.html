@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width initial-scale=1'>
+    <title>CNVD-2018-11913</title>
+    <link rel="stylesheet" href="../assets/styles.css">
+
+</head>
+
+<body class='typora-export'>
+    <div id='write' class='is-mac'>
+        <h1>
+            <a name='header-n0' class='md-header-anchor '></a>GreenCMS信息泄露漏洞</h1>
+        <figure>
+            <table>
+                <thead>
+                    <tr>
+                        <th>CNVD-ID</th>
+                        <th>CNVD-2018-11913</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>公开日期</td>
+                        <td>2018-06-22</td>
+                    </tr>
+                    <tr>
+                        <td>危害级别</td>
+                        <td>中 (
+                            <a href='http://www.cnvd.org.cn/flaw/show/CNVD-2018-11913#showDiv'>AV:N/AC:L/Au:N/C:P/I:N/A:N</a>)</td>
+                    </tr>
+                    <tr>
+                        <td>影响产品</td>
+                        <td>GreenCMS GreenCMS 2.3.0603</td>
+                    </tr>
+                    <tr>
+                        <td>CVE ID</td>
+                        <td>
+                            <a href='http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-12604'>CVE-2018-12604 </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>漏洞描述</td>
+                        <td>GreenCMS是一套基于ThinkPHP开发的内容管理系统（CMS）。 GreenCMS 2.3.0603版本中存在安全漏洞。远程攻击者可通过对Data/Log/year_month_day.log文件发送直接请求利用该漏洞获取敏感信息。</td>
+                    </tr>
+                    <tr>
+                        <td>参考链接</td>
+                        <td>
+                            <a href='https://nvd.nist.gov/vuln/detail/CVE-2018-12604' target='_blank' class='url'>https://nvd.nist.gov/vuln/detail/CVE-2018-12604</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>漏洞解决方案</td>
+                        <td>厂商尚未提供漏洞修复方案，请关注厂商主页更新：
+                            <a href='https://github.com/GreenCMS/GreenCMS' target='_blank' class='url'>https://github.com/GreenCMS/GreenCMS</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>厂商补丁</td>
+                        <td>(无补丁信息)</td>
+                    </tr>
+                    <tr>
+                        <td>验证信息</td>
+                        <td>(暂无验证信息)</td>
+                    </tr>
+                    <tr>
+                        <td>报送时间</td>
+                        <td>2018-06-21</td>
+                    </tr>
+                    <tr>
+                        <td>收录时间</td>
+                        <td>2018-06-22</td>
+                    </tr>
+                    <tr>
+                        <td>更新时间</td>
+                        <td>2018-06-22</td>
+                    </tr>
+                    <tr>
+                        <td>漏洞附件</td>
+                        <td>(无附件)</td>
+                    </tr>
+                    <tr>
+                        <td>在发布漏洞公告信息之前，CNVD都力争保证每条公告的准确性和可靠性。然而，采纳和实施公告中的建议则完全由用户自己决定，其可能引起的问题和结果也完全由用户承担。是否采纳我们的建议取决于您个人或您企业的决策，您应考虑其内容是否符合您个人或您企业的安全策略和流程。</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                </tbody>
+            </table>
+        </figure>
+        <h1>
+            <a name='header-n48' class='md-header-anchor '></a>漏洞分析</h1>
+        <p>测试地址：
+            <a href='http://192.168.249.128:8080/GreenCMS-beta/Data/Log/18_06_20.log' target='_blank' class='url'>http://192.168.249.128:8080/GreenCMS-beta/Data/Log/18_06_20.log</a>
+        </p>
+        <p>案例地址：
+            <a href='http://47.100.195.111/Data/Log/18_06_20.log' target='_blank' class='url'>http://47.100.195.111/Data/Log/18_06_20.log</a>
+        </p>
+        <p>POC：
+            <a href='http://xn--eqrt2g/Data/Log/%E5%B9%B4_%E6%9C%88_%E6%97%A5.log'>http://域名/Data/Log/年
+                <em>月</em>日.log</a>
+        </p>
+        <p>只需要尝试猜测日志的日期，就能够下载全部日志。 防御方法：加强日志名称的复杂程度。 </p>
+    </div>
+</body>
+
+</html>

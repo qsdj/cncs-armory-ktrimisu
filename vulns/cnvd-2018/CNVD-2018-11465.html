@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width initial-scale=1'>
+    <title>CNVD-2018-11465</title>
+    <link rel="stylesheet" href="../assets/styles.css">
+</head>
+
+<body class='typora-export'>
+    <div id='write' class='is-mac'>
+        <h1>
+            <a name='header-n0' class='md-header-anchor '></a>Joomla! Harmis Ek rishta SQL注入漏洞</h1>
+        <figure>
+            <table>
+                <thead>
+                    <tr>
+                        <th>CNVD-ID</th>
+                        <th>CNVD-2018-11465</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>公开日期</td>
+                        <td>2018-06-14</td>
+                    </tr>
+                    <tr>
+                        <td>危害级别</td>
+                        <td>高 (
+                            <a href='http://www.cnvd.org.cn/flaw/show/CNVD-2018-11465#showDiv'>AV:N/AC:L/Au:N/C:C/I:N/A:N</a>)</td>
+                    </tr>
+                    <tr>
+                        <td>影响产品</td>
+                        <td>Joomla! Harmis Ek rishta 2.10</td>
+                    </tr>
+                    <tr>
+                        <td>CVE ID</td>
+                        <td>
+                            <a href='http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-12254'>CVE-2018-12254 </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>漏洞描述</td>
+                        <td>Joomla!是美国Open Source Matters团队开发的一套开源的内容管理系统(CMS)，该系统提供RSS馈送、网站搜索等功能。Harmis Ek rishta（又名ek-rishta）是使用在其中的一个婚恋交友网站插件。
+                            Joomla! Harmis Ek rishta 2.10版本中的router.php文件存在SQL注入漏洞。远程攻击者可通过向home/requested_user/Sent%20interest/
+                            URI发送PATH_INFO利用该漏洞注入SQL命令。
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>参考链接</td>
+                        <td>
+                            <a href='https://m4k4br0.github.io/sql-injection-joomla-component/' target='_blank' class='url'>https://m4k4br0.github.io/sql-injection-joomla-component/</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>漏洞解决方案</td>
+                        <td>目前厂商暂未发布修复措施解决此安全问题，建议使用此软件的用户随时关注厂商主页或参考网址以获取解决办法：
+                            <a href='https://extensions.joomla.org/extension/ek-rishta/' target='_blank' class='url'>https://extensions.joomla.org/extension/ek-rishta/</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>厂商补丁</td>
+                        <td>(无补丁信息)</td>
+                    </tr>
+                    <tr>
+                        <td>验证信息</td>
+                        <td>(暂无验证信息)</td>
+                    </tr>
+                    <tr>
+                        <td>报送时间</td>
+                        <td>2018-06-14</td>
+                    </tr>
+                    <tr>
+                        <td>收录时间</td>
+                        <td>2018-06-14</td>
+                    </tr>
+                    <tr>
+                        <td>更新时间</td>
+                        <td>2018-06-14</td>
+                    </tr>
+                    <tr>
+                        <td>漏洞附件</td>
+                        <td>(无附件)</td>
+                    </tr>
+                    <tr>
+                        <td>在发布漏洞公告信息之前，CNVD都力争保证每条公告的准确性和可靠性。然而，采纳和实施公告中的建议则完全由用户自己决定，其可能引起的问题和结果也完全由用户承担。是否采纳我们的建议取决于您个人或您企业的决策，您应考虑其内容是否符合您个人或您企业的安全策略和流程。</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                </tbody>
+            </table>
+        </figure>
+        <h1>
+            <a name='header-n48' class='md-header-anchor '></a>漏洞分析</h1>
+        <ul>
+            <li>注入点:
+                <code>url:http://[HOST]/index.php/home/requested_user/Sent%20interest/1&#39;or%20sleep(5)%23</code>
+            </li>
+        </ul>
+        <p>触发了一个延时函数: </p>
+        <p>
+            <img src='http://image.3001.net/images/20180706/15308069854497.png' alt='' referrerPolicy='no-referrer' />
+        </p>
+        <p>&nbsp;</p>
+    </div>
+</body>
+
+</html>
