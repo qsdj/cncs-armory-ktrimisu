@@ -1,0 +1,5 @@
+{
+  "type": "cms",
+  "producer": null,
+  "desc": "Sweepstakes Pro Software中win.php和widget_lb.php中的s参数均存在SQL注入漏洞，攻击者可利用该漏洞读取数据库中的敏感信息。"
+}

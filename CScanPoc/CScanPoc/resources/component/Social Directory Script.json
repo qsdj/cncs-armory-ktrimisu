@@ -1,0 +1,5 @@
+{
+  "type": "cms",
+  "producer": null,
+  "desc": "Social Directory Script 2.0中的search、category等多个参数存在SQL注入。允许攻击者利用漏洞获取数据库敏感信息。"
+}
