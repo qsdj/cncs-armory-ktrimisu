@@ -16,7 +16,7 @@ class Vuln(ABVuln):
     ref = 'http://www.cnvd.org.cn/flaw/show/CNVD-2017-03179' #
     cnvd_id = 'CNVD-2017-03179' # cnvd漏洞编号
     cve_id = 'CVE-2018-12636'  # cve编号
-    product = 'Bus Booking Script'  # 漏洞组件名称
+    product = 'Bus-Booking-Script'  # 漏洞组件名称
     product_version = 'Advanced Bus Booking Script 2.04'  # 漏洞应用版本
 
 class Poc(ABPoc):

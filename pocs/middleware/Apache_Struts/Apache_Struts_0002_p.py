@@ -17,7 +17,7 @@ class Vuln(ABVuln):
     ref = 'http://www.cnvd.org.cn/flaw/show/CNVD-2017-25632'  # 漏洞来源
     cnvd_id = 'CNVD-2017-25632'  # cnvd漏洞编号
     cve_id = 'CVE-2017-12611'  # cve编号
-    product = 'Apache Struts'  # 漏洞应用名称
+    product = 'Apache-Struts'  # 漏洞应用名称
     product_version = 'Apache Struts2 >=2.0.1，<=2.3.33 ，Apache Struts2 >=2.5，<=2.5.10'  # 漏洞应用版本
 
 

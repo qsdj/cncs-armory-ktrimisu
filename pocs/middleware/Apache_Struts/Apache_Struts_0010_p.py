@@ -16,7 +16,7 @@ class Vuln(ABVuln):
     ref = 'http://www.cnvd.org.cn/flaw/show/CNVD-2014-00664'  # 漏洞来源
     cnvd_id = 'CNVD-2014-00664'  # cnvd漏洞编号
     cve_id = 'CVE-2013-4316'  # cve编号
-    product = 'Apache Struts'  # 漏洞应用名称
+    product = 'Apache-Struts'  # 漏洞应用名称
     product_version = 'Struts 2.0.0 - Struts 2.3.15.1'  # 漏洞应用版本
 
 

@@ -18,7 +18,7 @@ class Vuln(ABVuln):
     ref = 'http://blog.knownsec.com/2015/01/analysis-of-zte-soho-routerweb_shell_cmd-gch-remote-command-execution/'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
-    product = 'ZTE'  # 漏洞应用名称
+    product = 'ZTE-Site'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
 
 

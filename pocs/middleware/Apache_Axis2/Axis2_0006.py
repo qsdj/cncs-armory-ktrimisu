@@ -19,7 +19,7 @@ class Vuln(ABVuln):
     ref = 'http://www.codesec.net/view/247352.html'  # http://www.codesec.net/view/247352.html
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
-    product = 'Apache Axis2'  # 漏洞组件名称
+    product = 'Apache-Axis2'  # 漏洞组件名称
     product_version = 'Unknown'  # 漏洞应用版本
 
 

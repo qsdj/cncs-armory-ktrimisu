@@ -5,18 +5,18 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 
 class Vuln(ABVuln):
-    vuln_id = 'IBM_0000'  # 平台漏洞编号
-    name = 'IBM系统任意文件下载'  # 漏洞名称
+    vuln_id = 'IBM-HTTP-Server_0000'  # 平台漏洞编号
+    name = 'IBM-HTTP-Server任意文件下载'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD  # 漏洞类型
     disclosure_date = '2015-11-19'  # 漏洞公布时间
     desc = '''
-        IBM系统任意文件下载漏洞，攻击者可以通过构造恶意语句来读取系统敏感文件信息。
+        IBM-HTTP-Server任意文件下载漏洞，攻击者可以通过构造恶意语句来读取系统敏感文件信息。
     '''  # 漏洞描述
     ref = 'Unknown'
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
-    product = 'IBM'  # 漏洞组件名称
+    product = 'IBM-HTTP-Server'  # 漏洞组件名称
     product_version = 'Unknown'  # 漏洞应用版本
 
 

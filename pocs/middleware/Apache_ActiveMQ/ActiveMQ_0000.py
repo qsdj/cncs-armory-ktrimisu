@@ -22,7 +22,7 @@ class Vuln(ABVuln):
     ref = 'https://www.exploit-db.com/exploits/40857/'  # https://www.exploit-db.com/exploits/40857/
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'CVE-2015-1830'  # cve编号
-    product = 'Apache ActiveMQ'  # 漏洞组件名称
+    product = 'Apache-ActiveMQ'  # 漏洞组件名称
     product_version = '5.11.1/5.13.2'  # 漏洞应用版本
 
 

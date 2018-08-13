@@ -8,8 +8,8 @@ import urllib.parse
 
 
 class Vuln(ABVuln):
-    vuln_id = 'WebsitebakerCMS_0001'  # 平台漏洞编号，留空
-    name = 'Websitebaker CMS v2.8.3 Reflecting XSS vulnerability'  # 漏洞名称
+    vuln_id = 'Websitebaker-CMS_0001'  # 平台漏洞编号，留空
+    name = 'Websitebaker-CMS v2.8.3 Reflecting XSS vulnerability'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.XSS  # 漏洞类型
     disclosure_date = '2015-01-05'  # 漏洞公布时间
@@ -19,7 +19,7 @@ class Vuln(ABVuln):
     ref = 'http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-0553'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'CVE-2015-0553'  # cve编号
-    product = 'WebsiteBakerCMS'  # 漏洞应用名称
+    product = 'WebsiteBaker-CMS'  # 漏洞应用名称
     product_version = 'v2.8.3'  # 漏洞应用版本
 
 

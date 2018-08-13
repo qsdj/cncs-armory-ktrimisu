@@ -13,11 +13,12 @@ class Vuln(ABVuln):
     type = VulnType.RCE  # 漏洞类型
     disclosure_date = 'Unknown'  # 漏洞公布时间
     desc = '''
+    IBM WebSphere Application Server（WAS）是由IBM遵照開放標準，例如Java EE、XML及Web Services，開發並行行的一種應用伺服器。
     '''  # 漏洞描述
     ref = 'https://foxglovesecurity.com/2015/11/06/what-do-weblogic-websphere-jboss-jenkins-opennms-and-your-application-have-in-common-this-vulnerability/'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
-    product = 'WebSphere'  # 漏洞应用名称
+    product = 'IBM-WebSphere'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
 
 

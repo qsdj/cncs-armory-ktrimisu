@@ -6,19 +6,19 @@ import re
 
 
 class Vuln(ABVuln):
-    vuln_id = 'interact_0000'  # 平台漏洞编号
+    vuln_id = 'Interact_0000'  # 平台漏洞编号
     # 漏洞名称
-    name = 'interact <= 2.2 (CONFIG[BASE_PATH]) Remote File Include Vulnerability'
+    name = 'Interact <= 2.2 (CONFIG[BASE_PATH]) Remote File Include Vulnerability'
     level = VulnLevel.MED  # 漏洞危害级别
     type = VulnType.RFI  # 漏洞类型
     disclosure_date = 'Unknown'  # 漏洞公布时间
     desc = '''
-        interact <= 2.2版本存在远程文件包含漏洞。
+        Interact <= 2.2版本存在远程文件包含漏洞。
     '''  # 漏洞描述
     ref = 'Unknown'
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
-    product = 'interact'  # 漏洞组件名称
+    product = 'Interact'  # 漏洞组件名称
     product_version = '<= 2.2'  # 漏洞应用版本
 
 

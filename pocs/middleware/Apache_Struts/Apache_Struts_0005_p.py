@@ -17,7 +17,7 @@ class Vuln(ABVuln):
     ref = 'https://cwiki.apache.org/confluence/display/WW/S2-007'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
-    product = 'Apache Struts'  # 漏洞应用名称
+    product = 'Apache-Struts'  # 漏洞应用名称
     product_version = 'Apache Struts 2.0.0 - Struts 2.2.3 '  # 漏洞应用版本
 
 

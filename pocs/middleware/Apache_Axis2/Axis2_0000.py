@@ -20,7 +20,7 @@ class Vuln(ABVuln):
     ref = 'https://www.securityfocus.com/bid/40343/info'  # https://www.securityfocus.com/bid/40343/info
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
-    product = 'Apache Axis2'  # 漏洞组件名称
+    product = 'Apache-Axis2'  # 漏洞组件名称
     product_version = '1.4.1'  # 漏洞应用版本
 
 

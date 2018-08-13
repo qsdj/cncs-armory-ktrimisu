@@ -30,7 +30,7 @@ class Vuln(ABVuln):
     ref = 'https://docs.microsoft.com/en-us/security-updates/SecurityBulletins/2008/ms08-067'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'CVE-2008-4250'  # cve编号
-    product = 'Windows'  # 漏洞应用名称
+    product = 'Microsoft-Windows-Business-Server'  # 漏洞应用名称
     product_version = 'Microsoft Windows 2000、Windows XP 和 Windows Server 2003'  # 漏洞应用版本
 
 

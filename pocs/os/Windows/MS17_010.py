@@ -19,7 +19,7 @@ class Vuln(ABVuln):
     ref = 'https://www.exploit-db.com/exploits/42315/'  # https://www.exploit-db.com/exploits/42315/
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'CVE-2017-0144 '  # cve编号
-    product = 'Windows'  # 漏洞组件名称
+    product = 'Microsoft-Windows-Business-Server'  # 漏洞组件名称
     product_version = 'Windows Vista、Windows Server 2008、Windows 7、Windows Server 2008 R2、Windows 8.1、Windows Server 2012 and Windows Server 2012 R2、Windows RT 8.1、Windows 10、Windows Server 2016'  # 漏洞应用版本
 
 

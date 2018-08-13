@@ -6,7 +6,7 @@ import time
 
 class Vuln(ABVuln):
     vuln_id = 'CNVD-2017-05657' # 平台漏洞编号
-    name = 'FAQ Script SQL注入' # 漏洞名称
+    name = 'FAQ-Script SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
     disclosure_date = '2017-04-11'  # 漏洞公布时间
@@ -16,7 +16,7 @@ class Vuln(ABVuln):
     ref = 'http://www.cnvd.org.cn/flaw/show/CNVD-2017-05657' #
     cnvd_id = 'CNVD-2017-05657' # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
-    product = 'FAQ Script'  # 漏洞组件名称
+    product = 'FAQ-Script'  # 漏洞组件名称
     product_version = 'PHP only FAQ Script 3.1.3'  # 漏洞应用版本
 
 class Poc(ABPoc):

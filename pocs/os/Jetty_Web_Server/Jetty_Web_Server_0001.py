@@ -41,7 +41,7 @@ class Vuln(ABVuln):
             '''  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'CVE-2015-2080'  # cve编号
-    product = 'Jetty Web Server'  # 漏洞应用名称
+    product = 'Jetty-Web-Server'  # 漏洞应用名称
     product_version = '9.2.x-9.3.x'  # 漏洞应用版本
 
 

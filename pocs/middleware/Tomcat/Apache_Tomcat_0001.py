@@ -23,7 +23,7 @@ class Vuln(ABVuln):
     ref = 'http://www.cnvd.org.cn/flaw/show/CNVD-2017-27472'  # 漏洞来源https://mp.weixin.qq.com/s/dgWT3Cgf1mQs-IYxeID_Mw
     cnvd_id = 'CNVD-2017-27472'  # cnvd漏洞编号
     cve_id = 'CVE-2017-12615'  # cve编号
-    product = 'Tomcat'  # 漏洞应用名称
+    product = 'Apache-Tomcat'  # 漏洞应用名称
     product_version = 'Apache Tomcat 7.0.0 - 7.0.79'  # 漏洞应用版本
 
 

@@ -20,8 +20,8 @@ class Vuln(ABVuln):
     ref = 'http://www.exploit-db.com/exploits/14997/'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'CVE-2010-4912'  # cve编号
-    product = 'UCenter'  # 漏洞应用名称
-    product_version = 'UCenter Home 2.0'  # 漏洞应用版本
+    product = 'UCenter-Home'  # 漏洞应用名称
+    product_version = '2.0'  # 漏洞应用版本
 
 
 class Poc(ABPoc):

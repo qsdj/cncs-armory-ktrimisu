@@ -16,7 +16,7 @@ class Vuln(ABVuln):
     ref = 'Unknown'  # https://wooyun.shuimugan.com/bug/view?bug_no=136346
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
-    product = 'AfterLogic WebMail'  # 漏洞组件名称
+    product = 'AfterLogic-WebMail'  # 漏洞组件名称
     product_version = 'Unknown'  # 漏洞应用版本
 
 

@@ -19,8 +19,8 @@ class Vuln(ABVuln):
     ref = 'https://github.com/vulhub/vulhub/tree/master/couchdb/CVE-2017-12635'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'CVE-2017-12635'  # cve编号
-    product = 'CouchDB'  # 漏洞应用名称
-    product_version = '小于 1.7.0 以及 小于 2.1.1'  # 漏洞应用版本
+    product = 'Apache-CouchDB'  # 漏洞应用名称
+    product_version = '< 1.7.0 $$ < 2.1.1'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
