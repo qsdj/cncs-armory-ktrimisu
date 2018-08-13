@@ -19,7 +19,7 @@
 # Added favicon md5 hash
 # Added cookie matches
 ##
-Plugin.define "phpMyAdmin" do
+Plugin.define "PHPMyAdmin" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-01 
 version "0.5"
 description "phpMyAdmin is a free software tool written in PHP intended to handle the administration of MySQL over the World Wide Web."

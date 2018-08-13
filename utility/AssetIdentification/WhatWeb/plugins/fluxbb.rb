@@ -14,7 +14,7 @@
 # Version 0.3
 # removed :name and :certainty=>100
 ##
-Plugin.define "FluxBB" do
+Plugin.define "Fluxbb" do
 author "Andrew Horton"
 version "0.5"
 description "Open Source forum written in PHP"

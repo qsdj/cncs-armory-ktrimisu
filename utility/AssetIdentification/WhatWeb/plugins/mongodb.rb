@@ -5,7 +5,7 @@
 # http://www.morningstarsecurity.com/research/whatweb
 ##
 
-Plugin.define "MongoDB" do
+Plugin.define "Mongodb" do
 author "Steve 'Ashcrow' Milner"
 version "0.1"
 description "Identifies the admnistration console of MondoDB. http://www.mongodb.org/"

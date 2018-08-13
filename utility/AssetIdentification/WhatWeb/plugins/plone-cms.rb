@@ -7,7 +7,7 @@
 # Version 0.2
 # remove :certainty=>100
 ##
-Plugin.define "Plone" do
+Plugin.define "Plone-CMS" do
 author "Andrew Horton"
 version "0.2"
 description "Plone Content Management System (CMS)"
