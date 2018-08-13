@@ -12,6 +12,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-03-13'  # 漏洞公布时间
     desc = '''
+        Gnuboard是韩国Sir公司开发一套PHP+Mysql可扩展论坛程序。
         GNUboard 通用型注入SQL Injection，据测试基本上大部分的版本都可以。
     '''  # 漏洞描述
     ref = 'Unknown'  # 漏洞来源

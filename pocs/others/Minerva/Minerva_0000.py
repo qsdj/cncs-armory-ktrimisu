@@ -14,6 +14,7 @@ class Vuln(ABVuln):
     disclosure_date = '2006-09-28'  # 漏洞公布时间
     desc = '''
         Minerva <= 2.0.21 build 238a (phpbb_root_path)版本存在远程文件包含漏洞。
+        Chris Smith Minerva Build 238及更早版本的admin/admin_topic_action_logging.php中存在PHP远程文件包含漏洞，远程攻击者可以通过phpbb_root_path参数中的URL执行任意PHP代码。
     '''  # 漏洞描述
     ref = 'http://www.cnvd.org.cn/flaw/show/CNVD-2006-7525'
     cnvd_id = 'CNVD-2006-7525'  # cnvd漏洞编号

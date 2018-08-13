@@ -12,6 +12,8 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2005-05-02'  # 漏洞公布时间
     desc = '''
+        mcNews是一套允许用户在WEB上张贴新闻的脚本系统，可运行在Linux和Unix操作系统上，也可运行在Microsoft Windows操作系统下。
+        mcNews中存在远程文件包含漏洞，漏洞的起因是应用程序无法正确的过滤用户对install.php脚本所提供的输入，这样攻击者就可以在输入中包含任意文件，导致跨站脚本等攻击。
         McNews 1.x Install.PHP文件存在远程文件包含漏洞。
         /admin/install.php?l=http://baidu.com/robots.txt
     '''  # 漏洞描述

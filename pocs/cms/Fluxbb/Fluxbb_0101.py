@@ -10,7 +10,8 @@ class Vuln(ABVuln):
     type = VulnType.LFI  # 漏洞类型
     disclosure_date = '2013-12-26'  # 漏洞公布时间
     desc = '''
-    Fluxbb存在PHP本地文件包含漏洞，攻击者可以通过文件包含来读取系统敏感文件信息。
+    fluxbb 是个快速、轻量级基于PHP开发的论坛系统。页面符合XHTML与CSS标准。支持MySQL、PostgreSQL、SQLite等数据库。
+    Fluxbb 存在PHP本地文件包含漏洞，攻击者可以通过文件包含来读取系统敏感文件信息。
     '''  # 漏洞描述
     ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=38312
     cnvd_id = 'Unknown'  # cnvd漏洞编号

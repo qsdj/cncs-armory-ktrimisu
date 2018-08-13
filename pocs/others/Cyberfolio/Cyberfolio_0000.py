@@ -13,6 +13,7 @@ class Vuln(ABVuln):
     type = VulnType.RFI  # 漏洞类型
     disclosure_date = '2014-07-01'  # 漏洞公布时间
     desc = '''
+        Cyberfolio中存在多个PHP远程文件包含漏洞，当系统启用register_globals时，远程攻击者可以通过传递给(1)msg/view.php，(2)msg/inc_message.php，(3)msg/inc_envoi.php和(4)admin/incl_voir_compet.php的av参数内的URL来执行任意PHP代码。
         Cyberfolio 2.0及其以下版本远程文件包含漏洞。
     '''  # 漏洞描述
     ref = 'http://www.cnvd.org.cn/flaw/show/CNVD-2006-8325'  # 漏洞来源

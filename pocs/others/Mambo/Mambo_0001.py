@@ -12,6 +12,7 @@ class Vuln(ABVuln):
     type = VulnType.RFI  # 漏洞类型
     disclosure_date = '2006-08-22'  # 漏洞公布时间
     desc = '''
+        Mambo 1.1的bigAPE-Backup组件(com_babackup)中的classes/Tar.php脚本存在PHP远程文件包含漏洞，远程攻击者可借助mosConfig_absolute_path参数包含任意文件。
         Mambo com_babackup Component <= 1.1版本存在远程文件包含漏洞。
     '''  # 漏洞描述
     ref = 'http://www.cnvd.org.cn/flaw/show/CNVD-2006-6440'

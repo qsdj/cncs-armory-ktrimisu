@@ -14,6 +14,7 @@ class Vuln(ABVuln):
     type = VulnType.OTHER  # 漏洞类型
     disclosure_date = '2016-08-09'  # 漏洞公布时间
     desc = '''
+        Zookeeper是分布式应用程序的协调服务。它允许通过简单的界面管理命名，同步，配置管理和组服务等常用服务，并在操作系统上使用文件系统的数据模型。
         Zookeeper Unauthorized access.
     '''  # 漏洞描述
     ref = 'https://hackerone.com/reports/154369'

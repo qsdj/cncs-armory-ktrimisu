@@ -12,6 +12,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2016-07-22'  # 漏洞公布时间
     desc = '''
+        zabbix是一个开源的企业级性能监控解决方案。
         Zabbix的jsrpc中profileIdx2参数存在insert方式的SQL注入漏洞。攻击者无需授权即可登录zabbix管理系统，也可通过script等功能直接获取zabbix服务器的操作权限。 
     '''  # 漏洞描述
     ref = 'http://www.cnvd.org.cn/flaw/show/CNVD-2016-06408'  # 漏洞来源

@@ -10,6 +10,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2016-07-23'  # 漏洞公布时间
     desc = '''
+        OpenSNS开源社交建站系统,是基于OneThink的轻量级社交化用户中心框架,
         漏洞触发点在/Application/People/Controller/IndexController.class.php中第48行：
         $arearank有这样一个赋值操作：$arearank = I('get.arearank', 0);
         直接将$arearank与upid=做拼接然后组装到了where语句中，周围并无引号进行包裹，是一个数字型的注入。
