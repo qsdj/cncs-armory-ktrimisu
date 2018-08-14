@@ -44,4 +44,4 @@ class AkscanPipeline(object):
 
     def close_spider(self, spider):
         self.file.close()
-        self.changing_data_structure()
+        # self.changing_data_structure()

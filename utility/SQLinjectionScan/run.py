@@ -2,30 +2,10 @@
 import os
 import json
 import time
+import tempfile
 import requests
 import threading
-import optparse
-
-
-class Coptions(object):
-    def __init__(self, usage=None):
-        if usage == None:
-            usage = '''"python %prog -h | --help"'''
-        self.parser = optparse.OptionParser(usage)
-        
-    def u(self):
-        self.parser.add_option('-t', dest='target', type='string',\
-                            help=u'''Example: http://example.com/''')
-    def parameterFilter(self):
-        if self.options.target == None:
-            self.parser.error("options -target can't be empty")
-
-    def getoptions(self):
-        self.u()
-        (self.options, _args) = self.parser.parse_args()
-        self.parameterFilter()
-        return self.options
-
+import argparse
 
 class AutoSqli(object):
     """
@@ -48,7 +28,7 @@ class AutoSqli(object):
     def task_new(self):
         self.taskid = json.loads(
             requests.get(self.server + 'task/new').text)['taskid']
-        print ('Created new task: ' + self.taskid)
+        print('Created new task: ' + self.taskid)
         if len(self.taskid) > 0:
             return True
         return False
@@ -133,51 +113,75 @@ class AutoSqli(object):
         spendTime = time.time() - self.start_time
         print("taskid={taskid};target={target};spendTime={spendTime};scanResult={scanResult};".format(taskid=self.taskid, target=self.target, spendTime=spendTime, scanResult=scanResult))
 
+def create_cmd_parser():
+    parser = argparse.ArgumentParser(
+        formatter_class=argparse.RawTextHelpFormatter)
+    parser.add_argument(
+        '--target', required=True, type=str, dest='target',
+        help='识别目标主机 URL/IP/域名')
+    parser.add_argument(
+        '--timeout', required=False, type=int, dest='timeout',default=1800,
+        help='爬虫超时时间（单位：秒）默认1800')
+    parser.add_argument(
+        '--depth-limit', required=False, type=int, dest='depth_limit',default=5,
+        help='爬虫深度,默认5')
+    parser.add_argument(
+        '--sqlmapapi', required=True, type=str, dest='sqlmapapi',
+        help='sqlmapapi启动后的url; Example:localhost:8000')
+    return parser
 
-
-
-def runAKscan(spiderPath, spiderName,target=None):
-    shell = "cd {} && scrapy crawl {} -a target={} > /dev/null".format(spiderPath, spiderName, target)
+def AKscan_run(args, runpath=None, json_out_file=None):
+    if args.target and runpath:
+        shell = "cd {runpath} && python run.py --target {target} --json-out-file={json_out_file}".format(runpath=runpath, target=args.target, json_out_file=json_out_file)
+    else:
+        return
+    if args.timeout:
+        shell += " --timeout={}".format(args.timeout)
+    if args.depth_limit:
+        shell += " --depth-limit={}".format(args.depth_limit)
     os.system(shell)
 
 def get_all_urls(filename):
     with open(filename, 'r') as load_f:
         load_dict = json.load(load_f)
-    for key in load_dict["getallurls"].keys():
-        if load_dict["getallurls"][key]:
-            return load_dict["getallurls"][key]
-        else:
-            return []
+    for url in load_dict:
+        if url["url"]:
+            yield url["url"]
 
 def run_sqlmapapi(sqlmapapi, url):
     AutoSqli(sqlmapapi,url).run()
 
-if __name__ == "__main__":
-    BASEPATH = os.path.dirname(os.path.abspath(__file__))
-    spiderPath = os.path.join(BASEPATH, "./AKscan/AKscan/spiders/")
-    url_jsonPath = os.path.join(BASEPATH, "./urls.json")
-    sqlmapapi = "http://192.168.1.2:8000/"
-
-    target = Coptions().getoptions().target
-    runAKscan(spiderPath, spiderName="getallurls", target=target)
-    urls = get_all_urls(url_jsonPath)
-
-    # 线程池最多的装载数量
-    runthreadNum = 30 if len(urls)/3 > 30 else len(urls)/3
-    # 线程池
-    threadPool = []
-    for url in urls: 
-        if len(threadPool) >= runthreadNum:
-            print(2)
+def main():
+    BASEDIR = os.path.dirname(os.path.abspath(__file__))
+    AKscan_path = "./AKscan/"
+    url_jsonPath = os.path.join(BASEDIR, "./urls.json")
+    if os.path.exists(url_jsonPath):
+        os.remove(url_jsonPath)
+    parser = create_cmd_parser()
+    args = parser.parse_args()
+    try:
+        # 运行AKscan
+        AKscan_run(args, runpath=AKscan_path,json_out_file=url_jsonPath)
+        sqlmapapi = args.sqlmapapi
+        # 线程池最多的装载数量
+        runthreadNum = 40
+        # 运行sqlmapapi
+        threadPool = []
+        for url in get_all_urls(url_jsonPath):
+            if len(threadPool) >= runthreadNum:
+                for t in threadPool:
+                    t.start()
+                for t in threadPool:
+                    t.join()
+                threadPool = []
+            threadPool.append(threading.Thread(target=run_sqlmapapi, args=(sqlmapapi, url)))
+        else:
             for t in threadPool:
                 t.start()
             for t in threadPool:
                 t.join()
-            threadPool = []
-        threadPool.append(threading.Thread(target=run_sqlmapapi, args=(sqlmapapi, url)))
-        print(1)
-    else:
-        for t in threadPool:
-            t.start()
-        for t in threadPool:
-            t.join()
+    except Exception,e:
+        print(e)
+
+if __name__ == "__main__":
+    main()

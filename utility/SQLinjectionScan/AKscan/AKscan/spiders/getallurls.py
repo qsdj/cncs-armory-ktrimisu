@@ -29,13 +29,14 @@ class DuplicatesPipeline(object):
 class GetallurlsSpider(scrapy.Spider):
     name = 'getallurls'
     
-    def __init__(self, target=None, *args, **kwargs):
-        super(GetallurlsSpider, self).__init__(target=None, *args, **kwargs)
+    def __init__(self, target=None,timeout=None ,*args, **kwargs):
+        super(GetallurlsSpider, self).__init__(*args, **kwargs)
         
         # 解析命令
         if target == None or not (target.startswith("http://") or target.startswith("https://")):
             raise CloseSpider("需要参数target; -a target=<url>")
-        
+            # 爬取超时 时间 单位秒(默认1800)
+        self.spider_timeout = int(timeout) if timeout and timeout.isdigit() else 30*60
         # 初始化spider 必要参数
         self.start_urls = [target]
         self.allowed_domains = [urlparse(target).netloc]
@@ -45,9 +46,6 @@ class GetallurlsSpider(scrapy.Spider):
         self.staticResources = ['.asp', '.aspx', '.php', '.jsp', '.action', '.ts']
         self.staticurl = ['.shtml', '.html', '.htm']
         self.url_is_repeat = DuplicatesPipeline()
-        
-        # 爬取超时 时间 单位秒
-        self.spider_timeout = 30 * 60
         # 启动时间戳
         self.start_time = time.time()
 
@@ -106,9 +104,6 @@ class GetallurlsSpider(scrapy.Spider):
     def parse(self, response):
         # 静态页面链接分析
         staticurlpattern = re.compile(r'((https?)://[-A-Za-z0-9+&@#/%?=~_|!:,.;]+[-A-Za-z0-9+&@#/%=~_|])')
-        # print("#"*100)
-        # print(type(response.body))
-        # print("#"*100)
         urls= staticurlpattern.findall(str(response.body))
         # urls + self.get_from_url(response)
         for url in urls:

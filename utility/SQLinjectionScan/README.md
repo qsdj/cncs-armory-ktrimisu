@@ -13,7 +13,9 @@
 $ pipenv install --dev
 $ pipenv shell
 
-$ python run.py -t http://example.com/
+$ python run.py -h 
+$ python run.py --target http://sublimetext.iaixue.com/ --sqlmapapi http://localhost:8000/
+$ python run.py --target http://sublimetext.iaixue.com/  --timeout=1800 --depth-limit=5 --sqlmapapi http://localhost:8000/
 ```
 
 # 待完成

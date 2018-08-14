@@ -16,8 +16,7 @@ SPIDER_MODULES = ['AKscan.spiders']
 NEWSPIDER_MODULE = 'AKscan.spiders'
 
 # 结果输出文件
-OUTFILE = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), 'urls.json')
-
+OUTFILE = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'urls.json')
 # 最大深度
 DEPTH_LIMIT = 5
 # log level
@@ -73,9 +72,11 @@ COOKIES_ENABLED = False
 
 # Configure item pipelines
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
-ITEM_PIPELINES = {
-   'AKscan.pipelines.AkscanPipeline': 300,
-}
+
+# 使用-o 输出暂不用管道
+# ITEM_PIPELINES = {
+#    'AKscan.pipelines.AkscanPipeline': 300,
+# }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://doc.scrapy.org/en/latest/topics/autothrottle.html
