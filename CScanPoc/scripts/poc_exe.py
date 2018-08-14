@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # coding: utf-8
 
-'''POC 啊'''
+'''POC 执行入口'''
 
 import sys
 
@@ -30,13 +30,13 @@ def main():
     except:
         logger.exception('解析错误')
         raise
-    if not args.url:
-        parser.print_usage()
-        logger.warning('参数解析错误: url 为空')
-        return
     if not args.poc_id:
         parser.print_usage()
         logger.warning('参数解析错误: poc-id 为空')
+        return
+    if not args.url:
+        parser.print_usage()
+        logger.warning('参数解析错误: url 为空')
         return
     setup_cscan_poc_logger(verbose=args.verbose,
                            very_verbose=args.very_verbose)

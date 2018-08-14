@@ -2,18 +2,28 @@
 
 CScan Poc 开发文档。
 
+## 资产
+
+文档中资产的概念等同于主机（大致等同于 IP/域名）。
+
 ## 接口概述
 
 接口集中在 `CScanPoc.lib.api` 中定义。
 
-- `ABVuln`: 漏洞抽象类
-- `ABPoc`: 漏洞验证抽象类
-- `ABStrategy`: 策略抽象类
-- `Component`: 组件
+### 组件：[Component](CScanPoc/lib/api/component.py)
 
-注意 POC 和 Strategy 中都可以定义执行参数（覆盖 `option_schema` 属性）。其返回值类型见[属性定义]()。
+组件是**资产的一类属性**，其类别主要如下：
 
-组件的具体定义放在[CScanPoc/CScanPoc/resources/component/](CScanPoc/CScanPoc/resources/component/) 下以 `组件名.json` 的方式命名的文件中。其中定义的格式应该是：
+- 服务级组件
+- 服务提供级组件
+- 应用类组件
+  - os
+  - cms
+  - middleware
+  - ...
+
+组件的具体定义放在[CScanPoc/CScanPoc/resources/component/](CScanPoc/CScanPoc/resources/component/)
+下以 `组件名.json` 的方式命名的文件中。其中定义的格式应该是：
 
 ```python
 {
@@ -24,13 +34,36 @@ CScan Poc 开发文档。
 }
 ```
 
-现在 POC 和 Strategy 都对单个资产进行扫描。它们执行时可以传入执行参数以及资产的属性。看属性定义也可知，执行参数的属性可以引用组件属性，即执行过程中如果某个执行参数没有人工设定，将会自动获取传进来的对应组件的属性。POC 的默认引用组件是其对应漏洞组件。
+### 漏洞：[ABVuln](CScanPoc/lib/api/vuln.py)
 
-各对象之间的关系：
+**某个组件**上存在的特定缺陷。
 
-![](./doc/cscan-object-rel.png)
+### POC: [ABPoc](CScanPoc/lib/api/poc.py)
 
-## 属性定义
+漏洞验证程序，验证特定漏洞是否存在的代码，其中可能包含对其的利用代码。
+
+### 策略：[ABStrategy](CScanPoc/lib/api/strategy.py)
+
+对目标资产的一次有计划的可能会相对复杂的扫描。可能利用多个 POC.
+
+### 日志
+
+- `CScanPoc.lib.core.log.CSCAN_LOGGER` 用于记录系统执行日志的 logger。
+- `CScanPoc.lib.core.log.get_scan_outputer` 用于创建记录系统扫描输出的 outputer。
+
+## 属性及参数
+
+### 参数
+
+POC 和策略都通过 `option_schema` 属性定义执行参数，其定义方式同属性。
+
+它们存在一些通用参数，定义在了 [CScanPoc.lib.api.common](CScanPoc/lib/api/common.py) 中。
+主要有：
+
+- `-u`: 目标地址，即目标资产的 IP/域名。
+- `--component-property` / `--component-property-file`: 组件属性，目标资产的组件及对应属性。
+
+### 属性
 
 ```python
 {
@@ -50,7 +83,78 @@ CScan Poc 开发文档。
 }
 ```
 
-## 日志
+## 开发环境
 
-- `CScanPoc.lib.core.log.CSCAN_LOGGER` 用于记录系统执行日志的 logger。
-- `CScanPoc.lib.core.log.get_scan_outputer` 用于创建记录系统扫描输出的 outputer。
+机器上应该安装有 Python 3. 更新 pip (`pip install -U pip`), 安装 pipenv (`pip install pipenv`)。
+
+```sh
+pipenv install --dev .
+```
+
+## 命令
+
+### utils.py
+
+- 用于生成 组件、POC、策略等数据索引。
+- 用于更新相关数据到数据库。
+
+索引的常用，写成了脚本 `build.sh`，直接运行：
+
+```sh
+./build.sh ../pocs ../strategies true
+```
+
+更新到数据库：先执行上面的索引操作，然后：
+
+```sh
+python scripts/utils.py -v --update --skip-indexing \
+    --host 数据库主机 \
+    --user 用户名 \
+    --db 数据库名 \
+    --pass 数据库密码
+```
+
+### poc_exe.py
+
+根据指定的 POC ID 执行对应 POC.
+
+```sh
+pipenv run python scripts/poc_exe.py --poc-id 00000000-0000-0000-0POC-000000000000 -u http://www.baidu.com
+```
+
+当然，还可以传入其它参数如组件属性、执行参数：
+
+```sh
+pipenv run python scripts/poc_exe.py --poc-id 00000000-0000-0000-0POC-000000000000 -u http://www.baidu.com \
+    --component-property LotucTestProduct.deploy_path=/hello \
+    --exec-option component=LotucTestProduct
+```
+> 注意：需要先使用 utils.py 索引
+
+### strategy_exe.py
+
+```sh
+pipenv run python scripts/strategy_exe.py --strategy-id 00000000-0000-STRA-TEGY-000000000000 -u http://www.baidu.com
+```
+
+同样，可以传入其它参数如组件属性、执行参数：
+
+```sh
+pipenv run python scripts/strategy_exe.py --strategy-id 00000000-0000-STRA-TEGY-000000000000 -u http://www.baidu.com \
+    --component-property LotucTestProduct.deploy_path=/hello \
+    --exec-option component=LotucTestProduct
+```
+
+> 注意：需要先使用 utils.py 索引
+
+### recommend_task.py
+
+```sh
+python scripts/recommend_task.py --component-property CmsEasy.deploy_path=/
+
+python scripts/recommend_task.py --component-property http.port=80
+
+python scripts/recommend_task.py --component-property http.port=80 IIS.port=80
+
+python scripts/recommend_task.py --component-property http.port=80 IIS.port=80 CmsEasy.deploy_path=/
+```

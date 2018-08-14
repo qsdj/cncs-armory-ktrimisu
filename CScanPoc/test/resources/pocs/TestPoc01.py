@@ -1,5 +1,6 @@
 # coding: utf-8
 
+import json
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 
@@ -32,12 +33,32 @@ class Poc(ABPoc):
                     '$default_ref': {
                         'property': 'deploy_path'
                     }
+                },
+                'component': {
+                    'type': 'string',
+                    'default': 'Unkown'
                 }
             }
         }
 
     def verify(self):
         self.output.info('扫描 %s' % self.target)
+        self.output.info('传入的组件属性：')
+        for line in json.dumps(
+                self.components_properties, indent=2).split('\n'):
+            self.output.info(line)
+        self.output.info('传入的执行参数：')
+        for line in json.dumps(
+                self.exec_option, indent=2).split('\n'):
+            self.output.info(line)
+        try:
+            self.output.info('部署路径：%s' % self.get_option('base_path'))
+        except:
+            pass
+        try:
+            self.output.info('传入组件：%s' % self.get_option('component'))
+        except:
+            pass
         self.output.warning('警告信息 001')
         self.output.warning(self.vuln, '漏洞警告信息 001')
         self.output.warning('警告信息 002')

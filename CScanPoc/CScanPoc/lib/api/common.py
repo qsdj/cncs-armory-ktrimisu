@@ -25,13 +25,6 @@ class LoadFromFile(argparse.Action):
             parser.parse_args(argfile.read().split(), namespace)
 
 
-class LoadComponentsProperties(argparse.Action):
-    '''从文件加载组件属性'''
-
-    def __call__(self, parser, namespace, values, option_string=None):
-        pass
-
-
 def create_cmd_parser():
     '''创建命令行解析器'''
     parser = argparse.ArgumentParser(
@@ -65,10 +58,14 @@ def create_cmd_parser():
     parser.add_argument('-vv', dest='very_verbose', action='store_true',
                         help='系统日志配置')
     # 执行参数解析
-    parser.add_argument('--exec-option', metavar='KEY=VALUE', type=str, nargs='+',
+    parser.add_argument('--exec-option',
+                        metavar='KEY=VALUE',
+                        type=str,
+                        nargs='+',
                         help='执行参数定义')
     # 组件属性定义
-    parser.add_argument('--component-property', metavar='COMPONENT.PROPERTY=VALUES',
+    parser.add_argument('--component-property',
+                        metavar='COMPONENT.PROPERTY=VALUES',
                         type=str, nargs='+',
                         dest='component_properties',
                         help='组件属性定义')
@@ -86,8 +83,9 @@ def parse_properties(args,
         def _set_component_property(component_name, key, val):
             if component_name not in components_properties:
                 components_properties[component_name] = {}
-            Component.get_component(component_name).property_schema_handle.set_val(
-                components_properties[component_name], key, val)
+            Component.get_component(
+                component_name).property_schema_handle.set_val(
+                    components_properties[component_name], key, val)
         set_component_property = _set_component_property
 
     if set_option:

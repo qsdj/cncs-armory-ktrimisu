@@ -8,9 +8,16 @@ from CScanPoc.lib.core.log import CSCAN_LOGGER as logger
 class SimpleComponentScanStrategy(ABStrategy):
     '''组件 POC 按序扫描策略'''
 
-    def __init__(self, component_name=None):
+    def __init__(self):
         ABStrategy.__init__(self)
-        self.component_name = component_name
+        self.option_schema = {
+            'properties': {
+                'component': {
+                    'type': 'string',
+                    'description': '组件名'
+                }
+            }
+        }
 
     @property
     def author(self):
@@ -30,10 +37,11 @@ class SimpleComponentScanStrategy(ABStrategy):
 
     @property
     def pocs(self):
-        if self.component_name is None:
+        component_name = self.get_option('component')
+        if component_name is None:
             return []
-        logger.info('遍历查找组件 %s 的 POC', self.component_name)
-        for poc in iter_pocs_of_component(self.component_name, self.index_dir):
+        logger.info('遍历查找组件 %s 的 POC', component_name)
+        for poc in iter_pocs_of_component(component_name, self.index_dir):
             poc.output.strategy = self
             yield poc
 
