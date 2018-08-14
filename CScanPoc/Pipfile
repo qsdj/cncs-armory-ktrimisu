@@ -17,14 +17,11 @@ colorlog = "*"
 python-json-logger = "*"
 
 [dev-packages]
-twine = "*"
-pylint = "*"
-"autopep8" = "*"
-rope = "*"
 cscanpoc = {editable = true, path = "."}
+autopep8 = "*"
+pylint = "*"
 ipython = "*"
 pytest = "*"
-pytest-watch = "*"
 
 [requires]
 python_version = "3"
