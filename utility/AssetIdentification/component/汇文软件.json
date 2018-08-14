@@ -1,5 +1,0 @@
-{
-  "type": "others",
-  "producer": "江苏汇文软件有限公司",
-  "desc": "采用Client/Server、Browse/Server体系结构，运用中间件技术，创建开放的、创新的、可扩展的、 基于图书馆文献资源共享和文献服务共享的分布式应用软件系统。支持多种操作系统平台。如Windows 2003，各种Linux版本，Solaris， AIX， HP-UNIX，SCO UnixWare等 。采用大型关系型数据库Oracle作为数据库服务平台。支持TCP/IP、NetBEUI等多种通讯协议。"
-}

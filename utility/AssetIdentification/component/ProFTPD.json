@@ -1,5 +1,0 @@
-{
-  "type": "middleware",
-  "producer": null,
-  "desc": "ProFTPD:一个Unix平台上或是类Unix平台上（如Linux, FreeBSD等）的FTP服务器程序。"
-}

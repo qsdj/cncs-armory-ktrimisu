@@ -1,5 +1,0 @@
-{
-  "type": "middleware",
-  "producer": null,
-  "desc": "相信很多站长对swfupload.swf、uploadify.swf这样的文件不陌生，做站的时候常常看到。实际上这是一个著名的利用swf异步上传的一个插件。\n        它可以很好解决异步上传、多文件异步上传的问题，很快这个插件就红遍了cms界，各大cms都使用这个swf来处理上传问题。"
-}

@@ -1,5 +1,0 @@
-{
-  "type": "cms",
-  "producer": null,
-  "desc": "phpMyRecipes is a simple application for storing and retrieving recipes. It uses a web-based interface, for ease of use across any system, and a MySQL database backend for storing the recipes."
-}

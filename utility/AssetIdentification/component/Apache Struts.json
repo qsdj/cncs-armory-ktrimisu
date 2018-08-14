@@ -1,5 +1,0 @@
-{
-  "type": "middleware",
-  "producer": "Apache软件基金会",
-  "desc": "Apache Struts框架是一个一个基于 Java Servlets,JavaBeans, 和 JavaServer Pages (JSP)的Web应用框架的开源项目，Struts基于Model-View-Controller (MVC)的设计模式，可以用来构件复杂的Web应用。它允许我们分解一个应用程序的商业逻辑、控制逻辑和表现逻辑的代码，使它的重用性和维护性更好。Struts框架是Jakarta工程的一部分，由Apache软件基金会管理，Struts框架提供以下服务： 作为MVC结构中的controller的servlet JSP里用于Bean管理、HTML和JavaScript生成、模板处理和流程控制的JSP标签库 用户国际化消息框架 一个JDBC的实现来定义数据员和数据库连接池 一个通用的错误和异常处理机制，包括从一个应用程序资源文件读取错误信息 XML语法分析 文件上载工具，注册机制。"
-}

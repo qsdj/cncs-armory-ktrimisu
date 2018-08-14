@@ -1,5 +1,0 @@
-{
-  "type": "cms",
-  "producer": null,
-  "desc": "AKCMS一个轻量级的PHP的小型CMS(内容管理系统）！灵活，可靠，功能实用，支持MySQL、SQLite，支持整站HTML静态化，采集功能，适合做几乎所有的WEB1.0网站：文章站、网址站、门户站、书库站、下载站、音乐站等。"
-}

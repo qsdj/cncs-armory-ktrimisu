@@ -1,5 +1,0 @@
-{
-  "type": "middleware",
-  "producer": "Node.js基金会",
-  "desc": "Node.js是一个Javascript运行环境(runtime environment)，发布于2009年5月，由Ryan Dahl开发，实质是对Chrome V8引擎进行了封装。Node.js对一些特殊用例进行优化，提供替代的API，使得V8在非浏览器环境下运行得更好。"
-}

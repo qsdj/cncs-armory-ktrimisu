@@ -1,5 +1,0 @@
-{
-  "type": "others",
-  "producer": null,
-  "desc": "LNMP指的是一个基于CentOS/Debian编写的Nginx、PHP、MySQL、phpMyAdmin、eAccelerator一键安装包。可以在VPS、独立主机上轻松的安装LNMP生产环境。"
-}

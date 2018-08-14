@@ -1,5 +1,0 @@
-{
-  "type": "middleware",
-  "producer": "Apache软件基金会",
-  "desc": "Apache ActiveMQ是一款开源消息总线，支持JMS1.1和J2EE 1.4规范的JMS Provider实现。"
-}

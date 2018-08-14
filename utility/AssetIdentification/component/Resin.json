@@ -1,5 +1,0 @@
-{
-  "type": "middleware",
-  "producer": "CAUCHO",
-  "desc": "Resin是CAUCHO公司的产品，是一个非常流行的application server，对servlet和JSP提供了良好的支持，性能也比较优良，resin自身采用JAVA语言开发。"
-}

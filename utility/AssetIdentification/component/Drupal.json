@@ -1,5 +1,0 @@
-{
-  "type": "cms",
-  "producer": "Drupal ",
-  "desc": "Drupal 是一个自由和开源的模块化框架和内容管理系统，用PHP语言写成。它也被称为内容管理框架，因为其功能已经超越了一般意义上的内容系统。Drupal可以运行在Windows和Unix/Linux操作系统上，支持IIS和Apache Web服务器，需要MySQL或者PostgreSQL数据库。"
-}
