@@ -12,7 +12,6 @@ class Vuln(ABVuln):
     disclosure_date = '2014-03-01'  # 漏洞公布时间
     desc = '''
         Srun3000计费系统 /srun3/web/user_info.php 逻辑不严谨，导致命令执行漏洞。
-
     '''  # 漏洞描述
     ref = 'Unknown'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号

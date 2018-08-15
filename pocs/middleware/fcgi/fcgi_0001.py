@@ -7,7 +7,7 @@ import urllib.parse
 
 
 class Vuln(ABVuln):
-    vuln_id = 'fcgi_0001'  # 平台漏洞编号，留空
+    vuln_id = 'Fcgi_0001'  # 平台漏洞编号，留空
     name = 'fcgi 暴露于公网'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.OTHER  # 漏洞类型
@@ -20,7 +20,7 @@ class Vuln(ABVuln):
     ref = 'Unknown'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
-    product = 'fcgi'  # 漏洞应用名称
+    product = 'Fcgi'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
 
 

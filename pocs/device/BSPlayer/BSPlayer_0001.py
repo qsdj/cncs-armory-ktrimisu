@@ -9,7 +9,7 @@ import urllib.parse
 
 class Vuln(ABVuln):
     vuln_id = 'BSPlayer_0001'  # 平台漏洞编号，留空
-    name = 'BSPlayer2.68 缓冲区溢出漏洞'  # 漏洞名称
+    name = 'BSPlayer 2.68 缓冲区溢出漏洞'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INFO_LEAK  # 漏洞类型
     disclosure_date = '2015-03-24'  # 漏洞公布时间
@@ -22,7 +22,7 @@ class Vuln(ABVuln):
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'BSPlayer'  # 漏洞应用名称
-    product_version = 'BSPlayer2.68'  # 漏洞应用版本
+    product_version = '2.68'  # 漏洞应用版本
 
 
 class Poc(ABPoc):

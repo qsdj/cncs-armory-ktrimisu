@@ -18,19 +18,19 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'D-Link'  # 漏洞应用名称
     product_version = '''
-                        DIR-890L
-                        DAP-1522 revB
-                        DAP-1650 revB
-                        DIR-880L
-                        DIR-865L
-                        DIR-860L revA
-                        DIR-860L revB
-                        DIR-815 revB
-                        DIR-300 revB
-                        DIR-600 revB
-                        DIR-645
-                        TEW-751DR
-                        TEW-733GR'''  # 漏洞应用版本
+        DIR-890L
+        DAP-1522 revB
+        DAP-1650 revB
+        DIR-880L
+        DIR-865L
+        DIR-860L revA
+        DIR-860L revB
+        DIR-815 revB
+        DIR-300 revB
+        DIR-600 revB
+        DIR-645
+        TEW-751DR
+        TEW-733GR'''  # 漏洞应用版本
 
 
 class Poc(ABPoc):

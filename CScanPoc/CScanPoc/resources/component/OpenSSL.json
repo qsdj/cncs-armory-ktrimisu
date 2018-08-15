@@ -1,5 +1,5 @@
 {
-  "type": "middleware",
+  "type": "os",
   "producer": "OpenSSL软件基金会",
   "desc": "OpenSSL 是一个安全套接字层密码库，囊括主要的密码算法、常用的密钥和证书封装管理功能及SSL协议，并提供丰富的应用程序供测试或其它目的使用。"
 }
