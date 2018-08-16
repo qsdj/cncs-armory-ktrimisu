@@ -12,6 +12,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-04-08'  # 漏洞公布时间
     desc = '''
+    北京方正阿帕比技术有限公司是北大方正信息产业集团有限公司旗下专业的数字出版技术及产品提供商。方正阿帕比公司自2001年起进入数字出版领域，在继承并发展方正传统出版印刷技术优势的基础上，自主研发了数字出版技术及整体解决方案，已发展成为全球领先的数字出版技术提供商。
         方正Apabi数字资源平台多处存在QL注入漏洞：
         '/tasi/admin/system/tutordept.asp'
         '/tasi/admin/system/language.asp'

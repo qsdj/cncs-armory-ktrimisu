@@ -15,6 +15,7 @@ class Vuln(ABVuln):
     type = VulnType.INFO_LEAK  # 漏洞类型
     disclosure_date = '2014-06-28'  # 漏洞公布时间
     desc = '''
+        用友是国内著名的内容管理系统之一，包括协同管理系统、用友NC、用友U8等
         用友NC /hrss/ELTextFile.load.d?src=../../ierp/bin/prop.xml 存在信息泄露。
     '''  # 漏洞描述
     ref = 'Unknown'  # 漏洞来源

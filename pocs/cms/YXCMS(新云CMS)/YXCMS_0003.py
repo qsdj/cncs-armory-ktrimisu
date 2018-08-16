@@ -12,7 +12,7 @@ class Vuln(ABVuln):
     type = VulnType.FILE_UPLOAD  # 漏洞类型
     disclosure_date = '2014-09-24'  # 漏洞公布时间
     desc = '''
-        YXCMS(新云CMS)建站系统存在ewebeditor上传和iis解析漏洞，可批量getshell.
+        YXCMS(新云CMS)建站系统存在ewebeditor上传和iis解析漏洞，可批量getshell。
         利用ewebeditor上传漏洞可以新建一个1.asp的文件夹，再配合iis的解析漏洞就可以成功的拿到shell.
     '''  # 漏洞描述
     ref = 'https://www.secpulse.com/archives/27317.html'  # 漏洞来源

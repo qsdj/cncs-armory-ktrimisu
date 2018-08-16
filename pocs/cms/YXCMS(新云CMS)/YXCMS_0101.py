@@ -12,6 +12,7 @@ class Vuln(ABVuln):
     type = VulnType.FILE_UPLOAD  # 漏洞类型
     disclosure_date = '2014-09-24'  # 漏洞公布时间
     desc = '''
+    YXCMS(新云CMS)建站系统存在ewebeditor上传和iis解析漏洞，可批量getshell。
     Yxcms building system（compatible cell phone）是一套网站创建系统。
     Yxcms building system (compatible cell phone)1.4.7版本中存在跨站脚本漏洞。
     远程攻击者可通过向index.php?r=default/column/index&col=guestbook请求中的protected\apps\default\view\default\extend_guestbook.php或

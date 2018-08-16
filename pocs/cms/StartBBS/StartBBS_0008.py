@@ -12,6 +12,7 @@ class Vuln(ABVuln):
     type = VulnType.INFO_LEAK  # 漏洞类型
     disclosure_date = '2013-02-03'  # 漏洞公布时间
     desc = '''
+        Startbbs - a simple & lightweight Forum. ... Hello, world! StartBBS 是一款优雅、开源、轻量社区系统，基于MVC架构。
         StartBBS /index.php/home/getmore/w.jsp 物理路径泄露。
     '''  # 漏洞描述
     ref = 'Unknown'  # 漏洞来源

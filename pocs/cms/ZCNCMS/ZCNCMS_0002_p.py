@@ -19,6 +19,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2016-08-25'  # 漏洞公布时间
     desc = '''
+        zcncms是站长中国基于php技术开发的内容管理系统。
         在/module/products/admincontroller/products_photo.php中，
         当 $a的值为’list’时，$where = " productid = '".$productid."' ", $procuctid被单引号保护起来，参数引进是经过addslashes操作的，所以这里是安全的。
         但是当$a == ‘edit’时，$products->GetInfo('',' id = '.$productid)，$productid被直接拼接到where语句中且没有单引号保护，导致SQL注入。

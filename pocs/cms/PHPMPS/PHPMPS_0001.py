@@ -15,6 +15,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2014-10-06'  # 漏洞公布时间
     desc = '''
+        php分类信息发布系统是一款免费开源的分类信息程序,适用于建立本地信息站点。
         PHPMPS 在修复漏洞时误将修复代码注释，造成 SQL 注入漏洞，可以获取管理员账号密码等。
     '''  # 漏洞描述
     ref = 'https://www.sitedirsec.com/exploit-1828.html'  # 漏洞来源

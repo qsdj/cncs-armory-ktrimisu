@@ -19,6 +19,7 @@ class Vuln(ABVuln):
     type = VulnType.OTHER  # 漏洞类型
     disclosure_date = '2017-03-05'  # 漏洞公布时间
     desc = """
+        SemCms是一套开源外贸企业网站管理系统,主要用于外贸企业,兼容IE、Firefox 、google、360 等主流浏览器。
         文件位置:/Admin/Include/function.php
         cookie只简单的用htmlspecialchars()函数过滤了。我们知道这个函数用于将'&'，'''(单引号)，'"'（双引号）,'<'(小于号),'>'（大于号）转义为html实体字符。
         过滤不严谨，导致任意用户登录。

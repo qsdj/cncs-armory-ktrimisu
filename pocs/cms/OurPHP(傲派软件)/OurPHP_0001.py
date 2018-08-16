@@ -12,7 +12,8 @@ class Vuln(ABVuln):
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-10-27'  # 漏洞公布时间
-    desc = '''  
+    desc = '''
+        OURPHP是一个品牌,一款基于PHP+MySQL开发符合W3C标准的建站系统。
         傲派软件（OurPHP）在 /function/plugs/Comment/product-content.php 存在SQL注入漏洞。
     '''  # 漏洞描述
     ref = 'Unknown'  # 漏洞来源

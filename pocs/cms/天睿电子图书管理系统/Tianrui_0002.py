@@ -12,6 +12,7 @@ class Vuln(ABVuln):
     type = VulnType.MISCONFIGURATION  # 漏洞类型
     disclosure_date = '2015-09-22'  # 漏洞公布时间
     desc = '''
+        天睿电子图书管理系统是一套阅读书籍系统，基于PHPCMF框架架构，拥有相当强大的内容管理模式和灵活的扩展性能。
         天睿电子图书管理系统 /useradd.asp 任意增加管理员。
     '''  # 漏洞描述
     ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0121549

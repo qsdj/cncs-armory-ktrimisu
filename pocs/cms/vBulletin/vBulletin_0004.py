@@ -11,6 +11,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2016-11-19'  # 漏洞公布时间
     desc = '''
+        vBulletin是美国Internet Brands和vBulletin Solutions公司共同开发的一款开源的商业Web论坛程序。
         漏洞的本质是forumrunner/includes/moderation.php文件中， do_get_spam_data()函数()对参数postids和threadid过滤不严导致SQL注入漏洞，
         VBulletin程序中并不直接使用$_GET等全局变量获取输入数据，而是使用clean_gpc() 和 clean_array_gpc() 函数来过滤输入数据，而这两个函数并未对STRING类型做严格过滤，而传入的参数postids是作为SRING类型解析，参数postids随后拼接在SQL语句中进行查询，导致SQL注入漏洞。
     '''  # 漏洞描述

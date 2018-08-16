@@ -12,6 +12,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2014-07-23'  # 漏洞公布时间
     desc = '''
+        最土团购系统是国内最专业、功能最强大的GroupOn模式的免费开源团购系统平台，专业技术团队、完美用户体验与极佳的性能，立足为用户提供最值得信赖的免费开源网上团购系统。
         最土团购，在include/library/DB.class.php(128-134):
         发现传递进来的参数，进行处理后变为$idstring ，在此期间 只是做了空格检测，并没有做其他特殊字符的过滤，然后直接进入查询，故而导致sql注入。
         辐射的文件有：

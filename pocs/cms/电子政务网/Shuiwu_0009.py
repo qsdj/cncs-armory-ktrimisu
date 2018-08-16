@@ -11,6 +11,7 @@ class Vuln(ABVuln):
     type = VulnType.LFI  # 漏洞类型
     disclosure_date = '2016-02-26'  # 漏洞公布时间
     desc = '''
+        电子政务网是国家机关在政务活动中，全面应用现代信息技术、网络技术以及办公自动化技术等进行办公、管理和为社会提供公共服务的一种全新的管理模式的系统。
         航天信息增值税系统通用型任意文件包含漏洞，可通过构造语句来读取任意敏感文件信息。
     '''  # 漏洞描述
     ref = 'Unknown'  # https://wooyun.shuimugan.com/bug/view?bug_no=155162

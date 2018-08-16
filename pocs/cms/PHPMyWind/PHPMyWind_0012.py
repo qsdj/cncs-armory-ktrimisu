@@ -12,6 +12,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-01-07'  # 漏洞公布时间
     desc = '''
+        PHPMyWind 是一款基于PHP+MySQL开发，符合W3C标准的建站引擎。
         漏洞出在/order.php中，
         $r = $dosql->GetOne("SELECT `$colname` FROM `$tbname2` WHERE `id`=".$_GET['id']);//没过滤
         绕过也很简单，Cookie设置一下即可。

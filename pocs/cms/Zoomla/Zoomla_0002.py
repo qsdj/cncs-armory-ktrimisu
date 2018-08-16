@@ -18,6 +18,7 @@ class Vuln(ABVuln):
     type = VulnType.FILE_DOWNLOAD  # 漏洞类型
     disclosure_date = '2014-10-17'  # 漏洞公布时间
     desc = '''
+        Zoomla!逐浪®CMS是运行在微软大数据平台上的一款卓越网站内容管理系统，基于.NET4.5框架，SQL Server数据库平台（扩展支持Oracle甲骨文、MYSQL诸多数据库）、纯净的MVC架构，系统在优秀的内容管理之上，提供OA办公、移动应用、微站、微信、微博等能力，完善的商城、网店等管理功能，并包括教育模块、智能组卷、在线试戴、在线考试及诸多应用。Zoomla!逐浪®CMS不仅是一款网站内容管理系统，更是企业信息化的起点，也是强大的WEB开发平台，完全免费开放，丰富的学习资源和快速上手教程，并结合自主的字库、Webfont解决方案、逐浪云，为中国政府、军工、世界五百强企业以及诸多站长、开发者提供卓越的软件支持。
         Zoomla X2.0 /User/UserZone/School/Download.aspx文件存在任意文件下载漏洞
     '''  # 漏洞描述
     ref = 'Unknown'  # 漏洞来源

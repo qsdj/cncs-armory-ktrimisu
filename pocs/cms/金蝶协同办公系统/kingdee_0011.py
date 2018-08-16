@@ -12,6 +12,7 @@ class Vuln(ABVuln):
     type = VulnType.FILE_UPLOAD  # 漏洞类型
     disclosure_date = 'Unknown'  # 漏洞公布时间
     desc = '''
+        金蝶协同办公管理系统助力企业实现从分散到协同，规范业务流程、降低运作成本，提高执行力，并成为领导的工作助手、员工工作和沟通的平台。
         金蝶协同办公系统 /kingdee/document/upphoto_action.jsp 可上传任意文件。
     '''  # 漏洞描述
     ref = 'Unknown'  # 漏洞来源

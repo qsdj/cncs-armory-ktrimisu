@@ -12,6 +12,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-10-25'  # 漏洞公布时间
     desc = '''
+        VisionSoft是由源天软件打造的一款OA办公一体化内容管理系统。
         源天软件OA通用型SQL注入漏洞(mssql and Oracle)
         /ServiceAction/com.velcro.base.DataAction?sql=
     '''  # 漏洞描述

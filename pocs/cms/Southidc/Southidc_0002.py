@@ -15,7 +15,8 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2013-03-03'  # 漏洞公布时间
     desc = '''
-       Southidc news_search.asp 注入漏洞 
+        南方数据企业CMS、企业网站SEO、网站优化、SEO搜索引擎优化机制、自助建站系统、前台全站采用静态html页面模板自动生成。
+        Southidc news_search.asp 注入漏洞 
     '''  # 漏洞描述
     ref = 'Unknown'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号

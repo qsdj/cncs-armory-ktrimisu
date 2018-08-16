@@ -12,6 +12,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = 'Unknown'  # 漏洞公布时间
     desc = '''
+        合众商道一款PHP建站系统。
         合众商道php系统通用注入,支持联合查询。
     '''  # 漏洞描述
     ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=083434

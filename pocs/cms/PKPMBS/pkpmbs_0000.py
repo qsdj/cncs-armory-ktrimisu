@@ -12,8 +12,8 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-09-17'  # 漏洞公布时间
     desc = '''
+        PKPMBS是一个多功能工程质量监督站信息管理系统。
         政府建设工程质量监督系统某处注入漏洞：
-        
     '''  # 漏洞描述
     ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0120366
     cnvd_id = 'Unknown'  # cnvd漏洞编号

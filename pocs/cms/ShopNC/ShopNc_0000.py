@@ -12,6 +12,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-10-1'  # 漏洞公布时间
     desc = '''
+        ShopNC商城系统，是天津市网城天创科技有限责任公司开发的一套多店模式的商城系统。
         ShopNC o2o 版三处sql注入,直接出数据.
     '''  # 漏洞描述
     ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0125512

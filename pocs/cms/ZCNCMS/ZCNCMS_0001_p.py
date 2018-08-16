@@ -19,6 +19,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2016-08-25'  # 漏洞公布时间
     desc = '''
+        zcncms是站长中国基于php技术开发的内容管理系统。
         文件/module/menus/admincontroller/menus.php
         在$parentid != $infoold[‘parentid’]中，用的’!=’，很明显如果我们要控制$parentid的值，这个不等式肯定成立。但是errorinfo会使程序退出，所以这里需要一个在数据库不存在的parentid，使得取出$List为空，从而产生SQL注入漏洞。
     '''  # 漏洞描述

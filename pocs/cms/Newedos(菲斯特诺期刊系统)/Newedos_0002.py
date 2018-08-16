@@ -12,6 +12,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-10-08'  # 漏洞公布时间
     desc = '''
+        菲斯特诺期刊网络编辑平台，系统运行环境：windows NT或以上操作系统，IIS6.0，SQL数据库，ASP.NET2.0。主要功能是图书馆建设。
         菲斯特诺期刊系统5处SQL注入漏洞：
         /showunit.aspx?classid=1&newsid=1
         /CompanyList.aspx?parentid=1

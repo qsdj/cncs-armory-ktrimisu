@@ -11,6 +11,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-08-17'  # 漏洞公布时间
     desc = '''
+        TodayMail时代企业邮箱是一款企业邮箱通讯系统。
         文件searchAddr.inc.php，可以看到这里没有包含登录验证的文件，所以可以无需登录即可直接访问。
         文件emailcore.class.inc.php，变量$value直接进入select sql语句了，没有进行任何过滤处理，导致SQL注入漏洞产生。
     '''  # 漏洞描述

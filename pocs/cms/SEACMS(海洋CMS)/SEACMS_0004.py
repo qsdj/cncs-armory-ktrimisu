@@ -18,8 +18,8 @@ class Vuln(ABVuln):
     type = VulnType.RCE  # 漏洞类型
     disclosure_date = '2016-12-207'  # 漏洞公布时间
     desc = '''
+        SeaCMS是一套使用PHP编写的免费、开源的网站内容管理系统。该系统主要被设计用来管理视频点播资源。
         漏洞文件:seacms/search.php
-
         parseif函数中： @eval("if(".$strIf.") { \$ifFlag=true;} else{ \$ifFlag=false;}");//就是这里了,@eval 可直接执行任意命令。
     '''  # 漏洞描述
     ref = 'http://0day5.com/archives/4180/'  # 漏洞来源

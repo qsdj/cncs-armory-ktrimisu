@@ -11,6 +11,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2014-05-23'  # 漏洞公布时间
     desc = '''
+        海天网络协同办公系统(海天OA)，是一套高质量、高效率、智能化的基于B/S结构的办公系统。产品特色：图形化流程设计、电子印章及手写签名痕迹保留等功能、灵活的工作流处理模式支持、完善的角色权限管理 、严密的安全性管理 、完备的二次开发特性。
         HaitianOA /InforForWeb/list.asp 参数过滤不完整，导致SQL注入漏洞。
     '''  # 漏洞描述
     ref = 'Unknown'  # 漏洞来源

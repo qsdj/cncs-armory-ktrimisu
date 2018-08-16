@@ -11,6 +11,7 @@ class Vuln(ABVuln):
     type = VulnType.LFI  # 漏洞类型
     disclosure_date = '2016-01-19'  # 漏洞公布时间
     desc = '''
+        用友是国内著名的内容管理系统之一，包括协同管理系统、用友NC、用友U8等
         用友ERP-NC通用文件包含漏洞，攻击者可以通过构造恶意语句来读取系统敏感文件信息。
     '''  # 漏洞描述
     ref = 'Unknown'  # https://wooyun.shuimugan.com/bug/view?bug_no=148227

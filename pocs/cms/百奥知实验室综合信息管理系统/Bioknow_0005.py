@@ -12,6 +12,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-04-16'  # 漏洞公布时间
     desc = '''
+        百奥知实验室综合信息管理系统是一款由北京百奥知信息科技有限公司自主研发的实验室管理系统。
         百奥知实验室综合信息管理系统：
         /portal/root/lims_std/gyxt.jsp?id=a
         /portal/root/lims_std/gyxt.jsp?id=a

@@ -12,6 +12,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2013-02-03'  # 漏洞公布时间
     desc = '''
+        SiteServer CMS是定位于中高端市场的CMS内容管理系统，能够以最低的成本、最少的人力投入在最短的时间内架设一个功能齐全、性能优异、规模庞大并易于维护的网站平台。
         SiteServer最新版3.6.4 存在多处SQL注入漏洞：
         /siteserver/bbs/background_post.aspx
         /siteserver/bbs/background_user.aspx

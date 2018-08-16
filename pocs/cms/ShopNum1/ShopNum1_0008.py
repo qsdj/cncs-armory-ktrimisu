@@ -12,7 +12,8 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-09-12'  # 漏洞公布时间
     desc = '''
-        武汉群翔软件有限公司商城系统注入.
+        ShopNum1网店系统是武汉群翔软件有限公司自主研发的基于 WEB 应用的 B/S 架构的B2C网上商店系统，主要面向中高端客户， 为企业和大中型网商打造优秀的电子商务平台，ShopNum1运行于微软公司的 .NET 平台，采用最新的 ASP.NET 3.5技术进行分层开发。拥有更强的安全性、稳定性、易用性。
+        武汉群翔软件有限公司商城系统/ShoppingCart1.html文件设计缺陷导致注入漏洞的产生。
     '''  # 漏洞描述
     ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0118447
     cnvd_id = 'Unknown'  # cnvd漏洞编号

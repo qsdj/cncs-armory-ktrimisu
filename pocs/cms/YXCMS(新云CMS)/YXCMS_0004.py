@@ -12,6 +12,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-01-13'  # 漏洞公布时间
     desc = '''
+        YXCMS(新云CMS)建站系统存在ewebeditor上传和iis解析漏洞，可批量getshell。
         新云cms建站系统 showkbxx.asp 页面参数过滤不完整，导致 SQL注入漏洞。
     '''  # 漏洞描述
     ref = 'Unknown'  # 漏洞来源

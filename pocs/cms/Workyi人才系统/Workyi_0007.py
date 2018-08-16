@@ -11,6 +11,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-05-27'  # 漏洞公布时间
     desc = '''
+            基于Asp.Net+MsSQL的开源高端人才系统,人才招聘程序.为创业者带来低投入高回报的人才系统。
         Workyi人才系统 /hrtool/Default.aspx 页面参数过滤不严谨，导致SQL注入漏洞。
     '''  # 漏洞描述
     ref = 'Unknown'  # 漏洞来源

@@ -12,6 +12,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2018-03-26'  # 漏洞公布时间
     desc = '''
+        ZZCMS是一款集成app移动平台与电子商务平台的内容管理系统。
         ZZCMS 8.2版本中存在安全漏洞。攻击者可借助adv2.php?action=modify请求中的‘id’参数利用该漏洞注入SQL命令，获取密码。
     '''  # 漏洞描述
     ref = 'http://www.cnvd.org.cn/flaw/show/CNVD-2018-06859'  # 漏洞来源

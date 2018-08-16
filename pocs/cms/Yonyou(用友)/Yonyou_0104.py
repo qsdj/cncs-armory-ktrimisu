@@ -10,7 +10,8 @@ class Vuln(ABVuln):
     type = VulnType.LFI  # 漏洞类型
     disclosure_date = '2012-06-19'  # 漏洞公布时间
     desc = '''
-    用友俱乐部目录遍历漏洞，攻击者可以通过文件包含来读取系统敏感文件信息。
+        用友是国内著名的内容管理系统之一，包括协同管理系统、用友NC、用友U8等
+        用友俱乐部目录遍历漏洞，攻击者可以通过文件包含来读取系统敏感文件信息。
     '''  # 漏洞描述
     ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=8484
     cnvd_id = 'Unknown'  # cnvd漏洞编号

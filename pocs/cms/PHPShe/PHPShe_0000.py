@@ -12,6 +12,7 @@ class Vuln(ABVuln):
     type = VulnType.OTHER  # 漏洞类型
     disclosure_date = '2014-06-19'  # 漏洞公布时间
     desc = '''
+        PHPSHE网上商城系统具备电商零售业务所需的所有基本功能,以其安全稳定、简单易用、高效专业等优势赢得了用户的广泛好评,为用户提供了一个低成本、高效率的网上商城服务。
         PHPShe B2C商城网站系统软件此问题由于phpshe系统可以重装，加上install时存在任意代码写入导致代码执行。
         install/index.php
     '''  # 漏洞描述

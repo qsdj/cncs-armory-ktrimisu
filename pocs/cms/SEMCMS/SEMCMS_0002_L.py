@@ -19,6 +19,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2017-03-05'  # 漏洞公布时间
     desc = """
+        SemCms是一套开源外贸企业网站管理系统,主要用于外贸企业,兼容IE、Firefox 、google、360 等主流浏览器。
         xxxx_Admin/SEMCMS_Banner.php
         对GET参数没有处理，直接注入。
     """  # 漏洞描述

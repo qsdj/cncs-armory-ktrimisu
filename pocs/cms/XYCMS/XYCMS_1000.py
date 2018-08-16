@@ -11,6 +11,7 @@ class Vuln(ABVuln):
     type = VulnType.FILE_TRAVERSAL
     disclosure_date = '2018-3-14'
     desc = '''
+        XYCMS企业建站系统是以asp+access进行开发的企业建站系统。
         system/xyeditor/php/file_manager_json.php文件中path参数存在任意目录遍历
     '''
     ref = 'Unknown'  # 漏洞来源

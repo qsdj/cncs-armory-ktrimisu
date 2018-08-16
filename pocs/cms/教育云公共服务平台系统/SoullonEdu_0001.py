@@ -14,6 +14,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-08-09'  # 漏洞公布时间
     desc = '''
+        山东鲁能教育云公共服务平台系统。
         教育云公共服务平台系统参数过滤不严谨，存在多处SQL注入漏洞。
     '''  # 漏洞描述
     ref = 'Unknown'  # 漏洞来源

@@ -11,6 +11,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-06-16'  # 漏洞公布时间
     desc = '''
+        金窗教务管理系统是为高校数字校园建设提供的技术解决方案。 
         金窗教务管理系统通用型SQL注入漏洞。
     '''  # 漏洞描述
     ref = 'Unknown'  # 漏洞来源

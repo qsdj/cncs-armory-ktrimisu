@@ -15,6 +15,7 @@ class Vuln(ABVuln):
     type = VulnType.RCE  # 漏洞类型
     disclosure_date = '2015-03-25'  # 漏洞公布时间
     desc = '''
+        惠尔顿上网行为管理系统是由深圳市惠尔顿信息技术有限公司打造的一款上网行为管理检测系统。
         惠尔顿（Wholeton）上网行为管理系统多处命令执行漏洞：
         /base/stats/realtime/user_prohibit_internet.php
         /base/stats/realtime/underLineUser.php

@@ -11,6 +11,7 @@ class Vuln(ABVuln):
     type = VulnType.INFO_LEAK  # 漏洞类型
     disclosure_date = '2015-08-20'  # 漏洞公布时间
     desc = '''
+        P2P通用系统是一个个人对个人的网贷系统。
         P2P通用系统逻辑错误，导致数据库可直接下载。
     '''  # 漏洞描述
     ref = 'Unknown'  # 漏洞来源

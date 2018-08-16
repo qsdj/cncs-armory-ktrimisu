@@ -11,6 +11,7 @@ class Vuln(ABVuln):
     type = VulnType.OTHER  # 漏洞类型
     disclosure_date = '2010-11-01'  # 漏洞公布时间
     desc = '''
+        猫扑OA采用行业领先的云计算技术，基于传统互联网和移动互联网，创新云服务+云终端的应用模式， 为企业用户版提供一账号管理聚合应用服务。
         猫扑跳转漏洞，攻击者可以通过构造恶意链接来跳转到恶意网站对用户进行钓鱼攻击。
     '''  # 漏洞描述
     ref = 'Unknown'  # https://wooyun.shuimugan.com/bug/view?bug_no=771

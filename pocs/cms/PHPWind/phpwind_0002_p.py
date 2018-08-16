@@ -20,6 +20,7 @@ class Vuln(ABVuln):
     type = VulnType.OTHER  # 漏洞类型
     disclosure_date = '2014-08-17'  # 漏洞公布时间
     desc = '''
+        phpwind（简称：pw）是一个基于PHP和MySQL的开源社区程序，是国内最受欢迎的通用型论坛程序之一。
         PHPWind v9.0版本中上传头像处误将访问api的密钥泄露，导致 secretkey 泄露，导致可通过api任意修改密码。
     '''  # 漏洞描述
     ref = 'Unknown'  # 漏洞来源

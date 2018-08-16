@@ -12,6 +12,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '20160-01-11'  # 漏洞公布时间
     desc = '''
+        安脉学校综合管理平台采用B/S结构.NET技术，支持IE/Google/火狐/360等主流浏览器，支持云平台，有多元化的用户群，进行统一身份论证，符合《教育管理信息化标准》的要求。
         安脉学校综合管理平台 /anmai/Edis/DiathesisAppraise/grghjl.aspx?stuNo=1 SQL注入漏洞。
     '''  # 漏洞描述
     ref = 'Unknown'  # 漏洞来源

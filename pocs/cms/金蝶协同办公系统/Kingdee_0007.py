@@ -11,6 +11,7 @@ class Vuln(ABVuln):
     type = VulnType.LFI  # 漏洞类型
     disclosure_date = '2015-06-05'  # 漏洞公布时间
     desc = '''
+        金蝶协同办公管理系统助力企业实现从分散到协同，规范业务流程、降低运作成本，提高执行力，并成为领导的工作助手、员工工作和沟通的平台。
         金蝶分站点存在本地文件包含漏洞，攻击者可以通过构造恶意语句来读取系统敏感文件信息。
     '''  # 漏洞描述
     ref = 'Unknown'  # https://wooyun.shuimugan.com/bug/view?bug_no=109389

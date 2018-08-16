@@ -19,6 +19,7 @@ class Vuln(ABVuln):
     type = VulnType.INFO_LEAK  # 漏洞类型
     disclosure_date = '2014-10-30'  # 漏洞公布时间
     desc = '''
+        Shopex是国内市场占有率最高的网店软件。网上商店平台软件系统又称网店管理系统、网店程序、网上购物系统、在线购物系统。
         /app/dev/svinfo.php?phpinfo=true
         /app/dev/svinfo.php?download=true
         /install/svinfo.php?phpinfo=true

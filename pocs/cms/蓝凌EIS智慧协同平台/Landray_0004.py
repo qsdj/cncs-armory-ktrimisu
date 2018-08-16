@@ -11,7 +11,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = 'Unknown'  # 漏洞公布时间
     desc = '''
-        蓝凌EIS智慧协同平台
+        蓝凌EIS智慧协同平台功能涵盖协同管理、知识管理、文化管理、个人工作及移动办公、项目管理、资源管理等多项扩展应用，充分满足成长型企业的各项需求。
         /vote/service.aspx，参数处理不当，导致SQL注入漏洞。
     '''  # 漏洞描述
     ref = 'Unknown'  # 漏洞来源

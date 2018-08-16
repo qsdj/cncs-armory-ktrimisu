@@ -12,6 +12,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-06-18'  # 漏洞公布时间
     desc = '''
+        金窗教务管理系统是为高校数字校园建设提供的技术解决方案。
         金窗教务系统存在多处SQL .net+sqlserver注射漏洞
     '''  # 漏洞描述
     ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=0101234'  # 漏洞来源

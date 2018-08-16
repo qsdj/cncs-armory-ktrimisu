@@ -14,6 +14,7 @@ class Vuln(ABVuln):
     type = VulnType.XSS  # 漏洞类型
     disclosure_date = '2015-01-05'  # 漏洞公布时间
     desc = '''
+        WebsiteBaker可帮助您创建所需的网站：免费，简单，安全，灵活且可扩展的开源内容管理系统（CMS）。
         隐藏表单中引发的反射XSS漏洞。
     '''  # 漏洞描述
     ref = 'http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-0553'  # 漏洞来源

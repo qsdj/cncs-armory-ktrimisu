@@ -12,6 +12,7 @@ class Vuln(ABVuln):
     type = VulnType.LFI  # 漏洞类型
     disclosure_date = '2015-09-17'  # 漏洞公布时间
     desc = '''
+        TRS Web Content Management( TRS WCM ), 是-套完全基于Java和浏览器技术的网络内容管理软件。
         TRS WCM(拓尔思内容协作平台) /common/pre.as?_url=/WEB-INF/web.xml 通用型文件包含漏洞。
     '''  # 漏洞描述
     ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=0120447'  # 漏洞来源

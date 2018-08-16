@@ -11,6 +11,7 @@ class Vuln(ABVuln):
     type = VulnType.FILE_OPERATION  # 漏洞类型
     disclosure_date = ' 2014-11-07'  # 漏洞公布时间
     desc = '''
+        用友是国内著名的内容管理系统之一，包括协同管理系统、用友NC、用友U8等
         用友FE协作办公系统某处协议处理接口未过滤file://协议，导致任意文件读取漏洞,通杀全版本。
     '''  # 漏洞描述
     ref = 'Unknown'  # 漏洞来源

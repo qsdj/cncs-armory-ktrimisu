@@ -11,6 +11,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-07-16'  # 漏洞公布时间
     desc = '''
+        极限OA网络智能办公系统是一款办公软件，运行环境支持Win9x/Me/NT/2000/XP/2003。
         /inc/finger/use_finger.php?USER_ID=-1%df
         /general/ems/manage/search_excel.php?LOGIN_USER_ID=1&EMS_TYPE=1%df
         /general/ems/query/search_excel.php?LOGIN_USER_ID=1%bf

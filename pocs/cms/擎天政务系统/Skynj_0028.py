@@ -14,6 +14,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-06-11'  # 漏洞公布时间
     desc = '''
+        擎天政务系统是由南京擎天科技有限公司打造的一款集电子政务、税务信息化、信息集成软件、温室气体排放管理及系统集成业务等五大业务体系的软件。
         南京擎天政务系统SQL注入漏洞：
         /webpages/casebase_list_page.aspx
     '''  # 漏洞描述

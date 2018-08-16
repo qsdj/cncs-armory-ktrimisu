@@ -11,6 +11,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2012-10-17'  # 漏洞公布时间
     desc = '''
+        PHP168整站是PHP的建站系统，代码全部开源，是国内知名的开源软件提供商；提供核心+模块+插件的模式；任何应用均可在线体验。
         PHP168 /zhidao/user.php?j=question&u=-1+union+select+1,2,3,md5(1),5,6,7,8-- SQL注入漏洞。
     '''  # 漏洞描述
     ref = 'Unknown'  # 漏洞来源

@@ -11,6 +11,7 @@ class Vuln(ABVuln):
     type = VulnType.INFO_LEAK  # 漏洞类型
     disclosure_date = 'Unknown'  # 漏洞公布时间
     desc = '''
+        TRS Web Content Management( TRS WCM ), 是-套完全基于Java和浏览器技术的网络内容管理软件。
         TRS WCM(拓尔思内容协作平台) 6.X /wcm/infoview.do 位置用户密码泄漏。
     '''  # 漏洞描述
     ref = 'http://reboot.cf/2017/06/22/TRS%E6%BC%8F%E6%B4%9E%E6%95%B4%E7%90%86/'  # 漏洞来源

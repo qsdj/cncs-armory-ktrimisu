@@ -14,8 +14,9 @@ class Vuln(ABVuln):
     type = VulnType.XSS  # 漏洞类型
     disclosure_date = '2014-12-09'  # 漏洞公布时间
     desc = '''
-    PJBlog 3.0.6.170 /Action.asp XSS
-    漏洞文件：Action.asp 。
+        PJBlog是由舜子（陈子舜，英文名字PuterJam，PJblog就是以他英文名字缩写命名的，他本人就职于腾讯公司QZONE开发组）所开发的一套开源免费的中文个人博客系统程序，采用asp+Access的技术，PJBlog同时支持简繁中文，UTF-8编码，相对于其他系统，PJBlog具有相当高的运作效能以及更新率，也支持目前Blog所使用的新技术。
+        PJBlog 3.0.6.170 /Action.asp XSS
+        漏洞文件：Action.asp 。
     '''  # 漏洞描述
     ref = 'http://sebug.net/vuldb/ssvid-11236'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号

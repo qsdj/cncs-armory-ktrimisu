@@ -12,6 +12,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-09-17'  # 漏洞公布时间
     desc = '''
+        PKPMBS是一个多功能工程质量监督站信息管理系统。
         政府建设工程质量监督系统某处SQL注入漏洞：
         /PKPMBS/portal/MsgList.aspx
     '''  # 漏洞描述

@@ -11,6 +11,7 @@ class Vuln(ABVuln):
     type = VulnType.FILE_DOWNLOAD  # 漏洞类型
     disclosure_date = '2015-08-17'  # 漏洞公布时间
     desc = '''
+        万户软件是一个坚持网络风格是最大限度提升软件健壮性的一种有效手段，因为这样一来，决定应用并发数的并不是软件平台本身，而是硬件和网络速度；也就是说，从理论上讲，类似万户协同ezOFFICE这样的软件平台没有严格的并发数限制。
         万户ezEIP任意文件下载漏，可以获取管理员账号，密码明文、数据库密码明文、配置信息等非常敏感的信息，可以轻松实现无任何限制获取 WEBSHELL。
     '''  # 漏洞描述
     ref = 'https://www.secpulse.com/archives/23875.html'  # 漏洞来源

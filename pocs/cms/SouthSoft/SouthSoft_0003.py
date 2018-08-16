@@ -12,6 +12,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-06-04'  # 漏洞公布时间
     desc = '''
+        南软公司分别在教育、政府机关、烟草、企业等多个领域展开了软件研发，电子商务应用及系统集成工作。
         南软研究生信息管理系统SQL注入漏洞：
         /Gmis/Byyxwgl/yjszhkh.aspx?xh=20070001
         /Gmis/Byyxwgl/xlsdbsh_fwhedit.aspx?xh=200902100005

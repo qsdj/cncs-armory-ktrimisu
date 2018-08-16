@@ -11,6 +11,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = 'Unknown'  # 漏洞公布时间
     desc = '''
+        rockOA为企业构建一个基于互联网的企业管理平台, 对企业中沟通与互动，协作与管理的全方位整合，并且免费开源系统，二次开发更快捷，即时推送审批，掌上APP手机办公。
         rockOA 管理员登陆的地址没有过滤，导致SQL注入漏洞。
     '''  # 漏洞描述
     ref = 'Unknown'  # 漏洞来源

@@ -11,6 +11,7 @@ class Vuln(ABVuln):
     type = VulnType.FILE_OPERATION  # 漏洞类型
     disclosure_date = '2015-06-09'  # 漏洞公布时间
     desc = '''
+        Z-Blog是由RainbowSoft Studio开发的一款小巧而强大的基于Asp和PHP平台的开源程序，其创始人为朱煊(网名：zx.asd)。
         /zb_system/xml-rpc/index.php 直接调用simple_load_string解析XML，造成了一个XML实体注入。
         只在特定情况下有回显，是典型的blind-xxe.
     '''  # 漏洞描述

@@ -13,7 +13,8 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-07-11'  # 漏洞公布时间
     desc = ''' 
-        杭州麦达 TRS学位论文服务系统存在SQL注入漏洞。
+        杭州麦达TRS学位论文服务系统是一个论文查重检测系统。
+        杭州麦达TRS学位论文服务系统存在SQL注入漏洞。
         google dork: intitle:"学位论文服务系统"
         /paper/forget2.jsp POST
     '''  # 漏洞描述

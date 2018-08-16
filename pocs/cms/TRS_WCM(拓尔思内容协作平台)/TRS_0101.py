@@ -14,7 +14,8 @@ class Vuln(ABVuln):
     type = VulnType.FILE_DOWNLOAD  # 漏洞类型
     disclosure_date = '2014-10-31'  # 漏洞公布时间
     desc = '''
-    TRSWCM系统 /wcm/app/system/read_image.jsp 任意文件下载漏洞。
+        TRS Web Content Management( TRS WCM ), 是-套完全基于Java和浏览器技术的网络内容管理软件。
+        TRSWCM系统 /wcm/app/system/read_image.jsp 任意文件下载漏洞。
     '''  # 漏洞描述
     ref = 'Unknown'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号

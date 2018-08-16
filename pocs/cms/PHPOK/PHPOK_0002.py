@@ -18,7 +18,8 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2014-09-08'  # 漏洞公布时间
     desc = '''
-         PHPOK企业站缺陷文件：framework/phpok_call.php line：108
+        PHPOK是一套允许用户高度自由配置的企业站程序，基于LGPL协议开源授权。
+        PHPOK企业站缺陷文件：framework/phpok_call.php line：108
     '''  # 漏洞描述
     ref = 'http://0day5.com/archives/1860/'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=64360
     cnvd_id = 'Unknown'  # cnvd漏洞编号

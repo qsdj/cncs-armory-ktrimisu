@@ -11,6 +11,7 @@ class Vuln(ABVuln):
     type = VulnType.INFO_LEAK  # 漏洞类型
     disclosure_date = '2015-04-27'  # 漏洞公布时间
     desc = '''
+        用友是国内著名的内容管理系统之一，包括协同管理系统、用友NC、用友U8等
         用友致远A6协同系统createMysql.jsp敏感信息泄露，
         该漏洞泄露了数据库用户的账号，密码hash.
     '''  # 漏洞描述

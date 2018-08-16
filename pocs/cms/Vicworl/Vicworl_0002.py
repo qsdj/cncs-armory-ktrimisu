@@ -11,6 +11,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-04-03'  # 漏洞公布时间
     desc = '''
+        Vicworl，视频播客系统、网络直播(视频/音频)系统、智能录制系统、网络电视台系统。功能强大而完善。
         Vicworl媒体系统 /home.php?action=article&id=-1 SQL注入漏洞。
     '''  # 漏洞描述
     ref = 'Unknown'  # 漏洞来源

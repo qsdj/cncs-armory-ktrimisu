@@ -10,6 +10,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2013-08-05'  # 漏洞公布时间
     desc = '''
+        Shopex是国内市场占有率最高的网店软件。网上商店平台软件系统又称网店管理系统、网店程序、网上购物系统、在线购物系统。
         在\shopex\core\admin\controller\ctl.passport.php中跟踪后台登陆验证流程，
         在参数sess_id传递的时候没有做任何的处理，直接带入查询了。
     '''  # 漏洞描述

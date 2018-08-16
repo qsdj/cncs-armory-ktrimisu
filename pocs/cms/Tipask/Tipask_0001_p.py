@@ -18,6 +18,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2013-09-11'  # 漏洞公布时间
     desc = '''
+        tipask，即Tipask问答系统，是一款开放源码的PHP仿百度知道程序。
         Tipask 2.0 文件/control/question.php中Onajaxsearch函数对get的第二个参数urldecode后直接传入SQL语句，
         绕过了前面的过滤和检查，导致SQL注入的产生。
     '''  # 漏洞描述

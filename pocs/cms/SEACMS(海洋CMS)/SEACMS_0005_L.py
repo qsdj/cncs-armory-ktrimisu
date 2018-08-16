@@ -12,7 +12,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2016-04-11'  # 漏洞公布时间
     desc = '''
-        SeaCms是一套用于搭建在线电影的应用，采用PHP+MYSQL架构。
+        SeaCMS是一套使用PHP编写的免费、开源的网站内容管理系统。该系统主要被设计用来管理视频点播资源。
         漏洞出现在注册那里reg.php
         ip无过滤被带入insert了。
     '''  # 漏洞描述

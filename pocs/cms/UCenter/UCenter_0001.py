@@ -13,6 +13,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = ' 2010-09-13'  # 漏洞公布时间
     desc = '''
+        UCenter 的中文意思就是用户中心，其中的 U 代表 User 也代表 You ，取其中的含义就是“用户中心”，或者说“你（最终用户）的中心”。 UCenter 是 Comsenz 旗下各个产品之间信息直接传递的一个桥梁，通过 UCenter 站长可以无缝整合 Comsenz 系列产品，实现用户的一站式注册、登录、退出以及社区其他数据的交互。
         Script HomePage : http://u.discuz.net/
         Dork : Powered by UCenter inurl:shop.php?ac=view
         Dork 2 : inurl:shop.php?ac=view&shopid=

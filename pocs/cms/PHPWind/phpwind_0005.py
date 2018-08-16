@@ -14,6 +14,7 @@ class Vuln(ABVuln):
     type = VulnType.XSS  # 漏洞类型
     disclosure_date = '2012-09-14'  # 漏洞公布时间
     desc = '''
+        phpwind（简称：pw）是一个基于PHP和MySQL的开源社区程序，是国内最受欢迎的通用型论坛程序之一。
         漏洞文件：index.php.
     '''  # 漏洞描述
     ref = 'Unknown'  # 漏洞来源

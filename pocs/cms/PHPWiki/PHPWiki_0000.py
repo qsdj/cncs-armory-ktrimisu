@@ -18,6 +18,7 @@ class Vuln(ABVuln):
     type = VulnType.XSS  # 漏洞类型
     disclosure_date = '2015-08-31'  # 漏洞公布时间
     desc = '''
+        PhpWiki是一个开源的wiki引擎程序，运行于PHP环境。
         Cross-site scripting vulnerability in user preferences allows remote unauthenticated users to inject arbitrary web script by injecting code via GET or POST 'pagename' parameter.
     '''  # 漏洞描述
     ref = 'https://www.exploit-db.com/exploits/38027/'  # 漏洞来源

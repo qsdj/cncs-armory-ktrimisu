@@ -12,7 +12,8 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-06-09'  # 漏洞公布时间
     desc = '''
-       村级重大事项及监委会建设监管系统 /ExtWebModels/WebFront/ShowLand.aspx?id=id参数 sql注入
+        农友软件多年来致力于农村、农业、农民的“三农”信息化建设，是国内领先的“三农”信息化建设全面解决方案提供商，同时也是国内最大的“三农”信息化服务提供商。
+        村级重大事项及监委会建设监管系统 /ExtWebModels/WebFront/ShowLand.aspx?id=id参数 sql注入
     '''  # 漏洞描述
     ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=099433
     cnvd_id = 'Unknown'  # cnvd漏洞编号

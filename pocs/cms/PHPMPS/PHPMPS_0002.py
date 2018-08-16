@@ -15,8 +15,8 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2014-04-01'  # 漏洞公布时间
     desc = '''
+        php分类信息发布系统是一款免费开源的分类信息程序,适用于建立本地信息站点。
         member.php 422 - 455 行的代码使用了extract($_REQUEST);
-
         导致我们可以覆盖任意变量，通过覆盖变量$table可以构造注入。
         /phpmps/member.php?act=check_info_gold&table=phpmps_member
     '''  # 漏洞描述

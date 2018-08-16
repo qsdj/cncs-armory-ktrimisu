@@ -11,6 +11,7 @@ class Vuln(ABVuln):
     type = VulnType.FILE_TRAVERSAL  # 漏洞类型
     disclosure_date = '2012-04-23'  # 漏洞公布时间
     desc = '''
+        Piwigo是一个基于MySQL5与PHP5开发的相册系统.提供基本的发布和管理照片功能,按多种方式浏览如类别,标签,时间等。
         Piwigo是用PHP编写的相册脚本。
         Piwigo 2.3.4之前版本的upgrade.php中存在目录遍历漏洞，通过language参数中的“..”可允许远程攻击者包含和执行任意本地文件。  
     '''  # 漏洞描述

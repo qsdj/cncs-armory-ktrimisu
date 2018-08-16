@@ -19,6 +19,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2014-06-30'  # 漏洞公布时间
     desc = '''
+        TCCMS是一款具有良好的扩展性、安全、高效的内容管理系统。其核心框架TC，具备大数据量,高并发,易扩展等特点。
         TCCMS 在/app/model/attackAction.class.php中参数未过滤导致SQL注入漏洞。
     '''  # 漏洞描述
     ref = 'http://0day5.com/archives/1919/'  # 漏洞来源

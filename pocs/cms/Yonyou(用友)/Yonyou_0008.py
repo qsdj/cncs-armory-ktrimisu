@@ -12,6 +12,7 @@ class Vuln(ABVuln):
     type = VulnType.FILE_DOWNLOAD  # 漏洞类型
     disclosure_date = '2015-04-13'  # 漏洞公布时间
     desc = '''
+        用友是国内著名的内容管理系统之一，包括协同管理系统、用友NC、用友U8等
         用友ICC客服系统任意文件下载漏洞
     '''  # 漏洞描述
     ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=090956'  # 漏洞来源

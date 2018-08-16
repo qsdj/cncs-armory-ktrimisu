@@ -19,6 +19,7 @@ class Vuln(ABVuln):
     type = VulnType.RCE  # 漏洞类型
     disclosure_date = '2016-08-25'  # 漏洞公布时间
     desc = '''
+        zcncms是站长中国基于php技术开发的内容管理系统。
         在文件/include/admincontroller/sys.php中
         将$sys[“closeinfo”]后面的单引号转义，使之和$sys[“webtitle”]的第一个单引号闭合，这样$sys[“webtitle”]的值就摆脱了单引号，再利用注释符”//“注释掉后面的单引号，中间直接可以写shell。
     '''  # 漏洞描述

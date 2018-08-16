@@ -11,6 +11,7 @@ class Vuln(ABVuln):
     type = VulnType.FILE_DOWNLOAD  # 漏洞类型
     disclosure_date = '2014-05-16'  # 漏洞公布时间
     desc = '''
+        北京心海通用型管理系统是由北京心海导航教育科技股份有限公司打造的一款多功能管理系统。
         北京心海通用型管理系统（CMS）任意文件下载。
         /IneduPortal/Components/news/FileDown.aspx
     '''  # 漏洞描述

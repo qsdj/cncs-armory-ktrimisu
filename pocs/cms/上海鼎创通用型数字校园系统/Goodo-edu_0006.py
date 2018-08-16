@@ -13,6 +13,7 @@ class Vuln(ABVuln):
     type = VulnType.FILE_UPLOAD  # 漏洞类型
     disclosure_date = '2015-04-29'  # 漏洞公布时间
     desc = '''
+        上海鼎创通用型数字校园系统是由上海鼎创信息科技有限公司打造的校园数字一体化管理系统。
         上海鼎创通用型数字校园系统 任意上传导致Getshell
     '''  # 漏洞描述
     ref = 'Unknown'  # 漏洞来源

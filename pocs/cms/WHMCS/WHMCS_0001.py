@@ -17,6 +17,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2013-10-18'  # 漏洞公布时间
     desc = '''
+        WHMCS是一套国外流行的域名主机管理软件，跟国内众所周知的IDCSystem一样，主要在用户管理、财务管理、域名接口、服务器管理面板接口等方面设计的非常人性化。WHMCS是一套全面支持域名注册管理解析，主机开通管理，VPS开通管理和服务器管理的一站式管理软件，目前已经被越来越多的中国站长们所熟悉和了解。
         THIS TIME IT'S again the same mistake in
         /includes/dbfunctions.php
 

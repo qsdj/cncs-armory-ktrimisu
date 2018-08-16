@@ -12,6 +12,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-07-25'  # 漏洞公布时间
     desc = '''
+        皓翰数字化校园平台是由浙江皓翰教育科技有限公司推出的一款校园管理软件。
         浙江皓翰教育科技有限公司通用数字化校园平台存在SQL注入漏洞。
         /IneduPortal/Components/albums/AlbumShow.aspx?id=1
     '''  # 漏洞描述

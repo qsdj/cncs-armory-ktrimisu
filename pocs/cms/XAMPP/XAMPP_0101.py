@@ -15,7 +15,8 @@ class Vuln(ABVuln):
     type = VulnType.FILE_DOWNLOAD  # 漏洞类型
     disclosure_date = '2014-10-21'  # 漏洞公布时间
     desc = '''
-    XAMPP <=1.7.3 has a file disclosure Vul. attacker can read any files on web server.
+        XAMPP（Apache+MySQL+PHP+PERL）是一个功能强大的建站集成软件包。这个软件包原来的名字是 LAMPP，但是为了避免误解，最新的几个版本就改名为 XAMPP 了。它可以在Windows、Linux、Solaris、Mac OS X 等多种操作系统下安装使用，支持多语言：英文、简体中文、繁体中文、韩文、俄文、日文等。
+        XAMPP <=1.7.3 has a file disclosure Vul. attacker can read any files on web server.
     '''  # 漏洞描述
     ref = 'http://www.exploit-db.com/exploits/15370/'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号

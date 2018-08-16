@@ -11,6 +11,7 @@ class Vuln(ABVuln):
     type = VulnType.FILE_UPLOAD  # 漏洞类型
     disclosure_date = '2015-12-11'  # 漏洞公布时间
     desc = '''
+        rockOA为企业构建一个基于互联网的企业管理平台, 对企业中沟通与互动，协作与管理的全方位整合，并且免费开源系统，二次开发更快捷，即时推送审批，掌上APP手机办公。
         rockOA ftpupload.php中函数没有用户身份判定，也没有文件类型过滤，导致任意文件上传。
     '''  # 漏洞描述
     ref = 'http://xiaomange.meximas.com/?p=317'  # 漏洞来源

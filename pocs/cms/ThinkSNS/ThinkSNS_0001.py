@@ -12,6 +12,7 @@ class Vuln(ABVuln):
     type = VulnType.OTHER  # 漏洞类型
     disclosure_date = '2014-12-30'  # 漏洞公布时间
     desc = '''
+        ThinkSNS开源社交网站APP系统,含微博,论坛,问答,即时聊天,资讯CMS,投票,礼物商城,商城等功能应用。
         ThinkSNS 前台GetShell 漏洞。
     '''  # 漏洞描述
     ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=081755

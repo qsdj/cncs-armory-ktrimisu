@@ -13,6 +13,7 @@ class Vuln(ABVuln):
     type = VulnType.MISCONFIGURATION  # 漏洞类型
     disclosure_date = '2015-09-20'  # 漏洞公布时间
     desc = '''
+        PKPMBS是一个多功能工程质量监督站信息管理系统。
         PKPMBS工程质量监督站信息管理系统可修改任意会员密码等其他信息
         /pkpmbs/manager/sysuserlist.aspx
     '''  # 漏洞描述

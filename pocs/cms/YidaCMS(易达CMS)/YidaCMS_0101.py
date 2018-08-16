@@ -14,6 +14,7 @@ class Vuln(ABVuln):
     type = VulnType.OTHER  # 漏洞类型
     disclosure_date = '2014-12-27'  # 漏洞公布时间
     desc = '''
+        YidaCMS免费开源网站管理系统，是一款简单、实用、高效的网站建站软件。YidaCMS免费开源网站管理系统是基于微软的WINDOWS IIS平台，采用ASP语言ACCESS和MSSQL双数据库开发完成。\n整体系统采用强大的HTML引擎，模板设计和程序语言完全分开，这会让您在设计模板时更加快捷和方便。全站静态化及标准的URL路径，更加让百度等搜索引擎青睐。
         YidaCMS(易达CMS)重置密码时没有对帐号和原密码进行校验,导致可以任意重置任何用户密码
     '''  # 漏洞描述
     ref = 'Unknown'  # 漏洞来源http://www.wooyun.org/bugs/wooyun-2014-073901

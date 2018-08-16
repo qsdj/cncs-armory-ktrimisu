@@ -12,6 +12,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2016-04-15'  # 漏洞公布时间
     desc = '''
+        青云客网站管理系统简称QYKCMS,是青云客开发的一款基于PHP+MySql的轻量级智能建站系统。
         在include/class_temp.php中
         其中变量$word过滤不得当，导致可以注入。
     '''  # 漏洞描述

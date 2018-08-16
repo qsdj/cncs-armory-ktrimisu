@@ -11,6 +11,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2014-07-21'  # 漏洞公布时间
     desc = '''
+        新座标数字校园系统是由无锡新座标教育技术有限公司打造的一款为数字校园的建设与应用提供了更加广阔背景的软件。
         新座标通用型数字校园系统多处SQL注射漏洞。
         /DPMA/FWeb/SchoolWeb/Class/ClassNotic.aspx
         /dpma/FWeb/WorkRoomWeb/Web/Index.aspx

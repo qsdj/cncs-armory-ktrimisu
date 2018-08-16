@@ -13,7 +13,7 @@ class Vuln(ABVuln):
     type = VulnType.FILE_TRAVERSAL  # 漏洞类型
     disclosure_date = '2015-12-23'  # 漏洞公布时间
     desc = '''
-        正方协同办公系统
+        协同办公系统的设计目标是帮助各部门快速构建起一个安全、可靠、易用的文档一体化办公环境，实现公文处理的自动化，同时作为内部通讯和信息共享的平台。
         /gwxxbviewhtml.do?theAction=downdoc&gw_title=%00&htwj_recordid=../../../../../../../../../../.././../etc/passwd%00 任意文件下载漏洞。
     '''  # 漏洞描述
     ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=150337

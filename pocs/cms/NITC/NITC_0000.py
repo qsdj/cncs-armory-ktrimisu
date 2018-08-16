@@ -12,6 +12,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-04-13'  # 漏洞公布时间
     desc = '''
+        NITC是由宁波思迈尔网络科技有限公司与宁波好的网络科技有限公司组织创办，联合国内较有实力的网络公司共同运营，为国内中小型企业与个人用户提供各类网络营销服务的平台。
         NITC企业智能营销网站系统 /inquiry.php 通杀注入漏洞。
     '''  # 漏洞描述
     ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=081305'  # 漏洞来源

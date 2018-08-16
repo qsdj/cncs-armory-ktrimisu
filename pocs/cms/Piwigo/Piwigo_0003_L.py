@@ -11,7 +11,7 @@ class Vuln(ABVuln):
     type = VulnType.XSS  # 漏洞类型
     disclosure_date = '2017-12-22'  # 漏洞公布时间
     desc = '''
-        Piwigo是Piwigo团队的一套基于Web的相册软件。该软件支持照片发布、管理、多种浏览方式（类别、标签、时间）等。Batch Manager component是其中的一个管理器组件。
+        Piwigo是一个基于MySQL5与PHP5开发的相册系统.提供基本的发布和管理照片功能,按多种方式浏览如类别,标签,时间等。
         Piwigo 2.9.2版本中的Batch Manager组件存在跨站脚本漏洞。远程攻击者可借助admin.php?page=batch_manager&mode=unit请求中的‘tags-*’数组参数利用该漏洞劫持用户浏览器及储存在其中的数据。  
     '''  # 漏洞描述
     ref = 'http://www.cnvd.org.cn/flaw/show/CNVD-2017-38278'  # 漏洞来源

@@ -10,6 +10,7 @@ class Vuln(ABVuln):
     type = VulnType.LFI  # 漏洞类型
     disclosure_date = '2014-01-27'  # 漏洞公布时间
     desc = '''
+    电子政务网是国家机关在政务活动中，全面应用现代信息技术、网络技术以及办公自动化技术等进行办公、管理和为社会提供公共服务的一种全新的管理模式的系统。
     河南省政府网系统存在文件包含漏洞，攻击者可以通过本地文件包含来读取系统敏感文件信息。
     '''  # 漏洞描述
     ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=45834

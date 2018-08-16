@@ -10,6 +10,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2013-07-29'  # 漏洞公布时间
     desc = '''
+        Shopex是国内市场占有率最高的网店软件。网上商店平台软件系统又称网店管理系统、网店程序、网上购物系统、在线购物系统。
         ShopEx4.85最新版本SQL注入，无需登录，过GPC，可直接查询管理员密码并回显。
     '''  # 漏洞描述
     ref = 'http://0day5.com/archives/730/'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=32753

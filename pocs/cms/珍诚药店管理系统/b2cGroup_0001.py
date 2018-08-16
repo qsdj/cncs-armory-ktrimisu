@@ -12,7 +12,8 @@ class Vuln(ABVuln):
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-07-10'  # 漏洞公布时间
-    desc = '''  
+    desc = '''
+        珍诚药店管理系统是中国领先的医药管理软件。
         珍诚药店管理系统后台两处SQL注入漏洞。
         google dork: powered by b2cGroup
 

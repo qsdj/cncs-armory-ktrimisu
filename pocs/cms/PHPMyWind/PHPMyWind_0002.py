@@ -11,6 +11,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-01-07'  # 漏洞公布时间
     desc = '''
+        PHPMyWind 是一款基于PHP+MySQL开发，符合W3C标准的建站引擎。
         5.2beta 2014-12-28 参数没有处理，绕过过滤
         /4g.php?m=show&cid=2&tbname=pmw_infolist。
     '''  # 漏洞描述

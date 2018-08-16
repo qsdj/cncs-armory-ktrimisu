@@ -15,6 +15,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2014-09-28'  # 漏洞公布时间
     desc = '''
+        PHPWeb具有各种插件、模板和边框可以自由安装卸载、任意组合排版的特点，可以让网站制作者方便地制作网站。
         PHPWeb 2.0.5 伪静态 SQL注入。
     '''  # 漏洞描述
     ref = 'http://blog.163.com/sjg_admin/blog/static/22682017120139192446513/'  # 漏洞来源

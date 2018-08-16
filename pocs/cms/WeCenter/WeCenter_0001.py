@@ -12,6 +12,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-07-12'  # 漏洞公布时间
     desc = '''
+        Wecenter(微中心系统软件)是一款由深圳市微客互动有限公司开发的具有完全自主知识产权的开源软件。
         WeCenter SQL注射（ROOT SHELL）.
     '''  # 漏洞描述
     ref = 'http://0day5.com/archives/3760/'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0106369

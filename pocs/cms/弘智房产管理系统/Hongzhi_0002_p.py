@@ -12,6 +12,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2014-10-16'  # 漏洞公布时间
     desc = '''
+        武汉弘智科技房产管理系统是由武汉弘智科技打造的一款房产管理维护一体化系统。
          武汉弘智科技房产管理系统SQL注入漏洞。
     '''  # 漏洞描述
     ref = 'Unknown'  # 漏洞来源

@@ -12,9 +12,10 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2017-01-25'  # 漏洞公布时间
     desc = '''
+        PageAdmins网站管理系统采用Div+Css标准化设计，符合W3C标准。兼容主流浏览器，网站系统可免费下载、免费使用、无使用时间与任何功能限制。主要用于公司企业网站、学校类和信息类网站搭建。
         漏洞出现在:
         class ：  mem_issue。
-        //如果用户是 admin 或者 提交的current_username 和当前string_1 一样  string_1 是你登录的SESSION 所以需要登录。
+        如果用户是 admin 或者 提交的current_username 和当前string_1 一样  string_1 是你登录的SESSION 所以需要登录。
     '''  # 漏洞描述
     ref = 'http://0day5.com/archives/4220/'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号

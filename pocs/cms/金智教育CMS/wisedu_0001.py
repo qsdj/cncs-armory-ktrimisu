@@ -11,6 +11,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = ' 2014-08-04'  # 漏洞公布时间
     desc = '''
+        金智教育是中国最大的教育信息化服务提供商。金智教育专注于教育信息化领域，致力于成为中国教育信息化服务的领航者，成为业界最具吸引力的事业平台，以通过信息化促进教育公平。
         江苏金智教育高校系统存在通用型Oracle注射漏洞。
         /elcs/forum/forumIndexAction!init.action
         /elcs/forum/forumIndexAction!init.action

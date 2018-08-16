@@ -18,6 +18,7 @@ class Vuln(ABVuln):
     type = VulnType.RCE  # 漏洞类型
     disclosure_date = '2010-06-15'  # 漏洞公布时间
     desc = '''
+        Shopex是国内市场占有率最高的网店软件。网上商店平台软件系统又称网店管理系统、网店程序、网上购物系统、在线购物系统。
         ShopEx 4.8.5.45144 中的\core\include_v5\crontab.php中$this没任何过滤就将错误写入日志文件,且只对linux服务器有用
     '''  # 漏洞描述
     ref = 'https://www.seebug.org/vuldb/ssvid-19798'  # 漏洞来源

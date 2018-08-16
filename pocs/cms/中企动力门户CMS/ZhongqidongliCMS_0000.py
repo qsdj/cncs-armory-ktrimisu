@@ -13,6 +13,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-10-10'  # 漏洞公布时间
     desc = '''
+        中企动力门户CMS是一个内容管理系统。
         中企动力门户 CMS SQL注入漏洞，根据中企动力官网介绍，影响大约几十万的用户，有不少的大企业用户，影响很是广泛。
     '''  # 漏洞描述
     ref = 'Unknown'  # 漏洞来源

@@ -12,6 +12,7 @@ class Vuln(ABVuln):
     type = VulnType.INFO_LEAK  # 漏洞类型
     disclosure_date = '2014-11-09'  # 漏洞公布时间
     desc = '''
+        通达OA系统代表了协同OA的先进理念,16年研发铸就成熟OA产品。
         通达OA无需登录即可获得企业所有员工姓名/Email等敏感信息。
     '''  # 漏洞描述
     ref = 'Unknown'  # 漏洞来源

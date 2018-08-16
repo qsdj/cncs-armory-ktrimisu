@@ -12,6 +12,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2013-12-25'  # 漏洞公布时间
     desc = '''
+        PHPMBBCMS是一个简约的CMS，适用于学校网、商店和其他必需品的网站建设。
         PHP MBB, sebuah CMS sederhana cocok digunakan untuk keperluan misalnya, pembangunan web sekolah, toko dan keperluan lainnya secara universal.
         php MBB CMS SQL注入漏洞：/?mod=article&act=detail&id=adhan
     '''  # 漏洞描述

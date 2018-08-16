@@ -19,6 +19,7 @@ class Vuln(ABVuln):
     type = VulnType.XSS  # 漏洞类型
     disclosure_date = '2016-08-25'  # 漏洞公布时间
     desc = '''
+        zcncms是站长中国基于php技术开发的内容管理系统。
         在后台登陆文件 /include/admincontroller/login.php中，进行登陆是否成功后，设置模板文件为’login.tpl.php’.
         在<title>标签中要echo三个变量，其中会检查$topTitle是否为空，我们再控制器文件login.php中并未找到$topTitle的定义或初始化，由于之前参数输入特性，可以进行变量覆盖。
     '''  # 漏洞描述

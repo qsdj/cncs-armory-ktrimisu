@@ -11,6 +11,7 @@ class Vuln(ABVuln):
     type = VulnType.XSS  # 漏洞类型
     disclosure_date = '2014-02-24'  # 漏洞公布时间
     desc = '''
+        WordPress是一个基于PHP和MySQL的免费开源内容管理系统（CMS）。功能包括插件架构和模板系统。它与博客最相关，但支持其他类型的网络内容，包括更传统的邮件列表和论坛，媒体画廊和在线商店。截至2018年4月，超过6000万个网站使用，包括前1000万个网站的30.6％，WordPress是最受欢迎的网站管理系统正在使用中。WordPress也被用于其他应用领域，如普适显示系统（PDS）。
         WordPress是一款使用PHP语言开发的内容管理系统。DZS-VideoGallery是其中的一个DZS视频库插件。 
         WordPress插件DZS-VideoGallery 'ajax.php'存在跨站脚本漏洞。
         由于程序未能正确过滤用户提交的输入，攻击者可以利用漏洞在受影响的站点上下文的信任用户浏览器中执行任意脚本代码，窃取基于cookie的认证证书，并发动其他攻击。

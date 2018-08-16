@@ -12,6 +12,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-06-06'  # 漏洞公布时间
     desc = '''
+        璐华OA办公自动化系统（政府版）是广州市璐华计算机科技有限公司专门针对我国党政机关、事业单位开发，采用组件技术和Web技术相结合，基于Windows平台，构建在大型关系数据库管理系统基础上的，以行政办公为核心，以集成融通业务办公为目标，将网络与无线通讯等信息技术完美结合在一起设计而成的新型办公自动化应用系统。
         璐华通用企业版OA系统SQL注入漏洞：
         /include/get_dict.aspx?bt_id=
         /LHMail/email_attach_delete.aspx?attach_id=

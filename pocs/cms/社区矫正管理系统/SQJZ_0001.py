@@ -12,6 +12,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2016-01-22'  # 漏洞公布时间
     desc = '''
+        社区矫正管理系统结合现在国内社区矫正工作的管理特点，实现矫正工作流程中矫正衔接、矫正执行、管理监督、矫正解除各个环节的管理。
         社区矫正管理系统万能密码登录。
     '''  # 漏洞描述
     ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0147553

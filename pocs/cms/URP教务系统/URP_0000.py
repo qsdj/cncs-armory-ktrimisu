@@ -19,6 +19,7 @@ class Vuln(ABVuln):
     type = VulnType.FILE_UPLOAD  # 漏洞类型
     disclosure_date = '2014-12-08'  # 漏洞公布时间
     desc = '''
+        URP教务系统是一个受欢迎的校园多功能教务管理系统。
         http://xxx.xxx.xxx.xxx/lwUpLoad_action.jsp
         post:
             type="file" name="theFile" id="File"

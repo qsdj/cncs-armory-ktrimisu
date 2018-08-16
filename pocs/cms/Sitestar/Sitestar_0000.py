@@ -11,6 +11,7 @@ class Vuln(ABVuln):
     type = VulnType.LFI  # 漏洞类型
     disclosure_date = '2014-06-28'  # 漏洞公布时间
     desc = '''
+        企业智能建站系统—建站之星SiteStar系统该款建站软件完全从网络营销角度开发，结合了企业对网站的内容结构、应用功能、页面呈现等方面的市场需求。
         建站之星 Sitestar 本地包含漏洞，攻击者可以通过构造恶意语句来读取系统敏感文件信息。
     '''  # 漏洞描述
     ref = 'Unknown'  # https://wooyun.shuimugan.com/bug/view?bug_no=54906

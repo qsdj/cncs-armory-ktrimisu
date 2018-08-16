@@ -13,6 +13,7 @@ class Vuln(ABVuln):
     type = VulnType.INFO_LEAK  # 漏洞类型
     disclosure_date = 'Unknown'  # 漏洞公布时间
     desc = '''
+        Shop7z网上购物系统是国内优秀的网上开店软件，模板新颖独特，功能强大，自主知识产权国家认证，数万用户网上开店首选，可以快速建立自己的网上商城。
         Shop7z /admin/lipinadd.asp 越权访问漏洞。
     '''  # 漏洞描述
     ref = 'Unknown'  # 漏洞来源

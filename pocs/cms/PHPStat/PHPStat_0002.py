@@ -12,6 +12,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-09-28'  # 漏洞公布时间
     desc = '''
+        PHPStat 网站流量统计,是通过统计网站访问者的访问来源、访问时间、访问内容等访问信息,加以系统分析,进而总结出访问者访问来源、爱好趋向、访问习惯等一些共性数据，为网站进一步调整做出指引的一门新型用户行为分析技术。
         漏洞文件：show_today.php，其中参数：searchtype、searchkey、orderstr均存在延时注入。
     '''  # 漏洞描述
     ref = 'http://0day5.com/archives/3751/'  # 漏洞来源

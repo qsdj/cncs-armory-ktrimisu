@@ -11,6 +11,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-08-17'  # 漏洞公布时间
     desc = '''
+        ThinkSAAS开源社区基于PHP+MySQL开发完成，运行于Linux 平台和Windows平台，完美支持Apache和Nginx运行环境。
         app\group\action\do.php 281行
         post变量全局做了转义，$content = tsClean($_POST['content']);这行去除了转义，导致可绕过单引号限制。
         tsClean除去转义后做了一些过滤，但不影响注入。

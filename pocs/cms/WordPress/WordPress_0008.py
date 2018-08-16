@@ -15,6 +15,7 @@ class Vuln(ABVuln):
     type = VulnType.XSS  # 漏洞类型
     disclosure_date = '2015-04-27'  # 漏洞公布时间
     desc = '''
+        WordPress是一个基于PHP和MySQL的免费开源内容管理系统（CMS）。功能包括插件架构和模板系统。它与博客最相关，但支持其他类型的网络内容，包括更传统的邮件列表和论坛，媒体画廊和在线商店。截至2018年4月，超过6000万个网站使用，包括前1000万个网站的30.6％，WordPress是最受欢迎的网站管理系统正在使用中。WordPress也被用于其他应用领域，如普适显示系统（PDS）。
         在wordpress wp_comments表中存储留言的列为comment_content，他的类型为text。
         Text最大可以存储64kb的数据，如果用户输入了大于64kb的数据，mysql的做法依然是将后面的内容截断，
         由于wordpress并没有限制留言内容的长度，所以当我们提交大于64kb的留言内容时，

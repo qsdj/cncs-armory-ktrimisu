@@ -13,6 +13,7 @@ class Vuln(ABVuln):
     type = VulnType.FILE_UPLOAD  # 漏洞类型
     disclosure_date = '2015-08-27'  # 漏洞公布时间
     desc = '''
+        用友是国内著名的内容管理系统之一，包括协同管理系统、用友NC、用友U8等
         用友CRM系统 /ajax/swfupload.php?DontCheckLogin=1&vname=file 任意文件上传漏洞。
     '''  # 漏洞描述
     ref = 'Unknown'  # 漏洞来源

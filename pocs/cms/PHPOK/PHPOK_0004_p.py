@@ -12,6 +12,7 @@ class Vuln(ABVuln):
     type = VulnType.RFI  # 漏洞类型
     disclosure_date = '2014-06-03'  # 漏洞公布时间
     desc = '''
+        PHPOK是一套允许用户高度自由配置的企业站程序，基于LGPL协议开源授权。
         /framework/www/ueditor_control.php行61，
         remote_image_f函数没对远程文件后缀做检查直接保存到本地。
     '''  # 漏洞描述

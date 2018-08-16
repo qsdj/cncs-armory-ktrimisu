@@ -12,6 +12,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2014-11-27'  # 漏洞公布时间
     desc = '''
+        强智教务系统是由湖南强智科技发展有限公司打造的一款中和教务服务系统。
         强智教务系统通杀Getshell.
         /jiaowu/jwgl/jcxx/savetofile.asp
     '''  # 漏洞描述

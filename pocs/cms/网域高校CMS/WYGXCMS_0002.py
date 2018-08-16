@@ -13,6 +13,7 @@ class Vuln(ABVuln):
     type = VulnType.FILE_DOWNLOAD  # 漏洞类型
     disclosure_date = '2014-11-03'  # 漏洞公布时间
     desc = '''
+        网域高校CMS是由网域公司出品的面向高校的内容管理系统。
         网域高校CMS数据库任意下载。
         /editor/db/%23%23%23wygk20012%23%23%23editor.mdb
     '''  # 漏洞描述

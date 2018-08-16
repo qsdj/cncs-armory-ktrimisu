@@ -11,6 +11,7 @@ class Vuln(ABVuln):
     type = VulnType.LFI  # 漏洞类型
     disclosure_date = '2015-11-08'  # 漏洞公布时间
     desc = '''
+        乐知行教学系统是北京讯飞乐知行软件有限公司打造的一款教学管理一体化系统。
         乐知行教学系统高危任意文件包含漏洞，攻击者可以通过构造恶意语句来读取系统敏感文件信息。
     '''  # 漏洞描述
     ref = 'Unknown'  # https://wooyun.shuimugan.com/bug/view?bug_no=132070

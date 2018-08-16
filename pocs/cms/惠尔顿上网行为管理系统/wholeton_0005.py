@@ -15,6 +15,7 @@ class Vuln(ABVuln):
     type = VulnType.INFO_LEAK  # 漏洞类型
     disclosure_date = 'Unknown'  # 漏洞公布时间
     desc = '''
+        惠尔顿上网行为管理系统是由深圳市惠尔顿信息技术有限公司打造的一款上网行为管理检测系统。
         惠尔顿（Wholeton）上网行为管理系统未授权访问，造成信息泄露：
         /base/sys/backfile.php
     '''  # 漏洞描述

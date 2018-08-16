@@ -12,6 +12,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2016-07-23'  # 漏洞公布时间
     desc = '''
+        Shopxp网上购物系统是一个经过完善设计的经典商城购物管理系统，适用于各种服务器环境的高效网上购物网站建设解决方案。基于asp＋Access、Mssql为免费开源程序，在互联网上有广泛的应用。
         savexpadmin.asp添加管理员页未进行身份验证。
     '''  # 漏洞描述
     ref = 'https://blog.csdn.net/oceanark/article/details/51902605'  # 漏洞来源

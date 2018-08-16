@@ -11,6 +11,7 @@ class Vuln(ABVuln):
     type = VulnType.INFO_LEAK  # 漏洞类型
     disclosure_date = '2013-06-21'  # 漏洞公布时间
     desc = '''
+        PHP168整站是PHP的建站系统，代码全部开源，是国内知名的开源软件提供商；提供核心+模块+插件的模式；任何应用均可在线体验。
         国微PHP168中出现了一处神奇的array，可致全站用户数据泄露。泄露的内容包括全站用户的密码密文、邮箱、密码salt、IP等敏感信息。
     '''  # 漏洞描述
     ref = 'http://0day5.com/archives/753/'  # 漏洞来源

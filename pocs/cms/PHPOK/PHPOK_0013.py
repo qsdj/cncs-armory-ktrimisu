@@ -12,6 +12,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2014-12-18'  # 漏洞公布时间
     desc = '''
+        PHPOK是一套允许用户高度自由配置的企业站程序，基于LGPL协议开源授权。
         在framework/www/open_control.php中:
         发现$id 虽然做了全局的过滤，但是sql语句中并没有两侧加上引号，这样过滤就没啥意义了，直接可以sql整形注入。
     '''  # 漏洞描述

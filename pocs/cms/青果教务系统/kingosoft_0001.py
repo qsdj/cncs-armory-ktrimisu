@@ -11,7 +11,8 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2014-12-16'  # 漏洞公布时间
     desc = '''
-        青果教务系统存在SQL注入漏洞（简单绕过WAF保护）。
+    湖南青果软件有限公司KINGOSOFT高校教务网络管理系统是为高校数字校园建设提供的技术解决方案。 
+    青果教务系统存在SQL注入漏洞（简单绕过WAF保护）。
     '''  # 漏洞描述
     ref = 'Unknown'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号

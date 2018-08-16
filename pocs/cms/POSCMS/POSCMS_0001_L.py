@@ -12,7 +12,6 @@ class Vuln(ABVuln):
     disclosure_date = '2018-05-11'  # 漏洞公布时间
     desc = '''
         POSCMS（PhpOpenSourceCMS）是中国天睿信息技术公司的一套基于PHP和MySQL的、开源的、跨平台网站内容管理系统（CMS）。  
-
         POSCMS 3.2.18版本中存在安全漏洞。远程攻击者可借助diy\dayrui\controllers\admin\Syscontroller.php文件中的‘add’函数利用该漏洞执行任意的PHP代码。
     '''  # 漏洞描述
     ref = 'http://www.cnvd.org.cn/flaw/show/CNVD-2018-09381'  # 漏洞来源

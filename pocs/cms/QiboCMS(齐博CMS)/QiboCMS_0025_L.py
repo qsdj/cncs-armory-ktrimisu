@@ -14,6 +14,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-06-05'  # 漏洞公布时间
     desc = '''
+        齐博CMS前身是龙城于大学期间也即2003年所创建的PHP168网站管理系统，它是国内主流CMS系统之一，曾多次被新浪网、腾讯网、凤凰网等多家大型IT媒体报道。齐博CMS目前已有数以万计的用户在使用，覆盖政府、 企业、科研教育和媒体等各个领域。
         /member/special.php中的相关代码
         现$TB_pre被遗漏了，该变量的作用是作为表的前缀，没有初始化，导致SQL注入。
     '''  # 漏洞描述

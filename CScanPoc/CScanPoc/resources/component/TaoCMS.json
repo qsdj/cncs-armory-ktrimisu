@@ -1,5 +1,5 @@
 {
   "type": "cms",
   "producer": null,
-  "desc": "taoCMS是一个完善支持多数据库(Sqlite/Mysql)的CMS网站内容管理系统，是国内最小巧的功能完善的基于 php+SQLite/php+Mysql的CMS。体积小速度快，所有的css、JavaScript均为手写代码，无任何垃圾代码，采用严格的数据过滤，保证服务器的安全稳定！"
+  "desc": "TaoCMS是一个完善支持多数据库(Sqlite/Mysql)的CMS网站内容管理系统，是国内最小巧的功能完善的基于 php+SQLite/php+Mysql的CMS。体积小速度快，所有的css、JavaScript均为手写代码，无任何垃圾代码，采用严格的数据过滤，保证服务器的安全稳定。"
 }

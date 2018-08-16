@@ -12,6 +12,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-02-05'  # 漏洞公布时间
     desc = '''
+        南京师友软件是一个网站集群管理系统。
         南京师友软件网站集群管理系统通用SQL注入漏洞。
         /webSchool/list.aspx?keyWords=1
     '''  # 漏洞描述

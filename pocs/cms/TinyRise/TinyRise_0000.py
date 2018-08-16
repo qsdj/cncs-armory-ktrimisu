@@ -11,6 +11,7 @@ class Vuln(ABVuln):
     type = VulnType.LFI  # 漏洞类型
     disclosure_date = '2014-12-30'  # 漏洞公布时间
     desc = '''
+        TinyRise是一款B2C独立网店系统,适合企业及个人快速构建个性化网上商店。
         TinyRise前台任意文件包含漏洞，攻击者可以通过构造恶意语句来读取系统敏感文件信息。
     '''  # 漏洞描述
     ref = 'Unknown'  # https://wooyun.shuimugan.com/bug/view?bug_no=80578

@@ -11,6 +11,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2014-07-29'  # 漏洞公布时间
     desc = '''
+        诺瀚投稿系统的设计者是具有博士学位的资深编辑，熟悉国内外投稿和审稿系统。 在逐一比较分析国内外采编系统的优缺点基础上，广泛汲取国内外各 系统的优 点，博采众家精华，提出设计思想和功能需求，由南京杰诺瀚科技的软件工程 师具体完成。
         南京杰诺瀚投稿系统通，
         /Web/Login.aspx'
         /web/KeySearch.aspx?searchid=1'

@@ -11,6 +11,7 @@ class Vuln(ABVuln):
     type = VulnType.FILE_DOWNLOAD  # 漏洞类型
     disclosure_date = '2015-06-18'  # 漏洞公布时间
     desc = '''
+        金智教育是中国最大的教育信息化服务提供商。金智教育专注于教育信息化领域，致力于成为中国教育信息化服务的领航者，成为业界最具吸引力的事业平台，以通过信息化促进教育公平。
         江苏金智教育门户信息系统存在任意文件读取漏洞。
         /epstar/servlet/RaqFileServer?action=
     '''  # 漏洞描述

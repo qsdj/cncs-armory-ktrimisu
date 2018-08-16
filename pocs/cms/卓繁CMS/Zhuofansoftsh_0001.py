@@ -12,6 +12,7 @@ class Vuln(ABVuln):
     type = VulnType.FILE_DOWNLOAD  # 漏洞类型
     disclosure_date = '2014-06-18'  # 漏洞公布时间
     desc = '''
+        卓繁CMS是由上海卓繁信息技术有限公司打造的一款网站一体化管理系统。
         上海卓繁CMS政府服务中心 /index/downLoadFile.action?fileName=web.xml&filePath=WEB-INF/web.xml 存在通用型任意文件下载漏洞。
     '''  # 漏洞描述
     ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=54074

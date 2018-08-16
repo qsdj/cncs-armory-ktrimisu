@@ -13,6 +13,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-02-27'  # 漏洞公布时间
     desc = '''
+        太极行政服务中心是由太极计算机股份有限公司打造的一款为行政部门简化管理的多功能系统。
         太极行政服务中心SQL注入:
         /newsinfo.do?id=wtfwablsfdsi
     '''  # 漏洞描述

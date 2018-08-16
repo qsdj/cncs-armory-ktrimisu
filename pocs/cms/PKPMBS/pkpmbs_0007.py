@@ -13,6 +13,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-12-17'  # 漏洞公布时间
     desc = '''
+        PKPMBS是一个多功能工程质量监督站信息管理系统。
         链接guestbook.aspx中参数id未过滤存在SQL注入漏洞：
         /guestbook.aspx?do=show&id=1
     '''  # 漏洞描述

@@ -11,6 +11,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-04-01'  # 漏洞公布时间
     desc = '''
+        管家婆ECT是任我行软件发展公司推出的进销存、财务一体化软件。
         成都任我行软件管家婆ECT存在SQL注入漏洞（无需登录）。
         /VerifyUser.asp
     '''  # 漏洞描述

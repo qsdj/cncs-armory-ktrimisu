@@ -11,6 +11,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2014-09-17'  # 漏洞公布时间
     desc = '''
+        金盘大型图书馆系统是金盘软件经过数年的努力全力退出的一代图书馆业务自动化管理软件系统。
         金盘大型图书馆系统 /opac/rss/do.jsp?marcType=1 SQL注射漏洞。
     '''  # 漏洞描述
     ref = 'Unknown'  # 漏洞来源

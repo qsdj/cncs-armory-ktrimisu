@@ -10,7 +10,8 @@ class Vuln(ABVuln):
     type = VulnType.LFI  # 漏洞类型
     disclosure_date = '2014-03-09'  # 漏洞公布时间
     desc = '''
-    ThinkSAAS 2.0.1 版文件包含漏洞，攻击者可以通过本地文件包含来读取系统敏感文件信息。
+        ThinkSAAS开源社区基于PHP+MySQL开发完成，运行于Linux 平台和Windows平台，完美支持Apache和Nginx运行环境。
+        ThinkSAAS 2.0.1 版文件包含漏洞，攻击者可以通过本地文件包含来读取系统敏感文件信息。
     '''  # 漏洞描述
     ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=45409
     cnvd_id = 'Unknown'  # cnvd漏洞编号

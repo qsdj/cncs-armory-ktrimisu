@@ -11,6 +11,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-03-02'  # 漏洞公布时间
     desc = '''
+        STCMS音乐系统是一个优秀的音乐内容管理系统，本系统基于PHP+Mysql，采用MVC模式开发，支持模板标签，调用灵活。
         参数过滤不严，导致注入。
         /music_rl/
     '''  # 漏洞描述

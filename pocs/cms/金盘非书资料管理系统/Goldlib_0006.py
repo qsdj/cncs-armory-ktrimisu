@@ -11,6 +11,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2014-05-27'  # 漏洞公布时间
     desc = '''
+        金盘非书资料管理系统是面向图书馆等部门的非书资料管理系统,它集信息加工、资源发布、文件浏览于一体。
         金盘非书资料管理系统 /HotBrowse.aspx?Call=TU SQL注入漏洞。
     '''  # 漏洞描述
     ref = 'Unknown'  # 漏洞来源

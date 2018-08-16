@@ -14,6 +14,7 @@ class Vuln(ABVuln):
     type = VulnType.RCE  # 漏洞类型
     disclosure_date = '2014-10-11'  # 漏洞公布时间
     desc = '''
+        歪酷CMS基于Thinkphp框架开发,是一款小巧的CMS内容管理系统。
         Search.html 参数 keyword会在一定条件下会带入eval函数，构造代码可造成代码执行。
     '''  # 漏洞描述
     ref = 'Unknown'  # 漏洞来源http://www.wooyun.org/bugs/wooyun-2010-048523

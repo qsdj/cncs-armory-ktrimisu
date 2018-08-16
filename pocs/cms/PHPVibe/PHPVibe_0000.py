@@ -11,6 +11,7 @@ class Vuln(ABVuln):
     type = VulnType.INFO_LEAK  # 漏洞类型
     disclosure_date = '2015-07-14'  # 漏洞公布时间
     desc = '''
+        PHPVibe是国外一款视频CMS系统。
         PHPVibe /stream.php?file=TGk0dmRtbGlaVjlqYjI1bWFXY3VjR2h3UUVCdFpXUnBZUT09 任意文件泄露。
     '''  # 漏洞描述
     ref = 'https://packetstormsecurity.com/files/132691/phpvibe4-disclose.txt'  # 漏洞来源

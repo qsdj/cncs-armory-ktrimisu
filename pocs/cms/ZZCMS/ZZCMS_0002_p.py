@@ -11,6 +11,7 @@ class Vuln(ABVuln):
     type = VulnType.FILE_OPERATION  # 漏洞类型
     disclosure_date = '2018-07-04'  # 漏洞公布时间
     desc = '''
+        ZZCMS是一款集成app移动平台与电子商务平台的内容管理系统。
         ZZCMS 8.3版本中的/user/del.php文件存在安全漏洞。攻击者可通过向zzcms_main表单中放入相对路径并发送添加图像的请求利用该漏洞删除任意文件。 
     '''  # 漏洞描述
     ref = 'http://www.cnvd.org.cn/flaw/show/CNVD-2018-12559'  # 漏洞来源

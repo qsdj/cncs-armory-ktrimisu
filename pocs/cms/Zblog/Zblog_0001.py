@@ -11,6 +11,7 @@ class Vuln(ABVuln):
     type = VulnType.LFI  # 漏洞类型
     disclosure_date = '2015-06-17'  # 漏洞公布时间
     desc = '''
+        Z-Blog是由RainbowSoft Studio开发的一款小巧而强大的基于Asp和PHP平台的开源程序，其创始人为朱煊(网名：zx.asd)。
         虽然限制了必须为.php后缀的，但是因为没对POST转义，所以我们可以截断后面的.php。
     '''  # 漏洞描述
     ref = 'https://www.seebug.org/vuldb/ssvid-89658'  # 漏洞来源

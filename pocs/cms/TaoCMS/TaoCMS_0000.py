@@ -12,6 +12,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2014-03-20'  # 漏洞公布时间
     desc = '''
+        TaoCMS是一个完善支持多数据库(Sqlite/Mysql)的CMS网站内容管理系统，是国内最小巧的功能完善的基于 php+SQLite/php+Mysql的CMS。体积小速度快，所有的css、JavaScript均为手写代码，无任何垃圾代码，采用严格的数据过滤，保证服务器的安全稳定。
         TaoCMS 2.5 /index.php SQL注入漏洞
     '''  # 漏洞描述
     ref = 'https://www.seebug.org/vuldb/ssvid-62606'  # 漏洞来源

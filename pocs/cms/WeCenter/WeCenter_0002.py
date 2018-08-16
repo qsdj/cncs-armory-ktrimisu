@@ -11,6 +11,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2017-01-08'  # 漏洞公布时间
     desc = '''
+        Wecenter(微中心系统软件)是一款由深圳市微客互动有限公司开发的具有完全自主知识产权的开源软件。
         wecenter 3.1.9 /app/m/weixin.php 文件中，对传入的参数反序列化后直接构造SQL语句进行查询，导致SQL注入漏洞。
     '''  # 漏洞描述
     ref = 'http://0day5.com/archives/4341/'  # 漏洞来源

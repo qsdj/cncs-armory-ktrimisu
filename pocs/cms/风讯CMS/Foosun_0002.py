@@ -12,7 +12,8 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-11-04'  # 漏洞公布时间
     desc = '''
-       风讯CMS /user/City_ajax.aspx sql注入漏洞。
+    风讯网站管理系统包括了信息采集、整理、分类、审核、发布和管理的全过程，具备完善的信息管理和发布管理功能，是企事业单位网站、内部网站和各类ICP网站内容管理和维护的理想工具。
+    风讯CMS /user/City_ajax.aspx sql注入漏洞。
     '''  # 漏洞描述
     ref = 'Unknown'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号

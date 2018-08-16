@@ -12,6 +12,7 @@ class Vuln(ABVuln):
     type = VulnType.OTHER  # 漏洞类型
     disclosure_date = '2014-02-10'  # 漏洞公布时间
     desc = '''
+        PHP168整站是PHP的建站系统，代码全部开源，是国内知名的开源软件提供商；提供核心+模块+插件的模式；任何应用均可在线体验。
         利用代码将php木马插入到cache/目录里轻松获得webshell，可批量。
     '''  # 漏洞描述
     ref = 'Unknown'  # 漏洞来源

@@ -11,6 +11,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2014-04-02'  # 漏洞公布时间
     desc = '''
+        天生创想OA是由北京天生创想信息技术有限公司自公司打造的一款办公管理系统。
         天生创想OA 2.0 administrative/mod_conference.php 中：
         $db->query("update ".DB_TABLEPRE."conference set type='".$type."' where id=".$id." "); //带入sql语句，
         结合报错注入和获取管理员账号密码。

@@ -12,6 +12,7 @@ class Vuln(ABVuln):
     type = VulnType.OTHER  # 漏洞类型
     disclosure_date = '2015-03-06'  # 漏洞公布时间
     desc = '''
+        云购CMS是国内领先的PHP云购夺宝源码,企业版授权之后终身使用、无限升级。
         YunGouCMS(云购CMS) 在install目录下 有个setconf.php
         虽然index check.php 等文件都验证 唯独重要的setconf.php没有，造成未授权重装漏洞。
     '''  # 漏洞描述

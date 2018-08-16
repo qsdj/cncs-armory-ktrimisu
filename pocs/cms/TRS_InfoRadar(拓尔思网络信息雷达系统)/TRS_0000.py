@@ -12,6 +12,7 @@ class Vuln(ABVuln):
     type = VulnType.INFO_LEAK  # 漏洞类型
     disclosure_date = '2015-04-15'  # 漏洞公布时间
     desc = '''
+        TRS网络信息雷达系统的主要功能是实时监控和采集目标网站的内容，对采集到的信息进行过滤阴门动分类处理，最终将最新内容及时发布出来，实现统一的信息导航功能，同时提供包括全文检索。彐期(范围)检索·标题检索、URL检索等在内的全方位信息查询手段。
         拓尔思网络信息雷达系统4.6, /inforadar/jsp/xml/init_sysUsers.xml 敏感信息泄漏到进后台。
     '''  # 漏洞描述
     ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=091999'  # 漏洞来源

@@ -11,6 +11,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2014-02-07'  # 漏洞公布时间
     desc = '''
+        PHP云人才管理系统，专业的人才招聘网站系统开源程序，采用PHP 和MySQL 数据库构建的高效的人才与企业求职招招聘系统源码。
         在/model/qqconnect.class.php文件中：
         代码从$_GET中获取id参数然后base64解码后按|分隔，其中第0个元素和第1个元素进入了SQL查询，但在此之前有个判断：if($id && is_array($arr) && $arr[0] && $arr[2]==$this->config['coding']){
         这里$this->config['coding']默认为null，当我们只提交两个元素的数组时，$arr[2]也为null，因此$arr[2]==$this->config['coding']，条件成立进入判断所以注入发生。

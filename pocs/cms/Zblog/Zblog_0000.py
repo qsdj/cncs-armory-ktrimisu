@@ -19,6 +19,7 @@ class Vuln(ABVuln):
     type = VulnType.XSS  # 漏洞类型
     disclosure_date = '2010-03-10'  # 漏洞公布时间
     desc = '''
+        Z-Blog是由RainbowSoft Studio开发的一款小巧而强大的基于Asp和PHP平台的开源程序，其创始人为朱煊(网名：zx.asd)。
         search.asp在对用户提交数据处理上存在安全漏洞。
     '''  # 漏洞描述
     ref = 'https://www.seebug.org/vuldb/ssvid-19246'  # 漏洞来源

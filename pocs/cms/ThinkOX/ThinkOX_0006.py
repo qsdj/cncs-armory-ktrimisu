@@ -13,6 +13,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-03-22'  # 漏洞公布时间
     desc = '''
+        ThinkOX 2015 年 1 月 28 日 ThinkOX 正式更名为 OpenSNS，意思是基于OpenCenter的社交程序。
         ThinkOX /index.php 参数未经过过滤导致SQL注入漏洞。
     '''  # 漏洞描述
     ref = 'http://0day5.com/archives/3100/'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=087529

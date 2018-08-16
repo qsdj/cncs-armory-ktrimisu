@@ -15,6 +15,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2012-6-30'  # 漏洞公布时间
     desc = '''
+        南方数据企业CMS、企业网站SEO、网站优化、SEO搜索引擎优化机制、自助建站系统、前台全站采用静态html页面模板自动生成。
         southidc v10.0到v11.0版本中news_search.asp文件对key参数没有适当过滤，导致SQL注入漏洞。
     '''  # 漏洞描述
     ref = 'https://blog.csdn.net/fengling132/article/details/7705005'  # 漏洞来源

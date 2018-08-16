@@ -11,6 +11,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2014-12-13'  # 漏洞公布时间
     desc = '''
+        ROCBOSS微社区是一个高负荷，简单的微型社区软件。
         漏洞文件：\module\\user.module.class.php，第11行代码：
         当$_GET[‘id’]被赋值的时候这个参数就能控制了，而且没有进行过滤。
     '''  # 漏洞描述

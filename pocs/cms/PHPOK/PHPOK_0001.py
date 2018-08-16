@@ -18,6 +18,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2014-10-22'  # 漏洞公布时间
     desc = '''
+        PHPOK是一套允许用户高度自由配置的企业站程序，基于LGPL协议开源授权。
         PHPOK企业站 4.0.315 /framework/ajax/admin_opt.php SQL注入漏洞。
     '''  # 漏洞描述
     ref = 'Unknown'  # 漏洞来源

@@ -12,7 +12,8 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-12-12'  # 漏洞公布时间
     desc = '''
-        用友  GRP-U8 sql注入漏洞 
+        用友是国内著名的内容管理系统之一，包括协同管理系统、用友NC、用友U8等
+        用友 GRP-U8 sql注入漏洞 
     '''  # 漏洞描述
     ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=0159096'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号

@@ -17,7 +17,8 @@ class Vuln(ABVuln):
     type = VulnType.FILE_DOWNLOAD  # 漏洞类型
     disclosure_date = '2015-08-25'  # 漏洞公布时间
     desc = '''
-    SiteFactory CMS 5.5.9任意文件下载漏洞。
+        动易SiteFactory内容管理系统是业界首款基于微软.NET2.0平台，采用ASP.NET 2.0进行分层开发的内容管理系统（Content Management System）。
+        SiteFactory CMS 5.5.9任意文件下载漏洞。
     '''  # 漏洞描述
     ref = 'https://www.bugscan.net/#!/x/22441'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号

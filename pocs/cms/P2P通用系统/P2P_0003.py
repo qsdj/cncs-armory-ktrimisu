@@ -11,6 +11,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-08-10'  # 漏洞公布时间
     desc = '''
+        P2P通用系统是一个个人对个人的网贷系统。
         绿麻雀是一款专业的P2P借贷系统，并且提供p2p网贷平台的全方位技术支持和网站运营策划，拥有一支高素质，高学历的技术管理团队，都是来自IT前沿，拥有高超的技术和丰富的制作经验。能为客户提供稳定，高效的服务以及解决问题的最佳方案。
         通杀sql注入漏洞，涉及官方多个版本。
         漏洞文件 App\Lib\Action\HCommonAction.class.php 代码中 $_REQUEST['idarr']没有经过任何过滤直接进入sql.

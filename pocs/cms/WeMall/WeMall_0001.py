@@ -18,6 +18,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-10-19'  # 漏洞公布时间
     desc = '''
+        WeMall微商城系统是基于ThinkPHP技术架构，实现MVC、缓存等框架设计的微商城源码，帮助中小企业及个人迅速搭建商城系统，减少二次开发带来的成本。
         //Application\Lib\Action\Admin\WechatAction.class.php
         valid()函数，直接使用了simplexml_load_string函数。
     '''  # 漏洞描述

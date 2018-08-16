@@ -12,7 +12,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-03-26'  # 漏洞公布时间
     desc = '''
-       牛逼CMS 地方门户网站源码系统 PHP免费版。功能包含：新闻、房产、人才、汽车、二手、分类信息、交友、商城、团购、知道、论坛、DM读报、优惠券、本地商家、商家名片等功能。 
+        牛逼CMS 地方门户网站源码系统 PHP免费版。功能包含：新闻、房产、人才、汽车、二手、分类信息、交友、商城、团购、知道、论坛、DM读报、优惠券、本地商家、商家名片等功能。 
     '''  # 漏洞描述
     ref = 'http://0day5.com/archives/3021/'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号

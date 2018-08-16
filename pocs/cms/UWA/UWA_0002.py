@@ -12,6 +12,7 @@ class Vuln(ABVuln):
     type = VulnType.INFO_LEAK  # 漏洞类型
     disclosure_date = '2015-01-07'  # 漏洞公布时间
     desc = '''
+        UWA为一款通用建站系统。
         /core/tpl/page_trace.php 第17行
         文件并未define function文件 并直接调用函数导致报错。
     '''  # 漏洞描述

@@ -12,6 +12,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2013-01-14'  # 漏洞公布时间
     desc = '''
+        phpshop购物系统是完全按照web2.0标准构架的一套完整、专业的购物系统，完善的使用功能足以满足专业购物网站的需求，在用户体验方面使用了ajax技术，让网站耳目一新。程序基于PHP5.0和MYSQL5.0，运行更快，更安全。
         PHPShop ?page=admin/function_list&module_id=11 id变量未正确过滤,导致SQL注入漏洞。
     '''  # 漏洞描述
     ref = 'https://www.exploit-db.com/exploits/24108/'

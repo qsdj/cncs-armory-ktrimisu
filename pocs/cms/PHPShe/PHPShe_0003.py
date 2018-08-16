@@ -12,6 +12,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-01-03'  # 漏洞公布时间
     desc = '''
+        PHPSHE网上商城系统具备电商零售业务所需的所有基本功能,以其安全稳定、简单易用、高效专业等优势赢得了用户的广泛好评,为用户提供了一个低成本、高效率的网上商城服务。
         漏洞文件:include\plugin\payway\ebank\Receive.php 逻辑错误造成注入漏洞。
     '''  # 漏洞描述
     ref = 'http://0day5.com/archives/2738/'  # 漏洞来源

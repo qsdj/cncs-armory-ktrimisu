@@ -18,8 +18,9 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2014-01-15'  # 漏洞公布时间
     desc = '''
-        order.php第39行，
-        $sql = “SELECT * FROM `#@__cascadedata` WHERE level=$level And “;$level没有过滤造成SQL注入漏洞。
+    phpMyAdmin 是一个以PHP为基础，以Web-Base方式架构在网站主机上的MySQL的数据库管理工具，让管理者可用Web接口管理MySQL数据库。借由此Web接口可以成为一个简易方式输入繁杂SQL语法的较佳途径，尤其要处理大量资料的汇入及汇出更为方便。其中一个更大的优势在于由于phpMyAdmin跟其他PHP程式一样在网页服务器上执行，但是您可以在任何地方使用这些程式产生的HTML页面，也就是于远端管理MySQL数据库，方便的建立、修改、删除数据库及资料表。也可借由phpMyAdmin建立常用的php语法，方便编写网页时所需要的sql语法正确性。
+    order.php第39行，
+    $sql = “SELECT * FROM `#@__cascadedata` WHERE level=$level And “;$level没有过滤造成SQL注入漏洞。
     '''  # 漏洞描述
     ref = 'http://0day5.com/archives/1170/'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号

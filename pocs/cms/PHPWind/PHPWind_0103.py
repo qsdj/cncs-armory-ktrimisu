@@ -15,7 +15,8 @@ class Vuln(ABVuln):
     type = VulnType.XSS  # 漏洞类型
     disclosure_date = '2014-12-11'  # 漏洞公布时间
     desc = '''
-    PHPWind 9.0 /res/js/dev/util_libs/jPlayer/Jplayer.swf 跨站脚本。
+        phpwind（简称：pw）是一个基于PHP和MySQL的开源社区程序，是国内最受欢迎的通用型论坛程序之一。
+        PHPWind 9.0 /res/js/dev/util_libs/jPlayer/Jplayer.swf 跨站脚本。
     '''  # 漏洞描述
     ref = 'Unknown'  # 漏洞来源http://wooyun.org/bugs/wooyun-2013-017733
     cnvd_id = 'Unknown'  # cnvd漏洞编号

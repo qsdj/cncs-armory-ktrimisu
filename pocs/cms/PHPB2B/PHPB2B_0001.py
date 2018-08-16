@@ -13,6 +13,7 @@ class Vuln(ABVuln):
     type = VulnType.INFO_LEAK  # 漏洞类型
     disclosure_date = '2015-02-11'  # 漏洞公布时间
     desc = '''
+        友邻B2B网站系统(PHPB2B)是一款基于PHP程序和Mysql数据库、以MVC架构为基础的开源B2B行业门户电子商务网站建站系统，系统代码完整、开源，功能全面，架构优秀，提供良好的用户体验、多国语言化及管理平台，是目前搭建B2B行业门户网站最好的程序。
         PHPB2B 直接访问 install/install.php?step=5&app_lang=zh-cn&do=complete 直接查看mysql密码。
     '''  # 漏洞描述
     ref = 'Unknown'  # 漏洞来源

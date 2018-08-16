@@ -19,6 +19,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2014-08-14'  # 漏洞公布时间
     desc = '''
+        TCCMS是一款具有良好的扩展性、安全、高效的内容管理系统。其核心框架TC，具备大数据量,高并发,易扩展等特点。
         TCCMS 在 /system/core/controller.class.php中
         当Config::get("checkHack") &&　IN_ADMIN != TRUE 时 调用 initLogHacker，过滤sql。
         checkHack默认是为true的 然而 IN_ADMIN 常量是未定义的 在 php中 如果使用了一个未定义的常量，PHP 假定想要的是该常量本身的名字，如同用字符串调用它一样（CONSTANT 对应 "CONSTANT"）。此时将发出一个 E_NOTICE 级的错误（参考 http://php.net/manual/zh/language.constants.syntax.php）

@@ -13,6 +13,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-05-12'  # 漏洞公布时间
     desc = '''
+        双杨OA系统是由上海双杨电脑高科技开发公司打造的一款办公一体化管理软件。
         双杨OA系统多处存在SQL注入漏洞：
         /ObjSwitch/HYTZ.aspx?userid=1
         /RCMANAGE_New/rcgl.aspx?UID=1

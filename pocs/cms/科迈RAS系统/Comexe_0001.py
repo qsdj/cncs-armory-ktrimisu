@@ -11,6 +11,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = 'Unknown'  # 漏洞公布时间
     desc = '''
+        科迈RAS 为企业提供了一种从中心点集中管理应用程序远程接入方法。
         科迈RAS系统，函数过滤不全导致SQL注射。
     '''  # 漏洞描述
     ref = 'Unknown'  # 漏洞来源

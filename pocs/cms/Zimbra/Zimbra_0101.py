@@ -10,7 +10,8 @@ class Vuln(ABVuln):
     type = VulnType.LFI  # 漏洞类型
     disclosure_date = '2014-01-24'  # 漏洞公布时间
     desc = '''
-    zimbra邮箱系统本地包含漏洞，攻击者可以通过本地文件包含来读取系统敏感文件信息。
+        Zimbra提供一套开源协同办公套件包括WebMail，日历，通信录，Web文档管理和创作。它最大的特色在于其采用Ajax技术模仿CS桌面应用软件的风格开发的客户端兼容Firefox,Safari和IE浏览器。
+        Zimbra邮箱系统本地包含漏洞，攻击者可以通过本地文件包含来读取系统敏感文件信息。
     '''  # 漏洞描述
     ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=45515
     cnvd_id = 'Unknown'  # cnvd漏洞编号

@@ -19,6 +19,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2008-06-29'  # 漏洞公布时间
     desc = '''
+        SePortal是一个Weblog管理系统。
         SePortal 2.4 /poll.php SQL注入漏洞。
     '''  # 漏洞描述
     ref = 'https://www.seebug.org/vuldb/ssvid-8867'  # 漏洞来源

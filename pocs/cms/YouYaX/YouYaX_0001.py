@@ -14,6 +14,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2014-09-09'  # 漏洞公布时间
     desc = '''
+        YouYaX是用PHP语言编写的一套通用论坛系统。秉承简洁实用的设计原则，将传统论坛中一些复杂臃肿的部分统统去掉，保留论坛交流的本质核心，拥有自己独特的原创风格和特性，并且在不断优化和改进。
         YouYaX，问题出现在ORG/YouYa.php文件中。第356行：
         对传入的param参数没有进行过滤，导致存在SQL注入危险。
     '''  # 漏洞描述

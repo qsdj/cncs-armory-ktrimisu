@@ -18,6 +18,7 @@ class Vuln(ABVuln):
     type = VulnType.XSS  # 漏洞类型
     disclosure_date = '2014-07-27'  # 漏洞公布时间
     desc = '''
+        CMSZERO是免费开源网站内容管理系统，主要面向企业进行快速的建造简洁，高效，易用，安全的公司企业网站，一般的开发人员就能够使用本系统以最低的成本、最少的人力投入在最短的时间内架设一个功能齐全、性能优异的公司企业网站。CMSZERO是基于ASP+Access(sql2005)开发的网站内容管理系统，提供了简介类模块，新闻类模块，产品类模块，图片类模块，下载类模块。你在使用过程中可选择任意模块来建设您的网站。
         ZeroCMS用户注册页面zero_transact_user.php表单完全没进行过滤。
     '''  # 漏洞描述
     ref = 'https://www.exploit-db.com/exploits/34170/'  # 漏洞来源

@@ -19,6 +19,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-06-30'  # 漏洞公布时间
     desc = '''
+        TCCMS是一款具有良好的扩展性、安全、高效的内容管理系统。其核心框架TC，具备大数据量,高并发,易扩展等特点。
         TCCMS V9.0 在app/controller/news.class.php中。
         程序从$_POST['info'] 逐一获取了key/value的值，并最终保存为$this->$key =$value。并且在中间过程中做了html编码，并没有做转义就带入到了sql语句中执行了。
         可以使用boolen型盲注,当sql语句获取到数据的时候会提示title已经存在，利用这个可以很方便的进行sql注入。

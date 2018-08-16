@@ -11,6 +11,7 @@ class Vuln(ABVuln):
     type = VulnType.FILE_UPLOAD  # 漏洞类型
     disclosure_date = '2013-08-14'  # 漏洞公布时间
     desc = '''
+        TRS Web Content Management( TRS WCM ), 是-套完全基于Java和浏览器技术的网络内容管理软件。
         拓尔思拓尔思内容协作平台 ６.ｘ的 Web Service 提供了向服务器写入文件的方式，可以写入shell.
         web service的路径为：http://xxx.xxx/wcm/services/.
     '''  # 漏洞描述

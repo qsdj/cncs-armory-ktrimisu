@@ -14,8 +14,8 @@ class Vuln(ABVuln):
     type = VulnType.RCE  # 漏洞类型
     disclosure_date = '2015-03-03'  # 漏洞公布时间
     desc = '''
-        PHPMoAdmin is a MongoDB administration tool for PHP built on a\
-        stripped-down version of the Vork high-performance framework.'
+        phpMoAdmin是一款便捷的在线MongoDB管理工具，可用于创建、删除和修改数据库和索引，提供视图和数据搜索工具，提供数据库启动时间和内存的统计，支持JSON格式数据的导入导出的php应用。
+        moadmin.php文件设计缺陷导致远程命令执行漏洞的产生。
     '''  # 漏洞描述
     ref = 'http://seclists.org/fulldisclosure/2015/Mar/19'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号

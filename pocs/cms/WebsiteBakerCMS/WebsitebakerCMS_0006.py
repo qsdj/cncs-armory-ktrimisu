@@ -13,6 +13,7 @@ class Vuln(ABVuln):
     type = VulnType.XSS  # 漏洞类型
     disclosure_date = '2015-01-19'  # 漏洞公布时间
     desc = '''
+        WebsiteBaker可帮助您创建所需的网站：免费，简单，安全，灵活且可扩展的开源内容管理系统（CMS）。
         CMS Websitebaker 2.8.3 SP3 Cross Site Scripting
     '''  # 漏洞描述
     ref = 'https://packetstormsecurity.com/files/130008/CMS-Websitebaker-2.8.3-SP3-Cross-Site-Scripting.html'  # 漏洞来源

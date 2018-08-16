@@ -11,6 +11,7 @@ class Vuln(ABVuln):
     type = VulnType.XSS  # 漏洞类型
     disclosure_date = '2015-05-25'  # 漏洞公布时间
     desc = '''
+        phpwind（简称：pw）是一个基于PHP和MySQL的开源社区程序，是国内最受欢迎的通用型论坛程序之一。
         PHPWind 8.7版本，goto.php存在多个跨站脚本漏洞，远程攻击者通过url参数，利用此漏洞可注入任意Web脚本或HTML。
     '''  # 漏洞描述
     ref = 'http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-4135'  # 漏洞来源

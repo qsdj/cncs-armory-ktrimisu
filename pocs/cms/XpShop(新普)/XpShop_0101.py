@@ -15,7 +15,8 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2014-09-30'  # 漏洞公布时间
     desc = '''
-    XpShop v7.4 /textbox2.asp SQL注入漏洞 EXP
+        XpShop是深圳市新普软件开发有限公司自主研发的一套网店系统,针对不同类型的客户,有不同级别的系统。
+        XpShop v7.4 /textbox2.asp SQL注入漏洞 EXP
     '''  # 漏洞描述
     ref = 'http://www.webshell.cc/1154.html'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号

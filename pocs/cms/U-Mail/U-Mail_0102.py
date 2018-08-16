@@ -16,7 +16,8 @@ class Vuln(ABVuln):
     type = VulnType.INFO_LEAK  # 漏洞类型
     disclosure_date = '2014-10-23'  # 漏洞公布时间
     desc = '''
-    U-Mail /webmail/userapply.php 路径泄漏
+        U-Mail专家级邮件系统是福洽科技最新推出的第四代企业邮局系统。该产品依托福洽科技在信息领域中领先的技术与完善的服务，专门针对互联网信息技术的特点，综合多行业多领域不同类型企业自身信息管理发展的特点，采用与国际先进技术接轨的专业系统和设备，将先进的网络信息技术与企业自身的信息管理需要完美的结合起来。
+        U-Mail /webmail/userapply.php 路径泄漏
     '''  # 漏洞描述
     ref = 'Unknown'  # 漏洞来源http://wooyun.org/bugs/wooyun-2010-049525
     cnvd_id = 'Unknown'  # cnvd漏洞编号

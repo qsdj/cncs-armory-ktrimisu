@@ -12,6 +12,7 @@ class Vuln(ABVuln):
     type = VulnType.INFO_LEAK  # 漏洞类型
     disclosure_date = '2015-01-07'  # 漏洞公布时间
     desc = '''
+        UWA为一款通用建站系统。
         /core/lib/core/App.class.php 第14行
         其中 Pfa 父类没有验证是否存在 导致直接访问
         http://localhost/core/lib/core/App.class.php

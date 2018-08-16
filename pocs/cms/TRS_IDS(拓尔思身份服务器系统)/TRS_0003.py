@@ -11,6 +11,7 @@ class Vuln(ABVuln):
     type = VulnType.INFO_LEAK  # 漏洞类型
     disclosure_date = '2013-10-15'  # 漏洞公布时间
     desc = '''
+        拓尔思身份服务器系统实现各种应用系统间跨域的单点登录和统一的身份管理功能。提供与第三方协作应用系统集成的框架以及非常便捷的二次开发接口。
         拓尔思身份服务器系统 /ids/admin/debug/env.jsp 存在信息泄露漏洞。
     '''  # 漏洞描述
     ref = 'http://reboot.cf/2017/06/22/TRS%E6%BC%8F%E6%B4%9E%E6%95%B4%E7%90%86/'  # 漏洞来源

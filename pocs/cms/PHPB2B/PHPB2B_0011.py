@@ -13,13 +13,12 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2014-11-23'  # 漏洞公布时间
     desc = '''
-        漏洞文件/virtual-office/product.php
 
+        友邻B2B网站系统(PHPB2B)是一款基于PHP程序和Mysql数据库、以MVC架构为基础的开源B2B行业门户电子商务网站建站系统，系统代码完整、开源，功能全面，架构优秀，提供良好的用户体验、多国语言化及管理平台，是目前搭建B2B行业门户网站最好的程序。
+        漏洞文件/virtual-office/product.php
         Content-Disposition: form-data; name="data[product][sort_id]"
         Content-Disposition: form-data; name="data[product][name]"
-        .
-        .
-        .sort_id,name等未过滤。
+        sort_id,name等未过滤。
     '''  # 漏洞描述
     ref = 'http://0day5.com/archives/2482/'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号

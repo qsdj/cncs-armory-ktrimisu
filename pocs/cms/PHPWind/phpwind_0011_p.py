@@ -14,6 +14,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2011-03-10'  # 漏洞公布时间
     desc = '''
+        phpwind（简称：pw）是一个基于PHP和MySQL的开源社区程序，是国内最受欢迎的通用型论坛程序之一。
         利用前提是得到群组管理员权限，所以需要传入-c参数cookie
     '''  # 漏洞描述
     ref = 'Unknown'  # 漏洞来源

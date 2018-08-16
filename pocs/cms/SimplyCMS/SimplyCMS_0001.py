@@ -12,6 +12,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2012-05-30'  # 漏洞公布时间
     desc = '''
+        SimplyCMS是一家位于Napa的数字营销机构，专门从事酒庄网站的设计、开发和数字化管理。
         PHPCMS 批量：inurl:"index.php?subid=" 参数未过滤导致SQL注入漏洞。
     '''  # 漏洞描述
     ref = 'http://0day5.com/archives/149/'  # 漏洞来源

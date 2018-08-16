@@ -18,6 +18,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2011-09-05'  # 漏洞公布时间
     desc = '''
+        Shopxp网上购物系统是一个经过完善设计的经典商城购物管理系统，适用于各种服务器环境的高效网上购物网站建设解决方案。基于asp＋Access、Mssql为免费开源程序，在互联网上有广泛的应用。
         Shopxp v7.4版本中的textbox2.asp文件设计缺陷导致SQL注入漏洞的产生,严重威胁网站以及服务器的安全.
     '''  # 漏洞描述
     ref = 'https://www.webshell.cc/1154.html'  # 漏洞来源

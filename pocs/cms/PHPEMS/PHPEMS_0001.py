@@ -12,9 +12,8 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2014-04-17'  # 漏洞公布时间
     desc = '''
-        PHPEMS（PHP Exam Management System）在线模拟考试系统基于PHP+Mysql开发，主要用于搭建模拟考试平台，支持多种题型和展现方式，是国内首款支持题冒题和自动评分与教师评分相结合的PHP开源在线模拟考试系统。
+        PHPEMS(PHP Exam Management System)在线模拟考试系统基于PHP+Mysql开发,支持多种题型和展现方式,是国内首款支持题冒题和手自动一体评分的PHP在线模拟考试系统。
         使用本系统，您可以快速搭建用于模拟考试的网站平台，实现无纸化考试、真实考场模拟、知识强化练习等功能。可满足培训机构、学校、公司等机构各种考试需求。
-
         任意找了一个进入数据库的地方，
         没有做任何过滤就进入数据库了。
     '''  # 漏洞描述

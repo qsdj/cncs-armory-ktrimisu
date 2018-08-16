@@ -11,6 +11,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2014-04-02'  # 漏洞公布时间
     desc = '''
+        天生创想OA是由北京天生创想信息技术有限公司自公司打造的一款办公管理系统。
         天生创想OA 2.0 /duty/mod_duty.php 中：
         if ($number = getGP('number','G')) { //获取参数
         $wheresql .= " AND number=".$number.""; //没有进行过滤，组合进了sql语句

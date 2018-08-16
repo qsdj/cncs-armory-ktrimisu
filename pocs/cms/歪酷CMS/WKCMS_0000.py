@@ -19,6 +19,7 @@ class Vuln(ABVuln):
     type = VulnType.RCE  # 漏洞类型
     disclosure_date = '2014-04-12'  # 漏洞公布时间
     desc = '''
+        歪酷网站管理系统(歪酷CMS)是一款基于THINKPHP框架开发的PHP+MYSQL网站建站程序,本程序实现了文章和栏目的批量动态管理,支持栏目无限分类,实现多管理员管理,程序辅助功能也基本实现了常见的文章内关键字替换,文章内自动分页,手动分页,心情投票,留言和评论均采用了AJAX无刷新技术,数据库备份和还原,系统已经实现了伪静态,支持自定义伪静态后缀等等。
         歪酷CMS /search.html?keyword 任意代码执行漏洞
     '''  # 漏洞描述
     ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=048523'  # 漏洞来源

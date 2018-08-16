@@ -13,6 +13,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-04-02'  # 漏洞公布时间
     desc = '''
+        育友通用数字化校园平台采用分布式权限管理，将整个信息平台的大量的信息维护任务，分配到各科室、个人，既调动了全体教师的使用热情，又可及时、高效的更新大量的信息。
         育友通用数字化校园平台 SQL注入漏洞：
         '/Resource/search/search.aspx',
         '/Inedu3In1/components/xsjz.aspx',

@@ -12,6 +12,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2016-05-14'  # 漏洞公布时间
     desc = '''
+        totalsof整个系统采用国际流行的Browser / WebServer / DBServer 三层或 Client / Server 双层体系结构， 后台选用大型关系数据库Sql Server 2000 作为系统平台（并全面支持Sybase和Oracle数据库）。
         图腾软件图书管理系统三处SQL注入漏洞：
         /Code.aspx?id=0143034244
         /Periodical.aspx?ID=1113000371

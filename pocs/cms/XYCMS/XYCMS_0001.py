@@ -11,6 +11,7 @@ class Vuln(ABVuln):
     type = VulnType.INFO_LEAK  # 漏洞类型
     disclosure_date = '2015-03-11'  # 漏洞公布时间
     desc = '''
+        XYCMS企业建站系统是以asp+access进行开发的企业建站系统。
         XYCMS环保设备企业建站系统 /xydata/xycms.mdb 可直接下载数据库。
     '''  # 漏洞描述
     ref = 'Unknown'  # 漏洞来源

@@ -14,6 +14,7 @@ class Vuln(ABVuln):
     type = VulnType.INFO_LEAK  # 漏洞类型
     disclosure_date = '2015-01-03'  # 漏洞公布时间
     desc = '''
+        用友是国内著名的内容管理系统之一，包括协同管理系统、用友NC、用友U8等
         用友NC-IUFO报表系统部分安全问题（影响多个大客户）。
     '''  # 漏洞描述
     ref = 'https://www.secpulse.com/archives/27741.html'  # 漏洞来源

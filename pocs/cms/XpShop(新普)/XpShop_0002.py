@@ -10,6 +10,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2016-02-16'  # 漏洞公布时间
     desc = '''
+        XpShop是深圳市新普软件开发有限公司自主研发的一套网店系统,针对不同类型的客户,有不同级别的系统。
         XpShop xpshop.webui.MyRefund SQL注入漏洞。
     '''  # 漏洞描述
     ref = 'http://0day5.com/archives/3743/'  # 漏洞来源

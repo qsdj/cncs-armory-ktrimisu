@@ -11,6 +11,7 @@ class Vuln(ABVuln):
     type = VulnType.INFO_LEAK  # 漏洞类型
     disclosure_date = '2018-02-27'  # 漏洞公布时间
     desc = '''
+        ZZCMS是一款集成app移动平台与电子商务平台的内容管理系统。
         ZZCMS 8.2版本中存在安全漏洞。远程攻击者可通过向3/qq_connect2.0/API/class/ErrorCase.class.php或3/ucenter_api/code/friend.php文件发送直接请求利用该漏洞获取完整路径。
     '''  # 漏洞描述
     ref = 'http://www.cnvd.org.cn/flaw/show/CNVD-2018-05863'  # 漏洞来源

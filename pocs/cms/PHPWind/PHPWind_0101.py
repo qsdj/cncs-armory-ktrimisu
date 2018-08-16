@@ -11,8 +11,9 @@ class Vuln(ABVuln):
     type = VulnType.XSS  # 漏洞类型
     disclosure_date = '2015-05-25'  # 漏洞公布时间
     desc = '''
-    PHPWind v8.7 /goto.php 跨站脚本。
-    The first programming code flaw occurs at "&url" parameter in "/goto.php?" page.
+        phpwind（简称：pw）是一个基于PHP和MySQL的开源社区程序，是国内最受欢迎的通用型论坛程序之一。
+        PHPWind v8.7 /goto.php 跨站脚本。
+        The first programming code flaw occurs at "&url" parameter in "/goto.php?" page.
     '''  # 漏洞描述
     ref = 'http://seclists.org/fulldisclosure/2015/May/106'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号

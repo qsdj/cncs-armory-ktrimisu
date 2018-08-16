@@ -10,7 +10,8 @@ class Vuln(ABVuln):
     type = VulnType.FILE_UPLOAD  # 漏洞类型
     disclosure_date = '2015-07-29'  # 漏洞公布时间
     desc = '''
-    TRSWCM的Web Service提供了向服务器写入文件的方式，可以直接写jsp文件获取webshell。
+        TRS Web Content Management( TRS WCM ), 是-套完全基于Java和浏览器技术的网络内容管理软件。
+        TRSWCM的Web Service提供了向服务器写入文件的方式，可以直接写jsp文件获取webshell。
     '''  # 漏洞描述
     ref = 'Unknown'  # 漏洞来源http://www.wooyun.org/bugs/wooyun-2015-092138
     cnvd_id = 'Unknown'  # cnvd漏洞编号

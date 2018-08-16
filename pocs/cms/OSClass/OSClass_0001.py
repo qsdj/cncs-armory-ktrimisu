@@ -11,6 +11,7 @@ class Vuln(ABVuln):
     type = VulnType.LFI  # 漏洞类型
     disclosure_date = '2014-09-25'  # 漏洞公布时间
     desc = '''
+        osclass是一个开源项目，允许您在没有任何技术知识的情况下轻松创建分类网站。
         Local file inclusion vulnerability where discovered in Osclass, an
         open source project that allows you to create a classifieds sites.
     '''  # 漏洞描述

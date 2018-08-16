@@ -14,7 +14,8 @@ class Vuln(ABVuln):
     type = VulnType.INFO_LEAK  # 漏洞类型
     disclosure_date = '2014-12-09'  # 漏洞公布时间
     desc = '''
-    http://startbbs/index.php/home/getmore/w.jsp 随意构造一个.jsp爆出数据库查询语句。
+        Startbbs - a simple & lightweight Forum. ... Hello, world! StartBBS 是一款优雅、开源、轻量社区系统，基于MVC架构。
+        http://startbbs/index.php/home/getmore/w.jsp 随意构造一个.jsp爆出数据库查询语句。
     '''  # 漏洞描述
     ref = 'Unknown'  # 漏洞来源http://www.wooyun.org/bugs/wooyun-2013-045780
     cnvd_id = 'Unknown'  # cnvd漏洞编号

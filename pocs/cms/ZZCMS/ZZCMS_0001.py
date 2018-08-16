@@ -18,6 +18,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2016-10-07'  # 漏洞公布时间
     desc = '''
+        ZZCMS是一款集成app移动平台与电子商务平台的内容管理系统。
         文件位置:zs/contrast.php
         POST过来的id字段一个字一个字分开然后用”,”连接(我也不知道为什么这个程序员把”.=”写成了”=” 导致了”123”变成”1,” 原本应为”1,2,3,”)去掉最后的”,”后不经过任何过滤扔进sql语句里
         其实绕过这个substr很简单 只需要提交的时候加一个数组的下标就可以了。

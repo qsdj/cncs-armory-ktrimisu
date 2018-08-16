@@ -11,6 +11,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2014-06-02'  # 漏洞公布时间
     desc = '''
+        苏亚星校园网软件系统是一个校务管理系统、资源库管理系统、VOD点播系统、校园网站和虚拟社区进行整合而形成的校园网综合应用平台。
         南京苏亚星校园管理系统后台未授权访问到SQL注入再到Getshell.
     '''  # 漏洞描述
     ref = 'Unknown'  # 漏洞来源

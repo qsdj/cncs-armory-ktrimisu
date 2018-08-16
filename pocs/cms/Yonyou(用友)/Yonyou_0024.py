@@ -11,6 +11,7 @@ class Vuln(ABVuln):
     type = VulnType.XXE  # 漏洞类型
     disclosure_date = '2015-05-31'  # 漏洞公布时间
     desc = '''
+        用友是国内著名的内容管理系统之一，包括协同管理系统、用友NC、用友U8等
         用友人力资源管理软件全版本XXE漏洞：
         /hrss/dorado/smartweb2.RPC.d?__rpc=true
     '''  # 漏洞描述

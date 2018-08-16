@@ -12,6 +12,7 @@ class Vuln(ABVuln):
     type = VulnType.MISCONFIGURATION  # 漏洞类型
     disclosure_date = '2015-10-01'  # 漏洞公布时间
     desc = '''
+        科迈RAS 为企业提供了一种从中心点集中管理应用程序远程接入方法。
         科迈RAS远程快速接入方案后台 /server/CmxManager.php 登陆绕过。
     '''  # 漏洞描述
     ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=0123807'  # 漏洞来源

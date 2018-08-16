@@ -12,8 +12,9 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-04-01'  # 漏洞公布时间
     desc = '''
-    param `pk_message` is not filterd,
-    用友NC-IUFO系统 /epp/detail/publishinfodetail.jsp SQL注入。
+        用友是国内著名的内容管理系统之一，包括协同管理系统、用友NC、用友U8等
+        param `pk_message` is not filterd,
+        用友NC-IUFO系统 /epp/detail/publishinfodetail.jsp SQL注入。
     '''  # 漏洞描述
     ref = 'Unknown'  # 漏洞来源http://www.wooyun.org/bugs/wooyun-2014-089208
     cnvd_id = 'Unknown'  # cnvd漏洞编号

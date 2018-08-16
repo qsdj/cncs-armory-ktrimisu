@@ -12,6 +12,7 @@ class Vuln(ABVuln):
     type = VulnType.RCE  # 漏洞类型
     disclosure_date = '2015-03-27'  # 漏洞公布时间
     desc = '''
+        PHPCMS采用PHP5+MYSQL做为技术基础进行开发。9采用OOP（面向对象）方式进行基础运行框架搭建。模块化开发方式做为功能开发形式。框架易于功能扩展，代码维护，优秀的二次开发能力，可满足所有网站的应用需求。 5年开发经验的优秀团队，在掌握了丰富的WEB开发经验和CMS产品开发经验的同时，勇于创新追求完美的设计理念，为全球多达10万网站提供助力，并被更多的政府机构、教育机构、事业单位、商业企业、个人站长所认可。
         首先利用了mysql的一个特性，mysql在存储数据的时候会根据当前数据库的字符集来校验数据，发现非法数据时会抛弃其后续数据。
         当表的字符集是utf8_general_ci时，测试SQL：Insert into table values (concat('ab', 0x80, 'cd'))，因为0x80不是有效的UTF-8字符，所以只有ab被写入数据库中，cd会被截断。
         当表的字符集是gbk_chinese_ci时，测试SQL：Insert into table values (concat('ab', 0x8027, 'cd'))，因为0x8027不是有效的gbk字符，所以只有ab被写入数据库中，cd会被截断。

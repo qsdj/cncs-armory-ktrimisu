@@ -14,6 +14,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2014-10-16'  # 漏洞公布时间
     desc = '''
+        SupeSite是一套拥有独立的内容管理(CMS)功能，并集成了Web2.0社区个人门户系统X-Space，拥有强大的聚合功能的社区门户系统。 SupeSite可以实现对站内的论坛(Discuz!)、个人空间(X-Space)信息进行内容聚合。任何站长，都可以通过SupeSite，轻松构建一个面向Web2.0的社区门户。
         /batch.common.php $_GET[name]过滤不严谨。
     '''  # 漏洞描述
     ref = 'https://www.secpulse.com/archives/46521.html'  # 漏洞来源

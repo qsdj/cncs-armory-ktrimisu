@@ -11,6 +11,7 @@ class Vuln(ABVuln):
     type = VulnType.FILE_UPLOAD  # 漏洞类型
     disclosure_date = '2013-09-20'  # 漏洞公布时间
     desc = '''
+        通达OA系统代表了协同OA的先进理念,16年研发铸就成熟OA产品。
         通达OA/general/vmeet/wbUpload.php 页面存在任意文件上传漏洞，进而getshell.
     '''  # 漏洞描述
     ref = 'Unknown'  # 漏洞来源

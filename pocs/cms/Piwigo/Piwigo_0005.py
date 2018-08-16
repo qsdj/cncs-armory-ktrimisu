@@ -11,7 +11,7 @@ class Vuln(ABVuln):
     type = VulnType.XSS  # 漏洞类型
     disclosure_date = '2012-04-23'  # 漏洞公布时间
     desc = '''
-        Piwigo是用PHP编写的相册脚本。
+        Piwigo是一个基于MySQL5与PHP5开发的相册系统.提供基本的发布和管理照片功能,按多种方式浏览如类别,标签,时间等。
         Piwigo 2.3.4之前版本的admin.php中存在多处跨站脚本执行漏洞。  
     '''  # 漏洞描述
     ref = 'http://www.cnvd.org.cn/flaw/show/CNVD-2012-7650'  # 漏洞来源

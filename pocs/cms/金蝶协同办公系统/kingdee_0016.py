@@ -13,7 +13,8 @@ class Vuln(ABVuln):
     type = VulnType.MISCONFIGURATION  # 漏洞类型
     disclosure_date = '2015-02-12'  # 漏洞公布时间
     desc = '''
-        金蝶AES系统2种Java web配置文件可下载。
+        金蝶协同办公管理系统助力企业实现从分散到协同，规范业务流程、降低运作成本，提高执行力，并成为领导的工作助手、员工工作和沟通的平台。
+        金蝶EAS系统2种Java web配置文件可下载。
     '''  # 漏洞描述
     ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=083323'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号

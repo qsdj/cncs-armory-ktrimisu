@@ -12,6 +12,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-09-17'  # 漏洞公布时间
     desc = '''
+        农友软件多年来致力于农村、农业、农民的“三农”信息化建设，是国内领先的“三农”信息化建设全面解决方案提供商，同时也是国内最大的“三农”信息化服务提供商。
         农友政务系统sql注入漏洞。
         /newsymItemView/Item2.aspx?id=021973
     '''  # 漏洞描述

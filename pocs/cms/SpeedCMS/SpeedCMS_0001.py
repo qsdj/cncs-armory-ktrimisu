@@ -13,6 +13,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-10-08'  # 漏洞公布时间
     desc = '''
+        标准化企业内容管理系统(SpeedCMS) php框架采用SpeedPHP js框架采用jquery开发的一款软件。
         SpeedCMS某处Oracle注射漏洞。
         /guestbook/list/portalId/86/cid/828%27)%20AND%206152=
     '''  # 漏洞描述

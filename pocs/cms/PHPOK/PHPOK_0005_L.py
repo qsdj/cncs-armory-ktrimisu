@@ -12,6 +12,7 @@ class Vuln(ABVuln):
     type = VulnType.OTHER  # 漏洞类型
     disclosure_date = '2014-07-25'  # 漏洞公布时间
     desc = '''
+        PHPOK是一套允许用户高度自由配置的企业站程序，基于LGPL协议开源授权。
         phpokcms存在csrf漏洞，管理员查看会员列表时不知不觉会自动添加新的系统管理员。
     '''  # 漏洞描述
     ref = 'http://0day5.com/archives/1890/'  # 漏洞来源

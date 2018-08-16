@@ -15,7 +15,8 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2014-10-02'  # 漏洞公布时间
     desc = '''
-    漏洞出现在pinglun.asp文件。
+        Shopv8商城系统是一款Asp商城系统，运行环境支持ASP。
+        漏洞出现在pinglun.asp文件。
     '''  # 漏洞描述
     ref = 'http://www.shellsec.com/tech/2143.html'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号

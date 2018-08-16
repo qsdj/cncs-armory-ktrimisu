@@ -12,6 +12,7 @@ class Vuln(ABVuln):
     type = VulnType.RCE  # 漏洞类型
     disclosure_date = '2017-05-03'  # 漏洞公布时间
     desc = '''
+        WordPress是一个基于PHP和MySQL的免费开源内容管理系统（CMS）。功能包括插件架构和模板系统。它与博客最相关，但支持其他类型的网络内容，包括更传统的邮件列表和论坛，媒体画廊和在线商店。截至2018年4月，超过6000万个网站使用，包括前1000万个网站的30.6％，WordPress是最受欢迎的网站管理系统正在使用中。WordPress也被用于其他应用领域，如普适显示系统（PDS）。
         WordPress的PHPMailer漏洞利用细节在WordPress核心中的实现。未经授权的攻击者利用漏洞就能实现远程代码执行，针对目标服务器实现即时访问，最终导致目标应用服务器的完全陷落。。
     '''  # 漏洞描述
     ref = 'http://0day5.com/archives/4204/'  # 漏洞来源

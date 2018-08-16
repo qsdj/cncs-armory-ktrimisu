@@ -11,6 +11,7 @@ class Vuln(ABVuln):
     type = VulnType.INFO_LEAK  # 漏洞类型
     disclosure_date = '2015-05-27'  # 漏洞公布时间
     desc = '''
+        淘客帝国CMS是一家以淘客推广为主的服务平台，淘客帝国汇聚淘宝客活动所有商品，并集成强大的自定义筛选功能，帮您迅速找到高佣金高转化的推广商品的网站管理系统。
         淘客帝国CMS /usercenter.php?ac=shareframe 无视GPC注射和信息泄露漏洞。
     '''  # 漏洞描述
     ref = 'Unknown'  # 漏洞来源

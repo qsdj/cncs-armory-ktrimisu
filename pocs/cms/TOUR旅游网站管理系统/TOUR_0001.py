@@ -12,6 +12,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2014-04-20'  # 漏洞公布时间
     desc = '''
+        tour旅游网站管理系统,快速上手,操作简单,轻松管理旅游网站!tour旅游网站管理系统,用户体验超棒的一款旅游网站系统。
         TOUR旅游网站管理系统存在SQL注入，服务商、CMS版本不明，很多旅游网站在用。
     '''  # 漏洞描述
     ref = 'Unknown'  # 漏洞来源

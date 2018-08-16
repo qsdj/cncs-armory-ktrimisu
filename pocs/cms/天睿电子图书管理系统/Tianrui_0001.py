@@ -12,6 +12,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-09-19'  # 漏洞公布时间
     desc = '''
+        天睿电子图书管理系统是一套阅读书籍系统，基于PHPCMF框架架构，拥有相当强大的内容管理模式和灵活的扩展性能。
         天睿电子图书管理系统10处SQL注入漏洞：
         /gl_tj_0.asp?id=1
         /gl_tuijian_1.asp

@@ -12,6 +12,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-04-07'  # 漏洞公布时间
     desc = '''
+        三唐实验室综合信息管理系统是由湖南三唐信息科技有限公司打造的一款集实验室人员管理、教育部数据报表、实验室资源共享等功能的管理系统。
         三唐实验室综合信息管理系统 /OpenTimsUI/STUMODEL/StuBookExpCell.aspx?codeID=1 SQL注入漏洞。
     '''  # 漏洞描述
     ref = 'Unknown'  # 漏洞来源

@@ -1,5 +1,5 @@
 {
   "type": "cms",
   "producer": null,
-  "desc": " STCMS音乐系统是一个优秀的音乐内容管理系统，本系统基于PHP+Mysql，采用MVC模式开发，支持模板标签，调用灵活。"
+  "desc": "STCMS音乐系统是一个优秀的音乐内容管理系统，本系统基于PHP+Mysql，采用MVC模式开发，支持模板标签，调用灵活。"
 }

@@ -11,12 +11,10 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2013-03-25'  # 漏洞公布时间
     desc = '''
-        #Title: vBulletin 5 SQL Injection > Beta Whatever
-        #Category: web application
-        #Type: SQL Injection
-        #Requirements: Firefox/Live HTTP Headers/
-        #Software Link: http://www.vbulletin.com/purchases/
-        #Version: 5 and above(not older versions)
+        vBulletin是美国Internet Brands和vBulletin Solutions公司共同开发的一款开源的商业Web论坛程序。
+        Requirements: Firefox/Live HTTP Headers/
+        Software Link: http://www.vbulletin.com/purchases/
+        Version: 5 and above(not older versions)
     '''  # 漏洞描述
     ref = 'http://0day5.com/archives/415/'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号

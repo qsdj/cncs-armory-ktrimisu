@@ -14,6 +14,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2014-06-10'  # 漏洞公布时间
     desc = '''
+        PHP云人才管理系统，专业的人才招聘网站系统开源程序，采用PHP 和MySQL 数据库构建的高效的人才与企业求职招招聘系统源码。
         PHPYun 2.5 在 /api/alipay/alipayto.php 中，提交POST[dingdan]参数存在SQL注入漏洞。
     '''  # 漏洞描述
     ref = 'https://www.seebug.org/vuldb/ssvid-62513'  # 漏洞来源

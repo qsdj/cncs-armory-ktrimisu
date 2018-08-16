@@ -14,6 +14,7 @@ class Vuln(ABVuln):
     type = VulnType.INFO_LEAK  # 漏洞类型
     disclosure_date = '2013-08-01'  # 漏洞公布时间
     desc = '''
+        P2P通用系统是一个个人对个人的网贷系统。
         帝友P2P借贷系统 /index.php?plugins&q=imgurl&url=QGltZ3VybEAvY29yZS9jb21tb24uaW5jLnBocA== 任意文件读取漏洞。
     '''  # 漏洞描述
     ref = 'https://www.secpulse.com/archives/18745.html'  # 漏洞来源

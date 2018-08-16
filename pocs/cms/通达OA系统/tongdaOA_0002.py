@@ -11,6 +11,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-05-27'  # 漏洞公布时间
     desc = '''
+        通达OA系统代表了协同OA的先进理念,16年研发铸就成熟OA产品。
         通达OA系统/interface/auth.php页面参数过滤不严谨，导致SQL注入漏洞。
     '''  # 漏洞描述
     ref = 'Unknown'  # 漏洞来源

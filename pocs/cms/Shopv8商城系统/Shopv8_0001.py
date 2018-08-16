@@ -18,6 +18,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2010-04-17'  # 漏洞公布时间
     desc = '''
+        Shopv8商城系统是一款Asp商城系统，运行环境支持ASP。
         'ShopV8 10.48 SQL注入漏洞出现在pinglun.asp文件.
     '''  # 漏洞描述
     ref = 'http://www.yunsec.net/a/security/bugs/script/2010/0417/3407.html'  # 漏洞来源

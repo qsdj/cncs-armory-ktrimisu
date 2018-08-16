@@ -11,6 +11,7 @@ class Vuln(ABVuln):
     type = VulnType.FILE_DOWNLOAD  # 漏洞类型
     disclosure_date = '2015-04-08'  # 漏洞公布时间
     desc = '''
+        Vicworl，视频播客系统、网络直播(视频/音频)系统、智能录制系统、网络电视台系统。功能强大而完善。
         Vicworl 数据库备份文件下载漏洞，可以获取管理员账号等非常敏感的信息，可以轻松实现无任何限制获取 WEBSHELL。
     '''  # 漏洞描述
     ref = 'Unknown'  # 漏洞来源

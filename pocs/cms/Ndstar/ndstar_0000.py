@@ -12,6 +12,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2016-01-11'  # 漏洞公布时间
     desc = '''
+        南大之星档案管理软件，本系统采用浏览器/服务器（B/S）结构，具有维护方便，不需要另外安装客户端软件，客户端只需要一台联网（局域网、校园网、互联网）的计算机就可以了，具有操作简单、维护方便、安全可靠、功能齐全等特点。
         南大之星信息发布系统多处SQL注入漏洞：
         "/pub/search/search_graph_dl.asp?id=85",
         "/pub/search/search_fj_dl.asp?id=2",

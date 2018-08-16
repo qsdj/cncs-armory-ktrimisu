@@ -10,7 +10,8 @@ class Vuln(ABVuln):
     type = VulnType.LFI  # 漏洞类型
     disclosure_date = '2013-08-25'  # 漏洞公布时间
     desc = '''
-    ShopEx绕过补丁本地包含漏洞，攻击者可以通过本地包含来读取系统敏感文件信息。
+        Shopex是国内市场占有率最高的网店软件。网上商店平台软件系统又称网店管理系统、网店程序、网上购物系统、在线购物系统。
+        ShopEx绕过补丁本地包含漏洞，攻击者可以通过本地包含来读取系统敏感文件信息。
     '''  # 漏洞描述
     ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=24559
     cnvd_id = 'Unknown'  # cnvd漏洞编号

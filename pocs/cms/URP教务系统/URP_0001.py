@@ -14,6 +14,7 @@ class Vuln(ABVuln):
     type = VulnType.FILE_DOWNLOAD  # 漏洞类型
     disclosure_date = 'Unknown'  # 漏洞公布时间
     desc = '''
+        URP教务系统是一个受欢迎的校园多功能教务管理系统。
         URP教务系统 /servlet/com.runqian.base.util.ReadJavaScriptServlet?file= 任意文件下载漏洞。
     '''  # 漏洞描述
     ref = 'Unknown'  # 漏洞来源

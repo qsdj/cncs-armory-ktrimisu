@@ -19,6 +19,7 @@ class Vuln(ABVuln):
     type = VulnType.FILE_DOWNLOAD  # 漏洞类型
     disclosure_date = '2014-08-16'  # 漏洞公布时间
     desc = '''
+        TRS Web Content Management( TRS WCM ), 是-套完全基于Java和浏览器技术的网络内容管理软件。
         拓尔思内容协作平台 /wcm/app/system/read_image.jsp 任意文件下载漏洞。
     '''  # 漏洞描述
     ref = 'http://reboot.cf/2017/06/22/TRS%E6%BC%8F%E6%B4%9E%E6%95%B4%E7%90%86/'  # 漏洞来源

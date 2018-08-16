@@ -12,6 +12,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2014-12-14'  # 漏洞公布时间
     desc = '''
+        PHPOK是一套允许用户高度自由配置的企业站程序，基于LGPL协议开源授权。
         网站在初始化的时候会装载一些资源引擎，其中装载了一个session_file.php，用于初始化session
         文件framework/engine/session/file.php:
         $session_id 直接从get或者post中获取，没有进行任何过滤。

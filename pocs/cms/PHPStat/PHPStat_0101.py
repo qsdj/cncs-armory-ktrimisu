@@ -15,7 +15,8 @@ class Vuln(ABVuln):
     type = VulnType.FILE_DOWNLOAD  # 漏洞类型
     disclosure_date = '2014-11-25'  # 漏洞公布时间
     desc = '''
-    PHPStat v1.0.20141124 /download.php 任意文件下载。
+        PHPStat 网站流量统计,是通过统计网站访问者的访问来源、访问时间、访问内容等访问信息,加以系统分析,进而总结出访问者访问来源、爱好趋向、访问习惯等一些共性数据，为网站进一步调整做出指引的一门新型用户行为分析技术。
+        PHPStat v1.0.20141124 /download.php 任意文件下载。
     '''  # 漏洞描述
     ref = 'http://0day5.com/archives/2372'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号

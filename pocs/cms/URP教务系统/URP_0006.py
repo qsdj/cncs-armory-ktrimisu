@@ -12,6 +12,7 @@ class Vuln(ABVuln):
     type = VulnType.RCE  # 漏洞类型
     disclosure_date = '2015-05-17'  # 漏洞公布时间
     desc = '''
+        URP教务系统是一个受欢迎的校园多功能教务管理系统。
         URP综合教务系统 /lwUpLoad_action.jsp 代码执行漏洞。
     '''  # 漏洞描述
     ref = 'Unknown'  # 漏洞来源

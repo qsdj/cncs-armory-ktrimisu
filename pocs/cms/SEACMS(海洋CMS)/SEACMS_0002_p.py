@@ -19,6 +19,7 @@ class Vuln(ABVuln):
     type = VulnType.RCE  # 漏洞类型
     disclosure_date = '2017-10-11'  # 漏洞公布时间
     desc = '''
+        SeaCMS是一套使用PHP编写的免费、开源的网站内容管理系统。该系统主要被设计用来管理视频点播资源。
         漏洞的初始接口在 ./search.php文件中。
         该漏洞成因在于search.php没有对用户输入内容进行过滤，导致攻击者提交的order参数可进入parseIf函数中执行eval.
     '''  # 漏洞描述

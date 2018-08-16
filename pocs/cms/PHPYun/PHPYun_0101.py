@@ -15,7 +15,8 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-01-16'  # 漏洞公布时间
     desc = '''
-    /wap/member/model/index.class.php 过滤不严谨。
+        PHP云人才管理系统，专业的人才招聘网站系统开源程序，采用PHP 和MySQL 数据库构建的高效的人才与企业求职招招聘系统源码。
+        /wap/member/model/index.class.php 过滤不严谨。
     '''  # 漏洞描述
     ref = 'Unknown'  # 漏洞来源http://www.wooyun.org/bugs/wooyun-2014-071296
     cnvd_id = 'Unknown'  # cnvd漏洞编号

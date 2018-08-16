@@ -12,6 +12,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2014-11-13'  # 漏洞公布时间
     desc = '''
+        PHPOK是一套允许用户高度自由配置的企业站程序，基于LGPL协议开源授权。
         PHPOK系统在前台获取“文章总数”的功能实现上存在SQL注入漏洞。
         漏洞文件：处理数据的data_model类/framework/model/data.php
         漏洞函数：获取“文章总数”的total($rs)函数

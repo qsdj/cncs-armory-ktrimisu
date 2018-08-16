@@ -14,7 +14,9 @@ class Vuln(ABVuln):
     type = VulnType.XSS  # 漏洞类型
     disclosure_date = '2014-12-09'  # 漏洞公布时间
     desc = '''
-    search.asp在对用户提交数据处理上存在安全漏洞。
+        YXcms是一款基于PHP+MySql开发的网站管理系统，采用轻量级MVC设计模式。
+        Z-Blog是由RainbowSoft Studio开发的一款小巧而强大的基于Asp和PHP平台的开源程序，其创始人为朱煊(网名：zx.asd)。
+        search.asp在对用户提交数据处理上存在安全漏洞。
     '''  # 漏洞描述
     ref = 'http://sebug.net/vuldb/ssvid-19246'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号

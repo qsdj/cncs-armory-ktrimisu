@@ -13,6 +13,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2014-11-05'  # 漏洞公布时间
     desc = '''
+        Shop7z网上购物系统是国内优秀的网上开店软件，模板新颖独特，功能强大，自主知识产权国家认证，数万用户网上开店首选，可以快速建立自己的网上商城。
         Shop7z order_checknoprint.asp参数 SQL注入漏洞。
     '''  # 漏洞描述
     ref = 'http://www.anyun.org/a/jishuguanzhu/wangluoanquan/loudongfenxiang/2014/1105/3527.html'  # 漏洞来源

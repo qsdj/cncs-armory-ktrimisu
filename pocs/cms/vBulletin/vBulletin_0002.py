@@ -11,6 +11,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2013-03-25'  # 漏洞公布时间
     desc = '''
+        vBulletin是美国Internet Brands和vBulletin Solutions公司共同开发的一款开源的商业Web论坛程序。
         vbulletin 4.1.5 attachment SQLI
         examine variables came across sq-injection, as later found to be inherent to all vbulletin 4.1.5.
         Title: Vulnerability in vBulletin 4.1.5

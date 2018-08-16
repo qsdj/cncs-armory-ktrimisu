@@ -14,7 +14,8 @@ class Vuln(ABVuln):
     type = VulnType.LFI  # 漏洞类型
     disclosure_date = '2015-02-01'  # 漏洞公布时间
     desc = '''
-    Qibocms /hr/listperson.php 系统文件包含致无限制Getshell。
+        齐博CMS前身是龙城于大学期间也即2003年所创建的PHP168网站管理系统，它是国内主流CMS系统之一，曾多次被新浪网、腾讯网、凤凰网等多家大型IT媒体报道。齐博CMS目前已有数以万计的用户在使用，覆盖政府、 企业、科研教育和媒体等各个领域。
+        Qibocms /hr/listperson.php 系统文件包含致无限制Getshell。
     '''  # 漏洞描述
     ref = 'Unknown'  # 漏洞来源http://www.wooyun.org/bugs/wooyun-2015-081470
     cnvd_id = 'Unknown'  # cnvd漏洞编号

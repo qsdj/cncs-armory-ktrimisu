@@ -12,6 +12,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-11-22'  # 漏洞公布时间
     desc = '''
+        金蝶协同办公管理系统助力企业实现从分散到协同，规范业务流程、降低运作成本，提高执行力，并成为领导的工作助手、员工工作和沟通的平台。
         金蝶协同办公系统 TemplateEdit.jsp 参数过滤不完整导致SQL注入漏洞。
     '''  # 漏洞描述
     ref = 'http://www.hackdig.com/11/hack-28820.htm'  # 漏洞来源
