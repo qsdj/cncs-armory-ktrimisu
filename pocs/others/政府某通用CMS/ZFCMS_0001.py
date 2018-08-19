@@ -7,7 +7,7 @@ hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
     vuln_id = 'ZFCMS_0001'  # 平台漏洞编号，留空
-    name = '政府某通用CMS 任意文件下载'  # 漏洞名称
+    name = '政府通用CMS 任意文件下载'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD  # 漏洞类型
     disclosure_date = '2014-08-30'  # 漏洞公布时间
@@ -15,10 +15,10 @@ class Vuln(ABVuln):
         政府某通用CMS任意文件下载导致webshell
         google搜索找到的任意文件下载：inurl:upload/FileDownload.jsp
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=068728
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=068728'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
-    product = '政府某通用CMS'  # 漏洞应用名称
+    product = '政府通用CMS'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
 
 

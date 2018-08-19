@@ -14,7 +14,7 @@ class Vuln(ABVuln):
     desc = '''
         金融化一卡通系统越权漏洞
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=095962
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=095962'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'Synjones'  # 漏洞应用名称

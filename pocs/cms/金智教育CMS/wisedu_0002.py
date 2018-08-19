@@ -15,7 +15,7 @@ class Vuln(ABVuln):
         江苏金智教育门户信息系统存在任意文件读取漏洞。
         /epstar/servlet/RaqFileServer?action=
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0121332'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '金智教育CMS'  # 漏洞应用名称

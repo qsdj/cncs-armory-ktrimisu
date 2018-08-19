@@ -16,7 +16,7 @@ class Vuln(ABVuln):
     desc = '''
     /download.jspx 文件用于文件下载,fpath及filename参数未做正确过滤限制,导致可下载任意文件。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源http://wooyun.org/bugs/wooyun-2014-077960'
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=077960'  # 漏洞来源http://wooyun.org/bugs/wooyun-2014-077960'
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'JeeCMS'  # 漏洞应用名称

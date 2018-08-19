@@ -14,7 +14,7 @@ class Vuln(ABVuln):
         北京希尔OA通用型任意文件读取漏洞。
         /vfs?path=../../../../../../../../../../etc/passwd
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=058143'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'HeeritOA(希尔OA)'  # 漏洞应用名称

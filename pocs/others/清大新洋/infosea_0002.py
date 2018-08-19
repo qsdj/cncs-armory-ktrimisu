@@ -19,7 +19,7 @@ class Vuln(ABVuln):
         /opac/ckgc.jsp
         参数过滤不完整，导致SQL注入漏洞。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=085319、082667、079840、014662'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '清大新洋'  # 漏洞应用名称

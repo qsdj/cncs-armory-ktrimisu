@@ -16,7 +16,7 @@ class Vuln(ABVuln):
         乐语OMS是一款整合多终端的即时在线客服系统，支持千万级并发，让企业迅速捕获有效客户信息。同时整合CRM客户管理、数据分析、手机站群营销等功能，实现从流量到客户到成单再到数据分析的全流程管理，是企业构建网络营销运营系统必备的软件。
         乐语客服系统任意文件下载漏洞
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0150444
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0150444'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '乐语客服系统'  # 漏洞应用名称

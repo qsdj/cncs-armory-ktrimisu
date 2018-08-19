@@ -16,7 +16,7 @@ class Vuln(ABVuln):
         好视通FastMeeting视频会议系统任意文件上传。
         缺陷地址:/AdminMgr/backup/databackup.jsp
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0132866'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'FastMeeting'  # 漏洞应用名称

@@ -22,7 +22,7 @@ class Vuln(ABVuln):
         Tipask 2.0 文件/control/question.php中Onajaxsearch函数对get的第二个参数urldecode后直接传入SQL语句，
         绕过了前面的过滤和检查，导致SQL注入的产生。
     '''  # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=025802'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=025802'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'Tipask'  # 漏洞应用名称
@@ -71,18 +71,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        self.target = self.target.rstrip(
-            '/') + '/' + (self.get_option('base_path').lstrip('/'))
-        try:
-            self.output.info('开始对 {target} 进行 {vuln} 漏洞利用'.format(
-                target=self.target, vuln=self.vuln))
-
-            if res:
-                self.output.report(self.vuln, '发现{target}存在{name}漏洞，获取到的*********为{data}'.format(
-                    target=self.target, name=self.vuln.name, data=exploit_data))
-
-        except Exception as e:
-            self.output.info('执行异常{}'.format(e))
+        self.verify()
 
 
 if __name__ == '__main__':

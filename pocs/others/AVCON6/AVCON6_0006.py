@@ -14,7 +14,7 @@ class Vuln(ABVuln):
     desc = '''
         华平 AVCON6 统一协同通讯系统 /download.action?filename=../../../../../../etc/shadow 任意文件下载漏洞。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=50653
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=50653'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'AVCON6'  # 漏洞应用名称

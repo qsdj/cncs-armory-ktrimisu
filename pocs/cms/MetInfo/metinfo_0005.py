@@ -11,9 +11,9 @@ class Vuln(ABVuln):
     type = VulnType.OTHER  # 漏洞类型
     disclosure_date = '2015-03-12'  # 漏洞公布时间
     desc = '''
-        MetInfo4.0注册会员后，可以修改任意用户和管理员密码，影响特别大，百度里可以找到上千用MetInfo4.0的企业站，危害特别严重！
+        MetInfo4.0注册会员后，可以修改任意用户和管理员密码，影响特别大，搜索引擎里可以找到上千用MetInfo4.0的企业站，危害特别严重！
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0121863'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'MetInfo'  # 漏洞应用名称

@@ -17,7 +17,7 @@ class Vuln(ABVuln):
         M('Comments')->where("comment_id IN ($cids) AND (user_id='".$this->my['user_id']."' OR comment_uid='".$this->my['user_id']."')")->delete();
         带入查询，导致SQL注入漏洞。
     '''  # 漏洞描述
-    ref = 'Unknown'  # https://wooyun.shuimugan.com/bug/view?bug_no=50344
+    ref = 'Unknown'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'EasyTalk'  # 漏洞应用名称

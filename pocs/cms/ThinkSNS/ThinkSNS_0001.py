@@ -15,7 +15,7 @@ class Vuln(ABVuln):
         ThinkSNS开源社交网站APP系统,含微博,论坛,问答,即时聊天,资讯CMS,投票,礼物商城,商城等功能应用。
         ThinkSNS 前台GetShell 漏洞。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=081755
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=081755'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'ThinkSNS'  # 漏洞应用名称

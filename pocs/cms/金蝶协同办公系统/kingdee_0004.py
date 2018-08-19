@@ -10,12 +10,17 @@ class Vuln(ABVuln):
     name = '金蝶协同办公系统 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION  # 漏洞类型
-    disclosure_date = 'Unknown'  # 漏洞公布时间
+    disclosure_date = '2015-08-31'  # 漏洞公布时间
     desc = '''
         金蝶协同办公管理系统助力企业实现从分散到协同，规范业务流程、降低运作成本，提高执行力，并成为领导的工作助手、员工工作和沟通的平台。
         金蝶协同办公系统文件参数过滤不严谨，造成SQL注入漏洞。
+        /kingdee/tree/tree/get_flow.jsp?ids=
+        /kingdee/tree/tree/get_mail.jsp?node=
+        /kingdee/tree/tree/get_flow_class.jsp?file_type=
+        /kingdee/tree/tree/get_nodes.jsp?node=
+        /kingdee/tree/tree/get_part.jsp?ids=
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0137234'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '金蝶协同办公系统'  # 漏洞应用名称
@@ -67,8 +72,8 @@ class Poc(ABPoc):
                 code, head, res, body, _ = hh.http(url)
                 if code == 200 and '81dc9bdb52d04dc20036dbd8313ed055' in res:
                     # security_hole(url)
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                        target=self.target, name=self.vuln.name))
+                    self.output.report(self.vuln, '发现{target}存在{name}漏洞，漏洞地址为{url}'.format(
+                        target=self.target, name=self.vuln.name, url=url))
 
         except Exception as e:
             self.output.info('执行异常{}'.format(e))

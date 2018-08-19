@@ -14,7 +14,7 @@ class Vuln(ABVuln):
         金盘非书资料管理系统是面向图书馆等部门的非书资料管理系统,它集信息加工、资源发布、文件浏览于一体。
         金盘非书资料管理系统 /HotBrowse.aspx?Call=TU SQL注入漏洞。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=062061'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '金盘非书资料管理系统'  # 漏洞应用名称

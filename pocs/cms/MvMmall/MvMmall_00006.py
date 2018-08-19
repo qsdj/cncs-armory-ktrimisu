@@ -15,7 +15,7 @@ class Vuln(ABVuln):
     desc = '''
         MvMmall网店商城系统注入漏洞。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=01732
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=01732'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'MvMmall'  # 漏洞应用名称

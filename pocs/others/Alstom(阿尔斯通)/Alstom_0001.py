@@ -15,7 +15,7 @@ class Vuln(ABVuln):
     desc = '''
         阿尔斯通S8000， guest_s参数可以注入。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0145966'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'Alstom(阿尔斯通)'  # 漏洞应用名称

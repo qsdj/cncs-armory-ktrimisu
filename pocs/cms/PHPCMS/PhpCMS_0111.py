@@ -16,7 +16,7 @@ class Vuln(ABVuln):
         利用（其中之一）：
         包含目录include\fields\areaid 下任一文件，即可执行任意SQL脚本。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=497
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=497'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'PHPCMS'  # 漏洞组件名称

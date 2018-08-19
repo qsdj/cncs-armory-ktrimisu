@@ -14,7 +14,7 @@ class Vuln(ABVuln):
     desc = '''
        亿邮系统敏感信息泄漏（产品版本和授权信息、系统信息、弱口令账号列表等） 
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=061538
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=061538'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'eYou'  # 漏洞应用名称

@@ -15,7 +15,7 @@ class Vuln(ABVuln):
     desc = '''
         北京东方文辉FSMCMS ColumnID参数注入漏洞。
     '''  # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=0144330'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0144330'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'FSMCMS'  # 漏洞应用名称

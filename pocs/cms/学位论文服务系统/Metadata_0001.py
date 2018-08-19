@@ -18,7 +18,7 @@ class Vuln(ABVuln):
         google dork: intitle:"学位论文服务系统"
         /paper/forget2.jsp POST
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0124453'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '学位论文服务系统'  # 漏洞应用名称

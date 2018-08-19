@@ -15,7 +15,7 @@ class Vuln(ABVuln):
         用友致远A6协同系统createMysql.jsp敏感信息泄露，
         该漏洞泄露了数据库用户的账号，密码hash.
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0110538'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'Yonyou(用友)'  # 漏洞应用名称

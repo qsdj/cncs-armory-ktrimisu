@@ -13,7 +13,7 @@ class Vuln(ABVuln):
     desc = '''
         天融信负载均衡系统 /acc/network/getMacAddr.php 参数处理不当，导致命令执行。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0117621'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '天融信负载均衡系统'  # 漏洞应用名称

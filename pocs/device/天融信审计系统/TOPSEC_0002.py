@@ -15,7 +15,7 @@ class Vuln(ABVuln):
         天融信网络卫士安全审计系统(TopAudit)
         无需登录可添加任意管理员 和 未授权下载日志。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0116821'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '天融信审计系统'  # 漏洞应用名称

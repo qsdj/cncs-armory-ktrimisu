@@ -13,7 +13,7 @@ class Vuln(ABVuln):
     desc = '''
         北京东方文辉FSMCMS通用网站集群系统 /fsmcms/cms/web/jspdownload.jsp 配置参数不当，导致SQL注入漏洞。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0116270'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'FSMCMS'  # 漏洞应用名称

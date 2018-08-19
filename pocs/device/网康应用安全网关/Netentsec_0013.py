@@ -17,7 +17,7 @@ class Vuln(ABVuln):
         /admin/detail_tunel.php?type=
         /debug/show_logfile.php?filename=
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=058987'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '网康应用安全网关'  # 漏洞应用名称

@@ -16,7 +16,7 @@ class Vuln(ABVuln):
         杰奇小说连载系统1.7版本任意文件下载漏洞。
         构造 /modules/article/packdown.php?id={小说id值}&cid=./../../../../../configs/define.php%00&type=txt&fname=define.php 即可下载任意文件。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0144213'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'JieqiCMS(杰奇CMS)'  # 漏洞应用名称

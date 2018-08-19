@@ -15,7 +15,7 @@ class Vuln(ABVuln):
         参数过滤不严，导致注入。
         /music_rl/
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=97659'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'STCMS'  # 漏洞应用名称

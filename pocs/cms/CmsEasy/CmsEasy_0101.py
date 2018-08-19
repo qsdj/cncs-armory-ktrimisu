@@ -19,7 +19,7 @@ class Vuln(ABVuln):
     desc = '''
     CmsEasy 5.5 <=20140718 /lib/table/stats.php中$_SERVER并没有转义，造成了注入。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源http://www.wooyun.org/bugs/wooyun-2010-069343
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=069343'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'CmsEasy'  # 漏洞应用名称

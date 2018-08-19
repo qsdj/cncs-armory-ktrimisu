@@ -15,7 +15,7 @@ class Vuln(ABVuln):
         金蝶协同办公管理系统助力企业实现从分散到协同，规范业务流程、降低运作成本，提高执行力，并成为领导的工作助手、员工工作和沟通的平台。
         金蝶协同办公系统文件参数过滤不严谨，造成SQL注入漏洞。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0140344'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '金蝶协同办公系统'  # 漏洞应用名称
@@ -162,8 +162,8 @@ class Poc(ABPoc):
                 false_time = time.time() - t2
                 if code1 == 200 and code2 == 200 and false_time-true_time > 7:
                     # security_hole(arg+payload)
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                        target=self.target, name=self.vuln.name))
+                    self.output.report(self.vuln, '发现{target}存在{name}漏洞，漏洞地址为{url}'.format(
+                        target=self.target, name=self.vuln.name, url=url))
 
         except Exception as e:
             self.output.info('执行异常{}'.format(e))

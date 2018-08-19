@@ -14,7 +14,7 @@ class Vuln(ABVuln):
         企智通系列上网行为管理设备 /report/rp_download.jsp?file=
         任意文件读取利用，敏感信息泄露，文件操作不当。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=145925'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '企智通上网行为管理设备'  # 漏洞应用名称

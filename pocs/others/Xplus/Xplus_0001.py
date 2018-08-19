@@ -16,7 +16,7 @@ class Vuln(ABVuln):
         /www/index.php?mod=admin&con=deliver&act=view&deliId=1
         /www/index.php?mod=admin&con=user&act=view&id=1
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0114482
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0114482'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'Xplus'  # 漏洞应用名称

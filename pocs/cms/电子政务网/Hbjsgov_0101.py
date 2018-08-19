@@ -13,7 +13,7 @@ class Vuln(ABVuln):
     电子政务网是国家机关在政务活动中，全面应用现代信息技术、网络技术以及办公自动化技术等进行办公、管理和为社会提供公共服务的一种全新的管理模式的系统。
     jcms可导致任意文件读取漏洞，攻击者可以通过任意文件读取来读取系统敏感文件信息。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=27066
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=27066'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '电子政务网'  # 漏洞组件名称

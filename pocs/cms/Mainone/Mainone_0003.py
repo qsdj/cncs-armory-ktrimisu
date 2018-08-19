@@ -15,7 +15,7 @@ class Vuln(ABVuln):
         铭万信息技术企事业通用建站系统SQL注入漏洞。
         /MessageBoard/Default.aspx
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=074974
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=074974'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'Mainone'  # 漏洞应用名称

@@ -16,7 +16,7 @@ class Vuln(ABVuln):
         南京师友软件网站集群管理系统通用SQL注入漏洞。
         /webSchool/list.aspx?keyWords=1
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=082296
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=082296'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '南京师友软件'  # 漏洞应用名称

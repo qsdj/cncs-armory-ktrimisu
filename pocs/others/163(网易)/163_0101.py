@@ -12,7 +12,7 @@ class Vuln(ABVuln):
     desc = '''
     网易url跳转漏洞，攻击者可以通过url跳转将应用程序引导到不安全的第三方区域，从而导致的安全问题。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=25126
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=25126'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '163(网易)'  # 漏洞组件名称

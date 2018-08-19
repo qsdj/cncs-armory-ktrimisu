@@ -1,5 +1,5 @@
 {
   "type": "cms",
-  "producer": null,
+  "producer": "志精科技",
   "desc": "joyplus-cms（悦视频）是一套基于PHP和MySQL的开源视频后台管理系统。该系统具有视频资源采集、用户反馈管理、地址自动解析和消息推送管理等功能。 "
 }

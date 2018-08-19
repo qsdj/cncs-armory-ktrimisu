@@ -14,7 +14,7 @@ class Vuln(ABVuln):
         Resin是CAUCHO公司的产品,是一个非常流行的application server,对servlet和JSP提供了良好的支持,性能也比较优良,resin自身采用JAVA语言开发。
         resin任意文件读取漏洞，可以读取铭感文件信息。
     '''  # 漏洞描述
-    ref = 'https://www.secpulse.com/archives/9536.html'  # https://wooyun.shuimugan.com/bug/view?bug_no=175174
+    ref = 'https://www.secpulse.com/archives/9536.html'  # https://bugs.shuimugan.com/bug/view?bug_no=175174
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'Resin'  # 漏洞组件名称

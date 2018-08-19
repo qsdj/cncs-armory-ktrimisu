@@ -16,7 +16,7 @@ class Vuln(ABVuln):
         /NewPortal/download.aspx?fileid=1
         /NewPortal/content_show.aspx?contentid=1
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0118985
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0118985'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'Euse-TMS(益用在线培训系统)'  # 漏洞应用名称

@@ -15,7 +15,7 @@ class Vuln(ABVuln):
         ShopNC商城系统，是天津市网城天创科技有限责任公司开发的一套多店模式的商城系统。
         shopNC B2B版SQL注入
     '''  # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=0124172'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0124172'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'ShopNC'  # 漏洞应用名称

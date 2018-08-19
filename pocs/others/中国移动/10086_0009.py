@@ -13,7 +13,7 @@ class Vuln(ABVuln):
     desc = '''
         江苏移动智能交通云服务门户网站存在文件包含漏洞，攻击者可以通过构造恶意语句来读取系统敏感文件信息。
     '''  # 漏洞描述
-    ref = 'Unknown'  # https://wooyun.shuimugan.com/bug/view?bug_no=123251
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=123251'  #
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '中国移动'  # 漏洞组件名称

@@ -15,7 +15,7 @@ class Vuln(ABVuln):
         华创智能加速路由器，设计缺陷。
         函数未做完整过滤，导致可上传任意文件，进而执行任意命令。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0135123'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '华创路由器'  # 漏洞应用名称

@@ -16,7 +16,7 @@ class Vuln(ABVuln):
         KJ65N 煤矿远程监控安全预警系统存在SQL注入漏洞。
         /yhpc/trbl_acc_modi.asp?pActFlag=
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0131730'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'KJ65N煤矿安全监控系统'  # 漏洞应用名称

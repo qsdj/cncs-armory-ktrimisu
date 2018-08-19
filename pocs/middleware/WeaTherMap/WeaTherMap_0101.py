@@ -16,7 +16,7 @@ class Vuln(ABVuln):
     desc = '''
     WeaTherMap插件的editor.php利用参数mapname上传一句话shell。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源http://zone.wooyun.org/content/28036
+    ref = 'Unknown'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'WeaTherMap'  # 漏洞组件名称

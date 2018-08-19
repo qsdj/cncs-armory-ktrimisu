@@ -15,7 +15,7 @@ class Vuln(ABVuln):
     desc = '''  
         江南科友运维安全审计系统（HAC）在 /system/download_cert.php 页面命令执行漏洞。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=076864'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '江南科友堡垒机'  # 漏洞应用名称

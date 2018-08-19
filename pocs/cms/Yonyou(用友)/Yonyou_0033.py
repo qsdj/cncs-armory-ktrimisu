@@ -17,7 +17,7 @@ class Vuln(ABVuln):
         由于致远A8协同管理系统会对用户登录信息进行日志记录，可是日志文件存放在web目录的logs子目录下，
         并且未作任何权限控制，测试发现大部分在用系统都存在logs目录遍历漏洞，因此导致致远A8协同管理系统用户登录信息泄露。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0157458'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'Yonyou(用友)'  # 漏洞应用名称

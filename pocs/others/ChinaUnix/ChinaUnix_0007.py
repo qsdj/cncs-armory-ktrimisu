@@ -13,7 +13,7 @@ class Vuln(ABVuln):
     desc = '''
         ChinaUnix SQL注入漏洞，攻击者可以通过构造恶意SQL语句泄露出数据库中的重要信息。
     '''  # 漏洞描述
-    ref = 'Unknown'  # https://wooyun.shuimugan.com/bug/view?bug_no=1450
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=1450'  #
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'ChinaUnix'  # 漏洞组件名称

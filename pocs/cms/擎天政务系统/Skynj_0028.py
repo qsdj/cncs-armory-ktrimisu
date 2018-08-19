@@ -18,7 +18,7 @@ class Vuln(ABVuln):
         南京擎天政务系统SQL注入漏洞：
         /webpages/casebase_list_page.aspx
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0100237
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0100237'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '擎天政务系统'  # 漏洞应用名称

@@ -16,7 +16,7 @@ class Vuln(ABVuln):
         天融信WEB应用安全网关任意命令执行。
         /function/ssh/file_ssh.php
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0131155'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '天融信应用安全网关'  # 漏洞应用名称

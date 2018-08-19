@@ -16,7 +16,7 @@ class Vuln(ABVuln):
         浙江皓翰教育科技有限公司通用数字化校园平台存在SQL注入漏洞。
         /IneduPortal/Components/albums/AlbumShow.aspx?id=1
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0128557'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '皓翰数字化校园平台'  # 漏洞应用名称

@@ -15,7 +15,7 @@ class Vuln(ABVuln):
         用友是国内著名的内容管理系统之一，包括协同管理系统、用友NC、用友U8等
         用友FE协作办公系统 DBA权限注入。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0112747'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'Yonyou(用友)'  # 漏洞应用名称

@@ -13,7 +13,7 @@ class Vuln(ABVuln):
     fluxbb 是个快速、轻量级基于PHP开发的论坛系统。页面符合XHTML与CSS标准。支持MySQL、PostgreSQL、SQLite等数据库。
     Fluxbb 存在PHP本地文件包含漏洞，攻击者可以通过文件包含来读取系统敏感文件信息。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=38312
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=38312'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'Fluxbb'  # 漏洞组件名称

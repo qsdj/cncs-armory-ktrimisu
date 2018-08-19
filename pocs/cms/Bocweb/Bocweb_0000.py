@@ -15,7 +15,7 @@ class Vuln(ABVuln):
     desc = '''
         Bocweb（博采网络）/nobom.php 敏感信息泄露。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0105069
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0105069'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'Bocweb'  # 漏洞应用名称

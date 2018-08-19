@@ -15,7 +15,7 @@ class Vuln(ABVuln):
         谷歌搜索：
         http://www.google.co.in/search?q=inurl:Course_Default.aspx%3Ftypeid%3D&newwindow=1&filter=0&biw=1366&bih=642
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=053822、061004'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '天柏在线培训系统'  # 漏洞应用名称
@@ -68,8 +68,8 @@ class Poc(ABPoc):
                 code, head, res, errcode, _ = hh.http(url)
                 if code == 500 and 'master' in res:
                     #security_hole(url+'   :found sql Injection')
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                        target=self.target, name=self.vuln.name))
+                    self.output.report(self.vuln, '发现{target}存在{name}漏洞，漏洞地址为{url}'.format(
+                        target=self.target, name=self.vuln.name, url=url))
 
         except Exception as e:
             self.output.info('执行异常{}'.format(e))

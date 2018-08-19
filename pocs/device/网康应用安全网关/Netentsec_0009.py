@@ -14,7 +14,7 @@ class Vuln(ABVuln):
     desc = '''
         网康科技应用网关NS—ASG 6.3通用性sql注入
     '''  # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=073991'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=073991'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '网康应用安全网关'  # 漏洞应用名称

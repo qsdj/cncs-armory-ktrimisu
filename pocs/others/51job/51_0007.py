@@ -13,7 +13,7 @@ class Vuln(ABVuln):
     desc = '''
         前程无忧网WEB平台存在sql注入漏洞，攻击者可以通过构造恶意SQL语句泄露出数据库中的重要信息。
     '''  # 漏洞描述
-    ref = 'Unknown'  # https://wooyun.shuimugan.com/bug/view?bug_no=205
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=205'  #
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '51job'  # 漏洞组件名称

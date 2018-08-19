@@ -14,7 +14,7 @@ class Vuln(ABVuln):
     desc = '''
         五车图书管系统越权添加管理员
     '''  # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=0128686'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0128686'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '5Clib(五车图书管理系统)'  # 漏洞应用名称

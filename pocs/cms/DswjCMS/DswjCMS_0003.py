@@ -12,10 +12,9 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2016-01-11'  # 漏洞公布时间
     desc = '''
-        DswjCMS p2p网贷系统前台sql注入
-        
+        DswjCMS p2p网贷系统前台sql注入。   
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0141364
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0141364'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'DswjCMS'  # 漏洞应用名称

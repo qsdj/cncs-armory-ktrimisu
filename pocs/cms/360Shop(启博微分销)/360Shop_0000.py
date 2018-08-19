@@ -14,7 +14,7 @@ class Vuln(ABVuln):
     desc = '''
         启博淘店通标准版 /?mod=goods&do=../../../../../../../../../etc/passwd%00.jpg&class_id=25 任意文件遍历漏洞。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0148274
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0148274'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '360Shop(启博微分销)'  # 漏洞应用名称

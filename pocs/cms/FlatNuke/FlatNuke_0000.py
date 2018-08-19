@@ -14,7 +14,7 @@ class Vuln(ABVuln):
     desc = '''
         FlatNuke 2.5.7 Index.php RFI 远程文件包含。
     '''  # 漏洞描述
-    ref = 'Unknown'
+    ref = 'Unknown'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'FlatNuke'  # 漏洞组件名称

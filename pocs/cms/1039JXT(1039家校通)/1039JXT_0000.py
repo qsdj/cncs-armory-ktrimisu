@@ -14,7 +14,7 @@ class Vuln(ABVuln):
     desc = '''
         1039家校通 /headmaster/Index.aspx 未授权访问。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0132856
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0132856'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '1039JXT(1039家校通)'  # 漏洞应用名称

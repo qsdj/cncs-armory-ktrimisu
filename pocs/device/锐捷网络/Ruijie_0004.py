@@ -17,7 +17,7 @@ class Vuln(ABVuln):
         锐捷网络2015年新品RG-EG1000系列产品存在授权绕过非法访问敏感信息缺陷。
         config配置文件(包括管理密码获取设备特权模式)
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=082472'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '锐捷网络'  # 漏洞应用名称

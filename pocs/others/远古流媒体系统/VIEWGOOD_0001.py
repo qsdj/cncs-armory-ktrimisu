@@ -14,7 +14,7 @@ class Vuln(ABVuln):
     desc = '''
         远古流媒体系统 /viewgood/webmedia/portal/query_user_password_qustion.aspx?user_name=1 SQL注入漏洞。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=109703
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=109703'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '远古流媒体系统'  # 漏洞应用名称

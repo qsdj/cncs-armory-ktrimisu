@@ -13,7 +13,7 @@ class Vuln(ABVuln):
     BugFree是借鉴微软的研发流程和Bug管理理念,使用PHP+MySQL独立写出的一个Bug管理 系统。简单实用、免费并且开放源代码(遵循GNU GPL)。
     BugFree文件包含漏洞，攻击者可以通过文件包含来读取系统敏感文件信息。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=35626
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=35626'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'BugFree'  # 漏洞组件名称

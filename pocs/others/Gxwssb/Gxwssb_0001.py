@@ -14,7 +14,7 @@ class Vuln(ABVuln):
     desc = '''
         天津神州助平台 /gxwssb/fileDownloadmodel?name=../WEB-INF/web.xml 通用型任意下载漏洞。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=087767
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=087767'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'Gxwssb'  # 漏洞应用名称

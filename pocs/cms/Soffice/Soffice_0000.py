@@ -19,7 +19,7 @@ class Vuln(ABVuln):
         Soffice，赛飞软件Soffice小组主要作品，国内重量级全方位协同办公平台和中小企业云优质基础产品，覆盖30人-3000人的企业级用户，提供数字办公全面解决方案，是目前功能最完整技术最先进的协同办公平台之一。
         赛飞软件Soffice全方位协同办公平台 /advicemanage/sendsuggest.aspx 页面参数过滤不严谨，导致SQL注入漏洞。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0146921'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'Soffice'  # 漏洞应用名称

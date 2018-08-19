@@ -16,7 +16,7 @@ class Vuln(ABVuln):
         台湾某电力监控系统通用型注入漏洞。
         /DeMandTest.aspx?B=0&Month=1&PLCNr=5*&MeterID=1
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=102603'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '电力监控系统'  # 漏洞应用名称
@@ -50,7 +50,7 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
 
-            # https://wooyun.shuimugan.com/bug/view?bug_no=102603
+            # https://bugs.shuimugan.com/bug/view?bug_no=102603
             hh = hackhttp.hackhttp()
             arg = self.target
             start_time1 = time.time()

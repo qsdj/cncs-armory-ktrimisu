@@ -13,7 +13,7 @@ class Vuln(ABVuln):
     desc = '''
         M1905文件文件包含漏洞，攻击者可以通过构造恶意语句来读取系统敏感文件信息。
     '''  # 漏洞描述
-    ref = 'Unknown'  # https://wooyun.shuimugan.com/bug/view?bug_no=122011
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=122011'  #
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'M1905'  # 漏洞组件名称

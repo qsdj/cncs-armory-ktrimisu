@@ -15,7 +15,7 @@ class Vuln(ABVuln):
     desc = '''
     ElasticSearch在安装了river之后可以同步多种数据库数据（包括关系型的mysql、mongodb等）。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源http://zone.wooyun.org/content/20297
+    ref = 'Unknown'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'ElasticSearch'  # 漏洞应用名称

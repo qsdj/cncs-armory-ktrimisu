@@ -14,7 +14,7 @@ class Vuln(ABVuln):
     desc = '''
         时光动态网站平台(Cicro 3e WS) 任意下载
     '''  # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=035064'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=035064'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'Cicro'  # 漏洞应用名称

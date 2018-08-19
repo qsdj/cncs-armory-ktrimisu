@@ -16,7 +16,7 @@ class Vuln(ABVuln):
         ShopNC SQL注入漏洞。
         /index.php?act=payment&op=notify
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0125517'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'ShopNC'  # 漏洞应用名称

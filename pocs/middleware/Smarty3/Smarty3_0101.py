@@ -16,7 +16,7 @@ class Vuln(ABVuln):
     因此，利用以上两个特性相结合，如果用户可以控制模板文件名，即可执行任意php表达式。
     同样的，利用smarty3的resource特性，还可以直接利用“file:”协议直接远程包含任意文件。因为底层是使用fopen函数实现的文件打开，而默认的php配置中，虽然禁止了remote_file_include，但是对于remote_file_open却是允许的。利用这一个特性，让早已消失已久的RFI经典漏洞类型重见天日了。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=2648
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=2648'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'Smarty3'  # 漏洞组件名称

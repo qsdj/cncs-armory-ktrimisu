@@ -61,7 +61,7 @@ class Poc(ABPoc):
             false_time = time.time() - t2
 
             if code1 == 200 and code2 == 200 and false_time-true_time > 4.5:
-                security_hole(url1)
+                #security_hole(url1)
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 

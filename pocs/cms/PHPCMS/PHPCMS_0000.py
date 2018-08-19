@@ -22,7 +22,7 @@ class Vuln(ABVuln):
         vote_tag.class.php 文件siteid变量通过全局来接受，那么在php.ini中的register_globals=On的情况下，
         siteid就变为可控的变量，之后再拼接成$sql变量时也没有进行任何过滤，带入数据库查询就直接导致了SQL注入漏洞。
     '''  # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=051077'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=051077'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'PHPCMS'  # 漏洞应用名称

@@ -14,7 +14,7 @@ class Vuln(ABVuln):
     desc = '''
         MetInfo V5.3.1 news.php 页面参数过滤不严，导致sql注入漏洞。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0119166'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'MetInfo'  # 漏洞应用名称

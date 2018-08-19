@@ -20,7 +20,7 @@ class Vuln(ABVuln):
         /Gmis/Byyxwgl/xls_lwdbxxedit.aspx?id=200902100005
         /Gmis/dcpg/dcpgedit.aspx?id=1
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=098771
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=098771'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'SouthSoft'  # 漏洞应用名称

@@ -16,7 +16,7 @@ class Vuln(ABVuln):
         /repoort/smartuser.aspx?di=1
         /Plan/plancommentlist.aspx?type=3&targetid=1
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0135012
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0135012'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'Euse-TMS(益用在线培训系统)'  # 漏洞应用名称

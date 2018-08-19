@@ -15,7 +15,7 @@ class Vuln(ABVuln):
         科迈RAS 为企业提供了一种从中心点集中管理应用程序远程接入方法。
         科迈RAS远程快速接入方案后台 /server/CmxManager.php 登陆绕过。
     '''  # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=0123807'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0123807'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '科迈RAS系统'  # 漏洞应用名称

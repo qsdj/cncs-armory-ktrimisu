@@ -15,7 +15,7 @@ class Vuln(ABVuln):
         Hsort报刊管理系统getshell.
         /Admin/fileManage.aspx?action=UPLOAD&value1=~/
     '''  # 漏洞描述
-    ref = 'http://0day5.com/archives/3756/'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0141695
+    ref = 'http://0day5.com/archives/3756/'  # 漏洞来源https://bugs.shuimugan.com/bug/view?bug_no=0141695
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'Hsort'  # 漏洞应用名称

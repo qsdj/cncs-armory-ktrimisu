@@ -20,7 +20,7 @@ class Vuln(ABVuln):
     desc = '''
         Discuz! 中的post.php中handlekey变量传入global.func.php后过滤不严,导致反射XSS漏洞的产生
     '''  # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=065930'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=065930'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'Discuz!'  # 漏洞应用名称

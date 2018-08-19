@@ -22,7 +22,7 @@ class Vuln(ABVuln):
     PHPDisk 2.5 /phpdisk_del_process.php 代码执行。
     利用环境比较鸡肋，代码执行需要关闭short_open_tag。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源http://wooyun.org/bugs/wooyun-2014-057665
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=057665'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'PHPDisk'  # 漏洞应用名称

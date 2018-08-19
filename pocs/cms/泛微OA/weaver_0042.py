@@ -17,7 +17,7 @@ class Vuln(ABVuln):
         泛微 e-office 前台sql注入导致的 getshell.
         inc/group_user_list/group_xml.php
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0128007'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '泛微OA'  # 漏洞应用名称

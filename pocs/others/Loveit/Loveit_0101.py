@@ -12,7 +12,7 @@ class Vuln(ABVuln):
     desc = '''
     Loveit推广分站任意文件下载包含漏洞，攻击者可以通过本地文件包含来读取系统敏感文件信息。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=42899
+    ref = 'Unknown'  # 漏洞来源https://bugs.shuimugan.com/bug/view?bug_no=42899
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'Loveit'  # 漏洞组件名称

@@ -16,7 +16,7 @@ class Vuln(ABVuln):
     desc = '''
         CmsTop /domain.com/app/?, /app.domain.com/? 存在远程代码执行漏洞。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=054693'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'CmsTop'  # 漏洞应用名称

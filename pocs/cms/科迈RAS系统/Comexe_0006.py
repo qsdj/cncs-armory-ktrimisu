@@ -15,7 +15,7 @@ class Vuln(ABVuln):
         科迈RAS 为企业提供了一种从中心点集中管理应用程序远程接入方法。
         科迈RAS标准版客户端页面cmxpagedquery.php注入。 
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0117921
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0117921'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '科迈RAS系统'  # 漏洞应用名称

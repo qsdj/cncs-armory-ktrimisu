@@ -18,7 +18,7 @@ class Vuln(ABVuln):
         type="file" name="test"
     可以无需登录直接上传任意文件。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源http://www.wooyun.org/bugs/wooyun-2014-076547
+    ref = 'http://www.wooyun.org/bugs/wooyun-2014-076547'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '泛微OA'  # 漏洞应用名称

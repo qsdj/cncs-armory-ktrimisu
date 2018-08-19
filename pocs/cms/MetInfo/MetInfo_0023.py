@@ -49,7 +49,7 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
 
-            # https://wooyun.shuimugan.com/bug/view?bug_no=45763
+            # https://bugs.shuimugan.com/bug/view?bug_no=45763
             # 生成随机注册信息
             randstr = 'admin_' + str(random.randint(1, 10000))
             payload = '/member/save.php?action=add'

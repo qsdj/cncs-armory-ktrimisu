@@ -24,7 +24,7 @@ class Vuln(ABVuln):
         <input name="file" value="浏览" id="file" type="file">
         可上传文件,未限制上传文件类型,导致任意文件上传漏洞。 
     '''  # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=075840'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=075840'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '金龙一卡通系统'  # 漏洞应用名称

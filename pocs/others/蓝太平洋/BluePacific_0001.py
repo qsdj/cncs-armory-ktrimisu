@@ -16,7 +16,7 @@ class Vuln(ABVuln):
         蓝太平洋网站决策支持系统WebEngine存在利用短文件漏洞下载明文系统配置文件(可泄漏管理员明文密码等系统敏感配置信息)
         部分部署安装在 win+apache 环境下存在缺陷通过短文件漏洞实现利用。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0132719'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '蓝太平洋'  # 漏洞应用名称

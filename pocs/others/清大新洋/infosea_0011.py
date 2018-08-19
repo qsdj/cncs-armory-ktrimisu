@@ -15,7 +15,7 @@ class Vuln(ABVuln):
         北京清大新洋通用图书馆集成系统GLIS9.0，存在注入漏洞： 
         opac/xskp.jsp
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0132188'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '清大新洋'  # 漏洞应用名称

@@ -16,9 +16,9 @@ class Vuln(ABVuln):
     desc = '''
         擎天政务系统是由南京擎天科技有限公司打造的一款集电子政务、税务信息化、信息集成软件、温室气体排放管理及系统集成业务等五大业务体系的软件。
         南京擎天政务系统SQL注入漏洞：
-        https://wooyun.shuimugan.com/bug/view?bug_no=075253
+        /index_page/geren_list_page.aspx?server=1
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=075253'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '擎天政务系统'  # 漏洞应用名称

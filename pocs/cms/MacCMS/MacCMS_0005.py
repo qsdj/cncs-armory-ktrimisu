@@ -15,7 +15,7 @@ class Vuln(ABVuln):
     desc = '''
     MacCMS V8版本中/inc/ajax.php文件tab参数未经过过滤带入SQL语句，导致SQL注入漏洞发生。
     '''  # 漏洞描述
-    ref = 'http://wooyun.org/bugs/wooyun-2014-063677'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=063677'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     product = 'MacCMS'  # 漏洞应用名称
     product_version = 'v8'  # 漏洞应用版本

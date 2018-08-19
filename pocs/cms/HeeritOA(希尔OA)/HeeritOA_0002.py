@@ -13,7 +13,7 @@ class Vuln(ABVuln):
     desc = '''
         希尔协同办公系统高危文件包含漏洞，攻击者可以通过构造恶意语句来读取系统敏感文件信息。
     '''  # 漏洞描述
-    ref = 'Unknown'  # https://wooyun.shuimugan.com/bug/view?bug_no=140020
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=140020'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'HeeritOA(希尔OA)'  # 漏洞组件名称

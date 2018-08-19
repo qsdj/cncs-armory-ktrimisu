@@ -16,7 +16,7 @@ class Vuln(ABVuln):
     desc = '''
         Mallbuilder商城系统 ?m=product&s=list&key=, key参数木有过滤，报错注入。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=080751'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'Mallbuilder'  # 漏洞应用名称
@@ -61,8 +61,8 @@ class Poc(ABPoc):
                 req = requests.get(verify_url)
 
                 if req.status_code == 200 and "4beed3b9c4a886067de0e3a094246f7" in req.text:
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                        target=self.target, name=self.vuln.name))
+                    self.output.report(self.vuln, '发现{target}存在{name}漏洞，漏洞地址为{url}'.format(
+                        target=self.target, name=self.vuln.name, url=verify_url))
 
         except Exception as e:
             self.output.info('执行异常{}'.format(e))

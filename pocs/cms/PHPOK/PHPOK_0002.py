@@ -21,7 +21,7 @@ class Vuln(ABVuln):
         PHPOK是一套允许用户高度自由配置的企业站程序，基于LGPL协议开源授权。
         PHPOK企业站缺陷文件：framework/phpok_call.php line：108
     '''  # 漏洞描述
-    ref = 'http://0day5.com/archives/1860/'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=64360
+    ref = 'http://0day5.com/archives/1860/'  # 漏洞来源https://bugs.shuimugan.com/bug/view?bug_no=64360
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'PHPOK'  # 漏洞应用名称

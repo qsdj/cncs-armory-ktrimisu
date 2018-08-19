@@ -65,8 +65,8 @@ class Poc(ABPoc):
                 except:
                     continue
                 if 'ShopEx' in content and 'MySQL' in content:
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                        target=self.target, name=self.vuln.name))
+                    self.output.report(self.vuln, '发现{target}存在{name}漏洞，漏洞地址为{url}'.format(
+                        target=self.target, name=self.vuln.name, url=verify_url))
                     file_path.append(verify_url)
 
         except Exception as e:

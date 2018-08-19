@@ -19,7 +19,7 @@ class Vuln(ABVuln):
         /WorkFlow/wf_work_form_save.aspx?office_missive_id=
         /WorkFlow/wf_get_fields_approve.aspx?template_id=
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0104430
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0104430'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'RuvarOA(璐华OA)'  # 漏洞应用名称

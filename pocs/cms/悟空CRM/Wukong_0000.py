@@ -14,7 +14,7 @@ class Vuln(ABVuln):
         悟空CRM系统是一款开源免费的通用企业客户关系管理平台软件,采用先进的LAMP架构,具有良好的开放性、可扩展性、安全性和透明性。
         悟空CRM系统后门导致未授权访问公司内部文件漏洞，攻击者可以通过构造恶意语句来读取系统敏感文件信息。
     '''  # 漏洞描述
-    ref = 'Unknown'  # https://wooyun.shuimugan.com/bug/view?bug_no=147647
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=147647'  #
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '悟空CRM'  # 漏洞组件名称

@@ -14,7 +14,7 @@ class Vuln(ABVuln):
     desc = '''
         铭万B2B门户建站公司存在SQL注入通用漏洞，数据库账户权限过高 字符类型注射。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0104430
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0104430'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'Mainone'  # 漏洞应用名称

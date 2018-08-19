@@ -18,7 +18,7 @@ class Vuln(ABVuln):
         漏洞文件，
         /srun3/srun/services/modules/login/controller/login_controller.php
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=067666'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '深澜计费引擎'  # 漏洞应用名称

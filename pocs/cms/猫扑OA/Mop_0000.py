@@ -14,7 +14,7 @@ class Vuln(ABVuln):
         猫扑OA采用行业领先的云计算技术，基于传统互联网和移动互联网，创新云服务+云终端的应用模式， 为企业用户版提供一账号管理聚合应用服务。
         猫扑跳转漏洞，攻击者可以通过构造恶意链接来跳转到恶意网站对用户进行钓鱼攻击。
     '''  # 漏洞描述
-    ref = 'Unknown'  # https://wooyun.shuimugan.com/bug/view?bug_no=771
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=771'  #
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '猫扑OA'  # 漏洞组件名称

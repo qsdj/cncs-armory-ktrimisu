@@ -13,7 +13,7 @@ class Vuln(ABVuln):
     desc = '''
         天融信WEB应用安全网关 /function/content/tamper/file_tamper_show.php 页面任意文件读取。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0130560'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '天融信应用安全网关'  # 漏洞应用名称

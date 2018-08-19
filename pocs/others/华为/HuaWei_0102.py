@@ -12,7 +12,7 @@ class Vuln(ABVuln):
     desc = '''
     华为系统文件包含漏洞，攻击者可以通过文件包含读取系统敏感文件信息。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=12031
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=12031'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '华为'  # 漏洞组件名称

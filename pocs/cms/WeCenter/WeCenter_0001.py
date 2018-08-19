@@ -15,7 +15,7 @@ class Vuln(ABVuln):
         Wecenter(微中心系统软件)是一款由深圳市微客互动有限公司开发的具有完全自主知识产权的开源软件。
         WeCenter SQL注射（ROOT SHELL）.
     '''  # 漏洞描述
-    ref = 'http://0day5.com/archives/3760/'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0106369
+    ref = 'http://0day5.com/archives/3760/'  # 漏洞来源https://bugs.shuimugan.com/bug/view?bug_no=0106369
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'WeCenter'  # 漏洞应用名称

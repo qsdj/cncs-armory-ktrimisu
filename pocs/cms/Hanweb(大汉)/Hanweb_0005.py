@@ -18,7 +18,7 @@ class Vuln(ABVuln):
         /interface/ldap/receive.jsp 组件可以被覆盖。
         我们可以使用大汉的加解密库进行任意加解密，覆盖原有密码。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0143528'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'Hanweb(大汉)'  # 漏洞应用名称

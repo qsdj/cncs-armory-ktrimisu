@@ -18,7 +18,7 @@ class Vuln(ABVuln):
         '/Inedu3In1/Components/news/FileDown.aspx?OldName=web.config&NewName=../../../web.config',
         '/IneduBlog/Components/news/FileDown.aspx?OldName=web.config&NewName=../../../web.config'
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0103034
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0103034'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '皓翰数字化校园平台'  # 漏洞应用名称

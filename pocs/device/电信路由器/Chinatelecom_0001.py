@@ -15,7 +15,7 @@ class Vuln(ABVuln):
     desc = '''
         中国电信路由器默认配置不当导致用户ADSL账号密码及物理位置泄露。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=049406'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '电信路由器'  # 漏洞应用名称

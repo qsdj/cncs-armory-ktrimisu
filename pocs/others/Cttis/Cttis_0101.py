@@ -16,7 +16,7 @@ class Vuln(ABVuln):
     ASP壳http://www.cttjs.com/admin/acu_test_5Itlt.asp; JPG。
     扫描器会尝试删除这个文件，但它可能没有足够的权限这样做。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=3023
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=3023'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'Cttis'  # 漏洞组件名称

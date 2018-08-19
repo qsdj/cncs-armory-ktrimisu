@@ -15,7 +15,7 @@ class Vuln(ABVuln):
         用友人力资源管理软件全版本XXE漏洞：
         /hrss/dorado/smartweb2.RPC.d?__rpc=true
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=117316'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'Yonyou(用友)'  # 漏洞应用名称

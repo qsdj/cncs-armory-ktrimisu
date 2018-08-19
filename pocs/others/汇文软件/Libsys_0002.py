@@ -14,7 +14,7 @@ class Vuln(ABVuln):
         汇文软件（Libsys）任意文件包含漏洞。
         /zplug/ajax_asyn_link.php?url=
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=067400'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '汇文软件'  # 漏洞应用名称

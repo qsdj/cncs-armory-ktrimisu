@@ -12,7 +12,7 @@ class Vuln(ABVuln):
     desc = '''
     奥鹏远程教育中心绕过验证看任意学生信息漏洞，攻击者可以通过绕过验证来读取系统敏感文件信息。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=11365
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=11365'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'Open(奥鹏)'  # 漏洞组件名称

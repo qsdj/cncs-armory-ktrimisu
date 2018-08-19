@@ -16,7 +16,7 @@ class Vuln(ABVuln):
         票友系统一处通用SQL注入漏洞：
         /flight/view_xz.aspx?a=1+and+1=
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0128323
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0128323'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'PiaoYou(票友软件)'  # 漏洞应用名称

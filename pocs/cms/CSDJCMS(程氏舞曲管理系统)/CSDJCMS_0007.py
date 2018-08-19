@@ -14,7 +14,7 @@ class Vuln(ABVuln):
     desc = '''
         CSDJCMS 程式舞曲 /index.php/open/bang SQL注入漏洞。
     '''  # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=060122'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=060122'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'CSDJCMS(程氏舞曲管理系统)'  # 漏洞应用名称

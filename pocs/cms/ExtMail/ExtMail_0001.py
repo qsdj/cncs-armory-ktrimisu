@@ -14,7 +14,7 @@ class Vuln(ABVuln):
     desc = '''
         苏州市数字证书认证中心邮件系统前台sql注入漏洞 可获取任意用户密码。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=095220'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'ExtMail'  # 漏洞应用名称

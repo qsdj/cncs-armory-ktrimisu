@@ -13,7 +13,7 @@ class Vuln(ABVuln):
     desc = '''
         中国电信旗下门户备份下载，漏洞打包可威胁内网。
     '''  # 漏洞描述
-    ref = 'Unknown'  # https://wooyun.shuimugan.com/bug/view?bug_no=160931
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=160931'  #
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '中国电信'  # 漏洞组件名称

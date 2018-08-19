@@ -16,7 +16,7 @@ class Vuln(ABVuln):
         强智教务系统通杀Getshell.
         /jiaowu/jwgl/jcxx/savetofile.asp
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=074367
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=074367'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '强智教务系统'  # 漏洞应用名称

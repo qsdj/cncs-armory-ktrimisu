@@ -16,7 +16,7 @@ class Vuln(ABVuln):
     desc = '''
     Cross site scripting has benn found on /admincp.php file.
     '''  # 漏洞描述
-    ref = 'http://www.wooyun.org/bugs/wooyun-2014-084097'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=084097'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'Discuz!'  # 漏洞应用名称

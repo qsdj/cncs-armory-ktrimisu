@@ -18,7 +18,7 @@ class Vuln(ABVuln):
         问题参数：client_account
         说明：该系统，凡是出现参数 client_account 的链接，都存在SQL注入漏洞。无论 GET or POST 类型。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0129390'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'DOSSM(广州问途网络营销系统)'  # 漏洞应用名称

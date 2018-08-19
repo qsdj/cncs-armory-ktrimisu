@@ -13,7 +13,7 @@ class Vuln(ABVuln):
     desc = '''
         APPCMS 前台sql注射漏洞可爆后台密码。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=045643'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'APPCMS'  # 漏洞应用名称

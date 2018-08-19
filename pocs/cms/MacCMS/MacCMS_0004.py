@@ -14,7 +14,7 @@ class Vuln(ABVuln):
     desc = '''
         苹果CMS系统 /inc/ajax.php 由于过滤不严格，导致sql注入。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=063677
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=063677'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'MacCMS'  # 漏洞应用名称

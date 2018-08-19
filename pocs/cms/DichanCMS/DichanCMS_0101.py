@@ -13,7 +13,7 @@ class Vuln(ABVuln):
     新浪地产CMS存设计缺陷和多处sql注入，
     设计缺陷出现在登录时图片验证码使用一次未失效，可撞库和暴破。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=196430
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=196430'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'DichanCMS'  # 漏洞组件名称

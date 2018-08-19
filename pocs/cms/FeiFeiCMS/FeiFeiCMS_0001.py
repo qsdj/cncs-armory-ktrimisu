@@ -14,7 +14,7 @@ class Vuln(ABVuln):
     desc = '''
         飞飞影视最新版 /index.php?s=hits-show&sid=md5(1)%23&type=md5(1) SQL注入漏洞。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=060233
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=060233'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'FeiFeiCMS'  # 漏洞应用名称

@@ -14,7 +14,7 @@ class Vuln(ABVuln):
         清华紫光硬件防火墙 /cgi-bin/UserManager
         清华紫光硬件防火墙UF3504 3.0版型号命令执行漏洞。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0115756'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '清华紫光硬件防火墙'  # 漏洞应用名称

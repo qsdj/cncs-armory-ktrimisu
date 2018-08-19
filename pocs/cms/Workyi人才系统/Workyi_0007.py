@@ -14,7 +14,7 @@ class Vuln(ABVuln):
             基于Asp.Net+MsSQL的开源高端人才系统,人才招聘程序.为创业者带来低投入高回报的人才系统。
         Workyi人才系统 /hrtool/Default.aspx 页面参数过滤不严谨，导致SQL注入漏洞。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0116453'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'Workyi人才系统'  # 漏洞应用名称

@@ -18,7 +18,7 @@ class Vuln(ABVuln):
         直接删掉fsm_login的值更换host即可绕过权限验证，
         修改host即可实现攻击不同目标，将admin用户密码修改为admin
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=099869'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '百为流控路由'  # 漏洞应用名称

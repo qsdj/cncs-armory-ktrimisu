@@ -15,7 +15,7 @@ class Vuln(ABVuln):
         东方电子SCADA通用系统文件包含：
         /modules/tmr/server/switchControlPanel.php?func=../../../../../../../../../../../../windows/system.ini%00.htm
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0131719
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0131719'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '东方电子SCADA'  # 漏洞应用名称

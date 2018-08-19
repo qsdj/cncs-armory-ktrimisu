@@ -13,7 +13,7 @@ class Vuln(ABVuln):
     desc = '''
         科信邮件系统 任意文件下载漏洞导致敏感信息泄漏，可致系统沦陷。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=66892'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'KXmail'  # 漏洞应用名称

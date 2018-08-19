@@ -14,7 +14,7 @@ class Vuln(ABVuln):
         “全网行为管理TPN-2G安全网关产品”和“SJW74系列安全网关” 存在一处敏感信息泄漏。
         http://url/lan/admin_getLisence 未授权访问导致敏感信息泄漏。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0131408'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '安达通安全网关'  # 漏洞应用名称

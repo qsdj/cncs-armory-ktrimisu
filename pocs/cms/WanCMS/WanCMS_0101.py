@@ -14,7 +14,7 @@ class Vuln(ABVuln):
     WanCMS sql盲注
     /app/Lib/Action/AccountsAction.class.php。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=143240
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=143240'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'WanCMS'  # 漏洞组件名称

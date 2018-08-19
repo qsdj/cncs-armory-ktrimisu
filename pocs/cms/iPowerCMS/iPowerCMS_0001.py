@@ -14,7 +14,7 @@ class Vuln(ABVuln):
     desc = '''
         鼎维iPowerCMS建站CMS存在两处高危漏洞：建站弱口令、万能密码。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=110152'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'iPowerCMS'  # 漏洞应用名称

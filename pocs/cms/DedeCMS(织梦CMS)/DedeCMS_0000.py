@@ -21,7 +21,7 @@ class Vuln(ABVuln):
     desc = '''
         DedeCMS /plus/download.php?open= 任意地址跳转。
     '''  # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=3638'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=3638'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'DedeCMS(织梦CMS)'  # 漏洞应用名称

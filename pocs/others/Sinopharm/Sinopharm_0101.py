@@ -12,7 +12,7 @@ class Vuln(ABVuln):
     desc = '''
     国药系统Oracle注入漏洞，攻击者可以通过构造恶意语句来读取系统敏感文件信息。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=205908
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=205908'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'Sinopharm'  # 漏洞组件名称

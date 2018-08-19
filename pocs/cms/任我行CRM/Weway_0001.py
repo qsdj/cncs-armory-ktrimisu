@@ -15,7 +15,7 @@ class Vuln(ABVuln):
         任我行CRM软件，是构架在互联网上，以客户为中心，以销售团队或营销系统管理为核心，以规范企业系统性和流程性、提升执行力为诉求的，涉及企业全方位资源管理的“企业运营管理平台”(Enterprise Operation Management Platform)。
         任我行CRM /Common/PictureView1/?picurl=/web.config 任意文件下载。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0134737
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0134737'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '任我行CRM'  # 漏洞应用名称

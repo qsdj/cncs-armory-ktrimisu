@@ -16,7 +16,7 @@ class Vuln(ABVuln):
         EasyTalk 在appaction.class.php 中
         $appname 无过滤 且直接带入查询，导致SQL注入漏洞。
     '''  # 漏洞描述
-    ref = 'Unknown'  # https://wooyun.shuimugan.com/bug/view?bug_no=50344
+    ref = 'Unknown'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'EasyTalk'  # 漏洞应用名称

@@ -14,7 +14,7 @@ class Vuln(ABVuln):
         埃森诺网络服务质量检测系统 Struts2 命令执行。
         /usercfg/user_loginUI.do
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=113148'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'ACSNO(埃森诺)'  # 漏洞应用名称
@@ -48,7 +48,6 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
 
-            # https://wooyun.shuimugan.com/bug/view?bug_no=113148
             hh = hackhttp.hackhttp()
             arg = self.target
             param_data = '/usercfg/user_loginUI.do'

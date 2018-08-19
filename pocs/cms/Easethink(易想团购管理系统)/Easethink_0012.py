@@ -13,7 +13,7 @@ class Vuln(ABVuln):
     desc = '''
         Easethink(易想团购管理系统)/index.php 存在cookies注入漏洞。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=072094'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'Easethink(易想团购管理系统)'  # 漏洞应用名称

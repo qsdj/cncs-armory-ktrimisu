@@ -15,7 +15,7 @@ class Vuln(ABVuln):
         用它来对用户提交的加密字符串进行解密，进入程序流程，如果我们可以控制了phpcms_auth函数的解密，
         我们就可以通过注射我们的恶意代码，进行攻击。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=497
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=497'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'PHPCMS'  # 漏洞组件名称

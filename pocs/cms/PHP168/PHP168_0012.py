@@ -16,7 +16,7 @@ class Vuln(ABVuln):
         PHP168整站是PHP的建站系统，代码全部开源，是国内知名的开源软件提供商；提供核心+模块+插件的模式；任何应用均可在线体验。
         PHP168在某些函数里运用了eval函数,但是某数组没有初试化,导致可以提交任意代码执行。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0528'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'PHP168'  # 漏洞应用名称

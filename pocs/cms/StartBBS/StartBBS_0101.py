@@ -23,7 +23,7 @@ class Vuln(ABVuln):
 
     输出了用户的邮箱，但是给注释掉了，所以用户页面看不到。。查看源代码即可。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源 http://www.wooyun.org/bugs/wooyun-2014-051696
+    ref = 'http://www.wooyun.org/bugs/wooyun-2014-051696'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'StartBBS'  # 漏洞应用名称

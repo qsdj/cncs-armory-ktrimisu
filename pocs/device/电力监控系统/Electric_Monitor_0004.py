@@ -19,7 +19,7 @@ class Vuln(ABVuln):
         http://foorbar/ForgotPassword/MailPassword.aspx?System= Parameter: Account (POST)
         type: stacked queries
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0102622'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '电力监控系统'  # 漏洞应用名称

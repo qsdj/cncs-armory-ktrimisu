@@ -39,7 +39,7 @@ class Vuln(ABVuln):
         http://websecurity.com.ua
         http://packetstormsecurity.com/files/118059/SWF-Upload-Cross-Site-Scripting.html.
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源http://wooyun.org/bugs/wooyun-2013-017731
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=017731'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'PHPWind'  # 漏洞应用名称

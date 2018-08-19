@@ -14,7 +14,7 @@ class Vuln(ABVuln):
     desc = '''
         大汉JCMS涉及缺陷，爆管理员明文密码。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=095221
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=095221'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'Hanweb(大汉)'  # 漏洞应用名称

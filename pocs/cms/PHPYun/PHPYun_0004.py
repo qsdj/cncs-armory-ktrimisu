@@ -17,7 +17,7 @@ class Vuln(ABVuln):
         PHP云人才管理系统，专业的人才招聘网站系统开源程序，采用PHP 和MySQL 数据库构建的高效的人才与企业求职招招聘系统源码。
         PHPYUN无视GPC(可注入全站信息) 180个字符的注入，等于没有限制，什么都能注入出来。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0127257'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'PHPYun'  # 漏洞应用名称

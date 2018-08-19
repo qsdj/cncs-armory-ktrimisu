@@ -16,7 +16,7 @@ class Vuln(ABVuln):
         wlan_security.gch                不登录情况下直接获取路由ESSID以及WIFI密码
         manager_log_conf_t.gch           不登录情况下直接获取路由日志
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=066850'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'ZTE-Router'  # 漏洞应用名称

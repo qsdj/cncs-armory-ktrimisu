@@ -12,7 +12,7 @@ class Vuln(ABVuln):
     desc = '''
     北大讲座网SQL文件包含泄漏重要系统文件
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=4251
+    ref = 'Unknown'  # 漏洞来源https://bugs.shuimugan.com/bug/view?bug_no=4251
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'Lecture'  # 漏洞组件名称

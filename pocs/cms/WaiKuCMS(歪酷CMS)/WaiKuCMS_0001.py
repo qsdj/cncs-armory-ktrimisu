@@ -21,7 +21,7 @@ class Vuln(ABVuln):
         歪酷CMS基于Thinkphp框架开发,是一款小巧的CMS内容管理系统。
         歪酷CMS(WaiKuCMS)的Search.html文件参数 keyword会在一定条件下会带入eval函数，构造代码可造成代码执行。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=048523
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=048523'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'WaiKuCMS(歪酷CMS)'  # 漏洞应用名称

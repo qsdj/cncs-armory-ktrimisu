@@ -14,7 +14,7 @@ class Vuln(ABVuln):
     或者可通过include apache日志 获取一个webshell 或者包含content_help.php文件本身造成死循环..CC攻击
     '''  # 漏洞描述
     ref = 'Unknown'  # 漏洞来源
-    cnvd_id = 'Unknown'  # cnvd漏洞编号https://wooyun.shuimugan.com/bug/view?bug_no=2431
+    cnvd_id = 'https://bugs.shuimugan.com/bug/view?bug_no=2431'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'Cnsun(太阳网)'  # 漏洞组件名称
     product_version = 'Unknown'  # 漏洞应用版本

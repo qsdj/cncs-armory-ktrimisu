@@ -13,7 +13,7 @@ class Vuln(ABVuln):
     desc = '''
         华泰人寿系统存在任意文件读取漏洞。
     '''  # 漏洞描述
-    ref = 'Unknown'  # https://wooyun.shuimugan.com/bug/view?bug_no=164486
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=164486'  #
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '华泰人寿'  # 漏洞组件名称

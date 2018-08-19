@@ -14,7 +14,7 @@ class Vuln(ABVuln):
     desc = '''
         sgc8000 大型旋转机监控系统 数据连接信息泄露
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0135197
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0135197'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'sgc8000'  # 漏洞应用名称

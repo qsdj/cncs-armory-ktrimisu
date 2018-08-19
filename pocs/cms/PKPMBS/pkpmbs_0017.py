@@ -17,7 +17,7 @@ class Vuln(ABVuln):
         PKPMBS工程质量监督站信息管理系统可修改任意会员密码等其他信息
         /pkpmbs/manager/sysuserlist.aspx
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0121058
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0121058'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'PKPMBS'  # 漏洞应用名称

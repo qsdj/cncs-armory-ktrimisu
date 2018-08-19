@@ -13,7 +13,7 @@ class Vuln(ABVuln):
     由于网站服务器resin版本存在漏洞，导致南方电网国际网页源代码泄漏。
     /resin-doc/viewfile/?file=index.jsp
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=8188
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=8188'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'Csgi'  # 漏洞组件名称

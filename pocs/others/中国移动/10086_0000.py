@@ -13,7 +13,7 @@ class Vuln(ABVuln):
     desc = '''
         中国移动通信集团新疆集团通讯录文件包含导致命令执行Getshell。
     '''  # 漏洞描述
-    ref = 'Unknown'  # https://wooyun.shuimugan.com/bug/view?bug_no=202397
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=202397'  #
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '中国移动'  # 漏洞组件名称

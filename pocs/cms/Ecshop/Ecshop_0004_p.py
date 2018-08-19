@@ -21,7 +21,7 @@ class Vuln(ABVuln):
         登录操作最终执行check_user方法，当用户密码为null时，只判断用户名。
         而在flow.php中并没有对密码进行判断或者初始化。可以只通过账号就可以实现登录。
     '''  # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=063655'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=063655'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'Ecshop'  # 漏洞应用名称

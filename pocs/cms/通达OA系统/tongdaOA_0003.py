@@ -14,7 +14,7 @@ class Vuln(ABVuln):
         通达OA系统代表了协同OA的先进理念,16年研发铸就成熟OA产品。
         通达OA/general/vmeet/wbUpload.php 页面存在任意文件上传漏洞，进而getshell.
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=037642'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '通达OA系统'  # 漏洞应用名称

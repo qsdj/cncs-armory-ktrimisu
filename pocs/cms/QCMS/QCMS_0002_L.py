@@ -38,21 +38,22 @@ class Poc(ABPoc):
                         'property': 'deploy_path'
                     }
                 },
-                'cookies':{
+                'cookies': {
                     'type': 'string',
                     'description': 'cookies',
                     'default': ''
                 }
             }
         }
-                    
+
     def verify(self):
-        self.target = self.target.rstrip('/') + '/' + (self.get_option('base_path').lstrip('/'))
+        self.target = self.target.rstrip(
+            '/') + '/' + (self.get_option('base_path').lstrip('/'))
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
 
-            #登录用户
+            # 登录用户
             self.output.info('开始对网站进行跨站脚本漏洞检查...')
             payload = '/backend/system.html'
             headers = {
@@ -67,7 +68,6 @@ class Poc(ABPoc):
             if "<script>alert(cscan)</script>" in r.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
-
 
         except Exception as e:
             self.output.info('执行异常{}'.format(e))

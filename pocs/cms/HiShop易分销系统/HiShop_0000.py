@@ -14,7 +14,7 @@ class Vuln(ABVuln):
     desc = '''
         HiShop易分销系统 /wapshop/productlist.aspx SQL注入漏洞。
     '''  # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=0154499'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0154499'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'HiShop易分销系统'  # 漏洞应用名称

@@ -13,7 +13,7 @@ class Vuln(ABVuln):
     desc = '''
         115网盘分站SQL注射漏洞，攻击者可以通过构造恶意SQL语句泄露出数据库中的重要信息。
     '''  # 漏洞描述
-    ref = 'Unknown'  # https://wooyun.shuimugan.com/bug/view?bug_no=1697
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=1697'  #
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '115网盘'  # 漏洞组件名称

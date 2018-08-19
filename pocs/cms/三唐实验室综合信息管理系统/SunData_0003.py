@@ -15,7 +15,7 @@ class Vuln(ABVuln):
         三唐实验室综合信息管理系统是由湖南三唐信息科技有限公司打造的一款集实验室人员管理、教育部数据报表、实验室资源共享等功能的管理系统。
         三唐实验室综合信息管理系统 /defaultnew.aspx SQL注入漏洞。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0105279'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '三唐实验室综合信息管理系统'  # 漏洞应用名称

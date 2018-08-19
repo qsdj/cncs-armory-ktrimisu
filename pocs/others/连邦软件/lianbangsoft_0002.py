@@ -17,7 +17,7 @@ class Vuln(ABVuln):
         邯郸市连邦软件政府网上审批系统sql注入漏洞。
         workplate/xzsp/gxxt/tjfx/sxlist.aspx?baseorg=
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0122708'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '连邦软件'  # 漏洞应用名称

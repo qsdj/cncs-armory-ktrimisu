@@ -14,7 +14,7 @@ class Vuln(ABVuln):
     desc = '''
         浙江万鹏某通用教育类门户系统 /cnet/servlet/servletupload?domesticfile=WEB-INF/web.xml 任意文件下载漏洞。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=072693
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=072693'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '万鹏通用教育类门户系统'  # 漏洞应用名称

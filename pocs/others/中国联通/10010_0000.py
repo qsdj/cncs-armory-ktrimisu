@@ -13,7 +13,7 @@ class Vuln(ABVuln):
     desc = '''
         联通沃音乐服务器存在文件包含漏洞，攻击者可以通过构造恶意语句来读取系统敏感文件信息。
     '''  # 漏洞描述
-    ref = 'Unknown'  # https://wooyun.shuimugan.com/bug/view?bug_no=109319
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=109319'  #
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '中国联通'  # 漏洞组件名称

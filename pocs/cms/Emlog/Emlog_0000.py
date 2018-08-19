@@ -20,7 +20,7 @@ class Vuln(ABVuln):
     desc = '''
         Emlog include/lib/js/uploadify/uploadify.swf文件存在FlashXss漏洞。
     '''  # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=069818'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=069818'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'Emlog'  # 漏洞应用名称

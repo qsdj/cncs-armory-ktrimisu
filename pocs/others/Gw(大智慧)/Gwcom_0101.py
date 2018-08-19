@@ -12,7 +12,7 @@ class Vuln(ABVuln):
     desc = '''
     大智慧漏洞文件包含信息泄漏漏洞，攻击者可以通过本地文件包含来读取系统敏感文件信息。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=44887
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=44887'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'Gw(大智慧)'  # 漏洞组件名称

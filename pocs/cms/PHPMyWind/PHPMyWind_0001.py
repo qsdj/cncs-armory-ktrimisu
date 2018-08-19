@@ -16,7 +16,7 @@ class Vuln(ABVuln):
         PHPMyWind SQL注入漏洞：
         /phpmywind/shoppingcart.php?a=a
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=048454'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'PHPMyWind'  # 漏洞应用名称

@@ -12,7 +12,7 @@ class Vuln(ABVuln):
     desc = '''
     从文件包含通过配置泄漏从而引发任意文件下载漏洞的发现。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=7326
+    ref = 'Unknown'  # 漏洞来源https://bugs.shuimugan.com/bug/view?bug_no=7326
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'Xxzcity'  # 漏洞组件名称

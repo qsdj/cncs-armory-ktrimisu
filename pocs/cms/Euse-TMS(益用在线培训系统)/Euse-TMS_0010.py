@@ -14,7 +14,7 @@ class Vuln(ABVuln):
     desc = '''
         Euse TMS(益用在线培训系统) /js/mood/xinqing.aspx?action=mood&classid=download&id=1 SQL注入漏洞。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0118985
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0118985'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'Euse-TMS(益用在线培训系统)'  # 漏洞应用名称

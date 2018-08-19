@@ -14,7 +14,7 @@ class Vuln(ABVuln):
         “全网行为管理TPN-2G安全网关产品”和“SJW74系列安全网关” 存在一处远程命令执行。
         http://url/lan/admin_getLisence 存在远程命令执行漏洞。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0131408'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '安达通安全网关'  # 漏洞应用名称

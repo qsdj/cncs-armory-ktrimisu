@@ -18,7 +18,7 @@ class Vuln(ABVuln):
         保存密钥的ldapconf.xml文件，放在了网站目录，直接可以访问获得秘钥。
         我们可以使用大汉的加解密库进行任意加解密，只要知道服务端的密钥，就可以和服务器进行通讯
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0143528'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'Hanweb(大汉)'  # 漏洞应用名称

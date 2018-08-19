@@ -14,7 +14,7 @@ class Vuln(ABVuln):
         PHP168整站是PHP的建站系统，代码全部开源，是国内知名的开源软件提供商；提供核心+模块+插件的模式；任何应用均可在线体验。
         PHP168 /zhidao/user.php?j=question&u=-1+union+select+1,2,3,md5(1),5,6,7,8-- SQL注入漏洞。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=013476'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'PHP168'  # 漏洞应用名称

@@ -18,7 +18,7 @@ class Vuln(ABVuln):
         /portal/root/eip_cro/gg_list.jsp?nowlx=a
         处存在SQL注入漏洞。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0107187'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '百奥知实验室综合信息管理系统'  # 漏洞应用名称

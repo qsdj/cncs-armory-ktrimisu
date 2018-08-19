@@ -18,7 +18,7 @@ class Vuln(ABVuln):
         湖南三唐信息科技有限公司某学校在用的通用型实验管理系统SQL注入漏洞。
         /AllInfor/Experiment_baseInfor.aspx?SYXH=1
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0105992'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '三唐实验室综合信息管理系统'  # 漏洞应用名称

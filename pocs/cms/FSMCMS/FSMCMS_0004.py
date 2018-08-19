@@ -13,7 +13,7 @@ class Vuln(ABVuln):
     desc = '''
         北京东方文辉FSMCMS /cms/webapp/critic/p_criticfrontlist.jsp 页面参数过滤不严谨，导致SQL注入漏洞。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0135311'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'FSMCMS'  # 漏洞应用名称

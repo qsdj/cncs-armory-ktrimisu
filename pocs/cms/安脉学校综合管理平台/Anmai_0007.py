@@ -17,7 +17,7 @@ class Vuln(ABVuln):
         "/oa/stock/applyInfo.aspx?username=1",
         "/time/shezhiSystem/SZTime.aspx?clsname=1"
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0108502
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0108502'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '安脉学校综合管理平台'  # 漏洞应用名称

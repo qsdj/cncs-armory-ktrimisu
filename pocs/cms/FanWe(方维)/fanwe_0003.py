@@ -13,7 +13,7 @@ class Vuln(ABVuln):
     desc = '''
         UNION SELECT注入，直接出数据，demo验证，无需登录，只要一个POST数据库，可批量。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0122566'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'FanWe(方维)'  # 漏洞应用名称

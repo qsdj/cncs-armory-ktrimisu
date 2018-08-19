@@ -16,7 +16,7 @@ class Vuln(ABVuln):
         TCExam 是一款基于网络的开源在线考试系统，用于在线试题的生成、管理等方面。
         TCExam /install/install.php 重新安装可getshell漏洞。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=046974
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=046974'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'TCExam'  # 漏洞应用名称

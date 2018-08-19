@@ -16,7 +16,7 @@ class Vuln(ABVuln):
         江南科友堡垒机该漏洞在 /manager/config_SSO.php 当中
         此页面未做任何权限判断，导致任意用户可访问，进而getshell.
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=077033'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '江南科友堡垒机'  # 漏洞应用名称

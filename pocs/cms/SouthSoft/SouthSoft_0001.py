@@ -16,7 +16,7 @@ class Vuln(ABVuln):
         南软研究生信息管理系统任意上传漏洞。
         /gmis/zs/sczgscbInfoAdd.aspx
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=98176
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=98176'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'SouthSoft'  # 漏洞应用名称

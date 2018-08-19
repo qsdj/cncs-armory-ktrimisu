@@ -24,7 +24,7 @@ class Vuln(ABVuln):
         getUserDirPath($uid, $domain)函数，该函数存在的$path = `$cmd`代码
         使得CMD控制台可以直接调用。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=058301
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=058301'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'eYou'  # 漏洞应用名称

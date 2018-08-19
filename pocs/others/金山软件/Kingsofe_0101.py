@@ -14,7 +14,7 @@ class Vuln(ABVuln):
     desc = '''
     通过“金山软件基础服务”监听的9922端口，攻击者可远程查看系统任意文本文件。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=5103
+    ref = 'ttps://bugs.shuimugan.com/bug/view?bug_no=5103'  # 漏洞来源h
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '金山软件'  # 漏洞组件名称

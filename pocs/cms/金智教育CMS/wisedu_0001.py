@@ -16,7 +16,7 @@ class Vuln(ABVuln):
         /elcs/forum/forumIndexAction!init.action
         /elcs/forum/forumIndexAction!init.action
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=071006'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '金智教育CMS'  # 漏洞应用名称

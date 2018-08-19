@@ -16,7 +16,7 @@ class Vuln(ABVuln):
         OURPHP是一个品牌,一款基于PHP+MySQL开发符合W3C标准的建站系统。
         傲派软件（OurPHP）在 /function/plugs/Comment/product-content.php 存在SQL注入漏洞。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=149584'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'OurPHP(傲派软件)'  # 漏洞应用名称

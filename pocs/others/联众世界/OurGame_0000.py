@@ -13,7 +13,7 @@ class Vuln(ABVuln):
     desc = '''
         联众世界URL跳转漏洞，攻击者可以通过构造恶意链接来跳转到恶意网站对用户进行钓鱼攻击。
     '''  # 漏洞描述
-    ref = 'Unknown'  # https://wooyun.shuimugan.com/bug/view?bug_no=65
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=65'  #
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '联众世界'  # 漏洞组件名称

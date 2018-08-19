@@ -14,7 +14,7 @@ class Vuln(ABVuln):
     desc = '''
         网康 NS-ASG 应用安全网关所有版本任意文件下载漏洞
     '''  # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=058838'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=058838'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '网康应用安全网关'  # 漏洞应用名称

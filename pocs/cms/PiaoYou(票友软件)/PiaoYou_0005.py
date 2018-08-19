@@ -21,7 +21,7 @@ class Vuln(ABVuln):
         /json_db/Recycle_orders.aspx?sd=
         /system/role_flag.aspx?id=
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0101031'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'PiaoYou(票友软件)'  # 漏洞应用名称
@@ -66,8 +66,8 @@ class Poc(ABPoc):
                 code, head, body, errcode, final_url = hh.http(target)
                 if 'c4ca4238a0b923820dcc509a6f75849' in body:
                     # security_hole(target)
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                        target=self.target, name=self.vuln.name))
+                    self.output.report(self.vuln, '发现{target}存在{name}漏洞，漏洞地址为{url}'.format(
+                        target=self.target, name=self.vuln.name, url=target))
 
         except Exception as e:
             self.output.info('执行异常{}'.format(e))

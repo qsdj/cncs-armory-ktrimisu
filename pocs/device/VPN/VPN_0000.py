@@ -13,7 +13,7 @@ class Vuln(ABVuln):
     desc = '''
         该漏洞涉及到包括网御神州、天融信、西安网赢、卫士通、吉大正元、美国凹凸、德国 ANIX等多家VPN厂商设备在政务、地产、运营商、政府部门、高校、企业、公安、司法、银行等行业。
     '''  # 漏洞描述
-    ref = 'Unknown'  # https://wooyun.shuimugan.com/bug/view?bug_no=174693
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=174693'  #
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'VPN'  # 漏洞组件名称

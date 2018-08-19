@@ -15,7 +15,7 @@ class Vuln(ABVuln):
         农友软件多年来致力于农村、农业、农民的“三农”信息化建设，是国内领先的“三农”信息化建设全面解决方案提供商，同时也是国内最大的“三农”信息化服务提供商。
         Nongyou系统 /ExtWebModels/LandManage/ShowLandInfo.aspx?id=1 存在一处SQL注入漏洞。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=099863
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=099863'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'Nongyou'  # 漏洞应用名称

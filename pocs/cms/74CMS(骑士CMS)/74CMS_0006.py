@@ -20,7 +20,7 @@ class Vuln(ABVuln):
     desc = '''
         骑士CMS V3.4.20140709 /plus/ajax_common.php 文件存在SQL注入漏洞。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=070316
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=070316'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '74CMS(骑士CMS)'  # 漏洞应用名称

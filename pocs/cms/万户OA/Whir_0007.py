@@ -17,7 +17,7 @@ class Vuln(ABVuln):
         万户软件是一个坚持网络风格是最大限度提升软件健壮性的一种有效手段，因为这样一来，决定应用并发数的并不是软件平台本身，而是硬件和网络速度；也就是说，从理论上讲，类似万户协同ezOFFICE这样的软件平台没有严格的并发数限制。
         万户OA /defaultroot/public/jsp/download.jsp?FileName=mailserver.properties&name=2.jsp&path= 任意文件下载。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=063711
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=063711'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '万户OA'  # 漏洞应用名称

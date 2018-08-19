@@ -18,7 +18,7 @@ class Vuln(ABVuln):
         "/Bulletin/PolicyList.aspx?infoflowId=",
         "/login/TransactList.aspx?ItemName=1",       
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0128477
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0128477'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'ECGAP电子政务系统'  # 漏洞应用名称

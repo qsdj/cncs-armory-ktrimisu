@@ -16,7 +16,7 @@ class Vuln(ABVuln):
         泛微e-cology /pweb/careerapply/HrmCareerApplyPerEdit.jsp，/pweb/careerapply/HrmCareerApplyWorkEdit.jsp，
         /web/careerapply/HrmCareerApplyPerEdit.jsp，/web/careerapply/HrmCareerApplyWorkView.jsp 存在通用型SQL注入漏洞。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0136818'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '泛微OA'  # 漏洞应用名称

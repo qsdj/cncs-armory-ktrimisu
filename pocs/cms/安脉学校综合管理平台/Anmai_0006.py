@@ -15,7 +15,7 @@ class Vuln(ABVuln):
         安脉学校综合管理平台采用B/S结构.NET技术，支持IE/Google/火狐/360等主流浏览器，支持云平台，有多元化的用户群，进行统一身份论证，符合《教育管理信息化标准》的要求。
         安脉学校综合管理平台 /time/shezhiSystem/XueKeNocourse.aspx POST注入漏洞。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0108502
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0108502'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '安脉学校综合管理平台'  # 漏洞应用名称

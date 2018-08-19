@@ -16,7 +16,7 @@ class Vuln(ABVuln):
         中企动力门户CMS是一个内容管理系统。
         中企动力门户 CMS SQL注入漏洞，根据中企动力官网介绍，影响大约几十万的用户，有不少的大企业用户，影响很是广泛。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0145311'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '中企动力门户CMS'  # 漏洞应用名称

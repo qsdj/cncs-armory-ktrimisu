@@ -21,7 +21,7 @@ class Vuln(ABVuln):
     PHPDisk是一套采用PHP和MySQL构建的网络硬盘(文件存储管理)系统，可替代传统的FTP文件管理。友好的界面，操作的便捷深受用户的欢迎。是一套可用于网络上文件办公、共享、传递、查看的多用户文件存储系统。广泛应用于互联网、公司、网吧、学校等地管理及使用文件，多方式的共享权限，全方位的后台管理，满足从个人到企业各方面应用的需求。
     利用环境比较鸡肋，代码执行需要关闭short_open_tag.
     '''  # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=057665'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=057665'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'PHPDisk'  # 漏洞应用名称

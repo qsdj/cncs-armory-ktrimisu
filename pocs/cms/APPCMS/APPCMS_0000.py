@@ -14,7 +14,7 @@ class Vuln(ABVuln):
     desc = '''
         APPCMS设计权限备份数据库可直接下载
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=077157
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=077157'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'APPCMS'  # 漏洞应用名称

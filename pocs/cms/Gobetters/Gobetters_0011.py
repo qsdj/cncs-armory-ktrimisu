@@ -15,7 +15,7 @@ class Vuln(ABVuln):
         Gobetters视频会议系统post注入漏洞：
         /web/users/usersave.php
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0134733
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0134733'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'Gobetters'  # 漏洞应用名称

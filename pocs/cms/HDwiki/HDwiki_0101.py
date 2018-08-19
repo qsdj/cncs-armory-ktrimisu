@@ -17,7 +17,7 @@ class Vuln(ABVuln):
     http://gmanxin.baike.com/install/install.php?lang=888888888888/..
     此文件包含在某些环境下可以截断利用。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=5619
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=5619'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'HDwiki'  # 漏洞组件名称

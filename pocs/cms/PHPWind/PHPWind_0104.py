@@ -18,7 +18,7 @@ class Vuln(ABVuln):
         PHPWind 9.0 貝塔 反射XSS。
         漏洞文件：index.php。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源http://wooyun.org/bugs/wooyun-2012-012163
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=012163'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'PHPWind'  # 漏洞应用名称

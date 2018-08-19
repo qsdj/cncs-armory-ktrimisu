@@ -14,7 +14,7 @@ class Vuln(ABVuln):
     desc = '''
         磊科（Netcore）NI360安全路由器,无需密码即可登录路由器.
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0109095
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0109095'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '磊科路由器'  # 漏洞应用名称

@@ -15,7 +15,7 @@ class Vuln(ABVuln):
         5.2beta 2014-12-28 参数没有处理，绕过过滤
         /4g.php?m=show&cid=2&tbname=pmw_infolist。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=089760'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'PHPMyWind'  # 漏洞应用名称

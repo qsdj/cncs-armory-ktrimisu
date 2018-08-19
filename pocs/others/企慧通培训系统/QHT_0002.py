@@ -15,7 +15,7 @@ class Vuln(ABVuln):
         深圳市企慧通培训系统通用型SQL注入漏洞：
         /SysAdmin/aRegisAdmin.aspx?type=regisAdmin&clientid=adminName&adminName=admin
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0129326
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0129326'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '企慧通培训系统'  # 漏洞应用名称

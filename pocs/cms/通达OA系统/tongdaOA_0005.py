@@ -15,7 +15,7 @@ class Vuln(ABVuln):
         通达OA系统代表了协同OA的先进理念,16年研发铸就成熟OA产品。
         通达OA无需登录即可获得企业所有员工姓名/Email等敏感信息。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=082678'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '通达OA系统'  # 漏洞应用名称

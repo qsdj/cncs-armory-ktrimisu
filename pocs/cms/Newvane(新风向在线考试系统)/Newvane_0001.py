@@ -17,7 +17,7 @@ class Vuln(ABVuln):
         新风向科技致力于开发、引进、整合、传播各类优秀教育培训资源及相关软件系统技术，并配以卓越的技术力量和专业的顾问式服务，帮助客户建立一套快速有效的在线培训和考试模式。
         新风向在线考试系统平台系统通用型任意文件上传漏洞。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0108559'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'Newvane(新风向在线考试系统)'  # 漏洞应用名称

@@ -52,7 +52,7 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
 
-            # https://wooyun.shuimugan.com/bug/view?bug_no=42162
+            # https://bugs.shuimugan.com/bug/view?bug_no=42162
             payload = '/ftp/install.php'
             url = self.target + payload
             r = requests.get(url)

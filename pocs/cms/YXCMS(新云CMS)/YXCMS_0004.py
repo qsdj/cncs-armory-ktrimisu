@@ -15,7 +15,7 @@ class Vuln(ABVuln):
         YXCMS(新云CMS)建站系统存在ewebeditor上传和iis解析漏洞，可批量getshell。
         新云cms建站系统 showkbxx.asp 页面参数过滤不完整，导致 SQL注入漏洞。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=090874'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'YXCMS(新云CMS)'  # 漏洞应用名称

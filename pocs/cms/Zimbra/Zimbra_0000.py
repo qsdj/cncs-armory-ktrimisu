@@ -14,7 +14,7 @@ class Vuln(ABVuln):
         Zimbra提供一套开源协同办公套件包括WebMail，日历，通信录，Web文档管理和创作。它最大的特色在于其采用Ajax技术模仿CS桌面应用软件的风格开发的客户端兼容Firefox,Safari和IE浏览器。
         Zimbra邮件系统存在文件包含漏洞，可以直接读取系统铭感文件。
     '''  # 漏洞描述
-    ref = 'Unknown'  # https://wooyun.shuimugan.com/bug/view?bug_no=163540 https://wooyun.shuimugan.com/bug/view?bug_no=210881
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=163540'  # https://bugs.shuimugan.com/bug/view?bug_no=210881
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'Zimbra'  # 漏洞组件名称

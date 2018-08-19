@@ -15,7 +15,7 @@ class Vuln(ABVuln):
         Gobetters视频会议系统SQL注入漏洞：
         /web/conferences/journal.php?confid=-732453
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0121825
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0121825'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'Gobetters'  # 漏洞应用名称

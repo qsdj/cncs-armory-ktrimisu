@@ -16,7 +16,7 @@ class Vuln(ABVuln):
         极光推送，英文简称 JPush，是一个面向普通开发者开放的，免费的第三方消息推送服务。
         极光推送之zabbix /httpmon.php?applications=2 注入导致命令执行。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=084877
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=084877'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'Zabbix'  # 漏洞应用名称

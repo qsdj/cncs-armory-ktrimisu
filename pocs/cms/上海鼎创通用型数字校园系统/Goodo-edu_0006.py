@@ -16,7 +16,7 @@ class Vuln(ABVuln):
         上海鼎创通用型数字校园系统是由上海鼎创信息科技有限公司打造的校园数字一体化管理系统。
         上海鼎创通用型数字校园系统 任意上传导致Getshell
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0111072'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '上海鼎创通用型数字校园系统'  # 漏洞应用名称

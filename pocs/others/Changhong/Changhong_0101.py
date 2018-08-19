@@ -10,9 +10,9 @@ class Vuln(ABVuln):
     type = VulnType.LFI  # 漏洞类型
     disclosure_date = '2013-02-23'  # 漏洞公布时间
     desc = '''
-   长虹SSLvpn远程执行后门漏洞，攻击者可以通过程执行来读取系统敏感文件信息。
+        长虹SSLvpn远程执行后门漏洞，攻击者可以通过程执行来读取系统敏感文件信息。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=17124
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=17124'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'Changhong'  # 漏洞组件名称

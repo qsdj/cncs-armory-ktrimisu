@@ -16,7 +16,7 @@ class Vuln(ABVuln):
     desc = '''
     eYou sysinfo Information Disclosure.
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源http://www.wooyun.org/bugs/wooyun-2014-061538
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=061538'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'eYou'  # 漏洞应用名称

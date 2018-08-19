@@ -13,7 +13,7 @@ class Vuln(ABVuln):
     desc = '''
         艺龙系统任意文件遍历漏洞，可直接读取敏感信息。
     '''  # 漏洞描述
-    ref = 'Unknown'  # https://wooyun.shuimugan.com/bug/view?bug_no=159088
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=159088'  #
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '艺龙'  # 漏洞组件名称

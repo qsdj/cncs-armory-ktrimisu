@@ -13,7 +13,7 @@ class Vuln(ABVuln):
     desc = '''
         宝利通(Polycom,Inc.)旗下型号产品存在任意文件包含漏洞，攻击者无需登录可以通过构造恶意语句来读取系统敏感文件信息。
     '''  # 漏洞描述
-    ref = 'Unknown'  # https://wooyun.shuimugan.com/bug/view?bug_no=149670
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=149670'  #
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '宝利通'  # 漏洞组件名称

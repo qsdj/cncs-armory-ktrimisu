@@ -14,7 +14,7 @@ class Vuln(ABVuln):
     desc = '''
         远古流媒体系统 /VIEWGOOD/ADI/portal/GetCaption.ashx 注入漏洞。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=146420
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=146420'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '远古流媒体系统'  # 漏洞应用名称

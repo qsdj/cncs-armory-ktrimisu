@@ -17,7 +17,7 @@ class Vuln(ABVuln):
     desc = '''
     EspCMS v5.0 /index.php，tagkey造成了注入。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源http://www.wooyun.org/bugs/wooyun-2013-019995
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=019995'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'EspCMS(易思CMS)'  # 漏洞应用名称

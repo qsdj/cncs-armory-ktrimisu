@@ -13,7 +13,7 @@ class Vuln(ABVuln):
     desc = '''
         724CMS index.php文件注入漏洞。
     '''  # 漏洞描述
-    ref = 'https://www.exploit-db.com/exploits/5400/'  # https://www.exploit-db.com/exploits/5400/
+    ref = 'https://www.exploit-db.com/exploits/5400/'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'CVE-2008-1858 '  # cve编号
     product = '724CMS'  # 漏洞组件名称

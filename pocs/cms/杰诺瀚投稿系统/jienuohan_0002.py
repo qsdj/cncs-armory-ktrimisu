@@ -19,7 +19,7 @@ class Vuln(ABVuln):
         /tougao/GetInfo.aspx
         存在SQL注入漏洞。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=080467/083812/083817/083852'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '杰诺瀚投稿系统'  # 漏洞应用名称

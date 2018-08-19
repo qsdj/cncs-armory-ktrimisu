@@ -13,7 +13,7 @@ class Vuln(ABVuln):
     desc = '''
         中科新业网络安全审计系统V5.0 /ucenter/include/get_file.php 任意文件可下载。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=123369'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '中科新业网络哨兵'  # 漏洞应用名称

@@ -15,7 +15,7 @@ class Vuln(ABVuln):
     desc = '''
         中兴ZXV10 MS90 远程视频会议系统任意文件下载：conf_control/download.jsp?filename=dd.txt&filePath=/../../../../etc/shadow
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=081469'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'ZTE-Site'  # 漏洞应用名称

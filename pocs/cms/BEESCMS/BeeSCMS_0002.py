@@ -19,7 +19,7 @@ class Vuln(ABVuln):
     desc = '''
     BEESCMS v3.4 /includes/fun.php 弱验证导致后台验证绕过。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源http://www.wooyun.org/bugs/wooyun-2014-059180
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=059180'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'BEESCMS'  # 漏洞应用名称

@@ -16,7 +16,7 @@ class Vuln(ABVuln):
         ShopNC B2B版SQL注入漏洞。
         /microshop/index.php?act=
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0124172'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'ShopNC'  # 漏洞应用名称

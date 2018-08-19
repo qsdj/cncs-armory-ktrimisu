@@ -17,7 +17,7 @@ class Vuln(ABVuln):
     Discuz 7.2 /post.php 跨站脚本漏洞,
     post.php中handlekey变量传入global.func.php后过滤不严,导致反射XSS漏洞的产生。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源http://www.wooyun.org/bugs/wooyun-2014-065930
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=065930'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'Discuz!'  # 漏洞应用名称

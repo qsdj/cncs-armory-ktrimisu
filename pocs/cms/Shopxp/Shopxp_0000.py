@@ -18,7 +18,7 @@ class Vuln(ABVuln):
         Shopxp网上购物系统是一个经过完善设计的经典商城购物管理系统，适用于各种服务器环境的高效网上购物网站建设解决方案。基于asp＋Access、Mssql为免费开源程序，在互联网上有广泛的应用。
         SHOPXP网上购物系统 v10.31 注入漏洞
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=82844
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=82844'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'Shopxp'  # 漏洞应用名称

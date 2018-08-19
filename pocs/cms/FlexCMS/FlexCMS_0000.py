@@ -17,7 +17,7 @@ class Vuln(ABVuln):
         当register_globals选项被激活时，远程攻击者可以借助reviousColorsString参数，
         注入任意的web脚本或HTML。
     '''  # 漏洞描述
-    ref = 'https://www.exploit-db.com/exploits/32254/'
+    ref = 'https://www.exploit-db.com/exploits/32254/'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'FlexCMS'  # 漏洞组件名称

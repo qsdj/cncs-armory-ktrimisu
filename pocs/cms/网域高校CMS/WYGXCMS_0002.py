@@ -17,7 +17,7 @@ class Vuln(ABVuln):
         网域高校CMS数据库任意下载。
         /editor/db/%23%23%23wygk20012%23%23%23editor.mdb
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=067890'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '网域高校CMS'  # 漏洞应用名称

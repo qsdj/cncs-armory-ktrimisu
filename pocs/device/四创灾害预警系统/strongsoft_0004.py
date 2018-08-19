@@ -14,7 +14,7 @@ class Vuln(ABVuln):
     desc = '''
         福建四创软件开发的“山洪灾害预警监测系统”存在SQL注入漏洞，可获取数据库任意数据，进而而导致预警系统沦陷。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=085076'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '四创灾害预警系统'  # 漏洞应用名称

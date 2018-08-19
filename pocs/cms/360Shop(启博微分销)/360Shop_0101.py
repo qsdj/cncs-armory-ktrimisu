@@ -12,7 +12,7 @@ class Vuln(ABVuln):
     desc = '''
     漏洞，攻击者可以通过构造恶意语句来读取系统敏感文件信息。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=48045
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=48045'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '360Shop(启博微分销)'  # 漏洞组件名称

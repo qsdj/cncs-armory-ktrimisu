@@ -13,7 +13,7 @@ class Vuln(ABVuln):
     desc = '''
         企智通系列上网行为管理设备 /recvpass.do?acc= 存在SQL注入漏洞。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0139442'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '企智通上网行为管理设备'  # 漏洞应用名称

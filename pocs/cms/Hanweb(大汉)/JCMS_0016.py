@@ -15,7 +15,7 @@ class Vuln(ABVuln):
     desc = '''
         南京大汉某政府信息公开系统存在通用型SQL注入
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0150571
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0150571'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'Hanweb(大汉)'  # 漏洞应用名称

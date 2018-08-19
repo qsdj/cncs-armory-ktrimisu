@@ -15,7 +15,7 @@ class Vuln(ABVuln):
         卓繁CMS是由上海卓繁信息技术有限公司打造的一款网站一体化管理系统。
         上海卓繁CMS政府服务中心 /index/downLoadFile.action?fileName=web.xml&filePath=WEB-INF/web.xml 存在通用型任意文件下载漏洞。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=54074
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=54074'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '卓繁CMS'  # 漏洞应用名称

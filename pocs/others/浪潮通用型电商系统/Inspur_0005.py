@@ -16,7 +16,7 @@ class Vuln(ABVuln):
     desc = '''
         首先确保photo_id的数字对应的图片存在，之后修改photo_size的值导致下载任意文件（包括passwd、shadow、还有各类敏感配置文件）。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=093845'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '浪潮通用型电商系统'  # 漏洞应用名称

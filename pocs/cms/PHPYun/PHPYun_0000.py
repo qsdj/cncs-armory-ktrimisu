@@ -17,7 +17,7 @@ class Vuln(ABVuln):
         PHP云人才管理系统，专业的人才招聘网站系统开源程序，采用PHP 和MySQL 数据库构建的高效的人才与企业求职招招聘系统源码。
         PHPYun人才系统任意文件读取(XML实体注入)。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=064637
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=064637'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'PHPYun'  # 漏洞应用名称

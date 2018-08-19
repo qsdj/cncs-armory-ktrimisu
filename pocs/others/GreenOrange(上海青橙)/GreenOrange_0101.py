@@ -12,7 +12,7 @@ class Vuln(ABVuln):
     desc = '''
     上海青橙任意文件读取漏洞，攻击者可以通过任意文件读取来读取系统敏感文件信息。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=15439
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=15439'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'GreenOrange(上海青橙)'  # 漏洞组件名称

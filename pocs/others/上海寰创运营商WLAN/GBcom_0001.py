@@ -15,7 +15,7 @@ class Vuln(ABVuln):
     desc = '''
         上海寰创运营商WLAN产品 /DownloadServlet?fileName=../../etc/shadow 任意文件下载（可直接获取管理员账号密码等）。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0121010'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '上海寰创运营商WLAN'  # 漏洞应用名称

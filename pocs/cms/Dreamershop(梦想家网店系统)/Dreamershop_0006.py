@@ -16,7 +16,7 @@ class Vuln(ABVuln):
         'PopUpWindows.aspx?id=1%20and%201=1',
         'PopUpWindows.aspx?id=1%20and%201=2'
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0121914'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'Dreamershop(梦想家网店系统)'  # 漏洞应用名称

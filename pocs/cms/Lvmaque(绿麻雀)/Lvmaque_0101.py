@@ -15,7 +15,7 @@ class Vuln(ABVuln):
     数字型注入
     漏洞文件:/App/Lib/Action/Member/MsgAction.class.php //46行
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=144792
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=144792'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'Lvmaque(绿麻雀)'  # 漏洞组件名称

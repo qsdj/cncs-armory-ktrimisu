@@ -10,9 +10,9 @@ class Vuln(ABVuln):
     type = VulnType.LFI  # 漏洞类型
     disclosure_date = '2016-02-12'  # 漏洞公布时间
     desc = '''
-   Egret(白鹭时代)反射型xss漏洞，攻击者可以通过构造恶意语句来读取系统敏感文件信息。
+        Egret(白鹭时代)反射型xss漏洞，攻击者可以通过构造恶意语句来读取系统敏感文件信息。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=169620
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=169620'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'Egret(白鹭时代)'  # 漏洞组件名称

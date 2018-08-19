@@ -17,7 +17,7 @@ class Vuln(ABVuln):
         太极行政服务中心SQL注入:
         /bmtd.do?method=dept&deptid=00942001
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=085183
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=085183'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '太极行政服务中心'  # 漏洞应用名称

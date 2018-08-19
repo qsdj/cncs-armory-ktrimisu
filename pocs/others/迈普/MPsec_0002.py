@@ -14,7 +14,7 @@ class Vuln(ABVuln):
         迈普ISG1000系列网关，未授权下载配置文件。
         system/maintenance/export.php?type=sc
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=079924'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '迈普'  # 漏洞应用名称

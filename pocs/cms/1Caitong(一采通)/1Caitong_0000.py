@@ -14,7 +14,7 @@ class Vuln(ABVuln):
     desc = '''
         一采通电子采购系统/library/editornew/Editor/img_save.asp任意文件上传漏洞。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0142269
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0142269'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '1Caitong(一采通)'  # 漏洞应用名称

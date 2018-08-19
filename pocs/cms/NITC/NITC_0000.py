@@ -15,7 +15,7 @@ class Vuln(ABVuln):
         NITC是由宁波思迈尔网络科技有限公司与宁波好的网络科技有限公司组织创办，联合国内较有实力的网络公司共同运营，为国内中小型企业与个人用户提供各类网络营销服务的平台。
         NITC企业智能营销网站系统 /inquiry.php 通杀注入漏洞。
     '''  # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=081305'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=081305'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'NITC'  # 漏洞应用名称

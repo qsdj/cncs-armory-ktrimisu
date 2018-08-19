@@ -19,7 +19,7 @@ class Vuln(ABVuln):
         /subscribe.php
         /sms.php
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=21971
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=21971'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'Easethink(易想团购管理系统)'  # 漏洞应用名称

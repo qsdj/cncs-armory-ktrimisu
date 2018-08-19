@@ -15,7 +15,7 @@ class Vuln(ABVuln):
         社区矫正管理系统结合现在国内社区矫正工作的管理特点，实现矫正工作流程中矫正衔接、矫正执行、管理监督、矫正解除各个环节的管理。
         社区矫正管理系统万能密码登录。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0147553
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0147553'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '社区矫正管理系统'  # 漏洞应用名称

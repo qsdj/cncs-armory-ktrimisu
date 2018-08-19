@@ -23,7 +23,7 @@ class Vuln(ABVuln):
 
 class Poc(ABPoc):
     poc_id = '7275dd0d-d50e-4388-8c5b-bbef0b7f3b5e'  # 平台 POC 编号
-    author = ''  # POC编写者
+    author = 'hyhm2n'  # POC编写者
     create_date = '2018-06-06'  # POC创建时间
 
     def __init__(self):

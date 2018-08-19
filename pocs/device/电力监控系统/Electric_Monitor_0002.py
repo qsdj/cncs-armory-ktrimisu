@@ -19,7 +19,7 @@ class Vuln(ABVuln):
         http://foorbar/ShowPower.aspx?Pic=2&PLCNr=1 Parameter: PLCNr (GET)
         type: stack queries, AND/OR time-baseed blind, boolean-based blind
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0102608'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '电力监控系统'  # 漏洞应用名称

@@ -15,7 +15,7 @@ class Vuln(ABVuln):
     desc = '''
         大华城市安防监控系统平台管理存在任意文件遍历(无需登录) 
     '''  # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=131730'  # 漏洞来源
+    ref = 'Unknown'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'Dahuatech'  # 漏洞应用名称

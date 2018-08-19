@@ -15,7 +15,7 @@ class Vuln(ABVuln):
         PSTAR-电子服务平台SQL注入漏洞：
         /HyperLink/isfLclInfo.aspx?type=A&no=
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0128182
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0128182'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'PSTAR'  # 漏洞应用名称

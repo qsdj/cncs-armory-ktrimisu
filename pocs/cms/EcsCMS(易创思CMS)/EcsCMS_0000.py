@@ -14,7 +14,7 @@ class Vuln(ABVuln):
     desc = '''
         EcsCMS(易创思CMS) SQL注入漏洞，.net+sqlserver注射，影响众多学校及教育机构。
     '''  # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=088844'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=088844'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'EcsCMS(易创思CMS)'  # 漏洞应用名称

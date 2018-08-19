@@ -15,7 +15,7 @@ class Vuln(ABVuln):
         大汉科技（Hanweb）大汉VC系统，漏洞地址：
         /vc/vc/style/opr_copycode.jsp?id=1
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0143776'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'Hanweb(大汉)'  # 漏洞应用名称

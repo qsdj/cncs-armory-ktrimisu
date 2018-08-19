@@ -15,7 +15,7 @@ class Vuln(ABVuln):
     desc = '''
         dotWidget CMS 1.0.6及其以下版本存在远程文件包含漏洞。
     '''  # 漏洞描述
-    ref = 'https://www.seebug.org/vuldb/ssvid-63616'
+    ref = 'https://www.seebug.org/vuldb/ssvid-63616'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'dotWidgetCMS'  # 漏洞组件名称

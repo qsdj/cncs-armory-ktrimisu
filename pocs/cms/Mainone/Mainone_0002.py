@@ -14,7 +14,7 @@ class Vuln(ABVuln):
     desc = '''
         铭万行业门户建站系统存在通用注入漏洞 涉及数十万企业用户。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0104558
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0104558'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'Mainone'  # 漏洞应用名称

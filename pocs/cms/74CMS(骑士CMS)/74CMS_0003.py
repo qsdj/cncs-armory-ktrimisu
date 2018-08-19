@@ -14,7 +14,7 @@ class Vuln(ABVuln):
     desc = '''
         骑士CMS 密码重置机制可以绕过，同时可重置任意账号密码。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0137785'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '74CMS(骑士CMS)'  # 漏洞应用名称

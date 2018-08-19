@@ -17,7 +17,7 @@ class Vuln(ABVuln):
         SpeedCMS某处Oracle注射漏洞。
         /guestbook/list/portalId/86/cid/828%27)%20AND%206152=
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0136530
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0136530'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'SpeedCMS'  # 漏洞应用名称

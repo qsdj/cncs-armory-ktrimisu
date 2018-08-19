@@ -48,7 +48,7 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
 
-            # https://wooyun.shuimugan.com/bug/view?bug_no=42552
+            # https://bugs.shuimugan.com/bug/view?bug_no=42552
             payload = '/user/do.php?ac=edit@op=zl'
             url = self.target + payload
             hh = hackhttp.hackhttp()

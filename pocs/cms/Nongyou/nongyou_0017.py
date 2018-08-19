@@ -22,7 +22,7 @@ class Vuln(ABVuln):
         '/symItemManage/ItemSecond.aspx?id=1',
         '/WebDefault3.aspx?CountryName=test&level=0'
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=095250
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=095250'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'Nongyou'  # 漏洞应用名称

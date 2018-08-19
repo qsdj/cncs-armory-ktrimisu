@@ -47,7 +47,8 @@ class Poc(ABPoc):
 
     def verify(self):
         self.target = (
-            self.target.rstrip("/") + "/" + (self.get_option("base_path").lstrip("/"))
+            self.target.rstrip("/") + "/" +
+            (self.get_option("base_path").lstrip("/"))
         )
         try:
             ip = socket.gethostbyname(self.target_host)

@@ -15,7 +15,7 @@ class Vuln(ABVuln):
     desc = '''
         DianYiPS建站系统 /dianyi/index.php 管理后台，SQL注入漏洞。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=110810'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'DianYiPS建站系统'  # 漏洞应用名称

@@ -18,7 +18,7 @@ class Vuln(ABVuln):
         由于“ICEFLOW VPN Router”设备产品存在各种日志文件未授权访问可导致系统敏感信息泄漏，
         根据日志信息获得session后，可利用实时登录系统管理后台。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0134377'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '上海冰峰VPN路由设备'  # 漏洞应用名称

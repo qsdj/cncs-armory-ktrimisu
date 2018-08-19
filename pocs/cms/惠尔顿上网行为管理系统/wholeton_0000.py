@@ -15,7 +15,7 @@ class Vuln(ABVuln):
         惠尔顿上网行为管理系统是由深圳市惠尔顿信息技术有限公司打造的一款上网行为管理检测系统。
         惠尔顿（Wholeton）上网行为管理系统任意文件下载漏洞s
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0100472
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0100472'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '惠尔顿上网行为管理系统'  # 漏洞应用名称

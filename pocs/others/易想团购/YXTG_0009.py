@@ -21,7 +21,7 @@ class Vuln(ABVuln):
     desc = '''
         易想团购 v1.4.7 /sms.php do_unsubscribe_verify参数 SQL注入漏洞。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=060675
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=060675'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '易想团购'  # 漏洞应用名称

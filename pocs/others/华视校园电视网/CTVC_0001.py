@@ -16,7 +16,7 @@ class Vuln(ABVuln):
         可获取到管理员的账户，
         利用此账户登录后可进一步全面控制四所高校近400块屏幕媒体（可上传，播放任意内容）。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0100173'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '华视校园电视网'  # 漏洞应用名称

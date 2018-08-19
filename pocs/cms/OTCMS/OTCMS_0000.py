@@ -14,7 +14,7 @@ class Vuln(ABVuln):
         网钛CMS(OTCMS) PHP版 基于PHP+sqlite/mysql的技术架构，UTF-8编码，以简单、实用、傻瓜式操作而闻名，无论在功能，人性化，还是易用性方面，都有了长足的发展，网钛CMS的主要目标用户锁定在中小型网站站长，让那些对网络不是很熟悉，对网站建设不是很懂又想做网站的人可以很快搭建起一个功能实用又强大，操作人性又易用。
         OTCMS网钛文章管理系统非授权任意文件下载漏洞，攻击者可以通过构造恶意语句来读取系统敏感文件信息。
     '''  # 漏洞描述
-    ref = 'Unknown'  # https://wooyun.shuimugan.com/bug/view?bug_no=65268
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=65268'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'OTCMS'  # 漏洞组件名称

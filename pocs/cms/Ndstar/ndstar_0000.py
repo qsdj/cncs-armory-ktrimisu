@@ -21,7 +21,7 @@ class Vuln(ABVuln):
         "/pub/search/search_audio_view.asp?id=",
         "/pub/search/search_video_view.asp?id=3",
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0153651
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0153651'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'Ndstar'  # 漏洞应用名称

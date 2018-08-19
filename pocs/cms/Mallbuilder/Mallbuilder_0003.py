@@ -14,7 +14,7 @@ class Vuln(ABVuln):
     desc = '''
         Mallbuilder多用户商城系统最新版 多处SQL注入
     '''  # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=097475'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=097475'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'Mallbuilder'  # 漏洞应用名称

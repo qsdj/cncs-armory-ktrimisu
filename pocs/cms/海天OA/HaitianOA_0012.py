@@ -28,7 +28,7 @@ class Vuln(ABVuln):
         /Documents/OA_WordDocDisplay.asp?OAID=1
         /ZhuanTi/frmmain.asp?type=-1
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=083161
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=083161'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '海天OA'  # 漏洞应用名称
@@ -94,8 +94,8 @@ class Poc(ABPoc):
             for url in urls:
                 code, head, res, err, _ = hh.http(url)
                 if (code == 200) and ('WtFaBcMicrosoft SQL Server' in res):
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                        target=self.target, name=self.vuln.name))
+                    self.output.report(self.vuln, '发现{target}存在{name}漏洞，漏洞地址为{url}'.format(
+                        target=self.target, name=self.vuln.name, url=url))
 
         except Exception as e:
             self.output.info('执行异常{}'.format(e))

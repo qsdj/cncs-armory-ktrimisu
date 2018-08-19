@@ -15,7 +15,7 @@ class Vuln(ABVuln):
         IWMS系统后台绕过&整站删除。
         /Admin/pages/fileManager.aspx?bp=
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=083888
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=083888'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'IWMS'  # 漏洞应用名称

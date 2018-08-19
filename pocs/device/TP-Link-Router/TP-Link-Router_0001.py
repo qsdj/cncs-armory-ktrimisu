@@ -16,7 +16,7 @@ class Vuln(ABVuln):
     desc = '''  
         TP-Link-Router TD-8820路由器未授权下载配置文件可解密。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=075723'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'TP-Link-Router'  # 漏洞应用名称

@@ -12,9 +12,9 @@ class Vuln(ABVuln):
     disclosure_date = 'Unknown'  # 漏洞公布时间
     desc = '''
         MetInfo SQL注入漏洞：
-        /MetInfo5.3/search/search.php
+        /MetInfo5.3/search/search.php.
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0106582'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'MetInfo'  # 漏洞应用名称

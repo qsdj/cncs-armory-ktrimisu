@@ -13,7 +13,7 @@ class Vuln(ABVuln):
     desc = '''
     奇客星空存在SQL盲注。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=131888
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=131888'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '7k7kbox'  # 漏洞组件名称

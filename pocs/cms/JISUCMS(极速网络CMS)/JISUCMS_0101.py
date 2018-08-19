@@ -15,7 +15,7 @@ class Vuln(ABVuln):
     厂商：http://www.90576.com/  台州市极速网络有限公司，
     台州市极速网络CMS /data/log/passlog.php 任意代码执行漏洞。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源http://www.wooyun.org/bugs/wooyun-2014-085633
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=085633'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'JISUCMS(极速网络CMS)'  # 漏洞应用名称

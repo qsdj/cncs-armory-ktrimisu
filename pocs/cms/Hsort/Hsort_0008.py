@@ -15,7 +15,7 @@ class Vuln(ABVuln):
         Hsort报刊管理系统任意文件下载漏洞。
         /Admin/fileManage.aspx?action=DOWNLOAD&value1=~%2FWeb.config
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=140968
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=140968'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'Hsort'  # 漏洞应用名称

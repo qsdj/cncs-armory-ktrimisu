@@ -15,7 +15,7 @@ class Vuln(ABVuln):
     desc = '''
         Emlog博客前台反射型XSS(无视浏览器filter)
     '''  # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=69818'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=69818'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'Emlog'  # 漏洞应用名称

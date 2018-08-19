@@ -15,7 +15,7 @@ class Vuln(ABVuln):
         中国联通某solr服务未授权访问，泄露员工信息。索引数据库为iwo_ad、iwo_agency、iwo_user、iwo_video。联通的沃业务相关服务器
         而且C段几乎全是联通的业务。
     '''  # 漏洞描述
-    ref = 'https://www.secpulse.com/archives/31908.html'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0105302
+    ref = 'https://www.secpulse.com/archives/31908.html'  # 漏洞来源https://bugs.shuimugan.com/bug/view?bug_no=0105302
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '中国联通'  # 漏洞应用名称

@@ -18,7 +18,7 @@ class Vuln(ABVuln):
         南京擎天政务系统路径泄露：
         /index_page/geren_list_page.aspx?server=1%27&refid=
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=075253
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=075253'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '擎天政务系统'  # 漏洞应用名称

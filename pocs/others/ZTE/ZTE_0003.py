@@ -15,7 +15,7 @@ class Vuln(ABVuln):
     desc = '''
         中兴ZXHN H168N光猫任意远程命令执行：web_shell_cmd.gch
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0104095'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'ZTE-Router'  # 漏洞应用名称

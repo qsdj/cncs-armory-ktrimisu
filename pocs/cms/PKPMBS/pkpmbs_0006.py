@@ -16,7 +16,7 @@ class Vuln(ABVuln):
         政府建设工程质量监督系统某处SQL注入漏洞：
         /PKPMBS/portal/MsgList.aspx
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0120366
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0120366'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'PKPMBS'  # 漏洞应用名称

@@ -14,7 +14,7 @@ class Vuln(ABVuln):
     湖南青果软件有限公司KINGOSOFT高校教务网络管理系统是为高校数字校园建设提供的技术解决方案。 
     青果教务系统存在SQL注入漏洞（简单绕过WAF保护）。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=087296'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '青果教务系统'  # 漏洞应用名称

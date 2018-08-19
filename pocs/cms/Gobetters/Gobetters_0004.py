@@ -17,7 +17,7 @@ class Vuln(ABVuln):
         /web/monitor/monitorsave.php
         /web/users/result.php
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0134733
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0134733'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'Gobetters'  # 漏洞应用名称

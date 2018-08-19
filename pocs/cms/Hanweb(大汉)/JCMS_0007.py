@@ -14,7 +14,7 @@ class Vuln(ABVuln):
     desc = '''
         大汉版通JCMS XSS跨站脚本漏洞,漏洞文件在/m_5_b/selmulti_column.jsp中。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=076816
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=076816'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'Hanweb(大汉)'  # 漏洞应用名称

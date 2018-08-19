@@ -16,7 +16,7 @@ class Vuln(ABVuln):
         PHPCMS 9.5.3 /phpcms/modules/vote/classes/vote_tag.class.php 文件siteid变量可控
         需register_globals=on
     '''  # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=051077'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=051077'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'PHPCMS'  # 漏洞应用名称

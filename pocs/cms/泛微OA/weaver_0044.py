@@ -15,7 +15,7 @@ class Vuln(ABVuln):
         泛微 e-office 信息泄露：
         E-mobile/email_page.php?detailid=*** 可以遍历任意邮件
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0127270'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '泛微OA'  # 漏洞应用名称

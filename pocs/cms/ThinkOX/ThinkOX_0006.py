@@ -16,7 +16,7 @@ class Vuln(ABVuln):
         ThinkOX 2015 年 1 月 28 日 ThinkOX 正式更名为 OpenSNS，意思是基于OpenCenter的社交程序。
         ThinkOX /index.php 参数未经过过滤导致SQL注入漏洞。
     '''  # 漏洞描述
-    ref = 'http://0day5.com/archives/3100/'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=087529
+    ref = 'http://0day5.com/archives/3100/'  # 漏洞来源https://bugs.shuimugan.com/bug/view?bug_no=087529
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'ThinkOX'  # 漏洞应用名称

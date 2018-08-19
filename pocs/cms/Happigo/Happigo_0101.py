@@ -12,7 +12,7 @@ class Vuln(ABVuln):
     desc = '''
     快乐购文件包含漏洞，攻击者可以通过文件包含来读取系统敏感文件信息。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=8824
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=8824'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'Happigo'  # 漏洞组件名称

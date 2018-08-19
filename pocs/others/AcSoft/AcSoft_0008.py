@@ -14,7 +14,7 @@ class Vuln(ABVuln):
     desc = '''
         安财软件通用报销系统 /DownLoadPage.aspx?FileName=/web.config 任意文件下载。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=064190
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=064190'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'AcSoft'  # 漏洞应用名称

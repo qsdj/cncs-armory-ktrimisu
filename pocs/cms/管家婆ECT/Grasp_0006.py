@@ -15,7 +15,7 @@ class Vuln(ABVuln):
         成都任我行软件管家婆ECT存在SQL注入漏洞（无需登录）。
         /VerifyUser.asp
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0105065'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '管家婆ECT'  # 漏洞应用名称

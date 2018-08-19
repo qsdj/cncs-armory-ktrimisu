@@ -16,7 +16,7 @@ class Vuln(ABVuln):
     desc = '''
     漏洞文件：/php/report/include/config.inc .
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源http://wooyun.org/bugs/wooyun-2014-058462
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=058462'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'eYou'  # 漏洞应用名称

@@ -15,7 +15,7 @@ class Vuln(ABVuln):
         用友NC综合办公系统前台Oracle注入漏洞：
         /epp/html/nodes/upload/SupdocDo.jsp?areaname=areaname=1
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0124173'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'Yonyou(用友)'  # 漏洞应用名称

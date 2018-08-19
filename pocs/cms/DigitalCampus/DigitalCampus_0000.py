@@ -14,7 +14,7 @@ class Vuln(ABVuln):
     desc = '''
         通用型数字校园平台 /log.txt 敏感信息泄露漏洞。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=071575
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=071575'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'DigitalCampus'  # 漏洞应用名称

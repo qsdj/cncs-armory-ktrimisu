@@ -16,7 +16,7 @@ class Vuln(ABVuln):
         /goods/GoodsAdd.aspx?goodsid=1
         /goods/GoodsAdd.aspx?goodsid=1
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0115584'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '双杨OA系统'  # 漏洞应用名称
@@ -61,8 +61,8 @@ class Poc(ABPoc):
                 code, head, res, errcode, _ = hh.http(url)
                 if 'qzqzqaDJPjDClWiqbxpq' in res:
                             #security_hole(arg + 'goods/GoodsAdd.aspx?goodsid=1&flag=2')
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                        target=self.target, name=self.vuln.name))
+                    self.output.report(self.vuln, '发现{target}存在{name}漏洞，漏洞地址为{url}'.format(
+                        target=self.target, name=self.vuln.name, url=url))
 
         except Exception as e:
             self.output.info('执行异常{}'.format(e))

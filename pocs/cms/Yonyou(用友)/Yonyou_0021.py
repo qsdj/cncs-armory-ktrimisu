@@ -15,7 +15,7 @@ class Vuln(ABVuln):
         用友是国内著名的内容管理系统之一，包括协同管理系统、用友NC、用友U8等
         用友NC-集团报表为集团企业用户提供全面的报表解决方案，它主要支持各类业务报表的输出、合并报表编制、分部报告编制以及报表的权限与流程管理，客户涉及金融、政府、教育、企业等
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=060988'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'Yonyou(用友)'  # 漏洞应用名称

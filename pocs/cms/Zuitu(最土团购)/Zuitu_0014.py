@@ -15,7 +15,7 @@ class Vuln(ABVuln):
         最土团购系统是国内最专业、功能最强大的GroupOn模式的免费开源团购系统平台，专业技术团队、完美用户体验与极佳的性能，立足为用户提供最值得信赖的免费开源网上团购系统。
         最土团购 /ajax/coupon.php?action=consume&secret=8&id=2 php+数字类型注射漏洞。
     '''  # 漏洞描述
-    ref = 'http://0day5.com/archives/2245/'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=75525
+    ref = 'http://0day5.com/archives/2245/'  # 漏洞来源https://bugs.shuimugan.com/bug/view?bug_no=75525
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'Zuitu(最土团购)'  # 漏洞应用名称

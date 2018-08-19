@@ -15,7 +15,7 @@ class Vuln(ABVuln):
         武汉弘智科技房产管理系统是由武汉弘智科技打造的一款房产管理维护一体化系统。
          武汉弘智科技房产管理系统SQL注入漏洞。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0107850'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '弘智房产管理系统'  # 漏洞应用名称

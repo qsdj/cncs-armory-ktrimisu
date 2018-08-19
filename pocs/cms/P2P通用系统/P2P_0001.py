@@ -17,7 +17,7 @@ class Vuln(ABVuln):
         P2P通用系统是一个个人对个人的网贷系统。
         金钱柜P2P通用系统过滤参数不严谨，导致SQL注入。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0135528'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'P2P通用系统'  # 漏洞应用名称

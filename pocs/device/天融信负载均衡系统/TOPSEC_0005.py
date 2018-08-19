@@ -13,7 +13,7 @@ class Vuln(ABVuln):
     desc = '''
         天融信负载均衡系统 /acc/bindipmac/static_arp_setting_content.php 信息泄SQL注入露洞。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0118363'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '天融信负载均衡系统'  # 漏洞应用名称

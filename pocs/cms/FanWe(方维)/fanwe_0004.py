@@ -15,7 +15,7 @@ class Vuln(ABVuln):
         post：origURL=ghost&password=ghost&email=ghost（email参数没有过滤）
         报错，注入。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=078865'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'FanWe(方维)'  # 漏洞应用名称

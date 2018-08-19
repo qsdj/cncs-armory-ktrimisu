@@ -14,7 +14,7 @@ class Vuln(ABVuln):
         乐知行教学系统是北京讯飞乐知行软件有限公司打造的一款教学管理一体化系统。
         北京乐知行教务系统 /datacenter/downloadApp/loadAppInfo.do SQL注射漏洞。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=085320'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '乐知行教务系统'  # 漏洞应用名称

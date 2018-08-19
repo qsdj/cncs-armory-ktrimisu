@@ -16,7 +16,7 @@ class Vuln(ABVuln):
         /anmai/SF_Manage/tfdeleN.aspx?tfid=%28
         /anmai/RecruitstuManage/hiddenValue.aspx?topicid=1
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0106717https://bugs.shuimugan.com/bug/view?bug_no=0106896'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '安脉学校综合管理平台'  # 漏洞应用名称

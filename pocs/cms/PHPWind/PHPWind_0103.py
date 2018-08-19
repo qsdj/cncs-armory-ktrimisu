@@ -18,7 +18,7 @@ class Vuln(ABVuln):
         phpwind（简称：pw）是一个基于PHP和MySQL的开源社区程序，是国内最受欢迎的通用型论坛程序之一。
         PHPWind 9.0 /res/js/dev/util_libs/jPlayer/Jplayer.swf 跨站脚本。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源http://wooyun.org/bugs/wooyun-2013-017733
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=017733'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'PHPWind'  # 漏洞应用名称

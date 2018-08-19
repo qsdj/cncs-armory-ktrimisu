@@ -17,7 +17,7 @@ class Vuln(ABVuln):
             if 'localhost' in response.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(target=self.target, name=self.vuln.name)).
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=6343
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=6343'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'M1905'  # 漏洞组件名称

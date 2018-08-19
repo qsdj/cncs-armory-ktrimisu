@@ -23,7 +23,7 @@ class Vuln(ABVuln):
         /Rat/EBid/ViewClarify.asp?InviteId=11
         /Rat/EBid/AuditForm/AuditForm_ExpertForm.asp?InviteId=11
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0122276
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0122276'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '1Caitong(一采通)'  # 漏洞应用名称

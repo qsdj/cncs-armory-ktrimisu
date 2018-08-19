@@ -16,7 +16,7 @@ class Vuln(ABVuln):
         SiteServer CMS是定位于中高端市场的CMS内容管理系统，能够以最低的成本、最少的人力投入在最短的时间内架设一个功能齐全、性能优异、规模庞大并易于维护的网站平台。
         SiteServer最新版3.6.4 /platform/background_log.aspx 存在SQL注入漏洞。
     '''  # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=043523'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=043523'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'SiteServer'  # 漏洞应用名称

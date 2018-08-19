@@ -14,7 +14,7 @@ class Vuln(ABVuln):
     desc = '''
         通过本地包含直接getwebshell，直接控制整个网站权限。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=061639'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'EkuCMS(易酷CMS)'  # 漏洞应用名称

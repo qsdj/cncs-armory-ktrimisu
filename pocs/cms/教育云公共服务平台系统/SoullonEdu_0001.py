@@ -91,8 +91,8 @@ class Poc(ABPoc):
                 req = requests.get(verify_url)
 
                 if req.status_code == 500 and 'testvul' in req.text:
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                        target=self.target, name=self.vuln.name))
+                    self.output.report(self.vuln, '发现{target}存在{name}漏洞，漏洞地址为{url}'.format(
+                        target=self.target, name=self.vuln.name, url=verify_url))
 
         except Exception as e:
             self.output.info('执行异常{}'.format(e))

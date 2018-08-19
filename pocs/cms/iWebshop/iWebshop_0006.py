@@ -13,7 +13,7 @@ class Vuln(ABVuln):
     desc = '''
         iWebshop /index.php?controller=site&action=getProduct&specJSON= SQL注射漏洞。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=62061'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'iWebshop'  # 漏洞应用名称

@@ -6,18 +6,18 @@ from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
 class Vuln(ABVuln):
     vuln_id = 'AnyMacro-Mail_0000'  # 平台漏洞编号
-    name = 'AnyMacro-Mail 邮件系统存在文件包含'  # 漏洞名称
+    name = 'AnyMacro Mail 邮件系统存在文件包含'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.LFI  # 漏洞类型
     disclosure_date = '2015-12-17'  # 漏洞公布时间
     desc = '''
         AnyMacro Mail 邮件系统存在文件包含，可任意读取敏感信息。
     '''  # 漏洞描述
-    ref = 'Unknown'  # https://wooyun.shuimugan.com/bug/view?bug_no=153123
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=153123'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'AnyMacro-Mail'  # 漏洞组件名称
-    product_version = '应用版本'  # 漏洞应用版本
+    product_version = 'Unknown'  # 漏洞应用版本
 
 
 class Poc(ABPoc):

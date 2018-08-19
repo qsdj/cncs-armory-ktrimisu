@@ -14,7 +14,7 @@ class Vuln(ABVuln):
     desc = '''
     汇文软件Libsys图书馆管理系统任意文件读取，可以直接获取管理员账号，密码明文、数据库密码明文、配置信息等非常敏感的信息，可以轻松实现无任何限制获取 WEBSHELL ...
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源 http://www.wooyun.org/bugs/wooyun-2014-059850
+    ref = 'http://www.wooyun.org/bugs/wooyun-2014-059850'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '汇文软件'  # 漏洞应用名称

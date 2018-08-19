@@ -13,7 +13,7 @@ class Vuln(ABVuln):
     desc = '''
     酷派旗下分站存在SQL盲注漏洞可获取数据库信息。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=138407
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=138407'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'Coolpad'  # 漏洞组件名称

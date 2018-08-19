@@ -15,7 +15,7 @@ class Vuln(ABVuln):
         北京清大新洋通用图书馆集成系统GLIS9.0，存在注入漏洞： 
         opac/eaal/eaaldetail.jsp?kzh=zyk0040640
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0132188'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '清大新洋'  # 漏洞应用名称
@@ -61,7 +61,7 @@ class Poc(ABPoc):
             m2 = re.findall('1', res2)
 
             if code1 == 200 and code2 == 200 and m1 != m2:
-                security_hole(arg+payload+'   :found sql Injection')
+                #security_hole(arg+payload+'   :found sql Injection')
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 

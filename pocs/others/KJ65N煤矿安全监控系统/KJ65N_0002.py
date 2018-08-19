@@ -19,7 +19,7 @@ class Vuln(ABVuln):
         /admin/groupCollieryEdit.asp?groupId=
         /admin/userEdit.asp?userId=
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=149526'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'KJ65N煤矿安全监控系统'  # 漏洞应用名称

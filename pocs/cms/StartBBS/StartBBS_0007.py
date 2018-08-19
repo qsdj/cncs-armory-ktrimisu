@@ -16,7 +16,7 @@ class Vuln(ABVuln):
         Startbbs - a simple & lightweight Forum. ... Hello, world! StartBBS 是一款优雅、开源、轻量社区系统，基于MVC架构。
         StartBBS v1.1.5.2版 /index.php/home/search?q=1 SQL注入漏洞。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=067853
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=067853'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'StartBBS'  # 漏洞应用名称

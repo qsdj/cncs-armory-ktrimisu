@@ -14,7 +14,7 @@ class Vuln(ABVuln):
     desc = '''
         中农信达农村集体三资网络监管系统 /servlet/downloadfile?filename=/../WEB-INF/web.xml&userid=/ 任意文件下载。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=069864
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=069864'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '北京中农信达'  # 漏洞应用名称

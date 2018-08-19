@@ -14,7 +14,7 @@ class Vuln(ABVuln):
     desc = '''
         贵州博虹科技政府建站程序 /NewsSearch.aspx?TxtKey=1 通用型SQL注射漏洞。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=080289
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=080289'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'Bohoog'  # 漏洞应用名称

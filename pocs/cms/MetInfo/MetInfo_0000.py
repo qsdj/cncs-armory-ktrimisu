@@ -12,9 +12,9 @@ class Vuln(ABVuln):
     type = VulnType.OTHER  # 漏洞类型
     disclosure_date = '2015-05-03'  # 漏洞公布时间
     desc = '''
-        MetInfo 无需登录前台直接GETSHELL
+        MetInfo 无需登录前台直接GETSHELL.
     '''  # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=094886'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=094886'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'MetInfo'  # 漏洞应用名称

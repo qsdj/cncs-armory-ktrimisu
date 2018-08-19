@@ -14,7 +14,7 @@ class Vuln(ABVuln):
         电子政务网是国家机关在政务活动中，全面应用现代信息技术、网络技术以及办公自动化技术等进行办公、管理和为社会提供公共服务的一种全新的管理模式的系统。
         山西信访局文件包含获取敏感信息漏洞，攻击者可以通过构造恶意语句来读取任意文件敏感信息。
     '''  # 漏洞描述
-    ref = 'Unknown'  # https://wooyun.shuimugan.com/bug/view?bug_no=910366
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=910366'  #
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '电子政务网'  # 漏洞组件名称

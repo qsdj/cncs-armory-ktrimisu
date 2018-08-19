@@ -14,7 +14,7 @@ class Vuln(ABVuln):
     desc = '''
         大汉科技（Hanweb）vipchat /vipchat/servlet/upfile.do 文件上传getshell漏洞。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0143430'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'Hanweb(大汉)'  # 漏洞应用名称

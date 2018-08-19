@@ -18,7 +18,7 @@ class Vuln(ABVuln):
         '/cgi-bin/web_cgi?op_req=apply&module=conf_bakdown',
         '/cgi-bin/web_cgi?op_req=apply&module=syslog_management&opt=down&type=system'
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0102009
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0102009'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '任子行网络审计系统'  # 漏洞应用名称

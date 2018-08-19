@@ -14,7 +14,7 @@ class Vuln(ABVuln):
     desc = '''   
         中科新业网络安全审计系统 /manage/main/tree/tree/ajax.php SQL注入（无需登录DBA权限。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0133628'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '中科新业网络哨兵'  # 漏洞应用名称

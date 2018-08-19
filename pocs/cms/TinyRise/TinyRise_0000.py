@@ -14,7 +14,7 @@ class Vuln(ABVuln):
         TinyRise是一款B2C独立网店系统,适合企业及个人快速构建个性化网上商店。
         TinyRise前台任意文件包含漏洞，攻击者可以通过构造恶意语句来读取系统敏感文件信息。
     '''  # 漏洞描述
-    ref = 'Unknown'  # https://wooyun.shuimugan.com/bug/view?bug_no=80578
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=80578'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'TinyRise'  # 漏洞组件名称

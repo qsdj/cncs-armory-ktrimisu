@@ -1,5 +1,5 @@
 {
   "type": "cms",
-  "producer": null,
+  "producer": "CMS Made Simple",
   "desc": "CMS Made Simple(简称CMSMS)是一款优秀的轻量级开源内容管理系统(CMS)。"
 }

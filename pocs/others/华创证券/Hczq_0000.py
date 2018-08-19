@@ -13,7 +13,7 @@ class Vuln(ABVuln):
     desc = '''
         华创证券分站配置不当造成任意文件包含漏洞，攻击者可以通过构造恶意语句来读取系统敏感文件信息。
     '''  # 漏洞描述
-    ref = 'Unknown'  # https://wooyun.shuimugan.com/bug/view?bug_no=141374
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=141374'  #
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '华创证券'  # 漏洞组件名称

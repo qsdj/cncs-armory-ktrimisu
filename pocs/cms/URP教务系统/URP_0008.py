@@ -15,7 +15,7 @@ class Vuln(ABVuln):
         URP教务系统是一个受欢迎的校园多功能教务管理系统。
         URP综合教务系统 /servlet/com.runqian.base.util.ReadJavaScriptServlet?file= 任意文件读取and未授权访问。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=054350
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=054350'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'URP教务系统'  # 漏洞应用名称

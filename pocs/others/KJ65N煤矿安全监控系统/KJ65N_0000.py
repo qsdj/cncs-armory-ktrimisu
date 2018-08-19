@@ -15,7 +15,7 @@ class Vuln(ABVuln):
     desc = '''
         KJ65N煤矿远程监控安全预警系统 通用 sql注入3处(可直接os-shell 添加用户)
     '''  # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=0148855'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0148855'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'KJ65N煤矿安全监控系统'  # 漏洞应用名称

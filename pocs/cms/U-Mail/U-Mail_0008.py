@@ -22,7 +22,7 @@ class Vuln(ABVuln):
         U-Mail专家级邮件系统是福洽科技最新推出的第四代企业邮局系统。该产品依托福洽科技在信息领域中领先的技术与完善的服务，专门针对互联网信息技术的特点，综合多行业多领域不同类型企业自身信息管理发展的特点，采用与国际先进技术接轨的专业系统和设备，将先进的网络信息技术与企业自身的信息管理需要完美的结合起来。
         U-Mail 20141124 /api/api.php 敏感信息泄露。
     '''  # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=070206'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=070206'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'U-Mail'  # 漏洞应用名称

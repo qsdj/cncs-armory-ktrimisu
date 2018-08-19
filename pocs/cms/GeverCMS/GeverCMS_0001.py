@@ -14,7 +14,7 @@ class Vuln(ABVuln):
     desc = '''
         金宇恒内容管理系统 /adminroot/common/downLoadFile.jsp?filepath=/WEB-INF/web.xml&filename=None 通用型任意文件下载漏洞。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=069009
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=069009'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'GeverCMS'  # 漏洞应用名称

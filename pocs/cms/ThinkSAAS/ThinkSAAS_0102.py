@@ -13,7 +13,7 @@ class Vuln(ABVuln):
         ThinkSAAS开源社区基于PHP+MySQL开发完成，运行于Linux 平台和Windows平台，完美支持Apache和Nginx运行环境。
         ThinkSAAS 2.0.1 版文件包含漏洞，攻击者可以通过本地文件包含来读取系统敏感文件信息。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=45409
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=45409'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'ThinkSAAS'  # 漏洞组件名称

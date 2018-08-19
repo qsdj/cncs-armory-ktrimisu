@@ -15,7 +15,7 @@ class Vuln(ABVuln):
         浙大升腾软件开发的数字房产系统越权访问可以getshell.
         /admini/upfile/upfile.aspx
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=063656
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=063656'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '浙大升腾软件数字房产系统'  # 漏洞应用名称

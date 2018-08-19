@@ -13,7 +13,7 @@ class Vuln(ABVuln):
     desc = '''
         网神网关设备文件包含漏洞（无需登录可远程）。
     '''  # 漏洞描述
-    ref = ''  # https://wooyun.shuimugan.com/bug/view?bug_no=169734
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=169734'  #
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '网神'  # 漏洞组件名称

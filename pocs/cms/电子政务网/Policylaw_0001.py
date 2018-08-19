@@ -16,7 +16,7 @@ class Vuln(ABVuln):
         政府通用系统任意文件下载漏洞。
         /policylaw/policylaw.do?act=read&filePath=c://Windows//win.ini&fileContentType=
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=068484
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=068484'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '电子政务网'  # 漏洞应用名称

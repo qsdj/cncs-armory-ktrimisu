@@ -14,7 +14,7 @@ class Vuln(ABVuln):
     desc = '''
         冠群金辰防病毒墙网关设备 index.php SQL注入漏洞。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0140977'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '冠群金辰防病毒墙网关'  # 漏洞应用名称

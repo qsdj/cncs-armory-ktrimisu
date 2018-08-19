@@ -15,7 +15,7 @@ class Vuln(ABVuln):
     desc = '''
         中兴ZXV10 W812N路由设置文件未授权访问下载：manager_dev_config_t.gch
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=066735'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'ZTE-Router'  # 漏洞应用名称

@@ -15,7 +15,7 @@ class Vuln(ABVuln):
         Z-Blog是由RainbowSoft Studio开发的一款小巧而强大的基于Asp和PHP平台的开源程序，其创始人为朱煊(网名：zx.asd)。
         Zblog /zb_system/xml-rpc/index.php Blind-XXE  造成任意文件读取漏洞。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=098591
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=098591'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'Zblog'  # 漏洞应用名称

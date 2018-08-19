@@ -17,7 +17,7 @@ class Vuln(ABVuln):
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'AKCMS'  # 漏洞应用名称
-    product_version = 'Unknown'  # 漏洞应用版本
+    product_version = '4.0.9'  # 漏洞应用版本
 
 
 class Poc(ABPoc):

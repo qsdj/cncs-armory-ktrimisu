@@ -19,7 +19,7 @@ class Vuln(ABVuln):
         /public/DataAccess/GeneralModule/doDbAccess.ashx
         /SystemManage/Plan/GetArea.ashx
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=099084'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '四创灾害预警系统'  # 漏洞应用名称

@@ -50,12 +50,6 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
 
-            """
-            POC Name  :  D-Link DIR-300 2处未授权访问
-            Author    :  a
-            mail      :  a@lcx.cc
-            Referer   :  http://www.wooyun.org/bugs/wooyun-2010-066799
-            """
             hh = hackhttp.hackhttp()
             payload = (
                 '/bsc_wlan.php?NO_NEED_AUTH=1&AUTH_GROUP=0',

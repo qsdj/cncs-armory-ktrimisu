@@ -14,7 +14,7 @@ class Vuln(ABVuln):
     desc = '''
     欧派集团旗下核心系统存在SQL且权限为DBA（时间盲注）。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=138297
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=138297'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'Oppein'  # 漏洞组件名称

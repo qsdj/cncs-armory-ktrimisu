@@ -14,7 +14,7 @@ class Vuln(ABVuln):
         苏亚星校园网软件系统是一个校务管理系统、资源库管理系统、VOD点播系统、校园网站和虚拟社区进行整合而形成的校园网综合应用平台。
         南京苏亚星校园管理系统设计缺陷导致获取任意管理员明文密码（无需登录）。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=090403'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '苏亚星校园管理系统'  # 漏洞应用名称

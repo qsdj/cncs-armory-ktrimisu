@@ -26,7 +26,7 @@ class Vuln(ABVuln):
             type="text" name="xh" id="context"
         可上传文件,未限制上传文件类型,导致任意文件上传漏洞。
     '''  # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=075251'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=075251'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'URP教务系统'  # 漏洞应用名称

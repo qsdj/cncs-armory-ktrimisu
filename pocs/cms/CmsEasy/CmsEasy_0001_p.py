@@ -13,7 +13,7 @@ class Vuln(ABVuln):
     desc = '''
     CmsEasy 5.5 中 /celive/live/header.php 文件过滤不严存在POST注入
     '''  # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=70827'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=70827'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'CmsEasy'  # 漏洞应用名称

@@ -14,7 +14,7 @@ class Vuln(ABVuln):
     desc = '''
         中科新业网络哨兵 ucenter/remotewh/sendcmd_start.php 函数参数过滤不严谨，导致可执行任意命令。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0123369'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '中科新业网络哨兵'  # 漏洞应用名称

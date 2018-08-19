@@ -14,7 +14,7 @@ class Vuln(ABVuln):
     desc = '''
         Apache 目录下会有一个cgi-bin/test-cgi bash 远程命令执行漏洞
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0106070
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0106070'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'Apache'  # 漏洞应用名称

@@ -15,7 +15,7 @@ class Vuln(ABVuln):
         GlassFish 是一款强健的商业兼容应用服务器，达到产品级质量，可免费用于开发、部署和重新分发。开发者可以免费获得源代码，还可以对代码进行更改。
         应用服务器GlassFish /theme/META-INF 存在通用任意文件读取漏洞。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=0144595
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0144595'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'GlassFish'  # 漏洞应用名称

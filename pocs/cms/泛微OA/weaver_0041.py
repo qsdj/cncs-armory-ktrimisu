@@ -18,7 +18,7 @@ class Vuln(ABVuln):
         iweboffice/officeserver.php
         iWebOffice/OfficeServer2.php
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0125638'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '泛微OA'  # 漏洞应用名称

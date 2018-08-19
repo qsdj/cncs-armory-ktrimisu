@@ -21,7 +21,7 @@ class Vuln(ABVuln):
         南方数据企业CMS、企业网站SEO、网站优化、SEO搜索引擎优化机制、自助建站系统、前台全站采用静态html页面模板自动生成。
         Southidc v10.0到v11.0版本中NewsType.asp文件对SmallClass参数没有适当过滤，导致SQL注入漏洞。
     '''  # 漏洞描述
-    ref = 'Southidc南方数据 v11.0 /NewsType.asp SQL注入漏洞'  # 漏洞来源
+    ref = 'Unknown'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'Southidc'  # 漏洞应用名称

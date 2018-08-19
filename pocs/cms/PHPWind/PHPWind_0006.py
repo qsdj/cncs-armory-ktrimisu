@@ -16,7 +16,7 @@ class Vuln(ABVuln):
         phpwind（简称：pw）是一个基于PHP和MySQL的开源社区程序，是国内最受欢迎的通用型论坛程序之一。
         PHPWind flash xss漏洞。
     '''  # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=017731'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=017731'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'PHPWind'  # 漏洞应用名称

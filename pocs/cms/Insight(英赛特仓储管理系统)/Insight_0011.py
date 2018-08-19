@@ -14,7 +14,7 @@ class Vuln(ABVuln):
     desc = '''
         英赛特仓储管理系统互联网客户服务平台通用越权漏洞
     '''  # 漏洞描述
-    ref = 'https://wooyun.shuimugan.com/bug/view?bug_no=0122207'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0122207'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'Insight(英赛特仓储管理系统)'  # 漏洞应用名称

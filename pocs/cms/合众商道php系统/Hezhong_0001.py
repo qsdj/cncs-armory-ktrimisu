@@ -15,7 +15,7 @@ class Vuln(ABVuln):
         合众商道一款PHP建站系统。
         合众商道php系统通用注入,支持联合查询。
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源https://wooyun.shuimugan.com/bug/view?bug_no=083434
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=083434'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '合众商道php系统'  # 漏洞应用名称
