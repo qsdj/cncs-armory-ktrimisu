@@ -56,7 +56,6 @@ class Poc(ABPoc):
                 self.target + payload, postdata)
 
             if code == 200 and '4beed3b9c4a886067de0e3a094246f781' in res:
-                security_hole('SQLinjection '+arg+payload)
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 

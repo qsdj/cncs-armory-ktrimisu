@@ -1,14 +1,10 @@
 # coding: utf-8
+import urllib
+import hashlib
+import re
 
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
-import urllib.request
-import urllib.parse
-import urllib.error
-import urllib.request
-import urllib.error
-import urllib.parse
-import re
 
 
 class Vuln(ABVuln):

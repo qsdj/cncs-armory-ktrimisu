@@ -69,7 +69,7 @@ class Poc(ABPoc):
             r = requests.get(url)
 
             if r.status_code == 200 and 'alert(2)' in r.text:
-                if ('>17<' in page_content) or ('>32<' in page_content):
+                if ('>17<' in r.text) or ('>32<' in r.text):
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                         target=self.target, name=self.vuln.name))
 

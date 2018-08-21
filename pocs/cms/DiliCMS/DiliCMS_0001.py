@@ -59,7 +59,7 @@ class Poc(ABPoc):
             test_data_urlencode = urllib.parse.urlencode(test_data)
 
             req = urllib.request.urlopen(verify_url, data=test_data_urlencode)
-            if e.code == 500 and "`username` =  Array</p>" in e.read():
+            if req.code == 500 and "`username` =  Array</p>" in req.read():
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 

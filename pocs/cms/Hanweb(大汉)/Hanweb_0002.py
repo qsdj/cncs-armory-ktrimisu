@@ -64,7 +64,7 @@ class Poc(ABPoc):
                         if r.status_code == 200 and ('Licence' in r.text or 'admin' in r.text):
                             # security_hole(admin_verify_url)
                             self.output.report(self.vuln, '发现{target}存在{name}漏洞;url={url}'.format(
-                                target=self.target, name=self.vuln.name, url=url))
+                                target=self.target, name=self.vuln.name, url=verify_url))
 
         except Exception as e:
             self.output.info('执行异常{}'.format(e))

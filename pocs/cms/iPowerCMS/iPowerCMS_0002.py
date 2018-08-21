@@ -58,7 +58,6 @@ class Poc(ABPoc):
                 target = self.target + payload
                 code, head, body, errcode, final_url = hh.http(target)
                 if '<v>1</v>' in body:
-                    security_hole(target)
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                         target=self.target, name=self.vuln.name))
 

@@ -57,7 +57,7 @@ class Poc(ABPoc):
             code, head, res, errcode, _ = hh.http(payload)
 
             if code == 200 and 'name="dbname"' in res and 'name="dbhost"' in res:
-                s  # ecurity_info(payload+':Infromation Traversal dbw =value' )
+                # ecurity_info(payload+':Infromation Traversal dbw =value' )
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 

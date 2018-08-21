@@ -46,7 +46,7 @@ class Poc(ABPoc):
             }
         }
 
-    def random_str(self,len):
+    def random_str(self, len):
         str1 = ""
         for i in range(len):
             str1 += (random.choice("ABCDEFGH1234567890"))

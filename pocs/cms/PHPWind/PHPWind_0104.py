@@ -55,9 +55,10 @@ class Poc(ABPoc):
             verify_url = self.target + payload
             req = urllib.request.Request(verify_url)
             try:
-                content = urllib.request.urlopen(req).read()
+                response = urllib.request.urlopen(req)
+                content = response.read()
             except urllib.error.URLError as e:
-                content = e.read()
+                content = response.read()
                 if '<script>alert("bb2")</script>' in content:
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                         target=self.target, name=self.vuln.name))

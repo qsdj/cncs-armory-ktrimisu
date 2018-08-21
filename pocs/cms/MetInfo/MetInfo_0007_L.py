@@ -71,7 +71,7 @@ class Poc(ABPoc):
             if win_reponse.status_code == 200 and 'extensions' in win_reponse.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
-            if linux_reponse.status_code == 200 and 'hosts' in linux_reponse.text:
+            if linux_response.status_code == 200 and 'hosts' in linux_response.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
         except Exception as e:

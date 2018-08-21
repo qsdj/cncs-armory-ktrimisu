@@ -1,4 +1,5 @@
 # coding: utf-8
+import urllib
 
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType

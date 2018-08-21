@@ -58,7 +58,7 @@ class Poc(ABPoc):
             verify_url = self.target + "/wp-comments-post.php"
 
             def rand_str(length): return ''.join(
-                random.sample(string.letters, length))
+                random.sample(string.ascii_letters, length))
 
             post_id = ''
             try:

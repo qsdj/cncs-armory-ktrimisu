@@ -2,9 +2,9 @@
 
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
-import urllib.request
-import urllib.error
-import urllib.parse
+
+import re
+import urllib
 
 
 class Vuln(ABVuln):

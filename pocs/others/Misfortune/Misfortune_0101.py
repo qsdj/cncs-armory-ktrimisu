@@ -1,8 +1,5 @@
 # coding: utf-8
 import re
-import urllib.request
-import urllib.error
-import urllib.parse
 from distutils.version import LooseVersion
 
 from CScanPoc.thirdparty import requests, hackhttp
@@ -53,8 +50,7 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
             verify_url = '%s/Allegro' % self.target
-            req = urllib.request.Request(verify_url)
-            content = urllib.request.urlopen(req).read()
+            content = requests.get(verify_url).text
             ver = re.findall(
                 'RomPager Advanced Version (\\d+\\.\\d+)<br>', content)
             if ver and '<title>Allegro Copyright</title>' in content:

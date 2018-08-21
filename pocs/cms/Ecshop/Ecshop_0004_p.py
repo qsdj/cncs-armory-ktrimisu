@@ -73,7 +73,7 @@ class Poc(ABPoc):
                     data=postdata,
                 )
                 content = urllib.request.urlopen(req).read()
-                if urllib.request.urlopen(req).geturl() == args['options']['target'] + "/index.php":
+                if urllib.request.urlopen(req).geturl() == self.target + "/index.php":
                     if test in content:
                         self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                             target=self.target, name=self.vuln.name))

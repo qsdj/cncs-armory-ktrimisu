@@ -67,18 +67,7 @@ class Poc(ABPoc):
             self.output.info('执行异常{}'.format(e))
 
     def exploit(self):
-        self.target = self.target.rstrip(
-            '/') + '/' + (self.get_option('base_path').lstrip('/'))
-        try:
-            self.output.info('开始对 {target} 进行 {vuln} 漏洞利用'.format(
-                target=self.target, vuln=self.vuln))
-
-            if res:
-                self.output.report(self.vuln, '发现{target}存在{name}漏洞，获取到的为{data}'.format(
-                    target=self.target, name=self.vuln.name, data=exploit_data))
-
-        except Exception as e:
-            self.output.info('执行异常{}'.format(e))
+        self.verify()
 
 
 if __name__ == '__main__':

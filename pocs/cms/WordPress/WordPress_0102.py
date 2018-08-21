@@ -57,7 +57,7 @@ class Poc(ABPoc):
             verify_url = target + "/wp-comments-post.php"
 
             def rand_str(length): return ''.join(
-                random.sample(string.letters, length))
+                random.sample(string.ascii_letters, length))
             try:
                 post_id = re.search(r'post-(?P<post_id>[\\d]+)',
                                     requests.get(target).text).group('post_id')

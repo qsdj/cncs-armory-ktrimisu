@@ -9,6 +9,7 @@ import urllib.request
 import urllib.error
 import urllib.parse
 import re
+import hashlib
 
 
 class Vuln(ABVuln):
@@ -57,10 +58,12 @@ class Poc(ABPoc):
             flash_md5 = "e971c772b2df839298a8f8f9451f1eda"
             verify_url = '{target}'.format(
                 target=self.target)+"/res/js/dev/util_libs/syntaxHihglighter/scripts/clipboard.swf"
-            request = urllib.request.Request(verify_url)
-            response = urllib.request.urlopen(request)
-            content = str(response.read())
-            md5_value = hashlib.md5(content).hexdigest()
+            #request = urllib.request.Request(verify_url)
+            #response = urllib.request.urlopen(request)
+            #content = str(response.read())
+
+            response = requests.get(verify_url)
+            md5_value = hashlib.md5(response.text.encode("utf8")).hexdigest()
             if md5_value in flash_md5:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))

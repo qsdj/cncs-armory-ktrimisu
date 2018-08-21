@@ -50,6 +50,7 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
 
+            hh = hackhttp.hackhttp()
             anpayloads = [
                 '/pubinfo/Moreysxk.asp?Qryxmmc=111',
                 '/web/pubinfo/Moreysxk.asp?Qryxmmc=111'

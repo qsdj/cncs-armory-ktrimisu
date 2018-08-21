@@ -35,7 +35,7 @@ def h2bin(x):
     return x.replace(' ', '').replace('\n', '').decode('hex')
 
 
-def h2bin(x):
+def h2bin2(x):
     return bytes.fromhex(x.replace(' ', '').replace('\n', ''))
 
 

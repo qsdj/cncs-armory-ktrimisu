@@ -2,15 +2,12 @@
 
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
+
 import re
 import time
 import json
-import urllib.request
-import urllib.parse
-import urllib.error
-import urllib.request
-import urllib.error
-import urllib.parse
+import urllib
+from hashlib import md5
 
 
 class Vuln(ABVuln):

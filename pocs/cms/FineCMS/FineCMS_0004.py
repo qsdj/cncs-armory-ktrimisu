@@ -155,7 +155,6 @@ class Poc(ABPoc):
             poc = arg + '/member/ucenter/config.inc.php'
             code, head, res, errcode, _ = hh.http(poc)
             if 'testvul' in res:
-                security_hole("finecms getshell:" + poc)
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 

