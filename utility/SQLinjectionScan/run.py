@@ -6,6 +6,7 @@ import tempfile
 import requests
 import threading
 import argparse
+import urllib2
 
 
 class AutoSqli(object):
@@ -148,8 +149,14 @@ def create_cmd_parser():
 
 def AKscan_run(args, runpath=None, json_out_file=None):
     if args.target and runpath:
+        # TODO:任务地址
+        target = args.target
+        parsed = urlparse(target)
+        if not parsed.scheme:
+            target = 'http://{}'.format(target)
+
         shell = "cd {runpath} && python run.py --target {target} --json-out-file={json_out_file}".format(
-            runpath=runpath, target=args.target, json_out_file=json_out_file)
+            runpath=runpath, target=target, json_out_file=json_out_file)
     else:
         return
     if args.timeout:
@@ -174,7 +181,7 @@ def run_sqlmapapi(sqlmapapi, url):
 def main():
     BASEDIR = os.path.dirname(os.path.abspath(__file__))
     AKscan_path = "./AKscan/"
-    url_jsonPath = os.path.join(BASEDIR, "./urls.json")
+    url_jsonPath = os.path.join(BASEDIR, "urls.json")
     if os.path.exists(url_jsonPath):
         os.remove(url_jsonPath)
     parser = create_cmd_parser()
@@ -202,7 +209,7 @@ def main():
             for t in threadPool:
                 t.join()
     except Exception, e:
-        print(e)
+        pass
 
 
 if __name__ == "__main__":
