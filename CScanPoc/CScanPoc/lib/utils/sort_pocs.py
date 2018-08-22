@@ -27,11 +27,13 @@ def _clean_up_poc_dirs(path):
         os.rmdir(path)
 
 
-def sort_pocs(poc_base_dir):
+def sort_pocs(poc_base_dir, ignore_dirs=['common']):
     '''将 POC 放置到其检查的 产品类型/产品名 目录下'''
 
     mod_count = 0
-    for (mod, d, file_name) in iter_modules(poc_base_dir):
+    if '.venv' not in ignore_dirs:
+        ignore_dirs.append('.venv')
+    for (mod, d, file_name) in iter_modules(poc_base_dir, ignore_dirs):
         mod_count += 1
         progress(mod_count, mod_count, '处理模块', os.path.join(d, file_name))
         (vuln, _) = load_poc_mod(mod)
