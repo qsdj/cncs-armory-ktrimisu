@@ -2,11 +2,14 @@
 import os
 import json
 import time
-import tempfile
+import logging
 import requests
 import threading
 import argparse
-import urllib2
+from urlparse import urlparse
+
+FORMAT = '%(asctime)-15s %(clientip)s %(user)-8s %(message)s'
+logging.basicConfig(format=FORMAT)
 
 
 class AutoSqli(object):
@@ -30,14 +33,16 @@ class AutoSqli(object):
     def task_new(self):
         self.taskid = json.loads(
             requests.get(self.server + 'task/new').text)['taskid']
-        print('Created new task: ' + self.taskid)
+        logging.info('Created new task {}'.format(self.taskid))
         if len(self.taskid) > 0:
             return True
         return False
 
     def task_delete(self):
-        if json.loads(requests.get(self.server + 'task/' + self.taskid + '/delete').text)['success']:
-            print('{}: Deleted task'.format(self.taskid))
+        del_req_result = requests.get(
+            self.server + 'task/' + self.taskid + '/delete').text
+        if json.loads(del_req_result)['success']:
+            logging.info('Task {} removed'.format(self.taskid))
             return True
         return False
 
@@ -49,13 +54,14 @@ class AutoSqli(object):
             requests.post(url, data=json.dumps(payload), headers=headers).text)
         self.engineid = t['engineid']
         if len(str(self.engineid)) > 0 and t['success']:
-            print('{}: Started scan'.format(self.taskid))
+            logging.info('Task {} started'.format(self.taskid))
             return True
         return False
 
     def scan_status(self):
-        self.status = json.loads(
-            requests.get(self.server + 'scan/' + self.taskid + '/status').text)['status']
+        scan_status_req_result = requests.get(
+            self.server + 'scan/' + self.taskid + '/status').text
+        self.status = json.loads(scan_status_req_result)['status']
         if self.status == 'running':
             return 'running'
         elif self.status == 'terminated':
@@ -77,23 +83,15 @@ class AutoSqli(object):
 
     def option_set(self):
         headers = {'Content-Type': 'application/json'}
-        option = {"options": {
-            "smart": True
-        }
-        }
+        option = {"options": {"smart": True}}
         url = self.server + 'option/' + self.taskid + '/set'
         requests.post(url, data=json.dumps(option), headers=headers)
-        # t = json.loads(
-        #     requests.post(url, data=json.dumps(option), headers=headers).text)
-        # print t
 
     def scan_stop(self):
-        json.loads(
-            requests.get(self.server + 'scan/' + self.taskid + '/stop').text)['success']
+        requests.get(self.server + 'scan/' + self.taskid + '/stop').text
 
     def scan_kill(self):
-        json.loads(
-            requests.get(self.server + 'scan/' + self.taskid + '/kill').text)['success']
+        requests.get(self.server + 'scan/' + self.taskid + '/kill').text
 
     def run(self):
         if not self.task_new():
@@ -139,7 +137,8 @@ def create_cmd_parser():
         '--timeout', required=False, type=int, dest='timeout', default=1800,
         help='爬虫超时时间（单位：秒）默认1800')
     parser.add_argument(
-        '--depth-limit', required=False, type=int, dest='depth_limit', default=5,
+        '--depth-limit', required=False, type=int,
+        dest='depth_limit', default=5,
         help='爬虫深度,默认5')
     parser.add_argument(
         '--sqlmapapi', required=True, type=str, dest='sqlmapapi',
@@ -155,7 +154,8 @@ def AKscan_run(args, runpath=None, json_out_file=None):
         if not parsed.scheme:
             target = 'http://{}'.format(target)
 
-        shell = "cd {runpath} && python run.py --target {target} --json-out-file={json_out_file}".format(
+        shell = ("cd {runpath} && python run.py --target {target}"
+                 " --json-out-file={json_out_file}").format(
             runpath=runpath, target=target, json_out_file=json_out_file)
     else:
         return
@@ -167,8 +167,12 @@ def AKscan_run(args, runpath=None, json_out_file=None):
 
 
 def get_all_urls(filename):
+    load_dict = []
     with open(filename, 'r') as load_f:
-        load_dict = json.load(load_f)
+        try:
+            load_dict = json.load(load_f)
+        except Exception:
+            pass
     for url in load_dict:
         if url["url"]:
             yield url["url"]
@@ -180,15 +184,16 @@ def run_sqlmapapi(sqlmapapi, url):
 
 def main():
     BASEDIR = os.path.dirname(os.path.abspath(__file__))
-    AKscan_path = "./AKscan/"
+    askscan_path = os.path.join(BASEDIR, "./AKscan/")
     url_jsonPath = os.path.join(BASEDIR, "urls.json")
+
     if os.path.exists(url_jsonPath):
         os.remove(url_jsonPath)
     parser = create_cmd_parser()
     args = parser.parse_args()
     try:
         # 运行AKscan
-        AKscan_run(args, runpath=AKscan_path, json_out_file=url_jsonPath)
+        AKscan_run(args, runpath=askscan_path, json_out_file=url_jsonPath)
         sqlmapapi = args.sqlmapapi
         # 线程池最多的装载数量
         runthreadNum = 40
@@ -208,8 +213,8 @@ def main():
                 t.start()
             for t in threadPool:
                 t.join()
-    except Exception, e:
-        pass
+    except Exception:
+        logging.exeption()
 
 
 if __name__ == "__main__":
