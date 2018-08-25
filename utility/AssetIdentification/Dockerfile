@@ -6,7 +6,7 @@ RUN echo 'deb http://mirrors.ustc.edu.cn/ubuntu/ xenial main restricted universe
     echo 'deb http://mirrors.ustc.edu.cn/ubuntu/ xenial-security main restricted universe multiverse' >> /etc/apt/sources.list && \
     apt update
 RUN apt install nmap python ruby ruby-dev libruby gcc make --yes
-RUN gem sources --add https://gems.ruby-china.org/ --remove https://rubygems.org/ && \
+RUN gem sources --add https://mirrors.ustc.edu.cn/rubygems/ --remove https://rubygems.org/ && \
     gem install bundler && \
     bundle config mirror.https://rubygems.org https://gems.ruby-china.com
 COPY WhatWeb /WhatWeb

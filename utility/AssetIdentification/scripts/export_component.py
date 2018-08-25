@@ -46,8 +46,7 @@ def export_whatweb(args):
 
     os.system("{} -l > {}".format(whatweb_runpath, output_filename))
     total = int(
-        os.popen("cat {}|wc -l").format(output_filename).read().split("\n")[0].lstrip())
-    print(total)
+        os.popen("cat {}|wc -l".format(output_filename)).read().split("\n")[0].lstrip())
     count = 1
     contents = list()
     with open(output_filename, 'r') as tmp1:
