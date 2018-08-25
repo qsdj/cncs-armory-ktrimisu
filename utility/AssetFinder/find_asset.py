@@ -16,6 +16,14 @@ COMMON_PORTS = [21, 22, 23, 25, 53, 69, 80, 110, 443, 1080, 1158,
 
 
 def run_masscan(host, outfile, rate, masscan_bin, ports=COMMON_PORTS):
+    if ports is None:
+        ports = COMMON_PORTS
+    if isinstance(ports, (str, )):
+        try:
+            if ports.strip() == '':
+                ports = COMMON_PORTS
+        except Exception:
+            pass
     if isinstance(ports, (set, list, tuple)):
         ports = ','.join([str(x) for x in ports])
     cmd = MASSCAN_CMD.format(masscan_bin=masscan_bin,
@@ -54,6 +62,9 @@ def create_cmd_parser():
         '-u', '--url', required=False, dest='url',
         help='识别目标主机 URL/IP/域名')
     parser.add_argument(
+        '-p', '--port', required=False, dest='ports',
+        help='指定扫描端口')
+    parser.add_argument(
         '--json-out-file', required=False, dest='json_out_file',
         help='以 JSON 格式输出结果到文件')
     parser.add_argument(
@@ -82,7 +93,7 @@ def main(masscan_bin='masscan/masscan'):
     setup_logger()
     _, outfile = tempfile.mkstemp()
     rate = args.rate or 1000
-    run_masscan(args.url, outfile, rate, masscan_bin)
+    run_masscan(args.url, outfile, rate, masscan_bin, args.ports)
     result = parse_result(outfile)
     print_result(result, args.json_out_file)
 
