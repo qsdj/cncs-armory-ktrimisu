@@ -10,4 +10,5 @@ setup(name='CScanPoc',
       packages=find_packages(),
       package_data={'': ['*.json']},
       scripts=['scripts/poc_exe.py',
-               'scripts/strategy_exe.py'])
+               'scripts/strategy_exe.py',
+               'scripts/recommend_task.py'])

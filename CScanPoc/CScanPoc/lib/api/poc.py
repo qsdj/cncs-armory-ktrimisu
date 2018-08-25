@@ -158,6 +158,7 @@ class ABPoc(PocStaticDefinition, RuntimeOptionSupport):
             return
 
         if mode == "verify":
+            self.output.info('开始使用 %s 验证 %s' % (self, self.vuln))
             self.verify()
         else:
             self.exploit()

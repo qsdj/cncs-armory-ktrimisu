@@ -28,6 +28,18 @@ build_asset_identification() {
     cd ../..
 }
 
+build_sqlmapapi() {
+    cd utility/sqlmapApi/
+    docker build -t sqlmapapi:0.1 .
+    cd ../..
+}
+
+build_sqlinjectionscan() {
+    cd utility/SQLinjectionScan/
+    docker build -t sqlinjectionscan:0.1 .
+    cd ../..
+}
+
 echo_title "build cscan"
 build_cscan
 
@@ -36,3 +48,9 @@ build_asset_finder
 
 echo_title "build asset identifier"
 build_asset_identification
+
+echo_title "build sqlmapapi"
+build_sqlmapapi
+
+echo_title "build SQLInjectionScan"
+build_sqlinjectionscan
