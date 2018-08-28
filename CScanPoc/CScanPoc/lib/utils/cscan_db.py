@@ -282,8 +282,8 @@ class CScanDb:
             set([self.poc_vuln_ind[poc_id] for poc_id in poc_id_set]))
 
         poc_insert_sql = '''INSERT INTO poc
-            (poc_id, poc_name, author, vuln_id, created_at, updated_at, args)
-            VALUES(%s, %s, %s, %s, %s, %s, %s)'''
+            (poc_id, poc_name, author, vuln_id, create_time, created_at, updated_at, args)
+            VALUES(%s, %s, %s, %s, %s, %s, %s, %s)'''
 
         logger.info('准备要插入的 POC 数据')
         now = datetime.datetime.now()
@@ -303,12 +303,14 @@ class CScanDb:
             poc_info['created_at'] = now
             poc_info['updated_at'] = now
             poc_info['args'] = poc_info.get('option_schema', None)
+            poc_info['create_date'] = poc_info.get('create_date', now)
 
             try:
-                cursor.execute(poc_insert_sql,
-                               [poc_info.get(k) for k in
-                                ['poc_id', 'name', 'author', 'vuln_id',
-                                 'created_at', 'updated_at', 'args']])
+                cursor.execute(
+                    poc_insert_sql,
+                    [poc_info.get(k) for k in
+                     ['poc_id', 'name', 'author', 'vuln_id', 'create_date',
+                      'created_at', 'updated_at', 'args']])
             except Exception as err:
                 logger.warning('POC 插入失败: {}\n{}'.format(poc_info, err))
 
@@ -324,7 +326,8 @@ class CScanDb:
             set([self.poc_vuln_ind[poc_id] for poc_id in poc_id_set]))
 
         poc_update_sql = '''UPDATE poc
-            SET poc_name=%s, author=%s, vuln_id=%s, updated_at=%s, args=%s
+            SET poc_name=%s, author=%s, vuln_id=%s,
+                updated_at=%s, args=%s, create_time=%s
             WHERE poc_id=%s'''
 
         logger.info('准备要更新的 POC 数据 [count={}]'.format(len(poc_id_set)))
@@ -344,11 +347,13 @@ class CScanDb:
                 poc_info['vuln_id'] = vuln_id
             poc_info['updated_at'] = now
             poc_info['args'] = poc_info.get('option_schema', None)
+            poc_info['create_date'] = poc_info.get('create_date', now)
             try:
-                cursor.execute(poc_update_sql,
-                               [poc_info.get(k) for k in
-                                ['name', 'author', 'vuln_id',
-                                 'updated_at', 'args', 'poc_id']])
+                cursor.execute(
+                    poc_update_sql,
+                    [poc_info.get(k) for k in
+                     ['name', 'author', 'vuln_id', 'updated_at',
+                      'args', 'poc_id', 'create_date']])
             except Exception as e:
                 logger.warn('POC 更新失败: {}\n{}\n{}'.format(
                     poc_info, e, poc_update_sql))
