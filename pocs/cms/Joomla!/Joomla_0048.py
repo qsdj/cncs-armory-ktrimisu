@@ -18,7 +18,7 @@ class Vuln(ABVuln):
     '''  # 漏洞描述
     ref = 'https://www.seebug.org/vuldb/ssvid-10171'
     cnvd_id = 'Unknown'  # cnvd漏洞编号
-    cve_id = 'Unkown'  # cve编号
+    cve_id = 'Unknown'  # cve编号
     product = 'Joomla!'  # 漏洞组件名称
     product_version = '1.4.2'  # 漏洞应用版本
 

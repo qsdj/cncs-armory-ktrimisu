@@ -6,7 +6,7 @@ import time
 
 
 class Vuln(ABVuln):
-    vuln_id = 'SweepstakesProSoftware_0000'  # 平台漏洞编号
+    vuln_id = 'Sweepstakes-Pro-Software_0000'  # 平台漏洞编号
     name = 'Sweepstakes Pro Software SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION  # 漏洞类型
@@ -18,7 +18,7 @@ class Vuln(ABVuln):
     ref = 'http://www.cnvd.org.cn/flaw/show/CNVD-2017-05559'
     cnvd_id = 'CNVD-2017-05559'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
-    product = 'Sweepstakes Pro Software'  # 漏洞组件名称
+    product = 'Sweepstakes-Pro-Software'  # 漏洞组件名称
     product_version = 'bimedia Sweepstakes Pro Software'  # 漏洞应用版本
 
 

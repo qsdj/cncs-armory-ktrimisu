@@ -18,5 +18,5 @@ class Vuln(ABVuln):
     ref = 'https://zh.wikipedia.org/wiki/SQL%E8%B3%87%E6%96%99%E9%9A%B1%E7%A2%BC%E6%94%BB%E6%93%8A'
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
-    product = 'Unkown'  # 漏洞组件名称
+    product = 'Unknown'  # 漏洞组件名称
     product_version = 'Unknown'  # 漏洞应用版本

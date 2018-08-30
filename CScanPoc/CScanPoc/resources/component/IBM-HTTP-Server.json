@@ -1,5 +1,5 @@
 {
-  "type": "IBM-HTTP-Server",
+  "type": "os",
   "producer": "IBM",
   "desc": "IBM官方站点。"
 }
