@@ -40,5 +40,5 @@ def print_result(result, json_out_file=None):
             json.dump(result, out)
     else:
         print('RESULT_START')
-        print(json.dumps(result))
+        print(json.dumps(result, ensure_ascii=False))
         print('RESULT_END')
