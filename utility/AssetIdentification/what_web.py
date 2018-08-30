@@ -1,5 +1,5 @@
 #!/usr/bin/python
-# coding: utf-8
+# -*- coding: utf-8 -*-
 
 import os
 import json
@@ -54,6 +54,7 @@ class WhatWebResultParser(object):
         pth = urlparse(target).path
         plugins = json_obj["plugins"]
         for name in plugins:
+            name = name.encode('utf-8')
             if name in ("HTTPServer", "X-Powered-By"):
                 self._parse_common(plugins[name])
             elif name == "MetaGenerator":
@@ -61,6 +62,7 @@ class WhatWebResultParser(object):
                 self._parse_meta_generator(plugins[name], pth)
             elif not self.has_attr_MetaGenerator and (
                     _safe_lower(name) in self.name_trans):
+                name = name.decode('utf-8')
                 self._parse_in_plugins_common(plugins[name], name)
 
     def _parse_in_plugins_common(self, json_obj, name):
