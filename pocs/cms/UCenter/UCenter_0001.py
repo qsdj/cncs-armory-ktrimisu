@@ -19,7 +19,7 @@ class Vuln(ABVuln):
         Dork 2 : inurl:shop.php?ac=view&shopid=
     '''  # 漏洞描述
     ref = 'http://www.exploit-db.com/exploits/14997/'  # 漏洞来源
-    cnvd_id = 'Unknown'  # cnvd漏洞编号
+    cnvd_id = 'CNVD-2011-5971'  # cnvd漏洞编号
     cve_id = 'CVE-2010-4912'  # cve编号
     product = 'UCenter-Home'  # 漏洞应用名称
     product_version = '2.0'  # 漏洞应用版本
