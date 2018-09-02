@@ -17,7 +17,7 @@ class Vuln(ABVuln):
     ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0143276'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
-    product = 'v2_conference'  # 漏洞应用名称
+    product = 'v2-conference'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
 
 
