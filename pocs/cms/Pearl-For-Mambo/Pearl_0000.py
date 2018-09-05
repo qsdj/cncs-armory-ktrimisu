@@ -18,7 +18,7 @@ class Vuln(ABVuln):
     ref = 'http://www.cnvd.org.cn/flaw/show/CNVD-2006-4900'
     cnvd_id = 'CNVD-2006-4900'  # cnvd漏洞编号
     cve_id = 'CVE-2006-3340'  # cve编号
-    product = 'Pearl For Mambo'  # 漏洞组件名称
+    product = 'Pearl-For-Mambo'  # 漏洞组件名称
     product_version = '<= 1.6'  # 漏洞应用版本
 
 

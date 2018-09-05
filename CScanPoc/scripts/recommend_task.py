@@ -40,7 +40,7 @@ def recommend(components_properties):
         outputer.report(json.dumps({
             'type': 'strategy',
             'strategy_id': 'simple-component-scan-strategy',
-            'exec_option': ['component=\'%s\'' % component]
+            'exec_option': ['component=%s' % component]
         }))
 
 
