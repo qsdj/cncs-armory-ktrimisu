@@ -18,7 +18,7 @@ class Vuln(ABVuln):
     ref = 'http://www.cnvd.org.cn/flaw/show/CNVD-2018-04060'
     cnvd_id = 'CNVD-2018-04060'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
-    product = 'NewsBee CMS'  # 漏洞组件名称
+    product = 'NewsBeeCMS'  # 漏洞组件名称
     product_version = 'Unknown'  # 漏洞应用版本
 
 
