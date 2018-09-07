@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 # coding:utf-8
 
 import os
@@ -16,7 +17,7 @@ def create_cmd_parser():
         '-i', '--input', required=False, dest='input_file',
         help='输入component_path')
     parser.add_argument(
-        '--out-file', required=False, dest='out_file',
+        '-o', '--out-file', required=False, dest='out_file',
         help='输出结果到文件')
     return parser
 
@@ -29,8 +30,8 @@ def export_components(args):
     output_filename = args.out_file if args.out_file else "../component_names"
 
     if component_path:
-        all_components = [component.split(".json")[0] for component in os.listdir(
-            component_path) if component.endswith(".json")]
+        all_components = (component.split(".json")[0] for component in os.listdir(
+            component_path) if component.endswith(".json"))
         with open(output_filename, 'w') as tmp:
             for line in sorted(all_components):
                 tmp.write(line+"\n")
@@ -143,4 +144,5 @@ def main():
 
 if __name__ == "__main__":
     main()
-    # python export_component.py -r export_cms_components -i ~/work/CScan-POC/CScanPoc/CScanPoc/resources/component/
+    # python3 export_component.py -r export_cms_components -i ~/work/CScan-POC/CScanPoc/CScanPoc/resources/component/
+    # python3 export_component.py -r export_components -i ~/work/CScan-POC/CScanPoc/CScanPoc/resources/component
