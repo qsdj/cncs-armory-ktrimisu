@@ -33,6 +33,10 @@ matches [
 
 # Simple powered by text
 { :text=>'Powered By <a href="http://www.mybboard.com" target="_blank">MyBB</a>' },
+{ :text=>'Powered By <a href="https://mybb.com" target="_blank" rel="noopener">MyBB</a>'},
+{ :text=>'var cookiePath = "/mybb/Upload/";'},
+{:regexp=>/var rootpath = "https?:\/\/.+\..+\..+\/mybb\/Upload";/},
+{:regexp=>/var imagepath = "https?:\/\/.+\..+\..+\/mybb\/Upload\/images";/},
 
 ]
 

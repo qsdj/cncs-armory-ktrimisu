@@ -1,0 +1,23 @@
+##
+# This file is part of WhatWeb and may be subject to
+# redistribution and commercial restrictions. Please see the WhatWeb
+# web site for more information on licensing and terms of use.
+# http://www.morningstarsecurity.com/research/whatweb
+##
+# Version 0.2 # 2011-01-10 #
+# Updated version detection
+##
+Plugin.define "Hanweb(大汉)" do
+    author "hyhm2n <admin@imipy.com>" # 2010-09-18
+    version "0.1"
+    description "大汉版通JCMS内容管理系统是基于J2EE构架设计的内容管理系统，多用于政府门户网站。"
+    website "http://www.hanweb.com/"
+
+    matches [
+        # { :text=>'<meta name="Generator" content="大汉版通">'},
+        {:text=>'<link rel="stylesheet" type="text/css" href="/images/1/hanweb.css">'}
+        # { :text=>'<meta name="Author" content="大汉网络">'},
+        # { :text=>'<a href="http://www.hanweb.com" style="display:none">Produced By 大汉网络 大汉版通发布系统</a>'},    
+    ]
+    
+end
