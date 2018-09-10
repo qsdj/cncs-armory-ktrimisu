@@ -9,7 +9,7 @@
 
 Plugin.define "Apache-Struts" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-01-08
-version "0.2"
+version "0.3"
 description "The Apache Struts web framework is a free open-source solution for creating Java web applications."
 website "https://struts.apache.org/"
 
@@ -37,6 +37,17 @@ matches [
 {:regexp=>/Development mode, or devMode, enables extra\s+debugging behaviors and reports to assist developers.  To disable this mode, set:\s+<pre>\s+  struts.devMode=false/, :string=>"Development Mode"}
 
 ]
+
+# 解决以 .action url
+def passive
+    m=[]
+
+    if @base_uri.path=~/.*\/.*\.action/
+            m << {:name=>"Apache-Struts"}
+    end
+
+    m
+    end
 
 end
 
