@@ -1,5 +1,5 @@
 {
-  "type": "cms",
+  "type": "middleware",
   "producer": null,
   "desc": "phpMoAdmin是一款便捷的在线MongoDB管理工具，可用于创建、删除和修改数据库和索引，提供视图和数据搜索工具，提供数据库启动时间和内存的统计，支持JSON格式数据的导入导出的php应用。"
 }

@@ -1,5 +1,5 @@
 {
     "type": "cms",
-    "producer": null,
-    "desc": "POSCMS（PhpOpenSourceCMS）是中国天睿信息技术公司的一套基于PHP和MySQL的、开源的、跨平台网站内容管理系统（CMS）。  "
+    "producer": "成都天睿信息技术有限公司",
+    "desc": "POSCMS（PhpOpenSourceCMS）是中国天睿信息技术公司的一套基于PHP和MySQL的、开源的、跨平台网站内容管理系统（CMS）。"
   }
