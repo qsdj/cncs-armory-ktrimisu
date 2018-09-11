@@ -1,4 +1,5 @@
 FROM python:2
+ENV LANG=C.UTF-8
 
 RUN set -ex && mkdir -p ~/.pip
 RUN echo "[global]" > ~/.pip/pip.conf && \

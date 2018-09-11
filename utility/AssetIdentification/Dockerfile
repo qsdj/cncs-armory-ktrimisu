@@ -1,4 +1,5 @@
 FROM ubuntu:16.04
+ENV LANG=C.UTF-8
 
 RUN echo 'deb http://mirrors.ustc.edu.cn/ubuntu/ xenial main restricted universe multiverse' > /etc/apt/sources.list && \
     echo 'deb http://mirrors.ustc.edu.cn/ubuntu/ xenial-updates main restricted universe multiverse' >> /etc/apt/sources.list && \
