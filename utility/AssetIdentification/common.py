@@ -40,5 +40,8 @@ def print_result(result, json_out_file=None):
             json.dump(result, out)
     else:
         print('RESULT_START')
-        print(json.dumps(result, ensure_ascii=False))
+        try:
+            print(json.dumps(result, ensure_ascii=False))
+        except:
+            print(json.dumps(result))
         print('RESULT_END')
