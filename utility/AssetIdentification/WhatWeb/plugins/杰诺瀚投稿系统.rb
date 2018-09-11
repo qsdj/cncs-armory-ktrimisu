@@ -5,23 +5,21 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-
-Plugin.define "中企动力门户CMS" do
+Plugin.define "杰诺瀚投稿系统" do
     author "47bwy <admin@47bwy.com>" # 20180829
     version "0.1"
-    description "中企动力门户CMS是一个内容管理系统。"
-    website "http://www.sino-i.com/"
+    description "南京杰诺瀚软件科技有限公司"
+    website "Unknown"
     
     matches [
 
     # Default text
-    #{ :text=>"中企动力" },
-    { :text=>'membersarticleCategoryId' },
-    { :url=>'membersarticleCategoryId' },
+    # intitle:投稿系统 技术支持：南京杰诺瀚软件科技有限公司
+
 
     # Version detection
 
     ]
-    
+
     end
     

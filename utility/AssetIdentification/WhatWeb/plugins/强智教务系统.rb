@@ -5,23 +5,21 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-
-Plugin.define "中企动力门户CMS" do
+Plugin.define "强智教务系统" do
     author "47bwy <admin@47bwy.com>" # 20180829
     version "0.1"
-    description "中企动力门户CMS是一个内容管理系统。"
-    website "http://www.sino-i.com/"
+    description "强智教务系统是由湖南强智科技发展有限公司打造的一款中和教务服务系统。"
+    website "http://www.qzdatasoft.com"
     
     matches [
 
     # Default text
-    #{ :text=>"中企动力" },
-    { :text=>'membersarticleCategoryId' },
-    { :url=>'membersarticleCategoryId' },
+    # powered by 强智科技
+    { :text=>'href="http://www.qzdatasoft.com"'  },
 
     # Version detection
 
     ]
-    
+
     end
     

@@ -5,23 +5,21 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-
-Plugin.define "中企动力门户CMS" do
+Plugin.define "totalsoft" do
     author "47bwy <admin@47bwy.com>" # 20180829
     version "0.1"
-    description "中企动力门户CMS是一个内容管理系统。"
-    website "http://www.sino-i.com/"
+    description "totalsof整个系统采用国际流行的Browser / WebServer / DBServer 三层或 Client / Server 双层体系结构， 后台选用大型关系数据库Sql Server 2000 作为系统平台（并全面支持Sybase和Oracle数据库）。"
+    website "http://www.totalsoft.com.cn/"
     
     matches [
 
     # Default text
-    #{ :text=>"中企动力" },
-    { :text=>'membersarticleCategoryId' },
-    { :url=>'membersarticleCategoryId' },
+    { :text=>"RDSuggestBook.aspx" },
+    { :url=>"/RDSuggestBook.aspx" },
 
     # Version detection
 
     ]
-    
+
     end
     

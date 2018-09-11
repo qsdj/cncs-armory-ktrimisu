@@ -5,23 +5,20 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-
-Plugin.define "中企动力门户CMS" do
+Plugin.define "合众商道php系统" do
     author "47bwy <admin@47bwy.com>" # 20180829
     version "0.1"
-    description "中企动力门户CMS是一个内容管理系统。"
-    website "http://www.sino-i.com/"
+    description "合众商道一款PHP建站系统。"
+    website "http://www.myhezhong.com/"
     
     matches [
 
     # Default text
-    #{ :text=>"中企动力" },
-    { :text=>'membersarticleCategoryId' },
-    { :url=>'membersarticleCategoryId' },
+    { :text=>'href="http://www.myhezhong.com"'  },
 
     # Version detection
 
     ]
-    
+
     end
     

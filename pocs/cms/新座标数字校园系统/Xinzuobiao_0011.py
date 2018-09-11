@@ -16,7 +16,7 @@ class Vuln(ABVuln):
         /DPMA/FWeb/SPEWeb/Web5/SPEPhotosDetail.aspx
         /DPMA/FWeb/WorkRoomWeb/Web/TeacherPhotosDetail.aspx
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://www.secpulse.com/archives/25296.html'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = '新座标数字校园系统'  # 漏洞应用名称

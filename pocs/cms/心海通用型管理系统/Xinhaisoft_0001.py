@@ -18,7 +18,7 @@ class Vuln(ABVuln):
     ref = 'Unknown'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
-    product = '北京心海通用型管理系统'  # 漏洞应用名称
+    product = '心海通用型管理系统'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
 
 

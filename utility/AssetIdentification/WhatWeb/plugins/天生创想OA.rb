@@ -5,23 +5,21 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-
-Plugin.define "中企动力门户CMS" do
+Plugin.define "天生创想OA" do
     author "47bwy <admin@47bwy.com>" # 20180829
     version "0.1"
-    description "中企动力门户CMS是一个内容管理系统。"
-    website "http://www.sino-i.com/"
+    description "天生创想OA是由北京天生创想信息技术有限公司自公司打造的一款办公管理系统。"
+    website "http://www.515158.com/"
     
     matches [
 
     # Default text
-    #{ :text=>"中企动力" },
-    { :text=>'membersarticleCategoryId' },
-    { :url=>'membersarticleCategoryId' },
+    { :text=>'Powered by <a href="http://www.515158.com/">'  },
+    { :version=>/OA<\/a> V([\d\.]+)<\/div>/ },
 
     # Version detection
 
     ]
-    
+
     end
     

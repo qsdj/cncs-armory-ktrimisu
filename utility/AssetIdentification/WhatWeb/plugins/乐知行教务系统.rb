@@ -14,7 +14,7 @@ Plugin.define "乐知行教务系统" do
     matches [
 
     # Default text
-    #{ :text=>"http-equiv" },
+    { :text=>'<span class="dl_user"><input name="" id="username" type="text"  class="dl_input"/></span>' },
 
     # Version detection
 
