@@ -105,7 +105,7 @@ class WhatWebResultParser(object):
                 # name = item.split(" ")[0]
                 name = self._trans(name)
                 info = self.components.get(name, {})
-                if version:
+                if version and version.lower() not in ["cms"]:
                     info["version"] = version
                 info["deploy_path"] = pth or "/"
                 self.components[name] = info
