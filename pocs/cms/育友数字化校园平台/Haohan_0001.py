@@ -7,7 +7,7 @@ import time
 
 class Vuln(ABVuln):
     vuln_id = 'Haohanjy_0001'  # 平台漏洞编号，留空
-    name = '皓翰教育通用数字化校园平台 SQL注入'  # 漏洞名称
+    name = '育友教育通用数字化校园平台 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION  # 漏洞类型
     disclosure_date = '2015-07-25'  # 漏洞公布时间
@@ -19,7 +19,7 @@ class Vuln(ABVuln):
     ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0128557'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
-    product = '皓翰数字化校园平台'  # 漏洞应用名称
+    product = '育友数字化校园平台'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
 
 

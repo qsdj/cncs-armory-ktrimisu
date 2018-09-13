@@ -19,7 +19,7 @@ class Vuln(ABVuln):
     ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0105448'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
-    product = '育友通用数字化校园平台'  # 漏洞应用名称
+    product = '育友数字化校园平台'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
 
 
