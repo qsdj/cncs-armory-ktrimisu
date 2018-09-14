@@ -146,3 +146,4 @@ if __name__ == "__main__":
     main()
     # python3 export_component.py -r export_cms_components -i ~/work/CScan-POC/CScanPoc/CScanPoc/resources/component/
     # python3 export_component.py -r export_components -i ~/work/CScan-POC/CScanPoc/CScanPoc/resources/component
+    # python3 export_component.py -r export_whatweb
