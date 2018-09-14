@@ -10,14 +10,14 @@ hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
     vuln_id = 'SVN_0101'  # 平台漏洞编号，留空
-    name = 'SVN信息泄漏'  # 漏洞名称
+    name = 'SVN 信息泄漏漏洞'  # 漏洞名称
     level = VulnLevel.LOW  # 漏洞危害级别
     type = VulnType.INFO_LEAK  # 漏洞类型
     disclosure_date = '2014-09-24'  # 漏洞公布时间
     desc = '''
     use svn incorrect cause site information disclosure.
     '''  # 漏洞描述
-    ref = 'Unknown'  # 漏洞来源
+    ref = 'https://wps2015.org/drops/drops/SVN%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E5%8F%8A%E5%AE%89%E5%85%A8%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9.html'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
     product = 'SVN'  # 漏洞应用名称
@@ -50,7 +50,7 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            keyword = ['file', 'dir']
+            keyword = ['dir']
             vul_url = self.target + '/.svn/entries'
             vul_urresquest = urllib.request.Request(vul_url)
             response = urllib.request.urlopen(vul_urresquest)

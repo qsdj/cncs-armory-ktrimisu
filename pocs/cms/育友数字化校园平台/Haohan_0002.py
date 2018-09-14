@@ -7,7 +7,7 @@ hh = hackhttp.hackhttp()
 
 class Vuln(ABVuln):
     vuln_id = 'Haohan_0002'  # 平台漏洞编号，留空
-    name = '皓翰数字化校园平台通用型3处任意文件下载'  # 漏洞名称
+    name = '育友数字化校园平台通用型3处任意文件下载'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.FILE_DOWNLOAD  # 漏洞类型
     disclosure_date = '2015-06-24'  # 漏洞公布时间
@@ -21,7 +21,7 @@ class Vuln(ABVuln):
     ref = 'https://bugs.shuimugan.com/bug/view?bug_no=0103034'  # 漏洞来源
     cnvd_id = 'Unknown'  # cnvd漏洞编号
     cve_id = 'Unknown'  # cve编号
-    product = '皓翰数字化校园平台'  # 漏洞应用名称
+    product = '育友数字化校园平台'  # 漏洞应用名称
     product_version = 'Unknown'  # 漏洞应用版本
 
 
