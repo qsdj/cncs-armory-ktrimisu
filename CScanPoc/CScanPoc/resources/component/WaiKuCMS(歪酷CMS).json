@@ -1,5 +1,5 @@
 {
   "type": "cms",
-  "producer": null,
+  "producer": "歪酷CMS",
   "desc": "歪酷CMS基于Thinkphp框架开发,是一款小巧的CMS内容管理系统。"
 }
