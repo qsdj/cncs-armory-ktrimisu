@@ -8,7 +8,7 @@ from common import COMMON_PORTS
 from common import create_cmd_parser as create_common_cmd_parser
 from common import print_result, setup_logger
 from nmap_svc_scan import parse_nmap_result, run_nmap
-from what_web import WhatWebResultParser, run_whatweb
+from what_web import WhatWebResultParser, run_whatweb, get_name_trans
 
 
 def create_cmd_parser():
@@ -29,7 +29,7 @@ def main(what_web_bin='WhatWeb/whatweb', nmap_bin='/usr/bin/nmap'):
     logging.info('使用 WhatWeb 进行扫描')
     _, whatweb_outfile = tempfile.mkstemp()
     run_whatweb(args.url, whatweb_outfile, what_web_bin)
-    whatweb_result = WhatWebResultParser(whatweb_outfile).parse()
+    whatweb_result = WhatWebResultParser(whatweb_outfile, name_trans=get_name_trans()).parse()
 
     logging.info('使用 NMAP 进行扫描')
     _, nmap_outfile = tempfile.mkstemp()

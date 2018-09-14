@@ -110,18 +110,20 @@ class WhatWebResultParser(object):
                 info["deploy_path"] = pth or "/"
                 self.components[name] = info
 
+def get_name_trans():
+    name_trans = {}
+    for line in open('component_names'):
+        line = line.strip()
+        name_trans[_safe_lower(line)] = line
+    return name_trans
 
 def main(what_web_bin="WhatWeb/whatweb"):
     parser = create_cmd_parser()
     args = parser.parse_args()
     setup_logger()
     _, outfile = tempfile.mkstemp()
-    name_trans = {}
-    for line in open('component_names'):
-        line = line.strip()
-        name_trans[_safe_lower(line)] = line
     run_whatweb(args.url, outfile, what_web_bin)
-    result = WhatWebResultParser(outfile, name_trans=name_trans).parse()
+    result = WhatWebResultParser(outfile, name_trans=get_name_trans()).parse()
     print_result(result, args.json_out_file)
 
 
