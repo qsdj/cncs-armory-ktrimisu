@@ -14,6 +14,7 @@ Plugin.define "泛微OA" do
     matches [
 
     # Default text
+    # http://oa.fosun.com//wui/theme/ecology7/page/login.jsp
     { :text=>'ecology'  },
 
     # Version detection
