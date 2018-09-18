@@ -60,7 +60,6 @@ class Poc(ABPoc):
 
             if code1 == 200 and code2 == 200:
                 if res1.find('url="wap-jobs-show.php?id=1"') != -1 and res2.find('url="wap-jobs-show.php?id=1"') == -1:
-                    #security_hole('find sql injection:' + true_url)
                     self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                         target=self.target, name=self.vuln.name))
 

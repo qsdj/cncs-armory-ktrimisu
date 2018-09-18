@@ -62,7 +62,6 @@ class Poc(ABPoc):
                     payload3 = '/user/user_getpass.php?act=get_pass_sucess'
                     code, head, res, err, _ = hh.http(self.target + payload3)
                     if code == 200 and 'icon-success' in res:
-                        #security_hole(arg+payload1+" :重置任意账号密码")
                         self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                             target=self.target, name=self.vuln.name))
 

