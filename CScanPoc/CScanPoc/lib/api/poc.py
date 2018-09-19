@@ -80,17 +80,19 @@ class ABPoc(PocStaticDefinition, RuntimeOptionSupport):
     漏洞的 POC。子类中必须覆写方法 verify 和 exploit
     """
 
-    def __init__(self, vuln):
+    def __init__(self, vuln, reporter=None):
         """ABPoc.__init__
 
         :param vuln: 可选，当前扫描器关联的漏洞
         :type vuln: CScanPoc.lib.api.vuln.Vuln
+        :param reporter: 漏洞报告函数
+        :type reporter: (vuln) -> void
         """
         PocStaticDefinition.__init__(self, vuln)
         RuntimeOptionSupport.__init__(self)
 
         # 漏洞扫描输出
-        self.output = get_scan_outputer(poc=self)
+        self.output = get_scan_outputer(poc=self, reporter=reporter)
 
         # 扫描目标
         self.target = None

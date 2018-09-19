@@ -55,13 +55,14 @@ class CScanOutputLevel:
 class CScanOutputer:
     '''CScan 结果输出记录器'''
 
-    def __init__(self, logger, poc=None, strategy=None):
+    def __init__(self, logger, poc=None, strategy=None, reporter=None):
         '''
         :param logger: 日志记录器
         '''
         self.logger = logger
         self.poc = poc
         self.strategy = strategy
+        self.reporter = reporter
 
     def get_extra(self, vuln=None):
         extra = {}
@@ -106,6 +107,8 @@ class CScanOutputer:
         '''
         输出扫出的和漏洞 vuln 相关的漏洞信息
         '''
+        if self.reporter:
+            self.reporter(vuln)
         if msg is None and isinstance(vuln, str):
             (msg, vuln) = (vuln, None)
         self.logger.log(CScanOutputLevel.REPORT,
@@ -134,7 +137,13 @@ def _get_json_translate():
 __CSCAN_OUTPUT_LOGGER = logging.getLogger('CScanOutputer')
 
 
-def get_scan_outputer(poc=None, strategy=None):
+def get_scan_outputer(poc=None, strategy=None, reporter=None):
+    '''
+    :param poc: Outputer 关联 POC
+    :param strategy: Outputer 关联策略
+    :param reporter: 漏洞报告
+    :type reporter: (vuln) -> void
+    '''
     return CScanOutputer(__CSCAN_OUTPUT_LOGGER, poc=poc, strategy=strategy)
 
 

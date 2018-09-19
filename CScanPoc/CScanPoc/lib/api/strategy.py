@@ -47,14 +47,15 @@ class StrategyStaticDefinition(metaclass=ABCMeta):
 class ABStrategy(StrategyStaticDefinition, RuntimeOptionSupport):
     '''策略'''
 
-    def __init__(self):
+    def __init__(self, reporter=None):
         '''
-        : param index_dir: POC 索引目录
+        :param reporter: 漏洞报告函数
+        :type reporter: (vuln) -> void
         '''
         StrategyStaticDefinition.__init__(self)
         RuntimeOptionSupport.__init__(self)
         self._index_dir = None
-        self.output = get_scan_outputer(strategy=self)
+        self.output = get_scan_outputer(strategy=self, reporter=reporter)
 
     def get_poc(self, poc_id):
         '''根据 poc_id 获取 POC
