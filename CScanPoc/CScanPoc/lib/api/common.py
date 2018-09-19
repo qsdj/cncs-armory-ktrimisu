@@ -34,6 +34,8 @@ def create_cmd_parser():
         help='参数文件，如果指定了该参数，其它参数值从文件读取',
         action=LoadFromFile)
     parser.add_argument(
+        '--exec-option-file', dest='exec_option_file', help='执行参数文件')
+    parser.add_argument(
         '--component-property-file',
         dest='component_property_file', help='组件属性文件')
     parser.add_argument(
@@ -44,7 +46,8 @@ def create_cmd_parser():
         choices=['DEBUG', 'INFO', 'WARN', 'ERROR', 'SUCCESS', 'REPORT'],
         help="日志级别, default: DEBUG")
     parser.add_argument(
-        '--mode', required=False, default="verify", choices=["verify", "exploit"],
+        '--mode', required=False, default="verify",
+        choices=["verify", "exploit"],
         help="POC 执行模式, default: verify")
     parser.add_argument(
         '--index-dir', required=False, dest='index_dir',
@@ -77,7 +80,16 @@ def parse_properties(args,
                      set_component_property=None,
                      default_component=None,
                      components_properties=None):
-    '''解析参数中的执行参数和组件属性'''
+    '''解析参数中的执行参数和组件属性
+
+    :param args: 解析后的参数
+    :param set_option: 设定 --exec-option/--exec-option-file 定义的执行参数
+    :param set_component_property:
+        设定 --component-property/--component-property-file 设定的组件属性
+    :param default_component: 属性所属组件未指定时默认组件
+    :param components_properties:
+        组件属性 dict，如果 set_component_property 为空，设定属性到该 dict
+    '''
 
     if components_properties is not None:
         def _set_component_property(component_name, key, val):
@@ -88,51 +100,74 @@ def parse_properties(args,
                     components_properties[component_name], key, val)
         set_component_property = _set_component_property
 
-    if set_option:
-        # 执行参数解析
-        for opt in args.exec_option or []:
-            (key, val) = (opt, True)
-            if '=' in opt:
-                (key, val) = opt.split('=', 1)
-            try:
-                set_option(key, val)
-            except SchemaException as err:
-                logger.warning('执行参数设定错误: %s', err)
+    if set_component_property is None:
+        def _noop_set_component_property(c, k, v):
+            pass
+        set_component_property = _noop_set_component_property
 
-    if set_component_property:
-        if args.component_property_file:
-            if not os.path.exists(args.component_property_file):
-                raise Exception('属性文件 {} 不存在'.format(
-                    args.component_property_file))
-            properties = None
-            try:
-                with open(args.component_property_file) as fh:
-                    properties = json.load(fh)
-            except Exception as err:
-                raise Exception('属性文件 {} 解析错误'.format(
-                    args.component_property_file), err)
-            for component_name in properties:
-                for prop in properties[component_name]:
-                    try:
-                        set_component_property(
-                            component_name, prop, properties[component_name][prop])
-                    except SchemaException as err:
-                        logger.warning('组件属性设定错误: %s [%s]',
-                                       err, args.component_property_file)
+    if set_option is None:
+        def _noop_set_option(k, v):
+            pass
+        set_option = _noop_set_option
 
-        # 组件属性解析
-        for opt in args.component_properties or []:
-            (key, val) = (opt, True)
-            if '=' in opt:
-                (key, val) = opt.split('=', 1)
-            (component_name, prop) = (default_component, key)
-            if '.' in key:
-                (component_name, prop) = key.split('.', 1)
-            try:
-                set_component_property(component_name, prop, val)
-                logger.debug('解析设定组件 %s 属性：%s=%s', component_name, prop, val)
-            except SchemaException as err:
-                logger.warning('组件属性设定错误: %s', err)
+    # 执行参数解析
+    for opt in args.exec_option or []:
+        (key, val) = (opt, True)
+        if '=' in opt:
+            (key, val) = opt.split('=', 1)
+        try:
+            set_option(key, val)
+        except SchemaException as err:
+            logger.warning('执行参数设定错误: %s', err)
+
+    if args.exec_option_file:
+        if not os.path.exists(args.exec_option_file):
+            raise Exception('执行参数文件 {} 不存在'.format(
+                args.exec_option_file))
+        options = None
+        try:
+            with open(args.exec_option_file) as fh:
+                options = json.load(fh)
+        except Exception as err:
+            raise Exception('执行参数文件 {} 解析错误'.format(
+                args.exec_option_file), err)
+        for k in options:
+            set_option(k, options[k])
+
+    if args.component_property_file:
+        if not os.path.exists(args.component_property_file):
+            raise Exception('属性文件 {} 不存在'.format(
+                args.component_property_file))
+        properties = None
+        try:
+            with open(args.component_property_file) as fh:
+                properties = json.load(fh)
+        except Exception as err:
+            raise Exception('属性文件 {} 解析错误'.format(
+                args.component_property_file), err)
+        for component_name in properties:
+            for prop in properties[component_name]:
+                try:
+                    set_component_property(
+                        component_name, prop,
+                        properties[component_name][prop])
+                except SchemaException as err:
+                    logger.warning('组件属性设定错误: %s [%s]',
+                                   err, args.component_property_file)
+
+    # 组件属性解析
+    for opt in args.component_properties or []:
+        (key, val) = (opt, True)
+        if '=' in opt:
+            (key, val) = opt.split('=', 1)
+        (component_name, prop) = (default_component, key)
+        if '.' in key:
+            (component_name, prop) = key.split('.', 1)
+        try:
+            set_component_property(component_name, prop, val)
+            logger.debug('解析设定组件 %s 属性：%s=%s', component_name, prop, val)
+        except SchemaException as err:
+            logger.warning('组件属性设定错误: %s', err)
 
 
 class RuntimeOptionSupport(metaclass=ABCMeta):
