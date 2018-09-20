@@ -48,17 +48,16 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            arg = '{target}'.format(target=self.target)
             payload = '/nobom.php'
-            target = arg + payload
+            target = self.target + payload
 
             code, head, res, errcode, _ = hh.http(target)
 
             if code == 200:
                 m = re.findall(r'<br>filename[^<]+BOM Not Found. <br>', res)
                 if m:
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                        target=self.target, name=self.vuln.name))
+                    self.output.report(self.vuln, '发现{target}存在{name}漏洞;\n漏洞地址为{url}'.format(
+                        target=self.target, name=self.vuln.name, url=target))
 
         except Exception as e:
             self.output.info('执行异常{}'.format(e))

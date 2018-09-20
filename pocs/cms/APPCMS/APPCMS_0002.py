@@ -55,8 +55,8 @@ class Poc(ABPoc):
 
             print(type(r.text))
             if r.status_code == 200 and 'host' in r.text and 'dbpass' in r.text:
-                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                    target=self.target, name=self.vuln.name))
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞;\n漏洞地址为{url}'.format(
+                    target=self.target, name=self.vuln.name, url=verify_url))
 
         except Exception as e:
             logging.exception('')

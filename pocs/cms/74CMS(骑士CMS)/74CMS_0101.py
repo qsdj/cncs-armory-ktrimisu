@@ -92,7 +92,7 @@ class Poc(ABPoc):
                 match = pattern.match(content)
                 if match:
                     passwordhash = match.group('pwdhash').strip()
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞;获取到的信息:username={username};password={password};PasswordHash={passwordhash}'.format(
+                    self.output.report(self.vuln, '发现{target}存在{name}漏洞;获取到的信息:username={username};password={password};PasswordHash={passwordhash};\n具体请查看漏洞详情'.format(
                         target=self.target, name=self.vuln.name, username=username, password=password, passwordhash=passwordhash))
         except Exception as e:
             self.output.info('执行异常：{}'.format(e))

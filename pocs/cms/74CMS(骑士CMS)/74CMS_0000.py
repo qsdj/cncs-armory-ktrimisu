@@ -60,8 +60,8 @@ class Poc(ABPoc):
             response = urllib.request.urlopen(request)
             content = str(response.read())
             if '3438d5e3ead84b2effc5ec33ed1239f5' in content:
-                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                    target=self.target, name=self.vuln.name))
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞;\nSQL注入漏洞地址为{url}'.format(
+                    target=self.target, name=self.vuln.name, url=verify_url))
 
         except Exception as e:
             self.output.info('执行异常{}'.format(e))
@@ -87,7 +87,7 @@ class Poc(ABPoc):
             if match != None:
                 username = match.group('username').strip()
                 password = match.group('password').strip()
-                self.output.report(self.vuln, '发现{target}存在{name}漏洞，获取到的用户名为{username} 用户密码为{password}'.format(
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞，获取到的用户名为:{username} 用户密码为:{password};\n具体请查看漏洞详情'.format(
                     target=self.target, name=self.vuln.name, username=username, password=password))
 
         except Exception as e:

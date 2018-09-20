@@ -53,8 +53,8 @@ class Poc(ABPoc):
             r = requests.get(url)
 
             if 'PHP Version' in r.text and 'system' in r.text:
-                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                    target=self.target, name=self.vuln.name))
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞;\n漏洞地址为{url}'.format(
+                    target=self.target, name=self.vuln.name, url=url))
 
         except Exception as e:
             self.output.info('执行异常{}'.format(e))

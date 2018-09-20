@@ -72,7 +72,7 @@ class Poc(ABPoc):
                 return False
             config_file = base64.b64decode(m.group(1))
             if("<?php" in config_file) and ("?>" in config_file):
-                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞;\n具体请查看漏洞详情'.format(
                     target=self.target, name=self.vuln.name))
 
         except Exception as e:

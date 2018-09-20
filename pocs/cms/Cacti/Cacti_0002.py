@@ -60,8 +60,8 @@ class Poc(ABPoc):
             time_end_sleep = time.time()
 
             if (time_end_sleep-time_end_normal)-(time_end_normal-time_start) > 4:
-                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                    target=self.target, name=self.vuln.name))
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞;\n漏洞地址为{url};具体请查看漏洞详情'.format(
+                    target=self.target, name=self.vuln.name,url=url))
 
         except Exception as e:
             self.output.info('执行异常{}'.format(e))

@@ -54,7 +54,7 @@ class Poc(ABPoc):
             r = requests.get(url)
 
             if '4a8a08f09d37b73795649038408b5f33' in r.text:
-                self.output.report(self.vuln, '发现{target}存在{name}漏洞，漏洞地址为{url}'.format(
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞;\n漏洞地址为{url}'.format(
                     target=self.target, name=self.vuln.name, url=url))
 
         except Exception as e:

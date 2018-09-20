@@ -6,7 +6,7 @@ import time
 
 
 class Vuln(ABVuln):
-    vuln_id = 'Cacti_0004'  # 平台漏洞编号
+    vuln_id = 'Cacti_0004_L'  # 平台漏洞编号
     name = 'Cacti SQL注入'  # 漏洞名称
     level = VulnLevel.HIGH  # 漏洞危害级别
     type = VulnType.INJECTION  # 漏洞类型

@@ -66,7 +66,7 @@ class Poc(ABPoc):
             match = pattern.match(content)
 
             if match != None:
-                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞;\n具体请查看漏洞详情'.format(
                     target=self.target, name=self.vuln.name))
 
         except Exception as e:
@@ -91,7 +91,7 @@ class Poc(ABPoc):
             if match != None:
                 username = match.group("username")
                 password = match.group("password")
-                self.output.report(self.vuln, '发现{target}存在{name}漏洞，获取到的用户名为{username} 用户密码为{password}'.format(
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞，获取到的用户名为:{username} 用户密码为:{password};\n具体请查看漏洞详情'.format(
                     target=self.target, name=self.vuln.name, username=username, password=password))
 
         except Exception as e:

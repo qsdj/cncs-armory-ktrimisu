@@ -50,8 +50,8 @@ class Poc(ABPoc):
             verify_url = '{target}'.format(target=self.target) + payload
             content = requests.get(verify_url).text
             if 'fae0b27c451c728867a567e8c1bb4e53' in content:
-                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                    target=self.target, name=self.vuln.name))
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞;\nSQL注入漏洞地址为{url}'.format(
+                    target=self.target, name=self.vuln.name, url=verify_url))
 
         except Exception as e:
             self.output.info('执行异常{}'.format(e))

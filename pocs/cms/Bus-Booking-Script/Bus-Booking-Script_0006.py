@@ -73,8 +73,8 @@ class Poc(ABPoc):
             delta2 = end_time_2 - end_time_1
 
             if (delta2 - delta1) > 4:
-                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                    target=self.target, name=self.vuln.name))
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞;\n漏洞地址为{url}'.format(
+                    target=self.target, name=self.vuln.name, url=vul_url2))
         except Exception as e:
             self.output.info('执行异常{}'.format(e))
 

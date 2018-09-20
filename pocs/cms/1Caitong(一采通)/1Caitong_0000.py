@@ -93,7 +93,7 @@ class Poc(ABPoc):
                     "/library/editornew/Editor/NewImage/"+match.group(1)
                 rg = requests.get(verify_url)
                 if rg.status_code == 200 and "testvul" in rg.text:
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞，在该验证过程中上传了文件地址为:{url},请及时删除。'.format(
+                    self.output.report(self.vuln, '发现{target}存在{name}漏洞;\n在该验证过程中上传了文件地址为:{url},请及时删除。'.format(
                         target=self.target, name=self.vuln.name, url=verify_url))
         except Exception as e:
             self.output.info('执行异常{}'.format(e))
@@ -150,7 +150,7 @@ class Poc(ABPoc):
                     "/library/editornew/Editor/NewImage/" + match.group(1)
                 rg = requests.get(verify_url)
                 if rg.status_code == 200:
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞,已上传webshell地址:{url}密码为c,请及时删除。'.format(
+                    self.output.report(self.vuln, '发现{target}存在{name}漏洞;\n已上传webshell地址:{url}密码为c,请及时删除。'.format(
                         target=self.target, name=self.vuln.name, url=verify_url))
 
         except Exception as e:

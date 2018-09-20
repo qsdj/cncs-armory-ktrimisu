@@ -57,8 +57,8 @@ class Poc(ABPoc):
             r = s.get(verify_url, headers=header)
             if r.status_code == 200 and '4beed3b9c4a886067de0e3a094246f781' in r.text:
                 #security_hole(url + "\r\npayload:headers" + headers)
-                self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
-                    target=self.target, name=self.vuln.name))
+                self.output.report(self.vuln, '发现{target}存在{name}漏洞;漏洞地址为{url};\n具体请查看漏洞详情'.format(
+                    target=self.target, name=self.vuln.name,url=verify_url))
 
         except Exception as e:
             self.output.info('执行异常{}'.format(e))
