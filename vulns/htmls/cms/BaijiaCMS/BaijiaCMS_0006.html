@@ -1,0 +1,9 @@
+<meta charset="UTF-8">
+<div>
+    <h3>路径泄露URL: </h3>
+    <code>http://example.com/index.php?mod=mobile&name=member&do=index</code>
+    <p>修改请求头中的Content-Type参数为</p>
+    <code>application/x-www-form-urlencoded</code>
+    <h3>返回结果</h3>
+    <p>查看返回页面源码中是否有字符：/system/member/mobile.php 和字符：ModuleSite</p>
+</div>

