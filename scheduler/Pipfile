@@ -1,0 +1,13 @@
+[[source]]
+url = "https://mirrors.ustc.edu.cn/pypi/web/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+pika = "*"
+
+[dev-packages]
+cscanscheduler = {editable = true, path = "."}
+
+[requires]
+python_version = "3"
