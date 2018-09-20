@@ -14,6 +14,7 @@ pypinyin = "*"
 docker = "*"
 colorlog = "*"
 python-json-logger = "*"
+pika = "*"
 
 [dev-packages]
 cscanpoc = {editable = true, path = "."}
