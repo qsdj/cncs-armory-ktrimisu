@@ -1,8 +1,12 @@
 # encoding: utf-8
 
+import os
 import uuid
 import json
 import datetime
+from shutil import copyfile
+from os import path
+from pathlib import Path
 from pypinyin import Style, pinyin
 from CScanPoc.lib.api.component import Component
 from CScanPoc.lib.core.log import CSCAN_LOGGER as logger
@@ -419,3 +423,39 @@ class CScanDb:
         if self.updating:
             self.update_strategies(
                 all_strategy_ids.intersection(existed_strategy_ids))
+
+    def sync_vuln_detail(self, vuln_detail_dir,
+                         vuln_detail_static_dir,
+                         vuln_ids=None):
+        '''
+        :param vuln_detail_dir: 漏洞详情存放目录
+           - htmls/...
+           - imgs/...
+        :param vuln_detail_static_dir: Cscan 站点漏洞静态资源目录
+        :param vuln_ids: 为空/空列表时同步所有，为列表时只同步列表中指定的漏洞 ID
+        '''
+        logger.info('同步漏洞详情')
+        vuln_update_sql = '''UPDATE vuln SET exploit=%s WHERE vuln_id=%s'''
+        cursor = self.cnx.cursor()
+        for f in Path(path.join(vuln_detail_dir, 'htmls')).glob('**/*.html'):
+            vuln_id = f.name.rstrip('.html')
+            if vuln_ids and vuln_id not in vuln_ids:
+                continue
+            logger.info('同步 %s' % f)
+            try:
+                cursor.execute(vuln_update_sql, (f.read_text(), vuln_id))
+            except Exception as e:
+                logger.error('更新失败 %s' % f, e)
+        self.cnx.commit()
+        if vuln_detail_static_dir:
+            logger.info('同步静态资源')
+            src_path = path.join(vuln_detail_dir, 'imgs')
+            img_path = path.join(vuln_detail_static_dir, 'imgs')
+            if not path.exists(img_path):
+                os.makedirs(img_path)
+            for i in os.listdir(src_path):
+                fp = path.join(src_path, i)
+                if not path.isfile(fp):
+                    continue
+                logger.debug('同步 %s' % i)
+                copyfile(fp, path.join(img_path, i))

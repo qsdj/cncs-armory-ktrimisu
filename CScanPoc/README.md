@@ -114,6 +114,16 @@ python scripts/utils.py -v --update --skip-indexing \
     --pass 数据库密码
 ```
 
+同步漏洞详情(exploit 字段值):
+
+```sh
+python scripts/utils.py -v --vuln-detail-dir ../vulns \
+    --host 数据库主机 \
+    --user 用户名 \
+    --db 数据库名 \
+    --pass 数据库密码 \
+```
+
 ### poc_exe.py
 
 根据指定的 POC ID 执行对应 POC.
