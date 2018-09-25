@@ -73,7 +73,7 @@ class Poc(ABPoc):
             r = requests.get('{target}{params}'.format(
                 target=self.target, params=payload))
             # print(r.text)
-            if 'offset='and'length=' in r.text:
+            if 'offset=' in r.text and 'length=' in r.text:
                 self.output.report(self.vuln, '发现{target}存在{name}漏洞'.format(
                     target=self.target, name=self.vuln.name))
 
